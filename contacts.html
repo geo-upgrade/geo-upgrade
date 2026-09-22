@@ -11,28 +11,272 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{heading:['Orbitron','sans-serif'],body:['Exo 2','sans-serif']}}}}</script>
 <style>
-html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px}.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13);transform:translateY(-3px)}.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}.btn:hover{transform:translateY(-2px)}.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}.hidden-message{display:none}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}.card:hover,.btn:hover{transform:none}}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
+.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}
+.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}
+.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px}
+.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13);transform:translateY(-3px)}
+.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}
+.btn:hover{transform:translateY(-2px)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}
+.hidden-message{display:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}.card:hover,.btn:hover{transform:none}}
 </style>
 </head>
 <body>
-<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto h-16 px-5 flex items-center justify-between"><a href="index.html" class="font-heading font-bold text-lg">GEO-Апгрейд</a><nav class="flex gap-4 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="contacts.html" class="text-[#00F0FF]">Контакты</a></nav><a href="#form" class="btn rounded-md bg-[#00F0FF] px-4 py-2 text-sm font-semibold text-[#0D0618]">Мини-аудит</a></div></header>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur">
+  <div class="max-w-6xl mx-auto h-16 px-5 flex items-center justify-between">
+    <a href="index.html" class="font-heading font-bold text-lg">GEO-Апгрейд</a>
+    <nav class="flex gap-4 text-sm text-[#B8BCC6]">
+      <a href="index.html" class="hover:text-[#00F0FF]">Главная</a>
+      <a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a>
+      <a href="services.html" class="hover:text-[#00F0FF]">Услуги</a>
+      <a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a>
+      <a href="contacts.html" class="text-[#00F0FF]">Контакты</a>
+    </nav>
+    <a href="#form" class="btn rounded-md bg-[#00F0FF] px-4 py-2 text-sm font-semibold text-[#0D0618]">Мини-аудит</a>
+  </div>
+</header>
+
 <main>
-<section class="lab-grid"><div class="max-w-6xl mx-auto px-5 py-20 md:py-28"><div class="max-w-3xl"><p class="font-heading text-xs tracking-[.2em] text-[#00F0FF]">CONTACT LAB</p><h1 class="mt-4 text-4xl md:text-6xl font-bold">Связаться с лабораторией AI-видимости</h1><p class="mt-6 text-base md:text-lg text-[#B8BCC6]">Хотите узнать, как нейросети видят ваш бренд, рекомендуют ли его потенциальным клиентам? Оставьте заявку на бесплатный мини-аудит.</p><div class="mt-8 flex flex-col sm:flex-row gap-4"><a href="#form" class="btn glow rounded-md bg-[#00F0FF] px-7 py-4 text-center font-semibold text-[#0D0618]">Получить бесплатный мини-аудит</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="btn rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold">Написать в Telegram</a></div></div></div></section>
-<div class="divider"></div>
-<section class="max-w-6xl mx-auto px-5 py-16 md:py-24"><h2 class="text-center text-3xl md:text-5xl font-bold">Каналы связи</h2><p class="mt-4 text-center text-[#B8BCC6]">Для подробного описания задачи используйте форму или email, а для быстрого вопроса напишите в Telegram.</p><div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6"><article class="card p-6"><h3 class="text-lg font-semibold">Telegram</h3><p class="mt-3 text-sm text-[#B8BCC6]">Быстрый канал для вопросов и короткого описания задачи.</p><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Написать</a></article><article class="card p-6"><h3 class="text-lg font-semibold">ВКонтакте</h3><p class="mt-3 text-sm text-[#B8BCC6]">Новости GEO-Апгрейда, эксперименты и материалы об AI-видимости.</p><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Открыть</a></article><article class="card p-6"><h3 class="text-lg font-semibold">Email</h3><p class="mt-3 text-sm text-[#B8BCC6]">Для подробного брифа и деловой переписки.</p><p class="mt-3 text-sm text-[#B8BCC6]">geo.upgrade@bk.ru</p><a href="mailto:geo.upgrade@bk.ru" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Написать</a></article><article class="card p-6"><h3 class="text-lg font-semibold">Телефон</h3><p class="mt-3 text-sm text-[#B8BCC6]">Если удобнее обсудить задачу голосом.</p><p class="mt-3 text-sm text-[#B8BCC6]">+7 952 944-92-39</p><a href="tel:+79529449239" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Позвонить</a></article><article class="card p-6"><h3 class="text-lg font-semibold">GEO-Навигатор</h3><p class="mt-3 text-sm text-[#B8BCC6]">Проект о промпт-инжиниринге и автоматизации.</p><a href="https://vk.ru/geo.navigator" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Перейти</a></article><article class="card glow p-6 border-[#00F0FF]/40"><h3 class="text-lg font-semibold">Режим связи</h3><p class="mt-3 text-sm text-[#B8BCC6]"><strong>Пн–Пт, 12:00–20:00 по Томску (UTC+7).</strong></p><p class="mt-3 text-sm text-[#B8BCC6]">В это время лаборатория открыта для новых задач.</p></article></div></section>
-<div class="divider"></div>
-<section id="form" class="lab-grid py-16 md:py-24"><div class="max-w-3xl mx-auto px-5"><p class="font-heading text-xs tracking-[.2em] text-center text-[#00F0FF]">FREE MINI-AUDIT</p><h2 class="mt-4 text-center text-3xl md:text-5xl font-bold">Передать задачу в лабораторию</h2><p class="mt-4 text-center text-[#B8BCC6]">Не нужно разбираться в терминологии GEO. Расскажите, чем занимается бренд.</p><form id="contactForm" class="card mt-10 p-6 md:p-8" novalidate><div class="space-y-5"><label class="block text-sm text-[#B8BCC6]">Ваше имя *<input id="name" type="text" required class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></label><label class="block text-sm text-[#B8BCC6]">Название компании<input id="company" type="text" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></label><label class="block text-sm text-[#B8BCC6]">Email для ответа *<input id="email" type="email" required class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></label><label class="block text-sm text-[#B8BCC6]">Ссылка на сайт<input id="website" type="url" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></label><label class="block text-sm text-[#B8BCC6]">Что нужно проверить? *<select id="service" required class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"><option value="Бесплатный мини-аудит">Бесплатный мини-аудит</option><option value="GEO-сканер Lite">GEO-сканер Lite</option><option value="Полный GEO-сканер">Полный GEO-сканер</option><option value="GEO-лаборатория контента">GEO-лаборатория контента</option><option value="GEO-маршрут бренда">GEO-маршрут бренда</option><option value="GEO-тест-драйв">GEO-тест-драйв</option><option value="Индивидуальная задача">Индивидуальная задача</option></select></label><label class="block text-sm text-[#B8BCC6]">Расскажите, что происходит *<textarea id="message" required rows="5" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></textarea></label><label class="flex gap-3 text-sm text-[#B8BCC6]"><input id="consent" type="checkbox" required class="mt-1 h-5 w-5"><span>Я даю согласие на обработку персональных данных и принимаю условия <a href="privacy.html" target="_blank" class="text-[#00F0FF] underline">политики</a>.</span></label></div><p id="validation" class="hidden-message mt-4 text-sm text-red-300"></p><button id="submitBtn" type="submit" class="btn glow mt-6 w-full rounded-md bg-[#00F0FF] px-6 py-4 font-semibold text-[#0D0618]">Отправить заявку</button><p class="mt-4 text-center text-xs text-[#B8BCC6]">Достаточно указать название компании, ссылку и главную задачу.</p></form><div id="success" class="hidden-message card glow mt-8 p-6"><p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">STATUS: SIGNAL RECEIVED</p><h3 class="mt-3 text-xl font-semibold">Сигнал принят лабораторией</h3><p class="mt-3 text-sm text-[#B8BCC6]">Почтовое приложение открылось с вашей заявкой. После отправки письма мы изучим вводные и свяжемся с вами.</p><a href="index.html" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Вернуться на главную</a></div></div></section>
-<div class="divider"></div>
-<section class="max-w-6xl mx-auto px-5 py-16 md:py-24"><h2 class="text-3xl md:text-5xl font-bold">Что отправить для первого сканирования</h2><p class="mt-6 text-[#B8BCC6]">Для бесплатного мини-аудита не нужен большой бриф. Чем точнее исходные данные, тем полезнее будет первичная проверка.</p><div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6"><ul class="space-y-3 text-[#B8BCC6]"><li>◆ Название бренда</li><li>◆ Ссылка на сайт или страницу компании</li><li>◆ Город и регион работы</li><li>◆ Основная услуга или продукт</li><li>◆ Запрос, по которому клиенты должны находить компанию</li><li>◆ Описание проблемы, если она уже заметна</li></ul><article class="card p-6"><h3 class="text-lg font-semibold">Пример</h3><p class="mt-3 text-sm text-[#B8BCC6]"> «Мы — студия массажа в Томске. Хотим понять, рекомендуют ли нас нейросети по запросам о массаже ».</p></article></div></section>
-<div class="divider"></div>
-<section class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24"><div class="max-w-6xl mx-auto"><h2 class="text-center text-3xl md:text-5xl font-bold">Маршрут заявки</h2><div class="mt-10 grid grid-cols-1 md:grid-cols-5 gap-4"><article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">01</b><h3 class="mt-3 font-semibold">Сигнал поступает</h3><p class="mt-2 text-sm text-[#B8BCC6]">Заявка готовится к отправке на email GEO-Апгрейда.</p></article><article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">02</b><h3 class="mt-3 font-semibold">Изучаем контекст</h3><p class="mt-2 text-sm text-[#B8BCC6]">Проверяем направление бизнеса и выбранный формат задачи.</p></article><article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">03</b><h3 class="mt-3 font-semibold">Первичная проверка</h3><p class="mt-2 text-sm text-[#B8BCC6]">Для мини-аудита смотрим, как AI-системы воспринимают бренд.</p></article><article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">04</b><h3 class="mt-3 font-semibold">Связываемся</h3><p class="mt-2 text-sm text-[#B8BCC6]">В Пн–Пт, 12:00–20:00 по Томску лаборатория возвращается с дальнейшими шагами.</p></article><article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">05</b><h3 class="mt-3 font-semibold">Предлагаем маршрут</h3><p class="mt-2 text-sm text-[#B8BCC6]">Если нужен глубокий анализ, объясним подходящий формат работы.</p></article></div></div></section>
-<div class="divider"></div>
-<section class="max-w-6xl mx-auto px-5 py-16 md:py-24"><h2 class="text-3xl md:text-5xl font-bold">Частые вопросы</h2><div class="mt-10 max-w-3xl space-y-5"><article class="card p-5"><h3 class="text-lg font-semibold">Можно ли заказать только бесплатный мини-аудит?</h3><p class="mt-2 text-sm text-[#B8BCC6]">Да. Он нужен для первичной проверки AI-видимости и помогает увидеть очевидные зоны роста.</p></article><article class="card p-5"><h3 class="text-lg font-semibold">Нужно ли знать, что такое GEO?</h3><p class="mt-2 text-sm text-[#B8BCC6]">Нет. Достаточно описать задачу обычными словами.</p></article><article class="card p-5"><h3 class="text-lg font-semibold">Работаете ли вы с клиентами из других городов?</h3><p class="mt-2 text-sm text-[#B8BCC6]">Да. GEO-Апгрейд работает онлайн с компаниями из разных регионов.</p></article><article class="card p-5"><h3 class="text-lg font-semibold">В какое время можно связаться?</h3><p class="mt-2 text-sm text-[#B8BCC6]">По будням с 12:00 до 20:00 по томскому времени (UTC+7).</p></article></div></section>
-<section class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24"><div class="max-w-3xl mx-auto text-center"><h2 class="text-3xl md:text-5xl font-bold">Ваш бренд уже оставляет цифровой след</h2><p class="mt-5 text-[#B8BCC6]">Вопрос только в том, видят ли его нейросети. Начните с бесплатного мини-аудита.</p><a href="#form" class="btn glow mt-8 inline-block rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618]">Запустить бесплатный мини-аудит</a></div></section>
+  <section class="lab-grid">
+    <div class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="font-heading text-xs tracking-[.2em] text-[#00F0FF]">CONTACT LAB</p>
+        <h1 class="mt-4 text-4xl md:text-6xl font-bold">Связаться с лабораторией AI-видимости</h1>
+        <p class="mt-6 text-base md:text-lg text-[#B8BCC6]">Хотите узнать, как нейросети видят ваш бренд, рекомендуют ли его потенциальным клиентам? Оставьте заявку на бесплатный мини-аудит.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="#form" class="btn glow rounded-md bg-[#00F0FF] px-7 py-4 text-center font-semibold text-[#0D0618]">Получить бесплатный мини-аудит</a>
+          <a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="btn rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold">Написать в Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <h2 class="text-center text-3xl md:text-5xl font-bold">Каналы связи</h2>
+    <p class="mt-4 text-center text-[#B8BCC6]">Для подробного описания задачи используйте форму или email, а для быстрого вопроса напишите в Telegram.</p>
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold">Telegram</h3>
+        <p class="mt-3 text-sm text-[#B8BCC6]">Быстрый канал для вопросов и короткого описания задачи.</p>
+        <a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Написать</a>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold">ВКонтакте</h3>
+        <p class="mt-3 text-sm text-[#B8BCC6]">Новости GEO-Апгрейда, эксперименты и материалы об AI-видимости.</p>
+        <a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Открыть</a>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold">Email</h3>
+        <p class="mt-3 text-sm text-[#B8BCC6]">Для подробного брифа и деловой переписки.</p>
+        <p class="mt-3 text-sm text-[#B8BCC6]">geo.upgrade@bk.ru</p>
+        <a href="mailto:geo.upgrade@bk.ru" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Написать</a>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold">Телефон</h3>
+        <p class="mt-3 text-sm text-[#B8BCC6]">Если удобнее обсудить задачу голосом.</p>
+        <p class="mt-3 text-sm text-[#B8BCC6]">+7 952 944-92-39</p>
+        <a href="tel:+79529449239" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Позвонить</a>
+      </article>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold">GEO-Навигатор</h3>
+        <p class="mt-3 text-sm text-[#B8BCC6]">Проект о промпт-инжиниринге и автоматизации.</p>
+        <a href="https://vk.ru/geo.navigator" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Перейти</a>
+      </article>
+      <article class="card glow p-6 border-[#00F0FF]/40">
+        <h3 class="text-lg font-semibold">Режим связи</h3>
+        <p class="mt-3 text-sm text-[#B8BCC6]"><strong>Пн–Пт, 12:00–20:00 по Томску (UTC+7).</strong></p>
+        <p class="mt-3 text-sm text-[#B8BCC6]">В это время лаборатория открыта для новых задач.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="form" class="lab-grid py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-5">
+      <p class="font-heading text-xs tracking-[.2em] text-center text-[#00F0FF]">FREE MINI-AUDIT</p>
+      <h2 class="mt-4 text-center text-3xl md:text-5xl font-bold">Передать задачу в лабораторию</h2>
+      <p class="mt-4 text-center text-[#B8BCC6]">Не нужно разбираться в терминологии GEO. Расскажите, чем занимается бренд.</p>
+
+      <form id="contactForm" class="card mt-10 p-6 md:p-8" novalidate>
+        <div class="space-y-5">
+          <label class="block text-sm text-[#B8BCC6]">Ваше имя *
+            <input id="name" type="text" required class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+          </label>
+          <label class="block text-sm text-[#B8BCC6]">Название компании
+            <input id="company" type="text" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+          </label>
+          <label class="block text-sm text-[#B8BCC6]">Email для ответа *
+            <input id="email" type="email" required class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+          </label>
+          <label class="block text-sm text-[#B8BCC6]">Ссылка на сайт
+            <input id="website" type="url" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+          </label>
+          <label class="block text-sm text-[#B8BCC6]">Что нужно проверить? *
+            <select id="service" required class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+              <option value="Бесплатный мини-аудит">Бесплатный мини-аудит</option>
+              <option value="GEO-сканер Lite">GEO-сканер Lite</option>
+              <option value="Полный GEO-сканер">Полный GEO-сканер</option>
+              <option value="GEO-лаборатория контента">GEO-лаборатория контента</option>
+              <option value="GEO-маршрут бренда">GEO-маршрут бренда</option>
+              <option value="GEO-тест-драйв">GEO-тест-драйв</option>
+              <option value="Индивидуальная задача">Индивидуальная задача</option>
+            </select>
+          </label>
+          <label class="block text-sm text-[#B8BCC6]">Расскажите, что происходит *
+            <textarea id="message" required rows="5" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></textarea>
+          </label>
+          <label class="flex gap-3 text-sm text-[#B8BCC6]">
+            <input id="consent" type="checkbox" required class="mt-1 h-5 w-5">
+            <span>Я даю согласие на обработку персональных данных и принимаю условия <a href="privacy.html" target="_blank" class="text-[#00F0FF] underline">политики</a>.</span>
+          </label>
+        </div>
+        <p id="validation" class="hidden-message mt-4 text-sm text-red-300"></p>
+        <button id="submitBtn" type="submit" class="btn glow mt-6 w-full rounded-md bg-[#00F0FF] px-6 py-4 font-semibold text-[#0D0618]">Отправить заявку</button>
+        <p class="mt-4 text-center text-xs text-[#B8BCC6]">Достаточно указать название компании, ссылку и главную задачу.</p>
+      </form>
+
+      <div id="success" class="hidden-message card glow mt-8 p-6">
+        <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">STATUS: SIGNAL RECEIVED</p>
+        <h3 class="mt-3 text-xl font-semibold">Сигнал принят лабораторией</h3>
+        <p class="mt-3 text-sm text-[#B8BCC6]">Почтовое приложение открылось с вашей заявкой. После отправки письма мы изучим вводные и свяжемся с вами.</p>
+        <a href="index.html" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Вернуться на главную</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <h2 class="text-3xl md:text-5xl font-bold">Что отправить для первого сканирования</h2>
+    <p class="mt-6 text-[#B8BCC6]">Для бесплатного мини-аудита не нужен большой бриф. Чем точнее исходные данные, тем полезнее будет первичная проверка.</p>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <ul class="space-y-3 text-[#B8BCC6]">
+        <li>◆ Название бренда</li>
+        <li>◆ Ссылка на сайт или страницу компании</li>
+        <li>◆ Город и регион работы</li>
+        <li>◆ Основная услуга или продукт</li>
+        <li>◆ Запрос, по которому клиенты должны находить компанию</li>
+        <li>◆ Описание проблемы, если она уже заметна</li>
+      </ul>
+      <article class="card p-6">
+        <h3 class="text-lg font-semibold">Пример</h3>
+        <p class="mt-3 text-sm text-[#B8BCC6]">«Мы — студия массажа в Томске. Хотим понять, рекомендуют ли нас нейросети по запросам о массаже».</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-center text-3xl md:text-5xl font-bold">Маршрут заявки</h2>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-5 gap-4">
+        <article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">01</b><h3 class="mt-3 font-semibold">Сигнал поступает</h3><p class="mt-2 text-sm text-[#B8BCC6]">Заявка готовится к отправке на email GEO-Апгрейда.</p></article>
+        <article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">02</b><h3 class="mt-3 font-semibold">Изучаем контекст</h3><p class="mt-2 text-sm text-[#B8BCC6]">Проверяем направление бизнеса и выбранный формат задачи.</p></article>
+        <article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">03</b><h3 class="mt-3 font-semibold">Первичная проверка</h3><p class="mt-2 text-sm text-[#B8BCC6]">Для мини-аудита смотрим, как AI-системы воспринимают бренд.</p></article>
+        <article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">04</b><h3 class="mt-3 font-semibold">Связываемся</h3><p class="mt-2 text-sm text-[#B8BCC6]">В Пн–Пт, 12:00–20:00 по Томску лаборатория возвращается с дальнейшими шагами.</p></article>
+        <article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">05</b><h3 class="mt-3 font-semibold">Предлагаем маршрут</h3><p class="mt-2 text-sm text-[#B8BCC6]">Если нужен глубокий анализ, объясним подходящий формат работы.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <h2 class="text-3xl md:text-5xl font-bold">Частые вопросы</h2>
+    <div class="mt-10 max-w-3xl space-y-5">
+      <article class="card p-5"><h3 class="text-lg font-semibold">Можно ли заказать только бесплатный мини-аудит?</h3><p class="mt-2 text-sm text-[#B8BCC6]">Да. Он нужен для первичной проверки AI-видимости и помогает увидеть очевидные зоны роста.</p></article>
+      <article class="card p-5"><h3 class="text-lg font-semibold">Нужно ли знать, что такое GEO?</h3><p class="mt-2 text-sm text-[#B8BCC6]">Нет. Достаточно описать задачу обычными словами.</p></article>
+      <article class="card p-5"><h3 class="text-lg font-semibold">Работаете ли вы с клиентами из других городов?</h3><p class="mt-2 text-sm text-[#B8BCC6]">Да. GEO-Апгрейд работает онлайн с компаниями из разных регионов.</p></article>
+      <article class="card p-5"><h3 class="text-lg font-semibold">В какое время можно связаться?</h3><p class="mt-2 text-sm text-[#B8BCC6]">По будням с 12:00 до 20:00 по томскому времени (UTC+7).</p></article>
+    </div>
+  </section>
+
+  <section class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-bold">Ваш бренд уже оставляет цифровой след</h2>
+      <p class="mt-5 text-[#B8BCC6]">Вопрос только в том, видят ли его нейросети. Начните с бесплатного мини-аудита.</p>
+      <a href="#form" class="btn glow mt-8 inline-block rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618]">Запустить бесплатный мини-аудит</a>
+    </div>
+  </section>
 </main>
-<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><p class="font-heading font-bold text-lg">GEO-Апгрейд</p><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p></div><div class="flex flex-wrap gap-4 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="https://vk.ru/geo.navigator" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
+
+<footer class="border-t border-white/10 py-10">
+  <div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <p class="font-heading font-bold text-lg">GEO-Апгрейд</p>
+      <p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p>
+      <p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p>
+      <p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p>
+    </div>
+    <div class="flex flex-wrap gap-4 text-sm text-[#B8BCC6]">
+      <a href="index.html" class="hover:text-[#00F0FF]">Главная</a>
+      <a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a>
+      <a href="services.html" class="hover:text-[#00F0FF]">Услуги</a>
+      <a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a>
+      <a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a>
+      <a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a>
+      <a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a>
+      <a href="https://vk.ru/geo.navigator" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">GEO-Навигатор</a>
+      <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a>
+      <a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a>
+    </div>
+  </div>
+</footer>
+
 <script>
-(function(){var form=document.getElementById('contactForm');var button=document.getElementById('submitBtn');var validation=document.getElementById('validation');var success=document.getElementById('success');form.addEventListener('submit',function(event){event.preventDefault();var name=document.getElementById('name').value.trim();var email=document.getElementById('email').value.trim();var service=document.getElementById('service').value;var message=document.getElementById('message').value.trim();var consent=document.getElementById('consent').checked;if(!name||!email||!message||!consent){validation.textContent='Заполните обязательные поля.';validation.style.display='block';return;}if(!email.includes('@')){validation.textContent='Укажите корректный email.';validation.style.display='block';return;}validation.style.display='none';button.disabled=true;button.textContent='Передаём сигнал…';var body='Имя: '+name+'\nКомпания: '+document.getElementById('company').value.trim()+'\nEmail: '+email+'\nСайт: '+document.getElementById('website').value.trim()+'\nУслуга: '+service+'\nОписание: '+message+'\n\n---\nЗаявка с сайта GEO-Апгрейд';window.location.href='mailto:geo.upgrade@bk.ru?subject='+encodeURIComponent('Новая заявка — '+service)+'&body='+encodeURIComponent(body);form.style.display='none';success.style.display='block';});})();
+(function(){
+  var form = document.getElementById('contactForm');
+  var button = document.getElementById('submitBtn');
+  var validation = document.getElementById('validation');
+  var success = document.getElementById('success');
+
+  form.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var service = document.getElementById('service').value;
+    var message = document.getElementById('message').value.trim();
+    var consent = document.getElementById('consent').checked;
+
+    if(!name || !email || !message || !consent){
+      validation.textContent = 'Заполните обязательные поля.';
+      validation.style.display = 'block';
+      return;
+    }
+    if(!email.includes('@')){
+      validation.textContent = 'Укажите корректный email.';
+      validation.style.display = 'block';
+      return;
+    }
+
+    validation.style.display = 'none';
+    button.disabled = true;
+    button.textContent = 'Передаём сигнал…';
+
+    var body = 'Имя: ' + name + '\n' +
+               'Компания: ' + document.getElementById('company').value.trim() + '\n' +
+               'Email: ' + email + '\n' +
+               'Сайт: ' + document.getElementById('website').value.trim() + '\n' +
+               'Услуга: ' + service + '\n' +
+               'Описание: ' + message + '\n\n---\nЗаявка с сайта GEO-Апгрейд';
+
+    window.location.href = 'mailto:geo.upgrade@bk.ru?subject=' +
+      encodeURIComponent('Новая заявка — ' + service) +
+      '&body=' + encodeURIComponent(body);
+
+    form.style.display = 'none';
+    success.style.display = 'block';
+  });
+})();
 </script>
 </body>
 </html>
