@@ -15,14 +15,14 @@
 
 ## Блог
 - [GEO-лаборатория — блог](blog.html): Журнал AI-видимости
-- [Что такое GEO простыми словами](blog-what-is-geo.html): Как нейросети видят бренд
-- [Чем GEO отличается от SEO](blog-geo-vs-seo.html): Простое объяснение для бизнеса
-- [Что такое цифровой призрак](blog-digital-ghost.html): 10 причин невидимости бренда
-- [Контентные маяки](blog-kontentnye-mayaki.html): Как сделать бренд понятнее для людей и AI
-- [GEO-метрики в отчёте](blog-geo-metrics-full.html): Полная система измерения
-- [Отзывы, карты и каталоги](blog-local-visibility.html): Где AI берёт образы локального бизнеса
-- [AI-автоматизация для маркетинга](blog-ai-automation.html): Человек, AI-штурман и нейросеть
-- [Alice AI Foundation](blog-alice-ai-foundation.html): Суверенная нейросеть Яндекса для бизнеса
+- [Что такое GEO простыми словами](blog-post-what-is-geo.html): Как нейросети видят бренд
+- [Чем GEO отличается от SEO](blog-post-geo-vs-seo.html): Простое объяснение для бизнеса
+- [Что такое цифровой призрак](blog-post-digital-ghost.html): 10 причин невидимости бренда
+- [Контентные маяки](blog-post-kontentnye-mayaki.html): Как сделать бренд понятнее для людей и AI
+- [GEO-метрики в отчёте](blog-post-geo-metrics-full.html): Полная система измерения
+- [Отзывы, карты и каталоги](blog-post-local-visibility.html): Где AI берёт образы локального бизнеса
+- [AI-автоматизация для маркетинга](blog-post-ai-avtomatizaciya-dlya-marketinga.html): Человек, AI-штурман и нейросеть
+- [Alice AI Foundation](blog-post-alice-ai-foundation.html): Суверенная нейросеть Яндекса для бизнеса
 
 ## Справочники
 - [GEO-словарь](glossary.html): Термины AI-поиска, нейросетей и видимости бренда
