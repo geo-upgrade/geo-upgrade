@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GEO-Апгрейд — Блог</title>
+    <link>https://geo-upgrade.ru</link>
+    <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
+    <language>ru-RU</language>
+    <lastBuildDate>Wed, 23 Sep 2026 12:00:00 +0700</lastBuildDate>
+    <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>AI-автоматизация в маркетинге: как освободить время, не потеряв голос бренда</title>
+      <link>https://geo-upgrade.ru/blog-post-ai-avtomatizaciya-dlya-marketinga.html</link>
+      <description><![CDATA[Капитан, AI-штурман и нейросеть: как автоматизировать рутину, сохранив контроль и характер бренда.]]></description>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-ai-avtomatizaciya-dlya-marketinga.html</guid>
+    </item>
+
+    <item>
+      <title>Контентные маяки: как создавать материалы, которые ведут клиента к решению</title>
+      <link>https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html</link>
+      <description><![CDATA[Как связать вопрос клиента, доказательства и следующий шаг бренда.]]></description>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html</guid>
+    </item>
+
+    <item>
+      <title>Какие GEO-метрики можно использовать в отчёте</title>
+      <link>https://geo-upgrade.ru/blog-post-geo-metrics-full.html</link>
+      <description><![CDATA[Система измерения видимости бренда в AI-ответах.]]></description>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-geo-metrics-full.html</guid>
+    </item>
+
+    <item>
+      <title>Отзывы, карты и каталоги: где AI собирает образ локального бизнеса</title>
+      <link>https://geo-upgrade.ru/blog-post-local-visibility.html</link>
+      <description><![CDATA[Что синхронизировать, чтобы бренд выглядел целостно.]]></description>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-local-visibility.html</guid>
+    </item>
+
+    <item>
+      <title>Что такое GEO простыми словами?</title>
+      <link>https://geo-upgrade.ru/blog-post-what-is-geo.html</link>
+      <description><![CDATA[Объясняем GEO без сложной терминологии: что это за направление, чем отличается от SEO и зачем нужно бизнесу.]]></description>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-what-is-geo.html</guid>
+    </item>
+
+    <item>
+      <title>Чем GEO отличается от SEO?</title>
+      <link>https://geo-upgrade.ru/blog-post-geo-vs-seo.html</link>
+      <description><![CDATA[Ключевые отличия GEO от классического SEO: цели, метрики, инструменты и сценарии использования.]]></description>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-geo-vs-seo.html</guid>
+    </item>
+
+    <item>
+      <title>Что такое цифровой призрак</title>
+      <link>https://geo-upgrade.ru/blog-post-digital-ghost.html</link>
+      <description><![CDATA[Понятие «цифровой призрак»: как старые упоминания и забытые профили могут влиять на репутацию и видимость бизнеса.]]></description>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-digital-ghost.html</guid>
+    </item>
+
+    <item>
+      <title>Alice AI Foundation: новая языковая модель Яндекса</title>
+      <link>https://geo-upgrade.ru/blog-post-alice-ai-foundation.html</link>
+      <description><![CDATA[Обзор Alice AI Foundation: что это за модель, какие задачи решает и как её можно использовать в маркетинговых и GEO-проектах.]]></description>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-alice-ai-foundation.html</guid>
+    </item>
+  </channel>
+</rss>
