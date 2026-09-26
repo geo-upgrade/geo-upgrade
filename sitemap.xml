@@ -1,83 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>index.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://geo-upgrade.ru/index.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>services.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://geo-upgrade.ru/services.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://geo-upgrade.ru/about.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>contacts.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://geo-upgrade.ru/contacts.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>geo_navigator.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://geo-upgrade.ru/geo_navigator.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>blog.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://geo-upgrade.ru/blog.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>glossary.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://geo-upgrade.ru/glossary.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>blog-post-what-is-geo.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://geo-upgrade.ru/blog-post-what-is-geo.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>blog-post-geo-vs-seo.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://geo-upgrade.ru/blog-post-geo-vs-seo.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>blog-post-digital-ghost.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://geo-upgrade.ru/blog-post-digital-ghost.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>blog-post-kontentnye-mayaki.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>blog-post-geo-metrics-full.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://geo-upgrade.ru/blog-post-geo-metrics-full.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>blog-post-local-visibility.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://geo-upgrade.ru/blog-post-local-visibility.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>blog-post-ai-avtomatizaciya-dlya-marketinga.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://geo-upgrade.ru/blog-post-ai-avtomatizaciya-dlya-marketinga.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>blog-post-alice-ai-foundation.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://geo-upgrade.ru/blog-post-alice-ai-foundation.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
   <url>
-    <loc>privacy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://geo-upgrade.ru/privacy.html</loc>
+    <lastmod>2026-09-26</lastmod>
   </url>
 </urlset>

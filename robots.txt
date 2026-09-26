@@ -65,4 +65,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://geo-upgrade.ru/sitemap.xml

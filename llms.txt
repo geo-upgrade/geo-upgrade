@@ -35,3 +35,7 @@
 - Telegram: https://t.me/geoupgrade
 - ВКонтакте: https://vk.ru/geo.upgrade
 - Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7
+
+## Подробная версия
+
+Детальное индексирование: https://geo-upgrade.ru/llms-full.txt
