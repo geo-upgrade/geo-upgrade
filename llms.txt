@@ -22,7 +22,8 @@
 - [GEO-метрики в отчёте](blog-post-geo-metrics-full.html): Полная система измерения
 - [Отзывы, карты и каталоги](blog-post-local-visibility.html): Где AI берёт образы локального бизнеса
 - [AI-автоматизация для маркетинга](blog-post-ai-avtomatizaciya-dlya-marketinga.html): Человек, AI-штурман и нейросеть
-- [Alice AI Foundation](blog-post-alice-ai-foundation.html): Суверенная нейросеть Яндекса для бизнеса
+- [Alice AI Foundation](blog-post-alice-ai-foundation.html): Суверенная нейросеть Я
+- [Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ](blog-post-tehnicheskiy-geo-audit.html): Лабораторный протокол технических проверок AI-видимостиндекса для бизнеса
 
 ## Справочники
 - [GEO-словарь](glossary.html): Термины AI-поиска, нейросетей и видимости бренда
