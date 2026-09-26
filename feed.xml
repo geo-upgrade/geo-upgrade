@@ -5,69 +5,69 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Wed, 23 Sep 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
-      <title>AI-автоматизация в маркетинге: как освободить время, не потеряв голос бренда</title>
+      <title>Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ</title>
+      <link>https://geo-upgrade.ru/blog-post-tehnicheskiy-geo-audit.html</link>
+      <description><![CDATA[Лабораторный протокол из 20 технических проверок для AI-видимости сайта: robots.txt, SSL, мобильная версия, разметка Schema.org, llms.txt и другие.]]></description>
+      <pubDate>Sat, 26 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-tehnicheskiy-geo-audit.html</guid>
+    </item>
+    <item>
+      <title>AI-автоматизация для маркетинга: человек, AI-штурман и нейросеть</title>
       <link>https://geo-upgrade.ru/blog-post-ai-avtomatizaciya-dlya-marketinga.html</link>
-      <description><![CDATA[Капитан, AI-штурман и нейросеть: как автоматизировать рутину, сохранив контроль и характер бренда.]]></description>
+      <description><![CDATA[Как использовать AI для отзывов, контента, исследований и отчётов, сохраняя человеческий контроль, стратегию и голос бренда.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-ai-avtomatizaciya-dlya-marketinga.html</guid>
     </item>
-
     <item>
-      <title>Контентные маяки: как создавать материалы, которые ведут клиента к решению</title>
+      <title>Контентные маяки: как сделать бренд понятнее для людей и AI</title>
       <link>https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html</link>
-      <description><![CDATA[Как связать вопрос клиента, доказательства и следующий шаг бренда.]]></description>
+      <description><![CDATA[Что такое контентные маяки и как статьи, FAQ, кейсы, отзывы и карточки компаний ведут клиента к решению и помогают AI понять бренд.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html</guid>
     </item>
-
     <item>
-      <title>Какие GEO-метрики можно использовать в отчёте</title>
+      <title>Какие GEO-метрики можно использовать в отчёте: полная система</title>
       <link>https://geo-upgrade.ru/blog-post-geo-metrics-full.html</link>
-      <description><![CDATA[Система измерения видимости бренда в AI-ответах.]]></description>
+      <description><![CDATA[5 базовых метрик GEO и авторские методики GEO-Апгрейд: как измерить AI-видимость бренда и связать показатели с бизнес-результатами.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-geo-metrics-full.html</guid>
     </item>
-
     <item>
-      <title>Отзывы, карты и каталоги: где AI собирает образ локального бизнеса</title>
+      <title>Отзывы, карты и каталоги: где AI берёт образы локального бизнеса — GEO-Апгрейд</title>
       <link>https://geo-upgrade.ru/blog-post-local-visibility.html</link>
-      <description><![CDATA[Что синхронизировать, чтобы бренд выглядел целостно.]]></description>
+      <description><![CDATA[Где нейросети берут информацию о локальном бизнесе? Разбираем карты, каталоги и отзывы, которые влияют на видимость в AI-ответах. Чек-лист синхронизации от лаборатории GEO-Апгрейд.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-local-visibility.html</guid>
     </item>
-
     <item>
-      <title>Что такое GEO простыми словами?</title>
+      <title>Что такое GEO простыми словами: как нейросети видят бренд — GEO-Апгрейд</title>
       <link>https://geo-upgrade.ru/blog-post-what-is-geo.html</link>
-      <description><![CDATA[Объясняем GEO без сложной терминологии: что это за направление, чем отличается от SEO и зачем нужно бизнесу.]]></description>
+      <description><![CDATA[Простое объяснение GEO: чем оно отличается от SEO, почему AI не видит бизнес, что такое цифровой призрак и как проверить AI-видимость бренда.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-what-is-geo.html</guid>
     </item>
-
     <item>
-      <title>Чем GEO отличается от SEO?</title>
+      <title>Чем GEO отличается от SEO: простое объяснение для бизнеса — GEO-Апгрейд</title>
       <link>https://geo-upgrade.ru/blog-post-geo-vs-seo.html</link>
-      <description><![CDATA[Ключевые отличия GEO от классического SEO: цели, метрики, инструменты и сценарии использования.]]></description>
+      <description><![CDATA[GEO и SEO: в чём разница, почему SEO не исчезает, как AI формирует рекомендации и что происходит с цифровым следом бренда.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-geo-vs-seo.html</guid>
     </item>
-
     <item>
-      <title>Что такое цифровой призрак</title>
+      <title>Что такое цифровой призрак: 10 причин невидимости бренда — GEO-Апгрейд</title>
       <link>https://geo-upgrade.ru/blog-post-digital-ghost.html</link>
-      <description><![CDATA[Понятие «цифровой призрак»: как старые упоминания и забытые профили могут влиять на репутацию и видимость бизнеса.]]></description>
+      <description><![CDATA[Бренд есть, но нейросети его не видят? Разбираем 10 причин, почему вы стали цифровым призраком, и как выйти из невидимости в 2026 году. GEO-аудит от лаборатории AI видимости.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-digital-ghost.html</guid>
     </item>
-
     <item>
-      <title>Alice AI Foundation: новая языковая модель Яндекса</title>
+      <title>Alice AI Foundation: суверенная нейросеть Яндекса — что это значит для бизнеса</title>
       <link>https://geo-upgrade.ru/blog-post-alice-ai-foundation.html</link>
-      <description><![CDATA[Обзор Alice AI Foundation: что это за модель, какие задачи решает и как её можно использовать в маркетинговых и GEO-проектах.]]></description>
+      <description><![CDATA[Яндекс представил суверенную модель Alice AI Foundation. Разбираем, что правда/миф, как это повлияет на бизнес и как использовать. Мини-исследование от лаборатории GEO-Апгрейд.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-alice-ai-foundation.html</guid>
     </item>
