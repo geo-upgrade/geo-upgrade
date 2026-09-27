@@ -130,6 +130,35 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
   <meta property="og:title" content="Контакты GEO-Апгрейд — бесплатный аудит AI-видимости">
   <meta property="og:description" content="Свяжитесь с GEO-Апгрейд: бесплатный мини-аудит AI-видимости бренда.">
 <link rel="stylesheet" href="tailwind.min.css">
+<!-- GEO POLL v1: стили виджета опроса (одинаково на contacts.html и reviews.html) -->
+<style id="geo-poll-css">
+/* GEO POLL v1: опрос «Откуда вы о нас узнали» — одинаково на contacts.html и reviews.html */
+#geo-poll{padding:1.5rem;margin-top:2.5rem}
+@media(min-width:768px){#geo-poll{padding:2rem}}
+.gp-label{font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#00F0FF;margin:0}
+.gp-title{font-size:1.35rem;line-height:1.15;margin:.75rem 0 0;color:#F5F7FA}
+@media(min-width:768px){.gp-title{font-size:1.6rem}}
+.gp-sub{font-size:.9rem;color:#B8BCC6;margin:.5rem 0 0;line-height:1.55}
+.gp-grid{display:grid;grid-template-columns:1fr;gap:.5rem;margin-top:1.2rem}
+@media(min-width:640px){.gp-grid{grid-template-columns:1fr 1fr}}
+.gp-opt{display:flex;align-items:center;justify-content:space-between;gap:.6rem;width:100%;text-align:left;padding:.68rem .85rem;border-radius:8px;border:1px solid rgba(184,188,198,.3);background:rgba(19,10,32,.75);color:#F5F7FA;font-family:'Exo 2',sans-serif;font-size:.92rem;line-height:1.3;cursor:pointer;transition:all .25s cubic-bezier(.22,1,.36,1)}
+.gp-opt:hover{border-color:rgba(0,240,255,.65);box-shadow:0 0 14px rgba(0,240,255,.16);transform:translateY(-2px)}
+.gp-opt:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+.gp-opt.mine{border-color:rgba(0,240,255,.9);box-shadow:0 0 12px rgba(0,240,255,.3)}
+.gp-count{font-family:'Orbitron',sans-serif;font-size:.68rem;color:#B8BCC6;border:1px solid rgba(184,188,198,.35);border-radius:999px;padding:.08rem .55rem;white-space:nowrap;min-width:2.2rem;text-align:center;flex-shrink:0}
+.gp-row{position:relative;display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.68rem .85rem;border-radius:8px;border:1px solid rgba(184,188,198,.3);background:rgba(19,10,32,.75);overflow:hidden}
+.gp-row.mine{border-color:rgba(0,240,255,.9);box-shadow:0 0 12px rgba(0,240,255,.3)}
+.gp-bar{position:absolute;top:0;left:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(0,240,255,.28),rgba(0,240,255,.05));transition:width .8s cubic-bezier(.22,1,.36,1)}
+.gp-row-label{position:relative;font-size:.92rem;color:#F5F7FA;line-height:1.3}
+.gp-row-pct{position:relative;font-family:'Orbitron',sans-serif;font-size:.72rem;color:#00F0FF;white-space:nowrap;flex-shrink:0}
+.gp-input{width:100%;margin-top:.75rem;padding:.75rem 1rem;border-radius:8px;border:1px solid rgba(184,188,198,.4);background:#130A20;color:#F5F7FA;font-family:'Exo 2',sans-serif;font-size:.92rem;box-sizing:border-box}
+.gp-input:focus{outline:none;border-color:rgba(0,240,255,.65)}
+.gp-submit{justify-content:center;margin-top:.5rem;border-color:rgba(0,240,255,.5);color:#00F0FF}
+.gp-status{font-size:.88rem;color:#00F0FF;margin:.9rem 0 0;min-height:1.2em}
+.gp-foot{font-size:.72rem;color:#B8BCC6;margin:.5rem 0 0;line-height:1.5}
+.gp-foot a{color:#00F0FF;text-decoration:underline}
+.gp-hidden{display:none}
+</style>
 </head>
 <body>
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.png" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header>
@@ -223,6 +252,25 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
               <option value="Индивидуальная задача">Индивидуальная задача</option>
             </select>
           </label>
+          <label class="block text-sm text-[#B8BCC6]">Откуда вы о нас узнали?
+            <select id="source" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+              <option value="">Необязательно — выберите вариант</option>
+              <option value="Из ответа нейросети">Из ответа нейросети</option>
+              <option value="Из поисковой выдачи">Из поисковой выдачи</option>
+              <option value="ВКонтакте">ВКонтакте</option>
+              <option value="Telegram">Telegram</option>
+              <option value="Другие соцсети">Другие соцсети</option>
+              <option value="Личная страница Дарьи">Личная страница Дарьи</option>
+              <option value="Блог Дзен / vc.ru / Habr">Блог Дзен / vc.ru / Habr</option>
+              <option value="Карты / каталоги">Карты / каталоги</option>
+              <option value="Порекомендовали друзья или знакомые">Порекомендовали друзья или знакомые</option>
+              <option value="hh / Avito / площадки для услуг">hh / Avito / площадки для услуг</option>
+              <option value="Другое (свой вариант)">Другое (свой вариант)</option>
+            </select>
+          </label>
+          <label id="source-custom-wrap" class="block text-sm text-[#B8BCC6]" style="display:none">Свой вариант — откуда именно?
+            <input id="source-custom" type="text" maxlength="120" placeholder="Например: чат, канал, статья, площадка" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+          </label>
           <label class="block text-sm text-[#B8BCC6]">Расскажите, что происходит *
             <textarea id="message" required rows="5" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></textarea>
           </label>
@@ -242,6 +290,19 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
         <p class="mt-3 text-sm text-[#B8BCC6]">Почтовое приложение открылось с вашей заявкой. После отправки письма мы изучим вводные и свяжемся с вами.</p>
         <a href="index.html" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Вернуться на главную</a>
       </div>
+    </div>
+    <!-- GEO POLL v1: опрос «Откуда вы о нас узнали» (одинаковый блок на contacts.html и reviews.html) -->
+    <div id="geo-poll" class="card gp-wrap">
+      <p class="gp-label">LAB POLL / ОТКУДА ПРИШЁЛ СИГНАЛ</p>
+      <h3 class="gp-title">Откуда вы о нас узнали?</h3>
+      <p class="gp-sub">Дешёвый тест каналов: отметьте, откуда пришёл сигнал. Голоса считает публичный счётчик — статистика реальная, обновляется в реальном времени.</p>
+      <div id="gp-options" class="gp-grid" role="group" aria-label="Варианты: откуда вы о нас узнали"></div>
+      <div id="gp-custom" class="gp-hidden">
+        <input id="gp-custom-input" type="text" maxlength="120" class="gp-input" placeholder="Напишите, откуда именно — канал, чат, площадка">
+        <button id="gp-custom-send" type="button" class="gp-opt gp-submit"><span>Голосовать за свой вариант</span></button>
+      </div>
+      <p id="gp-status" class="gp-status" role="status" aria-live="polite"></p>
+      <p id="gp-foot" class="gp-foot"></p>
     </div>
   </section>
 
@@ -328,6 +389,16 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
     var service = document.getElementById('service').value;
     var message = document.getElementById('message').value.trim();
     var consent = document.getElementById('consent').checked;
+    var sourceSel = document.getElementById('source');
+    var sourceCustom = document.getElementById('source-custom');
+    var sourceText = '';
+    if(sourceSel && sourceSel.value){
+      sourceText = sourceSel.value;
+      if(sourceText === 'Другое (свой вариант)' && sourceCustom){
+        var sct = sourceCustom.value.trim();
+        sourceText = sct ? 'Другое — ' + sct : 'Другое';
+      }
+    }
 
     if(!name || !email || !message || !consent){
       validation.textContent = 'Заполните обязательные поля.';
@@ -349,6 +420,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
                'Email: ' + email + '\n' +
                'Сайт: ' + document.getElementById('website').value.trim() + '\n' +
                'Услуга: ' + service + '\n' +
+               'Источник: ' + (sourceText || '—') + '\n' +
                'Описание: ' + message + '\n\n---\nЗаявка с сайта GEO-Апгрейд';
 
     window.location.href = 'mailto:geo.upgrade@bk.ru?subject=' +
@@ -359,6 +431,158 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
     success.style.display = 'block';
   });
 })();
+</script>
+<script>
+/* GEO POLL v1: опрос «Откуда вы о нас узнали» — счётчик Abacus (abacus.jasoncameron.dev),
+   namespace geo-upgrade.ru, ключи poll1-*. Одинаковый скрипт на contacts.html и reviews.html. */
+(function(){
+  'use strict';
+  var NS='geo-upgrade.ru', API='https://abacus.jasoncameron.dev', LS='geo-poll-vote-v1';
+  var OPTS=[
+    {k:'poll1-ai',label:'Из ответа нейросети'},
+    {k:'poll1-search',label:'Из поисковой выдачи'},
+    {k:'poll1-vk',label:'ВКонтакте'},
+    {k:'poll1-tg',label:'Telegram'},
+    {k:'poll1-social',label:'Другие соцсети'},
+    {k:'poll1-daria',label:'Личная страница Дарьи'},
+    {k:'poll1-blog',label:'Блог Дзен / vc.ru / Habr'},
+    {k:'poll1-maps',label:'Карты / каталоги'},
+    {k:'poll1-friends',label:'Порекомендовали друзья или знакомые'},
+    {k:'poll1-freelance',label:'hh / Avito / площадки для услуг'},
+    {k:'poll1-other',label:'Другое (свой вариант)'}
+  ];
+  var counts={}, my=null, savedTxt='', loaded=false, busy=false;
+
+  var root=document.getElementById('geo-poll');
+  if(!root) return;
+  var list=document.getElementById('gp-options'),
+      statusEl=document.getElementById('gp-status'),
+      customBox=document.getElementById('gp-custom'),
+      customInput=document.getElementById('gp-custom-input'),
+      customSend=document.getElementById('gp-custom-send'),
+      foot=document.getElementById('gp-foot');
+
+  try{
+    var saved=JSON.parse(localStorage.getItem(LS)||'null');
+    if(saved && saved.k){ my=saved.k; savedTxt=saved.txt||''; }
+  }catch(e){}
+
+  function api(path){
+    return fetch(API+path,{headers:{'Accept':'application/json'}}).then(function(r){
+      if(!r.ok){ var err=new Error('HTTP '+r.status); err.code=r.status; throw err; }
+      return r.json();
+    });
+  }
+  function esc(s){ return String(s).replace(/[&<>"']/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function labelOf(k){ for(var i=0;i<OPTS.length;i++){ if(OPTS[i].k===k) return OPTS[i].label; } return ''; }
+  function total(){ var t=0; for(var i=0;i<OPTS.length;i++){ if(typeof counts[OPTS[i].k]==='number') t+=counts[OPTS[i].k]; } return t; }
+  function setStatus(t){ statusEl.textContent=t||''; }
+
+  function refresh(){ if(my) renderResults(); else renderVoteMode(); }
+
+  function renderVoteMode(){
+    list.innerHTML=OPTS.map(function(o){
+      var c=counts[o.k];
+      var badge=(typeof c==='number')?String(c):'—';
+      return '<button type="button" class="gp-opt" data-k="'+o.k+'"><span>'+esc(o.label)+'</span><span class="gp-count">'+badge+'</span></button>';
+    }).join('');
+    if(loaded && total()===0) setStatus('Пока тишина в эфире: вы можете стать первым сигналом.');
+    else if(loaded) setStatus('Собрано сигналов: '+total()+'. Отметьте свой вариант.');
+  }
+
+  function renderResults(){
+    var t=total();
+    list.innerHTML=OPTS.map(function(o){
+      var c=(typeof counts[o.k]==='number')?counts[o.k]:0;
+      var pct=(t>0)?Math.round(100*c/t):0;
+      var mine=(o.k===my)?' mine':'';
+      var tag=(o.k===my)?' — ваш голос':'';
+      return '<div class="gp-row'+mine+'"><span class="gp-bar" style="width:'+pct+'%"></span><span class="gp-row-label">'+esc(o.label)+tag+'</span><span class="gp-row-pct">'+pct+'% · '+c+'</span></div>';
+    }).join('');
+    setStatus('Голос учтён: «'+labelOf(my)+'». Всего сигналов: '+t+'.');
+    prefillForm();
+  }
+
+  function prefillForm(){
+    var sel=document.getElementById('source');
+    if(!sel || !my) return;
+    var lbl=labelOf(my);
+    if(lbl){ sel.value=lbl; }
+    if(my==='poll1-other'){
+      var wrap=document.getElementById('source-custom-wrap');
+      var sc=document.getElementById('source-custom');
+      if(wrap) wrap.style.display='block';
+      if(sc && savedTxt && !sc.value) sc.value=savedTxt;
+    }
+  }
+
+  function store(key, txt){
+    try{ localStorage.setItem(LS, JSON.stringify({k:key, txt:txt||''})); }catch(e){}
+  }
+
+  function attempt(key, txt){
+    return api('/hit/'+NS+'/'+key).then(function(d){
+      counts[key]=d.value; my=key; savedTxt=txt||''; store(key, txt);
+      if(customBox) customBox.classList.add('gp-hidden');
+      renderResults();
+    });
+  }
+  function vote(key, txt){
+    if(busy) return;
+    if(typeof fetch!=='function'){ setStatus('Браузер без fetch — счётчик недоступен, голос не отправлен.'); return; }
+    busy=true; setStatus('Отправляем сигнал…');
+    attempt(key, txt).catch(function(){
+      return attempt(key, txt);
+    }).catch(function(){
+      setStatus('Счётчик не ответил. Подождите пару секунд и попробуйте снова — голос пока не отправлен.');
+    }).then(function(){ busy=false; });
+  }
+
+  function loadCounts(){
+    if(typeof fetch!=='function'){ loaded=true; refresh(); return; }
+    var pend=OPTS.map(function(o){
+      return api('/get/'+NS+'/'+o.k).then(function(d){ counts[o.k]=d.value; },function(e){ counts[o.k]=(e&&e.code===404)?0:null; });
+    });
+    Promise.all(pend).then(function(){ loaded=true; refresh(); });
+  }
+
+  list.addEventListener('click', function(ev){
+    var t=ev.target, btn=null;
+    while(t && t!==list){ if(t.classList && t.classList.contains('gp-opt')){ btn=t; break; } t=t.parentNode; }
+    if(!btn || my) return;
+    var k=btn.getAttribute('data-k');
+    if(k==='poll1-other'){
+      customBox.classList.remove('gp-hidden');
+      customInput.focus();
+      setStatus('Впишите свой вариант — или отправьте голос без уточнения.');
+    } else { vote(k,''); }
+  });
+  customSend.addEventListener('click', function(){ vote('poll1-other', customInput.value.trim()); });
+  customInput.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); customSend.click(); } });
+
+  var srcSel=document.getElementById('source');
+  if(srcSel){
+    srcSel.addEventListener('change', function(){
+      var w=document.getElementById('source-custom-wrap');
+      if(w) w.style.display=(srcSel.value==='Другое (свой вариант)')?'block':'none';
+    });
+  }
+
+  if(document.getElementById('source')){
+    foot.innerHTML='Один голос с устройства. Свой вариант в деталях допишите в форме выше — поле «Откуда вы о нас узнали» попадёт в письмо лаборатории.';
+  } else {
+    foot.innerHTML='Один голос с устройства. Свой вариант в деталях можно дописать в <a class="gp-link" href="contacts.html#form">форме на странице контактов</a>.';
+  }
+
+  refresh();
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ io.disconnect(); loadCounts(); } });
+    },{threshold:.1});
+    io.observe(root);
+  } else { loadCounts(); }
+})();
+
 </script>
 </body>
 </html>
