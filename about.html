@@ -102,6 +102,76 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
   <meta property="og:image" content="https://geo-upgrade.ru/blog-geo-lab-signals.jpg">
   <meta property="og:title" content="О GEO-Апгрейде — лаборатория AI-видимости бренда">
   <meta property="og:description" content="История и методика лаборатории AI-видимости бренда GEO-Апгрейд.">
+<style id="xray-css">
+/* ===== GEO-XRAY (виджет «Рентген») ===== */
+#xray-root{--x:0;position:relative}
+.x-veil{
+  position:fixed;inset:0;z-index:5;pointer-events:none;
+  opacity:calc(var(--x,0)*.6);
+  background:
+    repeating-linear-gradient(0deg,rgba(0,240,255,.045) 0 1px,transparent 1px 4px),
+    radial-gradient(120% 90% at 50% 0%,rgba(13,6,24,.25),rgba(13,6,24,.9));
+}
+.x-keep{
+  position:relative;
+  outline:1px dashed rgba(0,240,255,calc(var(--x)*.75));
+  outline-offset:7px;
+}
+.x-keep::before{
+  content:attr(data-tag);
+  position:absolute;top:-20px;left:0;
+  font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:.22em;
+  color:#00F0FF;opacity:var(--x);pointer-events:none;white-space:nowrap;z-index:2;
+}
+.x-text{
+  text-shadow:0 0 calc(var(--x)*14px) rgba(0,240,255,calc(var(--x)*.5));
+}
+.x-decor{
+  opacity:calc(1 - var(--x));
+  filter:grayscale(calc(var(--x))) brightness(calc(1 - var(--x)*.55));
+}
+.x-img-wrap{position:relative;display:inline-block;max-width:100%}
+.x-blind{
+  position:absolute;inset:auto 0 0 0;
+  padding:5px 8px;text-align:center;
+  font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:.22em;
+  color:#00F0FF;background:rgba(13,6,24,.78);
+  border-top:1px dashed rgba(0,240,255,.55);
+  opacity:var(--x);pointer-events:none;
+}
+#xray-root.ai-mode .x-text{
+  font-family:ui-monospace,'JetBrains Mono',Consolas,monospace;
+  font-size:.95em;
+}
+#xray-root.ai-mode .x-keep::before{color:#7dffe0}
+.xray-bar{
+  position:fixed;left:50%;bottom:14px;transform:translateX(-50%);
+  z-index:60;width:min(680px,calc(100vw - 24px));
+  display:flex;align-items:center;gap:14px;
+  padding:12px 18px;border-radius:14px;
+  background:rgba(13,6,24,.92);backdrop-filter:blur(10px);
+  border:1px solid rgba(0,240,255,.4);
+  box-shadow:0 0 34px rgba(0,240,255,.2);
+  font-family:'Orbitron',sans-serif;
+}
+.xray-bar .lbl{font-size:9px;letter-spacing:.2em;color:#B8BCC6;text-transform:uppercase;white-space:nowrap}
+.xray-bar .lbl.on{color:#00F0FF}
+.xray-bar input[type=range]{
+  -webkit-appearance:none;appearance:none;flex:1;height:4px;border-radius:2px;
+  background:linear-gradient(90deg,#00F0FF,#7b5cff);outline:none;cursor:ew-resize;
+}
+.xray-bar input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;
+  background:#0D0618;border:2px solid #00F0FF;box-shadow:0 0 14px rgba(0,240,255,.85);cursor:ew-resize;
+}
+.xray-bar input[type=range]::-moz-range-thumb{
+  width:18px;height:18px;border-radius:50%;
+  background:#0D0618;border:2px solid #00F0FF;box-shadow:0 0 14px rgba(0,240,255,.85);cursor:ew-resize;
+}
+.xray-bar .pct{font-size:11px;color:#00F0FF;min-width:44px;text-align:right}
+.xray-bar .mode{font-size:9px;letter-spacing:.16em;color:#B8BCC6;text-transform:uppercase;white-space:nowrap}
+@media(max-width:560px){.xray-bar .mode{display:none}}
+</style>
 </head>
 <body>
 
@@ -120,6 +190,8 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 </header>
 
 <main>
+<div id="xray-root">
+<div class="x-veil" aria-hidden="true"></div>
 
 <!-- HERO -->
 <section class="lab-grid">
@@ -423,6 +495,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
   </div>
 </section>
 
+</div>
 </main>
 
 <footer class="border-t border-white/10 py-10">
@@ -447,6 +520,85 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
     </div>
   </div>
 </footer>
+
+
+<!-- ===== GEO-XRAY: панель управления ===== -->
+<div class="xray-bar" role="group" aria-label="Режим просмотра страницы">
+  <span class="lbl on">ЧЕЛОВЕК</span>
+  <input type="range" id="xray" min="0" max="100" value="0" step="1"
+         aria-label="Переключение между режимом человека и режимом ИИ" title="Человек ⟷ ИИ">
+  <span class="lbl">ИИ</span>
+  <span class="pct" id="xray-pct">0%</span>
+  <span class="mode" id="xray-mode">человеческий режим</span>
+</div>
+<script>
+/* ===== GEO-XRAY: скрипт виджета «Рентген» =====
+   Управляет одной CSS-переменной --x (0…1) на #xray-root.
+   Никаких зависимостей и бэкенда. */
+(function(){
+  var slider = document.getElementById('xray');
+  var root   = document.getElementById('xray-root');
+  var pct    = document.getElementById('xray-pct');
+  var mode   = document.getElementById('xray-mode');
+  if(!slider || !root) return;
+
+  /* --- авторазметка контента --- */
+  function tag(sel, cls, labelFn){
+    root.querySelectorAll(sel).forEach(function(el){
+      if(el.closest('.xray-bar')) return;
+      el.classList.add(cls);
+      if(labelFn && !el.dataset.tag) el.dataset.tag = labelFn(el);
+    });
+  }
+  tag('h1,h2,h3', 'x-keep', function(el){ return '<'+el.tagName.toLowerCase()+'>'; });
+  tag('article.card, table, .table, ul, ol, blockquote', 'x-keep', function(el){
+    return '<'+el.tagName.toLowerCase()+'>';
+  });
+  tag('a.btn', 'x-keep', function(el){ return '<a class=btn>'; });
+  tag('p, li, td, th, blockquote', 'x-text');
+  tag('div.divider, .hero-decor', 'x-decor');
+
+  /* изображения: гаснут + плашка «зона слепоты» */
+  root.querySelectorAll('img,video').forEach(function(el){
+    if(el.closest('.x-img-wrap')) return;
+    var w = document.createElement('span');
+    w.className = 'x-img-wrap';
+    el.parentNode.insertBefore(w, el);
+    w.appendChild(el);
+    var b = document.createElement('span');
+    b.className = 'x-blind';
+    b.textContent = 'ЗОНА СЛЕПОТЫ';
+    w.appendChild(b);
+  });
+
+  function apply(){
+    var v = +slider.value / 100;
+    root.style.setProperty('--x', v);
+    pct.textContent = Math.round(v*100) + '%';
+    root.classList.toggle('ai-mode', v >= 0.98);
+    mode.textContent = v === 0 ? 'человеческий режим'
+                     : v >= 0.98 ? 'режим ИИ: зона слепоты проявлена'
+                     : 'смешанный режим';
+  }
+  slider.addEventListener('input', apply);
+  slider.addEventListener('dblclick', function(){ slider.value = 0; apply(); });
+
+  /* пульс-подсказка, пока пользователь не тронул ползунок */
+  var touched = false;
+  slider.addEventListener('pointerdown', function(){ touched = true; });
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var t = 0, iv = setInterval(function(){
+      if(touched){ clearInterval(iv); return; }
+      t = (t + 1) % 60;
+      if(+slider.value === 0){
+        slider.style.boxShadow = '0 0 ' + (6 + 10*Math.abs(Math.sin(t/6))) + 'px rgba(0,240,255,.9)';
+      } else { clearInterval(iv); }
+    }, 90);
+  }
+
+  apply();
+})();
+</script>
 
 </body>
 </html>
