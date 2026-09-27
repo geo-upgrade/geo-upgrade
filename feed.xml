@@ -5,9 +5,16 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sat, 26 Sep 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Что на самом деле спрашивает ваш клиент у нейросети?</title>
+      <link>https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html</link>
+      <description><![CDATA[Как превратить аватар клиента, его боли и JTBD в карту запросов для AI-аудита, контента и GEO-видимости бренда.]]></description>
+      <pubDate>Sun, 27 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html</guid>
+    </item>
     <item>
       <title>Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ</title>
       <link>https://geo-upgrade.ru/blog-post-tehnicheskiy-geo-audit.html</link>
