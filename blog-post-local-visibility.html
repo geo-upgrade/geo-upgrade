@@ -252,12 +252,13 @@
   dots.forEach(function(dot){
     dot.addEventListener('click', function(){ activate(+dot.dataset.i - 1, false); });
   });
-  prev.addEventListener('click', function(){ activate(cur-1, true); });
-  next.addEventListener('click', function(){ activate(cur+1, true); });
+  prev.addEventListener('click', function(){ if(!root.dataset.mcnav){root.dataset.mcnav='1';try{ym(113118311,'reachGoal','autopsy_nav')}catch(e){}} activate(cur-1, true); });
+  next.addEventListener('click', function(){ if(!root.dataset.mcnav){root.dataset.mcnav='1';try{ym(113118311,'reachGoal','autopsy_nav')}catch(e){}} activate(cur+1, true); });
 
   toggle.addEventListener('click', function(){
     var off = root.classList.toggle('aut-off');
     toggle.textContent = off ? 'Показать вскрытие' : 'Скрыть вскрытие';
+    if(!off){try{ym(113118311,'reachGoal','autopsy_open')}catch(e){}}
     if(!off) activate(cur, false);
   });
 

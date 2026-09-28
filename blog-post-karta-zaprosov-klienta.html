@@ -398,8 +398,8 @@ JTBD — какую задачу он «нанимает» продукт или
 
 <script>
 (function(){
-  function copyText(text, st, okMsg){
-    function done(ok){if(ok){try{ym(113118311,'reachGoal','copy_tools',{"tool": "qmap"})}catch(e){}}if(st)st.textContent=ok?okMsg:'Не удалось скопировать автоматически — выделите текст вручную.'}
+  function copyText(text, st, okMsg, tool){
+    function done(ok){if(ok){try{ym(113118311,'reachGoal','copy_tools',{"tool": (tool||'qmap')})}catch(e){}}if(st)st.textContent=ok?okMsg:'Не удалось скопировать автоматически — выделите текст вручную.'}
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){done(true)},function(){done(false)})}
     else{done(false)}
   }
@@ -461,11 +461,13 @@ JTBD — какую задачу он «нанимает» продукт или
       return lines.join('\n');
     }
     qbuild.addEventListener('click',function(){
+      try{ym(113118311,'reachGoal','tools_build',{"tool": "qmap"})}catch(e){}
       var d=drafts();
       out.value=d;
       qst.textContent=d?'':'Выберите пример или напишите свой вариант хотя бы в одном поле — блок соберёт запросы.';
     });
     document.getElementById('qcons-example').addEventListener('click',function(){
+      try{ym(113118311,'reachGoal','tools_example',{"tool": "qmap"})}catch(e){}
       document.getElementById('q-pain').value='преобладают конкуренты';
       document.getElementById('q-ctx').value='клиент ищет [продукт]';
       document.getElementById('q-goal').value='хочется быть первым';
@@ -474,7 +476,7 @@ JTBD — какую задачу он «нанимает» продукт или
     });
     document.getElementById('qcons-copy').addEventListener('click',function(){
       if(!out.value.trim()){qst.textContent='Сначала соберите формулировки.';return}
-      copyText(out.value,qst,'Формулировки скопированы в буфер обмена.');
+      copyText(out.value,qst,'Формулировки скопированы в буфер обмена.','qmap');
     });
     ['q-pain-pick','q-ctx-pick','q-goal-pick'].forEach(function(selId){
       var sel=document.getElementById(selId);
@@ -491,7 +493,7 @@ JTBD — какую задачу он «нанимает» продукт или
   if(av){
     av.addEventListener('click',function(){
       var pre=document.getElementById('avatar-template-text');
-      copyText(pre.textContent,document.getElementById('avatar-status'),'Шаблон аватара скопирован в буфер обмена.');
+      copyText(pre.textContent,document.getElementById('avatar-status'),'Шаблон аватара скопирован в буфер обмена.','avatar');
     });
   }
   var cbs=document.querySelectorAll('.selfcheck-cb');
