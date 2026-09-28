@@ -5,9 +5,16 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Mon, 28 Sep 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Кому нужно GEO-продвижение и почему: как попасть в ответы ChatGPT, Нейро и Алисы AI</title>
+      <link>https://geo-upgrade.ru/blog-post-komu-nuzhno-geo.html</link>
+      <description><![CDATA[Кому нужен GEO: как нейросети собирают ответ по RAG и с каких сигналов начать видимость бренда в ChatGPT, Нейро и Алисе AI.]]></description>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-komu-nuzhno-geo.html</guid>
+    </item>
     <item>
       <title>Что на самом деле спрашивает ваш клиент у нейросети?</title>
       <link>https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html</link>

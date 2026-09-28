@@ -24,6 +24,7 @@
 - [AI-автоматизация для маркетинга](blog-post-ai-avtomatizaciya-dlya-marketinga.html): Человек, AI-штурман и нейросеть
 - [Alice AI Foundation](blog-post-alice-ai-foundation.html): Суверенная нейросеть Я
 - [Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ](blog-post-tehnicheskiy-geo-audit.html): Лабораторный протокол технических проверок AI-видимости
+- [Кому нужно GEO-продвижение и почему](blog-post-komu-nuzhno-geo.html): Кто теряет клиентов в ответах ChatGPT и Нейро; RAG, AI-след и сигнальная связность
 - [Что на самом деле спрашивает ваш клиент у нейросети?](blog-post-karta-zaprosov-klienta.html): Карта запросов для AI-аудита и контента: аватар, боль, JTBD, запросный двойник
 
 ## Отзывы
