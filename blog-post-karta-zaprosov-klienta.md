@@ -317,6 +317,8 @@ Google Maps
 [Цифровой призрак](glossary.html)
 [AI-след бренда](glossary.html)
 [Контекстный якорь](glossary.html)
+[Query](glossary.html)
+[Search intent](glossary.html)
 
 Похожие материалы
 

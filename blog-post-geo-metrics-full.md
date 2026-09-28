@@ -170,6 +170,8 @@ FAQ
 [Mention Rate](glossary.html)
 [Share of Voice](glossary.html)
 [GEO-аудит](glossary.html)
+[Brand mention](glossary.html)
+[Цитирование](glossary.html)
 
 Похожие материалы
 

@@ -289,6 +289,8 @@ SEO уже проложил дорогу. Проверим, видит ли её
 [Цифровой призрак](glossary.html)
 [Зона слепоты](glossary.html)
 [Контентный маяк](glossary.html)
+[AEO](glossary.html)
+[AI-поиск](glossary.html)
 
 Похожие материалы
 

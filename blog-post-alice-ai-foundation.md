@@ -121,6 +121,8 @@
 [Alice AI Foundation](glossary.html)
 [MoE](glossary.html)
 [Экспертный режим](glossary.html)
+[LLM](glossary.html)
+[Генеративный AI](glossary.html)
 
 Похожие материалы
 

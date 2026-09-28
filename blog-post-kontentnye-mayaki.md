@@ -305,6 +305,8 @@ LAB TOOL / КОНСТРУКТОР
 [Сигнальная связность](glossary.html)
 [Зона слепоты](glossary.html)
 [AI-след бренда](glossary.html)
+[Helpful content](glossary.html)
+[Search intent](glossary.html)
 
 Похожие материалы
 

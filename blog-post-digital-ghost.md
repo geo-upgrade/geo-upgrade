@@ -129,6 +129,8 @@ STATUS: INVISIBLE BRAND
 [Невидимость по умолчанию](glossary.html)
 [GEO](glossary.html)
 [НАП-хаос](glossary.html)
+[AI-crawler](glossary.html)
+[Brand entity](glossary.html)
 
 Похожие материалы
 

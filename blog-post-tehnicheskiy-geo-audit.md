@@ -155,6 +155,8 @@ PageSpeed Insights — скорость Rich Results Test — разметка S
 [Зона слепоты](glossary.html)
 [Цифровой след бренда](glossary.html)
 [Контекстный якорь](glossary.html)
+[Краулинг](glossary.html)
+[Structured data](glossary.html)
 
 Похожие материалы
 

@@ -191,6 +191,8 @@ yell.ru
 [НАП-хаос](glossary.html)
 [RAG](glossary.html)
 [AI Overview](glossary.html)
+[Local SEO](glossary.html)
+[Review signals](glossary.html)
 
 Похожие материалы
 

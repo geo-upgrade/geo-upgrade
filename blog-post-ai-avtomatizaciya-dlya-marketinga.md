@@ -232,6 +232,8 @@ GEO-Навигатор помогает собрать персональный 
 [Автоматизационный разрыв](glossary.html#term)
 [Контур доверия](glossary.html#term)
 [Человек в контуре](glossary.html#term)
+[Prompt engineering](glossary.html)
+[Human-in-the-loop](glossary.html)
 
 Похожие материалы
 
