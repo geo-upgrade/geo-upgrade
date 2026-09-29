@@ -9,6 +9,13 @@
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>Аудит на себе. Этап 1: как мы собрали запросный двойник — 6 аватаров и 66 запросов</title>
+      <link>https://geo-upgrade.ru/blog-post-zaprosny-dvoinik-geo-audit.html</link>
+      <description><![CDATA[Как GEO-Апгрейд собрал запросный двойник: 4 сегмента, 6 аватаров, живой язык отзывов и 66 запросов для аудита AI-видимости.]]></description>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-zaprosny-dvoinik-geo-audit.html</guid>
+    </item>
+    <item>
       <title>Кому нужно GEO-продвижение и почему: как попасть в ответы ChatGPT, Нейро и Алисы AI</title>
       <link>https://geo-upgrade.ru/blog-post-komu-nuzhno-geo.html</link>
       <description><![CDATA[Кому нужен GEO: как нейросети собирают ответ по RAG и с каких сигналов начать видимость бренда в ChatGPT, Нейро и Алисе AI.]]></description>

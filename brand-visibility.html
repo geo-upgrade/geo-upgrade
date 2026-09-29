@@ -75,6 +75,55 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#160
 .sig-chip{display:inline-block;padding:.3rem .75rem;border-radius:9999px;border:1px solid rgba(0,240,255,.35);font-size:.75rem;font-family:'Orbitron',sans-serif;letter-spacing:.08em;color:#00F0FF;background:rgba(0,240,255,.06)}
 .sig-count{font-family:'Orbitron',sans-serif;font-size:2.25rem;line-height:1;color:#00F0FF;text-shadow:0 0 18px rgba(0,240,255,.45)}
 @media(prefers-reduced-motion:reduce){.signal-dot{animation:none;left:50%}.signal-line::before{background:rgba(0,240,255,.2)}}
+
+/* ==== QUERY DOUBLE · стили кейса (метка GEO-QDBL) ==== */
+.badge-experiment{background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.5);color:#22D3EE}
+.toc-details summary{cursor:pointer;color:#00F0FF;font-weight:600;font-family:Orbitron,sans-serif;list-style:none}
+.toc-details summary::-webkit-details-marker{display:none}
+.toc-details summary::before{content:"▸ ";display:inline-block;transition:transform .2s}
+.toc-details[open] summary::before{transform:rotate(90deg)}
+.toc-details ul{margin-top:1rem}
+@media(min-width:769px){.toc-details summary{display:none}.toc-details ul{margin-top:0}}
+.q-raw{display:inline-block;padding:.2rem .6rem;margin:.15rem .25rem .15rem 0;border:1px solid rgba(184,188,198,.35);border-radius:9999px;color:#B8BCC6;background:rgba(13,6,24,.6);font-size:.85rem}
+.q-live{border:1px solid rgba(0,240,255,.4);border-left:4px solid #00F0FF;background:rgba(0,240,255,.04);border-radius:0 8px 8px 0;padding:.6rem .8rem;margin:.6rem 0;color:#F5F7FA;font-style:italic}
+.q-live-label{font-family:Orbitron,sans-serif;font-size:.65rem;letter-spacing:.12em;color:#00F0FF;display:block;margin-bottom:.2rem;font-style:normal;text-transform:uppercase}
+.proto-steps{list-style:none;padding-left:0;margin:1rem 0}
+.proto-steps li{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.7rem}
+.proto-steps li>span:last-child{color:#B8BCC6}
+.step-num-dim{background:rgba(184,188,198,.25);color:#B8BCC6}
+.scr-block{margin:2rem 0}
+.scr-grid{display:grid;gap:1rem;grid-template-columns:1fr}
+.scr-grid-3{grid-template-columns:1fr}
+@media(min-width:700px){.scr-grid{grid-template-columns:repeat(2,1fr)}.scr-grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.scr-grid-3{grid-template-columns:repeat(3,1fr)}}
+.scr-item{background:rgba(13,6,24,.85);border:1px solid rgba(0,240,255,.2);border-radius:10px;padding:.75rem;cursor:zoom-in;transition:border-color .3s,box-shadow .3s}
+.scr-item:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13)}
+.scr-item img{width:100%;height:340px;object-fit:cover;object-position:top;border-radius:6px;display:block}
+.scr-item.scr-solo{max-width:440px}
+.scr-item figcaption{margin-top:.55rem;font-size:.8rem;color:#B8BCC6;line-height:1.45}
+.scr-item figcaption strong{color:#00F0FF}
+.lb{position:fixed;inset:0;z-index:120;background:rgba(5,2,10,.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:1.25rem}
+.lb.open{display:flex}
+.lb img{max-width:min(92vw,560px);max-height:82vh;border-radius:8px;border:1px solid rgba(0,240,255,.35);object-fit:contain}
+.lb-cap{color:#B8BCC6;max-width:560px;text-align:center;margin-top:.75rem;font-size:.85rem;line-height:1.45}
+.lb-close{position:absolute;top:1rem;right:1.25rem;background:rgba(13,6,24,.7);border:1px solid rgba(0,240,255,.4);color:#00F0FF;border-radius:9999px;width:2.4rem;height:2.4rem;font-size:1.1rem;cursor:pointer}
+.lb-hint{color:#6B7280;font-size:.75rem;margin-top:.4rem}
+.qd-grid{display:grid;gap:1.25rem;grid-template-columns:1fr}
+@media(min-width:820px){.qd-grid{grid-template-columns:1fr 1fr}}
+.qd-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
+.qd-output{border:1px solid rgba(0,240,255,.35);background:rgba(0,240,255,.04);border-radius:10px;padding:1.1rem 1.2rem}
+.qd-output-title{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem}
+.qd-line{margin:.45rem 0;font-size:.92rem;color:#B8BCC6}
+.qd-line>span{font-family:Orbitron,sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#00F0FF;margin-right:.35rem}
+.qd-line strong{color:#F5F7FA;font-weight:600}
+.qd-variants{margin-top:.35rem}
+.qd-variants .q-live{margin:.35rem 0;padding:.45rem .65rem;font-size:.9rem}
+.qd-phrases{list-style:none;padding-left:0;margin:.35rem 0 0}
+.qd-phrases li{padding-left:1.1rem;position:relative;color:#F5F7FA;font-style:italic;font-size:.9rem;margin-bottom:.25rem}
+.qd-phrases li::before{content:"◆";position:absolute;left:0;color:#00F0FF}
+.qd-warn{border-left:4px solid #FBBF24;background:rgba(251,191,36,.05);padding:.6rem .8rem;border-radius:0 8px 8px 0}
+.qdbl-cb{margin-top:.25rem;accent-color:#00F0FF;width:1.05rem;height:1.05rem;flex-shrink:0}
+@media(prefers-reduced-motion:reduce){.scr-item,.toc-details summary::before{transition:none}}
 </style>
 <script type="application/ld+json">
 {
@@ -131,6 +180,7 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#160
     <span class="metric-pill">● РЕЖИМ: ОЖИДАНИЕ ПЕРВОГО ПРОГОНА</span>
     <span class="metric-pill">ЧАСТОТА: ПО ПЛАНУ МЕТОДОЛОГИИ</span>
     <span class="metric-pill">НЕЙРОСЕТИ: ChatGPT · Gemini · Perplexity · Яндекс Нейро</span>
+    <span class="metric-pill">ПЕРВЫЕ СИГНАЛЫ: АЛИСА AI · БЕЗ АККАУНТА</span>
   </div>
 
   <section class="mt-10">
@@ -138,7 +188,43 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#160
       <p><span class="prompt">&gt;</span> run: brand_check --brand "GEO-Апгрейд"</p>
       <p class="dim">&gt; цель: фиксировать, как AI отвечает о лаборатории</p>
       <p class="dim">&gt; статус: отслеживатель готовит первый цикл</p>
-      <p><span class="prompt">&gt;</span> ожидание данных<span class="cursor-blink"> ▮</span></p>
+      <p class="dim">&gt; источник первых сигналов: Алиса AI — анонимный диалог без аккаунта</p>
+    <p><span class="prompt">&gt;</span> ожидание данных<span class="cursor-blink"> ▮</span></p>
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <div class="card p-6 md:p-8">
+      <p class="font-heading text-xs tracking-[.2em] text-[#00F0FF] uppercase mb-2">ПОЛЕВЫЕ СИГНАЛЫ · АЛИСА AI</p>
+      <h2 class="text-2xl font-semibold">Так нас видит Алиса AI, если болтать с ней анонимно</h2>
+      <p class="mt-3 text-sm text-[#B8BCC6]">Реальные ответы на пробные запросы без аккаунта и истории диалога, замер от 29 сентября 2026 года. Клик по скриншоту открывает его целиком. Это сигналы до основного аудита: единичное упоминание показывает наличие сигнала, но не подтверждает устойчивую AI-видимость.</p>
+      <div class="scr-grid mt-6">
+        <figure class="scr-item" data-screen="bv-tomsk-projects">
+          <img src="alice-tomsk-projects.jpg" alt="Ответ Алисы AI: в Томске есть проект GEO-Апгрейд — аудит AI-видимости, руководитель Дарья Жарких" width="720" height="1340" loading="lazy" decoding="async">
+          <figcaption>«Есть ли в Томске молодые проекты с аудитом AI-видимости?» — GEO-Апгрейд назван ответом.</figcaption>
+        </figure>
+        <figure class="scr-item" data-screen="bv-only-geo-marketer">
+          <img src="alice-only-geo-marketer.jpg" alt="Ответ Алисы AI: Дарья Жарких — единственный в Томске специалист, открыто называющий себя GEO-маркетологом" width="720" height="1340" loading="lazy" decoding="async">
+          <figcaption>По уточняющему запросу — «единственный в Томске, кто открыто называет себя GEO-маркетологом».</figcaption>
+        </figure>
+        <figure class="scr-item" data-screen="bv-expert-intro">
+          <img src="alice-expert-intro.jpg" alt="Ответ Алисы AI: самопрезентация Дарьи Жарких — GEO-маркетолог и AI-консультант, лаборатория AI-видимости бренда" width="720" height="1340" loading="lazy" decoding="async">
+          <figcaption>Самопрезентация: «GEO-маркетолог и AI-консультант», «Лаборатория AI-видимости бренда» и корректный список нейросетей.</figcaption>
+        </figure>
+        <figure class="scr-item" data-screen="bv-granat">
+          <img src="alice-geo-tomsk-granat.jpg" alt="Ответ Алисы AI: рядом с Дарьей Жарких в ответе появляется томское агентство Гранат с направлением GEO" width="720" height="1340" loading="lazy" decoding="async">
+          <figcaption>Контекст конкурентов: рядом с нами в ответах появляется «Гранат» — прямая видимость в конкурентной связке.</figcaption>
+        </figure>
+        <figure class="scr-item" data-screen="bv-context-anchor">
+          <img src="alice-context-anchor.jpg" alt="Ответ Алисы AI объясняет термин контекстный якорь со ссылкой на лабораторию GEO-Апгрейд" width="720" height="1340" loading="lazy" decoding="async">
+          <figcaption>Авторский термин «контекстный якорь» ИИ объясняет со ссылкой на лабораторию — язык бренда уже в моделях.</figcaption>
+        </figure>
+        <figure class="scr-item" data-screen="bv-website-details">
+          <img src="alice-website-details.jpg" alt="Ответ Алисы AI о сайте geo-upgrade.ru: конструктор, калькулятор DFI, цельный стиль лаборатории" width="720" height="1340" loading="lazy" decoding="async">
+          <figcaption>ИИ знает детали сайта — от калькулятора до стиля лаборатории: AI-след бренда насыщенный.</figcaption>
+        </figure>
+      </div>
+      <p class="mt-5 text-xs text-[#B8BCC6]">Полная витрина полевых скриншотов и выводы этапа — в статье: <a href="blog-post-zaprosny-dvoinik-geo-audit.html" class="text-[#00F0FF] hover:underline">Аудит на себе. Этап 1: как мы собрали запросный двойник →</a></p>
     </div>
   </section>
 
@@ -170,5 +256,29 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#160
 </main>
 <footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.png" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="256" height="256"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p></div><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
 <script>document.addEventListener('DOMContentLoaded',function(){var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduceMotion||!('IntersectionObserver' in window)){document.querySelectorAll('.card,.btn').forEach(function(el){el.classList.add('visible')});return}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.card').forEach(function(card){observer.observe(card)});document.querySelectorAll('.btn').forEach(function(btn){if(!btn.closest('.card')){observer.observe(btn)}});var headerBtn=document.querySelector('header .btn');if(headerBtn){headerBtn.classList.add('visible')}});</script>
+<script>
+(function(){
+  function ymE(name,params){try{ym(113118311,'reachGoal',name,params||{})}catch(e){}}
+  var lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');
+  lb.innerHTML='<button type="button" class="lb-close" aria-label="Закрыть">×</button><img alt=""><p class="lb-cap"></p><p class="lb-hint">клик вне изображения — закрыть</p>';
+  document.body.appendChild(lb);
+  var lbImg=lb.querySelector('img'),lbCap=lb.querySelector('.lb-cap');
+  function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
+  lb.addEventListener('click',closeLb);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb()});
+  document.querySelectorAll('.scr-item').forEach(function(fig){
+    fig.addEventListener('click',function(){
+      var img=fig.querySelector('img');
+      if(!img)return;
+      lbImg.src=img.src;lbImg.alt=img.alt;
+      var cap=fig.querySelector('figcaption');lbCap.textContent=cap?cap.textContent:'';
+      lb.classList.add('open');document.body.style.overflow='hidden';
+      if(!fig.dataset.z){fig.dataset.z='1';ymE('screen_zoom',{'screen':fig.getAttribute('data-screen')||''})}
+    });
+  });
+  var art=document.querySelector('a[href^="blog-post-zaprosny-dvoinik-geo-audit"]');
+  if(art){art.addEventListener('click',function(){ymE('to_article_stage1')})}
+})();
+</script>
 </body>
 </html>
