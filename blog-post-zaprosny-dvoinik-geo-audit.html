@@ -211,7 +211,7 @@
 <aside class="lab-card mb-8" id="lab-card">
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
     <div><span class="font-heading text-[#00F0FF]">Тип кейса:</span><p class="mt-1">LAB CASE · QUERY DOUBLE</p></div>
-    <div><span class="font-heading text-[#00F0FF]">Этап:</span><p class="mt-1">1 из 2</p></div>
+    <div><span class="font-heading text-[#00F0FF]">Этап:</span><p class="mt-1">1 из 5</p></div>
     <div><span class="font-heading text-[#00F0FF]">Статус:</span><p class="mt-1">Разработка запросов завершена</p></div>
     <div><span class="font-heading text-[#00F0FF]">Дата замера:</span><p class="mt-1">29 сентября 2026</p></div>
   </div>
@@ -232,7 +232,7 @@
 
 <nav class="card p-6 mb-8">
   <h2 class="text-lg font-semibold mb-4">Содержание</h2>
-  <details class="toc-details" id="toc-details">
+  <details class="toc-details" id="toc-details" open="">
     <summary class="toc-toggle">Показать содержание</summary>
     <ul class="space-y-2 text-sm">
       <li><a href="#start" class="text-[#00F0FF] hover:underline">Что увидит нейросеть, если спросить о вашем бренде?</a></li>
@@ -690,7 +690,7 @@
           <option value="штатный маркетолог">Штатный маркетолог</option>
           <option value="__custom">✍ свой вариант</option>
         </select>
-        <input class="qmap-input mt-2" id="qd-segment-custom" type="text" placeholder="Впишите сегмент своими словами" hidden>
+        <input class="qmap-input mt-2" id="qd-segment-custom" type="text" placeholder="Впишите сегмент своими словами" hidden="">
         <label class="qmap-label" for="qd-city">Город</label>
         <input class="qmap-input" id="qd-city" type="text" placeholder="Например: Томск">
         <label class="qmap-label" for="qd-who">Кто клиент</label>
@@ -721,7 +721,7 @@
       <button type="button" id="qd-build" class="btn glow inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">Собрать запросный профиль</button>
       <button type="button" id="qd-example" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold">Показать пример</button>
     </div>
-    <div class="qd-output mt-6" id="qd-output" hidden>
+    <div class="qd-output mt-6" id="qd-output" hidden="">
       <p class="qd-output-title font-heading text-[#00F0FF]">Ваш запросный двойник ищет решение как…</p>
       <div class="qd-line"><span>Клиент:</span> <strong id="qd-out-who"></strong></div>
       <div class="qd-line"><span>Ситуация:</span> <strong id="qd-out-situation"></strong></div>
@@ -752,7 +752,7 @@
       <li><label class="check-item"><input type="checkbox" class="qdbl-cb"><span>Запрос не звучит как рекламный слоган</span></label></li>
       <li><label class="check-item"><input type="checkbox" class="qdbl-cb"><span>Из ответа можно сделать контентный вывод</span></label></li>
     </ul>
-    <div class="check-result" id="qdbl-check-result" hidden><p class="mb-0" id="qdbl-check-text"></p></div>
+    <div class="check-result" id="qdbl-check-result" hidden=""><p class="mb-0" id="qdbl-check-text"></p></div>
     <p class="qmap-note mt-3">Это рабочая проверка запроса, а не профессиональный аудит.</p>
   </div>
 </section>
@@ -1109,9 +1109,10 @@
     }
   }
 })();
-</script>
+</script><div class="lb" role="dialog" aria-modal="true"><button type="button" class="lb-close" aria-label="Закрыть">×</button><img alt=""><p class="lb-cap"></p><p class="lb-hint">клик вне изображения — закрыть</p></div>
 
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4343a58c91e740dea8a9c104b4e4fd62&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
 
 
 </body></html>

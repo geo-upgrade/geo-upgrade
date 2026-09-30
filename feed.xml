@@ -5,9 +5,16 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Почему AI видит бренд, но не рекомендует: второй этап GEO-аудита в Алисе AI</title>
+      <link>https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html</link>
+      <description><![CDATA[Второй этап из пяти: 67 прогонов в Алисе AI, метрики (Mention Rate, Share of Voice, Brand Gap, Presence Score), слепые зоны, конкуренты и маршрут изменений GEO-Апгрейда.]]></description>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html</guid>
+    </item>
     <item>
       <title>Аудит на себе. Этап 1: как мы собрали запросный двойник — 6 аватаров и 66 запросов</title>
       <link>https://geo-upgrade.ru/blog-post-zaprosny-dvoinik-geo-audit.html</link>
