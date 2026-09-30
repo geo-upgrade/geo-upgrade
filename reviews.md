@@ -88,3 +88,8 @@ STATUS: SIGNAL RECEIVED
 ---
 
 **Примечание:** Review/AggregateRating включать только при первом настоящем отзыве (шаблон закомментирован в HTML).
+
+
+---
+
+GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru

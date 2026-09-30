@@ -286,3 +286,8 @@ geo.navigator@bk.ru · Томск, удалённо по России
 ---
 
 **Примечание:** Собственная палитра #D4B896; mailto geo.navigator@bk.ru.
+
+
+---
+
+GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru

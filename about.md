@@ -205,3 +205,8 @@ Telegram
 ---
 
 **Примечание:** JSON-LD: Organization + WebPage.
+
+
+---
+
+GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
