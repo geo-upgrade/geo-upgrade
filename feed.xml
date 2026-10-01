@@ -5,9 +5,16 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом</title>
+      <link>https://geo-upgrade.ru/blog-post-geo-ne-geo.html</link>
+      <description><![CDATA[Чем GEO-маркетинг отличается от геомаркетинга и геотаргетинга: реальный пример галлюцинации Алисы AI из аудита GEO-Апгрейда, таблица различий и мини-тест для выбора направления.]]></description>
+      <pubDate>Fri, 02 Oct 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-geo-ne-geo.html</guid>
+    </item>
     <item>
       <title>Почему AI видит бренд, но не рекомендует: второй этап GEO-аудита в Алисе AI</title>
       <link>https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html</link>
