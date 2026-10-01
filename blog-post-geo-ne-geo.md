@@ -126,7 +126,7 @@ GEO-маркетинг — это про ответы нейросетей. Ге
 Не уверены, какой вид маркетинга вам нужен? Пройдите бесплатный мини-аудит — разберём вашу ситуацию и подскажем направление.
 [Пройти бесплатный мини-аудит](contacts.html?service=free-audit#form)
 
-Связанные термины: [GEO](glossary.html), [AI-видимость](glossary.html), [Query](glossary.html), [Search intent](glossary.html), [Запросный двойник](glossary.html), [Цифровой призрак](glossary.html), [AI-след бренда](glossary.html)
+Связанные термины: [GEO](glossary.html), [AI-видимость](glossary.html), [Local SEO](glossary.html), [Hallucination](glossary.html), [Query](glossary.html), [Цифровой призрак](glossary.html), [Зона слепоты](glossary.html), [AI-сигнал бренда](glossary.html)
 
 Похожие материалы
 
