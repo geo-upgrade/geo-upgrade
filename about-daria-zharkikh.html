@@ -1,0 +1,484 @@
+<!DOCTYPE html><html lang="ru"><head>
+<meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA+AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgVJREFUeJylkztoVFEQhr8559zduw83RoKEaBRUVBQfIFgEBbERQQtLESJR1kiwkIiNFja2YmMXEUFbG1PoEoIg2ASCCUQhqMEHghhFTET3Ps4di7uJQdLtNDNn5p85A/8/Ug03Km2YaacZwAEgkr90xTJLuSVbraaKU2OQNIEsA+dATB6nKaD/GqwDY/JcnIAIGgQ4kohsXRcahsj8PJLGaLkC1SpqLYggzQhZWIA4AiDr7kbSFPk2j9gHzzTbsbs1NaF46QLasZZ45C58XYQQzNRrwsEz+J27iG/cRDdtA1XM9Etg6ocWT9S11LNXi8f6tbTloBZO1pWfqoXTw1rq2aOl3v1a6tyqpjGrMv1dwwPHtXBqSHnn1QUP72Oej5EOXoayRxYXEGPht5KcGyI93499Mo4dfUS2bzvu9h3MzBTyYQ47PobTWgf4DFRJrg5DEiKTE+AyXOMx5tUk8vlLzoIH1tQgiqDioVzBpWcHII4wb2bhD+BTEIUOixoLSYZ2rcdOvMCOPiUd6Ec+zqEbevFHDyHBlVvq+w6DK2DezhDcG0GrNeJr18EHUC0i7z9RHL4IhQJJfQjfdwSiJna8gVToVERa/KcQFMEFy5SRZbkvlfO4+QvEtYSlSLWyWZdVJpKDVHPRKCAtPWmW141hJd7h/eoiX/p55amp8j++7WNqe8BfwsTb5mYAskEAAAAASUVORK5CYII="><link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFU0lEQVR42u2Xa4hd1RXHf2vvfc59TO5NZsYkkzhDoy1qBEFrBaUvaEsJlL5MExVbEBUKFVEQCwVLP1QstdBWqQ2FPigllIDmg5WipTV9xKpVqgRbopYqJtGZzCt37p1z7z3n7L36YZ/rTNoG2k/5Mgs297DO3v/73+t9ZFN9WjmPYjjPskFgg8B5J+DUSHwSiUsBFDQuoVKNROScYKKgum63cDb26GyFHQk4h2iAPIeyBFXUCFgHSQIqEHxFTsGX6H8hIaooAsacTdZa8GXE9xWOc5DWUBEcwwHaaBAu3Y1esB2sRVZ7yOwp5ORJNHik0QAf0HodbbVADIwsp4AGVAPkBdLtIgoYQQHJeujkVsJFF6ObJ8CXyOlZzJtvQJHjiptuwX9+H+F9l0GrAQmQgywuY147RnLgEcwLz0JZ4D/yMfKHHoZVXbMIQAjQEMwrr1K7/QZUDGgAa8nvvJdy7w3o1DRsslACK33M317G/eKnuOL+B6KvLNBVZLGLpim6dRx/1UeRN05QO/p7Qr2ONpvoeBsccaWsWWEMdH4HWIeKIBiG3/4B/gt7IKs8MtdFa3WYaBA+dB35B67DkXlwgnvsEPbxw8jSAiQJum07fs+nkFNvoWkafWkMDBUsyPHXSX7yw0i+yBH1sHwm7u2tUNx6B37vHlgoYNAn+f6D2BefQxtNyi/dhv/0Z6EMOFoWe/AQyf33QZpE0wZF/vk69pk/omNjaHszZBkYF0PbgSwvYX/zRLzaIEOGOaQpumUctkxQXn8jdAOMJSSPfA/3y5/B+CRSlqTf+gbD915CuOIyHJ0c9/ij0GyATWC1F32bJKhTGPShOQa2CjwBCkVndlHcc18kUOSQBMyLL2F/9yThiqvQnTOgBpb72KNPQ2szBIVaHVZ7mD8dIVy9GyeLS3DmTEy7fkZ599fwV14OfaBmkcVl0ge+DoNBdIEAuaIzU5R331IFIdAG+9Bh3K8eQycmIXUgIJ0zsNKtUjWgvozP83NQgou+rYpE8PhrriV84nI4DdRAZjO0VsMYieZXwAqy2EWePx4JlAU0BfP3Y5CkMe9H9WiEv746SaUXcLptEt1xIcy+De0tJN/5JnpwB8UdX0Wnt0G3C2JikRmVxZogL79Keu9XAEWGA8hLsAbd1MLMzUJ/AM06OjGBTm5FlhbRJI1FqJ+hM7vAgqFm8F+8FVwC/Qzz0l+wT/82Vq7EVOWzKp1B1zpICEi2ivQzyDJkkCHdDhiDnHgT84/jkCg0HeXn9sdYGg6gs4xeOIP/+CchCzj64D/4YYYP/xj75BPI8hK6fQpabRj6qpQGxJeVaT0MFJ3aSfHluyLBskQI0B9gHz2ILMzjfv4j8msPQC/gr99Hbh32mSNoewt+/83o1FSMHY7nypwqC6rMqzJb/b6jyrKqHD2l9fe8X5v1nZruu1PpqHJSldOq9NatYTzbuPgabbYv0ubYtCZ3PRj3zqqyuA57XpU5VXluTl3ttv34z+wlXHk1Or413rjXRd45gX3hWexTv8Z0OjF8Zt/GHnkeHei7QRuzQBED9FYh68emlqYkB76LOfZXyhtvJlyyG9oT0VoLc5g//wF3+BDSbE4rRQHtNrqpFYEHA2Slg/T7kKYxsgENPoKbdbExaq8hRCJp7d22q9Yg/SzuGp9AG2OgAVnpQK8H9Toy1tqlKoJ4H/+g6mQYi4hEYNWoF8AY9JzzQEVkvVgbCfkSDQFEEGvBWAgBFwMo9m4RszZEeH82kK7p5RzDyL9PLwrxYlX+i7EVhoIv4kAiowP6P3yf6P/3XiqdjF7qxlC6QWCDwH/KvwASIpEQWO092wAAAABJRU5ErkJggg=="><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дарья Жарких, основатель лаборатории GEO‑Апгрейд</title>
+<meta name="description" content="Страница о Дарье Жарких, основателе лаборатории GEO‑Апгрейд: путь к GEO, методика, авторские термины, формат работы и контакты.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&amp;family=Orbitron:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
+.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}
+.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}
+.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px}
+.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13);transform:translateY(-3px)}
+.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}
+.btn:hover{transform:translateY(-2px)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}
+.table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.table th,.table td{border:1px solid rgba(184,188,198,.3);padding:.75rem;text-align:left}
+.table th{background:rgba(0,240,255,.08);color:#00F0FF}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}.card:hover,.btn:hover{transform:none}}
+</style>
+<script async="" src="https://mc.yandex.ru/metrika/tag.js?id=113118311"></script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://geo-upgrade.ru/about-daria-zharkikh.html#daria-zharkikh",
+      "name": "Жарких Дарья Александровна",
+      "jobTitle": "GEO‑маркетолог и AI‑консультант",
+      "founderOf": { "@id": "#geo-upgrade" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Томск", "addressCountry": "RU" },
+      "sameAs": [
+        "https://geo-upgrade.ru",
+        "https://vk.ru/geo.upgrade",
+        "https://t.me/geoupgrade",
+        "https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933",
+        "https://workspace.ru/id/darya-zharkih/",
+        "https://www.klerk.ru/user/2726432/"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "#geo-upgrade",
+      "name": "GEO‑Апгрейд",
+      "description": "Узкоспециализированная лаборатория AI‑видимости для брендов и экспертов.",
+      "founder": { "@id": "#daria-zharkikh" },
+      "url": "https://geo-upgrade.ru"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://geo-upgrade.ru" },
+    { "@type": "ListItem", "position": 2, "name": "О лаборатории", "item": "https://geo-upgrade.ru/about.html" },
+    { "@type": "ListItem", "position": 3, "name": "Об основателе", "item": "https://geo-upgrade.ru/about-daria-zharkikh.html" }
+  ]
+}
+</script>
+
+  <link rel="canonical" href="https://geo-upgrade.ru/about-daria-zharkikh.html">
+  <meta property="og:url" content="https://geo-upgrade.ru/about-daria-zharkikh.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://geo-upgrade.ru/daria-photo-1.jpg">
+  <meta property="og:title" content="Дарья Жарких, основатель лаборатории GEO‑Апгрейд">
+  <meta property="og:description" content="Страница о Дарье Жарких, основателе лаборатории GEO‑Апгрейд: путь к GEO, методика, авторские термины, формат работы и контакты.">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
+.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}
+.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}
+.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px}
+.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13);transform:translateY(-3px)}
+.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}
+.btn:hover{transform:translateY(-2px)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}.card:hover,.btn:hover{transform:none}}
+.founder-photo{border:1px solid rgba(184,188,198,.3);border-radius:12px;box-shadow:0 0 24px rgba(0,240,255,.18)}
+.founder-photo--1{max-height:420px;object-fit:cover;object-position:center top}
+.founder-photo--2{max-height:420px;object-fit:cover;object-position:center}
+blockquote{margin:0}
+#lab-flask svg{width:100%;height:auto;display:block}
+.flask-particle{animation:flaskFloat 6s ease-in-out infinite alternate}
+@keyframes flaskFloat{from{transform:translateY(0)}to{transform:translateY(-14px)}}
+#lab-flask:hover .flask-particle{animation-duration:2s}
+.signal-line{stroke-dasharray:6 6;animation:signalDash 1.6s linear infinite}
+@keyframes signalDash{to{stroke-dashoffset:-12}}
+.map-node{cursor:pointer;transition:transform .25s}
+.map-node:hover{transform:scale(1.08)}
+.map-node .node-dot{transition:box-shadow .25s}
+.map-node:hover .node-dot{box-shadow:0 0 18px rgba(0,240,255,.6)}
+.map-tooltip{position:absolute;opacity:0;pointer-events:none;transition:opacity .25s;background:rgba(13,6,24,.95);border:1px solid rgba(0,240,255,.5);border-radius:8px;padding:8px 12px;font-size:13px;max-width:240px;z-index:5}
+.founder-quote{
+  position:relative;
+  margin:1.75rem 0;
+  padding:1.4rem 1.6rem 1.4rem 3.4rem;
+  background:rgba(0,240,255,.055);
+  border:1px solid rgba(0,240,255,.28);
+  border-left:3px solid #00F0FF;
+  border-radius:10px;
+  box-shadow:0 0 24px rgba(0,240,255,.08);
+}
+.founder-quote p{font-style:italic;color:#D8F9FF}
+.founder-quote::before{
+  content:'«';
+  position:absolute;left:14px;top:2px;
+  font-family:'Orbitron',sans-serif;font-size:2.2rem;
+  color:#00F0FF;opacity:.55;font-style:normal;line-height:1;
+}
+@media(max-width:768px){
+  #lab-flask .signal-line{animation:none;stroke-dasharray:none}
+  #lab-flask .flask-particle{animation:none}
+  .map-node{transform:none!important}
+  .map-node:hover .node-dot{box-shadow:none}
+}
+</style>
+<link rel="stylesheet" href="tailwind.min.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.png" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header>
+
+<main>
+
+<article class="about-page about-page--founder">
+<header class="page-header">
+  <section class="lab-grid">
+    <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+      <p class="font-heading text-xs tracking-[.2em] text-[#00F0FF]">ПРОФИЛЬ ОСНОВАТЕЛЯ</p>
+      <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div class="founder-photos grid grid-cols-2 gap-4 items-start">
+          <div><img src="/daria-photo-1.jpg" alt="Дарья Жарких" class="founder-photo founder-photo--1 w-full" loading="eager" width="512" height="512"></div>
+          <div class="mt-8"><img src="/daria-photo-2.jpg" alt="Дарья Жарких" class="founder-photo founder-photo--2 w-full" loading="eager" width="512" height="512"></div>
+        </div>
+        <div class="lab-flask-visual" id="lab-flask">
+<svg viewBox="0 0 360 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Колба идей GEO-Апгрейд и сеть сигналов">
+  <defs>
+    <radialGradient id="flaskGlow" cx="50%" cy="60%" r="60%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity=".28"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lineFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity=".15"/>
+    </linearGradient>
+  </defs>
+  <g id="signal-lines" stroke="url(#lineFade)" stroke-width="1.5" fill="none">
+    <path class="signal-line scroll-line" d="M180 150 C 140 110, 100 90, 60 70"/>
+    <path class="signal-line scroll-line" d="M180 150 C 220 110, 260 90, 300 70"/>
+    <path class="signal-line scroll-line" d="M180 150 C 120 160, 70 175, 40 190"/>
+    <path class="signal-line scroll-line" d="M180 150 C 240 160, 290 175, 320 190"/>
+    <path class="signal-line scroll-line" d="M180 150 C 150 210, 110 245, 90 285"/>
+    <path class="signal-line scroll-line" d="M180 150 C 210 210, 250 245, 270 285"/>
+  </g>
+  <g font-family="Orbitron, sans-serif" font-size="11" fill="#00F0FF">
+    <circle cx="60" cy="70" r="4" fill="#00F0FF" opacity=".9"/>
+    <text x="72" y="66">СТАТЬИ</text>
+    <circle cx="300" cy="70" r="4" fill="#00F0FF" opacity=".9"/>
+    <text x="270" y="62">СОЦСЕТИ</text>
+    <circle cx="40" cy="190" r="4" fill="#00F0FF" opacity=".9"/>
+    <text x="48" y="196">УСЛУГИ</text>
+    <circle cx="320" cy="190" r="4" fill="#00F0FF" opacity=".9"/>
+    <text x="252" y="196">ГЛОССАРИЙ</text>
+    <circle cx="90" cy="285" r="4" fill="#00F0FF" opacity=".9"/>
+    <text x="100" y="289">БРЕНД</text>
+    <circle cx="270" cy="285" r="4" fill="#00F0FF" opacity=".9"/>
+    <text x="192" y="306">СИГНАЛЫ</text>
+  </g>
+  <g>
+    <ellipse cx="180" cy="230" rx="70" ry="85" fill="url(#flaskGlow)"/>
+    <path d="M158 90 L158 150 C 120 165, 105 195, 105 225 C 105 268, 138 300, 180 300 C 222 300, 255 268, 255 225 C 255 195, 240 165, 202 150 L202 90 Z" fill="rgba(13,6,24,.55)" stroke="#00F0FF" stroke-width="2" stroke-opacity=".8"/>
+    <rect x="150" y="76" width="60" height="14" rx="7" fill="none" stroke="#00F0FF" stroke-width="2" stroke-opacity=".8"/>
+    <g id="particles" fill="#00F0FF">
+      <circle class="flask-particle" cx="160" cy="250" r="3" opacity=".9"/>
+      <circle class="flask-particle" cx="185" cy="265" r="2.4" opacity=".7" style="animation-delay:.6s"/>
+      <circle class="flask-particle" cx="200" cy="240" r="3.4" opacity=".8" style="animation-delay:1.1s"/>
+      <circle class="flask-particle" cx="172" cy="225" r="2" opacity=".6" style="animation-delay:1.7s"/>
+      <circle class="flask-particle" cx="190" cy="210" r="2.8" opacity=".75" style="animation-delay:2.2s"/>
+      <circle class="flask-particle" cx="150" cy="270" r="2.2" opacity=".65" style="animation-delay:.3s"/>
+      <circle class="flask-particle" cx="212" cy="262" r="2.6" opacity=".7" style="animation-delay:1.4s"/>
+      <circle class="flask-particle" cx="176" cy="285" r="2.1" opacity=".6" style="animation-delay:2.6s"/>
+    </g>
+    <text x="180" y="330" text-anchor="middle" font-family="Orbitron, sans-serif" font-size="12" fill="#00F0FF" opacity=".85">КОЛБА ИДЕЙ · GEO-АПГРЕЙД</text>
+  </g>
+</svg>
+        </div>
+      </div>
+      <h1 class="mt-10 text-4xl md:text-5xl font-bold">GEO‑Апгрейд — это моя лаборатория. Меня зовут Дарья Жарких</h1>
+      <p class="mt-6 text-base md:text-lg text-[#B8BCC6]">Узкоспециализированная лаборатория AI‑видимости для брендов и экспертов</p>
+    </div>
+  </section>
+</header>
+<div class="divider"></div>
+
+
+<section class="founder-intro max-w-6xl mx-auto px-5 py-14 md:py-20">
+<h2 class="text-3xl md:text-4xl font-bold">Привет, я Дарья Жарких</h2>
+<div class="mt-6 max-w-3xl"><p class="mt-4 text-[#B8BCC6]">Я создала GEO‑Апгрейд не как «ещё одно агентство», а как узкоспециализированную лабораторию AI‑видимости. Здесь я не продаю «продвижение в нейросетях» как чёрный ящик. Я разбираюсь, как AI видит бренд, где он исчезает из ответов и как превратить этот разрыв в маршрут.</p>
+<blockquote class="founder-quote"><p>«Мне важно, чтобы бренд был понятен нейросетям, а не просто висел в поиске где‑то на пятой странице. Поэтому я намеренно сужаю фокус: GEO, AI‑видимость, аудиты, контентные маяки. Это моя зона ответственности и компетенции».</p></blockquote>
+<p class="mt-4 text-[#B8BCC6]">Эта страница — обо мне, о том, как я пришла к GEO, и о том, почему я работаю именно так, а не иначе.</p>
+</div>
+</section>
+<div class="divider"></div>
+
+<section class="journey-to-geo max-w-6xl mx-auto px-5 py-14 md:py-20">
+<h2 class="text-3xl md:text-4xl font-bold">Как я пришла к GEO и AI</h2>
+<div class="mt-6 max-w-3xl"><p class="mt-4 text-[#B8BCC6]">Всё началось с того, что я увидела: все вокруг резко начали пользоваться нейросетями. Но в основном — для развлечения и бесцельного скроллинга. Мне стало интересно разобраться в самой сути: как это работает, как это можно использовать для учёбы и работы.</p>
+<p class="mt-4 text-[#B8BCC6]">Так я затянулась в промпт‑инжиниринг.</p>
+<p class="mt-4 text-[#B8BCC6]">Моим первым проектом стало, по сути, самообучение с помощью Perplexity. Я составила себе учебную программу, разработала практические задания и ударилась в учёбу. В процессе узнала о GEO. А так как весь мой профессиональный путь был связан с маркетингом, продажами и работой с бизнесами, GEO показалось мне очень интересной нишей — на стыке современности и маркетинга.</p>
+<p class="mt-4 text-[#B8BCC6]">До этого у меня был свой бизнес — интернет‑магазин для взрослых Stimulant. Потом я доросла до управляющей сетью магазинов у одного из работодателей. Была там недолго, но пришла к этому быстро. И выгорела. Потому что всегда хотела заниматься своим собственным делом.</p>
+<p class="mt-4 text-[#B8BCC6]">Когда я начала изучать промпт‑инжиниринг, я искала себя — и нашла. Это оказалось стыком моих старых и новых знаний: маркетинг, продажи, работа с клиентами + нейросети, промпты, AI‑видимость.</p>
+<blockquote class="founder-quote"><p>«Не люблю скрипты, но люблю инструкции, которые создаю для себя сама. Конечно, нужно соблюдать какие‑то правила в любой сфере, но уникальность и оригинальность — это то, что делает нас собой».</p></blockquote>
+<p class="mt-4 text-[#B8BCC6]">От первого интереса до запуска лаборатории прошло около двух месяцев. Сайту ещё не было недели, когда он начал появляться в ответах Алисы и Perplexity. Это был сигнал: мои методики рабочие.</p>
+<div class="mt-10 max-w-md">
+  <img src="/daria-photo-2.jpg" alt="Дарья Жарких" class="founder-photo founder-photo--2 w-full" loading="lazy" width="512" height="512">
+</div>
+</div>
+</section>
+<div class="divider"></div>
+
+<section class="lab-not-agency max-w-6xl mx-auto px-5 py-14 md:py-20">
+<h2 class="text-3xl md:text-4xl font-bold">Почему «лаборатория», а не «агентство»</h2>
+<div class="mt-6 max-w-3xl"><p class="mt-4 text-[#B8BCC6]">Я сознательно называю GEO‑Апгрейд лабораторией, а не агентством.</p>
+<p class="mt-4 text-[#B8BCC6]">Агентство часто работает по шаблону: пакет услуг, фиксированный состав, «делаем всё». Лаборатория — это про исследование, эксперименты, протоколы и индивидуальный маршрут.</p>
+<blockquote class="founder-quote"><p>«Для меня важен собственный путь — как мой, так и моего клиента. Индивидуальный подход — это мой рабочий метод во всём».</p></blockquote>
+<p class="mt-4 text-[#B8BCC6]">Я не беру «всех подряд». Мне интересны проекты, где есть готовность работать с данными, текстами и структурой, а не ждать чуда после одного текста.</p>
+</div>
+</section>
+<div class="divider"></div>
+
+<section class="how-i-work max-w-6xl mx-auto px-5 py-14 md:py-20">
+<h2 class="text-3xl md:text-4xl font-bold">Как я работаю</h2>
+<div class="mt-6 max-w-3xl"><p class="mt-4 text-[#B8BCC6]">Я работаю в формате лаборатории: сначала диагностика, затем маршрут, потом контроль изменений.</p>
+<p class="mt-4 text-[#B8BCC6]">Типовая последовательность:</p>
+<ul class="mt-4 space-y-1 pl-5 list-disc">
+<li class="mt-2 text-[#B8BCC6]">Запросный двойник — аватары клиентов, 66 базовых запросов, девять категорий.</li>
+<li class="mt-2 text-[#B8BCC6]">Базовый замер в AI (Алиса, затем Perplexity и ChatGPT) — упоминания, конкуренты, источники, ошибки, слепые зоны.</li>
+<li class="mt-2 text-[#B8BCC6]">Отчёт с метриками и рекомендациями — обязательные и второстепенные действия.</li>
+<li class="mt-2 text-[#B8BCC6]">Внедрение — страницы услуг, контентные маяки, карточки, синхронизация цен и описаний.</li>
+<li class="mt-2 text-[#B8BCC6]">Контрольный замер через 2–4 недели — проверка, изменился ли AI‑след бренда.</li>
+</ul>
+<blockquote class="founder-quote"><p>«Я не верю в “волшебную кнопку” для AI‑видимости. Я верю в систему: запросы → замеры → изменения → повторный замер. И в то, что бренд должен быть узнаваем не только для человека, но и для нейросети».</p></blockquote>
+<p class="mt-4 text-[#B8BCC6]">Мне важно, чтобы клиент видел не просто «красивые цифры», а понимал, откуда они взялись и что делать дальше. Поэтому я всегда показываю исходные ответы AI, правки и логику расчётов.</p>
+</div>
+</section>
+<div class="divider"></div>
+
+<section class="target-audience max-w-6xl mx-auto px-5 py-14 md:py-20">
+<h2 class="text-3xl md:text-4xl font-bold">Для кого я это делаю</h2>
+<div class="mt-6 max-w-3xl"><p class="mt-4 text-[#B8BCC6]">GEO‑Апгрейд ориентирован на три основных типа клиентов:</p>
+<ul class="mt-4 space-y-1 pl-5 list-disc">
+<li class="mt-2 text-[#B8BCC6]">Владельцы малого и среднего бизнеса, которые хотят, чтобы бренд находили и рекомендовали в нейросетях.</li>
+<li class="mt-2 text-[#B8BCC6]">Эксперты и специалисты, которым важно, чтобы AI правильно описывал их услуги и не путал с другими.</li>
+<li class="mt-2 text-[#B8BCC6]">Маркетологи и агентства, которые хотят понять, как работает AI‑видимость, и внедрить GEO в свою работу.</li>
+</ul>
+</div>
+</section>
+<div class="divider"></div>
+
+<section class="what-i-dont-do max-w-6xl mx-auto px-5 py-14 md:py-20">
+<h2 class="text-3xl md:text-4xl font-bold">Что я НЕ делаю</h2>
+<div class="mt-6 max-w-3xl"><p class="mt-4 text-[#B8BCC6]">Я честно говорю о границах метода и не обещаю «гарантированного попадания в топ AI».</p>
+<p class="mt-4 text-[#B8BCC6]">Я не накручиваю отзывы. В моём опыте был период, когда я писала такие отзывы на заказ. Теперь я вижу насквозь, когда они неискренни и написаны лишь для того, чтобы повысить репутацию. Если это заметно мне, то уж тем более не скроется от модераторов и специалистов карт и отзывиков.</p>
+<p class="mt-4 text-[#B8BCC6]">Я не обещаю того, что не могу сделать. Но обещаю сделать всё, что могу. И могу доказать, что мой подход и методы работают на самом деле.</p>
+<p class="mt-4 text-[#B8BCC6]">Я не работаю с нишами, которые вообще не отзываются. Пока точно не могу сказать, с какими именно, но если в практике такое появится — сразу честно сообщу клиенту, чтобы не тратить своё и его время.</p>
+<blockquote class="founder-quote"><p>«Честность и прозрачность — это важно для плодотворного сотрудничества и в целом для уменьшения информационного шума, которого сейчас полно на пространстве Интернета».</p></blockquote>
+</div>
+</section>
+<div class="divider"></div>
+
+<section class="ai-consultant max-w-6xl mx-auto px-5 py-14 md:py-20">
+<h2 class="text-3xl md:text-4xl font-bold">Моё второе направление: AI‑консультант</h2>
+<div class="mt-6 max-w-3xl"><p class="mt-4 text-[#B8BCC6]">Меня отличает не только мой подход и специализация, но и второе направление — AI‑консультант.</p>
+<p class="mt-4 text-[#B8BCC6]">Я хочу, чтобы нейросети были действительно полезны тем, кто их использует, и готова делиться своими знаниями, помогать и передавать методику.</p>
+</div>
+</section>
+<div class="divider"></div>
+
+<section class="brand-connections-map lab-grid max-w-6xl mx-auto px-5 py-16 md:py-20" id="brand-connections">
+<h2 class="text-3xl md:text-4xl font-bold">Карта связок бренда</h2>
+<div class="mt-6 max-w-3xl text-[#B8BCC6]"><p>Наведите курсор на узел: подсказка покажет, закреплена ли связка. Цвет маркера — статус: голубой — связка закреплена, янтарный — частично закреплена, красный — зона слепоты.</p></div>
+<div class="mt-8 max-w-3xl mx-auto">
+<script type="application/json" id="connections-data">
+[{"id": "site", "label": "Сайт", "status": "fixed", "tooltip": "Здесь используется формулировка: узкоспециализированная лаборатория"}, {"id": "blog", "label": "Статьи", "status": "fixed", "tooltip": "Здесь используется формулировка: узкоспециализированная лаборатория"}, {"id": "glossary", "label": "Глоссарий", "status": "fixed", "tooltip": "Здесь используется формулировка: узкоспециализированная лаборатория"}, {"id": "services", "label": "Услуги", "status": "fixed", "tooltip": "Здесь используется формулировка: узкоспециализированная лаборатория"}, {"id": "vk", "label": "ВК", "status": "fixed", "tooltip": "Здесь используется формулировка: узкоспециализированная лаборатория"}, {"id": "tg", "label": "Telegram", "status": "fixed", "tooltip": "Здесь используется формулировка: узкоспециализированная лаборатория"}, {"id": "yandex", "label": "Яндекс Услуги", "status": "fixed", "tooltip": "Здесь используется формулировка: узкоспециализированная лаборатория"}, {"id": "future", "label": "Будущие карточки", "status": "blind", "tooltip": "Здесь связка ещё не закреплена"}, {"id": "maps", "label": "Карты", "status": "partial", "tooltip": "Здесь связка ещё не закреплена"}, {"id": "2gis", "label": "2ГИС", "status": "partial", "tooltip": "Здесь связка ещё не закреплена"}, {"id": "avito", "label": "Авито", "status": "partial", "tooltip": "Здесь связка ещё не закреплена"}, {"id": "profi", "label": "Профи", "status": "partial", "tooltip": "Здесь связка ещё не закреплена"}]
+</script>
+<div id="map-wrap" class="relative w-full">
+<svg id="brand-map-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Карта связок бренда GEO-Апгрейд">
+  <line x1="300" y1="300" x2="300" y2="90" stroke="#00F0FF" stroke-opacity=".35" stroke-width="1.2"/><line x1="300" y1="300" x2="405" y2="118" stroke="#00F0FF" stroke-opacity=".35" stroke-width="1.2"/><line x1="300" y1="300" x2="482" y2="195" stroke="#00F0FF" stroke-opacity=".35" stroke-width="1.2"/><line x1="300" y1="300" x2="510" y2="300" stroke="#00F0FF" stroke-opacity=".35" stroke-width="1.2"/><line x1="300" y1="300" x2="482" y2="405" stroke="#00F0FF" stroke-opacity=".35" stroke-width="1.2"/><line x1="300" y1="300" x2="405" y2="482" stroke="#00F0FF" stroke-opacity=".35" stroke-width="1.2"/><line x1="300" y1="300" x2="300" y2="510" stroke="#00F0FF" stroke-opacity=".35" stroke-width="1.2"/><line x1="300" y1="300" x2="195" y2="482" stroke="#FF6B6B" stroke-opacity=".35" stroke-width="1.2" stroke-dasharray="4 4"/><line x1="300" y1="300" x2="118" y2="405" stroke="#D4B896" stroke-opacity=".35" stroke-width="1.2"/><line x1="300" y1="300" x2="90" y2="300" stroke="#D4B896" stroke-opacity=".35" stroke-width="1.2"/><line x1="300" y1="300" x2="118" y2="195" stroke="#D4B896" stroke-opacity=".35" stroke-width="1.2"/><line x1="300" y1="300" x2="195" y2="118" stroke="#D4B896" stroke-opacity=".35" stroke-width="1.2"/><g class="map-node" data-id="site">
+  <circle class="node-dot" cx="300" cy="90" r="5" fill="#00F0FF"/>
+  <rect x="284" y="75" width="31" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#00F0FF" stroke-opacity=".55"/>
+  <text x="300" y="94" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">Сайт</text>
+</g><g class="map-node" data-id="blog">
+  <circle class="node-dot" cx="405" cy="118" r="5" fill="#00F0FF"/>
+  <rect x="386" y="103" width="37" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#00F0FF" stroke-opacity=".55"/>
+  <text x="405" y="122" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">Статьи</text>
+</g><g class="map-node" data-id="glossary">
+  <circle class="node-dot" cx="482" cy="195" r="5" fill="#00F0FF"/>
+  <rect x="459" y="180" width="45" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#00F0FF" stroke-opacity=".55"/>
+  <text x="482" y="199" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">Глоссарий</text>
+</g><g class="map-node" data-id="services">
+  <circle class="node-dot" cx="510" cy="300" r="5" fill="#00F0FF"/>
+  <rect x="492" y="285" width="37" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#00F0FF" stroke-opacity=".55"/>
+  <text x="510" y="304" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">Услуги</text>
+</g><g class="map-node" data-id="vk">
+  <circle class="node-dot" cx="482" cy="405" r="5" fill="#00F0FF"/>
+  <rect x="470" y="390" width="24" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#00F0FF" stroke-opacity=".55"/>
+  <text x="482" y="409" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">ВК</text>
+</g><g class="map-node" data-id="tg">
+  <circle class="node-dot" cx="405" cy="482" r="5" fill="#00F0FF"/>
+  <rect x="384" y="467" width="42" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#00F0FF" stroke-opacity=".55"/>
+  <text x="405" y="486" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">Telegram</text>
+</g><g class="map-node" data-id="yandex">
+  <circle class="node-dot" cx="300" cy="510" r="5" fill="#00F0FF"/>
+  <rect x="273" y="495" width="54" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#00F0FF" stroke-opacity=".55"/>
+  <text x="300" y="514" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">Яндекс Услуги</text>
+</g><g class="map-node" data-id="future">
+  <circle class="node-dot" cx="195" cy="482" r="5" fill="#FF6B6B"/>
+  <rect x="165" y="467" width="60" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#FF6B6B" stroke-opacity=".55"/>
+  <text x="195" y="486" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">Будущие карточки</text>
+</g><g class="map-node" data-id="maps">
+  <circle class="node-dot" cx="118" cy="405" r="5" fill="#D4B896"/>
+  <rect x="101" y="390" width="34" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#D4B896" stroke-opacity=".55"/>
+  <text x="118" y="409" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">Карты</text>
+</g><g class="map-node" data-id="2gis">
+  <circle class="node-dot" cx="90" cy="300" r="5" fill="#D4B896"/>
+  <rect x="74" y="285" width="31" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#D4B896" stroke-opacity=".55"/>
+  <text x="90" y="304" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">2ГИС</text>
+</g><g class="map-node" data-id="avito">
+  <circle class="node-dot" cx="118" cy="195" r="5" fill="#D4B896"/>
+  <rect x="101" y="180" width="34" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#D4B896" stroke-opacity=".55"/>
+  <text x="118" y="199" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">Авито</text>
+</g><g class="map-node" data-id="profi">
+  <circle class="node-dot" cx="195" cy="118" r="5" fill="#D4B896"/>
+  <rect x="178" y="103" width="34" height="30" rx="15" fill="rgba(13,6,24,.9)" stroke="#D4B896" stroke-opacity=".55"/>
+  <text x="195" y="122" text-anchor="middle" font-size="12" font-family="Exo 2, sans-serif" fill="#F5F7FA">Профи</text>
+</g>
+  <g>
+    <circle cx="300" cy="300" r="46" fill="rgba(13,6,24,.92)" stroke="#00F0FF" stroke-width="2"/>
+    <text x="300" y="292" text-anchor="middle" font-family="Orbitron, sans-serif" font-size="12" fill="#00F0FF">ДАРЬЯ</text>
+    <text x="300" y="308" text-anchor="middle" font-family="Orbitron, sans-serif" font-size="12" fill="#00F0FF">ЖАРКИХ</text>
+    <text x="300" y="326" text-anchor="middle" font-family="Exo 2, sans-serif" font-size="11" fill="#B8BCC6">GEO-Апгрейд</text>
+  </g>
+</svg>
+<div class="map-tooltip" id="tip-site" data-node="site">Здесь используется формулировка: узкоспециализированная лаборатория</div><div class="map-tooltip" id="tip-blog" data-node="blog">Здесь используется формулировка: узкоспециализированная лаборатория</div><div class="map-tooltip" id="tip-glossary" data-node="glossary">Здесь используется формулировка: узкоспециализированная лаборатория</div><div class="map-tooltip" id="tip-services" data-node="services">Здесь используется формулировка: узкоспециализированная лаборатория</div><div class="map-tooltip" id="tip-vk" data-node="vk">Здесь используется формулировка: узкоспециализированная лаборатория</div><div class="map-tooltip" id="tip-tg" data-node="tg">Здесь используется формулировка: узкоспециализированная лаборатория</div><div class="map-tooltip" id="tip-yandex" data-node="yandex">Здесь используется формулировка: узкоспециализированная лаборатория</div><div class="map-tooltip" id="tip-future" data-node="future">Здесь связка ещё не закреплена</div><div class="map-tooltip" id="tip-maps" data-node="maps">Здесь связка ещё не закреплена</div><div class="map-tooltip" id="tip-2gis" data-node="2gis">Здесь связка ещё не закреплена</div><div class="map-tooltip" id="tip-avito" data-node="avito">Здесь связка ещё не закреплена</div><div class="map-tooltip" id="tip-profi" data-node="profi">Здесь связка ещё не закреплена</div>
+<div class="mt-4 flex flex-wrap gap-4 text-sm text-[#B8BCC6]">
+  <span class="inline-flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full" style="background:#00F0FF"></span> связка закреплена</span>
+  <span class="inline-flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full" style="background:#D4B896"></span> частично закреплена</span>
+  <span class="inline-flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full" style="background:#FF6B6B"></span> зона слепоты</span>
+</div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+
+<section class="next-steps-cta max-w-6xl mx-auto px-5 py-14 md:py-20">
+<h2 class="text-3xl md:text-4xl font-bold">Что дальше?</h2>
+<div class="mt-6 max-w-3xl"><p class="mt-4 text-[#B8BCC6]">Если ты хочешь понять, как AI видит твой бренд прямо сейчас, начни с двух шагов:</p>
+<ul class="mt-4 space-y-1 pl-5 list-disc">
+<li class="mt-2 text-[#B8BCC6]">Прочитай статьи — там я подробно разбираю метрики, слепые зоны, контентные маяки и маршруты.</li>
+<li class="mt-2 text-[#B8BCC6]">Подпишись на соцсети — я делюсь находками, обновлениями методик и сигналами из лаборатории.</li>
+</ul>
+<div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a href="/blog" class="btn glow rounded-md bg-[#00F0FF] px-7 py-4 text-center font-semibold text-[#0D0618]">Читать статьи →</a>
+        <a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="btn rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold">Подписаться на Telegram</a>
+        <a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="btn rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold">Подписаться на ВК</a>
+      </div>
+</div>
+</section>
+
+<footer class="page-footer max-w-6xl mx-auto px-5 pb-16">
+  <div class="divider mb-10"></div>
+  <p class="founder-signature text-[#00F0FF] font-semibold">Дарья Жарких, основатель лаборатории GEO‑Апгрейд</p>
+</footer>
+</article>
+
+</main>
+
+<footer class="border-t border-white/10 py-10">
+  <div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <div class="flex items-center gap-3"><img src="logo-round-min.png" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="256" height="256"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div>
+      <p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p>
+      <p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p>
+      <p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p>
+    </div>
+    <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div>
+</footer>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+
+
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+<script>
+(function(){
+  var dataEl = document.getElementById('connections-data');
+  if(!dataEl) return;
+  var data = JSON.parse(dataEl.textContent);
+  var svg = document.getElementById('brand-map-svg');
+  var wrap = document.getElementById('map-wrap');
+  if(!svg || !wrap) return;
+  var n = data.length;
+  var cx=300, cy=300, R=210;
+  var vb = svg.viewBox.baseVal;
+  var rect = svg.getBoundingClientRect();
+  var sx = rect.width / vb.width, sy = rect.height / vb.height;
+  var activeTip = null;
+  function showTip(tip){ if(activeTip && activeTip !== tip) activeTip.style.opacity = '0'; activeTip = tip; tip.style.opacity = '1'; }
+  function hideTip(tip){ tip.style.opacity = '0'; if(activeTip === tip) activeTip = null; }
+  data.forEach(function(nd, i){
+    var g = svg.querySelector('.map-node[data-id="'+nd.id+'"]');
+    if(!g) return;
+    var ang = 2*Math.PI*i/n - Math.PI/2;
+    var x = cx + R*Math.cos(ang), y = cy + R*Math.sin(ang);
+    var tip = document.getElementById('tip-'+nd.id);
+    if(tip){
+      tip.style.left = Math.min(Math.max(x*sx-40, 4), Math.max(rect.width-248, 4)) + 'px';
+      tip.style.top  = Math.min(y*sy+16, rect.height-10) + 'px';
+      g.addEventListener('mouseenter', function(){ showTip(tip); });
+      g.addEventListener('mouseleave', function(){ hideTip(tip); });
+      g.addEventListener('click', function(){ if(tip.style.opacity === '1'){ hideTip(tip); } else { showTip(tip); } });
+    }
+    var dot = g.querySelector('.node-dot');
+    if(dot){ dot.setAttribute('fill', {fixed:'#00F0FF', partial:'#D4B896', blind:'#FF6B6B'}[nd.status] || '#00F0FF'); }
+  });
+})();
+(function(){
+  var lines = document.querySelectorAll('.scroll-line');
+  if(!lines.length) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function update(){
+    var rect = document.getElementById('lab-flask').getBoundingClientRect();
+    var vh = window.innerHeight || 1;
+    var p = Math.min(Math.max(1 - (rect.top + rect.height*0.4)/vh, 0), 1);
+    lines.forEach(function(l){
+      var len = l.getTotalLength ? l.getTotalLength() : 0;
+      if(!len) return;
+      l.style.strokeDasharray = len;
+      l.style.strokeDashoffset = len*(1-p);
+      l.style.opacity = 0.15 + 0.85*p;
+    });
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
+
+
+</body>
+</html>
