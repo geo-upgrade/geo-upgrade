@@ -22,6 +22,12 @@ SECTION: AI-СИГНАЛЫ
 - [Alice AI Foundation: суверенная нейросеть Яндекса — что это значит для бизнеса](https://geo-upgrade.ru/blog-post-alice-ai-foundation.html) — 23 сентября 2026 • 10–12 минут
   Яндекс представил суверенную модель Alice AI Foundation. Разбираем, что правда, что миф, как это повлияет на бизнес. Мини-исследование от GEO-Апгрейд.
 
+## Коротко о материалах
+
+Сигналы AI-индустрии, которые влияют на видимость брендов.
+
+- [Alice AI Foundation: суверенная нейросеть Яндекса — что это значит для бизнеса](https://geo-upgrade.ru/blog-post-alice-ai-foundation.html) — Суверенная нейросеть Яндекса: что такое Alice AI Foundation и что она меняет для видимости брендов..
+
 ## Другие разделы блога
 
 - [Основы GEO](https://geo-upgrade.ru/blog-basics.html)
