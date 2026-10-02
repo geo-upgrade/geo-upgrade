@@ -1,4 +1,4 @@
-# Кому нужно GEO-продвижение и почему: как попасть в ответы ChatGPT, Нейро и Алисы AI | GEO-Апгрейд
+# Кому нужно GEO-продвижение и почему: ответы ChatGPT, Нейро, Алисы AI
 
 > https://geo-upgrade.ru/blog-post-komu-nuzhno-geo.html
 

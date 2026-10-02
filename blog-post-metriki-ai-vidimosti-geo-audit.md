@@ -1,4 +1,4 @@
-# Почему AI видит бренд, но не рекомендует: второй этап GEO-аудита в Алисе AI
+# Метрики AI-видимости: второй этап GEO-аудита бренда
 
 > https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html
 

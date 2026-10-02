@@ -1,4 +1,4 @@
-# Что спрашивает клиент у нейросети: карта запросов для AI-аудита | GEO-Апгрейд
+# Карта запросов клиента: методика GEO-Апгрейд
 
 > https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html
 

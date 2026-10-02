@@ -9,49 +9,49 @@
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
-      <title>Что внутри нашего аудита: этапы, артефакты и методологический протокол GEO-сканера</title>
+      <title>Что внутри нашего аудита: уровни, артефакты и протокол GEO-сканера</title>
       <link>https://geo-upgrade.ru/blog-post-chto-vnutri-audita.html</link>
-      <description><![CDATA[Таблица уровней аудита (Мини, Лайт, Полный), методология замера, метрики AI-видимости, карта зон слепоты и иерархия конкурентов. Честный и индивидуальный замер от GEO-Апгрейд.]]></description>
+      <description><![CDATA[Уровни аудита (Мини, Лайт, Полный), методология замера, метрики AI-видимости и карта зон слепоты. Честный разбор аудита от GEO-Апгрейд.]]></description>
       <pubDate>Fri, 02 Oct 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-chto-vnutri-audita.html</guid>
     </item>
     <item>
       <title>GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом</title>
       <link>https://geo-upgrade.ru/blog-post-geo-ne-geo.html</link>
-      <description><![CDATA[Чем GEO-маркетинг отличается от геомаркетинга и геотаргетинга: реальный пример галлюцинации Алисы AI из аудита GEO-Апгрейда, таблица различий и мини-тест для выбора направления.]]></description>
+      <description><![CDATA[Чем GEO-маркетинг отличается от геомаркетинга и геотаргетинга. Реальный пример галлюцинации Алисы AI и мини-тест для вашего бренда.]]></description>
       <pubDate>Fri, 02 Oct 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-geo-ne-geo.html</guid>
     </item>
     <item>
-      <title>Почему AI видит бренд, но не рекомендует: второй этап GEO-аудита в Алисе AI</title>
+      <title>Метрики AI-видимости: второй этап GEO-аудита бренда | GEO-Апгрейд</title>
       <link>https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html</link>
-      <description><![CDATA[Второй этап из пяти: 67 прогонов в Алисе AI, метрики (Mention Rate, Share of Voice, Brand Gap, Presence Score), слепые зоны, конкуренты и маршрут изменений GEO-Апгрейда.]]></description>
+      <description><![CDATA[Как молодой бренд проверил AI-видимость в Алисе: 67 прогонов, метрики, конкуренты, цифровой призрак, слепые зоны и маршрут из пяти этапов.]]></description>
       <pubDate>Wed, 30 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html</guid>
     </item>
     <item>
-      <title>Аудит на себе. Этап 1: как мы собрали запросный двойник — 6 аватаров и 66 запросов</title>
+      <title>Запросный двойник: этап 1 GEO-аудита — 6 аватаров и 66 запросов</title>
       <link>https://geo-upgrade.ru/blog-post-zaprosny-dvoinik-geo-audit.html</link>
-      <description><![CDATA[Как GEO-Апгрейд собрал запросный двойник: 4 сегмента, 6 аватаров, живой язык отзывов и 66 запросов для аудита AI-видимости.]]></description>
+      <description><![CDATA[Как создать запросный двойник для GEO-аудита: определить аудиторию, разобрать отзывы, разработать рабочие запросы и подготовить проверку AI-видимости бренда.]]></description>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-zaprosny-dvoinik-geo-audit.html</guid>
     </item>
     <item>
-      <title>Кому нужно GEO-продвижение и почему: как попасть в ответы ChatGPT, Нейро и Алисы AI</title>
+      <title>Кому нужно GEO-продвижение и почему: ответы ChatGPT, Нейро, Алисы AI</title>
       <link>https://geo-upgrade.ru/blog-post-komu-nuzhno-geo.html</link>
-      <description><![CDATA[Кому нужен GEO: как нейросети собирают ответ по RAG и с каких сигналов начать видимость бренда в ChatGPT, Нейро и Алисе AI.]]></description>
+      <description><![CDATA[Кому нужно GEO-продвижение: локальный бизнес, эксперты, онлайн-школы. Как нейросети собирают ответ по RAG и с каких сигналов начать.]]></description>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-komu-nuzhno-geo.html</guid>
     </item>
     <item>
-      <title>Что на самом деле спрашивает ваш клиент у нейросети?</title>
+      <title>Карта запросов клиента: методика GEO-Апгрейд</title>
       <link>https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html</link>
       <description><![CDATA[Как превратить аватар клиента, его боли и JTBD в карту запросов для AI-аудита, контента и GEO-видимости бренда.]]></description>
       <pubDate>Sun, 27 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html</guid>
     </item>
     <item>
-      <title>Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ</title>
+      <title>Технический GEO-аудит: 20 проверок видимости сайта в ИИ</title>
       <link>https://geo-upgrade.ru/blog-post-tehnicheskiy-geo-audit.html</link>
       <description><![CDATA[Лабораторный протокол из 20 технических проверок для AI-видимости сайта: robots.txt, SSL, мобильная версия, разметка Schema.org, llms.txt и другие.]]></description>
       <pubDate>Sat, 26 Sep 2026 12:00:00 +0700</pubDate>
@@ -65,51 +65,51 @@
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-ai-avtomatizaciya-dlya-marketinga.html</guid>
     </item>
     <item>
-      <title>Контентные маяки: как сделать бренд понятнее для людей и AI</title>
+      <title>Контентные маяки: бренд понятнее для людей и AI</title>
       <link>https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html</link>
       <description><![CDATA[Что такое контентные маяки и как статьи, FAQ, кейсы, отзывы и карточки компаний ведут клиента к решению и помогают AI понять бренд.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html</guid>
     </item>
     <item>
-      <title>Какие GEO-метрики можно использовать в отчёте: полная система</title>
+      <title>GEO-метрики в отчёте: полная система измерения</title>
       <link>https://geo-upgrade.ru/blog-post-geo-metrics-full.html</link>
       <description><![CDATA[5 базовых метрик GEO и авторские методики GEO-Апгрейд: как измерить AI-видимость бренда и связать показатели с бизнес-результатами.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-geo-metrics-full.html</guid>
     </item>
     <item>
-      <title>Отзывы, карты и каталоги: где AI берёт образы локального бизнеса — GEO-Апгрейд</title>
+      <title>Отзывы, карты и каталоги: где AI берёт образы бизнеса</title>
       <link>https://geo-upgrade.ru/blog-post-local-visibility.html</link>
-      <description><![CDATA[Где нейросети берут информацию о локальном бизнесе? Разбираем карты, каталоги и отзывы, которые влияют на видимость в AI-ответах. Чек-лист синхронизации от лаборатории GEO-Апгрейд.]]></description>
+      <description><![CDATA[Где нейросети берут информацию о локальном бизнесе? Карты, каталоги и отзывы, влияющие на видимость в AI-ответах. Чек-лист синхронизации от GEO-Апгрейд.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-local-visibility.html</guid>
     </item>
     <item>
-      <title>Что такое GEO простыми словами: как нейросети видят бренд — GEO-Апгрейд</title>
+      <title>Что такое GEO простыми словами: AI-видимость бренда</title>
       <link>https://geo-upgrade.ru/blog-post-what-is-geo.html</link>
       <description><![CDATA[Простое объяснение GEO: чем оно отличается от SEO, почему AI не видит бизнес, что такое цифровой призрак и как проверить AI-видимость бренда.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-what-is-geo.html</guid>
     </item>
     <item>
-      <title>Чем GEO отличается от SEO: простое объяснение для бизнеса — GEO-Апгрейд</title>
+      <title>Чем GEO отличается от SEO: простое объяснение для бизнеса</title>
       <link>https://geo-upgrade.ru/blog-post-geo-vs-seo.html</link>
       <description><![CDATA[GEO и SEO: в чём разница, почему SEO не исчезает, как AI формирует рекомендации и что происходит с цифровым следом бренда.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-geo-vs-seo.html</guid>
     </item>
     <item>
-      <title>Что такое цифровой призрак: 10 причин невидимости бренда — GEO-Апгрейд</title>
+      <title>Цифровой призрак: 10 причин невидимости бренда — GEO-Апгрейд</title>
       <link>https://geo-upgrade.ru/blog-post-digital-ghost.html</link>
-      <description><![CDATA[Бренд есть, но нейросети его не видят? Разбираем 10 причин, почему вы стали цифровым призраком, и как выйти из невидимости в 2026 году. GEO-аудит от лаборатории AI видимости.]]></description>
+      <description><![CDATA[Бренд есть, но нейросети его не видят? 10 причин, почему вы стали цифровым призраком, и как вернуть видимость. Аудит от лаборатории GEO-Апгрейд.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-digital-ghost.html</guid>
     </item>
     <item>
-      <title>Alice AI Foundation: суверенная нейросеть Яндекса — что это значит для бизнеса</title>
+      <title>Alice AI Foundation: суверенная нейросеть Яндекса для бизнеса</title>
       <link>https://geo-upgrade.ru/blog-post-alice-ai-foundation.html</link>
-      <description><![CDATA[Яндекс представил суверенную модель Alice AI Foundation. Разбираем, что правда/миф, как это повлияет на бизнес и как использовать. Мини-исследование от лаборатории GEO-Апгрейд.]]></description>
+      <description><![CDATA[Яндекс представил суверенную модель Alice AI Foundation. Разбираем, что правда, что миф, как это повлияет на бизнес. Мини-исследование от GEO-Апгрейд.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-alice-ai-foundation.html</guid>
     </item>

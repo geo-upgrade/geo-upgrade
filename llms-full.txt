@@ -14,7 +14,7 @@
 - Томск, Россия · Пн–Пт, 12:00–20:00 (UTC+7)
 
 ## Структура сайта
-- https://geo-upgrade.ru/index.html — GEO-Апгрейд — Лаборатория AI-видимости бренда
+- https://geo-upgrade.ru/ — GEO-Апгрейд — Лаборатория AI-видимости бренда
 - https://geo-upgrade.ru/services.html — Услуги GEO-Апгрейда — аудит, контент и стратегия AI-видимости
 - https://geo-upgrade.ru/about.html — О GEO-Апгрейде — лаборатория AI-видимости бренда
 - https://geo-upgrade.ru/about-daria-zharkikh.html — Об основателе — Дарья Жарких, путь к GEO и методика лаборатории
