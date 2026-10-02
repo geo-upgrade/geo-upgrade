@@ -33,4 +33,3 @@ SECTION: AI-АВТОМАТИЗАЦИЯ
 - [GEO для бизнеса](https://geo-upgrade.ru/blog-business.html)
 - [AI-сигналы](https://geo-upgrade.ru/blog-news.html)
 
-Обложка раздела: https://geo-upgrade.ru/cat-ai-business.jpg

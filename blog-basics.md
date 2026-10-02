@@ -39,4 +39,3 @@ SECTION: ОСНОВЫ GEO
 - [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
 - [AI-сигналы](https://geo-upgrade.ru/blog-news.html)
 
-Обложка раздела: https://geo-upgrade.ru/cat-basics.jpg

@@ -33,4 +33,3 @@ SECTION: AI-СИГНАЛЫ
 - [GEO для бизнеса](https://geo-upgrade.ru/blog-business.html)
 - [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
 
-Обложка раздела: https://geo-upgrade.ru/cat-news.jpg
