@@ -8,7 +8,7 @@
 
 
 
-Категории: [ЛОКАЛЬНЫЙ GEO](https://geo-upgrade.ru/blog-local.html) · [ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html)
+Категории: [ЛОКАЛЬНЫЙ GEO](https://geo-upgrade.ru/blog-local.html) · [GEO ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html)
 
 ---
 

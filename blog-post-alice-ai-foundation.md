@@ -8,7 +8,7 @@
 
 
 
-Категории: [AI-СИГНАЛЫ](https://geo-upgrade.ru/blog-news.html) · НОВОСТИ · [ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html)
+Категории: [AI-СИГНАЛЫ](https://geo-upgrade.ru/blog-news.html) · НОВОСТИ · [GEO ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html)
 
 ---
 

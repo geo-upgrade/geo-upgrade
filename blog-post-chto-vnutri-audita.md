@@ -8,13 +8,13 @@
 
 
 
-Категории: [БИЗНЕС](https://geo-upgrade.ru/blog-business.html) · [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · МЕТОДОЛОГИЯ
+Категории: [GEO ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html) · [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · МЕТОДОЛОГИЯ
 
 ---
 
 Лаборатория AI-видимости бренда · GEO-Апгрейд
 
-ОСНОВЫ GEO
+GEO ДЛЯ БИЗНЕСА
 AI-ВИДИМОСТЬ
 МЕТОДОЛОГИЯ
 

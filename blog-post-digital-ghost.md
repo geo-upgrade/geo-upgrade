@@ -8,7 +8,7 @@
 
 
 
-Категории: [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · [ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html)
+Категории: [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · [GEO ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html)
 
 ---
 
