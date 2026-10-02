@@ -305,24 +305,26 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
       <h2 class="mt-4 text-center text-3xl md:text-5xl font-bold">Передать задачу в лабораторию</h2>
       <p class="mt-4 text-center text-[#B8BCC6]">Не нужно разбираться в терминологии GEO. Расскажите, чем занимается бренд.</p>
 
-      <form id="contactForm" class="card mt-10 p-6 md:p-8" novalidate="">
+      <form id="contactForm" class="card mt-10 p-6 md:p-8" method="POST" action="https://formspree.io/f/mljdyaqo" novalidate="">
+        <input type="hidden" name="_subject" value="Новая заявка — GEO-Апгрейд">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
         <div class="space-y-5">
           <label class="block text-sm text-[#B8BCC6]">Ваше имя *
-            <input id="name" type="text" required="" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+            <input id="name" name="name" type="text" required="" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
           </label>
           <label class="block text-sm text-[#B8BCC6]">Название компании
-            <input id="company" type="text" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+            <input id="company" name="company" type="text" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
           </label>
           <label class="block text-sm text-[#B8BCC6]">Email для ответа *
-            <input id="email" type="email" required="" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+            <input id="email" name="email" type="email" required="" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
           </label>
           <label class="block text-sm text-[#B8BCC6]">Ссылка на сайт
-            <input id="website" type="url" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+            <input id="website" name="website" type="url" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
           </label>
           <label class="block text-sm text-[#B8BCC6]">Что нужно проверить? *
-            <select id="service" required="" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+            <select id="service" name="service" required="" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
               <option value="Бесплатный мини-аудит">Бесплатный мини-аудит</option>
-              <option value="GEO-сканер Lite">GEO-сканер Lite</option>
+              <option value="GEO-сканер Лайт">GEO-сканер Лайт</option>
               <option value="Полный GEO-сканер">Полный GEO-сканер</option>
               <option value="GEO-лаборатория контента">GEO-лаборатория контента</option>
               <option value="GEO-маршрут бренда">GEO-маршрут бренда</option>
@@ -331,7 +333,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
             </select>
           </label>
           <label class="block text-sm text-[#B8BCC6]">Откуда вы о нас узнали?
-            <select id="source" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+            <select id="source" name="source" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
               <option value="">Необязательно — выберите вариант</option>
               <option value="Из ответа нейросети">Из ответа нейросети</option>
               <option value="Из поисковой выдачи">Из поисковой выдачи</option>
@@ -347,13 +349,13 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
             </select>
           </label>
           <label id="source-custom-wrap" class="block text-sm text-[#B8BCC6]" style="display:none">Свой вариант — откуда именно?
-            <input id="source-custom" type="text" maxlength="120" placeholder="Например: чат, канал, статья, площадка" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+            <input id="source-custom" name="source_custom" type="text" maxlength="120" placeholder="Например: чат, канал, статья, площадка" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
           </label>
           <label class="block text-sm text-[#B8BCC6]">Расскажите, что происходит *
-            <textarea id="message" required="" rows="5" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></textarea>
+            <textarea id="message" name="message" required="" rows="5" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></textarea>
           </label>
           <label class="flex gap-3 text-sm text-[#B8BCC6]">
-            <input id="consent" type="checkbox" required="" class="mt-1 h-5 w-5">
+            <input id="consent" name="consent" type="checkbox" required="" class="mt-1 h-5 w-5">
             <span>Я даю согласие на обработку персональных данных и принимаю условия <a href="privacy.html" target="_blank" class="text-[#00F0FF] underline">политики</a>.</span>
           </label>
         </div>
@@ -365,7 +367,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
       <div id="success" class="hidden-message card glow mt-8 p-6">
         <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">STATUS: SIGNAL RECEIVED</p>
         <h3 class="mt-3 text-xl font-semibold">Сигнал принят лабораторией</h3>
-        <p class="mt-3 text-sm text-[#B8BCC6]">Почтовое приложение открылось с вашей заявкой. После отправки письма мы изучим вводные и свяжемся с вами.</p>
+        <p class="mt-3 text-sm text-[#B8BCC6]">Заявка ушла в приёмник лаборатории. Мы изучим вводные и свяжемся с вами.</p>
         <a href="index.html" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Вернуться на главную</a>
       </div>
     </div>
@@ -380,7 +382,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
         <button id="gp-custom-send" type="button" class="gp-opt gp-submit"><span>Голосовать за свой вариант</span></button>
       </div>
       <p id="gp-status" class="gp-status" role="status" aria-live="polite"></p>
-      <p id="gp-foot" class="gp-foot">Один голос с устройства. Свой вариант в деталях допишите в форме выше — поле «Откуда вы о нас узнали» попадёт в письмо лаборатории.</p>
+      <p id="gp-foot" class="gp-foot">Один голос с устройства. Свой вариант в деталях допишите в форме выше — поле «Откуда вы о нас узнали» попадёт в заявку.</p>
     </div>
   </section>
 
@@ -411,7 +413,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
     <div class="max-w-6xl mx-auto">
       <h2 class="text-center text-3xl md:text-5xl font-bold">Маршрут заявки</h2>
       <div class="mt-10 grid grid-cols-1 md:grid-cols-5 gap-4">
-        <article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">01</b><h3 class="mt-3 font-semibold">Сигнал поступает</h3><p class="mt-2 text-sm text-[#B8BCC6]">Заявка готовится к отправке на email GEO-Апгрейда.</p></article>
+        <article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">01</b><h3 class="mt-3 font-semibold">Сигнал поступает</h3><p class="mt-2 text-sm text-[#B8BCC6]">Заявка через приёмник уходит на email GEO-Апгрейда.</p></article>
         <article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">02</b><h3 class="mt-3 font-semibold">Изучаем контекст</h3><p class="mt-2 text-sm text-[#B8BCC6]">Проверяем направление бизнеса и выбранный формат задачи.</p></article>
         <article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">03</b><h3 class="mt-3 font-semibold">Первичная проверка</h3><p class="mt-2 text-sm text-[#B8BCC6]">Для мини-аудита смотрим, как AI-системы воспринимают бренд.</p></article>
         <article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">04</b><h3 class="mt-3 font-semibold">Связываемся</h3><p class="mt-2 text-sm text-[#B8BCC6]">В Пн–Пт, 12:00–20:00 по Томску лаборатория возвращается с дальнейшими шагами.</p></article>
@@ -490,24 +492,36 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
     }
 
     validation.style.display = 'none';
+
+    var gotcha = form.querySelector('[name="_gotcha"]');
+    if (gotcha && gotcha.value) return;
+
+    var subj = form.querySelector('[name="_subject"]');
+    if (subj) subj.value = 'Новая заявка — ' + service + ' · источник: ' + (sourceText || 'не указан');
+
+    var data = new FormData(form);
+    data.set('source', sourceText || '—');
+    data.set('page', 'contacts.html');
+
     button.disabled = true;
     button.textContent = 'Передаём сигнал…';
 
-    var body = 'Имя: ' + name + '\n' +
-               'Компания: ' + document.getElementById('company').value.trim() + '\n' +
-               'Email: ' + email + '\n' +
-               'Сайт: ' + document.getElementById('website').value.trim() + '\n' +
-               'Услуга: ' + service + '\n' +
-               'Источник: ' + (sourceText || '—') + '\n' +
-               'Описание: ' + message + '\n\n---\nЗаявка с сайта GEO-Апгрейд';
-
-    window.location.href = 'mailto:geo.upgrade@bk.ru?subject=' +
-      encodeURIComponent('Новая заявка — ' + service) +
-      '&body=' + encodeURIComponent(body);
-
-    form.style.display = 'none';
-    success.style.display = 'block';
-    try{ym(113118311,'reachGoal','form_lead')}catch(e){}
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      form.style.display = 'none';
+      success.style.display = 'block';
+      try{ym(113118311,'reachGoal','form_lead')}catch(e){}
+    }).catch(function(){
+      button.disabled = false;
+      button.textContent = 'Отправить заявку';
+      validation.textContent = 'Сигнал не дошёл. Напишите напрямую: Telegram @geoupgrade или geo.upgrade@bk.ru — продублируйте заявку, чтобы она не потерялась.';
+      validation.style.display = 'block';
+      try{ym(113118311,'reachGoal','form_error')}catch(e){}
+    });
   });
 })();
 </script>
@@ -649,7 +663,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
   }
 
   if(document.getElementById('source')){
-    foot.innerHTML='Один голос с устройства. Свой вариант в деталях допишите в форме выше — поле «Откуда вы о нас узнали» попадёт в письмо лаборатории.';
+    foot.innerHTML='Один голос с устройства. Свой вариант в деталях допишите в форме выше — поле «Откуда вы о нас узнали» попадёт в заявку.';
   } else {
     foot.innerHTML='Один голос с устройства. Свой вариант в деталях можно дописать в <a class="gp-link" href="contacts.html#form">форме на странице контактов</a>.';
   }

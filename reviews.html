@@ -158,7 +158,7 @@
   <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
     <div class="card p-6">
       <h3 class="text-lg font-bold mb-2 font-heading">Форма на этой странице</h3>
-      <p class="text-sm text-[#B8BCC6] mb-4">Самый быстрый канал: заполните форму ниже — она откроет письмо на почту лаборатории со всеми полями.</p>
+      <p class="text-sm text-[#B8BCC6] mb-4">Самый быстрый канал: заполните форму ниже — отзыв уйдёт в приёмник лаборатории со всеми полями.</p>
       <a href="#form" class="btn inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Перейти к форме</a>
     </div>
     <div class="card p-6">
@@ -227,19 +227,21 @@
   <h2 class="mt-4 text-center text-3xl md:text-5xl font-bold">Хотите стать первым?</h2>
   <p class="mt-4 text-center text-[#B8BCC6] max-w-3xl mx-auto">Если вы работали с GEO-Апгрейд — напишите, что получилось, а что нет: честный отзыв важнее приятного. Если только присматриваетесь — отметьте это в форме: начнём с бесплатного мини-аудита и посмотрим, как нейросети видят ваш бренд прямо сейчас.</p>
 
-  <form id="reviewForm" class="card mt-10 p-6 md:p-8" novalidate="">
+  <form id="reviewForm" class="card mt-10 p-6 md:p-8" method="POST" action="https://formspree.io/f/mljdyaqo" novalidate="">
+    <input type="hidden" name="_subject" value="Новый отзыв с сайта — GEO-Апгрейд">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
     <div class="space-y-5">
       <label class="block text-sm text-[#B8BCC6]">Ваше имя *
-        <input id="rv-name" type="text" required="" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+        <input id="rv-name" name="name" type="text" required="" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
       </label>
       <label class="block text-sm text-[#B8BCC6]">Компания или проект
-        <input id="rv-company" type="text" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+        <input id="rv-company" name="company" type="text" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
       </label>
       <label class="block text-sm text-[#B8BCC6]">Email для ответа *
-        <input id="rv-email" type="email" required="" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+        <input id="rv-email" name="email" type="email" required="" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
       </label>
       <label class="block text-sm text-[#B8BCC6]">Ваш отзыв *
-        <textarea id="rv-text" required="" rows="5" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></textarea>
+        <textarea id="rv-text" name="message" required="" rows="5" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]"></textarea>
       </label>
       <fieldset class="block text-sm text-[#B8BCC6]">
         <legend class="font-heading text-[#00F0FF] text-xs tracking-[.12em] uppercase mb-1">Signal strength · Оценка от 1 до 5</legend>
@@ -258,33 +260,33 @@
         <p id="rv-strength-desc" class="mt-2 text-xs text-[#B8BCC6] mb-0">Шкала силы сигнала: 1 — сигнал почти не дошёл, 5 — максимальная амплитуда, рекомендую всем. Честное значение важнее красивого.</p>
       </fieldset>
       <label class="block text-sm text-[#B8BCC6]">Как вы работали с лабораторией?
-        <select id="rv-kind" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+        <select id="rv-kind" name="kind" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
           <option value="Был клиент / была клиентом">Был(а) клиентом</option>
           <option value="Пока только присматриваюсь">Пока только присматриваюсь</option>
           <option value="Партнёр или коллега">Партнёр или коллега</option>
         </select>
       </label>
       <label class="block text-sm text-[#B8BCC6]">Можно ли опубликовать отзыв на этой странице?
-        <select id="rv-publish" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
+        <select id="rv-publish" name="publish" class="mt-1 w-full rounded-md border border-[#B8BCC6]/40 bg-[#130A20] px-4 py-3 text-[#F5F7FA]">
           <option value="Да, можно публиковать с моим именем">Да — с моим именем</option>
           <option value="Можно публиковать анонимно">Да — анонимно</option>
           <option value="Пока не публиковать, это просто отзыв">Пока не публиковать</option>
         </select>
       </label>
       <label class="flex gap-3 text-sm text-[#B8BCC6]">
-        <input id="rv-consent" type="checkbox" required="" class="mt-1 h-5 w-5">
+        <input id="rv-consent" name="consent" type="checkbox" required="" class="mt-1 h-5 w-5">
         <span>Я даю согласие на обработку персональных данных и принимаю условия <a href="privacy.html" target="_blank" class="text-[#00F0FF] underline">политики</a>.</span>
       </label>
     </div>
     <p id="rv-validation" class="hidden-message mt-4 text-sm text-red-300"></p>
     <button id="rv-submit" type="submit" class="btn glow mt-6 w-full rounded-md bg-[#00F0FF] px-6 py-4 font-semibold text-[#0D0618]">Передать отзыв в лабораторию</button>
-    <p class="mt-4 text-center text-xs text-[#B8BCC6]">Форма откроет письмо на почту лаборатории — geo.upgrade@bk.ru, ту же, что принимает заявки. Отзыв попадёт в этот раздел только после вашего разрешения.</p>
+    <p class="mt-4 text-center text-xs text-[#B8BCC6]">Отзыв уходит в приёмник лаборатории и попадёт в этот раздел только после вашего разрешения. Для связи укажите email — ответим с него.</p>
   </form>
 
   <div id="rv-success" class="hidden-message card glow mt-8 p-6">
     <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">STATUS: SIGNAL RECEIVED</p>
     <h3 class="mt-3 text-xl font-semibold">Отзыв собран и передан</h3>
-    <p class="mt-3 text-sm text-[#B8BCC6]">Почтовое приложение открылось с готовым письмом — отправьте его, и отзыв дойдёт до лаборатории. После проверки мы напишем вам и, если вы разрешили публикацию, отзыв появится в этом разделе.</p>
+    <p class="mt-3 text-sm text-[#B8BCC6]">Отзыв дошёл до лаборатории. После проверки мы напишем вам и, если вы разрешили публикацию, отзыв появится в этом разделе.</p>
     <a href="#channels" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">К каналам приёма</a>
   </div>
 
@@ -340,28 +342,44 @@
     }
 
     validation.style.display = 'none';
-    button.disabled = true;
+
+    var gotcha = form.querySelector('[name="_gotcha"]');
+    if (gotcha && gotcha.value) return;
+
     var st = document.querySelector('input[name="strength"]:checked');
     var stVal = st ? st.value : '';
-    var stDesc = st ? st.getAttribute('title') : '';
+    var stDesc = '';
+    if(st){
+      var stLabel = document.querySelector('label[for="' + st.id + '"]');
+      stDesc = stLabel ? stLabel.getAttribute('title') : '';
+    }
 
+    var subj = form.querySelector('[name="_subject"]');
+    if (subj) subj.value = 'Новый отзыв с сайта — ' + name + (stVal ? ' · оценка ' + stVal + '/5' : '');
+
+    var data = new FormData(form);
+    data.set('strength', stVal ? (stVal + '/5 — ' + stDesc) : 'не указана');
+    data.set('page', 'reviews.html');
+
+    button.disabled = true;
     button.textContent = 'Собираем сигнал…';
 
-    var body = 'Имя: ' + name + '\n' +
-               'Компания/проект: ' + document.getElementById('rv-company').value.trim() + '\n' +
-               'Email: ' + email + '\n' +
-               'Отзыв: ' + text + '\n' +
-               'Оценка (сила сигнала): ' + (stVal ? stVal + '/5 — ' + stDesc : 'не указана') + '\n' +
-               'Опыт работы: ' + document.getElementById('rv-kind').value + '\n' +
-               'Публикация: ' + document.getElementById('rv-publish').value + '\n\n---\nОтзыв со страницы отзывов GEO-Апгрейд';
-
-    window.location.href = 'mailto:geo.upgrade@bk.ru?subject=' +
-      encodeURIComponent('Отзыв о работе GEO-Апгрейд — ' + name) +
-      '&body=' + encodeURIComponent(body);
-
-    form.style.display = 'none';
-    success.style.display = 'block';
-    try{ym(113118311,'reachGoal','review_signal')}catch(e){}
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      form.style.display = 'none';
+      success.style.display = 'block';
+      try{ym(113118311,'reachGoal','review_signal')}catch(e){}
+    }).catch(function(){
+      button.disabled = false;
+      button.textContent = 'Передать отзыв в лабораторию';
+      validation.textContent = 'Сигнал не дошёл. Напишите напрямую: Telegram @geoupgrade или geo.upgrade@bk.ru — продублируйте отзыв, чтобы он не потерялся.';
+      validation.style.display = 'block';
+      try{ym(113118311,'reachGoal','review_error')}catch(e){}
+    });
   });
 })();
 
