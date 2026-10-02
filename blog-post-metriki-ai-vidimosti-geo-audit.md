@@ -10,6 +10,10 @@
 **Автор:** Жарких Дарья Александровна
 **Дата публикации:** 30 сентября 2026
 
+
+
+Категории: [ЭКСПЕРИМЕНТЫ](https://geo-upgrade.ru/blog-experiments.html) · [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · МЕТРИКИ
+
 ---
 
 

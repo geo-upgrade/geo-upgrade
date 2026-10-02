@@ -1,0 +1,42 @@
+# Основы GEO — раздел блога GEO-Апгрейд
+
+> https://geo-upgrade.ru/blog-basics.html
+
+**Назначение:** Категорийная страница блога: статьи раздела «Основы GEO» с обложками и краткими описаниями.
+
+**Описание (meta):** Раздел «Основы GEO»: что такое GEO простыми словами, чем он отличается от SEO и геомаркетинга. Материалы блога GEO-Апгрейд для тех, кто знакомится с AI-видимостью.
+
+---
+
+SECTION: ОСНОВЫ GEO
+
+# Основы GEO
+
+Для тех, кто только знакомится с темой: простые объяснения без терминологического перегруза. Что такое GEO, чем он отличается от SEO и почему нейросети путают бренды.
+
+[Все материалы блога](blog.html)
+[Бесплатный мини-аудит](contacts.html#form)
+
+## Статьи раздела
+
+- [GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом](https://geo-upgrade.ru/blog-post-geo-ne-geo.html) — 2 октября 2026 • 8–10 минут
+  Чем GEO-маркетинг отличается от геомаркетинга и геотаргетинга. Реальный пример галлюцинации Алисы AI и мини-тест для вашего бренда.
+  Обложка: https://geo-upgrade.ru/blog-geo-ne-geo.jpg
+- [Что такое GEO простыми словами?](https://geo-upgrade.ru/blog-post-what-is-geo.html) — 23 сентября 2026 • 9–12 минут
+  Простое объяснение GEO: чем оно отличается от SEO, почему AI не видит бизнес, что такое цифровой призрак и как проверить AI-видимость бренда.
+  Обложка: https://geo-upgrade.ru/cover-what-is-geo.jpg
+- [Чем GEO отличается от SEO?](https://geo-upgrade.ru/blog-post-geo-vs-seo.html) — 23 сентября 2026 • 10–13 минут
+  GEO и SEO: в чём разница, почему SEO не исчезает, как AI формирует рекомендации и что происходит с цифровым следом бренда.
+  Обложка: https://geo-upgrade.ru/cover-geo-vs-seo.jpg
+
+## Другие разделы блога
+
+- [AI-видимость бренда](https://geo-upgrade.ru/blog-visibility.html)
+- [Локальный GEO](https://geo-upgrade.ru/blog-local.html)
+- [Эксперименты](https://geo-upgrade.ru/blog-experiments.html)
+- [Контентная лаборатория](https://geo-upgrade.ru/blog-content.html)
+- [GEO для бизнеса](https://geo-upgrade.ru/blog-business.html)
+- [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
+- [AI-сигналы](https://geo-upgrade.ru/blog-news.html)
+
+Обложка раздела: https://geo-upgrade.ru/cat-basics.jpg

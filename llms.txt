@@ -16,6 +16,14 @@
 
 ## Блог
 - [GEO-лаборатория — блог](https://geo-upgrade.ru/blog.html): Журнал AI-видимости
+- [Основы GEO](https://geo-upgrade.ru/blog-basics.html): Страница категории блога
+- [AI-видимость бренда](https://geo-upgrade.ru/blog-visibility.html): Страница категории блога
+- [Локальный GEO](https://geo-upgrade.ru/blog-local.html): Страница категории блога
+- [Эксперименты](https://geo-upgrade.ru/blog-experiments.html): Страница категории блога
+- [Контентная лаборатория](https://geo-upgrade.ru/blog-content.html): Страница категории блога
+- [GEO для бизнеса](https://geo-upgrade.ru/blog-business.html): Страница категории блога
+- [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html): Страница категории блога
+- [AI-сигналы](https://geo-upgrade.ru/blog-news.html): Страница категории блога
 - [Что такое GEO простыми словами](https://geo-upgrade.ru/blog-post-what-is-geo.html): Как нейросети видят бренд
 - [Чем GEO отличается от SEO](https://geo-upgrade.ru/blog-post-geo-vs-seo.html): Простое объяснение для бизнеса
 - [Что такое цифровой призрак](https://geo-upgrade.ru/blog-post-digital-ghost.html): 10 причин невидимости бренда

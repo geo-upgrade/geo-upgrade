@@ -6,6 +6,10 @@
 
 **Описание (meta):** Что такое контентные маяки и как статьи, FAQ, кейсы, отзывы и карточки компаний ведут клиента к решению и помогают AI понять бренд.
 
+
+
+Категории: [КОНТЕНТНАЯ ЛАБОРАТОРИЯ](https://geo-upgrade.ru/blog-content.html) · [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · [GEO ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html)
+
 ---
 
 LAB NOTE: CONTENT BEACON

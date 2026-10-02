@@ -6,6 +6,10 @@
 
 **Описание (meta):** Бренд есть, но нейросети его не видят? 10 причин, почему вы стали цифровым призраком, и как вернуть видимость. Аудит от лаборатории GEO-Апгрейд.
 
+
+
+Категории: [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · [ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html)
+
 ---
 
 CASE TYPE: DIAGNOSTICS

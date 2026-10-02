@@ -6,6 +6,10 @@
 
 **Описание (meta):** Простое объяснение GEO: чем оно отличается от SEO, почему AI не видит бизнес, что такое цифровой призрак и как проверить AI-видимость бренда.
 
+
+
+Категории: [ОСНОВЫ GEO](https://geo-upgrade.ru/blog-basics.html) · [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · [ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html)
+
 ---
 
 CASE TYPE: EXPLAINER

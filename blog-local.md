@@ -1,0 +1,36 @@
+# Локальный GEO — раздел блога GEO-Апгрейд
+
+> https://geo-upgrade.ru/blog-local.html
+
+**Назначение:** Категорийная страница блога: статьи раздела «Локальный GEO» с обложками и краткими описаниями.
+
+**Описание (meta):** Раздел «Локальный GEO»: карты, отзывы, каталоги и локальные запросы. Как нейросети понимают, что ваш бизнес работает в городе или регионе. Материалы GEO-Апгрейд.
+
+---
+
+SECTION: ЛОКАЛЬНЫЙ GEO
+
+# Локальный GEO
+
+Для владельцев бизнеса, работающих в городе или регионе: карты, отзывы, каталоги и локальные запросы, по которым AI находит бизнес «рядом».
+
+[Все материалы блога](blog.html)
+[Бесплатный мини-аудит](contacts.html#form)
+
+## Статьи раздела
+
+- [Отзывы, карты и каталоги: где AI берёт образы локального бизнеса](https://geo-upgrade.ru/blog-post-local-visibility.html) — 23 сентября 2026 • 14–17 минут
+  Где нейросети берут информацию о локальном бизнесе? Карты, каталоги и отзывы, влияющие на видимость в AI-ответах. Чек-лист синхронизации от GEO-Апгрейд.
+  Обложка: https://geo-upgrade.ru/cover-local-visibility.jpg
+
+## Другие разделы блога
+
+- [Основы GEO](https://geo-upgrade.ru/blog-basics.html)
+- [AI-видимость бренда](https://geo-upgrade.ru/blog-visibility.html)
+- [Эксперименты](https://geo-upgrade.ru/blog-experiments.html)
+- [Контентная лаборатория](https://geo-upgrade.ru/blog-content.html)
+- [GEO для бизнеса](https://geo-upgrade.ru/blog-business.html)
+- [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
+- [AI-сигналы](https://geo-upgrade.ru/blog-news.html)
+
+Обложка раздела: https://geo-upgrade.ru/cat-local.jpg

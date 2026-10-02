@@ -6,6 +6,10 @@
 
 **Описание (meta):** GEO и SEO: в чём разница, почему SEO не исчезает, как AI формирует рекомендации и что происходит с цифровым следом бренда.
 
+
+
+Категории: [ОСНОВЫ GEO](https://geo-upgrade.ru/blog-basics.html) · [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · [ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html)
+
 ---
 
 CASE TYPE: COMPARISON

@@ -1,0 +1,69 @@
+# AI-видимость бренда — раздел блога GEO-Апгрейд
+
+> https://geo-upgrade.ru/blog-visibility.html
+
+**Назначение:** Категорийная страница блога: статьи раздела «AI-видимость бренда» с обложками и краткими описаниями.
+
+**Описание (meta):** Раздел «AI-видимость бренда»: цифровой призрак, GEO-метрики, технический аудит, карта запросов клиента и методики замера AI-видимости. Материалы GEO-Апгрейд.
+
+---
+
+SECTION: AI-ВИДИМОСТЬ
+
+# AI-видимость бренда
+
+Почему нейросети не видят и не рекомендуют ваш бренд — и что с этим делать. Метрики, цифровой призрак, зоны слепоты и методики замера.
+
+[Все материалы блога](blog.html)
+[Бесплатный мини-аудит](contacts.html#form)
+
+## Статьи раздела
+
+- [GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом](https://geo-upgrade.ru/blog-post-geo-ne-geo.html) — 2 октября 2026 • 8–10 минут
+  Чем GEO-маркетинг отличается от геомаркетинга и геотаргетинга. Реальный пример галлюцинации Алисы AI и мини-тест для вашего бренда.
+  Обложка: https://geo-upgrade.ru/blog-geo-ne-geo.jpg
+- [Аудит на себе. Этап 1: как мы собрали запросный двойник — 6 аватаров и 66 запросов](https://geo-upgrade.ru/blog-post-zaprosny-dvoinik-geo-audit.html) — 29 сентября 2026 • 12–15 минут
+  Как создать запросный двойник для GEO-аудита: определить аудиторию, разобрать отзывы, разработать рабочие запросы и подготовить проверку AI-видимости бренда.
+  Обложка: https://geo-upgrade.ru/cover-zaprosny-dvoinik.jpg
+- [Почему AI видит бренд, но не рекомендует: второй этап GEO-аудита](https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html) — 30 сентября 2026 • 15–18 минут
+  Как молодой бренд проверил AI-видимость в Алисе: 67 прогонов, метрики, конкуренты, цифровой призрак, слепые зоны и маршрут из пяти этапов.
+  Обложка: https://geo-upgrade.ru/cover-metriki-ai-vidimosti.jpg
+- [Кому нужно GEO-продвижение и почему: как попасть в ответы ChatGPT, Нейро и Алисы AI](https://geo-upgrade.ru/blog-post-komu-nuzhno-geo.html) — 29 сентября 2026 • 13–16 минут
+  Кому нужно GEO-продвижение: локальный бизнес, эксперты, онлайн-школы. Как нейросети собирают ответ по RAG и с каких сигналов начать.
+  Обложка: https://geo-upgrade.ru/cover-komu-nuzhno-geo.jpg
+- [Что на самом деле спрашивает ваш клиент у нейросети?](https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html) — 27 сентября 2026 • 12–15 минут
+  Как превратить аватар клиента, его боли и JTBD в карту запросов для AI-аудита, контента и GEO-видимости бренда.
+  Обложка: https://geo-upgrade.ru/query-map.jpg
+- [Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ](https://geo-upgrade.ru/blog-post-tehnicheskiy-geo-audit.html) — 26 сентября 2026 • 12–15 минут
+  Лабораторный протокол из 20 технических проверок для AI-видимости сайта: robots.txt, SSL, мобильная версия, разметка Schema.org, llms.txt и другие.
+  Обложка: https://geo-upgrade.ru/cover-tehnicheskiy-geo-audit.jpg
+- [Какие GEO-метрики можно использовать в отчёте: полная система](https://geo-upgrade.ru/blog-post-geo-metrics-full.html) — 23 сентября 2026 • 15–18 минут
+  5 базовых метрик GEO и авторские методики GEO-Апгрейд: как измерить AI-видимость бренда и связать показатели с бизнес-результатами.
+  Обложка: https://geo-upgrade.ru/cover-geo-metrics-full.jpg
+- [Что такое цифровой призрак: 10 причин невидимости бренда](https://geo-upgrade.ru/blog-post-digital-ghost.html) — 23 сентября 2026 • 12–15 минут
+  Бренд есть, но нейросети его не видят? 10 причин, почему вы стали цифровым призраком, и как вернуть видимость. Аудит от лаборатории GEO-Апгрейд.
+  Обложка: https://geo-upgrade.ru/cover-digital-ghost.jpg
+- [Что такое GEO простыми словами?](https://geo-upgrade.ru/blog-post-what-is-geo.html) — 23 сентября 2026 • 9–12 минут
+  Простое объяснение GEO: чем оно отличается от SEO, почему AI не видит бизнес, что такое цифровой призрак и как проверить AI-видимость бренда.
+  Обложка: https://geo-upgrade.ru/cover-what-is-geo.jpg
+- [Чем GEO отличается от SEO?](https://geo-upgrade.ru/blog-post-geo-vs-seo.html) — 23 сентября 2026 • 10–13 минут
+  GEO и SEO: в чём разница, почему SEO не исчезает, как AI формирует рекомендации и что происходит с цифровым следом бренда.
+  Обложка: https://geo-upgrade.ru/cover-geo-vs-seo.jpg
+
+## Смежные материалы: раздел упоминается в этих статьях
+
+- [Контентные маяки: как создавать материалы, которые ведут клиентов](https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html) — 23 сентября 2026 • 11–14 минут
+  Что такое контентные маяки и как статьи, FAQ, кейсы, отзывы и карточки компаний ведут клиента к решению и помогают AI понять бренд.
+  Обложка: https://geo-upgrade.ru/cover-kontentnye-mayaki.jpg
+
+## Другие разделы блога
+
+- [Основы GEO](https://geo-upgrade.ru/blog-basics.html)
+- [Локальный GEO](https://geo-upgrade.ru/blog-local.html)
+- [Эксперименты](https://geo-upgrade.ru/blog-experiments.html)
+- [Контентная лаборатория](https://geo-upgrade.ru/blog-content.html)
+- [GEO для бизнеса](https://geo-upgrade.ru/blog-business.html)
+- [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
+- [AI-сигналы](https://geo-upgrade.ru/blog-news.html)
+
+Обложка раздела: https://geo-upgrade.ru/cat-visibility.jpg
