@@ -26,7 +26,7 @@ SECTION: AI-СИГНАЛЫ
 
 Сигналы AI-индустрии, которые влияют на видимость брендов.
 
-- [Alice AI Foundation: суверенная нейросеть Яндекса — что это значит для бизнеса](https://geo-upgrade.ru/blog-post-alice-ai-foundation.html) — Суверенная нейросеть Яндекса: что такое Alice AI Foundation и что она меняет для видимости брендов..
+- [Alice AI Foundation: суверенная нейросеть Яндекса — что это значит для бизнеса](https://geo-upgrade.ru/blog-post-alice-ai-foundation.html) — Суверенная нейросеть Яндекса: что такое Alice AI Foundation и что она меняет для видимости брендов.
 
 ## Другие разделы блога
 
