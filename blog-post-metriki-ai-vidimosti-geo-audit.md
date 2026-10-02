@@ -39,6 +39,10 @@
     Для кого:Бизнес, эксперты, маркетологи
     Главный вывод:Видимость — это не единичное упоминание, а связный AI-след бренда
 
+Короткий ответ
+
+Видимость измеряют протоколом, а не ощущениями: 67 прогонов, 7 метрик, топ-4 конкурента по частоте упоминаний и карта 9 категорий с двумя нулевыми зонами. Замер фиксирует фактическую точку отсчёта и маршрут изменений — а не обещания.
+
   ## Содержание
 
       - Лаборатории — месяц. Сайту — неделя. Что покажет AI?
@@ -318,6 +322,12 @@ LAB TOOL · КАЛЬКУЛЯТОР СЛЕПЫХ ЗОН
     Presence Score
     Query
     Search intent
+
+## Источники
+
+1. [Руководство Google по оптимизации для генеративных AI-функций — Google Search Central](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
+2. [Создавайте полезный, надёжный и ориентированный на людей контент — Google Search Central](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+3. [Robots.txt: введение и руководство — Google Search Central](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
 
 Похожие материалы
 

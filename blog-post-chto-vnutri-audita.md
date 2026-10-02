@@ -26,6 +26,10 @@ AI-ВИДИМОСТЬ
 
 Главный вывод: глубина аудита — не громкие обещания, а протокол: сколько запросов, в скольких нейросетях, какие артефакты вы получаете и как это проверяется. Ниже — наша методология полностью, со стадиями, метриками и реальными цифрами собственного замера.
 
+Короткий ответ
+
+Глубина аудита — не громкие обещания, а протокол: сколько запросов, в скольких нейросетях, какие артефакты вы получаете и как это проверяется. Внутри — уровни аудита, условия замера, фиксируемые данные и реальные цифры собственного замера GEO-Апгрейда.
+
 Вы вложили силы в контент, обновили сайт, запустили рекламу — а в ответах ChatGPT, Gemini или Perplexity ваш бренд как будто не существует. Или существует, но с ошибками: не те цены, чужие кейсы, конкуренты чаще вас.
 
 Что у клиентов, что у нейросети часто возникает вопрос о детальности, поэтому я решила закрыть все вопросы в этой статье. Покажу, что внутри нашего GEO-сканера, как измеряется глубина и почему «просто спросить в ChatGPT» — это не аудит.
@@ -233,6 +237,12 @@ LAB TOOL · GHOST GAP
 Заявка на мини-аудит занимает меньше минуты: имя, сайт и 3 запроса — разберём вашу ситуацию и подскажем направление.
 
 Связанные термины: [GEO](glossary.html#geo-ai), [AI-видимость](glossary.html#geo-ai), [Query](glossary.html#seo-content), [Search intent](glossary.html#seo-content), [Hallucination](glossary.html#neuro-tech), [Local SEO](glossary.html#local), [NAP](glossary.html#local), [Review signals](glossary.html#local), [Structured data](glossary.html#seo-content), [Цифровой призрак](glossary.html#author-terms), [Зона слепоты](glossary.html#author-terms), [AI-след бренда](glossary.html#author-terms), [Контекстный якорь](glossary.html#author-terms), [Контентный маяк](glossary.html#author-terms)
+
+## Источники
+
+1. [Руководство Google по оптимизации для генеративных AI-функций — Google Search Central](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
+2. [Создавайте полезный, надёжный и ориентированный на людей контент — Google Search Central](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+3. [Общие правила для структурированных данных — Google Search Central](https://developers.google.com/search/docs/appearance/structured-data/sd-policies)
 
 Похожие материалы
 

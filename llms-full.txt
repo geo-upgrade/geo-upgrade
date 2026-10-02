@@ -1705,7 +1705,8 @@ GEO-Апгрейд — Лаборатория AI-видимости бренда
 ## Контентные маяки: как сделать бренд понятнее для людей и AI | GEO-Апгрейд
 URL: https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html
 Описание: Что такое контентные маяки и как статьи, FAQ, кейсы, отзывы и карточки компаний ведут клиента к решению и помогают AI понять бренд.
----
+
+Короткий ответ: Хороший контент — не поток публикаций, а согласованность. Контентный маяк отвечает одновременно на реальный вопрос клиента и на запрос нейросети: даёт факты, авторскую методику и контекстный якорь, по которым AI может связать бренд с задачей. Ниже — как это устроено, какие форматы работают и как проверить, стал ли материал маяком.---
 
 LAB NOTE: CONTENT BEACON
 **Статус:** методика GEO-Апгрейда
@@ -2023,6 +2024,11 @@ LAB TOOL / КОНСТРУКТОР
 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
 ---
+
+
+Источники:
+- Руководство Google по оптимизации для генеративных AI-функций — Google Search Central: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+- Создавайте полезный, надёжный и ориентированный на людей контент — Google Search Central: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
 
 ## Какие GEO-метрики можно использовать в отчёте: полная система | GEO-Апгрейд
 URL: https://geo-upgrade.ru/blog-post-geo-metrics-full.html
@@ -3175,6 +3181,7 @@ URL: https://geo-upgrade.ru/privacy.html
 URL: https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html
 Описание: Как превратить аватар клиента, его боли и JTBD в карту запросов для AI-аудита, контента и GEO-видимости бренда.
 
+Короткий ответ: Карту запросов собирают из живого аватара: сегмент превращается в конкретного человека, его сценарии до покупки и намерения разворачиваются в матрицу запросов по этапам готовности. Проверка качества проста: на каждый запрос можно ответить, кто его задаёт, в какой ситуации и какая боль за ним стоит — а сами запросы не сводятся к брендовым формулировкам.
 Лаборатория AI-видимости бренда · GEO-Апгрейд
 AI-ВИДИМОСТЬ
 МЕТОДИКА
@@ -3727,10 +3734,17 @@ AI-след бренда
 ---
 
 
+
+Источники:
+- Создавайте полезный, надёжный и ориентированный на людей контент — Google Search Central: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+- Руководство Google по оптимизации для генеративных AI-функций — Google Search Central: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+- Robots.txt: введение и руководство — Google Search Central: https://developers.google.com/search/docs/crawling-indexing/robots/intro
+
 ## Запросный двойник: этап 1 GEO-аудита — 6 аватаров и 66 запросов | GEO-Апгрейд
 URL: https://geo-upgrade.ru/blog-post-zaprosny-dvoinik-geo-audit.html
 Описание: Как создать запросный двойник для GEO-аудита: определить аудиторию, разобрать отзывы, разработать рабочие запросы и подготовить проверку AI-видимости бренда.
 
+Короткий ответ: Хороший GEO-аудит начинается не с техники, а со сценария клиента. На первом этапе запросный двойник собирает 6 живых аватаров и 66 запросов в 9 категориях (Томск и Новосибирск), проверяет их «живость» — и только после этого идёт замер AI-видимости.
 Лаборатория AI-видимости бренда · GEO-Апгрейд
 
     ЭКСПЕРИМЕНТЫ
@@ -4328,10 +4342,18 @@ SELF CHECK
 
 ---
 
+
+Источники:
+- Создавайте полезный, надёжный и ориентированный на людей контент — Google Search Central: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+- Руководство Google по оптимизации для генеративных AI-функций — Google Search Central: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+- HowTo — Schema.org: https://schema.org/HowTo
+- Общие правила для структурированных данных — Google Search Central: https://developers.google.com/search/docs/appearance/structured-data/sd-policies
+
 ## Почему AI видит бренд, но не рекомендует: второй этап GEO-аудита в Алисе AI | GEO-Апгрейд
 URL: https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html
 Описание: Как молодой бренд проверил AI-видимость в Алисе: 67 прогонов, метрики, конкуренты, цифровой призрак, слепые зоны и маршрут из пяти этапов.
 
+Короткий ответ: Видимость измеряют протоколом, а не ощущениями: 67 прогонов, 7 метрик, топ-4 конкурента по частоте упоминаний и карта 9 категорий с двумя нулевыми зонами. Замер фиксирует фактическую точку отсчёта и маршрут изменений — а не обещания.
 Лаборатория AI-видимости бренда · GEO-Апгрейд
 
     ЭКСПЕРИМЕНТЫ
@@ -4370,6 +4392,12 @@ URL: https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html
       - Что можно повторить самостоятельно?
       - Куда идти дальше?
       - Калькулятор слепых зон
+
+
+Источники:
+- Руководство Google по оптимизации для генеративных AI-функций — Google Search Central: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+- Создавайте полезный, надёжный и ориентированный на людей контент — Google Search Central: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+- Robots.txt: введение и руководство — Google Search Central: https://developers.google.com/search/docs/crawling-indexing/robots/intro
 
 ## Лаборатории — месяц. Сайту — неделя. Что покажет AI?
 Лаборатории GEO-Апгрейд — месяц. Сайту — ровно неделя.
@@ -4676,6 +4704,7 @@ AI-ВИДИМОСТЬ
 URL: https://geo-upgrade.ru/blog-post-chto-vnutri-audita.html
 Описание: Уровни аудита (Мини, Лайт, Полный), методология замера, метрики AI-видимости и карта зон слепоты. Честный разбор аудита от GEO-Апгрейд.
 
+Короткий ответ: Глубина аудита — не громкие обещания, а протокол: сколько запросов, в скольких нейросетях, какие артефакты вы получаете и как это проверяется. Внутри — уровни аудита, условия замера, фиксируемые данные и реальные цифры собственного замера GEO-Апгрейда.
 Категории: [GEO ДЛЯ БИЗНЕСА](https://geo-upgrade.ru/blog-business.html) · [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · МЕТОДОЛОГИЯ
 
 ---
@@ -4715,6 +4744,12 @@ AI-ВИДИМОСТЬ
 [Чек-лист готовности к аудиту](#gotovnost)
 [Карточки конкурентов](#konkurenty)
 [Маршрут: что делать дальше](#marshrut)
+
+
+Источники:
+- Руководство Google по оптимизации для генеративных AI-функций — Google Search Central: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+- Создавайте полезный, надёжный и ориентированный на людей контент — Google Search Central: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+- Общие правила для структурированных данных — Google Search Central: https://developers.google.com/search/docs/appearance/structured-data/sd-policies
 
 ## Почему глубина закладывается ещё до начала аудита
 
