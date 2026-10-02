@@ -2,7 +2,7 @@
 
 > https://geo-upgrade.ru/blog-news.html
 
-**Назначение:** Категорийная страница блога: статьи раздела «AI-сигналы» с обложками и краткими описаниями.
+**Назначение:** Категорийная страница блога: статьи раздела «AI-сигналы» с краткими описаниями.
 
 **Описание (meta):** Раздел «AI-сигналы»: новости нейросетей и AI-поиска, важные для видимости бренда — от Alice AI Foundation до обновлений моделей. GEO-Апгрейд.
 
@@ -21,7 +21,6 @@ SECTION: AI-СИГНАЛЫ
 
 - [Alice AI Foundation: суверенная нейросеть Яндекса — что это значит для бизнеса](https://geo-upgrade.ru/blog-post-alice-ai-foundation.html) — 23 сентября 2026 • 10–12 минут
   Яндекс представил суверенную модель Alice AI Foundation. Разбираем, что правда, что миф, как это повлияет на бизнес. Мини-исследование от GEO-Апгрейд.
-  Обложка: https://geo-upgrade.ru/cover-alice-ai-foundation.jpg
 
 ## Другие разделы блога
 
@@ -32,4 +31,3 @@ SECTION: AI-СИГНАЛЫ
 - [Контентная лаборатория](https://geo-upgrade.ru/blog-content.html)
 - [GEO для бизнеса](https://geo-upgrade.ru/blog-business.html)
 - [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
-
