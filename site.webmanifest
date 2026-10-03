@@ -1,0 +1,19 @@
+{
+  "name": "GEO-Апгрейд — Лаборатория AI-видимости бренда",
+  "short_name": "GEO-Апгрейд",
+  "description": "Лаборатория AI-видимости бренда: GEO-аудит, стратегия и контент для локального бизнеса и экспертов.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#0D0618",
+  "theme_color": "#0D0618",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
