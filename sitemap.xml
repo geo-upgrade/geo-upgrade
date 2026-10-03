@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://geo-upgrade.ru/</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-04</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/services.html</loc>
@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-04</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-basics.html</loc>
@@ -64,7 +64,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-business.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -227,5 +227,9 @@
   <url>
     <loc>https://geo-upgrade.ru/navigator-reviews.html</loc>
     <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://geo-upgrade.ru/blog-post-skolko-stoit-geo.html</loc>
+    <lastmod>2026-10-04</lastmod>
   </url>
 </urlset>
