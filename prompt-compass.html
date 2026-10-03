@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Промпт-компас: 20–40 промптов под вашу задачу — GEO-Навигатор</title>
+<meta name="description" content="Промпт-компас — базовая библиотека 20–40 промптов под одну задачу или нишу. Каждый промпт протестирован в 2–3 нейросетях, с комментариями и инструкцией по адаптации.">
+<meta name="theme-color" content="#0D0618">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
+<link rel="canonical" href="https://geo-upgrade.ru/prompt-compass.html">
+<meta property="og:url" content="https://geo-upgrade.ru/prompt-compass.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Промпт-компас: 20–40 промптов под вашу задачу">
+<meta property="og:description" content="Промпт-компас — базовая библиотека 20–40 промптов под одну задачу или нишу. Каждый промпт протестирован в 2–3 нейросетях, с комментариями и инструкцией по адаптации.">
+<meta property="og:site_name" content="GEO-Навигатор">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://geo-upgrade.ru/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="tailwind.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "GEO-Навигатор",
+  "url": "https://geo-upgrade.ru/geo_navigator.html",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "GEO-Апгрейд",
+    "url": "https://geo-upgrade.ru"
+  },
+  "description": "Промпт-библиотеки и внедрение ИИ в бизнес-процессы: дочернее направление GEO-Апгрейда.",
+  "areaServed": "RU",
+  "email": "geo.navigator@bk.ru",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Томск",
+    "streetAddress": "набережная Озера, 22",
+    "postalCode": "634009",
+    "addressCountry": "RU"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://geo-upgrade.ru"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "GEO-Навигатор",
+      "item": "https://geo-upgrade.ru/geo_navigator.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Промпт-компас",
+      "item": "https://geo-upgrade.ru/prompt-compass.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Промпт-компас",
+  "description": "Промпт-компас — базовая библиотека 20–40 промптов под одну задачу или нишу. Каждый промпт протестирован в 2–3 нейросетях, с комментариями и инструкцией по адаптации.",
+  "url": "https://geo-upgrade.ru/prompt-compass.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "GEO-Навигатор",
+    "url": "https://geo-upgrade.ru/geo_navigator.html"
+  },
+  "areaServed": "RU",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "RUB",
+    "lowPrice": "8000",
+    "highPrice": "12000"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что если промпты перестанут работать?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Библиотека остаётся у вас. Каждый промпт снабжён инструкцией по адаптации: роли, контекст и формат ответа можно менять под новые задачи. Глубокая перестройка — это отдельная корректировочная сессия по договорённости."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Почему 2–3 нейросети?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Каждый промпт тестируется минимум в двух, обычно в трёх нейросетях — так видно, где формулировка стабильно работает, а где нужно усиление."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно потом добавить ещё промптов?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Проще всего сделать это в рамках Промпт-карты бренда — там библиотека строится по всем направлениям бизнеса."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://mc.yandex.ru/metrika/tag.js?id=113118311"></script>
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+    ym(113118311, "init", {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<style>
+html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#1A0A14 0%,#0D0618 48%,#2A0A1A 100%);color:#F5F0E8;font-family:'Exo 2',sans-serif;line-height:1.6}h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}.nav-grid{background-image:linear-gradient(to right,rgba(212,184,150,.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(212,184,150,.06) 1px,transparent 1px);background-size:40px 40px}.glow-beige{box-shadow:0 0 16px rgba(212,184,150,.28)}.glow-burgundy{box-shadow:0 0 16px rgba(139,38,53,.35)}.card{background:rgba(26,10,20,.92);border:1px solid rgba(212,184,150,.25);border-radius:10px;opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.22,1,.36,1)}.card.visible{opacity:1;transform:translateY(0)}.card:hover{border-color:rgba(212,184,150,.6);box-shadow:0 10px 28px rgba(139,38,53,.2)}.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}.btn{opacity:0;transform:translateY(20px);transition:all .8s cubic-bezier(.22,1,.36,1)}.btn.visible{opacity:1;transform:translateY(0)}.btn:hover{transform:translateY(-2px)}.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,184,150,.3),transparent)}.accent-beige{color:#D4B896}.accent-burgundy{color:#C97064}.border-beige{border-color:rgba(212,184,150,.4)}.bg-beige{background:#D4B896;color:#1A0A14}.bg-burgundy{background:#8B2635;color:#F5F0E8}.table{width:100%;border-collapse:collapse;margin:1.5rem 0}.table th,.table td{border:1px solid rgba(212,184,150,.25);padding:.75rem;text-align:left}.table th{background:rgba(139,38,53,.12);color:#D4B896}.compass{display:inline-block;animation:spin 20s linear infinite}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none;opacity:1;transform:none}.card:hover,.btn:hover{transform:none}.compass{animation:none}}
+.case-stamp{display:inline-block;border:2px solid rgba(212,184,150,.55);border-radius:6px;padding:.35rem .8rem;font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.18em;color:#D4B896;transform:rotate(-2deg);background:rgba(26,10,20,.55)}
+.case-note{border:1px solid rgba(212,184,150,.15);background:rgba(26,10,20,.5);border-left:3px solid #D4B896;border-radius:0 10px 10px 0;padding:1rem 1.25rem;color:#B8B0A8;font-style:italic}
+.dossier-row{display:flex;gap:.9rem;align-items:flex-start;padding:.85rem 0;border-bottom:1px dashed rgba(212,184,150,.2)}
+.dossier-row:last-child{border-bottom:none}
+.dossier-num{font-family:'Orbitron',sans-serif;color:#D4B896;font-size:.8rem;letter-spacing:.1em;flex-shrink:0;min-width:2.2rem;padding-top:.15rem}
+.evidence-num{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:1.7rem;height:1.7rem;border-radius:9999px;background:rgba(139,38,53,.25);border:1px solid rgba(212,184,150,.5);color:#D4B896;font-family:'Orbitron',sans-serif;font-size:.75rem;font-weight:700}
+.checklist{list-style:none;margin:0;padding:0}.checklist li{position:relative;padding-left:1.5em;margin-bottom:.5rem;color:#B8B0A8;font-size:.95rem;line-height:1.55}.checklist li::before{content:'\25C6';position:absolute;left:0;top:.18em;color:#D4B896;font-size:.75rem}
+.checklist-x{list-style:none;margin:0;padding:0}.checklist-x li{position:relative;padding-left:1.5em;margin-bottom:.5rem;color:#B8B0A8;font-size:.95rem;line-height:1.55}.checklist-x li::before{content:'\2715';position:absolute;left:0;top:.18em;color:#C97064;font-size:.75rem}
+.proto-steps{list-style:none;margin:0;padding:0}.proto-steps li{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.6rem;color:#B8B0A8;font-size:.95rem;line-height:1.55}
+.step-num{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:1.7rem;height:1.7rem;border-radius:9999px;background:rgba(212,184,150,.14);border:1px solid rgba(212,184,150,.5);color:#D4B896;font-family:'Orbitron',sans-serif;font-size:.75rem;font-weight:700}
+.faq-item{border:1px solid rgba(212,184,150,.25);border-radius:10px;background:rgba(26,10,20,.92);padding:1rem 1.25rem;margin-bottom:.75rem}.faq-item summary{cursor:pointer;font-family:'Orbitron',sans-serif;font-size:.98rem;font-weight:600;color:#F5F0E8;list-style:none}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary::before{content:'\25B8';display:inline-block;margin-right:.5rem;color:#D4B896;transform:rotate(90deg)}.faq-item[open] summary::before{transform:rotate(0)}.faq-item summary:hover{color:#D4B896}.faq-item p{margin-top:.5rem;color:#B8B0A8;font-size:.95rem;line-height:1.6}
+.card-featured{border-color:rgba(212,184,150,.45)!important;box-shadow:0 0 16px rgba(212,184,150,.22)}
+.table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scan-line{position:relative}.scan-line::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 0%,rgba(212,184,150,.05) 50%,transparent 100%);background-size:100% 120px;animation:scanmove 9s linear infinite;opacity:.6}@keyframes scanmove{from{background-position:0 -120px}to{background-position:0 100vh}}
+/* fallback для классов, которых нет в tailwind.min.css */
+.md\:gap-4{gap:1rem}
+@media(min-width:640px){.sm\:gap-4{gap:1rem}}
+.bg-\[\#0D0618\]\/90{background-color:rgba(13,6,24,.9)}
+
+#calc-wrap{--bg:#1A0A14;--card:#1F0E1A;--card-hover:#2A1422;--border:#3A2230;--text:#F5F0E8;--text-dim:#B8B0A8;--accent:#D4B896;--accent-hover:#E8D5B7;--accent-dim:#8B2635;--radius:12px}#calc-wrap *{margin:0;padding:0;box-sizing:border-box}#calc-wrap{font-family:'Exo 2',sans-serif;color:var(--text);line-height:1.6}#calc-wrap .calc-container{max-width:720px;margin:0 auto}#calc-wrap .step-label{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);margin-bottom:12px}#calc-wrap .param-group{margin-bottom:20px}#calc-wrap .param-group label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}#calc-wrap .param-hint{font-size:12px;color:var(--text-dim);margin-bottom:8px}#calc-wrap .radio-row{display:flex;gap:8px;flex-wrap:wrap}#calc-wrap .radio-pill{display:inline-flex;align-items:center;padding:8px 16px;border:2px solid var(--border);border-radius:8px;cursor:pointer;font-size:14px;transition:all .15s;background:var(--card);user-select:none}#calc-wrap .radio-pill:hover{border-color:var(--accent-dim)}#calc-wrap .radio-pill.active{border-color:var(--accent);background:var(--accent-dim);color:#fff}#calc-wrap .radio-pill input{display:none}#calc-wrap .toggle-row{display:flex;align-items:center;gap:10px}#calc-wrap .toggle{position:relative;width:44px;height:24px;background:var(--border);border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}#calc-wrap .toggle.on{background:var(--accent)}#calc-wrap .toggle::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s}#calc-wrap .toggle.on::after{transform:translateX(20px)}#calc-wrap .toggle-label{font-size:14px}#calc-wrap .result-section{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:8px}#calc-wrap .result-section.has-result{border-color:var(--accent)}#calc-wrap .result-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}#calc-wrap .result-row:last-child{border-bottom:none}#calc-wrap .result-row .label{color:var(--text-dim)}#calc-wrap .result-row .value{font-weight:600}#calc-wrap .result-total{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:16px;border-top:2px solid var(--border)}#calc-wrap .result-total .label{font-size:16px;font-weight:700}#calc-wrap .result-total .price{font-size:28px;font-weight:800;color:var(--accent)}#calc-wrap .result-meta{font-size:12px;color:var(--text-dim);margin-top:12px;text-align:center}#calc-wrap .cta-btn{display:block;width:100%;padding:14px;background:var(--accent);color:#1A0A14;border:none;border-radius:var(--radius);font-size:16px;font-weight:600;cursor:pointer;transition:background .2s;margin-top:16px;text-decoration:none;text-align:center}#calc-wrap .cta-btn:hover{background:var(--accent-hover)}@media(max-width:600px){#calc-wrap .radio-row{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.png" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><nav class="flex flex-wrap gap-x-3 md:gap-x-4 gap-y-2 text-sm text-[#B8B0A8]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#D4B896]">Главная</a><a href="about.html" class="hover:text-[#D4B896]">О лаборатории</a><a href="services.html" class="hover:text-[#D4B896]">Услуги</a><a href="blog.html" class="hover:text-[#D4B896]">Блог</a><a href="reviews.html" class="hover:text-[#D4B896]">Отзывы</a><a href="mentions.html" class="hover:text-[#D4B896]">Упоминания</a><a href="cases.html" class="hover:text-[#D4B896]">Кейсы</a><a href="geo_navigator.html" class="accent-beige font-semibold">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#D4B896]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#D4B896]">Контакты</a><a href="faq.html" class="hover:text-[#D4B896]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#D4B896]">Как ИИ видит бренд</a></nav></div></header><main>
+<section class="nav-grid scan-line"><div class="max-w-6xl mx-auto px-5 py-20 md:py-28"><div class="max-w-3xl">
+<div class="flex flex-wrap items-center gap-4"><span class="case-stamp">ДЕЛО №01 · PROMPT COMPASS</span><span class="text-sm text-[#B8B0A8]">8 000–12 000 ₽ · 5–7 рабочих дней · 20–40 промптов</span></div>
+<h1 class="mt-5 text-4xl md:text-6xl font-bold">Промпт-компас</h1>
+<p class="mt-4 text-lg md:text-xl text-[#B8B0A8]">Базовая промпт-библиотека под одну задачу или нишу</p>
+<p class="mt-5 text-base md:text-lg text-[#B8B0A8]">20–40 проверенных промптов — 20–40 разведанных координат в мире нейросетей. Каждый промпт протестирован в 2–3 нейросетях и адаптирован под вашу нишу.</p>
+<div class="mt-8 flex flex-col sm:flex-row gap-4">
+<a href="mailto:geo.navigator@bk.ru?subject=%D0%9F%D1%80%D0%BE%D0%BC%D0%BF%D1%82-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D1%81%20%E2%80%94%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%C2%AB%D0%9F%D1%80%D0%BE%D0%BC%D0%BF%D1%82-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D1%81%C2%BB.%0A%0A%D0%9D%D0%B8%D1%88%D0%B0%3A%0A%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%3A%0A%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%3A%0A" class="btn glow-beige inline-block rounded-md bg-beige px-7 py-4 text-center font-semibold">Открыть дело</a>
+<a href="#calc" class="btn inline-block rounded-md border border-[#D4B896]/40 px-7 py-4 text-center font-semibold accent-beige">Рассчитать стоимость</a>
+</div>
+<p class="mt-5 text-sm text-[#B8B0A8]">Без автоматизаций и чат-ботов. Результат — документ в Google Docs, с которым вы работаете сами.</p>
+<div class="mt-8"><span class="compass text-4xl" aria-hidden="true">&#129517;</span><p class="mt-2 font-heading text-xs tracking-[.2em] text-[#B8B0A8]">NAVIGATION STATUS: ACTIVE</p></div>
+</div></div></section>
+<div class="divider"></div>
+<section id="about" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">СВОДКА ДЕЛА</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Что это</h2><div class="mt-6 max-w-3xl space-y-4 text-[#B8B0A8]"><p>Вы входите в мир нейросетей. Без карты — блуждаете. Без компаса — теряете часы на формулировки, которые не работают.</p><p>Промпт-компас — первый навигационный инструмент. Не атлас всего мира, а компас для одной экспедиции: вашей ниши, вашей задачи, вашего маршрута.</p><p>Каждый промпт — это разведанная координата. Вам не нужно наступать на те же грабли: вы получаете чистый маршрут от задачи к результату.</p></div></section>
+<div class="divider"></div>
+<section id="passport" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">ПАСПОРТ ДЕЛА</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Формальности</h2><div class="table-wrapper mt-6"><table class="table"><tbody><tr><td><strong>Формат</strong></td><td>Удалённо, онлайн</td></tr><tr><td><strong>Объём</strong></td><td>20–40 промптов</td></tr><tr><td><strong>Нейросети</strong></td><td>Каждый промпт протестирован в 2–3 нейросетях</td></tr><tr><td><strong>Сессии</strong></td><td>Вводный брифинг 30–40 минут + одна корректировочная сессия (до 30 минут)</td></tr><tr><td><strong>Срок</strong></td><td>5–7 рабочих дней</td></tr><tr><td><strong>Формат результата</strong></td><td>Документ в Google Docs</td></tr></tbody></table></div></section>
+<div class="divider"></div>
+<section id="audience" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">КТО ЗАКАЗЫВАЕТ ЭТО ДЕЛО</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Для кого</h2><div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"><article class="card p-6"><h3 class="text-lg font-semibold accent-beige">Эксперты и самозанятые</h3><p class="mt-2 text-sm text-[#B8B0A8]">Нужны рабочие формулировки под вашу нишу, а не универсальные шаблоны</p></article><article class="card p-6"><h3 class="text-lg font-semibold accent-beige">Интернет-магазины и продавцы на маркетплейсах</h3><p class="mt-2 text-sm text-[#B8B0A8]">Постоянные однотипные задачи: карточки, ответы, рассылки</p></article><article class="card p-6"><h3 class="text-lg font-semibold accent-beige">Небольшие компании</h3><p class="mt-2 text-sm text-[#B8B0A8]">Хотите протестировать ИИ в одном процессе — без больших проектов</p></article><article class="card p-6"><h3 class="text-lg font-semibold accent-beige">Те, кто теряет время на промпты</h3><p class="mt-2 text-sm text-[#B8B0A8]">Каждая формулировка проб и ошибок — часы, которые можно вернуть</p></article></div></section>
+<div class="divider"></div>
+<section id="includes" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">ЧТО В ДЕЛЕ</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Состав</h2><ul class="checklist mt-6 max-w-3xl"><li>20–40 проверенных промптов — каждый прошёл тесты в 2–3 нейросетях</li><li>Структурированная инструкция: роли, контекст, ограничения, формат ответа</li><li>Комментарий к каждому промпту — когда применять, что менять</li><li>Адаптация под вашу нишу — не универсальный шаблон, а промпт для вашей сферы</li><li>Анализ вашей ниши и задач перед разработкой</li><li>Инструкция по адаптации — как менять промпты под новые задачи</li><li>Вводный брифинг 30–40 минут</li><li>Одна корректировочная сессия до 30 минут</li><li>Документ в Google Docs</li></ul></section>
+<div class="divider"></div>
+<section class="max-w-6xl mx-auto px-5 py-10"><div class="case-note max-w-3xl"><p class="font-heading text-xs tracking-[.2em] accent-beige" style="font-style:normal">ИЗ ЗАМЕТОК НАВИГАТОРА</p><p class="mt-3">Вы входите в мир нейросетей. Без карты — блуждаете. Без компаса — теряете время на формулировки, которые не работают.</p><p class="mt-3">Промпт-компас — первый навигационный инструмент. Не атлас всего мира, а компас для одной экспедиции: вашей ниши, вашей задачи, вашего маршрута.</p><p class="mt-3">20–40 проверенных промптов — это 20–40 координат, которые уже разведаны. Вам не нужно наступать на те же грабли. Вы получаете чистый маршрут от задачи к результату.</p></div></section>
+<div class="divider"></div>
+<section id="stages" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">МАРШРУТ ЭКСПЕДИЦИИ</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Как идёт дело</h2><ol class="proto-steps mt-6 max-w-3xl"><li><span class="step-num">1</span><span><strong>Бриф</strong> — клиент заполняет письменный бриф</span></li><li><span class="step-num">2</span><span><strong>Вводный созвон</strong> — 30–40 минут: ниша, задачи, референсы, ограничения</span></li><li><span class="step-num">3</span><span><strong>Анализ</strong> — анализ ниши, задач и текущих процессов клиента</span></li><li><span class="step-num">4</span><span><strong>Разработка</strong> — библиотека 20–40 промптов, разбивка по категориям, комментарии к каждому</span></li><li><span class="step-num">5</span><span><strong>Корректировка</strong> — корректировочная сессия до 30 минут, внесение правок</span></li><li><span class="step-num">6</span><span><strong>Передача</strong> — финальный документ в Google Docs + краткая инструкция</span></li></ol></section>
+<div class="divider"></div>
+<section id="outputs" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">МАТЕРИАЛЫ ДЕЛА</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Что получаете на руки</h2><div class="mt-6 max-w-3xl"><div class="dossier-row"><span class="dossier-num">01</span><span class="text-[#B8B0A8]">Библиотека 20–40 промптов с комментариями к каждому</span></div><div class="dossier-row"><span class="dossier-num">02</span><span class="text-[#B8B0A8]">Инструкция по адаптации и использованию</span></div><div class="dossier-row"><span class="dossier-num">03</span><span class="text-[#B8B0A8]">Рекомендации по внедрению в ежедневную работу</span></div></div></section>
+<div class="divider"></div>
+<section id="calc" class="nav-grid max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">ТАРИФ</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Стоимость дела</h2>
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<article class="card card-featured p-6"><h3 class="text-xl font-semibold">Промпт-компас</h3><div class="mt-4"><span class="text-3xl font-bold accent-beige">8 000–12 000 ₽</span><p class="mt-1 text-sm text-[#B8B0A8]">Срок: 5–7 рабочих дней</p></div><p class="mt-4 text-sm text-[#B8B0A8]">Потолок цены фиксированный: даже если маршрут окажется сложнее, выше потолка не платите.</p><ul class="checklist mt-4"><li>Один раунд правок включён в стоимость</li><li>Точный расчёт — после вводной сессии</li><li>Заявка — письмом на geo.navigator@bk.ru</li></ul></article>
+<article class="card p-6"><h3 class="text-lg font-semibold accent-beige">Прикинуть в поле</h3><p class="mt-2 text-sm text-[#B8B0A8]">Соберите параметры дела — расчёт обновится сразу.</p>
+<div id="calc-wrap"><div class="calc-container">
+<div class="step-label" style="margin-top:16px;">Параметры дела</div>
+<div id="paramsArea"></div>
+<div class="result-section" id="resultSection">
+<div class="result-total"><span class="label">Ориентировочная стоимость</span><span class="price" id="resPrice">8 000 ₽</span></div>
+<div class="result-meta" id="resMeta">Потолок цены: 12 000 ₽. Точный расчёт — после вводной сессии.</div>
+<a href="mailto:geo.navigator@bk.ru?subject=%D0%9F%D1%80%D0%BE%D0%BC%D0%BF%D1%82-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D1%81%20%E2%80%94%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%C2%AB%D0%9F%D1%80%D0%BE%D0%BC%D0%BF%D1%82-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D1%81%C2%BB.%0A%0A%D0%9D%D0%B8%D1%88%D0%B0%3A%0A%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%3A%0A%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%3A%0A" class="cta-btn" id="ctaBtn">Отправить заявку с расчётом</a>
+</div>
+</div></div>
+</article>
+</div>
+<p class="mt-6 text-sm text-[#B8B0A8]">Цены ориентировочные: точная стоимость зависит от объёма задачи и сложности ниши. Точный расчёт — после вводной сессии.</p>
+</section>
+<div class="divider"></div>
+<section id="limits" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">ГРАНИЦЫ ДЕЛА</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Честные рамки</h2><div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"><article class="card p-6"><h3 class="text-lg font-semibold accent-beige">Входит в дело</h3><ul class="checklist mt-4"><li>Библиотека промптов под одну задачу или нишу</li><li>Один раунд правок включён в стоимость</li><li>Понятные инструкции — промпты можно менять под новые задачи</li></ul></article><article class="card p-6"><h3 class="text-lg font-semibold accent-burgundy">Не входит в дело</h3><ul class="checklist-x mt-4"><li>Не готовая автоматизация процессов — это отдельная услуга</li><li>Не настройка чат-ботов — это отдельно</li><li>Не бренд-анализ и Tone of Voice — это Промпт-карта бренда</li><li>Не универсальные шаблоны из интернета — каждый промпт пишется под вашу задачу</li></ul></article></div></section>
+<div class="divider"></div>
+<section id="faq" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">АРХИВ ДЕЛА</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Частые вопросы</h2><div class="mt-6 max-w-3xl"><details class="faq-item"><summary>Что если промпты перестанут работать?</summary><p>Библиотека остаётся у вас. Каждый промпт снабжён инструкцией по адаптации: роли, контекст и формат ответа можно менять под новые задачи. Глубокая перестройка — это отдельная корректировочная сессия по договорённости.</p></details><details class="faq-item"><summary>Почему 2–3 нейросети?</summary><p>Каждый промпт тестируется минимум в двух, обычно в трёх нейросетях — так видно, где формулировка стабильно работает, а где нужно усиление.</p></details><details class="faq-item"><summary>Можно потом добавить ещё промптов?</summary><p>Да. Проще всего сделать это в рамках Промпт-карты бренда — там библиотека строится по всем направлениям бизнеса.</p></details></div></section>
+<div class="divider"></div>
+<section id="related" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">СМЕЖНЫЕ МАРШРУТЫ</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Что рядом на карте</h2><div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6"><a href="prompt-map.html" class="card p-6 block"><h3 class="text-lg font-semibold accent-beige">Промпт-карта бренда</h3><p class="mt-2 text-sm text-[#B8B0A8]">Полная система: 40–80 промптов по направлениям, 3 сессии, гайд по масштабированию</p><span class="mt-3 inline-block text-sm accent-beige font-semibold">Открыть →</span></a><a href="expedition-lite.html" class="card p-6 block"><h3 class="text-lg font-semibold accent-beige">AI-экспедиция Лайт</h3><p class="mt-2 text-sm text-[#B8B0A8]">Часовая разведка: где ИИ поможет именно вам</p><span class="mt-3 inline-block text-sm accent-beige font-semibold">Открыть →</span></a><a href="geo_navigator.html" class="card p-6 block"><h3 class="text-lg font-semibold accent-beige">GEO-Навигатор — все экспедиции</h3><p class="mt-2 text-sm text-[#B8B0A8]">Вернуться на страницу направления GEO-Навигатор</p><span class="mt-3 inline-block text-sm accent-beige font-semibold">Открыть →</span></a></div></section>
+<div class="divider"></div>
+<section class="nav-grid"><div class="max-w-6xl mx-auto px-5 py-16 md:py-24"><div class="max-w-2xl mx-auto text-center">
+<span class="case-stamp">ДЕЛО ОЖИДАЕТ СВОЕГО ВЛАДЕЛЬЦА</span>
+<h2 class="mt-6 text-3xl md:text-5xl font-bold">Координаты разведаны. Осталось отправиться в путь</h2>
+<p class="mt-5 text-[#B8B0A8]">Напишите на почту — уточним задачу и рассчитаем точную стоимость дела.</p>
+<div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+<a href="mailto:geo.navigator@bk.ru?subject=%D0%9F%D1%80%D0%BE%D0%BC%D0%BF%D1%82-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D1%81%20%E2%80%94%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%C2%AB%D0%9F%D1%80%D0%BE%D0%BC%D0%BF%D1%82-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D1%81%C2%BB.%0A%0A%D0%9D%D0%B8%D1%88%D0%B0%3A%0A%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%3A%0A%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%3A%0A" class="btn glow-beige inline-block rounded-md bg-beige px-8 py-4 text-center font-semibold">Открыть дело</a>
+<a href="geo_navigator.html" class="btn inline-block rounded-md border border-[#D4B896]/40 px-8 py-4 text-center font-semibold accent-beige">Все экспедиции Навигатора</a>
+</div>
+<p class="mt-6 text-sm text-[#B8B0A8]">geo.navigator@bk.ru · Томск, удалённо по России</p>
+</div></div></section>
+</main>
+<footer class="border-t border-white/10 bg-[#0D0618]/90"><div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between gap-4"><div class="text-sm text-[#B8B0A8]"><span class="font-heading font-bold accent-beige">GEO</span>-<span class="font-heading font-bold accent-beige">Навигатор</span> — дочернее направление <a href="index.html" class="accent-beige hover:underline">GEO-Апгрейда</a><div class="mt-2 text-xs text-[#B8B0A8]">Томск, Россия · г. Томск, ул. Набережная озера 22 · <a href="tel:+79529449239" class="hover:text-[#D4B896]">+7 952 944-92-39</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#D4B896]">geo.upgrade@bk.ru</a></div></div><div class="flex flex-wrap gap-x-3 md:gap-x-4 gap-y-2 text-sm text-[#B8B0A8]"><a href="index.html" class="hover:text-[#D4B896]">Главная</a><a href="about.html" class="hover:text-[#D4B896]">О лаборатории</a><a href="services.html" class="hover:text-[#D4B896]">Услуги</a><a href="blog.html" class="hover:text-[#D4B896]">Блог</a><a href="reviews.html" class="hover:text-[#D4B896]">Отзывы</a><a href="mentions.html" class="hover:text-[#D4B896]">Упоминания</a><a href="cases.html" class="hover:text-[#D4B896]">Кейсы</a><a href="geo_navigator.html" class="font-semibold text-[#D4B896] hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#D4B896]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#D4B896]">Контакты</a><a href="faq.html" class="hover:text-[#D4B896]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#D4B896]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#D4B896]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#D4B896]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#D4B896]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#D4B896]">Email</a><a href="privacy.html" class="hover:text-[#D4B896]">Политика</a></div></div></footer><script>
+var SVC = {name:"Промпт-компас", base:8000, ceiling:12000, subject:"Промпт-компас — запрос услуги", fields:"Ниша:\nЗадача:\nКонтакт:", params:[{"key": "p0", "label": "Объём библиотеки", "hint": "Сколько промптов войдёт в дело", "type": "radio", "options": [{"label": "20 промптов (база)", "price": 0}, {"label": "40 промптов (+2 000 ₽)", "price": 2000}], "default": "20 промптов (база)"}, {"key": "p1", "label": "Вторая категория промптов", "hint": "2-я категория запросов в нише", "type": "toggle", "default": false, "price": 1500}, {"key": "p2", "label": "Сложная ниша", "hint": "Узкоспециализированная или регулируемая сфера", "type": "toggle", "default": false, "price": 1000}]};
+var currentParams = {};
+function renderParams(){
+  var html = '';
+  SVC.params.forEach(function(p) {
+    currentParams[p.key] = (p.type==='toggle') ? false : p.default;
+    currentParams[p.key+'_price'] = (p.type==='toggle') ? 0 : (p.options[0].price);
+    html += '<div class="param-group"><label>'+p.label+'</label>';
+    if (p.hint) html += '<div class="param-hint">'+p.hint+'</div>';
+    if (p.type==='radio') {
+      html += '<div class="radio-row">';
+      p.options.forEach(function(opt, idx) {
+        var active = idx===0 ? ' active' : '';
+        html += '<div class="radio-pill'+active+'" data-param="'+p.key+'" data-price="'+opt.price+'" onclick="pickRadio(this)">'+opt.label+'</div>';
+      });
+      html += '</div>';
+    } else {
+      html += '<div class="toggle-row"><div class="toggle" data-param="'+p.key+'" data-price="'+p.price+'" onclick="flipToggle(this)"></div><span class="toggle-label">Нет</span></div>';
+    }
+    html += '</div>';
+  });
+  document.getElementById('paramsArea').innerHTML = html;
+  calc();
+}
+function pickRadio(el) {
+  var group = el.parentElement;
+  group.querySelectorAll('.radio-pill').forEach(function(p){p.classList.remove('active')});
+  el.classList.add('active');
+  currentParams[el.dataset.param+'_price'] = parseInt(el.dataset.price);
+  calc();
+}
+function flipToggle(el) {
+  var isOn = el.classList.toggle('on');
+  el.parentElement.querySelector('.toggle-label').textContent = isOn ? 'Да' : 'Нет';
+  currentParams[el.dataset.param] = isOn;
+  currentParams[el.dataset.param+'_price'] = isOn ? parseInt(el.dataset.price) : 0;
+  calc();
+}
+function calc() {
+  var total = SVC.base;
+  SVC.params.forEach(function(p) { total += (currentParams[p.key+'_price'] || 0); });
+  var capped = Math.min(total, SVC.ceiling);
+  document.getElementById('resPrice').textContent = capped.toLocaleString('ru-RU') + ' ' + '\u20BD';
+  document.getElementById('resultSection').classList.add('has-result');
+  var chosen = [];
+  SVC.params.forEach(function(p) {
+    var price = currentParams[p.key+'_price'] || 0;
+    if (price>0) chosen.push(p.label);
+  });
+  var body = 'Здравствуйте!\n\nХочу заказать услугу «'+SVC.name+'».\n\nОриентировочная стоимость: '+capped.toLocaleString('ru-RU')+' руб. (потолок '+SVC.ceiling.toLocaleString('ru-RU')+' руб.)\n\nВыбранные параметры: '+(chosen.length?chosen.join('; '):'базовые')+'\n\n'+SVC.fields+'\n';
+  document.getElementById('ctaBtn').href = 'mailto:geo.navigator@bk.ru?subject='+encodeURIComponent(SVC.subject)+'&body='+encodeURIComponent(body);
+}
+document.addEventListener('DOMContentLoaded', renderParams);
+var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.card, .btn').forEach(function(el){observer.observe(el)});
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"4343a58c91e740dea8a9c104b4e4fd62"}' crossorigin="anonymous"></script>
+</body></html>
