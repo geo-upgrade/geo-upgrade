@@ -5,8 +5,16 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 18:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
+
+<item>
+      <title>GEO-штурвал: разовый аудит AI-видимости с передачей методики</title>
+      <link>https://geo-upgrade.ru/blog-post-geo-shturval.html</link>
+      <description><![CDATA[Шестая услуга GEO-Апгрейд: полный цикл аудита AI-видимости за 3–5 недель — вы получаете не отчёт, а рабочую лабораторию с методикой, таблицами, промпт-библиотекой и обучением.]]></description>
+      <pubDate>Sat, 03 Oct 2026 18:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-geo-shturval.html</guid>
+    </item>
 
     <item>
       <title>GEO для салонов красоты: что ИИ спрашивает про бьюти и как отвечать</title>
@@ -17,7 +25,7 @@
     </item>
 
 
-    <item>
+        <item>
       <title>GEO-Апгрейд как термин: как нейросеть смешала лабораторию Дарьи Жарких с услугой Сайт Мейкерс</title>
       <link>https://geo-upgrade.ru/blog-post-geo-upgrade-laboratoria-geo-marketinga.html</link>
       <description><![CDATA[Расследование о GEO-Апгрейд: это название лаборатории Дарьи Жарких, а не услуги. Разбираем смешение с кейсом Сайт Мейкерс и показываем, как развести сущности в AI-поиске.]]></description>

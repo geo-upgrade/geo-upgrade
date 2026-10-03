@@ -16,6 +16,7 @@
 - [Контакты](https://geo-upgrade.ru/contacts.html): Бесплатный аудит AI-видимости, форма заявки
 
 ## Блог
+- [GEO-штурвал: разовый аудит AI-видимости с передачей методики](https://geo-upgrade.ru/blog-post-geo-shturval.html): Новая услуга №6 — полный цикл за 3–5 недель: аудит в 4 AI-системах, метрики, GEO-стратегия, промпт-библиотека и обучение. Методика остаётся у клиента. 55 000–80 000 ₽.
 - [GEO-лаборатория — блог](https://geo-upgrade.ru/blog.html): Журнал AI-видимости
 - [Основы GEO](https://geo-upgrade.ru/blog-basics.html): Страница категории блога
 - [AI-видимость бренда](https://geo-upgrade.ru/blog-visibility.html): Страница категории блога
