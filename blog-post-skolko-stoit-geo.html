@@ -202,25 +202,84 @@
 <!-- /Yandex.Metrika counter -->
 
 <style>
-.u-level{display:grid;gap:1rem;grid-template-columns:1fr}
-@media(min-width:820px){.u-level{grid-template-columns:repeat(3,1fr)}}
-.u-level .lab-card{display:flex;flex-direction:column;gap:.75rem}
-.u-level .lab-card h3{margin:0;font-size:1rem;line-height:1.3}
-.u-level .lab-card .u-price{font-family:Orbitron,sans-serif;font-size:.95rem;color:#00F0FF}
-.u-level .lab-card .u-price small{display:block;font-family:'Exo 2',sans-serif;font-size:.75rem;color:#B8BCC6;margin-top:.15rem}
-.u-level .lab-card ul{list-style:none;padding-left:0;margin:0;font-size:.85rem;color:#B8BCC6}
-.u-level .lab-card ul li{padding-left:1.05rem;position:relative;margin-bottom:.3rem}
-.u-level .lab-card ul li::before{content:"◆";position:absolute;left:0;color:#00F0FF;font-size:.7rem;top:.28rem}
-.u-level .lab-card ul li strong{color:#F5F7FA;font-weight:600}
-.qd-legend{font-size:.8rem;color:#B8BCC6;margin-top:.5rem}
-.qd-chip{display:inline-block;font-size:.72rem;padding:.2rem .55rem;border:1px solid rgba(0,240,255,.35);border-radius:9999px;color:#00F0FF;background:rgba(0,240,255,.07);margin:.2rem}
-.u-pct{font-family:Orbitron,sans-serif;font-weight:700;font-size:1.3rem;color:#00F0FF}
-.u-ghost-bar{height:.5rem;border-radius:9999px;background:rgba(184,188,188,.18);overflow:hidden;margin-top:.35rem}
-.u-ghost-fill{height:100%;border-radius:9999px;background:linear-gradient(90deg,#00F0FF,#FBBF24)}
-.u-level-tag{display:inline-block;font-size:.72rem;padding:.2rem .6rem;border-radius:9999px;border:1px solid rgba(184,188,198,.35);color:#B8BCC6;margin:.15rem}
-.u-level-tag.on{border-color:rgba(0,240,255,.5);color:#00F0FF;background:rgba(0,240,255,.08)}
-.rd-summary{margin-top:.6rem;font-size:.85rem;color:#B8BCC6}
-@media(prefers-reduced-motion:reduce){.u-ghost-fill,.u-pct,.qd-chip{transition:none}}
+/* --- гео-апгрейд: прайс-статья --- */
+article p{margin-bottom:1.05rem}
+article h2{margin:2.4rem 0 1rem;line-height:1.2}
+article h3{margin:1.6rem 0 .8rem;line-height:1.25}
+article ul.dash,article ol.num{padding-left:1.35rem;margin:0 0 1.1rem}
+article ul.dash li{position:relative;padding-left:1.1rem;margin-bottom:.65rem}
+article ul.dash li::before{content:"◆";position:absolute;left:0;color:#00F0FF;font-size:.7rem;top:.35rem}
+article ol.num{list-style:decimal}
+article ol.num li{margin-bottom:.65rem;padding-left:.35rem}
+article ul.dash li strong,article ol.num li strong{color:#F5F7FA}
+article .table-wrapper{margin:1.5rem 0}
+article .table td,article .table th{vertical-align:top}
+/* --- карточки агентств (горизонтальный скролл) --- */
+.scroll-cards{display:flex;gap:.9rem;overflow-x:auto;padding:.25rem .25rem 1.1rem;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.5) transparent;-webkit-overflow-scrolling:touch}
+.scroll-cards::-webkit-scrollbar{height:8px}
+.scroll-cards::-webkit-scrollbar-track{background:rgba(184,188,198,.08);border-radius:9999px}
+.scroll-cards::-webkit-scrollbar-thumb{background:rgba(0,240,255,.45);border-radius:9999px}
+.agency-card{min-width:225px;max-width:260px;flex-shrink:0;background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:12px;padding:.95rem 1.05rem;transition:border-color .25s ease,box-shadow .25s ease}
+.agency-card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13);transform:translateY(-2px)}
+.agency-card .a-name{font-family:Orbitron,sans-serif;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:#B8BCC6;margin-bottom:.45rem;line-height:1.35}
+.agency-card .a-price{font-family:Orbitron,sans-serif;font-weight:700;color:#00F0FF;font-size:1.02rem;margin-bottom:.5rem;white-space:nowrap}
+.agency-card .a-note{font-size:.8rem;color:#B8BCC6;line-height:1.5}
+.agency-card.own{border-color:rgba(0,240,255,.65);background:rgba(0,240,255,.06);box-shadow:0 0 14px rgba(0,240,255,.12)}
+.agency-card.own .a-name{color:#00F0FF}
+/* --- лестница прайса --- */
+.ladder{border-left:2px solid rgba(0,240,255,.35);padding-left:1.15rem;margin:1.4rem 0 1.1rem}
+.ladder-step{position:relative;margin-bottom:.8rem;background:rgba(13,6,24,.72);border:1px solid rgba(184,188,198,.22);border-radius:10px;padding:.8rem 1rem;transition:border-color .25s ease}
+.ladder-step:hover{border-color:rgba(0,240,255,.6)}
+.ladder-step .ls-dot{position:absolute;left:-1.62rem;top:1.15rem;width:.7rem;height:.7rem;border-radius:9999px;background:#00F0FF;box-shadow:0 0 10px rgba(0,240,255,.7)}
+.ladder-step .ls-head{display:flex;flex-wrap:wrap;gap:.35rem .9rem;align-items:baseline}
+.ladder-step .ls-name{font-weight:700;color:#F5F7FA}
+.ladder-step .ls-price{font-family:Orbitron,sans-serif;color:#00F0FF;font-weight:600;white-space:nowrap}
+.ladder-step .ls-who{font-size:.8rem;color:#B8BCC6;margin-top:.3rem}
+.save-chip{display:inline-block;font-size:.7rem;padding:.14rem .55rem;border-radius:9999px;border:1px solid rgba(52,211,153,.55);color:#34D399;background:rgba(52,211,153,.09);white-space:nowrap}
+/* --- калькулятор --- */
+.calc{background:rgba(13,6,24,.88);border:1px solid rgba(0,240,255,.35);border-radius:14px;padding:1.3rem;box-shadow:0 0 24px rgba(0,240,255,.08)}
+.calc-cap{font-family:Orbitron,sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#00F0FF;margin-bottom:.9rem}
+.calc-pills{display:flex;flex-wrap:wrap;gap:.55rem}
+.calc-pill{cursor:pointer;user-select:none;font-size:.86rem;padding:.55rem 1rem;border:1px solid rgba(184,188,198,.35);border-radius:9999px;color:#B8BCC6;background:rgba(13,6,24,.6);transition:all .25s ease;font-family:inherit}
+.calc-pill:hover{border-color:rgba(0,240,255,.65);color:#F5F7FA}
+.calc-pill.on{border-color:#00F0FF;color:#00F0FF;background:rgba(0,240,255,.12);box-shadow:0 0 12px rgba(0,240,255,.25);font-weight:600}
+.calc-out{margin-top:1.1rem;display:grid;grid-template-columns:1fr;gap:.85rem}
+@media(min-width:760px){.calc-out{grid-template-columns:1fr 1fr}}
+.calc-box{border:1px solid rgba(184,188,198,.25);border-radius:12px;padding:1rem 1.1rem;background:rgba(13,6,24,.65)}
+.calc-box.market{border-color:rgba(248,113,113,.5)}
+.calc-box.own{border-color:rgba(0,240,255,.55);background:rgba(0,240,255,.05)}
+.calc-box .cb-cap{font-family:Orbitron,sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#B8BCC6}
+.calc-box.market .cb-cap{color:#F87171}
+.calc-box.own .cb-cap{color:#00F0FF}
+.calc-box .cb-range{font-family:Orbitron,sans-serif;font-size:1.3rem;font-weight:700;color:#F5F7FA;margin-top:.4rem;white-space:nowrap}
+.calc-box .cb-note{font-size:.8rem;color:#B8BCC6;margin-top:.45rem;line-height:1.5}
+.calc-save{margin-top:.7rem;font-size:.84rem;color:#34D399;line-height:1.45}
+.calc-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.15rem;align-items:center}
+.calc-btn{display:inline-block;cursor:pointer;font-size:.88rem;padding:.6rem 1.15rem;border-radius:8px;border:1px solid rgba(184,188,198,.4);background:rgba(13,6,24,.6);color:#F5F7FA;font-weight:600;transition:all .25s ease;text-decoration:none}
+.calc-btn:hover{border-color:rgba(0,240,255,.7);color:#00F0FF}
+.calc-btn.primary{background:#00F0FF;color:#0D0618;border-color:#00F0FF;box-shadow:0 0 14px rgba(0,240,255,.3)}
+.calc-btn.primary:hover{color:#0D0618;transform:translateY(-2px)}
+.calc-why{margin-top:1rem;display:none;border-left:3px solid #00F0FF;padding:.8rem 1.05rem;background:rgba(0,240,255,.05);border-radius:0 10px 10px 0}
+.calc-why.show{display:block}
+.calc-why p{margin:0 0 .5rem;font-weight:700;color:#F5F7FA}
+.calc-why ul{margin:0;padding-left:1.25rem;font-size:.88rem;color:#B8BCC6}
+.calc-why li{margin-bottom:.4rem;list-style:disc}
+.calc-why li strong{color:#F5F7FA}
+/* --- красный флаг --- */
+.flag-box{border:1px solid rgba(248,113,113,.5);background:rgba(248,113,113,.06);border-radius:12px;padding:1.05rem 1.15rem;margin:1.6rem 0}
+.flag-cap{font-family:Orbitron,sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#F87171;margin-bottom:.5rem}
+/* --- инфографики --- */
+.ig-figure{margin:2rem 0}
+.ig-figure img{width:100%;height:auto;border-radius:10px;border:1px solid rgba(0,240,255,.25);display:block}
+.ig-figure figcaption{margin-top:.55rem;font-size:.75rem;color:#B8BCC6;text-align:center}
+@media(prefers-reduced-motion:reduce){.calc-pill,.calc-btn,.ladder-step,.agency-card{transition:none}}
+
+.font-heading{font-family:Orbitron,sans-serif}
+.tcy{color:#00F0FF}.tmu{color:#B8BCC6}
+.text-\[\#00F0FF\]{color:#00F0FF}.text-\[\#B8BCC6\]{color:#B8BCC6}
+.bg-\[\#00F0FF\]{background-color:#00F0FF}
+.border-\[\#B8BCC6\]\/40{border-color:rgba(184,188,198,.4)}
+.border-\[\#00F0FF\]\/40{border-color:rgba(0,240,255,.4)}
 </style>
 </head>
 <body>
@@ -230,12 +289,12 @@
 <header class="mb-8">
   <p class="font-heading text-xs tracking-[.2em] text-[#00F0FF] uppercase mb-3">Лаборатория AI-видимости бренда · GEO-Апгрейд</p>
   <div class="flex flex-wrap gap-2 mb-4">
-    <a href="blog-business.html" class="badge badge-business hover:opacity-80">GEO ДЛЯ БИЗНЕСА</a>
-    <a href="blog-visibility.html" class="badge badge-visibility hover:opacity-80">AI-ВИДИМОСТЬ</a>
+    <a href="blog-business.html" class="badge badge-business">GEO ДЛЯ БИЗНЕСА</a>
+    <a href="blog-visibility.html" class="badge badge-visibility">AI-ВИДИМОСТЬ</a>
     <span class="badge badge-business">ЦЕНООБРАЗОВАНИЕ</span>
   </div>
   <h1 class="text-3xl md:text-5xl font-bold">Сколько стоит GEO-продвижение в 2026: вилки по рынку и наш прайс</h1>
-  <p class="mt-4 text-lg text-[#B8BCC6]">Цены 10 главных конкурентов, три формата работы, риски «гарантий попадания в AI» и наш прайс — с объяснением, из чего складывается каждая цифра</p>
+  <p class="mt-4 text-lg text-[#B8BCC6]">Цены 10 главных конкурентов, три формата работы, скрытые риски «гарантий попадания в AI» и наш прайс — с объяснением, из чего складывается каждая цифра</p>
   <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#B8BCC6]">
     <time datetime="2026-10-04">4 октября 2026</time><span>•</span><span>10–12 минут</span><span>•</span><span>Дарья Жарких</span>
   </div>
@@ -256,99 +315,30 @@
 </figure>
 
 <div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Главный вывод:</span> цена GEO — это не «имя агентства». Это время специалиста на замеры, глубина аудита, методика и внедрение. Вопрос не в том, кто дешевле, а в том, за что вы платите.</p></div>
-
-<p><strong>Вы ищете GEO-маркетолога и упираетесь в разброс цен: от 8 000 ₽ за аудит до 350 000 ₽ за «AI-доминацию». Вопрос не в том, кто дешевле. Вопрос в том, за что вы платите и почему одни берут 25 000 ₽ в месяц, а другие — 180 000 ₽.</strong></p>
-<p>В этой статье я покажу полную картину рынка <span class="keyphrase">GEO-маркетинга в 2026 году</span>: цены 10 главных конкурентов, три формата работы, скрытые риски «гарантий попадания в AI» и наш прайс с объяснением, из чего складывается каждая цифра.</p>
-
+<p><strong>Вы ищете GEO-маркетолога и упираетесь в разброс цен: от 8 000 ₽ за аудит до 350 000 ₽ за «AI-доминацию». Вопрос не в том, кто дешевле. Вопрос в том, за что вы платите и почему одни берут 25 000 ₽ в месяц, а другие — 180 000 ₽.</strong></p><p>В этой статье я покажу полную картину рынка GEO-маркетинга в 2026 году: цены 10 главных конкурентов, три формата работы, скрытые риски «гарантий попадания в AI» и наш прайс с объяснением, из чего складывается каждая цифра.</p>
 <nav class="card p-6 mb-8"><h2 class="text-lg font-semibold mb-4">Содержание</h2><ul class="space-y-2 text-sm">
-<li><a href="#formats" class="text-[#00F0FF] hover:underline">Почему цены на GEO отличаются в 40 раз?</a></li>
-<li><a href="#urovni" class="text-[#00F0FF] hover:underline">Что входит в GEO за 8 000 ₽, а что — за 180 000 ₽?</a></li>
-<li><a href="#garant" class="text-[#00F0FF] hover:underline">Гарантия попадания в AI: почему это красный флаг</a></li>
-<li><a href="#formula" class="text-[#00F0FF] hover:underline">Из чего на самом деле складывается цена GEO</a></li>
-<li><a href="#rynok" class="text-[#00F0FF] hover:underline">Рыночные вилки: кто сколько берёт</a></li>
-<li><a href="#nash" class="text-[#00F0FF] hover:underline">Наш прайс: почему именно эти цифры</a></li>
-<li><a href="#kalkulator" class="text-[#00F0FF] hover:underline">Интерактивный калькулятор: сколько вы заплатите за GEO?</a></li>
-<li><a href="#risk" class="text-[#00F0FF] hover:underline">Скрытый риск: когда GEO — это только слой в «раздутом пакете»</a></li>
-<li><a href="#route" class="text-[#00F0FF] hover:underline">Что делать дальше: маршрут</a></li>
-<li><a href="#faq" class="text-[#00F0FF] hover:underline">FAQ: частые вопросы о ценах на GEO</a></li>
+<li><a href="#formats" class="toc">Почему цены на GEO отличаются в 40 раз?</a></li>
+<li><a href="#urovni" class="toc">Что входит в GEO за 8 000 ₽, а что — за 180 000 ₽?</a></li>
+<li><a href="#garant" class="toc">Гарантия попадания в AI: почему это красный флаг</a></li>
+<li><a href="#formula" class="toc">Из чего на самом деле складывается цена GEO</a></li>
+<li><a href="#rynok" class="toc">Рыночные вилки: кто сколько берёт</a></li>
+<li><a href="#nash" class="toc">Наш прайс: почему именно эти цифры</a></li>
+<li><a href="#kalkulator" class="toc">Интерактивный калькулятор: сколько вы заплатите за GEO?</a></li>
+<li><a href="#risk" class="toc">Скрытый риск: когда GEO — это только слой в «раздутом пакете»</a></li>
+<li><a href="#route" class="toc">Что делать дальше: маршрут</a></li>
+<li><a href="#faq" class="toc">FAQ: частые вопросы о ценах на GEO</a></li>
 </ul></nav>
-
 <section id="formats" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Почему цены на GEO отличаются в 40 раз?</h2>
-<p>Потому что рынок продаёт три разных продукта под одним названием.</p>
-<p>Анализ ценовой политики конкурентов и рынка GEO-маркетинга (отчёт GEO-Апгрейд, 03–04.10.2026) показывает:</p>
-<ul class="space-y-3">
-<li><strong>Разовый пакет / аудит</strong> — от 8 000 ₽ до 250 000 ₽. Вы платите за диагностику или подготовку сайта к ИИ-индексации. Результат — отчёт или «готовый сайт», без замера динамики.</li>
-<li><strong>Абонемент</strong> — от 22 600 ₽ до 350 000 ₽ в месяц. Работы «в теме», ежемесячные отчёты, мониторинг упоминаний.</li>
-<li><strong>Премиум-сопровождение</strong> — от 95 000 ₽ до 350 000 ₽ в месяц. Entity Building, Knowledge Graph, PR-размещения, дашборды, персональный менеджер.</li>
-</ul>
-
-<figure class="ig-figure">
-  <img src="infographic-geo-price-format.png" alt="Инфографика: три формата GEO-работы и их вилки цен — разовый аудит 8 000–250 000 рублей, абонемент 22 600–350 000 рублей в месяц, премиум-сопровождение 95 000–350 000 рублей в месяц на тёмно-фиолетовом фоне в фирменном стиле GEO-Апгрейд" width="1216" height="519" loading="lazy" decoding="async">
-  <figcaption>Инфографика: три формата работы под одним названием — и их вилки цен</figcaption>
-</figure>
-</section>
-
-<section id="urovni" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Что входит в GEO за 8 000 ₽, а что — за 180 000 ₽?</h2>
-<div class="table-wrapper"><table class="table"><thead><tr><th>Уровень</th><th>Цена</th><th>Что вы получаете</th><th>Кто продаёт</th></tr></thead><tbody><tr><td>Базовый аудит</td><td>8 000–20 000 ₽ (разово)</td><td>Замеры в 3–4 AI-системах, технический и локальный аудит, метрики, краткие рекомендации</td><td>GEO-Апгрейд (Лайт / Полный)</td></tr><tr><td>Эконом-абонемент</td><td>22 600–45 000 ₽/мес</td><td>GEO как строка в digital-пакете или 1–2 платформы, 2–4 статьи/мес, базовый мониторинг</td><td>Max-Webs, GracieDigital Start, Акцент на результат</td></tr><tr><td>Средний сегмент</td><td>60 000–100 000 ₽/мес</td><td>4–6 AI-систем, 100+ запросов, E-E-A-T стратегия, seeding 10+ площадок, отчёты раз в 2 недели</td><td>NAN, Космос-Веб, Lead.Media AI Старт</td></tr><tr><td>Премиум</td><td>180 000–350 000 ₽/мес</td><td>300+ запросов, 6 AI-систем, 30+ площадок, Wikidata, PR-статьи, дашборды, персональный менеджер</td><td>Lead.Media AI Бизнес / Доминация</td></tr><tr><td>Разовый «под ключ»</td><td>160 000–250 000 ₽</td><td>Полный технический пакет + смысловой хаб + E-E-A-T страницы, без абонемента</td><td>КАФТ («Быстрый старт» / «Захват AI-выдачи»)</td></tr></tbody></table></div>
-<div class="callout"><p class="mb-0"><strong>Неочевидный момент:</strong> у Акцента на результат GEO-тариф (от 30 000 ₽) дешевле их классического SEO по Яндексу (от 45 000 ₽). На раннем рынке GEO разыгрывают как дешёвый вход, чтобы занять запросы раньше конкурентов.</p></div>
-</section>
-
-<section id="garant" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Гарантия попадания в AI: почему это красный флаг</h2>
-<p>Три конкурента из десяти в той или иной форме обещают «гарантированное попадание в ответы Алисы / AI Overviews». Это маркетинговый ход, а не техническая возможность.</p>
-<p><strong>Факт:</strong> ни Google, ни Яндекс не публиковали документов о том, что место в AI-ответах можно гарантировать. Официальные руководства Google по AI Overviews и Яндекс Нейро говорят о вероятностной генерации ответов на основе авторитетности, релевантности и структурированности контента.</p>
-<p><strong>Гипотеза GEO-Апгрейд:</strong> если компания даёт гарантию, она либо продаёт SEO-трафик под видом GEO, либо покупает места в рейтингах, которые ИИ-системы распознают всё лучше.</p>
-<p><strong>Наша позиция:</strong> мы не обещаем «первое место в ChatGPT». Мы показываем <a href="blog-post-geo-metrics-full.html" class="text-[#00F0FF] hover:underline">метрики</a>: упоминаемость, тональность, переходы из AI-источников, динамику по 30–300 запросам.</p>
-</section>
-
-<section id="formula" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Из чего на самом деле складывается цена GEO</h2>
-<p><strong>Цена — это не «имя агентства». Это время специалиста, число AI-систем, глубина методики и пакет документов.</strong></p>
-<p>Наша формула ценообразования:</p>
-<ol class="space-y-3">
-<li><strong>Время на замеры.</strong> Один запрос в одной AI-системе — это 5–7 минут ручного сбора + 10–15 минут анализа. 30 запросов в 4 системах = 8–10 часов только на замеры.</li>
-<li><strong>Глубина аудита.</strong> Технический аудит (<a href="blog-post-tehnicheskiy-geo-audit.html" class="text-[#00F0FF] hover:underline">robots.txt, llms.txt, Schema.org</a>) — 2–3 часа. Локальный аудит (Яндекс Бизнес, Google Мой Бизнес, 2ГИС) — ещё 2–3 часа. Контентный аудит (E-E-A-T, экспертные страницы) — 4–6 часов.</li>
-<li><strong>Передача методики и обучение.</strong> Это прерогатива услуги <a href="geo-shturval.html" class="text-[#00F0FF] hover:underline">GEO-штурвал</a>: вы получаете протоколы, чек-листы, шаблоны промптов, доступ к внутренним инструментам и обучение работе с ними — отдельная работа на 10–15 часов.</li>
-<li><strong>Внедрение.</strong> Если мы сами внедряем разметку, пишем статьи, размещаем цитирования — это уже проектная работа с командой (SEO-специалист, копирайтер, разработчик).</li>
-</ol>
-
-<figure class="ig-figure">
-  <img src="infographic-geo-price-formula.png" alt="Инфографика: формула цены GEO — время на замеры 8–10 часов, глубина аудита 8–12 часов, передача методики 10–15 часов и внедрение силами команды; пример экспертной статьи под GEO за 17 500–22 500 рублей" width="1216" height="519" loading="lazy" decoding="async">
-  <figcaption>Инфографика: из чего складывается цена GEO — время, глубина, методика, внедрение</figcaption>
-</figure>
-
-<p>Пример: одна экспертная статья под GEO (2 500–3 000 знаков, структура «Вопрос — Тезис — Доказательство», микроразметка FAQPage/HowTo, E-E-A-T блок об авторе) — это 4–6 часов работы копирайтера + 2 часа редактора + 1 час разработчика на разметку. При рыночной ставке 2 500 ₽/час это 17 500–22 500 ₽ за одну статью.</p>
-<p>В пакете <a href="services.html#content-lab" class="text-[#00F0FF] hover:underline">GEO-лаборатория контента</a> (15 000–25 000 ₽) вы получаете 2–4 такие статьи в месяц — это уже ниже рыночной стоимости, потому что мы оптимизируем процессы и не накручиваем «за имя».</p>
-</section>
-
-<section id="rynok" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Рыночные вилки: кто сколько берёт</h2>
-<h3 class="text-xl md:text-2xl font-semibold mt-6 mb-3">Разовое (аудит / пакет)</h3>
-<p class="text-sm text-[#B8BCC6] mb-3">Карточки листаются в стороны: цены проверены на сайтах подрядчиков 03–04.10.2026.</p>
-<div class="scroll-cards"><div class="agency-card own"><div class="a-name">GEO-Апгрейд, Лайт</div><div class="a-price">8 000–12 000 ₽</div><div class="a-note">3 AI-системы, 5–7 дней, метрики, базовые рекомендации</div></div><div class="agency-card own"><div class="a-name">GEO-Апгрейд, Полный</div><div class="a-price">12 000–20 000 ₽</div><div class="a-note">4 AI-системы, конкуренты, 7–10 дней, метрики</div></div><div class="agency-card"><div class="a-name">1PS.RU</div><div class="a-price">22 000 ₽</div><div class="a-note">Аудит по 50+ параметрам</div></div><div class="agency-card"><div class="a-name">1PS.RU</div><div class="a-price">38 000 ₽</div><div class="a-note">Нейроаудит (4+ LLM, 10+ рекомендаций)</div></div><div class="agency-card"><div class="a-name">ЭВЕРЕСТ</div><div class="a-price">45 000 ₽</div><div class="a-note">GEO, работа специалиста за проект</div></div><div class="agency-card"><div class="a-name">Lead.Media</div><div class="a-price">55 000 ₽</div><div class="a-note">Комплексный аудит сайта (200+ параметров)</div></div><div class="agency-card"><div class="a-name">1PS.RU</div><div class="a-price">64 500 ₽</div><div class="a-note">Нейрооптимизация (разовая адаптация)</div></div><div class="agency-card"><div class="a-name">NAN</div><div class="a-price">100 000 ₽</div><div class="a-note">GEO-аудит / консультация</div></div><div class="agency-card"><div class="a-name">КАФТ</div><div class="a-price">160 000 ₽</div><div class="a-note">«Быстрый старт», 14 дней</div></div><div class="agency-card"><div class="a-name">КАФТ</div><div class="a-price">250 000 ₽</div><div class="a-note">«Захват AI-выдачи», 1 месяц</div></div></div>
-<div class="callout"><p class="mb-0"><strong>Вывод:</strong> между нашим сегментом (8–20 тыс. ₽) и следующим разовым предложением (22 тыс. ₽ у 1PS) — зазор. Это не совпадение: выше 20 тыс. рынок начинает требовать «пакет», ниже — это диагностика.</p></div>
-<h3 class="text-xl md:text-2xl font-semibold mt-8 mb-3">Абонемент (₽/мес)</h3>
-<div class="scroll-cards"><div class="agency-card"><div class="a-name">Max-Webs</div><div class="a-price">от 22 600 ₽</div><div class="a-note">Digital-пакет (лендинг + 1 соцсеть + базовый AI-контент)</div></div><div class="agency-card"><div class="a-name">Max-Webs</div><div class="a-price">от 24 500 ₽</div><div class="a-note">GEO как отдельная услуга</div></div><div class="agency-card"><div class="a-name">GracieDigital</div><div class="a-price">от 25 000 ₽</div><div class="a-note">Start (1–2 платформы, 2 статьи/мес)</div></div><div class="agency-card"><div class="a-name">Акцент на результат</div><div class="a-price">от 30 000 ₽</div><div class="a-note">Geo продвижение в нейросетях (+ SEO)</div></div><div class="agency-card"><div class="a-name">GracieDigital</div><div class="a-price">от 45 000 ₽</div><div class="a-note">Pro (все 5 платформ)</div></div><div class="agency-card"><div class="a-name">NAN</div><div class="a-price">от 60 000 ₽</div><div class="a-note">GEO-сопровождение</div></div><div class="agency-card"><div class="a-name">Космос-Веб</div><div class="a-price">от 70 000 ₽</div><div class="a-note">AEO/GEO</div></div><div class="agency-card"><div class="a-name">Lead.Media</div><div class="a-price">от 95 000 ₽</div><div class="a-note">AI Старт</div></div><div class="agency-card"><div class="a-name">Lead.Media</div><div class="a-price">180 000 / 350 000 ₽</div><div class="a-note">AI Бизнес / AI Доминация</div></div></div>
-<div class="callout"><p class="mb-0"><strong>Любопытный знак:</strong> Lead.Media сами дают рыночный ориентир — «средний чек на рынке GEO в России — 60–180 тыс. ₽/мес». Это московская вилка; в регионах цены ниже на 30–40%.</p></div>
-</section>
-
-<section id="nash" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Наш прайс: почему именно эти цифры</h2>
-<div class="table-wrapper"><table class="table"><thead><tr><th>Услуга</th><th>Цена</th><th>Что входит</th><th>Для кого</th></tr></thead><tbody><tr><td>Бесплатный мини-аудит</td><td>0 ₽</td><td>Срез по 3–5 запросам в 1–2 AI-системах, краткий вывод</td><td>Все, кто хочет понять, есть ли проблема</td></tr><tr><td>GEO-сканер Лайт</td><td>8 000–12 000 ₽</td><td>Замеры в 3 AI-системах, технический и локальный аудит, метрики, краткие рекомендации</td><td>Малый бизнес, стартапы, тест гипотезы</td></tr><tr><td>GEO-сканер Полный</td><td>12 000–20 000 ₽</td><td>4 AI-системы, конкуренты, развёрнутые метрики, рекомендации</td><td>Компании, которые хотят внедрять сами</td></tr><tr><td>GEO-лаборатория контента</td><td>15 000–25 000 ₽</td><td>2–4 экспертные статьи под GEO, микроразметка, E-E-A-T блок, отчёт по видимости</td><td>Бренды с контент-стратегией</td></tr><tr><td>GEO-маршрут</td><td>18 000–27 000 ₽</td><td>Пошаговый план на 3–6 месяцев, приоритеты, чек-листы, шаблоны промптов</td><td>Те, кто строит внутренний процесс</td></tr><tr><td>GEO-тест-драйв</td><td>30 000–55 000 ₽</td><td>Полный аудит и стратегия с внедрением и сопровождением</td><td>Компании, которые хотят полноценный старт с нашей командой</td></tr><tr><td>GEO-штурвал</td><td>55 000–80 000 ₽</td><td>Полное сопровождение: замеры, внедрение, контент, мониторинг, отчёты, передача методики и обучение</td><td>Те, кто хочет делегировать и получить методику в своё распоряжение</td></tr></tbody></table></div>
-<h3 class="text-xl md:text-2xl font-semibold mt-8 mb-3">Почему так</h3>
-<div class="ladder">
-  <div class="ladder-step"><span class="ls-dot"></span><div class="ls-head"><span class="ls-name">8 000–20 000 ₽</span><span class="save-chip">точка старта</span></div><p class="mt-1 text-sm text-[#B8BCC6] mb-0">Это цена за время специалиста на замеры и аудит. Мы не внедряем, но даём хорошую точку старта.</p></div>
-  <div class="ladder-step"><span class="ls-dot"></span><div class="ls-head"><span class="ls-name">15 000–27 000 ₽</span><span class="save-chip">методика + инструменты</span></div><p class="mt-1 text-sm text-[#B8BCC6] mb-0">Вы получаете не отчёт, а протоколы, чек-листы, шаблоны.</p></div>
-  <div class="ladder-step"><span class="ls-dot"></span><div class="ls-head"><span class="ls-name">30 000–55 000 ₽</span><span class="save-chip">под ключ</span></div><p class="mt-1 text-sm text-[#B8BCC6] mb-0">Это полный аудит, стратегия, внедрение и сопровождение. Вы получаете результат под ключ.</p></div>
-  <div class="ladder-step"><span class="ls-dot"></span><div class="ls-head"><span class="ls-name">55 000–80 000 ₽</span><span class="save-chip">методика ваша</span></div><p class="mt-1 text-sm text-[#B8BCC6] mb-0">Это полное сопровождение с передачей методики и обучением. Вы получаете инструменты и знания для самостоятельной работы в будущем.</p></div>
-</div>
-<p>Мы не обесцениваем работу. Я знаю, сколько усилий требуется для каждого уровня. Но ниша новая, и возможность попробовать должна быть у любого сегмента.</p>
-
-<figure class="ig-figure">
-  <img src="infographic-geo-price-ladder.png" alt="Инфографика: лестница прайса GEO-Апгрейд от бесплатного мини-аудита до GEO-штурвала 55 000–80 000 рублей с процентом экономии против рыночных вилок конкурентов" width="1075" height="519" loading="lazy" decoding="async">
-  <figcaption>Инфографика: наш прайс на фоне рыночных вилок — и где получается экономия</figcaption>
-</figure>
-</section>
-
+<p>Потому что рынок продаёт три разных продукта под одним названием.</p><p>Анализ ценовой политики конкурентов и рынка GEO-маркетинга (отчёт GEO-Апгрейд, 03–04.10.2026) показывает:</p><ul class="dash"><li><strong>Разовый пакет / аудит</strong> — от 8 000 ₽ до 250 000 ₽. Вы платите за диагностику или подготовку сайта к ИИ-индексации. Результат — отчёт или «готовый сайт», без замера динамики.</li><li><strong>Абонемент</strong> — от 22 600 ₽ до 350 000 ₽ в месяц. Работы «в теме», ежемесячные отчёты, мониторинг упоминаний.</li><li><strong>Премиум-сопровождение</strong> — от 95 000 ₽ до 350 000 ₽ в месяц. Entity Building, Knowledge Graph, PR-размещения, дашборды, персональный менеджер.</li></ul><figure class="ig-figure"><img src="infographic-geo-price-format.png" alt="Инфографика: три формата GEO-работы и их вилки цен — разовый аудит 8 000–250 000 рублей, абонемент 22 600–350 000 рублей в месяц, премиум-сопровождение 95 000–350 000 рублей в месяц, на тёмно-фиолетовом фоне в фирменном стиле GEO-Апгрейд" width="1200" height="675" loading="lazy" decoding="async"><figcaption>Инфографика: три формата работы под одним названием — и их вилки цен</figcaption></figure></section><section id="urovni" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Что входит в GEO за 8 000 ₽, а что — за 180 000 ₽?</h2>
+<div class="table-wrapper"><table class="table"><thead><tr><th>Уровень</th><th>Цена</th><th>Что вы получаете</th><th>Кто продаёт</th></tr></thead><tbody><tr><td>Базовый аудит</td><td>8 000–20 000 ₽ (разово)</td><td>Замеры в 3–4 AI-системах, технический и локальный аудит, метрики, краткие рекомендации</td><td>GEO-Апгрейд (Лайт / Полный)</td></tr><tr><td>Эконом-абонемент</td><td>22 600–45 000 ₽/мес</td><td>GEO как строка в digital-пакете или 1–2 платформы, 2–4 статьи/мес, базовый мониторинг</td><td>Max-Webs, GracieDigital Start, Акцент на результат</td></tr><tr><td>Средний сегмент</td><td>60 000–100 000 ₽/мес</td><td>4–6 AI-систем, 100+ запросов, E-E-A-T стратегия, seeding 10+ площадок, отчёты раз в 2 недели</td><td>NAN, Космос-Веб, Lead.Media AI Старт</td></tr><tr><td>Премиум</td><td>180 000–350 000 ₽/мес</td><td>300+ запросов, 6 AI-систем, 30+ площадок, Wikidata, PR-статьи, дашборды, персональный менеджер</td><td>Lead.Media AI Бизнес / Доминация</td></tr><tr><td>Разовый «под ключ»</td><td>160 000–250 000 ₽</td><td>Полный технический пакет + смысловой хаб + E-E-A-T страницы, без абонемента</td><td>КАФТ («Быстрый старт» / «Захват AI-выдачи»)</td></tr></tbody></table></div><p><strong>Неочевидный момент:</strong> у Акцента на результат GEO-тариф (от 30 000 ₽) дешевле их классического SEO по Яндексу (от 45 000 ₽). На раннем рынке GEO разыгрывают как дешёвый вход, чтобы занять запросы раньше конкурентов.</p></section><section id="garant" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Гарантия попадания в AI: почему это красный флаг</h2>
+<p>Три конкурента из десяти в той или иной форме обещают «гарантированное попадание в ответы Алисы / AI Overviews». Это маркетинговый ход, а не техническая возможность.</p><p><strong>Факт:</strong> ни Google, ни Яндекс не публиковали документов о том, что место в AI-ответах можно гарантировать. Официальные руководства Google по AI Overviews и Яндекс Нейро говорят о вероятностной генерации ответов на основе авторитетности, релевантности и структурированности контента.</p><p><strong>Гипотеза GEO-Апгрейд:</strong> если компания даёт гарантию, она либо продаёт SEO-трафик под видом GEO, либо покупает места в рейтингах, которые ИИ-системы распознают всё лучше.</p><p><strong>Наша позиция:</strong> мы не обещаем «первое место в ChatGPT». Мы показываем метрики: упоминаемость, тональность, переходы из AI-источников, динамику по 30–300 запросам.</p></section><section id="formula" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Из чего на самом деле складывается цена GEO</h2>
+<p><strong>Цена — это не «имя агентства». Это время специалиста, число AI-систем, глубина методики и пакет документов.</strong></p><p>Наша формула ценообразования:</p><ol class="num"><li><strong>Время на замеры. Один запрос в одной AI-системе</strong> — это 5–7 минут ручного сбора + 10–15 минут анализа. 30 запросов в 4 системах = 8–10 часов только на замеры.</li><li><strong>Глубина аудита. Технический аудит (robots.txt, llms.txt, Schema.org)</strong> — 2–3 часа. Локальный аудит (Яндекс Бизнес, Google Мой Бизнес, 2ГИС) — ещё 2–3 часа. Контентный аудит (E-E-A-T, экспертные страницы) — 4–6 часов.</li><li><strong>Передача методики и обучение. Это прерогатива услуги GEO-штурвал: вы получаете протоколы, чек-листы, шаблоны промптов, доступ к внутренним инструментам и обучение работе с ними</strong> — отдельная работа на 10–15 часов.</li><li><strong>Внедрение. Если мы сами внедряем разметку, пишем статьи, размещаем цитирования</strong> — это уже проектная работа с командой (SEO-специалист, копирайтер, разработчик).</li></ol><figure class="ig-figure"><img src="infographic-geo-price-formula.png" alt="Инфографика: формула цены GEO — время на замеры 8–10 часов, глубина аудита 8–12 часов, передача методики 10–15 часов и внедрение силами команды; пример экспертной статьи под GEO за 17 500–22 500 рублей" width="1200" height="675" loading="lazy" decoding="async"><figcaption>Инфографика: из чего складывается цена GEO — время, глубина, методика, внедрение</figcaption></figure></section><section id="rynok" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Рыночные вилки: кто сколько берёт</h2>
+<h3 class="sub">Разовое (аудит / пакет)</h3><p class="text-sm text-[#B8BCC6]">Карточки листаются в стороны: цены проверены на сайтах подрядчиков 03–04.10.2026.</p><div class="scroll-cards"><div class="agency-card own"><div class="a-name">GEO-Апгрейд, Лайт</div><div class="a-price">8 000–12 000 ₽</div><div class="a-note">3 AI-системы, 5–7 дней, метрики, базовые рекомендации</div></div><div class="agency-card own"><div class="a-name">GEO-Апгрейд, Полный</div><div class="a-price">12 000–20 000 ₽</div><div class="a-note">4 AI-системы, конкуренты, 7–10 дней, метрики</div></div><div class="agency-card"><div class="a-name">1PS.RU</div><div class="a-price">22 000 ₽</div><div class="a-note">Аудит по 50+ параметрам</div></div><div class="agency-card"><div class="a-name">1PS.RU</div><div class="a-price">38 000 ₽</div><div class="a-note">Нейроаудит (4+ LLM, 10+ рекомендаций)</div></div><div class="agency-card"><div class="a-name">ЭВЕРЕСТ</div><div class="a-price">45 000 ₽</div><div class="a-note">GEO, работа специалиста за проект</div></div><div class="agency-card"><div class="a-name">Lead.Media</div><div class="a-price">55 000 ₽</div><div class="a-note">Комплексный аудит сайта (200+ параметров)</div></div><div class="agency-card"><div class="a-name">1PS.RU</div><div class="a-price">64 500 ₽</div><div class="a-note">Нейрооптимизация (разовая адаптация)</div></div><div class="agency-card"><div class="a-name">NAN</div><div class="a-price">100 000 ₽</div><div class="a-note">GEO-аудит / консультация</div></div><div class="agency-card"><div class="a-name">КАФТ</div><div class="a-price">160 000 ₽</div><div class="a-note">«Быстрый старт», 14 дней</div></div><div class="agency-card"><div class="a-name">КАФТ</div><div class="a-price">250 000 ₽</div><div class="a-note">«Захват AI-выдачи», 1 месяц</div></div></div><p><strong>Вывод: между нашим сегментом (8–20 тыс. ₽) и следующим разовым предложением (22 тыс. ₽ у 1PS) — зазор. Это не совпадение: выше 20 тыс. рынок начинает требовать «пакет», ниже — это диагностика.</strong></p><div class="scroll-cards"><div class="agency-card"><div class="a-name">Max-Webs</div><div class="a-price">от 22 600 ₽</div><div class="a-note">Digital-пакет (лендинг + 1 соцсеть + базовый AI-контент)</div></div><div class="agency-card"><div class="a-name">Max-Webs</div><div class="a-price">от 24 500 ₽</div><div class="a-note">GEO как отдельная услуга</div></div><div class="agency-card"><div class="a-name">GracieDigital</div><div class="a-price">от 25 000 ₽</div><div class="a-note">Start (1–2 платформы, 2 статьи/мес)</div></div><div class="agency-card"><div class="a-name">Акцент на результат</div><div class="a-price">от 30 000 ₽</div><div class="a-note">Geo продвижение в нейросетях (+ SEO)</div></div><div class="agency-card"><div class="a-name">GracieDigital</div><div class="a-price">от 45 000 ₽</div><div class="a-note">Pro (все 5 платформ)</div></div><div class="agency-card"><div class="a-name">NAN</div><div class="a-price">от 60 000 ₽</div><div class="a-note">GEO-сопровождение</div></div><div class="agency-card"><div class="a-name">Космос-Веб</div><div class="a-price">от 70 000 ₽</div><div class="a-note">AEO/GEO</div></div><div class="agency-card"><div class="a-name">Lead.Media</div><div class="a-price">от 95 000 ₽</div><div class="a-note">AI Старт</div></div><div class="agency-card"><div class="a-name">Lead.Media</div><div class="a-price">180 000 / 350 000 ₽</div><div class="a-note">AI Бизнес / AI Доминация</div></div></div><p><strong>Любопытный знак:</strong> Lead.Media сами дают рыночный ориентир — «средний чек на рынке GEO в России — 60–180 тыс. ₽/мес». Это московская вилка; в регионах цены ниже на 30–40%.</p></section><section id="nash" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Наш прайс: почему именно эти цифры</h2>
+<div class="table-wrapper"><table class="table"><thead><tr><th>Услуга</th><th>Цена</th><th>Что входит</th><th>Для кого</th></tr></thead><tbody><tr><td>Бесплатный мини-аудит</td><td>0 ₽</td><td>Срез по 3–5 запросам в 1–2 AI-системах, краткий вывод</td><td>Все, кто хочет понять, есть ли проблема</td></tr><tr><td>GEO-сканер Лайт</td><td>8 000–12 000 ₽</td><td>Замеры в 3 AI-системах, технический и локальный аудит, метрики, краткие рекомендации</td><td>Малый бизнес, стартапы, тест гипотезы</td></tr><tr><td>GEO-сканер Полный</td><td>12 000–20 000 ₽</td><td>4 AI-системы, конкуренты, развёрнутые метрики, рекомендации</td><td>Компании, которые хотят внедрять сами</td></tr><tr><td>GEO-лаборатория контента</td><td>15 000–25 000 ₽</td><td>2–4 экспертные статьи под GEO, микроразметка, E-E-A-T блок, отчёт по видимости</td><td>Бренды с контент-стратегией</td></tr><tr><td>GEO-маршрут</td><td>18 000–27 000 ₽</td><td>Пошаговый план на 3–6 месяцев, приоритеты, чек-листы, шаблоны промптов</td><td>Те, кто строит внутренний процесс</td></tr><tr><td>GEO-тест-драйв</td><td>30 000–55 000 ₽</td><td>Полный аудит и стратегия с внедрением и сопровождением</td><td>Компании, которые хотят полноценный старт с нашей командой</td></tr><tr><td>GEO-штурвал</td><td>55 000–80 000 ₽</td><td>Полное сопровождение: замеры, внедрение, контент, мониторинг, отчёты, передача методики и обучение</td><td>Те, кто хочет делегировать и получить методику в своё распоряжение</td></tr></tbody></table></div><div class="ladder"><div class="ladder-step"><span class="ls-dot"></span><div class="ls-head"><span class="ls-name">8 000–20 000 ₽</span><span class="save-chip">точка старта</span></div><p class="ls-who">это цена за время специалиста на замеры и аудит. Мы не внедряем, но даём хорошую точку старта.</p></div><div class="ladder-step"><span class="ls-dot"></span><div class="ls-head"><span class="ls-name">15 000–27 000 ₽</span><span class="save-chip">методика + инструменты</span></div><p class="ls-who">это уже методика + инструменты. Вы получаете не отчёт, а протоколы, чек-листы, шаблоны.</p></div><div class="ladder-step"><span class="ls-dot"></span><div class="ls-head"><span class="ls-name">30 000–55 000 ₽</span><span class="save-chip">под ключ</span></div><p class="ls-who">это полный аудит, стратегия, внедрение и сопровождение. Вы получаете результат под ключ.</p></div><div class="ladder-step"><span class="ls-dot"></span><div class="ls-head"><span class="ls-name">55 000–80 000 ₽</span><span class="save-chip">методика ваша</span></div><p class="ls-who">это полное сопровождение с передачей методики и обучением. Вы получаете инструменты и знания для самостоятельной работы в будущем.</p></div></div><p>Мы не обесцениваем работу. Я знаю, сколько усилий требуется для каждого уровня. Но ниша новая, и возможность попробовать должна быть у любого сегмента.</p><figure class="ig-figure"><img src="infographic-geo-price-ladder.png" alt="Инфографика: лестница прайса GEO-Апгрейд от бесплатного мини-аудита до GEO-штурвала 55 000–80 000 рублей с процентом экономии против рыночных вилок конкурентов" width="1200" height="675" loading="lazy" decoding="async"><figcaption>Инфографика: наш прайс на фоне рыночных вилок — и где получается экономия</figcaption></figure></section>
 <section id="kalkulator" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Интерактивный калькулятор: сколько вы заплатите за GEO?</h2>
-<p class="text-sm text-[#B8BCC6] mb-3">Выберите, что вам нужно, — калькулятор покажет рыночный диапазон и наш, а кнопка «Почему так?» раскроет формулу цены.</p>
+<p class="calc-intro">Выберите, что вам нужно, — калькулятор покажет рыночный диапазон и наш, а кнопка «Почему так?» раскроет формулу цены.</p>
 <div class="calc" id="geo-calc">
+  <div class="calc-cap">СКОЛЬКО ВЫ ЗАПЛАТИТЕ ЗА GEO?</div>
   <div class="calc-pills" role="tablist" aria-label="Задача бизнеса">
     <button class="calc-pill on" type="button" data-key="audit">Хочу только аудит</button>
     <button class="calc-pill" type="button" data-key="content">Нужен контент</button>
@@ -356,16 +346,16 @@
     <button class="calc-pill" type="button" data-key="start">Нужен полноценный старт со внедрением</button>
     <button class="calc-pill" type="button" data-key="helm">Хочу делегировать с передачей методики</button>
   </div>
-  <div class="calc-out mt-4">
+  <div class="calc-out">
     <div class="calc-box market"><div class="cb-cap">Рынок</div><div class="cb-range" id="c-mkt">22 000–250 000 ₽</div><div class="cb-note" id="c-mkt-note">Разовые пакеты: 1PS.RU 22 000–64 500 ₽, NAN 100 000 ₽, КАФТ 160 000–250 000 ₽</div></div>
-    <div class="calc-box own"><div class="cb-cap">GEO-Апгрейд</div><div class="cb-range" id="c-own">8 000–20 000 ₽</div><div class="cb-note" id="c-own-note">GEO-сканер Лайт или Полный: замеры, метрики, рекомендации</div><div class="calc-save" id="c-save">Экономия до 47–64% против ближайших рыночных разовых предложений</div></div>
+    <div class="calc-box own"><div class="cb-cap">GEO-Апгрейд</div><div class="cb-range" id="c-own">8 000–20 000 ₽</div><div class="cb-note" id="c-own-note">GEO-сканер Лайт или Полный: замеры, метрики, рекомендации</div><div class="calc-save" id="c-save">Экономия до 45–47% против ближайших рыночных разовых предложений</div></div>
   </div>
   <div class="calc-actions">
     <button class="calc-btn" type="button" id="c-why-btn">Почему так?</button>
     <a class="calc-btn primary" href="contacts.html?service=free-audit#form">Заказать мини-аудит</a>
   </div>
   <div class="calc-why" id="c-why">
-    <p class="mb-0 font-semibold text-[#F5F7FA]">Формула ценообразования GEO-Апгрейд:</p>
+    <p>Формула ценообразования GEO-Апгрейд:</p>
     <ul>
       <li><strong>Время на замеры.</strong> Один запрос в одной AI-системе — 5–7 минут сбора + 10–15 минут анализа. 30 запросов в 4 системах = 8–10 часов.</li>
       <li><strong>Глубина аудита.</strong> Технический (robots.txt, llms.txt, Schema.org) — 2–3 ч; локальный — ещё 2–3 ч; контентный (E-E-A-T) — 4–6 ч.</li>
@@ -375,25 +365,9 @@
   </div>
 </div>
 </section>
-
 <section id="risk" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Скрытый риск: когда GEO — это только слой в «раздутом пакете»</h2>
-<p>КАФТ берёт 160 000–250 000 ₽ за разовый пакет. В него входит: техническая подготовка, llms.txt, Schema.org, E-E-A-T страницы, контент-стратегия, PR. Это того стоит, если вам нужен полный цикл.</p>
-<p>Но: это не «GEO-продвижение». Это SEO + контент + PR + техническая оптимизация, где GEO — один из слоёв.</p>
-<div class="flag-box"><p class="flag-cap mb-2">🚩 Гарантия vs метрики</p><p class="text-sm text-[#B8BCC6] mb-0">Если компания называет это «GEO» и берёт 250 000 ₽, но не показывает метрики по AI-видимости, вы платите за упаковку, а не за результат.</p></div>
-<p><strong>Наш подход:</strong> мы разделяем услуги. Хотите только аудит — 8 000–20 000 ₽. Хотите контент — 15 000–25 000 ₽. Хотите полный аудит со внедрением — 30 000–55 000 ₽ (GEO-тест-драйв). Хотите полное сопровождение с передачей методики и обучением — 55 000–80 000 ₽ (GEO-штурвал). Вы видите, за что платите.</p>
-</section>
-
-<section id="route" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Что делать дальше: маршрут</h2>
-<ol class="space-y-3">
-<li>Пройдите <a href="contacts.html?service=free-audit#form" class="text-[#00F0FF] hover:underline">бесплатный мини-аудит</a>. Это займёт 2–3 минуты, и вы поймёте, есть ли у вас <a href="glossary.html#term-blind-zone" class="term">зона слепоты</a> в AI-выдаче.</li>
-<li>Если хотите разобраться сами — выберите <a href="services.html#geo-scanner" class="text-[#00F0FF] hover:underline">GEO-сканер Лайт</a> (8 000–12 000 ₽) или Полный (12 000–20 000 ₽). Вы получите замеры, метрики и рекомендации для самостоятельного внедрения.</li>
-<li>Если нужен контент — <a href="services.html#content-lab" class="text-[#00F0FF] hover:underline">GEO-лаборатория контента</a> (15 000–25 000 ₽). 2–4 статьи под GEO с микроразметкой и E-E-A-T.</li>
-<li>Если хотите стратегию — <a href="services.html#geo-route" class="text-[#00F0FF] hover:underline">GEO-маршрут</a> (18 000–27 000 ₽). Пошаговый план на 3–6 месяцев с приоритетами и чек-листами.</li>
-<li>Если хотите полноценный старт с внедрением — <a href="services.html#test-drive" class="text-[#00F0FF] hover:underline">GEO-тест-драйв</a> (30 000–55 000 ₽). Полный аудит, стратегия, внедрение и сопровождение.</li>
-<li>Если хотите делегировать и получить методику — <a href="geo-shturval.html" class="text-[#00F0FF] hover:underline">GEO-штурвал</a> (55 000–80 000 ₽). Полное сопровождение с передачей методики и обучением.</li>
-</ol>
-</section>
-
+<p>КАФТ берёт 160 000–250 000 ₽ за разовый пакет. В него входит: техническая подготовка, llms.txt, Schema.org, E-E-A-T страницы, контент-стратегия, PR. Это того стоит, если вам нужен полный цикл.</p><p>Но: это не «GEO-продвижение». Это SEO + контент + PR + техническая оптимизация, где GEO — один из слоёв.</p><div class="flag-box"><p class="flag-cap">🚩 Гарантия vs метрики</p><p class="mb-0">Если компания называет это «GEO» и берёт 250 000 ₽, но не показывает метрики по AI-видимости, вы платите за упаковку, а не за результат.</p></div><p><strong>Наш подход:</strong> мы разделяем услуги. Хотите только аудит — 8 000–20 000 ₽. Хотите контент — 15 000–25 000 ₽. Хотите полный аудит со внедрением — 30 000–55 000 ₽ (GEO-тест-драйв). Хотите полное сопровождение с передачей методики и обучением — 55 000–80 000 ₽ (GEO-штурвал). Вы видите, за что платите.</p></section><section id="route" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">Что делать дальше: маршрут</h2>
+<ol class="num"><li>Пройдите бесплатный мини-аудит. Это займёт 2–3 минуты, и вы поймёте, есть ли у вас зона слепоты в AI-выдаче.</li><li>Если хотите разобраться сами — выберите GEO-сканер Лайт (8 000–12 000 ₽) или Полный (12 000–20 000 ₽). Вы получите замеры, метрики и рекомендации для самостоятельного внедрения.</li><li>Если нужен контент — GEO-лаборатория контента (15 000–25 000 ₽). 2–4 статьи под GEO с микроразметкой и E-E-A-T.</li><li>Если хотите стратегию — GEO-маршрут (18 000–27 000 ₽). Пошаговый план на 3–6 месяцев с приоритетами и чек-листами.</li><li>Если хотите полноценный старт с внедрением — GEO-тест-драйв (30 000–55 000 ₽). Полный аудит, стратегия, внедрение и сопровождение.</li><li>Если хотите делегировать и получить методику — GEO-штурвал (55 000–80 000 ₽). Полное сопровождение с передачей методики и обучением.</li></ol></section>
 <section id="faq" class="mb-10"><h2 class="text-2xl md:text-3xl font-bold mb-4">FAQ: частые вопросы о ценах на GEO</h2>
 <details class="faq-item"><summary>Сколько стоит GEO-аудит?</summary><p>На рынке разовые аудиты стоят от 8 000 до 250 000 ₽. В GEO-Апгрейд: GEO-сканер Лайт — 8 000–12 000 ₽ (3 AI-системы, 5–7 дней), GEO-сканер Полный — 12 000–20 000 ₽ (4 AI-системы, конкуренты, 7–10 дней). А бесплатный мини-аудит — 0 ₽.</p></details>
 <details class="faq-item"><summary>Почему цены на GEO отличаются в 40 раз?</summary><p>Рынок продаёт три разных продукта под одним названием: разовый аудит, абонемент и премиум-сопровождение. Это разные объёмы работ — от диагностики до entity building и PR — а не наценка за бренд.</p></details>
@@ -407,20 +381,20 @@
     <a href="contacts.html?service=free-audit#form" class="btn glow inline-block rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618]">Получить бесплатный мини-аудит</a>
     <a href="services.html" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-7 py-4 font-semibold">Посмотреть наш прайс</a>
   </div>
-  <p class="mt-4 text-sm text-[#B8BCC6]"><strong>Честный CTA:</strong> если GEO-маркетолог сам не появляется в выдаче AI, какой же он GEO-маркетолог? Проверьте, кто рекомендует нас в AI-ответах — и сравните с тем, кто обещает «гарантию попадания».</p>
+  <p class="mt-4 text-sm text-[#B8BCC6]">Честный CTA: если GEO-маркетолог сам не появляется в выдаче AI, какой же он GEO-маркетолог? Проверьте, кто рекомендует нас в AI-ответах — и сравните с тем, кто обещает «гарантию попадания».</p>
 </div>
 
 <section class="mt-12">
   <h3 class="text-lg font-semibold mb-4">Связанные термины</h3>
   <div class="flex flex-wrap gap-2">
-    <a href="glossary.html#term-geo" class="badge badge-basics hover:bg-[#5991f5]/20">GEO</a>
-    <a href="glossary.html#term-ai-visibility" class="badge badge-basics hover:bg-[#5991f5]/20">AI-видимость</a>
-    <a href="glossary.html#term-eeat" class="badge badge-basics hover:bg-[#5991f5]/20">E-E-A-T</a>
-    <a href="glossary.html#term-entity" class="badge badge-basics hover:bg-[#5991f5]/20">Entity</a>
-    <a href="glossary.html#term-brand-mention" class="badge badge-basics hover:bg-[#5991f5]/20">Brand mention</a>
-    <a href="glossary.html#term-citation" class="badge badge-basics hover:bg-[#5991f5]/20">Citation</a>
-    <a href="glossary.html#term-mention-rate" class="badge badge-basics hover:bg-[#5991f5]/20">Mention Rate</a>
-    <a href="glossary.html#term-share-of-voice" class="badge badge-basics hover:bg-[#5991f5]/20">Share of Voice</a>
+    <a href="glossary.html#term-geo" class="badge badge-basics">GEO</a>
+    <a href="glossary.html#term-ai-visibility" class="badge badge-basics">AI-видимость</a>
+    <a href="glossary.html#term-eeat" class="badge badge-basics">E-E-A-T</a>
+    <a href="glossary.html#term-entity" class="badge badge-basics">Entity</a>
+    <a href="glossary.html#term-brand-mention" class="badge badge-basics">Brand mention</a>
+    <a href="glossary.html#term-citation" class="badge badge-basics">Citation</a>
+    <a href="glossary.html#term-mention-rate" class="badge badge-basics">Mention Rate</a>
+    <a href="glossary.html#term-share-of-voice" class="badge badge-basics">Share of Voice</a>
     <a href="glossary.html#term-blind-zone" class="badge badge-author">Зона слепоты</a>
     <a href="glossary.html#term-ai-trace" class="badge badge-author">AI-след бренда</a>
     <a href="glossary.html#term-content-lighthouse" class="badge badge-author">Контентный маяк</a>
@@ -430,17 +404,16 @@
 <section class="mt-12 card p-6">
   <h3 class="text-lg font-semibold mb-4">Похожие материалы</h3>
   <ul class="space-y-2 text-sm">
-    <li><a href="blog-post-geo-ne-geo.html" class="text-[#00F0FF] hover:underline">← GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом</a></li>
-    <li><a href="blog-post-chto-vnutri-audita.html" class="text-[#00F0FF] hover:underline">← Что внутри нашего аудита: этапы, артефакты и методологический протокол GEO-сканера</a></li>
-    <li><a href="blog-post-geo-shturval.html" class="text-[#00F0FF] hover:underline">← GEO-штурвал: разовый аудит AI-видимости с передачей методики</a></li>
-    <li><a href="blog-post-komu-nuzhno-geo.html" class="text-[#00F0FF] hover:underline">← Кому нужно GEO-продвижение и почему</a></li>
-    <li><a href="blog-post-geo-metrics-full.html" class="text-[#00F0FF] hover:underline">← GEO-метрики: как считаются пять метрик AI-видимости</a></li>
-    <li><a href="services.html" class="text-[#00F0FF] hover:underline">← Услуги GEO-Апгрейда: полный прайс</a></li>
-    <li><a href="blog.html" class="text-[#00F0FF] hover:underline">← Все материалы лаборатории</a></li>
+    <li><a href="blog-post-geo-ne-geo.html" class="rel">← GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом</a></li>
+    <li><a href="blog-post-chto-vnutri-audita.html" class="rel">← Что внутри нашего аудита: этапы, артефакты и методологический протокол GEO-сканера</a></li>
+    <li><a href="blog-post-geo-shturval.html" class="rel">← GEO-штурвал: разовый аудит AI-видимости с передачей методики</a></li>
+    <li><a href="blog-post-komu-nuzhno-geo.html" class="rel">← Кому нужно GEO-продвижение и почему</a></li>
+    <li><a href="blog-post-geo-metrics-full.html" class="rel">← GEO-метрики: как считаются пять метрик AI-видимости</a></li>
+    <li><a href="services.html" class="rel">← Услуги GEO-Апгрейда: полный прайс</a></li>
+    <li><a href="blog.html" class="rel">← Все материалы лаборатории</a></li>
   </ul>
 </section>
 </article>
-
 </main>
 
 <footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.png" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="256" height="256"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p><p class="text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера 22</p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p></div><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
@@ -448,49 +421,32 @@
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4343a58c91e740dea8a9c104b4e4fd62&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
 <script>
 (function(){
-  // ===== Калькулятор цены GEO (статья «Сколько стоит GEO-продвижение в 2026») =====
   var DATA={
-    audit:   {mkt:'22 000–250 000 ₽', mktNote:'Разовые пакеты: 1PS.RU 22 000–64 500 ₽, NAN 100 000 ₽, КАФТ 160 000–250 000 ₽',
-              own:'8 000–20 000 ₽', ownNote:'GEO-сканер Лайт (3 AI-системы) или Полный (4 AI-системы, конкуренты)',
-              save:'Экономия до 45–47% против ближайших разовых предложений рынка (1PS)'},
-    content: {mkt:'22 600–45 000 ₽/мес', mktNote:'Эконом-абонементы: Max-Webs, GracieDigital Start, Акцент на результат',
-              own:'15 000–25 000 ₽', ownNote:'GEO-лаборатория контента: 2–4 экспертные статьи под GEO в месяц',
-              save:'Вы платите за пакет статей, а не за абонемент с «строкой GEO» в digital-наборе'},
-    strategy:{mkt:'60 000–100 000 ₽/мес', mktNote:'Средний сегмент: NAN, Космос-Веб, Lead.Media AI Старт',
-              own:'18 000–27 000 ₽', ownNote:'GEO-маршрут: пошаговый план на 3–6 месяцев, приоритеты, чек-листы',
-              save:'Экономия до 40% против ЭВЕРЕСТ (45 000 ₽ за проект)'},
-    start:   {mkt:'160 000–250 000 ₽', mktNote:'Разовые «под ключ»: КАФТ «Быстрый старт» / «Захват AI-выдачи»',
-              own:'30 000–55 000 ₽', ownNote:'GEO-тест-драйв: полный аудит, стратегия, внедрение, сопровождение',
-              save:'Экономия до 66% против КАФТ «Быстрый старт» (160 000 ₽)'},
-    helm:    {mkt:'60 000–350 000 ₽/мес', mktNote:'От GEO-сопровождения NAN (60 000 ₽) до Lead.Media AI Доминации (350 000 ₽)',
-              own:'55 000–80 000 ₽', ownNote:'GEO-штурвал: полный цикл + передача методики и обучение',
-              save:'Экономия до 50% против КАФТ (160 000–250 000 ₽ разово)'}
+    audit:{mkt:'22 000–250 000 ₽',mktNote:'Разовые пакеты: 1PS.RU 22 000–64 500 ₽, NAN 100 000 ₽, КАФТ 160 000–250 000 ₽',own:'8 000–20 000 ₽',ownNote:'GEO-сканер Лайт (3 AI-системы) или Полный (4 AI-системы, конкуренты)',save:'Экономия до 45–47% против ближайших разовых предложений рынка (1PS)'},
+    content:{mkt:'22 600–45 000 ₽/мес',mktNote:'Эконом-абонементы: Max-Webs, GracieDigital Start, Акцент на результат',own:'15 000–25 000 ₽',ownNote:'GEO-лаборатория контента: 2–4 экспертные статьи под GEO в месяц',save:'Вы платите за пакет статей, а не за абонемент со «строкой GEO» в digital-наборе'},
+    strategy:{mkt:'60 000–100 000 ₽/мес',mktNote:'Средний сегмент: NAN, Космос-Веб, Lead.Media AI Старт',own:'18 000–27 000 ₽',ownNote:'GEO-маршрут: пошаговый план на 3–6 месяцев, приоритеты, чек-листы',save:'Экономия до 40% против ЭВЕРЕСТ (45 000 ₽ за проект)'},
+    start:{mkt:'160 000–250 000 ₽',mktNote:'Разовые «под ключ»: КАФТ «Быстрый старт» / «Захват AI-выдачи»',own:'30 000–55 000 ₽',ownNote:'GEO-тест-драйв: полный аудит, стратегия, внедрение, сопровождение',save:'Экономия до 66% против КАФТ «Быстрый старт» (160 000 ₽)'},
+    helm:{mkt:'60 000–350 000 ₽/мес',mktNote:'От GEO-сопровождения NAN (60 000 ₽) до Lead.Media AI Доминации (350 000 ₽)',own:'55 000–80 000 ₽',ownNote:'GEO-штурвал: полный цикл + передача методики и обучение',save:'Экономия до 50% против КАФТ (160 000–250 000 ₽ разово)'}
   };
   var pills=document.querySelectorAll('#geo-calc .calc-pill');
-  var mkt=document.getElementById('c-mkt'), mktNote=document.getElementById('c-mkt-note');
-  var own=document.getElementById('c-own'), ownNote=document.getElementById('c-own-note');
+  var mkt=document.getElementById('c-mkt'),mktNote=document.getElementById('c-mkt-note');
+  var own=document.getElementById('c-own'),ownNote=document.getElementById('c-own-note');
   var save=document.getElementById('c-save');
-  var whyBtn=document.getElementById('c-why-btn'), why=document.getElementById('c-why');
+  var whyBtn=document.getElementById('c-why-btn'),why=document.getElementById('c-why');
   function apply(key){
-    var d=DATA[key]; if(!d) return;
-    mkt.textContent=d.mkt; mktNote.textContent=d.mktNote;
-    own.textContent=d.own; ownNote.textContent=d.ownNote;
+    var d=DATA[key];if(!d)return;
+    mkt.textContent=d.mkt;mktNote.textContent=d.mktNote;
+    own.textContent=d.own;ownNote.textContent=d.ownNote;
     save.textContent=d.save;
-    try{ym(113118311,'reachGoal','price_calc',{'option':key});}catch(e){}
+    try{ym(113118311,'reachGoal','price_calc',{option:key});}catch(e){}
   }
   pills.forEach(function(p){
-    p.addEventListener('click', function(){
+    p.addEventListener('click',function(){
       pills.forEach(function(x){x.classList.remove('on')});
-      p.classList.add('on');
-      apply(p.dataset.key);
+      p.classList.add('on');apply(p.dataset.key);
     });
   });
-  if(whyBtn&&why){
-    whyBtn.addEventListener('click', function(){
-      why.classList.toggle('show');
-      try{ym(113118311,'reachGoal','price_calc_why');}catch(e){}
-    });
-  }
+  if(whyBtn&&why){whyBtn.addEventListener('click',function(){why.classList.toggle('show');try{ym(113118311,'reachGoal','price_calc_why');}catch(e){}});}
   apply('audit');
 })();
 </script>
