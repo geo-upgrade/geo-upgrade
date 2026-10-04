@@ -214,5 +214,7 @@ function calculate(){if(!currentService)return;const svc=services[currentService
 const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.card, .btn').forEach(el=>observer.observe(el));
 </script>
+<script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
+<script src="/geo-assistant-widget.js" defer></script>
 </body>
 </html>
