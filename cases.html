@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Кейсы и эксперименты | GEO-Апгрейд</title>
-<meta name="description" content="Кейсы и эксперименты лаборатории GEO-Апгрейд: замер AI-видимости доставки пиццы в Томске, эксперимент «Что нейросети говорят о нас» и лабораторные протоколы.">
+<meta name="description" content="Кейсы и эксперименты лаборатории GEO-Апгрейд: замер AI-видимости доставки пиццы в Томске, кейс учебного отслеживателя: прогон №001 — что нейросети говорят о нас и лабораторные протоколы.">
 <meta name="theme-color" content="#0D0618">
 <link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://geo-upgrade.ru/cases.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Кейсы и эксперименты | GEO-Апгрейд">
-<meta property="og:description" content="Кейсы и эксперименты лаборатории GEO-Апгрейд: замер AI-видимости доставки пиццы в Томске, эксперимент «Что нейросети говорят о нас» и лабораторные протоколы.">
+<meta property="og:description" content="Кейсы и эксперименты лаборатории GEO-Апгрейд: замер AI-видимости доставки пиццы в Томске, кейс учебного отслеживателя: прогон №001 — что нейросети говорят о нас и лабораторные протоколы.">
 <meta property="og:site_name" content="GEO-Апгрейд">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,7 +27,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Кейсы и эксперименты GEO-Апгрейд",
-  "description": "Стеллаж кейсов и экспериментов лаборатории: замер AI-видимости доставки пиццы [зашифровано], эксперимент «Что нейросети говорят о нас», лабораторные протоколы.",
+  "description": "Стеллаж кейсов и экспериментов лаборатории: замер AI-видимости доставки пиццы [зашифровано], кейс учебного отслеживателя: прогон №001 — что нейросети говорят о нас, лабораторные протоколы.",
   "url": "https://geo-upgrade.ru/cases.html",
   "inLanguage": "ru"
 }
@@ -127,8 +127,8 @@
     <div class="flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <span class="exh-chip">● СТЕЛЛАЖ: ОТКРЫТ</span>
-        <span class="exh-chip exh-chip-run">В РАБОТЕ: 2</span>
-        <span class="exh-chip exh-chip-wait">ЖДУТ ДАННЫХ: 1</span>
+        <span class="exh-chip exh-chip-run">В РАБОТЕ: 3</span>
+        <span class="exh-chip exh-chip-ok">ЗАМЕРЫ ГОТОВЫ: 1</span>
         <span class="exh-chip exh-chip-plan">ЗАПЛАНИРОВАНО: 2</span>
       </div>
       <div class="text-sm text-[#B8BCC6]">Экспонатов на стенде: <span class="exh-num" style="font-size:1.5rem;vertical-align:middle">5</span></div>
@@ -164,15 +164,18 @@
       </div>
     </article>
 
-    <article id="exh-03" class="exhibit"><span class="exh-node exh-node-wait"></span>
+    <article id="exh-03" class="exhibit"><span class="exh-node exh-node-run"></span>
       <div class="flex flex-wrap items-center justify-between gap-3">
-        <span class="exh-id">EXH-03 · ЭКСПЕРИМЕНТ</span>
-        <span class="exh-chip exh-chip-wait">ОЖИДАНИЕ ПЕРВОГО ПРОГОНА</span>
+        <span class="exh-id">EXH-03 · ЭКСПЕРИМЕНТ · ПРОГОН №001</span>
+        <span class="exh-chip exh-chip-ok">БАЗОВЫЙ ЗАМЕР ГОТОВ · 57/80</span>
       </div>
-      <h3 class="mt-3 text-xl font-semibold">Что нейросети говорят о нас</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6] mb-2">Учебный отслеживатель периодически задаёт нейросетям одинаковые вопросы о GEO-Апгрейде и фиксирует ответы: ChatGPT, Gemini, Perplexity, Яндекс Нейро. Слоты метрик на витрине пока пустые — так и задумано: цифры появятся только из реальных прогонов, никакого «примерно».</p>
+      <h3 class="mt-3 text-xl font-semibold">Что нейросети говорят о нас: учебный отслеживатель упоминаний</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] mb-2">Протокол из 20 фиксированных вопросов про GEO-Апгрейд: 6 блоков — от идентичности до ловушек. Первый полный прогон снят 04.10.2026: YandexGPT с веб-поиском, регион Томск. Итог — 57 из 80, средний 2.85. Все цифры — из реальных ответов модели, никакого «примерно».</p>
+      <p class="mt-3 text-sm text-[#B8BCC6] mb-2">Находки первого прогона: модерационный фильтр YandexGPT стабильно отказывается обсуждать название «GEO-штурвал»; основатель не ассоциируется с брендом; модель смешивает наши цены с чужими; Томск-локаль — чистая зона слепоты. Ловушки модель прошла честно: рейтинга и крупных клиентов не выдумала.</p>
+      <p class="mt-3 text-sm text-[#B8BCC6] mb-2">Внутри кейса — сравнение каналов: автопрогон через API против ручного замера в Алисе AI, с восемью скриншотами живых ответов. Сюда же ляжет динамика следующих прогонов.</p>
       <div class="flex flex-wrap gap-4">
-        <a href="brand-visibility.html" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Смотреть витрину эксперимента →</a>
+        <a href="case-tracker-mentions.html" class="btn inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Открыть кейс: прогон №001 →</a>
+        <a href="brand-visibility.html" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Витрина замеров →</a>
       </div>
     </article>
 

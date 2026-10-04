@@ -5,8 +5,16 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sun, 04 Oct 2026 05:30:00 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 19:30:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
+
+<item>
+      <title>Что нейросети говорят о нас: прогон №001 учебного отслеживателя</title>
+      <link>https://geo-upgrade.ru/blog-post-chto-neiroseti-govoryat-o-nas.html</link>
+      <description><![CDATA[Первый полный замер учебного отслеживателя GEO-Апгрейд: 20 вопросов с веб-поиском, 57 из 80. Модерационный блок «GEO-штурвала», полуправда цен, честные ловушки и сравнение с ручным замером в Алисе AI.]]></description>
+      <pubDate>Sun, 04 Oct 2026 19:30:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-chto-neiroseti-govoryat-o-nas.html</guid>
+    </item>
 
 <item>
       <title>Сколько стоит GEO-продвижение в 2026: вилки по рынку и наш прайс</title>

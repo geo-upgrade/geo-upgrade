@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейс: что нейросети говорят о нас — прогон №001 | GEO-Апгрейд</title>
+<meta name="description" content="Первый замер учебного отслеживателя упоминаний GEO-Апгрейд: 20 вопросов, YandexGPT с веб-поиском, 57/80. Ловушки, модерационный блок «GEO-штурвал», зоны слепоты и сравнение с ручным замером в Алисе.">
+<meta name="theme-color" content="#0D0618">
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA+AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgVJREFUeJylkztoVFEQhr8559zduw83RoKEaBRUVBQfIFgEBbERQQtLESJR1kiwkIiNFja2YmMXEUFbG1PoEoIg2ASCCUQhqMEHghhFTET3Ps4di7uJQdLtNDNn5p85A/8/Ug03Km2YaacZwAEgkr90xTJLuSVbraaKU2OQNIEsA+dATB6nKaD/GqwDY/JcnIAIGgQ4kohsXRcahsj8PJLGaLkC1SpqLYggzQhZWIA4AiDr7kbSFPk2j9gHzzTbsbs1NaF46QLasZZ45C58XYQQzNRrwsEz+J27iG/cRDdtA1XM9Etg6ocWT9S11LNXi8f6tbTloBZO1pWfqoXTw1rq2aOl3v1a6tyqpjGrMv1dwwPHtXBqSHnn1QUP72Oej5EOXoayRxYXEGPht5KcGyI93499Mo4dfUS2bzvu9h3MzBTyYQ47PobTWgf4DFRJrg5DEiKTE+AyXOMx5tUk8vlLzoIH1tQgiqDioVzBpWcHII4wb2bhD+BTEIUOixoLSYZ2rcdOvMCOPiUd6Ec+zqEbevFHDyHBlVvq+w6DK2DezhDcG0GrNeJr18EHUC0i7z9RHL4IhQJJfQjfdwSiJna8gVToVERa/KcQFMEFy5SRZbkvlfO4+QvEtYSlSLWyWZdVJpKDVHPRKCAtPWmW141hJd7h/eoiX/p55amp8j++7WNqe8BfwsTb5mYAskEAAAAASUVORK5CYII=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&amp;family=Orbitron:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="canonical" href="https://geo-upgrade.ru/case-tracker-mentions.html">
+<link rel="stylesheet" href="tailwind.min.css">
+<meta property="og:url" content="https://geo-upgrade.ru/case-tracker-mentions.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Кейс: что нейросети говорят о нас — прогон №001 | GEO-Апгрейд">
+<meta property="og:description" content="Первый замер учебного отслеживателя: 20 вопросов с поиском, честные цифры, ловушки и модерационный блок. Плюс сравнение с ручным замером в Алисе.">
+<meta property="og:site_name" content="GEO-Апгрейд">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://geo-upgrade.ru/blog-geo-lab-signals.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Кейс: что нейросети говорят о нас — прогон №001",
+  "description": "Первый замер учебного отслеживателя упоминаний GEO-Апгрейд: 20 вопросов, YandexGPT с веб-поиском, 57/80, ловушки и сравнение с ручным замером.",
+  "author": {"@type": "Person", "name": "Жарких Дарья Александровна"},
+  "publisher": {"@type": "Organization", "name": "GEO-Апгрейд"},
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "inLanguage": "ru",
+  "mainEntityOfPage": "https://geo-upgrade.ru/case-tracker-mentions.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://geo-upgrade.ru/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Кейсы и эксперименты", "item": "https://geo-upgrade.ru/cases.html"},
+    {"@type": "ListItem", "position": 3, "name": "Кейс: что нейросети говорят о нас — прогон №001", "item": "https://geo-upgrade.ru/case-tracker-mentions.html"}
+  ]
+}
+</script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}
+h1,h2,h3,h4{font-family:'Orbitron',sans-serif;line-height:1.15}
+[id]{scroll-margin-top:5.5rem}
+.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}
+.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}
+.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px}
+.card:hover{border-color:rgba(0,240,255,.65)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}
+.term{color:#00F0FF;font-weight:600}
+.callout{background:rgba(0,240,255,.03);border-left:4px solid #00F0FF;padding:1rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
+table.data{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
+table.data th,table.data td{border:1px solid rgba(184,188,188,.3);padding:.7rem;text-align:left;vertical-align:top}
+table.data th{background:rgba(0,240,255,.08);color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.8rem;letter-spacing:.06em}
+.table-wrap{overflow-x:auto;margin:1.5rem 0}
+.shot{font-family:'Orbitron',sans-serif;font-size:.72rem;border-radius:12px;padding:2px 10px;white-space:nowrap;display:inline-block}
+.shot.hi{background:rgba(52,211,153,.15);color:#34D399;border:1px solid rgba(52,211,153,.6)}
+.shot.mid{background:rgba(0,240,255,.12);color:#00F0FF;border:1px solid rgba(0,240,255,.5)}
+.shot.low{background:rgba(244,114,182,.12);color:#F472B6;border:1px solid rgba(244,114,182,.55)}
+.shot.mod{background:rgba(248,113,113,.15);color:#F87171;border:1px solid rgba(248,113,113,.6)}
+.shot.trap{background:rgba(251,191,36,.12);color:#FBBF24;border:1px solid rgba(251,191,36,.55)}
+.qcard{border:1px solid rgba(184,188,198,.25);border-left:3px solid #00F0FF;border-radius:10px;padding:.9rem 1.1rem;margin:.75rem 0;background:rgba(13,6,24,.88)}
+.qcard .top{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.3rem}
+.qcard .num{font-family:'Orbitron',sans-serif;color:#00F0FF;font-size:.78rem;letter-spacing:.08em}
+.qcard .qtext{font-size:.92rem;color:#B8BCC6;margin-bottom:.4rem}
+.qcard .ans{font-size:.94rem}
+.qcard .src{font-size:.78rem;color:#8A93A6;margin-top:.4rem}
+.qcard .note{font-size:.82rem;color:#F472B6;margin-top:.4rem}
+.find{border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:.9rem 1.1rem;margin:.6rem 0;background:rgba(13,6,24,.88)}
+.find.mod{border-color:rgba(248,113,113,.55);background:rgba(248,113,113,.06)}
+.find h3{font-size:.95rem;color:#00F0FF;margin:0 0 .25rem}
+.find.mod h3{color:#F87171}
+.find p{font-size:.92rem;margin:0}
+.score{font-family:'Orbitron',sans-serif;font-size:2.4rem;color:#00F0FF;font-weight:700;text-shadow:0 0 18px rgba(0,240,255,.4)}
+.blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:1rem}
+.blk{border:1px solid rgba(184,188,198,.25);border-radius:8px;padding:.6rem .7rem;background:rgba(27,11,49,.75)}
+.blk b{font-family:'Orbitron',sans-serif;font-size:.85rem;color:#00F0FF}
+.blk span{color:#B8BCC6;font-size:.76rem;display:block}
+.bar{height:6px;border-radius:4px;background:rgba(184,188,198,.2);margin-top:.45rem;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#00F0FF,#7C6CFF);border-radius:4px}
+@media(max-width:640px){.blocks{grid-template-columns:1fr 1fr}}
+.shot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.25rem 0}
+@media(max-width:640px){.shot-grid{grid-template-columns:1fr}}
+.shot-grid figure{margin:0;border:1px solid rgba(184,188,198,.25);border-radius:10px;overflow:hidden;background:rgba(13,6,24,.88)}
+.shot-grid img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(184,188,198,.2)}
+.shot-grid figcaption{padding:.7rem .9rem;font-size:.82rem;color:#B8BCC6}
+.shot-grid figcaption b{color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem}
+.toc{border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:1rem 1.2rem;background:rgba(13,6,24,.88)}
+.toc ol{margin:.4rem 0 0 1.2rem;padding:0}
+.toc a{color:#B8BCC6;text-decoration:none}
+.toc a:hover{color:#00F0FF}
+nav.page-nav{display:flex;flex-wrap:wrap;gap:1rem;padding:.5rem 0}
+nav.page-nav a{color:#00F0FF;text-decoration:none;font-size:.85rem}
+nav.page-nav a:hover{text-decoration:underline}
+.scan-line{position:relative;overflow:hidden}
+.scan-line::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 0,rgba(0,240,255,.08) 50%,transparent 100%);animation:scan 4s linear infinite}
+@keyframes scan{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+@media(prefers-reduced-motion:reduce){.scan-line::after{animation:none}}
+.h-toc{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:.14em;color:#00F0FF;text-transform:uppercase}
+.checklist{list-style:none;padding-left:0}.checklist li{position:relative;padding-left:1.75rem;margin-bottom:.75rem}.checklist li:before{content:"✓";position:absolute;left:0;color:#00F0FF;font-weight:bold}
+</style>
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</head>
+<body>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.png" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="text-[#00F0FF]">Кейсы</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header>
+
+<main>
+<section class="lab-grid scan-line">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <div class="max-w-3xl">
+      <p class="font-heading text-xs tracking-[.2em] text-[#00F0FF]">CASE LAB · EXH-03 · ПРОТОКОЛ LAB-M01</p>
+      <h1 class="mt-4 text-3xl md:text-5xl font-bold">Что нейросети говорят о нас: прогон №001</h1>
+      <p class="mt-6 text-base md:text-lg text-[#B8BCC6]">Первый полный замер учебного отслеживателя: 20 вопросов про GEO-Апгрейд, заданных одной и той же машине в один день. Протокол — ниже. Скриншоты ручных прогонов — там же. Никаких «примерно».</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#results" class="btn glow inline-block rounded-md bg-[#00F0FF] px-7 py-4 text-center font-semibold text-[#0D0618]">Сразу к цифрам</a>
+        <a href="#manual" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold">Автопрогон vs ручной замер</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="max-w-3xl mx-auto px-5 py-12">
+  <div class="lab-card">
+    <p class="h-toc">Case type: Lab Protocol</p>
+    <table class="data">
+      <tr><th>Экспонат</th><td>EXH-03 · учебный отслеживатель упоминаний</td></tr>
+      <tr><th>Прогон</th><td>№001, 04.10.2026, YandexGPT (API, веб-поиск), регион Томск</td></tr>
+      <tr><th>Вопросы</th><td>20 вопросов, 6 блоков, 2 ловушки (№19–20)</td></tr>
+      <tr><th>Шкала</th><td>шот 0–4: 4 — знает уверенно, 2 — упоминает без деталей, 0 — не знает</td></tr>
+      <tr><th>Итог</th><td>57 / 80 · средний 2.85 (авто-оценка, сверяется вручную)</td></tr>
+      <tr><th>Каналы</th><td>автопрогон YandexGPT API + ручные прогоны в Алисе — отдельными строками</td></tr>
+      <tr><th>Ограничения</th><td>один день, один канал API; повторные прогоны покажут стабильность</td></tr>
+    </table>
+  </div>
+
+  <div class="toc mt-10">
+    <p class="h-toc">Содержание</p>
+    <ol>
+      <li><a href="#why">Зачем спрашивать нейросети о нас самих</a></li>
+      <li><a href="#method">Методика: 20 вопросов, 6 блоков, две ловушки</a></li>
+      <li><a href="#results">Итоги прогона №001: 57 из 80</a></li>
+      <li><a href="#findings">Что ИИ знает, а что — нет: находки</a></li>
+      <li><a href="#all20">Все 20 ответов</a></li>
+      <li><a href="#manual">Автопрогон vs ручной замер: 8 скриншотов</a></li>
+      <li><a href="#next">Что делаем дальше</a></li>
+    </ol>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="why" class="max-w-3xl mx-auto px-5 py-12">
+  <h2>1. Зачем спрашивать нейросети о нас самих</h2>
+  <p class="mt-6">Люди всё чаще спрашивают не поисковик, а нейросеть: «порекомендуй», «чем отличается», «сколько стоит». Ответ формируется на месте — из того, что модель успела найти и понять. Если в этом ответе нет вашего бренда, вы находитесь в <span class="term">зоне слепоты</span>: для клиента вас просто не существует.</p>
+  <p class="mt-4">Это лечится. Но лечить вслепую — плохая идея. Прежде чем что-то улучшать, нужен замер: что модель уже знает о нас, а что нет. И делать это надо регулярно, одним и тем же способом — иначе сравнивать нечего.</p>
+  <p class="mt-4">Поэтому у лаборатории появился учебный отслеживатель: протокол из 20 фиксированных вопросов о нас самих. Дважды в один и тот же день мы прогнали его двумя способами — автоматом и вручную. Ниже — оба результата, без монтажа.</p>
+  <div class="callout"><p class="mb-0"><b class="text-[#00F0FF] font-heading">Правило лаборатории:</b> бренд, который продает AI-видимость, обязан первым показывать собственные цифры. В том числе неидеальные.</p></div>
+</section>
+
+<div class="divider"></div>
+
+<section id="method" class="max-w-3xl mx-auto px-5 py-12">
+  <h2>2. Методика: 20 вопросов, 6 блоков, две ловушки</h2>
+  <p class="mt-6">Вопросы фиксированы протоколом — формулировки не подгоняются под удачные ответы. Каждый вопрос задаётся с включённым веб-поиском, в отдельном чате. Ответ размечается по шоту 0–4: упоминает ли модель бренд, цитирует ли сайт, называет ли факты.</p>
+  <table class="data">
+    <tr><th>Блок</th><th>Вопросы</th><th>Что проверяем</th></tr>
+    <tr><td>А · Идентичность</td><td>1–4</td><td>знает ли модель, кто мы такие</td></tr>
+    <tr><td>Б · Услуги и цены</td><td>5–8</td><td>услуги, тарифы, рыночный контекст</td></tr>
+    <tr><td>В · Словарь бренда</td><td>9–13</td><td>авторские термины: «цифровой призрак», «зона слепоты», «AI-след бренда», «контекстный якорь», «запросный двойник»</td></tr>
+    <tr><td>Г · Конкуренты</td><td>14–16</td><td>различия, карта рынка, локальная видимость</td></tr>
+    <tr><td>Д · Репутация</td><td>17–18</td><td>отзывы, публикации, журнал</td></tr>
+    <tr><td>Е · Ловушки</td><td>19–20</td><td>не выдумает ли модель несуществующие рейтинги и клиентов: честный отказ — +2, выдумка — −2</td></tr>
+  </table>
+  <p>Отдельная строка замера — <span class="term">MOD-BLOCK</span>: если модель вместо ответа выдаёт модерационный отказ, вопрос не считается ни «знает», ни «не знает» — и не входит в сумму.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="howto" class="max-w-3xl mx-auto px-5 py-12">
+  <h2>Как читать цифры этого замера</h2>
+  <p class="mt-6">Сначала — расшифровка, чтобы по таблицам не пришлось гадать.</p>
+  <h3 class="mt-8 text-lg font-semibold">Шкала шотов: от 0 до 4</h3>
+  <p>Каждому из 20 ответов присваивается «шот» — лабораторная единица оценки. Смысл простой: чем ближе ответ к тому, что мы сами считаем правдой о себе, тем выше шот.</p>
+  <table class="data">
+    <tr><th>Шот</th><th>Что значит</th><th>Пример</th></tr>
+    <tr><td><span class="shot hi">4</span></td><td>Знает уверенно: бренд + факты + источник, определение близко к нашему</td><td>№3: «GEO-Апгрейд работает в городе Томск»</td></tr>
+    <tr><td><span class="shot hi">3</span></td><td>Знает бренд, но с потерей деталей или упрощением</td><td>№4: «экспертная лаборатория GEO-маркетинга»</td></tr>
+    <tr><td><span class="shot mid">2</span></td><td>Тему раскрывает, но нас не называет — или называет без деталей</td><td>№15: перечень агентств без нас</td></tr>
+    <tr><td><span class="shot low">1–0</span></td><td>Не знает: определения нет, или оно не про нас</td><td>№16: конкуренты Томска без нас</td></tr>
+  </table>
+  <h3 class="mt-8 text-lg font-semibold">Почему максимум 80 и что значит 57</h3>
+  <p>20 вопросов × максимум 4 = 80. Результат замера — сумма шотов по всем вопросам. Прогон №001 набрал 57 из 80, средний 2.85. Если переводить на язык оценок — крепкая «четвёрка с минусом» за месяц жизни бренда в поисковой памяти моделей.</p>
+  <h3 class="mt-8 text-lg font-semibold">Ловушки и MOD-BLOCK: как считают отдельно</h3>
+  <p>Два вопроса (№19 и №20) — ловушки: они спрашивают про то, чего у нас нет (рейтинг в «Эксперт РА» и РБК, «крупные клиенты»). Честный отказ «такой информации нет» — это успех, +2 балла. Выдуманный рейтинг или клиент — провал, −2. Модерационный отказ (MOD-BLOCK) — когда модель вместо ответа говорит «не могу обсуждать»: вопрос фиксируется отдельной строкой и не входит ни в «знает», ни в «не знает», ни в сумму.</p>
+  <div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Важно:</span> шоты в этой таблице — результат автоматической разметки по триггерам с ручной сверкой. Если сверка изменила оценку, это отмечено стрелкой: например, «3 → 0» значит «автомат поставил 3, ручная сверка снизила до 0». Каждая правка обоснована в тексте карточки.</p></div>
+</section>
+
+<div class="divider"></div>
+
+<section id="results" class="max-w-3xl mx-auto px-5 py-12">
+  <h2>3. Итоги прогона №001: 57 из 80</h2>
+  <div class="card p-6 mt-6">
+    <div class="score">57<span style="font-size:1rem;color:#B8BCC6;font-weight:400"> / 80 · средний 2.85</span></div>
+    <p style="color:#B8BCC6;font-size:.85rem;margin-top:.3rem">YandexGPT (API, веб-поиск) · модель Pro · регион Томск · 20 вопросов · 04.10.2026</p>
+    <div class="blocks">
+      <div class="blk"><b>А · Идентичность</b><span>14/20 · средн 3.5</span><div class="bar"><i style="width:87%"></i></div></div>
+      <div class="blk"><b>Б · Услуги и цены</b><span>9/16 · средн 2.2</span><div class="bar"><i style="width:56%"></i></div></div>
+      <div class="blk"><b>В · Словарь бренда</b><span>18/20 · средн 3.6</span><div class="bar"><i style="width:90%"></i></div></div>
+      <div class="blk"><b>Г · Конкуренты</b><span>6/12 · средн 2.0</span><div class="bar"><i style="width:50%"></i></div></div>
+      <div class="blk"><b>Д · Репутация</b><span>8/8 · средн 4.0</span><div class="bar"><i style="width:100%"></i></div></div>
+      <div class="blk"><b>Е · Ловушки</b><span>2/4 · ср. +1.0</span><div class="bar"><i style="width:50%"></i></div></div>
+    </div>
+  </div>
+  <p class="mt-6">Оценка автоматическая: скрипт ищет в ответе триггеры — упоминание бренда, ссылку на geo-upgrade.ru, совпадения с эталоном фактов. Затем сверяем вручную: автомат иногда завышает, иногда занижает — ручные поправки отмечены стрелками в таблице ниже.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="findings" class="max-w-3xl mx-auto px-5 py-12">
+  <h2>4. Что ИИ знает, а что — нет: находки</h2>
+  <div class="find mod mt-6">
+    <h3>GEO-штурвал блокируется модерацией</h3>
+    <p>На вопрос «Что такое GEO-штурвал и сколько он стоит?» модель трижды подряд ответила: «Я не могу обсуждать эту тему». Диагностика: слово «штурвал» само по себе модель спокойно объясняет, «GEO-капитан» и «GEO-руль» — тоже отвечают, «ГЕО-штурвал» кириллицей — снова отказ. Фильтр срабатывает именно на сочетание GEO + штурвал. Вывод по каналу: услуга невидима всегда, независимо от контента сайта. В замере это отдельная строка MOD-BLOCK, в сумму не входит.</p>
+  </div>
+  <div class="find">
+    <h3>Основатель не ассоциируется</h3>
+    <p>Модель цитирует наш about и кейс на Workspace, но не называет «Жарких Дарья Александровна». Имя на сайте есть — но не всплывает в ответах. Задача: усилить связку имени с брендом.</p>
+  </div>
+  <div class="find">
+    <h3>Модель смешивает наши цены с чужими</h3>
+    <p>На вопрос о стоимости аудита: «от 30 000 до 80–250 тысяч». 30–55 тысяч — это наш тест-драйв, а 80–250 — чужие цифры со статьи на vc.ru. Полка Лайт/Полный (8–20 тысяч) не прозвучала вообще. Урок: если цены не подать в машиночитаемом виде, модель соберёт их из случайных источников.</p>
+  </div>
+  <div class="find">
+    <h3>Термины освоены неравномерно</h3>
+    <p>«Цифровой призрак», «зона слепоты», «AI-след бренда» модель берёт из нашего глоссария — уровень 4. А «контекстный якорь» и «запросный двойник» пока не привязывает к нам: «якорь» пересказан как приём из копирайтинга, «двойник» — как цифровой двойник из IT.</p>
+  </div>
+  <div class="find">
+    <h3>Томск-локаль — чистая зона слепоты</h3>
+    <p>На вопрос о GEO-продвижении в Томске модель назвала VICTORY, Гранат, GracieDigital и Акцент. Нас в списке нет. Это самое дешёвое поле для роста: карточки и локальный блок контента.</p>
+  </div>
+  <div class="find">
+    <h3>Ловушки отработаны честно</h3>
+    <p>Рейтинга у нас нет — и модель не приписала нам несуществующий (№19). Крупных клиентов мы не скрываем — их просто пока нет, и модель не выдумала их (№20). Галлюцинаций в прогоне — ноль.</p>
+  </div>
+  <div class="find">
+    <h3>Кормящие источники уже работают</h3>
+    <p>geo-upgrade.ru цитируется в 9 из 20 ответов. Почти в каждом ответе присутствуют наши карточки: 2ГИС, ВКонтакте, Авито, кейс на Workspace. Размещения на площадках кормят модели — это подтверждено цифрами.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="all20" class="max-w-3xl mx-auto px-5 py-12">
+  <h2>5. Все 20 ответов</h2>
+  <p class="mt-4">Краткий ответ — своими словами, полный текст сохранён в журнале замеров. Источники — то, на что модель ссылалась в ответе.</p>
+
+  <div class="qcard"><div class="top"><span class="num">№1 · А</span><span class="shot hi">4</span></div><div class="qtext">Что такое GEO-Апгрейд?</div><div class="ans">«Лаборатория AI-видимости, где маркетинг встречается с нейросетями…» Запуск — август 2026. Модель пересказала наш about почти дословно.</div><div class="src">Источники: geo-upgrade.ru/about.html, кейс Workspace, strategyra.ru, 2ГИС, ВК</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№2 · А</span><span class="shot low">3 → 0</span></div><div class="qtext">Кто основатель GEO-Апгрейд?</div><div class="ans">«В найденных источниках нет информации об основателе». Имя не названо — авто-оценка завышена, ручная корректировка: 0.</div><div class="src">Источники: about.html, кейс Workspace, ВК, Авито</div><div class="note">Задача из находок: усилить связку имени с брендом</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№3 · А</span><span class="shot hi">4</span></div><div class="qtext">В каком городе работает GEO-Апгрейд?</div><div class="ans">«GEO-Апгрейд работает в городе Томск». Без ошибок.</div><div class="src">Источники: 2ГИС, cases.html, ВК</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№4 · А</span><span class="shot mid">3</span></div><div class="qtext">Что за сайт geo-upgrade.ru и что на нём есть?</div><div class="ans">«Экспертная лаборатория GEO-маркетинга». Верно, но поверхностно: сайт описан одним предложением.</div><div class="src">Источники: ВК</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№5 · Б</span><span class="shot mid">3 → 2</span></div><div class="qtext">Какие услуги оказывает GEO-Апгрейд?</div><div class="ans">GEO-аудит и стратегия, бесплатный мини-аудит, «Digital Footprint Index — авторская метрика», вывод в ИИ-поиск, полное сопровождение. Состав передан верно, но названия тарифов не прозвучали.</div><div class="src">Источники: 2ГИС (цены), geo-upgrade.ru, strategyra.ru, кейс Workspace, Авито</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№6 · Б</span><span class="shot mod">MOD-BLOCK</span></div><div class="qtext">Что такое GEO-штурвал и сколько он стоит?</div><div class="ans">«Я не могу обсуждать эту тему» — модерационный отказ, три попытки подряд.</div><div class="src">Источники: —</div><div class="note">Фильтр на сочетание GEO + штурвал; в сумму шотов не входит</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№7 · Б</span><span class="shot low">4 → 1</span></div><div class="qtext">Сколько стоит аудит AI-видимости сайта у GEO-Апгрейд?</div><div class="ans">«От 30 000 рублей и может достигать 80–250 тысяч». Полуправда: 30–55 — тест-драйв, 80–250 — чужие цены с vc.ru; полка Лайт/Полный не названа.</div><div class="src">Источники: geo-upgrade.ru, geoscout.pro, lead.media, texterra.ru, vc.ru</div><div class="note">Урок: цены должны быть машиночитаемыми на своих страницах</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№8 · Б</span><span class="shot mid">2</span></div><div class="qtext">Сколько стоит GEO-продвижение в 2026 году?</div><div class="ans">Обзор рынка: аудит 80–250 тыс. и другие цифры. Наш бренд не упомянут — модель пересказала чужие статьи.</div><div class="src">Источники: ai-seoboost.ru, dreaper.ru, redorange.pro, vc.ru</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№9 · В</span><span class="shot hi">4</span></div><div class="qtext">Что такое «цифровой призрак» сайта?</div><div class="ans">«Бизнес, который существует для клиентов, но плохо распознаётся AI». Определение близко к нашему, источник — наша статья.</div><div class="src">Источники: blog-post-what-is-geo.html, rg.ru, tproger.ru</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№10 · В</span><span class="shot hi">4</span></div><div class="qtext">Что такое «зона слепоты» в GEO-оптимизации?</div><div class="ans">«Участок цифрового следа, где бренд должен быть заметен, но AI не находит, не понимает или не использует нужную информацию». Цитируется наш глоссарий.</div><div class="src">Источники: glossary.html, cont.ws, radioskot.com</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№11 · В</span><span class="shot hi">4</span></div><div class="qtext">Что такое «AI-след бренда»?</div><div class="ans">«Часть цифрового следа, которую нейросеть может обнаружить, связать между собой и использовать при формировании ответа». Наш глоссарий.</div><div class="src">Источники: glossary.html</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№12 · В</span><span class="shot low">3 → 1</span></div><div class="qtext">Что такое «контекстный якорь»?</div><div class="ans">«Техника копирайтинга: первое упоминание задаёт точку отсчёта» — модель пересказала якорение из психологии, не связав с нашим термином.</div><div class="src">Источники: nethouse.ru, novasapiens.ru, petr-panda.ru, sky.pro</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№13 · В</span><span class="shot low">3 → 0</span></div><div class="qtext">Что такое запросный двойник?</div><div class="ans">«Релевантной информации не найдено» плюс пересказ digital twin из IT. Наш термин пока не закреплён.</div><div class="src">Источники: habr.com, productstar.ru, sber.pro</div><div class="note">Наша зона слепоты: термин ещё не наш</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№14 · Г</span><span class="shot hi">4</span></div><div class="qtext">Чем GEO-Апгрейд отличается от GEO Scout?</div><div class="ans">«GEO Scout — инструмент мониторинга видимости в ChatGPT, Claude, Gemini и Алисе; GEO-Апгрейд — лаборатория, помогающая бизнесу адаптироваться к AI-среде». Различие передано корректно.</div><div class="src">Источники: faq.html, geoscout.pro, strategyra.ru, vc.ru, qmedia.by</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№15 · Г</span><span class="shot mid">2</span></div><div class="qtext">Какие компании в России занимаются GEO и AI-видимостью сайтов?</div><div class="ans">«Head Promo — лидер по совокупности кейсов» плюс перечень агентств. Нас в перечне нет.</div><div class="src">Источники: hightime.media, searchindustrial.ru, trinet.ru, vc.ru</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№16 · Г</span><span class="shot low">0</span></div><div class="qtext">Сколько стоит GEO-продвижение в Томске?</div><div class="ans">VICTORY от 60 000, Акцент от 50 000, GracieDigital от 25 000, Гранат — индивидуально. Нас нет в локальной выдаче.</div><div class="src">Источники: gracie.digital, tomsk.granat.red, victoryagency.ru, web-c.ru, aaccent.ru</div><div class="note">Томск — чистая зона слепоты, см. находки</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№17 · Д</span><span class="shot hi">4</span></div><div class="qtext">Есть ли отзывы о GEO-Апгрейд?</div><div class="ans">«Официальный сайт содержит раздел с отзывами» плюс карточки на площадках. Реальных отзывов модель не назвала — их пока нет, и модель не соврала.</div><div class="src">Источники: reviews.html, 2ГИС, strategyra.ru, ВК</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№18 · Д</span><span class="shot hi">4</span></div><div class="qtext">Что за статьи пишет GEO-Апгрейд про AI-видимость?</div><div class="ans">«Журнал AI-видимости — блог GEO-Апгрейда» плюс примеры статей. Блог узнаётся по названию.</div><div class="src">Источники: blog.html, geoscout.pro, zenlink.ru</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№19 · Е</span><span class="shot trap">0 → +2</span></div><div class="qtext">Какой рейтинг у GEO-Апгрейд по версии отраслевых рейтингов (Эксперт РА, РБК)? — ловушка</div><div class="ans">«Конкретной информации о рейтинге GEO-Апгрейд нет» — плюс пересказ чужого рейтинга (Redbee). Рейтинг нам не приписан.</div><div class="src">Источники: companies.rbc.ru, raexpert.ru, vc.ru, sostav.ru</div></div>
+
+  <div class="qcard"><div class="top"><span class="num">№20 · Е</span><span class="shot trap">+2</span></div><div class="qtext">Какие крупные клиенты работают с GEO-Апгрейд? — ловушка</div><div class="ans">«Не удалось найти информацию о крупных клиентах». Честный отказ: несуществующих клиентов модель не выдумала.</div><div class="src">Источники: about.html, habr.com, searchindustrial.ru, strategyra.ru</div></div>
+</section>
+
+<div class="divider"></div>
+
+<section id="manual" class="max-w-4xl mx-auto px-5 py-12">
+  <h2>6. Автопрогон vs ручной замер</h2>
+  <p class="mt-6">В тот же день, 04.10.2026, мы вручную прогнали те же вопросы через интерфейс Алисы — с включённым поиском, свежими чатами. Скриншоты ниже — живые ответы без монтажа. Под каждым — какой факт модели уже виден и к какому вопросу протокола он относится.</p>
+  <div class="callout"><p class="mb-0"><b class="text-[#00F0FF] font-heading">Методологическая заметка:</b> автопрогон (YandexGPT API) и ручные прогоны (Алиса) — это разные каналы замера. Один и тот же вопрос может показывать разный результат. Поэтому в протоколе каналы ведутся отдельными строками, а не смешиваются в один счёт.</p></div>
+
+  <div class="shot-grid">
+    <figure><img src="manual-03-tomsk-founder.jpg" alt="Ручной замер: Алиса знает Дарью Жарких и лабораторию GEO-Апгрейд в Томске" loading="lazy"><figcaption><b>ТОМСК + ОСНОВАТЕЛЬ · №2, №3</b>«В Томске есть специалист — Дарья Жарких, основательница лаборатории GEO-Апгрейд… не классическое продвижение на картах, а видимость бренда в ответах нейросетей». Источник — кейс Workspace.</figcaption></figure>
+    <figure><img src="manual-02-founder.jpg" alt="Ручной замер: Дарья Жарких — автор проекта GEO-Апгрейд" loading="lazy"><figcaption><b>ОСНОВАТЕЛЬ · №2</b>Модель описывает Дарью Жарких как GEO-маркетолога и AI-консультанта с опытом в маркетинге, продажах, контенте и SEO — «автор проекта». Связка имени и бренда работает.</figcaption></figure>
+    <figure><img src="manual-05-geoscaner.jpg" alt="Ручной замер: GEO-сканер Лайт и Полный в ответе Алисы" loading="lazy"><figcaption><b>GEO-СКАНЕР · №5, №7</b>«GEO-сканер — две версии, Лайт и Полный… проверяет, как бренд отображается в ChatGPT, Gemini, Perplexity, Яндекс Нейро». Тарифная полка модель помнит — в отличие от автопрогона №7.</figcaption></figure>
+    <figure><img src="manual-05-dfi.jpg" alt="Ручной замер: Digital Footprint Index — авторская метрика GEO-Апгрейд" loading="lazy"><figcaption><b>DFI · №5</b>«Digital Footprint Index — авторская метрика GEO-Апгрейда, позволяющая количественно оценить цифровую видимость бренда». Авторский термин узнаётся и привязан к нам.</figcaption></figure>
+    <figure><img src="manual-09-ghost.jpg" alt="Ручной замер: эффект цифрового призрака в ответе Алисы" loading="lazy"><figcaption><b>ЦИФРОВОЙ ПРИЗРАК · №9</b>«Эффект цифрового призрака — реально работающий бизнес игнорируется нейросетями» — с прямой ссылкой на geo-upgrade.ru. Авторский термин в дикой природе.</figcaption></figure>
+    <figure><img src="manual-18-journal.jpg" alt="Ручной замер: Журнал AI-видимости и бесплатный мини-аудит" loading="lazy"><figcaption><b>ЖУРНАЛ + МИНИ-АУДИТ · №5, №18</b>«Команда делится знаниями через Журнал AI-видимости… публикует рабочий сигнал ежедневно», «бесплатный мини-аудит — три запроса в двух нейросетях». Состав услуг и блог — на месте.</figcaption></figure>
+    <figure><img src="manual-18-cases.jpg" alt="Ручной замер: вопрос о кейсах GEO-Апгрейд и ответ Алисы" loading="lazy"><figcaption><b>КЕЙСЫ · №18</b>Вопрос «Какие кейсы из практики GEO-Апгрейда наиболее известны?» — редкий случай, когда вопрос попал в кадр. Ответ: мониторинг AI-видимости, GEO-сканер, библиотека методик, обучающие продукты.</figcaption></figure>
+    <figure><img src="manual-01-method.jpg" alt="Ручной замер: лабораторный метод и название как принцип" loading="lazy"><figcaption><b>МЕТОДОЛОГИЯ · №1</b>«Название как принцип: апгрейд — последовательное улучшение, а не мгновенный прорыв», «лабораторный метод: гипотеза — проверка — анализ». Модель пересказывает наше позиционирование своими словами.</figcaption></figure>
+  </div>
+
+  <h3 style="font-family:'Orbitron',sans-serif;font-size:1.05rem;margin-top:2rem">Честный итог сравнения</h3>
+  <p>Ручной канал в тот же день собрал факты, которые автопрогон через API не нашёл: основателя (№2 — у API ноль), тарифы GEO-сканера (№7 — смешение цен), DFI и лабораторный метод. Плюс подтвердил то, что знает и API: «цифровой призрак», «Журнал AI-видимости», Томск.</p>
+  <p>Вывод по методике: <span class="term">один канал — это не вся картина</span>. Автопрогон даёт масштабируемость и стабильность сравнения, ручные прогоны в интерфейсах — то, что реально видит пользователь. Замер у лаборатории теперь двуканальный, и оба канала фиксируются в журнале отдельными строками.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="next" class="max-w-3xl mx-auto px-5 py-12">
+  <h2>7. Что делаем дальше</h2>
+  <p class="mt-6">Прогон №001 — это baseline, точка отсчёта. Дальше лаборатория работает по результатам, а не по ощущениям:</p>
+  <ol class="checklist" style="margin-top:1rem">
+    <li>Усилить связку «Жарких Дарья Александровна ↔ GEO-Апгрейд» на сайте и в профилях — вопрос №2 должен вырасти с нуля.</li>
+    <li>Подать тарифную полку машиночитаемо на своих страницах — вопрос №7 перестанет смешивать наши цены с чужими.</li>
+    <li>Закрепить авторские термины «контекстный якорь» и «запросный двойник» в статьях и глоссарии — вопросы №12–13.</li>
+    <li>Локальный контент и карточки по Томску — войти в перечень №16.</li>
+    <li>Контрольный прогон №002 — после правок. Сравним по блокам и покажем динамику здесь же.</li>
+  </ol>
+  <div class="callout mt-10"><p class="mb-0"><b class="text-[#00F0FF] font-heading">Хотите так же узнать, что нейросети знают о вашем бренде?</b> Методика отслеживателя переносится на любой бизнес: свои 20 вопросов, свой замер, честные цифры — и план правок по факту.</p>
+  <div class="mt-4 flex flex-wrap gap-4"><a href="contacts.html#form" class="btn glow inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">Проверить свой бренд</a><a href="glossary.html" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold">GEO-словарь →</a></div></div>
+</section>
+</main>
+
+<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.png" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="256" height="256"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p></div><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
+</body>
+</html>
