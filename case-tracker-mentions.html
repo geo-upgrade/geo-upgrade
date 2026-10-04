@@ -76,7 +76,7 @@ table.data th{background:rgba(0,240,255,.08);color:#00F0FF;font-family:'Orbitron
 .qcard .note{font-size:.82rem;color:#F472B6;margin-top:.4rem}
 .find{border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:.9rem 1.1rem;margin:.6rem 0;background:rgba(13,6,24,.88)}
 .find.mod{border-color:rgba(248,113,113,.55);background:rgba(248,113,113,.06)}
-.find h3{font-size:.95rem;color:#00F0FF;margin:0 0 .25rem}
+.find h3{font-size:1.15rem;color:#00F0FF;margin:0 0 .4rem}
 .find.mod h3{color:#F87171}
 .find p{font-size:.92rem;margin:0}
 .score{font-family:'Orbitron',sans-serif;font-size:2.4rem;color:#00F0FF;font-weight:700;text-shadow:0 0 18px rgba(0,240,255,.4)}
@@ -169,7 +169,7 @@ nav.page-nav a:hover{text-decoration:underline}
 <div class="divider"></div>
 
 <section id="why" class="max-w-3xl mx-auto px-5 py-12">
-  <h2>1. Зачем спрашивать нейросети о нас самих</h2>
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">1. Зачем спрашивать нейросети о нас самих</h2>
   <p class="mt-6">Люди всё чаще спрашивают не поисковик, а нейросеть: «порекомендуй», «чем отличается», «сколько стоит». Ответ формируется на месте — из того, что модель успела найти и понять. Если в этом ответе нет вашего бренда, вы находитесь в <span class="term">зоне слепоты</span>: для клиента вас просто не существует.</p>
   <p class="mt-4">Это лечится. Но лечить вслепую — плохая идея. Прежде чем что-то улучшать, нужен замер: что модель уже знает о нас, а что нет. И делать это надо регулярно, одним и тем же способом — иначе сравнивать нечего.</p>
   <p class="mt-4">Поэтому у лаборатории появился учебный отслеживатель: протокол из 20 фиксированных вопросов о нас самих. Дважды в один и тот же день мы прогнали его двумя способами — автоматом и вручную. Ниже — оба результата, без монтажа.</p>
@@ -179,7 +179,7 @@ nav.page-nav a:hover{text-decoration:underline}
 <div class="divider"></div>
 
 <section id="method" class="max-w-3xl mx-auto px-5 py-12">
-  <h2>2. Методика: 20 вопросов, 6 блоков, две ловушки</h2>
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">2. Методика: 20 вопросов, 6 блоков, две ловушки</h2>
   <p class="mt-6">Вопросы фиксированы протоколом — формулировки не подгоняются под удачные ответы. Каждый вопрос задаётся с включённым веб-поиском, в отдельном чате. Ответ размечается по шоту 0–4: упоминает ли модель бренд, цитирует ли сайт, называет ли факты.</p>
   <table class="data">
     <tr><th>Блок</th><th>Вопросы</th><th>Что проверяем</th></tr>
@@ -196,7 +196,7 @@ nav.page-nav a:hover{text-decoration:underline}
 <div class="divider"></div>
 
 <section id="howto" class="max-w-3xl mx-auto px-5 py-12">
-  <h2>Как читать цифры этого замера</h2>
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">Как читать цифры этого замера</h2>
   <p class="mt-6">Сначала — расшифровка, чтобы по таблицам не пришлось гадать.</p>
   <h3 class="mt-8 text-lg font-semibold">Шкала шотов: от 0 до 4</h3>
   <p>Каждому из 20 ответов присваивается «шот» — лабораторная единица оценки. Смысл простой: чем ближе ответ к тому, что мы сами считаем правдой о себе, тем выше шот.</p>
@@ -217,7 +217,7 @@ nav.page-nav a:hover{text-decoration:underline}
 <div class="divider"></div>
 
 <section id="results" class="max-w-3xl mx-auto px-5 py-12">
-  <h2>3. Итоги прогона №001: 57 из 80</h2>
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">3. Итоги прогона №001: 57 из 80</h2>
   <div class="card p-6 mt-6">
     <div class="score">57<span style="font-size:1rem;color:#B8BCC6;font-weight:400"> / 80 · средний 2.85</span></div>
     <p style="color:#B8BCC6;font-size:.85rem;margin-top:.3rem">YandexGPT (API, веб-поиск) · модель Pro · регион Томск · 20 вопросов · 04.10.2026</p>
@@ -236,7 +236,7 @@ nav.page-nav a:hover{text-decoration:underline}
 <div class="divider"></div>
 
 <section id="findings" class="max-w-3xl mx-auto px-5 py-12">
-  <h2>4. Что ИИ знает, а что — нет: находки</h2>
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">4. Что ИИ знает, а что — нет: находки</h2>
   <div class="find mod mt-6">
     <h3>GEO-штурвал блокируется модерацией</h3>
     <p>На вопрос «Что такое GEO-штурвал и сколько он стоит?» модель трижды подряд ответила: «Я не могу обсуждать эту тему». Диагностика: слово «штурвал» само по себе модель спокойно объясняет, «GEO-капитан» и «GEO-руль» — тоже отвечают, «ГЕО-штурвал» кириллицей — снова отказ. Фильтр срабатывает именно на сочетание GEO + штурвал. Вывод по каналу: услуга невидима всегда, независимо от контента сайта. В замере это отдельная строка MOD-BLOCK, в сумму не входит.</p>
@@ -270,7 +270,7 @@ nav.page-nav a:hover{text-decoration:underline}
 <div class="divider"></div>
 
 <section id="all20" class="max-w-3xl mx-auto px-5 py-12">
-  <h2>5. Все 20 ответов</h2>
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">5. Все 20 ответов</h2>
   <p class="mt-4">Краткий ответ — своими словами, полный текст сохранён в журнале замеров. Источники — то, на что модель ссылалась в ответе.</p>
 
   <div class="qcard"><div class="top"><span class="num">№1 · А</span><span class="shot hi">4</span></div><div class="qtext">Что такое GEO-Апгрейд?</div><div class="ans">«Лаборатория AI-видимости, где маркетинг встречается с нейросетями…» Запуск — август 2026. Модель пересказала наш about почти дословно.</div><div class="src">Источники: geo-upgrade.ru/about.html, кейс Workspace, strategyra.ru, 2ГИС, ВК</div></div>
@@ -317,7 +317,7 @@ nav.page-nav a:hover{text-decoration:underline}
 <div class="divider"></div>
 
 <section id="manual" class="max-w-4xl mx-auto px-5 py-12">
-  <h2>6. Автопрогон vs ручной замер</h2>
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">6. Автопрогон vs ручной замер</h2>
   <p class="mt-6">В тот же день, 04.10.2026, мы вручную прогнали те же вопросы через интерфейс Алисы — с включённым поиском, свежими чатами. Скриншоты ниже — живые ответы без монтажа. Под каждым — какой факт модели уже виден и к какому вопросу протокола он относится.</p>
   <div class="callout"><p class="mb-0"><b class="text-[#00F0FF] font-heading">Методологическая заметка:</b> автопрогон (YandexGPT API) и ручные прогоны (Алиса) — это разные каналы замера. Один и тот же вопрос может показывать разный результат. Поэтому в протоколе каналы ведутся отдельными строками, а не смешиваются в один счёт.</p></div>
 
@@ -340,7 +340,7 @@ nav.page-nav a:hover{text-decoration:underline}
 <div class="divider"></div>
 
 <section id="next" class="max-w-3xl mx-auto px-5 py-12">
-  <h2>7. Что делаем дальше</h2>
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">7. Что делаем дальше</h2>
   <p class="mt-6">Прогон №001 — это baseline, точка отсчёта. Дальше лаборатория работает по результатам, а не по ощущениям:</p>
   <ol class="checklist" style="margin-top:1rem">
     <li>Усилить связку «Жарких Дарья Александровна ↔ GEO-Апгрейд» на сайте и в профилях — вопрос №2 должен вырасти с нуля.</li>
