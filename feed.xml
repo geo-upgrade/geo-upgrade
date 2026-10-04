@@ -5,8 +5,16 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sun, 04 Oct 2026 19:30:00 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 21:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
+
+<item>
+      <title>Автоматизация в GEO-Апгрейд: какие инструменты мы используем</title>
+      <link>https://geo-upgrade.ru/blog-post-avtomatizaciya-v-geo-apgreyd.html</link>
+      <description><![CDATA[Какие процессы GEO-Апгрейд автоматизирует: отзывы, перелинковка, AI-замеры, аудит сайта и публикация. Чек-лист из 5 признаков неправильной автоматизации.]]></description>
+      <pubDate>Sun, 04 Oct 2026 21:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-avtomatizaciya-v-geo-apgreyd.html</guid>
+    </item>
 
 <item>
       <title>Что нейросети говорят о нас: прогон №001 учебного отслеживателя</title>
