@@ -80,6 +80,7 @@
 - https://geo-upgrade.ru/cases.html — Кейсы и эксперименты GEO-Апгрейд — стеллаж исследований и Lab Protocol
 - https://geo-upgrade.ru/faq.html — FAQ лаборатории — ответы на частые вопросы о GEO и AI-видимости
 - https://geo-upgrade.ru/brand-visibility.html — Как нейросети видят наш бренд — витрина замеров в реальном времени
+- https://geo-upgrade.ru/top-160-tomsk.html — AI Visibility Index Томска — топ-160 компаний города Томска в 16 отраслях по ответам нейросети Алисы, первый ежемесячный замер
 - https://geo-upgrade.ru/ai-policy.html — Разрешение для нейросетей — правила цитирования geo-upgrade.ru
 
 ## GEO-Апгрейд — Лаборатория AI-видимости бренда
