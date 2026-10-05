@@ -129,12 +129,13 @@
 <!-- /Yandex.Metrika counter -->
 
 <style>.badge-experiment{background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.6);color:#A78BFA}
+/* самотест AI-ready */
 .st-row{display:flex;align-items:flex-start;gap:1rem;justify-content:space-between;padding:.7rem 0;border-bottom:1px solid rgba(184,188,198,.15)}
 .st-row:last-of-type{border-bottom:none}
 .st-q{margin:0;font-size:.95rem}
 .st-n{color:#00F0FF;font-family:Orbitron,sans-serif;font-weight:600;margin-right:.5rem}
 .st-opts{display:flex;gap:.5rem;flex-shrink:0}
-.st-btn{padding:.4rem 1.1rem;border-radius:9999px;border:1px solid rgba(184,188,198,.35);background:rgba(13,6,24,.6);color:#F5F7FA;font-size:.85rem;cursor:pointer;transition:all .25s ease;font-family:'Exo 2',sans-serif}
+.st-btn{padding:.4rem 1.1rem;border-radius:9999px;border:1px solid rgba(184,188,198,.35);background:rgba(13,6,24,.6);color:#F5F7FA;font-size:.85rem;cursor:pointer;user-select:none;-webkit-user-select:none;transition:all .25s ease;font-family:'Exo 2',sans-serif}
 .st-btn:hover{border-color:rgba(0,240,255,.65);background:rgba(0,240,255,.08)}
 .st-btn.on[data-val="1"]{background:rgba(0,240,255,.16);border-color:#00F0FF;color:#00F0FF;font-weight:600}
 .st-btn.on[data-val="0"]{background:rgba(184,188,198,.12);border-color:#B8BCC6;color:#B8BCC6;font-weight:600}
@@ -227,10 +228,7 @@
 <p>Цепочка уже выстроена. Эта статья собирает её в одном месте и показывает проверкой, а не обещанием. Лаборатория начинается не с громкого слова «методология», а с повторяемого процесса: один список проверок, один способ фиксировать результат, понятные приоритеты и повторный прогон после правок.</p>
 <h2 id="cikl" class="text-2xl md:text-3xl font-bold mt-12">Как выглядит лабораторный цикл?</h2>
 <p>Наш внутренний принцип: если действие повторяется и описывается формулой, его делает машина. Человек остаётся там, где нужны точность фактов, тональность, живость аудитории и решение, что публиковать.</p>
-<p>Сначала проверяем sitemap, страницы, JSON-LD, OG, ссылки, robots.txt и llms-файлы.</p>
-<p>Затем фиксируем результат и расставляем приоритеты P0, P1 и P2.</p>
-<p>После правок снова запускаем парсер и сравниваем baseline с новым состоянием.</p>
-<p>Отдельно измеряем не только техническую готовность, но и реальные AI-ответы по запросам.</p>
+<ol class="space-y-2 text-[15px] list-decimal pl-5"><li>Сначала проверяем sitemap, страницы, JSON-LD, OG, ссылки, robots.txt и llms-файлы.</li><li>Затем фиксируем результат и расставляем приоритеты P0, P1 и P2.</li><li>После правок снова запускаем парсер и сравниваем baseline с новым состоянием.</li><li>Отдельно измеряем не только техническую готовность, но и реальные AI-ответы по запросам.</li></ol>
 <p>Именно здесь появляется важная граница: техническая готовность сайта и фактическая AI-видимость — не одно и то же. Первое можно проверить по коду и файлам. Второе требует прогонов по живым запросам, анализа упоминаний, позиций, ссылок, точности и конкурентов.</p>
 <h2 id="samotest" class="text-2xl md:text-3xl font-bold mt-12">Можно ли проверить свой сайт по тем же правилам?</h2>
 <p>Да. Ниже — сокращённый самотест на основе 17 пунктов. Он не заменяет полноценный аудит, но помогает увидеть первую <a href="glossary.html#term-blind-zone" class="text-[#00F0FF] hover:underline">зону слепоты</a>.</p>
@@ -256,11 +254,7 @@
 <p>Оговорка: самотест показывает техническую готовность, но не гарантирует упоминание в ответах нейросетей. Для этого нужны <a href="blog-post-zaprosny-dvoinik-geo-audit.html" class="text-[#00F0FF] hover:underline">запросный двойник</a>, повторяемый прогон и анализ того, как бренд видят разные системы.</p>
 <h2 id="slabij" class="text-2xl md:text-3xl font-bold mt-12">Что делать, если результат оказался слабым?</h2>
 <p>Не начинать с массового переписывания всех текстов.</p>
-<p>Проверить, существует ли единая версия бренда: имя, услуги, регион, контакты, авторство и внешние профили.</p>
-<p>Собрать список технических разрывов и разделить его на P0, P1 и P2.</p>
-<p>Проверить связность страниц, сущностей и внутренних ссылок.</p>
-<p>Добавить тематические источники и видимое авторство.</p>
-<p>После правок провести повторный прогон, а затем проверить реальные запросы в AI-системах.</p>
+<ol class="space-y-2 text-[15px] list-decimal pl-5"><li>Проверить, существует ли единая версия бренда: имя, услуги, регион, контакты, авторство и внешние профили.</li><li>Собрать список технических разрывов и разделить его на P0, P1 и P2.</li><li>Проверить связность страниц, сущностей и внутренних ссылок.</li><li>Добавить тематические источники и видимое авторство.</li><li>После правок провести повторный прогон, а затем проверить реальные запросы в AI-системах.</li></ol>
 <p>Если бюджет на специалиста пока ограничен, можно начать с бесплатного мини-аудита GEO-Апгрейда. Его задача — не выдать красивую оценку, а показать, как нейросети на самом деле видят бренд: упоминают ли, путают ли факты, называют ли сайт, связывают ли компанию с нужной услугой.</p>
 <h2 id="plan" class="text-2xl md:text-3xl font-bold mt-12">Что мы исправляем дальше?</h2>
 <div class="table-wrapper"><table class="table"><thead><tr><th scope="col">Приоритет</th><th scope="col">Задача</th><th scope="col">Зачем</th></tr></thead><tbody><tr><td>P0</td><td>Добавить sameAs на 45 страницах.</td><td>Усилить связность брендовых сущностей.</td></tr><tr><td>P0</td><td>Ввести тематические источники в статьи.</td><td>Закрыть контекстный вакуум и создать независимые опоры.</td></tr><tr><td>P0</td><td>Опубликовать эту страницу как постоянный GEO-кейс.</td><td>Собрать техническую систему в публичный артефакт.</td></tr><tr><td>P1</td><td>Добавить видимое авторство.</td><td>Синхронизировать машинный и человеческий слои.</td></tr><tr><td>P1</td><td>Добавить видимый маркер обновления.</td><td>Сделать актуальность понятной читателю.</td></tr><tr><td>P1</td><td>Добавить BreadcrumbList на privacy.html.</td><td>Закрыть последний небольшой технический долг.</td></tr><tr><td>P2</td><td>Согласовать Article и BlogPosting для кейса.</td><td>Унифицировать типы контента там, где это уместно.</td></tr><tr><td>P2</td><td>Сверить /index.html и / в llms.txt и sitemap.</td><td>Убрать мелкое расхождение адресов.</td></tr></tbody></table></div>
@@ -270,13 +264,13 @@
 <p>Для бизнеса это означает важную вещь: AI-видимость нельзя безопасно покупать как набор магических настроек. Её нужно строить как операционную систему бренда — с картой запросов, техническим основанием, контентом, внешними подтверждениями и повторными замерами.</p>
 <p>Наш сайт — очередной GEO-кейс. Не потому, что он уже идеален, а потому, что его можно проверить теми же инструментами и по тем же правилам, которые мы предлагаем клиентам.</p>
 <h2 id="marshrut" class="text-2xl md:text-3xl font-bold mt-12">Что делать дальше?</h2>
-<p>Пройти самотест из 17 пунктов.</p>
-<p>Проверить, нет ли у сайта контекстного вакуума и разрозненных сущностей.</p>
-<p><a href="free-audit.html" class="text-[#00F0FF] hover:underline">Провести бесплатный мини-аудит</a> GEO-Апгрейда.</p>
-<p>Если нужен полный маршрут с передачей методики, изучить <a href="geo-shturval.html" class="text-[#00F0FF] hover:underline">GEO-штурвал</a>.</p>
-<p>Повторить замер после внесения изменений, а не считать задачу закрытой после публикации.</p>
+<ul class="check-list mt-6"><li><label class="check-item"><input type="checkbox"><span><span class="step-num mr-2">1</span>Пройти самотест из 17 пунктов.</span></label></li>
+<li><label class="check-item"><input type="checkbox"><span><span class="step-num mr-2">2</span>Проверить, нет ли у сайта контекстного вакуума и разрозненных сущностей.</span></label></li>
+<li><label class="check-item"><input type="checkbox"><span><span class="step-num mr-2">3</span><a href="free-audit.html" class="text-[#00F0FF] hover:underline">Провести бесплатный мини-аудит</a> GEO-Апгрейда.</span></label></li>
+<li><label class="check-item"><input type="checkbox"><span><span class="step-num mr-2">4</span>Если нужен полный маршрут с передачей методики, изучить <a href="geo-shturval.html" class="text-[#00F0FF] hover:underline">GEO-штурвал</a>.</span></label></li>
+<li><label class="check-item"><input type="checkbox"><span><span class="step-num mr-2">5</span>Повторить замер после внесения изменений, а не считать задачу закрытой после публикации.</span></label></li></ul>
 <p>Начните не с вопроса «Как написать ещё одну статью?», а с вопроса «Существует ли для нейросети связная версия моего бренда?» Если ответа нет, контент будет работать в одиночку. Если связность есть, каждый новый материал сможет усиливать AI-след бренда.</p>
-<p>Честный CTA: проведите первый бесплатный мини-аудит и узнайте, как нейросети видят ваш бренд — и видят ли вообще.</p>
+<div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Честный CTA:</span> проведите первый бесплатный мини-аудит и узнайте, как нейросети видят ваш бренд — и видят ли вообще.</p></div>
 <h2 id="sources" class="text-2xl md:text-3xl font-bold mt-12">Источники</h2>
 <ol class="space-y-2 text-sm list-decimal pl-5"><li><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener" class="text-[#00F0FF] hover:underline">Руководство Google по оптимизации для генеративных AI-функций — Google Search Central</a></li><li><a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies" target="_blank" rel="noopener" class="text-[#00F0FF] hover:underline">Общие правила для структурированных данных — Google Search Central</a></li><li><a href="https://llmstxt.org/" target="_blank" rel="noopener" class="text-[#00F0FF] hover:underline">Спецификация llms.txt — llmstxt.org</a></li><li><a href="https://docs.perplexity.ai/guides/bots" target="_blank" rel="noopener" class="text-[#00F0FF] hover:underline">PerplexityBot и другие краулеры Perplexity — Perplexity Docs</a></li><li><a href="https://yandex.ru/support/webmaster/controlling-robot/robots-txt.html" target="_blank" rel="noopener" class="text-[#00F0FF] hover:underline">Правила robots.txt — Справка Яндекс Вебмастер</a></li></ol>
 </section>
@@ -421,7 +415,7 @@
 })();
 </script>
 
-
+<script>
 (function(){
   var box = document.getElementById('ai-selftest');
   if(!box) return;
@@ -475,6 +469,6 @@
     cnt.textContent = 'Отвечено: 0 из 17'; bar.style.width = '0%'; res.hidden = true; res.innerHTML = '';
   });
 })();
-
+</script>
 </body>
 </html>

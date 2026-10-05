@@ -152,6 +152,7 @@ AI-видимость бренда
 Эксперименты
 
 Лабораторные протоколы, проверки гипотез, разборы цифровых призраков.
+[◆ Проверка сайта по 17 пунктам AI-ready →](blog-post-geo-apgreyd-ai-ready.html)
 [◆ GEO-Апгрейд как термин: разведение сущностей →](blog-post-geo-upgrade-laboratoria-geo-marketinga.html)
 [◆ Этап 1 самоаудита: запросный двойник →](blog-post-zaprosny-dvoinik-geo-audit.html)
 [◆ Этап 2 самоаудита: метрики и слепые зоны →](blog-post-metriki-ai-vidimosti-geo-audit.html)
