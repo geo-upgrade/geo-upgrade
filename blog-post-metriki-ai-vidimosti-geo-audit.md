@@ -20,8 +20,8 @@
 
 **Лаборатория AI-видимости бренда · GEO-Апгрейд**
 
-    ЭКСПЕРИМЕНТЫ
-    AI-ВИДИМОСТЬ
+    [ЭКСПЕРИМЕНТЫ](blog-experiments.html)
+    [AI-ВИДИМОСТЬ](blog-visibility.html)
     МЕТРИКИ
 
   Почему AI видит бренд, но не рекомендует: второй этап GEO-аудита в Алисе AI
@@ -317,16 +317,16 @@ LAB TOOL · КАЛЬКУЛЯТОР СЛЕПЫХ ЗОН
 
 Связанные термины
 
-    Запросный двойник
-    AI-след бренда
-    Зона слепоты
-    Цифровой призрак
-    Контекстный якорь
-    Mention Rate
-    Share of Voice
-    Presence Score
-    Query
-    Search intent
+    [Запросный двойник](glossary.html#term-query-twin)
+    [AI-след бренда](glossary.html#term-ai-trace)
+    [Зона слепоты](glossary.html#term-blind-zone)
+    [Цифровой призрак](glossary.html#term-digital-ghost)
+    [Контекстный якорь](glossary.html#term-context-anchor)
+    [Mention Rate](glossary.html#term-mention-rate)
+    [Share of Voice](glossary.html#term-share-of-voice)
+    [Presence Score](glossary.html#term-presence-score)
+    [Query](glossary.html#term-query)
+    [Search intent](glossary.html#term-search-intent)
 
 ## Источники
 
@@ -337,11 +337,11 @@ LAB TOOL · КАЛЬКУЛЯТОР СЛЕПЫХ ЗОН
 Похожие материалы
 
     ← Аудит на себе. Этап 1: как мы собрали запросный двойник — 6 аватаров и 66 запросов
-    ← Что на самом деле спрашивает ваш клиент у нейросети?
-    ← Какие GEO-метрики можно использовать в отчёте
-    ← Кому нужно GEO-продвижение и почему
+    [← Что на самом деле спрашивает ваш клиент у нейросети?](blog-post-karta-zaprosov-klienta.html)
+    [← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)
+    [← Кому нужно GEO-продвижение и почему](blog-post-komu-nuzhno-geo.html)
     ← Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ
-    ← Все материалы лаборатории
+    [← Все материалы лаборатории](blog.html)
 
 ---
 

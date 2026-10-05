@@ -20,29 +20,29 @@ CONTACT LAB
 
 Для подробного описания задачи используйте форму или email, а для быстрого вопроса напишите в Telegram.
 
-Telegram
+[Telegram](https://t.me/geoupgrade)
 
 Быстрый канал для вопросов и короткого описания задачи.
 [Написать](https://t.me/geoupgrade)
 
-ВКонтакте
+[ВКонтакте](https://vk.ru/geo.upgrade)
 
 Новости GEO-Апгрейда, эксперименты и материалы об AI-видимости.
 [Открыть](https://vk.ru/geo.upgrade)
 
-Email
+[Email](mailto:geo.upgrade@bk.ru)
 
 Для подробного брифа и деловой переписки.
-geo.upgrade@bk.ru
+[geo.upgrade@bk.ru](mailto:geo.upgrade@bk.ru)
 [Написать](mailto:geo.upgrade@bk.ru)
 
 Телефон
 
 Если удобнее обсудить задачу голосом.
-+7 952 944-92-39
+[+7 952 944-92-39](tel:+79529449239)
 [Позвонить](tel:+79529449239)
 
-GEO-Навигатор
+[GEO-Навигатор](geo_navigator.html)
 
 Проект о промпт-инжиниринге и автоматизации.
 [Перейти](https://vk.ru/geo.navigator)
