@@ -232,6 +232,11 @@ AI правильно описывает вашу деятельность?Он 
 [AEO](glossary.html)
 [Генеративный движок](glossary.html)
 
+## Источники
+1. [Руководство Google по оптимизации для генеративных AI-функций — Google Search Central](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
+2. [Справка Яндекс Вебмастер — Яндекс](https://yandex.ru/support/webmaster/)
+3. [Спецификация llms.txt — llmstxt.org](https://llmstxt.org/)
+
 Похожие материалы
 
 [← Чем GEO отличается от SEO?](blog-post-geo-vs-seo.html)

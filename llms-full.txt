@@ -1356,6 +1356,11 @@ AI правильно описывает вашу деятельность?Он 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
 ---
 
+Источники:
+- Руководство Google по оптимизации для генеративных AI-функций — Google Search Central: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+- Справка Яндекс Вебмастер — Яндекс: https://yandex.ru/support/webmaster/
+- Спецификация llms.txt — llmstxt.org: https://llmstxt.org/
+
 ## Чем GEO отличается от SEO: простое объяснение для бизнеса | GEO-Апгрейд
 URL: https://geo-upgrade.ru/blog-post-geo-vs-seo.html
 Описание: GEO и SEO: в чём разница, почему SEO не исчезает, как AI формирует рекомендации и что происходит с цифровым следом бренда.
@@ -3023,6 +3028,12 @@ GEO-Апгрейд
 …
 
 ---
+
+Источники:
+- О файлах robots.txt — Google Search Central: https://developers.google.com/search/docs/crawling-indexing/robots/intro?hl=ru
+- Введение в структурированные данные — Google Search Central: https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data?hl=ru
+- Правила robots.txt — Справка Яндекс Вебмастер: https://yandex.ru/support/webmaster/controlling-robot/robots-txt.html
+- Спецификация llms.txt — llmstxt.org: https://llmstxt.org/
 
 ## Кому нужно GEO-продвижение и почему: ответы ChatGPT, Нейро, Алисы AI | GEO-Апгрейд
 URL: https://geo-upgrade.ru/blog-post-komu-nuzhno-geo.html

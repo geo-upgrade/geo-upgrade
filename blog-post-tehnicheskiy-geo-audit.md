@@ -162,6 +162,12 @@ PageSpeed Insights — скорость Rich Results Test — разметка S
 [Краулинг](glossary.html)
 [Structured data](glossary.html)
 
+## Источники
+1. [О файлах robots.txt — Google Search Central](https://developers.google.com/search/docs/crawling-indexing/robots/intro?hl=ru)
+2. [Введение в структурированные данные — Google Search Central](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data?hl=ru)
+3. [Правила robots.txt — Справка Яндекс Вебмастер](https://yandex.ru/support/webmaster/controlling-robot/robots-txt.html)
+4. [Спецификация llms.txt — llmstxt.org](https://llmstxt.org/)
+
 Похожие материалы
 
 [← Что такое GEO простыми словами?](blog-post-what-is-geo.html)
