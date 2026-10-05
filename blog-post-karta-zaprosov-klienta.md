@@ -340,7 +340,8 @@ Google Maps
 [← Отзывы, карты и каталоги: где AI собирает образ локального бизнеса](blog-post-local-visibility.html)
 [← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)
 [← Контентные маяки: как сделать бренд понятнее для людей и AI](blog-post-kontentnye-mayaki.html)
-[← Все материалы лаборатории](blog.html)
+
+[← AI-автоматизация для маркетинга: человек, AI-штурман и нейросеть](blog-post-ai-avtomatizaciya-dlya-marketinga.html)[← Все материалы лаборатории](blog.html)
 
 ---
 

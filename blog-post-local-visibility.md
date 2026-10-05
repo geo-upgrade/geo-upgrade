@@ -208,6 +208,7 @@ yell.ru
 [← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
 [← Что такое GEO простыми словами?](blog-post-what-is-geo.html)
 [← Чем GEO отличается от SEO?](blog-post-geo-vs-seo.html)
+[← GEO для салонов красоты: что ИИ спрашивает про бьюти](blog-post-geo-dlya-salonov-krasoty.html)
 
 ---
 

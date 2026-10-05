@@ -327,6 +327,7 @@ LAB TOOL / КОНСТРУКТОР
 [← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)
 [← Отзывы, карты и каталоги: где AI берёт образы локального бизнеса](blog-post-local-visibility.html)
 [← Чем GEO отличается от SEO?](blog-post-geo-vs-seo.html)
+[← GEO для салонов красоты: что ИИ спрашивает про бьюти](blog-post-geo-dlya-salonov-krasoty.html)
 
 ---
 

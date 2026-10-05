@@ -254,7 +254,8 @@ LAB TOOL · GHOST GAP
 [← GEO-метрики: как считаются пять метрик AI-видимости](blog-post-geo-metrics-full.html)
 [← Как ИИ видит наш бренд: живые цифры замера](brand-visibility.html)
 [← Кейсы и эксперименты лаборатории](cases.html)
-[← Все материалы лаборатории](blog.html)
+
+[← GEO-Апгрейд как термин: лаборатория Дарьи Жарких](blog-post-geo-upgrade-laboratoria-geo-marketinga.html)[← Все материалы лаборатории](blog.html)
 
 ---
 
