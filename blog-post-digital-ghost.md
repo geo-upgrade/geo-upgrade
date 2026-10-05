@@ -1,6 +1,6 @@
 # Цифровой призрак: 10 причин невидимости бренда — GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-digital-ghost.html
+> URL: https://geo-upgrade.ru/blog-post-digital-ghost.html
 
 **Назначение:** Что такое цифровой призрак: 10 причин невидимости бренда
 

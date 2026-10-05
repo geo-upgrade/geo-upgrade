@@ -1,6 +1,6 @@
 # Контакты GEO-Апгрейд — бесплатный аудит AI-видимости
 
-> https://geo-upgrade.ru/contacts.html
+> URL: https://geo-upgrade.ru/contacts.html
 
 **Назначение:** Форма заявки (Formspree, доставка на geo.upgrade@bk.ru), выбор услуги, телефон, Telegram, ВКонтакте, MAX, карточки и отзывы (Яндекс.Профиль, Google Карты, 2ГИС, Фламп, Авито, Профи.ру), график Пн–Пт 12:00–20:00 UTC+7.
 

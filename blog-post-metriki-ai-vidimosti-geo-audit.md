@@ -1,6 +1,6 @@
-# Метрики AI-видимости: второй этап GEO-аудита бренда
+# Метрики AI-видимости: второй этап GEO-аудита бренда | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html
+> URL: https://geo-upgrade.ru/blog-post-metriki-ai-vidimosti-geo-audit.html
 
 **Назначение:** Второй этап аудита GEO-Апгрейда на себе: метрики AI-видимости в Алисе AI, Presence Score, слепые зоны и маршрут изменений.
 

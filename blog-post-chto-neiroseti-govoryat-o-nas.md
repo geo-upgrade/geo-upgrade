@@ -1,6 +1,6 @@
 # Что нейросети говорят о нас: прогон №001 учебного отслеживателя | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-chto-neiroseti-govoryat-o-nas.html
+> URL: https://geo-upgrade.ru/blog-post-chto-neiroseti-govoryat-o-nas.html
 
 **Назначение:** Статья: первый полный замер учебного отслеживателя упоминаний — автопрогон №001 и сравнение с ручным замером.
 

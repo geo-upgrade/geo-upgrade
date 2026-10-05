@@ -1,6 +1,6 @@
 # GEO-Апгрейд как термин: как нейросеть смешала лабораторию Дарьи Жарких с услугой Сайт Мейкерс
 
-> https://geo-upgrade.ru/blog-post-geo-upgrade-laboratoria-geo-marketinga.html
+> URL: https://geo-upgrade.ru/blog-post-geo-upgrade-laboratoria-geo-marketinga.html
 
 **Назначение:** GEO-Апгрейд как термин: как нейросеть смешала лабораторию Дарьи Жарких с услугой Сайт Мейкерс
 

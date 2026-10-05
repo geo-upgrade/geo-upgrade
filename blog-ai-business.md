@@ -1,6 +1,6 @@
 # AI для бизнеса — раздел блога GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-ai-business.html
+> URL: https://geo-upgrade.ru/blog-ai-business.html
 
 **Назначение:** Категорийная страница блога: статьи раздела «AI для бизнеса» с краткими описаниями.
 

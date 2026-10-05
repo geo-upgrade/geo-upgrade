@@ -1,6 +1,6 @@
 # GEO-сканер Полный | GEO-Апгрейд
 
-> https://geo-upgrade.ru/geo-scanner-full.html
+> URL: https://geo-upgrade.ru/geo-scanner-full.html
 
 **Назначение:** Лендинг услуги «GEO-сканер Полный»: состав, процесс, артефакты, цена, границы, FAQ и заявка через форму.
 

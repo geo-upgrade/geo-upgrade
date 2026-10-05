@@ -1,6 +1,6 @@
-# Alice AI Foundation: суверенная нейросеть Яндекса для бизнеса
+# Alice AI Foundation: суверенная нейросеть Яндекса для бизнеса | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-alice-ai-foundation.html
+> URL: https://geo-upgrade.ru/blog-post-alice-ai-foundation.html
 
 **Назначение:** Alice AI Foundation: суверенная нейросеть Яндекса
 

@@ -1,6 +1,6 @@
-# GEO-метрики в отчёте: полная система измерения
+# GEO-метрики в отчёте: полная система измерения | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-geo-metrics-full.html
+> URL: https://geo-upgrade.ru/blog-post-geo-metrics-full.html
 
 **Назначение:** GEO-метрики в отчёте: полная система измерения
 

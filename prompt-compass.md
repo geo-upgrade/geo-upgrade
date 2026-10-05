@@ -1,6 +1,6 @@
-# Промпт-компас | GEO-Навигатор
+# Промпт-компас | GEO-Навигатор | GEO-Апгрейд
 
-> https://geo-upgrade.ru/prompt-compass.html
+> URL: https://geo-upgrade.ru/prompt-compass.html
 
 **Назначение:** Лендинг услуги «Промпт-компас» (GEO-Навигатор): состав, процесс, артефакты, цена, границы, FAQ и заявка.
 

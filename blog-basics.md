@@ -1,6 +1,6 @@
 # Основы GEO — раздел блога GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-basics.html
+> URL: https://geo-upgrade.ru/blog-basics.html
 
 **Назначение:** Категорийная страница блога: статьи раздела «Основы GEO» с краткими описаниями.
 

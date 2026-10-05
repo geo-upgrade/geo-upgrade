@@ -1,6 +1,6 @@
 # AI-видимость бренда — раздел блога GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-visibility.html
+> URL: https://geo-upgrade.ru/blog-visibility.html
 
 **Назначение:** Категорийная страница блога: статьи раздела «AI-видимость бренда» с краткими описаниями.
 

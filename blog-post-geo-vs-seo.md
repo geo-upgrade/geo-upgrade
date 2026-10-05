@@ -1,6 +1,6 @@
-# Чем GEO отличается от SEO: простое объяснение для бизнеса
+# Чем GEO отличается от SEO: простое объяснение для бизнеса | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-geo-vs-seo.html
+> URL: https://geo-upgrade.ru/blog-post-geo-vs-seo.html
 
 **Назначение:** Чем GEO отличается от SEO: простое объяснение
 

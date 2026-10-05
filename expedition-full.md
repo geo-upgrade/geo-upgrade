@@ -1,6 +1,6 @@
-# AI-экспедиция Полная | GEO-Навигатор
+# AI-экспедиция Полная | GEO-Навигатор | GEO-Апгрейд
 
-> https://geo-upgrade.ru/expedition-full.html
+> URL: https://geo-upgrade.ru/expedition-full.html
 
 **Назначение:** Лендинг услуги «AI-экспедиция Полная» (GEO-Навигатор): состав, процесс, артефакты, цена, границы, FAQ и заявка.
 

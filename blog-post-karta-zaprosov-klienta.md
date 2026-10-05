@@ -1,6 +1,6 @@
 # Карта запросов клиента: методика GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html
+> URL: https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html
 
 **Назначение:** Что на самом деле спрашивает ваш клиент у нейросети?
 

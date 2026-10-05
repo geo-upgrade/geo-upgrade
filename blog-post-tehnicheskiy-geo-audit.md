@@ -1,6 +1,6 @@
-# Технический GEO-аудит: 20 проверок видимости сайта в ИИ
+# Технический GEO-аудит: 20 проверок видимости сайта в ИИ | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-tehnicheskiy-geo-audit.html
+> URL: https://geo-upgrade.ru/blog-post-tehnicheskiy-geo-audit.html
 
 **Назначение:** Технический GEO-аудит: 20 проверок видимости для ИИ
 

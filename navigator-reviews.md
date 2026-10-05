@@ -1,6 +1,6 @@
-# Навигатор отзывов | GEO-Навигатор
+# Навигатор отзывов | GEO-Навигатор | GEO-Апгрейд
 
-> https://geo-upgrade.ru/navigator-reviews.html
+> URL: https://geo-upgrade.ru/navigator-reviews.html
 
 **Назначение:** Лендинг услуги «Навигатор отзывов» (GEO-Навигатор): состав, процесс, артефакты, цена, границы, FAQ и заявка.
 

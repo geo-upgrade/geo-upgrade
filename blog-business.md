@@ -1,6 +1,6 @@
 # GEO для бизнеса — раздел блога GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-business.html
+> URL: https://geo-upgrade.ru/blog-business.html
 
 **Назначение:** Категорийная страница блога: статьи раздела «GEO для бизнеса» с краткими описаниями.
 

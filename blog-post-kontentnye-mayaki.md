@@ -1,6 +1,6 @@
-# Контентные маяки: бренд понятнее для людей и AI
+# Контентные маяки: бренд понятнее для людей и AI | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html
+> URL: https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html
 
 **Назначение:** Контентные маяки: как сделать бренд понятнее для людей и AI
 

@@ -1,6 +1,6 @@
 # Отзывы о работе GEO-Апгрейд | GEO-Апгрейд
 
-> https://geo-upgrade.ru/reviews.html
+> URL: https://geo-upgrade.ru/reviews.html
 
 **Назначение:** Форма приёма отзывов (Formspree, доставка на geo.upgrade@bk.ru), шкала оценки 1–5, выбор публикации, чекбокс согласия.
 

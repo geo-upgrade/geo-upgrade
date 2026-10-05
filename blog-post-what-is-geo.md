@@ -1,6 +1,6 @@
-# Что такое GEO простыми словами: AI-видимость бренда
+# Что такое GEO простыми словами: AI-видимость бренда | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-what-is-geo.html
+> URL: https://geo-upgrade.ru/blog-post-what-is-geo.html
 
 **Назначение:** Что такое GEO простыми словами
 

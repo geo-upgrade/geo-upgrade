@@ -1,6 +1,6 @@
 # GEO-лаборатория контента | GEO-Апгрейд
 
-> https://geo-upgrade.ru/content-lab.html
+> URL: https://geo-upgrade.ru/content-lab.html
 
 **Назначение:** Лендинг услуги «GEO-лаборатория контента»: состав, процесс, артефакты, цена, границы, FAQ и заявка через форму.
 

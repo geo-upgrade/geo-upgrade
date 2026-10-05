@@ -1,6 +1,6 @@
-# AI-экспедиция Лайт | GEO-Навигатор
+# AI-экспедиция Лайт | GEO-Навигатор | GEO-Апгрейд
 
-> https://geo-upgrade.ru/expedition-lite.html
+> URL: https://geo-upgrade.ru/expedition-lite.html
 
 **Назначение:** Лендинг услуги «AI-экспедиция Лайт» (GEO-Навигатор): состав, процесс, артефакты, цена, границы, FAQ и заявка.
 

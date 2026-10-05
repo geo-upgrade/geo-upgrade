@@ -1,6 +1,6 @@
-# GEO для салонов красоты: что ИИ спрашивает про бьюти и как отвечать
+# GEO для салонов красоты: что ИИ спрашивает про бьюти и как отвечать | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-geo-dlya-salonov-krasoty.html
+> URL: https://geo-upgrade.ru/blog-post-geo-dlya-salonov-krasoty.html
 
 **Назначение:** GEO для салонов красоты: что ИИ спрашивает про бьюти и как отвечать
 

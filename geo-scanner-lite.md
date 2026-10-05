@@ -1,6 +1,6 @@
 # GEO-сканер Лайт | GEO-Апгрейд
 
-> https://geo-upgrade.ru/geo-scanner-lite.html
+> URL: https://geo-upgrade.ru/geo-scanner-lite.html
 
 **Назначение:** Лендинг услуги «GEO-сканер Лайт»: состав, процесс, артефакты, цена, границы, FAQ и заявка через форму.
 

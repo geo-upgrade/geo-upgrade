@@ -1,6 +1,6 @@
 # Автоматизация в GEO-Апгрейд: какие инструменты мы используем | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-avtomatizaciya-v-geo-apgreyd.html
+> URL: https://geo-upgrade.ru/blog-post-avtomatizaciya-v-geo-apgreyd.html
 
 **Назначение:** Статья: какие блоки автоматизации уже работают в лаборатории GEO-Апгрейд, что они ускоряют и где машина обязана остановиться перед человеком.
 

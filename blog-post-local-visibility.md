@@ -1,6 +1,6 @@
-# Отзывы, карты и каталоги: где AI берёт образы бизнеса
+# Отзывы, карты и каталоги: где AI берёт образы бизнеса | GEO-Апгрейд
 
-> https://geo-upgrade.ru/blog-post-local-visibility.html
+> URL: https://geo-upgrade.ru/blog-post-local-visibility.html
 
 **Назначение:** Отзывы, карты и каталоги: где AI берёт образы локального бизнеса
 

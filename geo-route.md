@@ -1,6 +1,6 @@
 # GEO-маршрут | GEO-Апгрейд
 
-> https://geo-upgrade.ru/geo-route.html
+> URL: https://geo-upgrade.ru/geo-route.html
 
 **Назначение:** Лендинг услуги «GEO-маршрут»: состав, процесс, артефакты, цена, границы, FAQ и заявка через форму.
 
