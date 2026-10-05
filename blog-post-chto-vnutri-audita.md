@@ -246,6 +246,7 @@ LAB TOOL · GHOST GAP
 
 Похожие материалы
 
+[← Как GEO-Апгрейд оптимизирован для AI: проверка по 17 пунктам](blog-post-geo-apgreyd-ai-ready.html)
 [← Аудит на себе. Этап 1: как мы собрали запросный двойник — 6 аватаров и 66 запросов](blog-post-zaprosny-dvoinik-geo-audit.html)
 [← Метрики AI-видимости: второй этап GEO-аудита](blog-post-metriki-ai-vidimosti-geo-audit.html)
 [← Карта запросов клиента: методика GEO-Апгрейд](blog-post-karta-zaprosov-klienta.html)

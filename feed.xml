@@ -5,8 +5,17 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sun, 04 Oct 2026 21:45:00 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
+
+<item>
+      <title>Как GEO-Апгрейд оптимизирован для AI: проверка сайта по 17 пунктам</title>
+      <link>https://geo-upgrade.ru/blog-post-geo-apgreyd-ai-ready.html</link>
+      <description><![CDATA[Проверка geo-upgrade.ru по 17 пунктам AI-ready чек-листа: robots, llms.txt, разметка, sameAs и источники. 13 попаданий, 2 частичных, 1 зона роста — честные разрывы и план доработок.]]></description>
+      <pubDate>Mon, 05 Oct 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-geo-apgreyd-ai-ready.html</guid>
+    </item>
+
 
 <item>
       <title>Ответы на отзывы — под лупой: программа разобрала 493 отзыва пиццерии</title>
