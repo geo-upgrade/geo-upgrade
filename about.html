@@ -130,6 +130,14 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 .xray-bar .mode{font-size:9px;letter-spacing:.16em;color:#B8BCC6;text-transform:uppercase;white-space:nowrap}
 @media(max-width:560px){.xray-bar .mode{display:none}}
 </style>
+
+<style>
+/* Оффер лаборатории — полоса под героем */
+.lab-offer-strip{padding:26px 0;border-top:1px solid rgba(0,240,255,.35);border-bottom:1px solid rgba(0,240,255,.35);background:linear-gradient(90deg,rgba(0,240,255,.06),rgba(139,92,246,.05),rgba(0,240,255,.06))}
+.lab-offer-chip{display:inline-block;padding:.3rem .7rem;border-radius:9999px;font-size:.72rem;letter-spacing:.06em;border:1px solid rgba(0,240,255,.35);color:#00F0FF;background:rgba(0,240,255,.06);font-family:'Orbitron',sans-serif}
+.lab-offer-line{margin:12px 0 0;font-size:clamp(17px,2.4vw,22px);line-height:1.5;color:#F5F7FA}
+.lab-offer-line strong{color:#00F0FF;font-weight:600}
+</style>
 <link rel="stylesheet" href="tailwind.min.css">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -144,7 +152,44 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-</head>
+<style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style></head>
 <body>
 
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.png" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header>
@@ -158,13 +203,13 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
   <div class="max-w-6xl mx-auto px-5 py-20 md:py-28">
     <div class="max-w-3xl">
       <p class="font-heading text-xs tracking-[.2em] text-[#00F0FF] x-text">STATUS: ACTIVE</p>
-      <h1 class="mt-4 text-4xl md:text-6xl font-bold x-keep">О лаборатории GEO-Апгрейд</h1>
+      <h1 class="mt-4 text-4xl md:text-6xl font-bold x-keep" data-tag="<h1>">О лаборатории GEO-Апгрейд</h1>
       <p class="mt-6 text-base md:text-lg text-[#B8BCC6] x-text">Исследуем, как нейросети видят бренды, и помогаем бизнесу стать понятнее для AI, заметнее для клиентов и свободнее от рутины.</p>
       <p class="mt-6 text-[#B8BCC6] x-text"><strong>GEO-Апгрейд</strong> — это лаборатория AI-видимости, где маркетинг встречается с нейросетями, контент — с экспериментами, а развитие бизнеса — с автоматизацией.</p>
       <p class="mt-4 text-[#B8BCC6] x-text">Мы изучаем, как искусственный интеллект понимает компании, экспертов и их услуги, почему одни бренды появляются в рекомендациях, а другие превращаются в цифровых призраков, и какие изменения помогают выстроить более точный цифровой след.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
-        <a href="contacts.html?service=free-audit#form" class="btn glow rounded-md bg-[#00F0FF] px-7 py-4 text-center font-semibold text-[#0D0618] x-keep">Получить бесплатный мини-аудит</a>
-        <a href="#communities" class="btn rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold x-keep">Подписаться на сообщества</a>
+        <a href="contacts.html?service=free-audit#form" class="btn glow rounded-md bg-[#00F0FF] px-7 py-4 text-center font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Получить бесплатный мини-аудит</a>
+        <a href="#communities" class="btn rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold x-keep" data-tag="<a class=btn>">Подписаться на сообщества</a>
       </div>
       <p class="mt-5 text-sm text-[#B8BCC6] x-text">Лаборатория работает, наблюдает, тестирует и собирает новые маршруты для брендов.</p>
     </div>
@@ -172,9 +217,10 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 </section>
 <div class="divider x-decor"></div>
 
+<section class="lab-offer-strip" aria-label="Первая экспертная лаборатория GEO-маркетинга и AI-видимости"><div class="max-w-6xl mx-auto px-5"><span class="lab-offer-chip">ЭКСПЕРТНАЯ ЛАБОРАТОРИЯ</span><p class="lab-offer-line">GEO-Апгрейд — первая экспертная лаборатория GEO-маркетинга и AI-видимости. <strong>Прокачаем ваш бренд под ИИ!</strong></p></div></section>
 <!-- ИСТОРИЯ -->
 <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-3xl md:text-5xl font-bold x-keep">Всё началось с вопроса: почему сильный бизнес остаётся невидимым?</h2>
+  <h2 class="text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Всё началось с вопроса: почему сильный бизнес остаётся невидимым?</h2>
   <p class="mt-6 text-[#B8BCC6] x-text">В августе 2026 года в маркетинговой карте появилась новая точка — GEO-Апгрейд.</p>
   <p class="mt-4 text-[#B8BCC6] x-text">За этим проектом стоит 11-летний опыт в маркетинге, продажах, контенте и SEO. За годы работы стало очевидно: бизнес может быть качественным, эксперт — сильным, а продукт — действительно полезным, но при этом оставаться за пределами нового клиентского маршрута.</p>
   <p class="mt-4 text-[#B8BCC6] x-text">Раньше человек открывал поисковую строку, изучал сайты и самостоятельно сравнивал предложения. Теперь всё чаще он задаёт вопрос нейросети и получает уже собранную рекомендацию: кого выбрать, куда обратиться, какой продукт подойдёт и почему.</p>
@@ -186,15 +232,15 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 <!-- НАЗВАНИЕ -->
 <section class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep">Почему «GEO-Апгрейд»</h2>
+  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Почему «GEO-Апгрейд»</h2>
   <p class="mt-6 text-center max-w-3xl mx-auto text-[#B8BCC6] x-text">Название — это наш рабочий принцип</p>
   <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-    <article class="card p-6 x-keep">
-      <h3 class="text-xl font-semibold text-[#00F0FF] x-keep">GEO</h3>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-xl font-semibold text-[#00F0FF] x-keep" data-tag="<h3>">GEO</h3>
       <p class="mt-3 text-[#B8BCC6] x-text">Связывает проект с новым направлением маркетинга — оптимизацией присутствия брендов в генеративном поиске и ответах нейросетей.</p>
     </article>
-    <article class="card p-6 x-keep">
-      <h3 class="text-xl font-semibold text-[#00F0FF] x-keep">Апгрейд</h3>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-xl font-semibold text-[#00F0FF] x-keep" data-tag="<h3>">Апгрейд</h3>
       <p class="mt-3 text-[#B8BCC6] x-text">Это не обещание мгновенного превращения бизнеса в лидера рынка. Это последовательное улучшение: точнее сформулировать позиционирование, убрать противоречия, усилить контент, <a href="blog-post-avtomatizaciya-v-geo-apgreyd.html" class="text-[#00F0FF] hover:underline">автоматизировать рутинные процессы</a> и помочь бренду развиваться вместе с технологиями.</p>
     </article>
   </div>
@@ -204,7 +250,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 <!-- ЛАБОРАТОРИЯ -->
 <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-3xl md:text-5xl font-bold x-keep">Почему лаборатория</h2>
+  <h2 class="text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Почему лаборатория</h2>
   <p class="mt-6 text-[#B8BCC6] x-text">Потому что в новой среде нет одной волшебной кнопки.</p>
   <p class="mt-4 text-[#B8BCC6] x-text">Нейросети могут отвечать по-разному, использовать разные источники, учитывать контекст запроса, регион, свежесть информации и связь между различными упоминаниями бренда.</p>
   <p class="mt-4 text-[#B8BCC6] x-text">Поэтому мы относимся к каждой задаче как к исследованию:</p>
@@ -216,19 +262,19 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 <!-- АВТОР -->
 <section class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep">Кто стоит за проектом</h2>
+  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Кто стоит за проектом</h2>
   <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     <div>
       <span class="x-img-wrap"><img src="placeholder-daria.jpg" alt="Жарких Дарья Александровна — GEO-маркетолог и AI-консультант" class="w-full rounded-lg border border-[#B8BCC6]/30"><span class="x-blind">ЗОНА СЛЕПОТЫ</span></span>
     </div>
     <div>
-      <h3 class="text-2xl font-semibold x-keep">Жарких Дарья Александровна</h3>
+      <h3 class="text-2xl font-semibold x-keep" data-tag="<h3>">Жарких Дарья Александровна</h3>
       <p class="mt-2 text-[#00F0FF] x-text">GEO-маркетолог и AI-консультант</p>
       <p class="mt-4 text-[#B8BCC6] x-text">Дарья — специалист с 11-летним опытом в маркетинге, продажах, контенте и SEO. Сегодня она развивает экспертизу в GEO-маркетинге, промпт-инжиниринге, автоматизации бизнес-процессов и практическом применении нейросетей.</p>
       <p class="mt-4 text-[#B8BCC6] x-text">В работе соединяются несколько профессиональных оптик: понимание бизнеса и продаж, работа с контентом, анализ поискового поведения, развитие бренда и исследование возможностей AI-инструментов.</p>
       <p class="mt-4 text-[#B8BCC6] x-text">Экспертиза развивается постоянно: через обучение и практику в Нетологии, Практикуме, GetCourse и Stepik, а также через собственные исследования, тестовые проекты и разборы реальных задач.</p>
       <p class="mt-4 text-[#B8BCC6] x-text">GEO-Апгрейд — самостоятельный бренд и проект, который строится вокруг этой экспертизы, но не ограничивается одной персоной. Его задача — создавать методики, инструменты и понятные маршруты, которыми смогут пользоваться разные компании, эксперты и маркетологи.</p>
-        <a href="about-daria-zharkikh.html" class="btn glow mt-6 inline-block rounded-md bg-[#00F0FF] px-6 py-3 text-center font-semibold text-[#0D0618] x-keep">Страница основателя →</a>
+        <a href="about-daria-zharkikh.html" class="btn glow mt-6 inline-block rounded-md bg-[#00F0FF] px-6 py-3 text-center font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Страница основателя →</a>
       <div class="mt-8">
         <p class="text-[#8A8F9A] text-sm font-medium uppercase tracking-wider mb-4 x-text">Блоги автора</p>
         <div class="flex flex-wrap gap-3">
@@ -244,54 +290,54 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 <!-- ПРАКТИКА -->
 <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-3xl md:text-5xl font-bold x-keep">Лаборатория начинается с практики</h2>
+  <h2 class="text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Лаборатория начинается с практики</h2>
   <p class="mt-6 text-[#B8BCC6] x-text">До создания полноценной системы GEO-Апгрейд уже начал проверять гипотезы на тестовых задачах.</p>
   <p class="mt-4 text-[#B8BCC6] x-text">Среди первых направлений — популярная доставка пиццы в Томске и трактир в центре города. Эти проекты помогают изучать, как локальный бизнес представлен в цифровом пространстве, какие ассоциации возникают у AI и какие сигналы важны для клиента, который ищет конкретное место рядом с собой.</p>
   <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-    <article class="card p-6 x-keep">
-      <h3 class="text-lg font-semibold x-keep">Эксперимент 001: локальная доставка</h3>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Эксперимент 001: локальная доставка</h3>
       <p class="mt-3 text-sm text-[#B8BCC6] x-text">Проверяем, как AI связывает бренд с городом, продуктом, районом и пользовательским запросом.</p>
     </article>
-    <article class="card p-6 x-keep">
+    <article class="card p-6 x-keep" data-tag="<article>">
       <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF] x-text">LAB CASE · ЭТАП 1</p>
-      <h3 class="text-lg font-semibold x-keep">Аудит на себе: запросный двойник — 6 аватаров и 66 запросов</h3>
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Аудит на себе: запросный двойник — 6 аватаров и 66 запросов</h3>
       <p class="mt-3 text-sm text-[#B8BCC6] x-text">Как мы применяем методику к собственному бренду: сегменты, аватары, живой язык отзывов и карта запросов перед прогонами.</p>
-      <a href="blog-post-zaprosny-dvoinik-geo-audit.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-4 py-2 text-sm font-semibold x-keep">Читать статью →</a>
+      <a href="blog-post-zaprosny-dvoinik-geo-audit.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-4 py-2 text-sm font-semibold x-keep" data-tag="<a class=btn>">Читать статью →</a>
     </article>
-    <article class="card p-6 x-keep">
+    <article class="card p-6 x-keep" data-tag="<article>">
       <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF] x-text">LAB CASE · ЭТАП 2</p>
-      <h3 class="text-lg font-semibold x-keep">Аудит на себе: метрики и слепые зоны — базовый замер в Алисе AI</h3>
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Аудит на себе: метрики и слепые зоны — базовый замер в Алисе AI</h3>
       <p class="mt-3 text-sm text-[#B8BCC6] x-text">Второй этап кейса: 67 прогонов, метрики AI-видимости, Presence Score, конкуренты и маршрут изменений.</p>
-      <a href="blog-post-metriki-ai-vidimosti-geo-audit.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-4 py-2 text-sm font-semibold x-keep">Читать статью →</a>
+      <a href="blog-post-metriki-ai-vidimosti-geo-audit.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-4 py-2 text-sm font-semibold x-keep" data-tag="<a class=btn>">Читать статью →</a>
     </article>
-    <article class="card p-6 x-keep">
+    <article class="card p-6 x-keep" data-tag="<article>">
       <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF] x-text">LAB CASE · ПРОГОН №001</p>
-      <h3 class="text-lg font-semibold x-keep">Что нейросети говорят о нас: первый полный замер отслеживателя</h3>
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Что нейросети говорят о нас: первый полный замер отслеживателя</h3>
       <p class="mt-3 text-sm text-[#B8BCC6] x-text">20 вопросов протокола, YandexGPT с веб-поиском, 57 из 80. Модерационный блок «GEO-штурвала», полуправда цен, честные ловушки и сравнение с ручным замером в Алисе AI.</p>
-      <a href="case-tracker-mentions.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-4 py-2 text-sm font-semibold x-keep">Открыть кейс →</a>
+      <a href="case-tracker-mentions.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-4 py-2 text-sm font-semibold x-keep" data-tag="<a class=btn>">Открыть кейс →</a>
     </article>
-<article class="card p-6">
-      <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">LAB NOTE · ПРОТОКОЛ</p>
-      <h3 class="text-lg font-semibold">Что внутри нашего аудита: этапы и артефакты GEO-сканера</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6]">Уровни аудита, методология замера, метрики AI-видимости и карта зон слепоты.</p>
-      <a href="blog-post-chto-vnutri-audita.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-4 py-2 text-sm font-semibold">Читать статью →</a>
+<article class="card p-6 x-keep" data-tag="<article>">
+      <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF] x-text">LAB NOTE · ПРОТОКОЛ</p>
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Что внутри нашего аудита: этапы и артефакты GEO-сканера</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] x-text">Уровни аудита, методология замера, метрики AI-видимости и карта зон слепоты.</p>
+      <a href="blog-post-chto-vnutri-audita.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-4 py-2 text-sm font-semibold x-keep" data-tag="<a class=btn>">Читать статью →</a>
     </article>
-<article class="card p-6">
-      <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">LAB NOTE · ОСНОВЫ GEO</p>
-      <h3 class="text-lg font-semibold">GEO-маркетинг ≠ геомаркетинг: почему ИИ путает с геотаргетингом</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6]">Разбор галлюцинации нейросети из реального замера и мини-тест на направление.</p>
-      <a href="blog-post-geo-ne-geo.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-4 py-2 text-sm font-semibold">Пройти мини-тест →</a>
+<article class="card p-6 x-keep" data-tag="<article>">
+      <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF] x-text">LAB NOTE · ОСНОВЫ GEO</p>
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">GEO-маркетинг ≠ геомаркетинг: почему ИИ путает с геотаргетингом</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] x-text">Разбор галлюцинации нейросети из реального замера и мини-тест на направление.</p>
+      <a href="blog-post-geo-ne-geo.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-4 py-2 text-sm font-semibold x-keep" data-tag="<a class=btn>">Пройти мини-тест →</a>
     </article>
   </div>
-  <a href="#experiments" class="btn mt-8 inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold x-keep">Открыть лабораторные эксперименты</a>
+  <a href="#experiments" class="btn mt-8 inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold x-keep" data-tag="<a class=btn>">Открыть лабораторные эксперименты</a>
 </section>
 <div class="divider x-decor"></div>
 
 <!-- УРОВНИ AI-ВИДИМОСТИ -->
 <section class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep">AI-видимость — это больше, чем упоминание</h2>
+  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">AI-видимость — это больше, чем упоминание</h2>
   <p class="mt-6 text-center max-w-3xl mx-auto text-[#B8BCC6] x-text">Мы оцениваем не только наличие названия бренда в ответе. Важно понять, <strong>как именно</strong> нейросеть распознаёт компанию и может ли связать её с реальной потребностью пользователя.</p>
-  <table class="table mt-10 x-keep">
+  <table class="table mt-10 x-keep" data-tag="<table>">
     <thead>
       <tr><th class="x-text">Уровень</th><th class="x-text">Что проверяем</th></tr>
     </thead>
@@ -311,9 +357,9 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 <!-- ЭКОСИСТЕМА -->
 <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-3xl md:text-5xl font-bold x-keep">Проверяем не один канал, а всю экосистему бренда</h2>
+  <h2 class="text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Проверяем не один канал, а всю экосистему бренда</h2>
   <p class="mt-6 text-[#B8BCC6] x-text">В зависимости от задачи анализ может включать:</p>
-  <ul class="mt-4 space-y-2 text-[#B8BCC6] x-keep">
+  <ul class="mt-4 space-y-2 text-[#B8BCC6] x-keep" data-tag="<ul>">
     <li class="x-text">◆ Сайт и его структуру</li>
     <li class="x-text">◆ SEO-основу</li>
     <li class="x-text">◆ Контент и экспертные материалы</li>
@@ -333,11 +379,11 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 <!-- ДЛЯ КОГО -->
 <section class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep">Для тех, кто хочет быть видимым в новой реальности</h2>
+  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Для тех, кто хочет быть видимым в новой реальности</h2>
   <p class="mt-6 text-center max-w-3xl mx-auto text-[#B8BCC6] x-text">GEO-Апгрейд работает с владельцами локального бизнеса, малыми интернет-магазинами, экспертами и специалистами, маркетологами и SMM-командами, компаниями любого размера и брендами из разных сфер — от магазинов для взрослых до сетей продуктовых супермаркетов.</p>
   <p class="mt-6 text-[#B8BCC6] x-text">В первую очередь нам близки земляки-сибиряки: с ними можно быстрее почувствовать контекст региона, встретиться лично и обсудить задачи без лишней дистанции. Но формат работы онлайн позволяет сотрудничать с клиентами из любой точки России и мира.</p>
-  <article class="card mt-8 p-6 border-[#00F0FF]/40 glow x-keep">
-    <h3 class="text-lg font-semibold text-[#00F0FF] x-keep">Главная проблема</h3>
+  <article class="card mt-8 p-6 border-[#00F0FF]/40 glow x-keep" data-tag="<article>">
+    <h3 class="text-lg font-semibold text-[#00F0FF] x-keep" data-tag="<h3>">Главная проблема</h3>
     <p class="mt-3 text-[#B8BCC6] x-text">Бренд уже существует, работает и приносит пользу, но в ответах нейросетей его нет, его описывают неточно или вместо него рекомендуют конкурентов. В GEO-Апгрейде мы называем это эффектом <strong>цифрового призрака</strong>.</p>
   </article>
 </section>
@@ -345,10 +391,10 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 <!-- ОТ ВИДИМОСТИ ДО АВТОМАТИЗАЦИИ -->
 <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-3xl md:text-5xl font-bold x-keep">От AI-видимости до автоматизации</h2>
+  <h2 class="text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">От AI-видимости до автоматизации</h2>
   <p class="mt-6 text-[#B8BCC6] x-text">GEO-Апгрейд развивается не только как направление аудита.</p>
   <p class="mt-4 text-[#B8BCC6] x-text">Мы помогаем:</p>
-  <ul class="mt-4 space-y-2 text-[#B8BCC6] x-keep">
+  <ul class="mt-4 space-y-2 text-[#B8BCC6] x-keep" data-tag="<ul>">
     <li class="x-text">◆ Исследовать присутствие бренда в ответах нейросетей</li>
     <li class="x-text">◆ Формировать GEO-стратегию</li>
     <li class="x-text">◆ Создавать контент для людей, поиска и AI-систем</li>
@@ -363,10 +409,10 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 <!-- GEO-НАВИГАТОР -->
 <section class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep">GEO-Навигатор — соседняя экспедиция</h2>
+  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">GEO-Навигатор — соседняя экспедиция</h2>
   <p class="mt-6 text-center max-w-3xl mx-auto text-[#B8BCC6] x-text">Если GEO-Апгрейд исследует видимость бренда, то GEO-Навигатор помогает ориентироваться в мире нейросетей.</p>
   <p class="mt-4 text-center text-[#B8BCC6] x-text">Это отдельный проект о промпт-инжиниринге, индивидуальных промпт-картах, новостях AI и автоматизации бизнес-процессов.</p>
-  <table class="table mt-10 x-keep">
+  <table class="table mt-10 x-keep" data-tag="<table>">
     <thead>
       <tr><th class="x-text">GEO-Апгрейд</th><th class="x-text">GEO-Навигатор</th></tr>
     </thead>
@@ -378,18 +424,18 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
       <tr><td class="x-text">Лаборатория видимости</td><td class="x-text">Экспедиция в мир нейросетей</td></tr>
     </tbody>
   </table>
-  <a href="https://vk.ru/geo.navigator" target="_blank" rel="noopener" class="btn mt-8 inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618] x-keep">Перейти в GEO-Навигатор</a>
+  <a href="https://vk.ru/geo.navigator" target="_blank" rel="noopener" class="btn mt-8 inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Перейти в GEO-Навигатор</a>
 </section>
 <div class="divider x-decor"></div>
 
 <!-- ЧЕСТНОСТЬ -->
 <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-3xl md:text-5xl font-bold x-keep">Мы не обещаем невозможного</h2>
+  <h2 class="text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Мы не обещаем невозможного</h2>
   <p class="mt-6 text-[#B8BCC6] x-text">В GEO-Апгрейде нельзя купить гарантированное упоминание в каждом ответе нейросети. Мы не обещаем 100% попадание в AI-рекомендации, потому что ответы зависят от запроса, системы, контекста, источников и множества внешних факторов.</p>
   <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-    <article class="card p-6 border-red-400/30 x-keep">
-      <h3 class="text-lg font-semibold text-red-300 x-keep">Мы не делаем</h3>
-      <ul class="mt-3 space-y-2 text-sm text-[#B8BCC6] x-keep">
+    <article class="card p-6 border-red-400/30 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold text-red-300 x-keep" data-tag="<h3>">Мы не делаем</h3>
+      <ul class="mt-3 space-y-2 text-sm text-[#B8BCC6] x-keep" data-tag="<ul>">
         <li class="x-text">✕ Не обещаем стопроцентное упоминание бренда в ответах нейросетей</li>
         <li class="x-text">✕ Не выдаём гипотезы за подтверждённые результаты</li>
         <li class="x-text">✕ Не придумываем цифры и кейсы</li>
@@ -399,9 +445,9 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
         <li class="x-text">✕ Не создаём контент только ради алгоритма, забывая о человеке</li>
       </ul>
     </article>
-    <article class="card p-6 border-[#00F0FF]/40 glow x-keep">
-      <h3 class="text-lg font-semibold text-[#00F0FF] x-keep">Мы делаем</h3>
-      <ul class="mt-3 space-y-2 text-sm text-[#B8BCC6] x-keep">
+    <article class="card p-6 border-[#00F0FF]/40 glow x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold text-[#00F0FF] x-keep" data-tag="<h3>">Мы делаем</h3>
+      <ul class="mt-3 space-y-2 text-sm text-[#B8BCC6] x-keep" data-tag="<ul>">
         <li class="x-text">✓ Честно обозначаем исходную точку</li>
         <li class="x-text">✓ Проверяем гипотезы на практике</li>
         <li class="x-text">✓ Связываем GEO с SEO, SMM, контентом и digital-маркетингом</li>
@@ -417,48 +463,48 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 <!-- ЭКСПЕРИМЕНТЫ -->
 <section id="experiments" class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep">Здесь теория проходит проверку</h2>
+  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Здесь теория проходит проверку</h2>
   <p class="mt-6 text-center max-w-3xl mx-auto text-[#B8BCC6] x-text">Этот раздел будет пополняться результатами тестовых проектов, открытых исследований и практических разборов.</p>
-  <article class="card mt-8 p-6 border-[#00F0FF]/40 glow x-keep">
+  <article class="card mt-8 p-6 border-[#00F0FF]/40 glow x-keep" data-tag="<article>">
     <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF] x-text">LAB STATUS: DATA COLLECTION</p>
-    <h3 class="mt-3 text-xl font-semibold x-keep">Новые исследования находятся в работе</h3>
+    <h3 class="mt-3 text-xl font-semibold x-keep" data-tag="<h3>">Новые исследования находятся в работе</h3>
     <p class="mt-3 text-sm text-[#B8BCC6] x-text">Первые протоколы появятся после завершения проверок.</p>
   </article>
-  <article class="card mt-6 p-6 x-keep">
+  <article class="card mt-6 p-6 x-keep" data-tag="<article>">
     <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF] x-text">LAB CASE · ЭТАП 1 · ЗАПРОСНЫЙ ДВОЙНИК</p>
-    <h3 class="mt-3 text-xl font-semibold x-keep">Аудит на себе: как мы собрали 6 аватаров и 66 запросов</h3>
+    <h3 class="mt-3 text-xl font-semibold x-keep" data-tag="<h3>">Аудит на себе: как мы собрали 6 аватаров и 66 запросов</h3>
     <p class="mt-3 text-sm text-[#B8BCC6] x-text">Первый публичный кейс лаборатории: разбор сегментов и аватаров, живой язык отзывов и карта запросов для аудита AI-видимости.</p>
-    <a href="blog-post-zaprosny-dvoinik-geo-audit.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-2 text-sm font-semibold x-keep">Читать первый этап кейса →</a>
+    <a href="blog-post-zaprosny-dvoinik-geo-audit.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-2 text-sm font-semibold x-keep" data-tag="<a class=btn>">Читать первый этап кейса →</a>
   </article>
-  <article class="card mt-6 p-6 x-keep">
+  <article class="card mt-6 p-6 x-keep" data-tag="<article>">
     <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF] x-text">LAB CASE · ЭТАП 2 · АЛИСА AI BASELINE</p>
-    <h3 class="mt-3 text-xl font-semibold x-keep">Почему AI видит бренд, но не рекомендует: метрики и слепые зоны</h3>
+    <h3 class="mt-3 text-xl font-semibold x-keep" data-tag="<h3>">Почему AI видит бренд, но не рекомендует: метрики и слепые зоны</h3>
     <p class="mt-3 text-sm text-[#B8BCC6] x-text">Второй этап кейса: 67 прогонов, метрики, Presence Score, конкуренты и маршрут изменений — этап 2 из 5.</p>
-    <a href="blog-post-metriki-ai-vidimosti-geo-audit.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-2 text-sm font-semibold x-keep">Читать второй этап кейса →</a>
+    <a href="blog-post-metriki-ai-vidimosti-geo-audit.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-2 text-sm font-semibold x-keep" data-tag="<a class=btn>">Читать второй этап кейса →</a>
   </article>
-<article class="card mt-6 p-6">
-    <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">LAB NOTE · ПРОТОКОЛ АУДИТА</p>
-    <h3 class="mt-3 text-xl font-semibold">Что внутри нашего аудита: этапы, артефакты и протокол GEO-сканера</h3>
-    <p class="mt-3 text-sm text-[#B8BCC6]">Уровни аудита (Мини, Лайт, Полный), методология замера, метрики AI-видимости и карта зон слепоты — как устроена работа лаборатории.</p>
-    <a href="blog-post-chto-vnutri-audita.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-2 text-sm font-semibold">Читать разбор протокола →</a>
+<article class="card mt-6 p-6 x-keep" data-tag="<article>">
+    <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF] x-text">LAB NOTE · ПРОТОКОЛ АУДИТА</p>
+    <h3 class="mt-3 text-xl font-semibold x-keep" data-tag="<h3>">Что внутри нашего аудита: этапы, артефакты и протокол GEO-сканера</h3>
+    <p class="mt-3 text-sm text-[#B8BCC6] x-text">Уровни аудита (Мини, Лайт, Полный), методология замера, метрики AI-видимости и карта зон слепоты — как устроена работа лаборатории.</p>
+    <a href="blog-post-chto-vnutri-audita.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-2 text-sm font-semibold x-keep" data-tag="<a class=btn>">Читать разбор протокола →</a>
   </article>
-<article class="card mt-6 p-6">
-    <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">LAB NOTE · ОСНОВЫ GEO</p>
-    <h3 class="mt-3 text-xl font-semibold">GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом</h3>
-    <p class="mt-3 text-sm text-[#B8BCC6]">Три похожих слова — три разные стратегии. Разбор галлюцинации нейросети из реального замера и мини-тест на направление.</p>
-    <a href="blog-post-geo-ne-geo.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-2 text-sm font-semibold">Пройти мини-тест →</a>
+<article class="card mt-6 p-6 x-keep" data-tag="<article>">
+    <p class="font-heading text-xs tracking-[.16em] text-[#00F0FF] x-text">LAB NOTE · ОСНОВЫ GEO</p>
+    <h3 class="mt-3 text-xl font-semibold x-keep" data-tag="<h3>">GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом</h3>
+    <p class="mt-3 text-sm text-[#B8BCC6] x-text">Три похожих слова — три разные стратегии. Разбор галлюцинации нейросети из реального замера и мини-тест на направление.</p>
+    <a href="blog-post-geo-ne-geo.html" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-2 text-sm font-semibold x-keep" data-tag="<a class=btn>">Пройти мини-тест →</a>
   </article>
   <p class="mt-8 text-[#B8BCC6] x-text">Мы не публикуем название компании, внутренние данные, скриншоты или результаты без разрешения владельца бизнеса или эксперта. Если работа понравилась, клиент может согласовать публикацию информации о проекте в обмен на честный отзыв и рекомендацию.</p>
-  <a href="cases.html" class="btn mt-8 inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold x-keep">Посмотреть эксперименты</a>
+  <a href="cases.html" class="btn mt-8 inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold x-keep" data-tag="<a class=btn>">Посмотреть эксперименты</a>
 </section>
 <div class="divider x-decor"></div>
 
 <!-- БУДУЩЕЕ -->
 <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-3xl md:text-5xl font-bold x-keep">От локального сигнала — к национальной узнаваемости</h2>
+  <h2 class="text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">От локального сигнала — к национальной узнаваемости</h2>
   <p class="mt-6 text-[#B8BCC6] x-text">Сегодня GEO-Апгрейд — молодой, но перспективный проект. Мы начинаем с практической работы с брендами и постепенно строим систему, которая поможет компаниям, экспертам и маркетологам адаптироваться к миру AI.</p>
   <p class="mt-4 text-[#B8BCC6] x-text">В будущем лаборатория планирует развивать:</p>
-  <ul class="mt-4 space-y-2 text-[#B8BCC6] x-keep">
+  <ul class="mt-4 space-y-2 text-[#B8BCC6] x-keep" data-tag="<ul>">
     <li class="x-text">◆ Мониторинг AI-видимости</li>
     <li class="x-text">◆ Собственный GEO-сканер</li>
     <li class="x-text">◆ Библиотеку лабораторных методик</li>
@@ -477,13 +523,13 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 <!-- CTA -->
 <section class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24">
   <div class="max-w-3xl mx-auto text-center">
-    <h2 class="text-3xl md:text-5xl font-bold x-keep">Проверьте, не стал ли ваш бренд цифровым призраком</h2>
+    <h2 class="text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Проверьте, не стал ли ваш бренд цифровым призраком</h2>
     <p class="mt-6 text-[#B8BCC6] x-text">Ваш бизнес может быть сильным, полезным и достойным рекомендаций, но нейросеть пока может этого не понимать.</p>
     <p class="mt-4 text-[#B8BCC6] x-text">Начните с бесплатного мини-аудита: познакомьтесь со специалистом, посмотрите на свой бренд глазами AI и решите, подходит ли вам лабораторный формат работы.</p>
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="contacts.html?service=free-audit#form" class="btn glow rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618] x-keep">Получить бесплатный мини-аудит</a>
-      <a href="#communities" class="btn rounded-md border border-[#B8BCC6]/40 px-7 py-4 font-semibold x-keep">Подписаться на GEO-Апгрейд</a>
-      <a href="https://vk.ru/geo.navigator" target="_blank" rel="noopener" class="btn rounded-md border border-[#B8BCC6]/40 px-7 py-4 font-semibold x-keep">Перейти в GEO-Навигатор</a>
+      <a href="contacts.html?service=free-audit#form" class="btn glow rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Получить бесплатный мини-аудит</a>
+      <a href="#communities" class="btn rounded-md border border-[#B8BCC6]/40 px-7 py-4 font-semibold x-keep" data-tag="<a class=btn>">Подписаться на GEO-Апгрейд</a>
+      <a href="https://vk.ru/geo.navigator" target="_blank" rel="noopener" class="btn rounded-md border border-[#B8BCC6]/40 px-7 py-4 font-semibold x-keep" data-tag="<a class=btn>">Перейти в GEO-Навигатор</a>
     </div>
     <p class="mt-8 text-sm text-[#B8BCC6] x-text">Будущее уже наступило. Теперь важно понять, какое место ваш бренд занимает в нём.</p>
   </div>
@@ -491,65 +537,65 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 <!-- СООБЩЕСТВА -->
 <section id="communities" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep">Подпишитесь на сообщества</h2>
+  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Подпишитесь на сообщества</h2>
   <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-    <article class="card p-6 x-keep">
-      <h3 class="text-lg font-semibold x-keep">Telegram</h3>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Telegram</h3>
       <p class="mt-3 text-sm text-[#B8BCC6] x-text">Новости лаборатории, эксперименты и инсайты о GEO.</p>
-      <a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618] x-keep">Подписаться</a>
+      <a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Подписаться</a>
     </article>
-    <article class="card p-6 x-keep">
-      <h3 class="text-lg font-semibold x-keep">ВКонтакте</h3>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">ВКонтакте</h3>
       <p class="mt-3 text-sm text-[#B8BCC6] x-text">Публикации, кейсы и материалы об AI-видимости брендов.</p>
-      <a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold x-keep">Подписаться</a>
+      <a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold x-keep" data-tag="<a class=btn>">Подписаться</a>
     </article>
   </div>
 </section>
 
 <!-- ПРИСУТСТВИЕ -->
 <section id="presence" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-  <h2 class="text-center text-3xl md:text-5xl font-bold">Проверяемое присутствие</h2>
-  <p class="mt-4 max-w-3xl mx-auto text-center text-[#B8BCC6]">Лаборатория — открытая система. Профили и карточки ниже — то, как бренд GEO-Апгрейд видят люди и нейросети: карты, каталоги услуг и профессиональные площадки. Согласованные упоминания подтверждают, что за сайтом стоит реальная команда, и делают бренд понятнее для AI.</p>
+  <h2 class="text-center text-3xl md:text-5xl font-bold x-keep" data-tag="<h2>">Проверяемое присутствие</h2>
+  <p class="mt-4 max-w-3xl mx-auto text-center text-[#B8BCC6] x-text">Лаборатория — открытая система. Профили и карточки ниже — то, как бренд GEO-Апгрейд видят люди и нейросети: карты, каталоги услуг и профессиональные площадки. Согласованные упоминания подтверждают, что за сайтом стоит реальная команда, и делают бренд понятнее для AI.</p>
   <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-    <article class="card p-6">
-      <h3 class="text-lg font-semibold">Workspace — профиль специалиста</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6]">Кейсы, опыт и подтверждения в профиле Дарьи Жарких на Workspace.</p>
-      <a href="https://workspace.ru/id/darya-zharkih/" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Открыть профиль</a>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Workspace — профиль специалиста</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] x-text">Кейсы, опыт и подтверждения в профиле Дарьи Жарких на Workspace.</p>
+      <a href="https://workspace.ru/id/darya-zharkih/" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Открыть профиль</a>
     </article>
-    <article class="card p-6">
-      <h3 class="text-lg font-semibold">Workspace — кейс лаборатории</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6]">Кейс «Создание лаборатории GEO-Апгрейд»: как устроена работа и что на выходе.</p>
-      <a href="https://workspace.ru/cases/soddanie-laboratorii-geo-apgreyd/" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Посмотреть кейс</a>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Workspace — кейс лаборатории</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] x-text">Кейс «Создание лаборатории GEO-Апгрейд»: как устроена работа и что на выходе.</p>
+      <a href="https://workspace.ru/cases/soddanie-laboratorii-geo-apgreyd/" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Посмотреть кейс</a>
     </article>
-    <article class="card p-6">
-      <h3 class="text-lg font-semibold">Клерк.ру</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6]">Профиль GEO-маркетолога в справочном сервисе Клерк.ру.</p>
-      <a href="https://www.klerk.ru/user/2726432/" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Открыть профиль</a>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Клерк.ру</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] x-text">Профиль GEO-маркетолога в справочном сервисе Клерк.ру.</p>
+      <a href="https://www.klerk.ru/user/2726432/" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Открыть профиль</a>
     </article>
-    <article class="card p-6">
-      <h3 class="text-lg font-semibold">Яндекс Услуги</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6]">Профиль исполнителя: консультации и услуги GEO-оптимизации.</p>
-      <a href="https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Открыть профиль</a>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Яндекс Услуги</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] x-text">Профиль исполнителя: консультации и услуги GEO-оптимизации.</p>
+      <a href="https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Открыть профиль</a>
     </article>
-    <article class="card p-6">
-      <h3 class="text-lg font-semibold">Профи.ру</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6]">Карточка GEO-Апгрейд на Профи.ру: услуги, цены и запись онлайн.</p>
-      <a href="https://profi.ru/profile/ZharkikhDA3/" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Открыть карточку</a>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Профи.ру</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] x-text">Карточка GEO-Апгрейд на Профи.ру: услуги, цены и запись онлайн.</p>
+      <a href="https://profi.ru/profile/ZharkikhDA3/" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Открыть карточку</a>
     </article>
-    <article class="card p-6">
-      <h3 class="text-lg font-semibold">2ГИС</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6]">Карточка организации в 2ГИС: адрес, телефон и фото.</p>
-      <a href="https://2gis.ru/tomsk/geo/70000001118166258" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Открыть карточку</a>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">2ГИС</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] x-text">Карточка организации в 2ГИС: адрес, телефон и фото.</p>
+      <a href="https://2gis.ru/tomsk/geo/70000001118166258" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Открыть карточку</a>
     </article>
-    <article class="card p-6">
-      <h3 class="text-lg font-semibold">Фламп</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6]">Карточка на Флампе — каталоге 2ГИС: отзывы и оценки.</p>
-      <a href="https://tomsk.flamp.ru/firm/geo_apgrejjd-70000001118166258" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Открыть карточку</a>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Фламп</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] x-text">Карточка на Флампе — каталоге 2ГИС: отзывы и оценки.</p>
+      <a href="https://tomsk.flamp.ru/firm/geo_apgrejjd-70000001118166258" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Открыть карточку</a>
     </article>
-    <article class="card p-6">
-      <h3 class="text-lg font-semibold">Google Карты</h3>
-      <p class="mt-3 text-sm text-[#B8BCC6]">Карточка в Google Картах: локальное присутствие бренда.</p>
-      <a href="https://maps.app.goo.gl/R8nnURT4CwAqi3nc7" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Открыть</a>
+    <article class="card p-6 x-keep" data-tag="<article>">
+      <h3 class="text-lg font-semibold x-keep" data-tag="<h3>">Google Карты</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] x-text">Карточка в Google Картах: локальное присутствие бренда.</p>
+      <a href="https://maps.app.goo.gl/R8nnURT4CwAqi3nc7" target="_blank" rel="noopener" class="btn mt-5 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618] x-keep" data-tag="<a class=btn>">Открыть</a>
     </article>
   </div>
 </section>
@@ -572,7 +618,7 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 <!-- ===== GEO-XRAY: панель управления ===== -->
 <div class="xray-bar" role="group" aria-label="Режим просмотра страницы">
   <span class="lbl on">ЧЕЛОВЕК</span>
-  <input type="range" id="xray" min="0" max="100" value="0" step="1" aria-label="Переключение между режимом человека и режимом ИИ" title="Человек ⟷ ИИ" style="box-shadow: rgba(0, 240, 255, 0.9) 0px 0px 12.1837px;">
+  <input type="range" id="xray" min="0" max="100" value="0" step="1" aria-label="Переключение между режимом человека и режимом ИИ" title="Человек ⟷ ИИ" style="box-shadow: rgba(0, 240, 255, 0.9) 0px 0px 10.7943px;">
   <span class="lbl">ИИ</span>
   <span class="pct" id="xray-pct">0%</span>
   <span class="mode" id="xray-mode">человеческий режим</span>
@@ -648,5 +694,5 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
 
 
 <script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
-<script src="/geo-assistant-widget.js" defer></script>
-</body></html>
+<script src="/geo-assistant-widget.js" defer=""></script>
+<div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div></body></html>
