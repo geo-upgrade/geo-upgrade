@@ -374,6 +374,9 @@ Workspace — профиль специалиста: кейсы, опыт и п�
 Workspace — кейс «Создание лаборатории GEO-Апгрейд»: как устроена работа и что на выходе (https://workspace.ru/cases/soddanie-laboratorii-geo-apgreyd/)
 Клерк.ру — профиль GEO-маркетолога в справочном сервисе Клерк.ру (https://www.klerk.ru/user/2726432/)
 Яндекс Услуги — профиль исполнителя: консультации и услуги GEO-оптимизации (https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933)
+
+Zoon — карточка организации в каталоге Zoon: услуги, адрес, режим работы (https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/)
+Yell.ru — карточка компании в каталоге Yell.ru: рейтинг, отзывы и контакты (https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/)
 Профи.ру — карточка GEO-Апгрейд: услуги, цены и запись онлайн (https://profi.ru/profile/ZharkikhDA3/)
 2ГИС — карточка организации: адрес, телефон и фото (https://2gis.ru/tomsk/geo/70000001118166258)
 Фламп — карточка на Флампе, каталоге 2ГИС: отзывы и оценки (https://tomsk.flamp.ru/firm/geo_apgrejjd-70000001118166258)
@@ -543,6 +546,9 @@ Google Карты — карточка бренда в Google Картах (http
 Фламп — та же карточка в каталоге Фламп: сбор отзывов и оценок (https://tomsk.flamp.ru/firm/geo_apgrejjd-70000001118166258)
 Авито — бренд-страница: услуги, чат с лабораторией и отзывы (https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7)
 Яндекс Услуги — профиль исполнителя: консультации и услуги GEO-оптимизации (https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933)
+
+Zoon — карточка организации в каталоге Zoon: услуги, адрес, режим работы (https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/)
+Yell.ru — карточка компании в каталоге Yell.ru: рейтинг, отзывы и контакты (https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/)
 Профи.ру — карточка GEO-Апгрейд: услуги, цены и запись онлайн (https://profi.ru/profile/ZharkikhDA3/)
 MAX — мессенджер MAX, быстрый канал связи с лабораторией (https://max.ru/u/f9LHodD0cOKn5NlqWfUehS5ZCaGQ9oLqwIkL5vvgygrWfsgupZ45s41702Q)
 Отзывы клиентов — письма клиентов и раздел отзывов на сайте (https://geo-upgrade.ru/reviews.html)
@@ -6437,8 +6443,6 @@ URL: https://geo-upgrade.ru/reviews.html
 
 Протокол работы с отзывами: публикуем только реальные отзывы от реальных клиентов; всегда указываем источник; не правим формулировки; честная стартовая точка — канал приёма открыт, сигналов пока нет.
 
-
-Независимые оценки: профиль и рейтинг на Яндекс Картах (виджет на странице), рейтинг на Yell.ru (https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/ — виджет yellrank на странице), профиль на Zoon (https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/).
 ## Как нейросети видят наш бренд — витрина GEO-Апгрейд
 URL: https://geo-upgrade.ru/brand-visibility.html
 Описание: Постоянная витрина: что отвечают ChatGPT, Gemini, Perplexity и Яндекс Нейро на запросы о GEO-Апгрейд; метрики и методология замеров.
