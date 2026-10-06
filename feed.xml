@@ -5,9 +5,16 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Tue, 06 Oct 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 03:00:33 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Анатомия GEO-маркетинга: 5 услуг, 3 подхода, 1 лаборатория</title>
+      <link>https://geo-upgrade.ru/blog-post-anatomiya-geo-marketinga.html</link>
+      <description><![CDATA[Разбор рынка GEO: 7 слоёв услуги, 3 подхода (пакет, абонемент, лаборатория), спектр гарантий и ценовая лестница от 3 000 до 350 000 ₽. Чек-лист и наш прайс.]]></description>
+      <pubDate>Wed, 07 Oct 2026 03:00:33 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-anatomiya-geo-marketinga.html</guid>
+    </item>
     <item>
       <title>Топ-160 Томска: как нейросети видят местный бизнес</title>
       <link>https://geo-upgrade.ru/blog-post-top-160-tomsk.html</link>

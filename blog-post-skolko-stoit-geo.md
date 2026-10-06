@@ -204,6 +204,7 @@
 
 ## Похожие материалы
 
+- [Анатомия GEO-маркетинга: 5 услуг, 3 подхода, 1 лаборатория](https://geo-upgrade.ru/blog-post-anatomiya-geo-marketinga.html)
 - [GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом](https://geo-upgrade.ru/blog-post-geo-ne-geo.html)
 - [Что внутри нашего аудита: этапы, артефакты и методологический протокол GEO-сканера](https://geo-upgrade.ru/blog-post-chto-vnutri-audita.html)
 - [GEO-штурвал: разовый аудит AI-видимости с передачей методики](https://geo-upgrade.ru/blog-post-geo-shturval.html)
