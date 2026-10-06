@@ -1,6 +1,14 @@
-# GEO-Апгрейд — Лаборатория AI-видимости бренда
+<html><head><meta name="\&quot;color-scheme\&quot;" content="\&quot;light" dark\"="">
+    <style>
+        pre {
+          content-visibility: auto;
+          line-height: 1.2em;
+          margin: 0;
+        }
+    </style>
+    </head><body><pre style="width: 768ch; contain-intrinsic-height: 235.2em; content-visibility: visible"># GEO-Апгрейд — Лаборатория AI-видимости бренда
 
-> URL: https://geo-upgrade.ru/index.html
+&gt; URL: https://geo-upgrade.ru/index.html
 
 **Назначение:** Витрина лаборатории: статус, услуги, блог-сигналы, CTA мини-аудита. Точка входа и маршрутизация по разделам.
 
@@ -18,6 +26,9 @@ AI VISIBILITY LAB
 Посмотреть тарифы
 
 Без доступа к рекламным кабинетам. Результат — понятная карта стартовой точки.
+
+ЗОНА СЛЕПОТЫ
+Яндекс.Метрика видит клики — но не видит AI. Мы покажем то, чего не видно в Яндекс.Метрике: как нейросети отвечают на запросы ваших клиентов.
 
 Клиенты уже спрашивают AI, кому доверять. Но ответы могут обходить ваш бренд стороной
 
@@ -194,3 +205,4 @@ GEO ДЛЯ БИЗНЕСА
 ---
 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
+</pre></body></html>
