@@ -306,6 +306,7 @@
 
 Хотите понять, что видит нейросеть о вашей компании? Мы покажем то, чего вы не видите. → [Контакты GEO-Апгрейд — бесплатный аудит AI-видимости](https://geo-upgrade.ru/contacts.html)
 
+Не нашли свою категорию в рейтинге? Напишите нам! → [Письмо в лабораторию GEO-Апгрейд](mailto:geo.upgrade@bk.ru?subject=%D0%A2%D0%BE%D0%BF-160%3A%20%D0%BD%D0%B5%20%D0%BD%D0%B0%D1%88%D0%BB%D0%B8%20%D1%81%D0%B2%D0%BE%D1%8E%20%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8E)
 Похожие материалы: [[← Топ-160 Томска: как нейросети видят местный бизнес — разбор первого замера](https://geo-upgrade.ru/blog-post-top-160-tomsk.html) · ← Как нейросети видят наш бренд](https://geo-upgrade.ru/brand-visibility.html) · [← GEO-Навигатор](https://geo-upgrade.ru/geo_navigator.html) · [← Упоминания GEO-Апгрейд](https://geo-upgrade.ru/mentions.html) · [← GEO-словарь](https://geo-upgrade.ru/glossary.html)
 
 ---
