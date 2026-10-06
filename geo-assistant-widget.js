@@ -1,5 +1,5 @@
 /*!
- * GEO-Апгрейд — AI-ассистент, виджет v1.2
+ * GEO-Апгрейд — AI-ассистент, виджет v1.2.1
  *
  * Подключение (вставить перед </body> на всех страницах):
  *   <script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://ВАШ-WORKER.workers.dev"};</script>
@@ -59,7 +59,11 @@
   function addMsg(role, text, sources, save) {
     var m = document.createElement('div');
     m.className = 'geoas-m geoas-' + (role === 'user' ? 'u' : 'a');
-    m.innerHTML = esc(text).replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener" style="color:#00F0FF">$1</a>');
+    m.innerHTML = esc(text).replace(/(https?:\/\/[^\s<]+)/g, function (_, u) {
+      var t = u.replace(/[.,;:!?)]+$/, '');
+      if (!t) t = u;
+      return '<a href="' + t + '" target="_blank" rel="noopener" style="color:#00F0FF">' + t + '</a>' + u.slice(t.length);
+    });
     msgs.appendChild(m);
     if (sources && sources.length) {
       var sm = document.createElement('div');
