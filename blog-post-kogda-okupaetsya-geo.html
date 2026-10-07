@@ -1,0 +1,425 @@
+<!DOCTYPE html><html lang="ru"><head>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA+AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgVJREFUeJylkztoVFEQhr8559zduw83RoKEaBRUVBQfIFgEBbERQQtLESJR1kiwkIiNFja2YmMXEUFbG1PoEoIg2ASCCUQhqMEHghhFTET3Ps4di7uJQdLtNDNn5p85A/8/Ug03Km2YaacZwAEgkr90xTJLuSVbraaKU2OQNIEsA+dATB6nKaD/GqwDY/JcnIAIGgQ4kohsXRcahsj8PJLGaLkC1SpqLYggzQhZWIA4AiDr7kbSFPk2j9gHzzTbsbs1NaF46QLasZZ45C58XYQQzNRrwsEz+J27iG/cRDdtA1XM9Etg6ocWT9S11LNXi8f6tbTloBZO1pWfqoXTw1rq2aOl3v1a6tyqpjGrMv1dwwPHtXBqSHnn1QUP72Oej5EOXoayRxYXEGPht5KcGyI93499Mo4dfUS2bzvu9h3MzBTyYQ47PobTWgf4DFRJrg5DEiKTE+AyXOMx5tUk8vlLzoIH1tQgiqDioVzBpWcHII4wb2bhD+BTEIUOixoLSYZ2rcdOvMCOPiUd6Ec+zqEbevFHDyHBlVvq+w6DK2DezhDcG0GrNeJr18EHUC0i7z9RHL4IhQJJfQjfdwSiJna8gVToVERa/KcQFMEFy5SRZbkvlfO4+QvEtYSlSLWyWZdVJpKDVHPRKCAtPWmW141hJd7h/eoiX/p55amp8j++7WNqe8BfwsTb5mYAskEAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFU0lEQVR42u2Xa4hd1RXHf2vvfc59TO5NZsYkkzhDoy1qBEFrBaUvaEsJlL5MExVbEBUKFVEQCwVLP1QstdBWqQ2FPigllIDmg5WipTV9xKpVqgRbopYqJtGZzCt37p1z7z3n7L36YZ/rTNoG2k/5Mgs297DO3v/73+t9ZFN9WjmPYjjPskFgg8B5J+DUSHwSiUsBFDQuoVKNROScYKKgum63cDb26GyFHQk4h2iAPIeyBFXUCFgHSQIqEHxFTsGX6H8hIaooAsacTdZa8GXE9xWOc5DWUBEcwwHaaBAu3Y1esB2sRVZ7yOwp5ORJNHik0QAf0HodbbVADIwsp4AGVAPkBdLtIgoYQQHJeujkVsJFF6ObJ8CXyOlZzJtvQJHjiptuwX9+H+F9l0GrAQmQgywuY147RnLgEcwLz0JZ4D/yMfKHHoZVXbMIQAjQEMwrr1K7/QZUDGgAa8nvvJdy7w3o1DRsslACK33M317G/eKnuOL+B6KvLNBVZLGLpim6dRx/1UeRN05QO/p7Qr2ONpvoeBsccaWsWWEMdH4HWIeKIBiG3/4B/gt7IKs8MtdFa3WYaBA+dB35B67DkXlwgnvsEPbxw8jSAiQJum07fs+nkFNvoWkafWkMDBUsyPHXSX7yw0i+yBH1sHwm7u2tUNx6B37vHlgoYNAn+f6D2BefQxtNyi/dhv/0Z6EMOFoWe/AQyf33QZpE0wZF/vk69pk/omNjaHszZBkYF0PbgSwvYX/zRLzaIEOGOaQpumUctkxQXn8jdAOMJSSPfA/3y5/B+CRSlqTf+gbD915CuOIyHJ0c9/ij0GyATWC1F32bJKhTGPShOQa2CjwBCkVndlHcc18kUOSQBMyLL2F/9yThiqvQnTOgBpb72KNPQ2szBIVaHVZ7mD8dIVy9GyeLS3DmTEy7fkZ599fwV14OfaBmkcVl0ge+DoNBdIEAuaIzU5R331IFIdAG+9Bh3K8eQycmIXUgIJ0zsNKtUjWgvozP83NQgou+rYpE8PhrriV84nI4DdRAZjO0VsMYieZXwAqy2EWePx4JlAU0BfP3Y5CkMe9H9WiEv746SaUXcLptEt1xIcy+De0tJN/5JnpwB8UdX0Wnt0G3C2JikRmVxZogL79Keu9XAEWGA8hLsAbd1MLMzUJ/AM06OjGBTm5FlhbRJI1FqJ+hM7vAgqFm8F+8FVwC/Qzz0l+wT/82Vq7EVOWzKp1B1zpICEi2ivQzyDJkkCHdDhiDnHgT84/jkCg0HeXn9sdYGg6gs4xeOIP/+CchCzj64D/4YYYP/xj75BPI8hK6fQpabRj6qpQGxJeVaT0MFJ3aSfHluyLBskQI0B9gHz2ILMzjfv4j8msPQC/gr99Hbh32mSNoewt+/83o1FSMHY7nypwqC6rMqzJb/b6jyrKqHD2l9fe8X5v1nZruu1PpqHJSldOq9NatYTzbuPgabbYv0ubYtCZ3PRj3zqqyuA57XpU5VXluTl3ttv34z+wlXHk1Or413rjXRd45gX3hWexTv8Z0OjF8Zt/GHnkeHei7QRuzQBED9FYh68emlqYkB76LOfZXyhtvJlyyG9oT0VoLc5g//wF3+BDSbE4rRQHtNrqpFYEHA2Slg/T7kKYxsgENPoKbdbExaq8hRCJp7d22q9Yg/SzuGp9AG2OgAVnpQK8H9Toy1tqlKoJ4H/+g6mQYi4hEYNWoF8AY9JzzQEVkvVgbCfkSDQFEEGvBWAgBFwMo9m4RszZEeH82kK7p5RzDyL9PLwrxYlX+i7EVhoIv4kAiowP6P3yf6P/3XiqdjF7qxlC6QWCDwH/KvwASIpEQWO092wAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
+<title>Когда окупается GEO: две недели от нуля до ответов ИИ</title>
+<meta name="description" content="Реальный таймлайн GEO-Апгрейд: первые упоминания на 4-й день, замер на 8-й, рекомендации на 14-й. Формула окупаемости GEO для вашего бизнеса и чек-лист протокола.">
+<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin=""><link rel="stylesheet" href="fonts.css">
+
+<script async="" src="https://mc.yandex.ru/metrika/tag.js?id=113118311"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Когда окупается GEO: две недели от нуля до ответов ИИ", "description": "Реальный таймлайн GEO-Апгрейд: первые упоминания на 4-й день, замер на 8-й, рекомендации на 14-й. Формула окупаемости GEO для вашего бизнеса и чек-лист протокола.", "author": {"@type": "Person", "name": "Жарких Дарья Александровна", "jobTitle": "GEO-маркетолог и AI-консультант"}, "publisher": {"@type": "Organization", "name": "GEO-Апгрейд", "url": "https://geo-upgrade.ru", "logo": {"@type": "ImageObject", "url": "https://geo-upgrade.ru/favicon.ico"}, "sameAs": ["https://t.me/geoupgrade", "https://vk.ru/geo.upgrade", "https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933", "https://profi.ru/profile/ZharkikhDA3/", "https://workspace.ru/id/darya-zharkih/", "https://www.klerk.ru/user/2726432/", "https://dzen.ru/id/6ab4b86296401f17f0716d4b", "https://g.page/r/CSUI5EnmoeeoEBM/review", "https://maps.app.goo.gl/R8nnURT4CwAqi3nc7", "https://yandex.ru/profile/84156063982", "https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7", "https://2gis.ru/tomsk/geo/70000001118166258", "https://tomsk.flamp.ru/geo_upgrade", "https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/", "https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/"]}, "datePublished": "2026-10-07", "dateModified": "2026-10-07", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://geo-upgrade.ru/blog-post-kogda-okupaetsya-geo.html"}, "image": "https://geo-upgrade.ru/cover-kogda-okupaetsya-geo.jpg", "inLanguage": "ru-RU", "keywords": "окупаемость GEO, через сколько окупается GEO, срок GEO-продвижения, таймлайн AI-видимости, кейс GEO-Апгрейд, упоминания бренда в нейросетях, зоны слепоты, AI-след бренда, Дарья Жарких", "about": {"@type": "Thing", "name": "Окупаемость GEO: таймлайн лаборатории"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://geo-upgrade.ru"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://geo-upgrade.ru/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Когда окупается GEO", "item": "https://geo-upgrade.ru/blog-post-kogda-okupaetsya-geo.html"}]}</script>
+<style>html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}h1,h2,h3,h4{font-family:'Orbitron',sans-serif;line-height:1.15}[id]{scroll-margin-top:5.5rem}.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px;opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.22,1,.36,1)}.card.visible{opacity:1;transform:translateY(0)}.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13)}.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}.btn{opacity:0;transform:translateY(20px);transition:all .8s cubic-bezier(.22,1,.36,1)}.btn.visible{opacity:1;transform:translateY(0)}.btn:hover{transform:translateY(-2px)}.card .btn{opacity:1;transform:none}.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}.badge{display:inline-block;padding:.25rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600}.badge-ai{background:rgba(6,182,212,.15);border:1px solid rgba(6,182,212,.5);color:#22D3EE}.badge-business{background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.5);color:#818CF8}.badge-basics{background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.5);color:#60A5FA}.lab-card{background:rgba(0,240,255,.05);border:1px solid rgba(0,240,255,.2);border-radius:8px;padding:1rem}.table{width:100%;border-collapse:collapse;margin:1.5rem 0}.table-wrapper{overflow-x:auto;margin:1.5rem 0}.table th,.table td{border:1px solid rgba(184,188,198,.3);padding:.75rem;text-align:left;min-width:150px}.table th{background:rgba(0,240,255,.08);color:#00F0FF}blockquote{border-left:4px solid #00F0FF;padding-left:1rem;margin:1.5rem 0;font-style:italic;color:#B8BCC6}.callout{background:rgba(0,240,255,.03);border-left:4px solid #00F0FF;padding:1rem;margin:1.5rem 0;border-radius:0 8px 8px 0}.term{color:#00F0FF;font-weight:600}.checklist{list-style:none;padding-left:0}.checklist li{position:relative;padding-left:1.75rem;margin-bottom:.75rem}.checklist li:before{content:"✓";position:absolute;left:0;color:#00F0FF;font-weight:bold}.faq-item{border:1px solid rgba(184,188,198,.25);border-radius:8px;padding:1rem;margin:1rem 0;background:rgba(13,6,24,.6)}.faq-item summary{cursor:pointer;color:#00F0FF;font-weight:600;font-family:'Orbitron',sans-serif}.faq-item p{margin:1rem 0 0;color:#B8BCC6}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none;opacity:1;transform:none}.card:hover,.btn:hover{transform:none}}@media(max-width:768px){.table{display:block;overflow-x:auto}.table-wrapper{overflow-x:auto}}
+
+.prio-cap{font-family:Orbitron,sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem}
+.prio-cap-1{color:#34D399}
+.prio-cap-2{color:#FBBF24}
+.prio-cap-3{color:#9CA3AF}
+.badge-author{background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.6);color:#A78BFA}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;border-radius:9999px;background:#00F0FF;color:#0D0618;font-family:Orbitron,sans-serif;font-size:.8rem;font-weight:700;flex-shrink:0}
+.tool-chip{font-size:.8rem;padding:.35rem .8rem;border:1px solid rgba(184,188,198,.3);border-radius:9999px;color:#B8BCC6;background:rgba(13,6,24,.6)}
+
+.qmap-label{display:block;font-family:Orbitron,sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#00F0FF;margin:.75rem 0 .3rem}
+.qmap-input,.qmap-select{width:100%;box-sizing:border-box;background:rgba(13,6,24,.72);border:1px solid rgba(184,188,198,.32);border-radius:6px;padding:.55rem .7rem;color:#F5F7FA;font-family:'Exo 2',sans-serif;font-size:.9rem}
+.qmap-input:focus,.qmap-select:focus{outline:none;border-color:rgba(0,240,255,.75);box-shadow:0 0 10px rgba(0,240,255,.18)}
+.qmap-note{font-size:.8rem;color:#B8BCC6;margin-top:.75rem}
+.qmap-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+.copy-ok{color:#34D399;font-size:.85rem;margin-top:.6rem;min-height:1.2em}
+.qmap-code{background:rgba(13,6,24,.85);border:1px solid rgba(184,188,198,.3);border-radius:8px;padding:1rem;font-family:Consolas,'Courier New',monospace;font-size:.85rem;color:#F5F7FA;white-space:pre-wrap;overflow-x:auto;margin:1rem 0}
+.src-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.src-card{background:rgba(13,6,24,.85);border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:1rem;transition:border-color .3s,box-shadow .3s}
+.src-card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13)}
+.src-card h4{font-family:Orbitron,sans-serif;font-size:.85rem;color:#00F0FF;margin:0 0 .5rem;line-height:1.3}
+.src-card p{font-size:.82rem;margin:.35rem 0;color:#B8BCC6}
+.src-card p strong{color:#F5F7FA;font-weight:600}
+.check-list{list-style:none;padding:0;margin:0}
+.check-list li{margin-bottom:.65rem}
+.check-item{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;font-size:.95rem}
+.check-item input{margin-top:.25rem;accent-color:#00F0FF;width:1.05rem;height:1.05rem;flex-shrink:0}
+.check-result{margin-top:1rem;padding:.85rem 1rem;border:1px solid rgba(0,240,255,.35);border-radius:8px;background:rgba(0,240,255,.05);font-size:.92rem}
+.check-result strong{color:#00F0FF}
+
+.cover-figure{margin:2rem 0}
+.cover-figure img{width:100%;height:auto;border-radius:8px;border:1px solid rgba(0,240,255,.2);display:block}
+.cover-figure figcaption{margin-top:.5rem;font-size:.75rem;color:#B8BCC6;text-align:center}
+.quote-card{border-left:4px solid #00F0FF}.def-term{font-family:Orbitron,sans-serif;font-size:1rem;color:#00F0FF;margin:0;line-height:1.3}.icon-svg{width:2rem;height:2rem;flex-shrink:0;color:#00F0FF}.quiz-opt{display:flex;align-items:flex-start;gap:.6rem;padding:.5rem .75rem;border:1px solid rgba(184,188,198,.25);border-radius:8px;cursor:pointer;transition:border-color .25s ease,background .25s ease;font-size:.95rem;margin-bottom:.4rem}.quiz-opt:hover{border-color:rgba(0,240,255,.65);background:rgba(0,240,255,.05)}.quiz-opt input{margin-top:.3rem;accent-color:#00F0FF;width:1.05rem;height:1.05rem;flex-shrink:0}.mt-letter{color:#00F0FF;font-family:Orbitron,sans-serif;font-weight:600;margin-right:.35rem}.mt-q{border:none;padding:0;margin:0}@keyframes mtFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.mt-anim{animation:mtFade .55s ease}.table tbody tr{transition:background .25s ease}.table tbody tr:hover{background:rgba(0,240,255,.06)}@media(prefers-reduced-motion:reduce){.mt-anim{animation:none}}</style>
+<style> /* === Окупаемость GEO: уникальные элементы статьи === */
+.cover-figure{margin:2rem 0}
+.cover-figure img{width:100%;height:auto;border-radius:8px;border:1px solid rgba(0,240,255,.2);display:block}
+.cover-figure figcaption{margin-top:.5rem;font-size:.75rem;color:#B8BCC6;text-align:center}
+.quote-card{border-left:4px solid #00F0FF}
+.roi-cap{font-family:Orbitron,sans-serif;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#00F0FF;margin-bottom:1rem}
+.roi-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:640px){.roi-grid{grid-template-columns:1fr 1fr}}
+.roi-field label{display:block;font-size:.8rem;color:#B8BCC6;margin-bottom:.35rem}
+.roi-field select,.roi-field input{width:100%;padding:.55rem .75rem;border-radius:8px;border:1px solid rgba(184,188,198,.3);background:rgba(13,6,24,.7);color:#F5F7FA;font-family:'Exo 2',sans-serif;font-size:.95rem}
+.roi-field select:focus,.roi-field input:focus{outline:none;border-color:rgba(0,240,255,.6)}
+.roi-range{width:100%;accent-color:#00F0FF}
+.roi-val{color:#00F0FF;font-weight:600}
+.roi-out{margin-top:1.25rem;border-top:1px solid rgba(184,188,198,.2);padding-top:1rem;display:grid;grid-template-columns:1fr;gap:.5rem}
+@media(min-width:640px){.roi-out{grid-template-columns:1fr 1fr 1fr}}
+.roi-cell .roi-num{font-family:Orbitron,sans-serif;font-size:1.3rem;color:#F5F7FA}
+.roi-cell .roi-lab{font-size:.75rem;color:#B8BCC6}
+.roi-verdict{margin-top:1rem;padding:.85rem 1rem;border:1px solid rgba(0,240,255,.35);border-radius:8px;background:rgba(0,240,255,.05);font-size:.92rem}
+.roi-verdict strong{color:#00F0FF}
+.roi-note{margin-top:.75rem;font-size:.75rem;color:#B8BCC6}
+@media(prefers-reduced-motion:reduce){.roi-field input,.roi-field select{transition:none}}</style>
+<link rel="canonical" href="https://geo-upgrade.ru/blog-post-kogda-okupaetsya-geo.html">
+<meta property="og:url" content="https://geo-upgrade.ru/blog-post-kogda-okupaetsya-geo.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://geo-upgrade.ru/cover-kogda-okupaetsya-geo.jpg">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="GEO-Апгрейд">
+<meta property="og:title" content="Когда окупается GEO: две недели от нуля до ответов ИИ">
+<meta property="og:description" content="Реальный таймлайн GEO-Апгрейд: первые упоминания на 4-й день, замер на 8-й, рекомендации на 14-й. Формула окупаемости GEO для вашего бизнеса и чек-лист протокола.">
+  <meta property="article:published_time" content="2026-10-07T22:00:00+07:00">
+<meta property="article:modified_time" content="2026-10-07T22:00:00+07:00">
+<link rel="stylesheet" href="tailwind.min.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<style>
+.badge-experiment{background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.5);color:#A78BFA}
+.badge-visibility{background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.5);color:#34D399}
+.t160-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 0}
+.t160-chip{font-size:.78rem;padding:.3rem .7rem;border:1px solid rgba(184,188,198,.3);border-radius:9999px;color:#B8BCC6;background:rgba(13,6,24,.6);cursor:pointer;transition:all .25s ease;font-family:'Exo 2',sans-serif}
+.t160-chip:hover{border-color:rgba(0,240,255,.65);color:#F5F7FA}
+.t160-chip.on{border-color:rgba(0,240,255,.75);color:#00F0FF;background:rgba(0,240,255,.08);box-shadow:0 0 8px rgba(0,240,255,.15)}
+.t160-note{font-size:.8rem;color:#B8BCC6;margin-top:.6rem}
+.t160-scheme{display:grid;grid-template-columns:1fr;gap:.75rem;align-items:stretch;margin:1.5rem 0}
+.t160-op{text-align:center;font-family:Orbitron,sans-serif;font-size:1.4rem;color:#00F0FF;padding:.25rem 0}
+.t160-cap{font-family:Orbitron,sans-serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#00F0FF;margin:0}
+.t160-big{font-family:Orbitron,sans-serif;font-size:2rem;font-weight:700;color:#F5F7FA;margin:.25rem 0}
+.t160-eq{font-family:Orbitron,sans-serif;font-size:1rem;color:#00F0FF;margin:.25rem 0}
+@media(min-width:820px){.t160-scheme{grid-template-columns:1fr auto 1fr auto 1.4fr}.t160-op{display:flex;align-items:center;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.t160-chip{transition:none}}
+</style>
+<style>
+/* фикс цвета плашек (badge-*), палитра сайта */
+.badge-visibility{background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.5);color:#34D399}
+</style>
+<link rel="stylesheet" href="perf-fixes.css">
+<style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style>
+</head><body><header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><main class="max-w-4xl mx-auto px-5 py-16 md:py-24">
+<article>
+<header class="mb-8">
+<p class="font-heading text-xs tracking-[.2em] text-[#00F0FF] uppercase mb-3">Лаборатория AI-видимости бренда · GEO-Апгрейд</p>
+<div class="flex flex-wrap gap-2 mb-4"><a href="blog-business.html" class="badge badge-business hover:opacity-80">GEO ДЛЯ БИЗНЕСА</a></div>
+<h1 class="text-3xl md:text-5xl font-bold">Когда окупается GEO: таймлайн лаборатории — 15 дней от нуля до рекомендаций</h1>
+<p class="mt-4 text-lg text-[#B8BCC6]">Скрины прогонов с 26.09, три замера и формула: как посчитать срок под свой бизнес</p>
+<div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#B8BCC6]">
+<time datetime="2026-10-07">7 октября 2026</time><span>•</span><span>12–14 минут</span><span>•</span><span><a href="about-daria-zharkikh.html" class="text-[#00F0FF] hover:underline">Дарья Жарких</a></span>
+</div>
+</header>
+
+<aside class="lab-card mb-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+<div><span class="font-heading text-[#00F0FF]">Тема:</span><p class="mt-1">Окупаемость GEO: живой протокол на своём сайте</p></div>
+<div><span class="font-heading text-[#00F0FF]">Период:</span><p class="mt-1">22.09 – 07.10.2026 (15 дней)</p></div>
+<div><span class="font-heading text-[#00F0FF]">Метод:</span><p class="mt-1">Три замера и скрины прогонов</p></div>
+<div><span class="font-heading text-[#00F0FF]">Объём:</span><p class="mt-1">15 дней · 3 замера · 13 скринов</p></div>
+</div>
+<div class="mt-4 text-xs"><span class="font-heading text-[#00F0FF]">Для кого:</span><p class="mt-1">Владельцы бизнеса, эксперты и маркетологи, которые спрашивают «через сколько окупится GEO» и хотят ориентир, а не обещание</p></div>
+</aside>
+
+<figure class="cover-figure">
+<img src="cover-kogda-okupaetsya-geo.jpg" alt="Обложка статьи: неоновая линия таймлайна со светящимися вехами поднимается вверх на тёмно-фиолетовом лабораторном фоне" width="1200" height="630" loading="eager" decoding="async">
+<figcaption>Таймлайн лаборатории: 15 дней от пустого домена до первых рекомендаций — протокол от GEO-Апгрейд</figcaption>
+</figure>
+
+<div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Главный вывод:</span> от пустого домена до активных рекомендаций нейросети у нас прошло две недели. Первые упоминания появились ещё до SSL-сертификата. А денежная окупаемость — это не «срок из методички», а расчёт от вашего чека и конверсии. Ниже — наш таймлайн по дням и формула, по которой вы посчитаете свой срок.</p></div>
+
+<p>Я — Дарья Жарких, GEO-маркетолог и основательница лаборатории GEO-Апгрейд. В сентябре мы запустили сайт и с первого дня вели журнал: даты публикаций, скрины прогонов, замеры. Через две недели нейросеть уже ставила нас первой в списках специалистов Томска и пересказывала наши услуги дословно — по сайту.</p>
+<p>Вопрос «через сколько окупается GEO» я слышу на каждой консультации. Честного ответа на рынке почти нет: SEO-методички переносят привычные «6–12 месяцев» на новый канал, агентства обещают «AI-доминацию за месяц». Мы сделали то, что считаем правильным: замерили на себе. Ниже — таймлайн по дням, три замера и формула под ваш бизнес. Без обещаний: обещания в GEO — красный флаг, мы так и пишем в <a href="blog-post-skolko-stoit-geo.html" class="text-[#00F0FF] hover:underline">статье про цены</a>.</p>
+
+<nav class="card p-6 mb-8"><h2 class="text-lg font-semibold mb-4">Содержание</h2><ul class="space-y-2 text-sm">
+<li><a href="#otvet" class="text-[#00F0FF] hover:underline">Короткий ответ: наш срок</a></li>
+<li><a href="#dva-taymera" class="text-[#00F0FF] hover:underline">Два таймера: сигналы и деньги</a></li>
+<li><a href="#do-ssl" class="text-[#00F0FF] hover:underline">Точка 0: видимость до SSL</a></li>
+<li><a href="#taymlayn" class="text-[#00F0FF] hover:underline">Таймлайн 15 дней: от нуля до рекомендаций</a></li>
+<li><a href="#zamery" class="text-[#00F0FF] hover:underline">Три замера: что изменилось</a></li>
+<li><a href="#skorost" class="text-[#00F0FF] hover:underline">Что дало скорость</a></li>
+<li><a href="#formula" class="text-[#00F0FF] hover:underline">Как посчитать окупаемость у себя</a></li>
+<li><a href="#net-rezultata" class="text-[#00F0FF] hover:underline">Что если результата нет</a></li>
+<li><a href="#chek-list" class="text-[#00F0FF] hover:underline">Чек-лист: как повторить протокол</a></li>
+<li><a href="#interaktiv" class="text-[#00F0FF] hover:underline">Калькулятор окупаемости</a></li>
+<li><a href="#fakty" class="text-[#00F0FF] hover:underline">Примечание по фактам</a></li>
+</ul></nav>
+
+<h2 id="otvet" class="text-2xl md:text-3xl font-bold mt-12">Короткий ответ: наш срок</h2>
+<p>Сколько ждать, пока GEO окупится? Наш замер отвечает по вехам — и все они зафиксированы скринами и журналами проекта:</p>
+<div class="table-wrapper"><table class="table">
+<tr><th>Веха</th><th>Когда</th><th>Что это значит</th></tr>
+<tr><td>Первые упоминания</td><td>4-й день (26.09)</td><td>Нейросеть и поиск уже отвечают про нас: имя, город, «лаборатория», цены услуг</td></tr>
+<tr><td>Замеряемая видимость</td><td>8-й день (30.09)</td><td>ИИ отвечает в 43% брендовых запросов о нас</td></tr>
+<tr><td>Первые места и рекомендации</td><td>14-й день (06–07.10)</td><td>Первые в списках специалистов Томска, услуги пересказаны дословно</td></tr>
+</table></div>
+<p>«Стартом» считаем 22 сентября — день, когда сайт был создан с основными страницами. Наполнение началось 23-го, первая статья датирована 23.09.</p>
+<p>Важная оговорка. Сроки сигналов — измеренный факт нашего кейса. Денежная окупаемость — не факт, а расчёт: она зависит от вашего среднего чека, конверсии и маржи. Обещать в деньгах не может никто — и если подрядчик обещает, это красный флаг. Формула для вашего срока — в разделе <a href="#formula" class="text-[#00F0FF] hover:underline">«Как посчитать окупаемость у себя»</a>.</p>
+
+<h2 id="dva-taymera" class="text-2xl md:text-3xl font-bold mt-12">Два таймера: сигналы и деньги</h2>
+<p>У GEO два таймера, и их часто путают в один.</p>
+<p>Первый таймер — <span class="term">сигналы</span>. Нейросеть начинает знать о вас: имя, услуги, цены. Это измеримо за недели — у нас видимость менялась между замерами каждые несколько дней.</p>
+<p>Второй таймер — <span class="term">деньги</span>. Заявки и клиенты. Он зависит от вашей воронки: сколько людей вообще спрашивают нейросети про вашу нишу, сколько из них доходит до заявки. Этот таймер считает ваша CRM, а не мой отчёт.</p>
+<div class="callout"><p class="mb-0">Если подрядчик называет срок окупаемости в деньгах, не спросив про ваш чек и конверсию, — он говорит про первый таймер, подписывая его словами второго. Первый — смотрите ниже, он у нас на глазах. Второй — считайте сами: формула в разделе 7.</p></div>
+
+<h2 id="do-ssl" class="text-2xl md:text-3xl font-bold mt-12">Точка 0: видимость до SSL</h2>
+<p>Сайт создан 22.09, наполнение началось 23.09. Первые прогоны я сделала уже 26.09 — за два дня до появления доменного SSL-сертификата. Вот что увидела (скрины 1–3):</p>
+<div class="table-wrapper"><table class="table">
+<tr><th>Скрин</th><th>Время</th><th>Что показано</th></tr>
+<tr><td>Скрин 1</td><td>26.09, 18:42</td><td>Поиск Яндекса: geo-upgrade.ru в выдаче — «GEO-Апгрейд — Лаборатория AI-видимости бренда», описание услуг и мини-аудита</td></tr>
+<tr><td>Скрин 2</td><td>26.09, 18:43</td><td>Быстрый ответ Алисы: «geo апгрейд» — лаборатория для заметности бизнеса в генеративном поиске; бесплатный мини-аудит; контакты</td></tr>
+<tr><td>Скрин 3</td><td>26.09, 18:51</td><td>Чат Алисы «GEO-Апгрейд лаборатория в Томске»: определение и точные цены — GEO-сканер Лайт, 8 000–12 000 ₽</td></tr>
+</table></div>
+<p>Обратите внимание на скрин 3: нейросеть называет точную вилку прайса. Это не общие слова «предлагает услуги аудита» — это наша страница услуг, пересказанная дословно. Значит, ИИ её уже читал.</p>
+<p>И всё это — без доменного SSL. Сертификат отвечает за шифрование канала, а не за знание о бренде. Знание собирается из сигналов: контент (статьи с 23.09), карточки на площадках, разметка. Технический аудит 27.09 при этом честно показывал 10/20: сайт был «цифровым призраком» по технике — но уже не нулём по сигналам.</p>
+<div class="callout"><p class="mb-0">Практический вывод: не ждите идеальной технической готовности. Контент и карточки дают первый AI-след за дни; технический слой уточняет его — точность ответов выросла с 72% в базовом замере до дословного пересказа услуг к 07.10.</p></div>
+
+<h2 id="taymlayn" class="text-2xl md:text-3xl font-bold mt-12">Таймлайн 15 дней: от нуля до рекомендаций</h2>
+<div class="table-wrapper"><table class="table">
+<tr><th>Дата</th><th>Событие</th><th>Что видела нейросеть</th><th>Источник</th></tr>
+<tr><td>22.09</td><td>Сайт создан с основными страницами</td><td>—</td><td>журналы</td></tr>
+<tr><td>23.09</td><td>Первые статьи блога</td><td>—</td><td>журналы</td></tr>
+<tr><td>26.09</td><td>Первые прогоны</td><td>ИИ знает имя, город, «лабораторию» и цены — без SSL</td><td>Скрины 1–3</td></tr>
+<tr><td>27.09</td><td>Аудит по чек-листу: 10/20</td><td>«Технический призрак»: SSL на домене нет, llms-файла нет, разметки нет. Сайт жив</td><td>журналы</td></tr>
+<tr><td>28.09</td><td>SSL починен к 18:10</td><td>Сертификат на оба имени, все варианты URL корректны</td><td>журналы</td></tr>
+<tr><td>29.09</td><td>Кейс, этап 1 «Запросный двойник»</td><td>—</td><td>журналы</td></tr>
+<tr><td>29.09, ночь</td><td>Термины канонизированы</td><td>«Контентный маяк» и «цифровой призрак» ИИ объясняет со ссылкой на нас; поиск называет «Дарья Жарких — GEO-маркетолог и AI-консультант»</td><td>Скрины 4–7</td></tr>
+<tr><td>30.09</td><td>Базовый замер</td><td>67 запросов: ИИ упоминает нас в 43.3% случаев, точность ответов 72.4%. В каждом третьем ответе сайт цитируется без имени бренда. Локаль Томска — зона слепоты</td><td>журналы</td></tr>
+<tr><td>02.10</td><td>Карточки площадок связаны</td><td>9 площадок с одинаковыми данными о нас, sameAs ×11</td><td>журналы</td></tr>
+<tr><td>04.10</td><td>Прогон №001 отслеживателя</td><td>57 из 80, сайт в 9 из 20 ответов. Локали всё ещё нет, основателя модель не называет</td><td>журналы</td></tr>
+<tr><td>05.10</td><td>Техслой добит до стандарта</td><td>sameAs на 58 из 58 страниц, авторство 23 из 23</td><td>журналы</td></tr>
+<tr><td>06.10</td><td>Большой замер</td><td>79 запросов, 16 категорий. В GEO-блоке 12 баллов: 3 упоминания и 3 первых места. В списке специалистов — первые</td><td>журналы</td></tr>
+<tr><td>06–07.10</td><td>Прогоны без аккаунта</td><td>Рекомендуют первой, линейку услуг пересказывают дословно</td><td>Скрины 8–13</td></tr>
+</table></div>
+<p>Отдельно — цитаты из ответов Алисы на прогонах 6–7 октября, без аккаунта, свежие чаты (дословно, сокращённо):</p>
+<div class="table-wrapper"><table class="table">
+<tr><th>Скрин</th><th>Ответ Алисы</th></tr>
+<tr><td>Скрин 8</td><td>«В Томске нашлась ровно одна частная специалистка, которая позиционирует себя именно как GEO-маркетолог и AI-консультант — это Дарья Александровна Жарких…»</td></tr>
+<tr><td>Скрин 9</td><td>«…она сама называет это „лабораторией AI-видимости бренда“ и делает ставку на измеримость: не „стало лучше“, а „вот сколько раз нейросеть упомянула, в каком контексте и на каких платформах“»</td></tr>
+<tr><td>Скрин 10</td><td>«Честная оценка. Плюсы: реально единственный в Томске человек, который занимается именно GEO… Честно обозначает ограничения: не обещает 100% результат, не публикует фейковые кейсы»</td></tr>
+<tr><td>Скрин 11</td><td>«1. Дарья Жарких — GEO-Апгрейд. Единственный в Томске специализированный GEO-маркетолог-фрилансер. Основала первую в городе лабораторию GEO-маркетинга…»</td></tr>
+<tr><td>Скрин 12</td><td>«Если выбирать по степени специализации: GEO-Апгрейд выглядит как самый „чистый“ игрок — вся линейка продуктов построена вокруг GEO»</td></tr>
+<tr><td>Скрин 13</td><td>Линейка услуг перечислена дословно: GEO-сканер, GEO-лаборатория контента, GEO-маршрут, GEO-тест-драйв, GEO-штурвал + «есть бесплатный мини-аудит для старта»</td></tr>
+</table></div>
+<p>Самый показательный переход — локальная выдача. 4 октября на запрос про Томск нас в ответе нет; 6 октября — мы первые в списке специалистов. Два дня.</p>
+
+<h2 id="zamery" class="text-2xl md:text-3xl font-bold mt-12">Три замера: что изменилось</h2>
+<div class="table-wrapper"><table class="table">
+<tr><th>Метрика</th><th>30.09 (базовый)</th><th>04.10 (прогон №001)</th><th>06.10 (большой)</th></tr>
+<tr><td>Объём замера</td><td>67 запросов, 9 категорий</td><td>20 вопросов</td><td>79 запросов, 16 категорий</td></tr>
+<tr><td>Упоминания бренда</td><td>29 из 67 (43.3%)</td><td>сайт в 9 из 20 ответов</td><td>4 из 4 GEO-ответов</td></tr>
+<tr><td>Точность ответов</td><td>72.4%</td><td>—</td><td>—</td></tr>
+<tr><td>Позиция</td><td>1.19 — почти всегда первым</td><td>—</td><td>3 первых места</td></tr>
+<tr><td>Ссылка на сайт в ответе</td><td>96.6% упоминаний</td><td>—</td><td>—</td></tr>
+<tr><td>Локальная выдача Томска</td><td>нас нет</td><td>нас нет</td><td>нас назвали первыми</td></tr>
+</table></div>
+<p>Честная оговорка: три замера считались по разным протоколам — с разным числом запросов и разными шкалами. Сравнивать цифры между колонками напрямую нельзя. Сравнивайте события: была ли компания в локальной выдаче, стояла ли первой, пересказывал ли ИИ услуги дословно. Именно эти события и меняются в таблице.</p>
+
+<h2 id="skorost" class="text-2xl md:text-3xl font-bold mt-12">Что дало скорость</h2>
+<p><strong>Контент с первого дня.</strong> Статьи с 23.09, каждая — по карте запросов. Дословный пересказ наших услуг и терминов — прямое доказательство, что ИИ читал наш контент, а не чужие пересказы.</p>
+<p><strong>Карточки на площадках.</strong> Workspace, 2ГИС, Авито, Яндекс Услуги, Профи.ру и другие — одинаковое имя, адрес, телефон на всех. Нейросеть собирает бренд из согласованных сигналов: расхождение данных между площадками — это утечка доверия модели.</p>
+<p><strong>Собственный словарь бренда.</strong> «Контентный маяк», «цифровой призрак», «зона слепоты» не существовали нигде, кроме нашего сайта. Когда 29.09 ИИ объяснял их со ссылкой на лабораторию — это маркер чистоты канала: он читал источник, а не пересказ. Канонизация словаря заняла неделю.</p>
+<p><strong>Технический слой без драмы.</strong> Файлы для ИИ на сайте, md-версии страниц, Schema.org, связь карточек с сайтом. Техника не создаёт знание — она его уточняет: 72% точности в базовом замере превратились в дословный пересказ услуг к 07.10.</p>
+<p>Пятый фактор мы не добавляли — он сработал сам: <strong>честность</strong>. Алиса отдельно отметила: «честно обозначает ограничения: не обещает 100% результат, не публикует фейковые кейсы». Сигналы доверия ИИ считывает из открытых ограничений. Это не совет «пиши скромнее» — это работающий сигнал.</p>
+
+<h2 id="formula" class="text-2xl md:text-3xl font-bold mt-12">Как посчитать окупаемость у себя</h2>
+<p>Сигнальные сроки у вас будут похожи на наши. Денежные — считаются только по вашим числам. Формула из трёх шагов:</p>
+<div class="lab-card"><p class="mb-0">
+<strong>1. Прибыль с одного клиента</strong> = средний чек × маржа.<br>
+<strong>2. Клиентов для окупаемости</strong> = стоимость GEO ÷ прибыль с одного клиента.<br>
+<strong>3. Срок окупаемости</strong> = стоимость GEO ÷ месячная прибыль из этого канала.</p></div>
+<p>Пример (модель, не обещание): чек 20 000 ₽, маржа 50% — с клиента остаётся 10 000 ₽. Аудит за 12 000 ₽ окупается примерно с полутора клиентов. А абонемент за 35 000 ₽ в месяц требует 3.5 клиента ежемесячно — и тут честный вопрос к рынку: сколько людей в вашей нише вообще спрашивают нейросети? Ответ даст замер, а не обещание.</p>
+<p>Ориентиры по ценам — наш прайс: аудит 8 000–20 000 ₽, маршрут бренда 18 000 ₽, полный цикл с передачей методики 55 000–80 000 ₽. Вилки рынка — в статье <a href="blog-post-skolko-stoit-geo.html" class="text-[#00F0FF] hover:underline">«Сколько стоит GEO-продвижение в 2026»</a>.</p>
+<p>Один нюанс, о котором забывают: заявка из нейросети не всегда видна в счётчике. Человек может прийти по телефону со словами «нейросеть рекомендовала». Поэтому в протоколе замера мы фиксируем и вопрос, с которым пришёл клиент.</p>
+
+<h2 id="net-rezultata" class="text-2xl md:text-3xl font-bold mt-12">Что если результата нет</h2>
+<p>Три разные ситуации — и у каждой свой следующий шаг:</p>
+<ul class="space-y-2 text-[#B8BCC6]">
+<li><strong>Рекомендации не внедрили.</strong> Замер показал зоны слепоты, отчёт лежит, сайт не тронут. Это не провал GEO — это незавершённая работа. Сигналы есть, каналы закрыты.</li>
+<li><strong>Внедрили — и ноль.</strong> Проверяем в порядке дешевизны: точность данных о компании (нейросеть не может рекомендовать то, в чём не уверена), локальные сигналы (карты, каталоги, отзывы), глубину контента по карте запросов. Неудача гипотезы — тоже результат: она экономит месяц работы в закрытую дверь.</li>
+<li><strong>Ниша ещё не спрашивает ИИ.</strong> Замер это покажет тоже. Если в вашей нише нейросеть вообще не составляет коммерческих списков — GEO не первое вложение. Лучше узнать это за один аудит, чем за полгода абонемента.</li>
+</ul>
+<p>Если после замера двигаться некуда — это тоже результат: вы потратили один аудит, а не шесть месяцев абонемента.</p>
+
+<h2 id="chek-list" class="text-2xl md:text-3xl font-bold mt-12">Чек-лист: как повторить протокол</h2>
+<ul class="checklist">
+<li><strong>Сайт с понятной сущностью</strong> — кто вы, что делаете, для кого (день 1–2).</li>
+<li><strong>Контент с первого дня</strong> — 3–5 статей по карте запросов (день 2–5).</li>
+<li><strong>Карточки на 4–6 площадках</strong> с одинаковыми именем, адресом и телефоном (день 3–7).</li>
+<li><strong>Свой словарь бренда</strong> — 3–5 авторских терминов, объяснённых на сайте (день 3–7).</li>
+<li><strong>Технический минимум</strong> — llms-файл, md-версии, Schema.org, связь с площадками (неделя 1).</li>
+<li><strong>Базовый замер</strong> — 20–60 запросов по вашей нише (день 7–10).</li>
+<li><strong>Внедрение рекомендаций</strong> — закрытие зон слепоты, уточнение данных (неделя 2).</li>
+<li><strong>Повторный замер</strong> и сравнение «было/стало» (день 14–21).</li>
+<li><strong>Формула окупаемости</strong> — подставьте свои числа (после замера).</li>
+<li><strong>Журнал</strong> — каждый замер: скрины + дата (постоянно).</li>
+</ul>
+<p>Прикладывайте этот чек-лист к заявке через <a href="contacts.html#form" class="text-[#00F0FF] hover:underline">форму на странице контактов</a> — по нему соберём ваш маршрут: что уже есть, чего не хватает и в какой последовательности двигаться.</p>
+
+<h2 id="interaktiv" class="text-2xl md:text-3xl font-bold mt-12">Калькулятор окупаемости</h2>
+<p>Подставьте свои числа — калькулятор считает по формуле из раздела 7. Это модель, не прогноз: реальный срок зависит от вашей ниши и от того, сколько людей в ней уже спрашивают нейросети.</p>
+<div class="card p-6" id="roi-root">
+<div class="roi-cap">LAB TOOL · КАЛЬКУЛЯТОР ОКУПАЕМОСТИ</div>
+<div class="roi-grid">
+<div class="roi-field"><label for="roi-service">Услуга</label>
+<select id="roi-service">
+<option value="10000">GEO-сканер Лайт — 10 000 ₽ (вилка 8 000–12 000)</option>
+<option value="16000">GEO-сканер Полный — 16 000 ₽ (вилка 12 000–20 000)</option>
+<option value="18000">GEO-маршрут бренда — 18 000 ₽</option>
+<option value="67500">GEO-штурвал — 67 500 ₽ (вилка 55 000–80 000)</option>
+</select></div>
+<div class="roi-field"><label for="roi-price">Средний чек, ₽</label>
+<input type="number" id="roi-price" min="0" step="1000" value="20000"></div>
+<div class="roi-field"><label>Маржа: <span class="roi-val" id="roi-margin-val">50%</span></label>
+<input type="range" id="roi-margin" min="10" max="90" step="5" value="50" class="roi-range"></div>
+<div class="roi-field"><label>Конверсия из заявки в сделку: <span class="roi-val" id="roi-conv-val">20%</span></label>
+<input type="range" id="roi-conv" min="5" max="100" step="5" value="20" class="roi-range"></div>
+</div>
+<div class="roi-out">
+<div class="roi-cell"><div class="roi-num" id="roi-profit">—</div><div class="roi-lab">Прибыль с одного клиента</div></div>
+<div class="roi-cell"><div class="roi-num" id="roi-clients">—</div><div class="roi-lab">Клиентов для окупаемости</div></div>
+<div class="roi-cell"><div class="roi-num" id="roi-leads">—</div><div class="roi-lab">Заявок при вашей конверсии</div></div>
+</div>
+<div class="roi-verdict" id="roi-verdict">—</div>
+<p class="roi-note">Расчёт по формуле из статьи. Заявки из нейросетей видны не всегда: часть клиентов приходит со словами «нейросеть рекомендовала» — фиксируйте вопрос, с которым пришёл клиент.</p>
+</div>
+
+<h2 id="fakty" class="text-2xl md:text-3xl font-bold mt-12">Примечание по фактам</h2>
+<p>Номера скринов в статье — порядковые, для читателя. Легенда по периодам:</p>
+<div class="table-wrapper"><table class="table">
+<tr><th>Скрины</th><th>Когда сняты</th><th>Условия</th></tr>
+<tr><td>1–3</td><td>26.09, 18:42–18:51</td><td>Первые прогоны — ещё до SSL-сертификата</td></tr>
+<tr><td>4–7</td><td>29.09, ночь</td><td>Прогоны после починки SSL: канонизация терминов</td></tr>
+<tr><td>8–13</td><td>06–07.10</td><td>Прогоны без аккаунта, инкогнито, свежие чаты</td></tr>
+</table></div>
+<ul class="space-y-2 text-[#B8BCC6]">
+<li>Три замера считались по разным протоколам (см. раздел «Три замера») — прямое сравнение цифр некорректно, сравнение событий корректно.</li>
+<li>Время на скринах — время устройства.</li>
+<li>В скрине 10 раздел «Ограничения» свёрнут — полный текст ответа не виден.</li>
+<li>Наш кейс — лаборатория в нише GEO, где тема по определению спрашивается у нейросетей. В других нишах скорость может отличаться — поэтому формула в разделе 7 важнее наших дат.</li>
+<li>Скорость сайта (PageSpeed 07.10: десктоп 99–100, мобайл 83) — к окупаемости сигналов отношения не имеет; приводим для полноты протокола.</li>
+</ul>
+
+<div class="card p-6 quote-card">
+<p class="mb-3">Следующий шаг — бесплатный мини-аудит GEO-Апгрейда. Он показывает не обещание «вывести в топ», а карту текущего AI-следа, источников и слепых зон — точку отсчёта вашего таймлайна.</p>
+<a href="contacts.html?service=free-audit#form" class="btn glow inline-block rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618]">Пройти бесплатный мини-аудит</a>
+<p class="mt-4 text-sm text-[#B8BCC6]">Хотите не отчёт, а рабочую методику? Посмотрите <a href="geo-shturval.html" class="text-[#00F0FF] hover:underline">GEO-штурвал</a> — разовый аудит с передачей методики: метрики, протокол замеров и промпт-библиотека остаются у вас.</p>
+</div>
+
+<p class="mt-8 text-sm text-[#B8BCC6]">Связанные термины: <a href="glossary.html" class="text-[#00F0FF] hover:underline">AI-видимость</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">Цифровой призрак</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">Зона слепоты</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">AI-след бренда</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">Контентный маяк</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">Лабораторный протокол</a></p>
+
+<nav class="card p-6 mt-8"><h2 class="text-lg font-semibold mb-4">Похожие материалы</h2><ul class="space-y-2 text-sm">
+<li><a href="blog-post-skolko-stoit-geo.html" class="text-[#00F0FF] hover:underline">← Сколько стоит GEO-продвижение в 2026: вилки по рынку и наш прайс</a></li>
+<li><a href="blog-post-anatomiya-geo-marketinga.html" class="text-[#00F0FF] hover:underline">← Анатомия GEO-маркетинга: 5 услуг, 3 подхода, 1 лаборатория</a></li>
+<li><a href="blog-post-geo-metrics-full.html" class="text-[#00F0FF] hover:underline">← Какие GEO-метрики можно использовать в отчёте</a></li>
+<li><a href="blog-post-geo-apgreyd-ai-ready.html" class="text-[#00F0FF] hover:underline">← Как GEO-Апгрейд оптимизирован для AI: проверка по 17 пунктам</a></li>
+<li><a href="blog-post-komu-nuzhno-geo.html" class="text-[#00F0FF] hover:underline">← Кому нужно GEO-продвижение и почему</a></li>
+<li><a href="blog-post-top-160-tomsk.html" class="text-[#00F0FF] hover:underline">← Топ-160 Томска: как нейросети видят местный бизнес</a></li>
+<li><a href="blog.html" class="text-[#00F0FF] hover:underline">← Все материалы лаборатории</a></li>
+</ul></nav>
+</article>
+
+</main>
+<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="256" height="256"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p><p class="text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера 22</p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p></div><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer><script>document.addEventListener('DOMContentLoaded',function(){var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduceMotion||!('IntersectionObserver' in window)){document.querySelectorAll('.card,.btn').forEach(function(el){el.classList.add('visible')});return}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.card').forEach(function(card){observer.observe(card)});document.querySelectorAll('.btn').forEach(function(btn){if(!btn.closest('.card')){observer.observe(btn)}});var headerBtn=document.querySelector('header .btn');if(headerBtn){headerBtn.classList.add('visible')}});</script><script>
+(function(){
+  var root=document.getElementById('roi-root');
+  if(!root) return;
+  var svc=document.getElementById('roi-service'),
+      price=document.getElementById('roi-price'),
+      marg=document.getElementById('roi-margin'),
+      margV=document.getElementById('roi-margin-val'),
+      conv=document.getElementById('roi-conv'),
+      convV=document.getElementById('roi-conv-val'),
+      outP=document.getElementById('roi-profit'),
+      outC=document.getElementById('roi-clients'),
+      outL=document.getElementById('roi-leads'),
+      verdict=document.getElementById('roi-verdict');
+  function fmt(n){return n.toLocaleString('ru-RU');}
+  function upd(){
+    var cost=parseInt(svc.value,10)||0;
+    var p=parseInt(price.value,10);
+    if(isNaN(p)||p<=0){p=0;}
+    var m=parseInt(marg.value,10);
+    var c=parseInt(conv.value,10);
+    margV.textContent=m+'%';
+    convV.textContent=c+'%';
+    var profit=Math.round(p*m/100);
+    if(profit<=0){
+      outP.textContent='—';outC.textContent='—';outL.textContent='—';
+      verdict.innerHTML='Введите средний чек и поднимите маржу — и калькулятор посчитает срок.';
+      return;
+    }
+    var clients=cost/profit;
+    var leads=clients/(c/100);
+    outP.textContent=fmt(profit)+' ₽';
+    outC.textContent=clients<10?clients.toFixed(1):String(Math.ceil(clients));
+    outL.textContent=leads<10?leads.toFixed(1):String(Math.ceil(leads));
+    var cliTxt=clients<=1?'достаточно одного клиента':(clients<10?'нужно ~'+clients.toFixed(1)+' клиента':'нужно ~'+Math.ceil(clients)+' клиентов');
+    verdict.innerHTML='Чтобы окупить услугу за '+fmt(cost)+' ₽ при чеке '+fmt(p)+' ₽ и марже '+m+'%, <strong>'+cliTxt+'</strong> из AI-канала. Замер покажет, сколько людей в вашей нише спрашивают нейросети.';
+  }
+  svc.addEventListener('change',upd);
+  price.addEventListener('input',upd);
+  marg.addEventListener('input',upd);
+  conv.addEventListener('input',upd);
+  upd();
+})();
+</script>
+
+<script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
+<script src="/geo-assistant-widget.js" defer=""></script>
+<div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div>
+</body></html>
