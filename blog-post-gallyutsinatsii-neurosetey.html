@@ -1,0 +1,606 @@
+<!DOCTYPE html><html lang="ru"><head>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA+AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgVJREFUeJylkztoVFEQhr8559zduw83RoKEaBRUVBQfIFgEBbERQQtLESJR1kiwkIiNFja2YmMXEUFbG1PoEoIg2ASCCUQhqMEHghhFTET3Ps4di7uJQdLtNDNn5p85A/8/Ug03Km2YaacZwAEgkr90xTJLuSVbraaKU2OQNIEsA+dATB6nKaD/GqwDY/JcnIAIGgQ4kohsXRcahsj8PJLGaLkC1SpqLYggzQhZWIA4AiDr7kbSFPk2j9gHzzTbsbs1NaF46QLasZZ45C58XYQQzNRrwsEz+J27iG/cRDdtA1XM9Etg6ocWT9S11LNXi8f6tbTloBZO1pWfqoXTw1rq2aOl3v1a6tyqpjGrMv1dwwPHtXBqSHnn1QUP72Oej5EOXoayRxYXEGPht5KcGyI93499Mo4dfUS2bzvu9h3MzBTyYQ47PobTWgf4DFRJrg5DEiKTE+AyXOMx5tUk8vlLzoIH1tQgiqDioVzBpWcHII4wb2bhD+BTEIUOixoLSYZ2rcdOvMCOPiUd6Ec+zqEbevFHDyHBlVvq+w6DK2DezhDcG0GrNeJr18EHUC0i7z9RHL4IhQJJfQjfdwSiJna8gVToVERa/KcQFMEFy5SRZbkvlfO4+QvEtYSlSLWyWZdVJpKDVHPRKCAtPWmW141hJd7h/eoiX/p55amp8j++7WNqe8BfwsTb5mYAskEAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFU0lEQVR42u2Xa4hd1RXHf2vvfc59TO5NZsYkkzhDoy1qBEFrBaUvaEsJlL5MExVbEBUKFVEQCwVLP1QstdBWqQ2FPigllIDmg5WipTV9xKpVqgRbopYqJtGZzCt37p1z7z3n7L36YZ/rTNoG2k/5Mgs297DO3v/73+t9ZFN9WjmPYjjPskFgg8B5J+DUSHwSiUsBFDQuoVKNROScYKKgum63cDb26GyFHQk4h2iAPIeyBFXUCFgHSQIqEHxFTsGX6H8hIaooAsacTdZa8GXE9xWOc5DWUBEcwwHaaBAu3Y1esB2sRVZ7yOwp5ORJNHik0QAf0HodbbVADIwsp4AGVAPkBdLtIgoYQQHJeujkVsJFF6ObJ8CXyOlZzJtvQJHjiptuwX9+H+F9l0GrAQmQgywuY147RnLgEcwLz0JZ4D/yMfKHHoZVXbMIQAjQEMwrr1K7/QZUDGgAa8nvvJdy7w3o1DRsslACK33M317G/eKnuOL+B6KvLNBVZLGLpim6dRx/1UeRN05QO/p7Qr2ONpvoeBsccaWsWWEMdH4HWIeKIBiG3/4B/gt7IKs8MtdFa3WYaBA+dB35B67DkXlwgnvsEPbxw8jSAiQJum07fs+nkFNvoWkafWkMDBUsyPHXSX7yw0i+yBH1sHwm7u2tUNx6B37vHlgoYNAn+f6D2BefQxtNyi/dhv/0Z6EMOFoWe/AQyf33QZpE0wZF/vk69pk/omNjaHszZBkYF0PbgSwvYX/zRLzaIEOGOaQpumUctkxQXn8jdAOMJSSPfA/3y5/B+CRSlqTf+gbD915CuOIyHJ0c9/ij0GyATWC1F32bJKhTGPShOQa2CjwBCkVndlHcc18kUOSQBMyLL2F/9yThiqvQnTOgBpb72KNPQ2szBIVaHVZ7mD8dIVy9GyeLS3DmTEy7fkZ599fwV14OfaBmkcVl0ge+DoNBdIEAuaIzU5R331IFIdAG+9Bh3K8eQycmIXUgIJ0zsNKtUjWgvozP83NQgou+rYpE8PhrriV84nI4DdRAZjO0VsMYieZXwAqy2EWePx4JlAU0BfP3Y5CkMe9H9WiEv746SaUXcLptEt1xIcy+De0tJN/5JnpwB8UdX0Wnt0G3C2JikRmVxZogL79Keu9XAEWGA8hLsAbd1MLMzUJ/AM06OjGBTm5FlhbRJI1FqJ+hM7vAgqFm8F+8FVwC/Qzz0l+wT/82Vq7EVOWzKp1B1zpICEi2ivQzyDJkkCHdDhiDnHgT84/jkCg0HeXn9sdYGg6gs4xeOIP/+CchCzj64D/4YYYP/xj75BPI8hK6fQpabRj6qpQGxJeVaT0MFJ3aSfHluyLBskQI0B9gHz2ILMzjfv4j8msPQC/gr99Hbh32mSNoewt+/83o1FSMHY7nypwqC6rMqzJb/b6jyrKqHD2l9fe8X5v1nZruu1PpqHJSldOq9NatYTzbuPgabbYv0ubYtCZ3PRj3zqqyuA57XpU5VXluTl3ttv34z+wlXHk1Or413rjXRd45gX3hWexTv8Z0OjF8Zt/GHnkeHei7QRuzQBED9FYh68emlqYkB76LOfZXyhtvJlyyG9oT0VoLc5g//wF3+BDSbE4rRQHtNrqpFYEHA2Slg/T7kKYxsgENPoKbdbExaq8hRCJp7d22q9Yg/SzuGp9AG2OgAVnpQK8H9Toy1tqlKoJ4H/+g6mQYi4hEYNWoF8AY9JzzQEVkvVgbCfkSDQFEEGvBWAgBFwMo9m4RszZEeH82kK7p5RzDyL9PLwrxYlX+i7EVhoIv4kAiowP6P3yf6P/3XiqdjF7qxlC6QWCDwH/KvwASIpEQWO092wAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
+<title>Галлюцинации ИИ о бренде: что делать, если нейросеть ошибается</title>
+<meta name="description" content="Почему нейросеть достраивает пустоту о бренде: эффект цифрового эха, три маски галлюцинаций и протокол канонизации фактов — 4 шага, чек-лист и мини-тест.">
+<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin=""><link rel="stylesheet" href="fonts.css">
+
+<script async="" src="https://mc.yandex.ru/metrika/tag.js?id=113118311"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Галлюцинации ИИ о бренде: что делать, если нейросеть ошибается", "description": "Почему нейросеть достраивает пустоту о бренде: эффект цифрового эха, три маски галлюцинаций и протокол канонизации фактов — 4 шага, чек-лист и мини-тест.", "author": {"@type": "Person", "name": "Жарких Дарья Александровна", "jobTitle": "GEO-маркетолог и AI-консультант"}, "publisher": {"@type": "Organization", "name": "GEO-Апгрейд", "url": "https://geo-upgrade.ru", "logo": {"@type": "ImageObject", "url": "https://geo-upgrade.ru/favicon.ico"}, "sameAs": ["https://t.me/geoupgrade", "https://vk.ru/geo.upgrade", "https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933", "https://profi.ru/profile/ZharkikhDA3/", "https://workspace.ru/id/darya-zharkih/", "https://www.klerk.ru/user/2726432/", "https://dzen.ru/id/6ab4b86296401f17f0716d4b", "https://g.page/r/CSUI5EnmoeeoEBM/review", "https://maps.app.goo.gl/R8nnURT4CwAqi3nc7", "https://yandex.ru/profile/84156063982", "https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7", "https://2gis.ru/tomsk/geo/70000001118166258", "https://tomsk.flamp.ru/geo_upgrade", "https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/", "https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/"]}, "datePublished": "2026-10-07", "dateModified": "2026-10-07", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://geo-upgrade.ru/blog-post-gallyutsinatsii-neurosetey.html"}, "image": "https://geo-upgrade.ru/cover-gallyutsinatsii-neurosetey.jpg", "inLanguage": "ru-RU", "keywords": "галлюцинации ИИ, галлюцинации нейросетей, ИИ пишет о бренде неточности, эффект цифрового эха, эхо-кольцо, канонизация фактов, композитный бренд, фиктивная атрибуция, числа-магнит, AI-видимость бренда, цифровой призрак, зона слепоты, GEO-Апгрейд, Дарья Жарких", "about": {"@type": "Thing", "name": "Эффект цифрового эха", "description": "Ситуация, когда нейросеть достраивает отсутствующие сигналы о бренде уверенным, но неверным ответом"}}</script>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://geo-upgrade.ru"},
+{"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://geo-upgrade.ru/blog.html"},
+{"@type": "ListItem", "position": 3, "name": "Галлюцинации ИИ о бренде", "item": "https://geo-upgrade.ru/blog-post-gallyutsinatsii-neurosetey.html"}
+]
+}
+</script>
+<style>html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}h1,h2,h3,h4{font-family:'Orbitron',sans-serif;line-height:1.15}[id]{scroll-margin-top:5.5rem}.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px;opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.22,1,.36,1)}.card.visible{opacity:1;transform:translateY(0)}.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13)}.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}.btn{opacity:0;transform:translateY(20px);transition:all .8s cubic-bezier(.22,1,.36,1)}.btn.visible{opacity:1;transform:translateY(0)}.btn:hover{transform:translateY(-2px)}.card .btn{opacity:1;transform:none}.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}.badge{display:inline-block;padding:.25rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600}.badge-ai{background:rgba(6,182,212,.15);border:1px solid rgba(6,182,212,.5);color:#22D3EE}.badge-business{background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.5);color:#818CF8}.badge-basics{background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.5);color:#60A5FA}.lab-card{background:rgba(0,240,255,.05);border:1px solid rgba(0,240,255,.2);border-radius:8px;padding:1rem}.table{width:100%;border-collapse:collapse;margin:1.5rem 0}.table-wrapper{overflow-x:auto;margin:1.5rem 0}.table th,.table td{border:1px solid rgba(184,188,198,.3);padding:.75rem;text-align:left;min-width:150px}.table th{background:rgba(0,240,255,.08);color:#00F0FF}blockquote{border-left:4px solid #00F0FF;padding-left:1rem;margin:1.5rem 0;font-style:italic;color:#B8BCC6}.callout{background:rgba(0,240,255,.03);border-left:4px solid #00F0FF;padding:1rem;margin:1.5rem 0;border-radius:0 8px 8px 0}.term{color:#00F0FF;font-weight:600}.checklist{list-style:none;padding-left:0}.checklist li{position:relative;padding-left:1.75rem;margin-bottom:.75rem}.checklist li:before{content:"✓";position:absolute;left:0;color:#00F0FF;font-weight:bold}.faq-item{border:1px solid rgba(184,188,198,.25);border-radius:8px;padding:1rem;margin:1rem 0;background:rgba(13,6,24,.6)}.faq-item summary{cursor:pointer;color:#00F0FF;font-weight:600;font-family:'Orbitron',sans-serif}.faq-item p{margin:1rem 0 0;color:#B8BCC6}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none;opacity:1;transform:none}.card:hover,.btn:hover{transform:none}}@media(max-width:768px){.table{display:block;overflow-x:auto}.table-wrapper{overflow-x:auto}}
+
+.prio-cap{font-family:Orbitron,sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem}
+.prio-cap-1{color:#34D399}
+.prio-cap-2{color:#FBBF24}
+.prio-cap-3{color:#9CA3AF}
+.badge-author{background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.6);color:#A78BFA}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;border-radius:9999px;background:#00F0FF;color:#0D0618;font-family:Orbitron,sans-serif;font-size:.8rem;font-weight:700;flex-shrink:0}
+.tool-chip{font-size:.8rem;padding:.35rem .8rem;border:1px solid rgba(184,188,198,.3);border-radius:9999px;color:#B8BCC6;background:rgba(13,6,24,.6)}
+
+.qmap-label{display:block;font-family:Orbitron,sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#00F0FF;margin:.75rem 0 .3rem}
+.qmap-input,.qmap-select{width:100%;box-sizing:border-box;background:rgba(13,6,24,.72);border:1px solid rgba(184,188,198,.32);border-radius:6px;padding:.55rem .7rem;color:#F5F7FA;font-family:'Exo 2',sans-serif;font-size:.9rem}
+.qmap-input:focus,.qmap-select:focus{outline:none;border-color:rgba(0,240,255,.75);box-shadow:0 0 10px rgba(0,240,255,.18)}
+.qmap-note{font-size:.8rem;color:#B8BCC6;margin-top:.75rem}
+.qmap-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+.copy-ok{color:#34D399;font-size:.85rem;margin-top:.6rem;min-height:1.2em}
+.qmap-code{background:rgba(13,6,24,.85);border:1px solid rgba(184,188,198,.3);border-radius:8px;padding:1rem;font-family:Consolas,'Courier New',monospace;font-size:.85rem;color:#F5F7FA;white-space:pre-wrap;overflow-x:auto;margin:1rem 0}
+.src-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.src-card{background:rgba(13,6,24,.85);border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:1rem;transition:border-color .3s,box-shadow .3s}
+.src-card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13)}
+.src-card h4{font-family:Orbitron,sans-serif;font-size:.85rem;color:#00F0FF;margin:0 0 .5rem;line-height:1.3}
+.src-card p{font-size:.82rem;margin:.35rem 0;color:#B8BCC6}
+.src-card p strong{color:#F5F7FA;font-weight:600}
+.check-list{list-style:none;padding:0;margin:0}
+.check-list li{margin-bottom:.65rem}
+.check-item{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;font-size:.95rem}
+.check-item input{margin-top:.25rem;accent-color:#00F0FF;width:1.05rem;height:1.05rem;flex-shrink:0}
+.check-result{margin-top:1rem;padding:.85rem 1rem;border:1px solid rgba(0,240,255,.35);border-radius:8px;background:rgba(0,240,255,.05);font-size:.92rem}
+.check-result strong{color:#00F0FF}
+
+.cover-figure{margin:2rem 0}
+.cover-figure img{width:100%;height:auto;border-radius:8px;border:1px solid rgba(0,240,255,.2);display:block}
+.cover-figure figcaption{margin-top:.5rem;font-size:.75rem;color:#B8BCC6;text-align:center}
+.quote-card{border-left:4px solid #00F0FF}.def-term{font-family:Orbitron,sans-serif;font-size:1rem;color:#00F0FF;margin:0;line-height:1.3}.icon-svg{width:2rem;height:2rem;flex-shrink:0;color:#00F0FF}.quiz-opt{display:flex;align-items:flex-start;gap:.6rem;padding:.5rem .75rem;border:1px solid rgba(184,188,198,.25);border-radius:8px;cursor:pointer;transition:border-color .25s ease,background .25s ease;font-size:.95rem;margin-bottom:.4rem}.quiz-opt:hover{border-color:rgba(0,240,255,.65);background:rgba(0,240,255,.05)}.quiz-opt input{margin-top:.3rem;accent-color:#00F0FF;width:1.05rem;height:1.05rem;flex-shrink:0}.mt-letter{color:#00F0FF;font-family:Orbitron,sans-serif;font-weight:600;margin-right:.35rem}.mt-q{border:none;padding:0;margin:0}@keyframes mtFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.mt-anim{animation:mtFade .55s ease}.table tbody tr{transition:background .25s ease}.table tbody tr:hover{background:rgba(0,240,255,.06)}@media(prefers-reduced-motion:reduce){.mt-anim{animation:none}}</style>
+<style>
+/* === Галлюцинации: уникальные элементы статьи === */
+.stat-band{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:1.75rem 0}
+.stat-box{background:rgba(0,240,255,.05);border:1px solid rgba(0,240,255,.25);border-radius:12px;padding:1.1rem;text-align:center}
+.stat-num{font-family:Orbitron,sans-serif;font-size:1.9rem;font-weight:700;color:#00F0FF;line-height:1.1}
+.stat-cap{font-size:.78rem;color:#B8BCC6;margin-top:.4rem}
+.echo-fig{display:flex;flex-direction:column;align-items:center;margin:1.75rem 0}
+.echo-rings{position:relative;width:290px;height:290px}
+.echo-ring{position:absolute;border-radius:50%;border:1px solid rgba(0,240,255,.45);left:50%;top:50%;transform:translate(-50%,-50%)}
+.echo-ring.r1{width:92px;height:92px;border-color:rgba(0,240,255,.8)}
+.echo-ring.r2{width:184px;height:184px}
+.echo-ring.r3{width:276px;height:276px;border-style:dashed;border-color:rgba(167,139,250,.4)}
+.echo-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:radial-gradient(circle,#00F0FF 0%,rgba(0,240,255,.15) 72%,transparent 100%);box-shadow:0 0 18px rgba(0,240,255,.6)}
+.echo-ghost{position:absolute;border-radius:50%;width:22px;height:22px;background:rgba(167,139,250,.4);border:1px solid rgba(167,139,250,.6);box-shadow:0 0 10px rgba(167,139,250,.45)}
+.echo-caps{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;font-size:.75rem;color:#B8BCC6;margin-top:1rem}
+.echo-caps span b{color:#00F0FF;font-weight:600}
+.mask-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin:1.5rem 0}
+@media(min-width:760px){.mask-grid{grid-template-columns:repeat(3,1fr)}}
+.mask-card{position:relative;background:rgba(13,6,24,.85);border:1px solid rgba(167,139,250,.35);border-radius:12px;padding:1.1rem;overflow:hidden}
+.mask-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 92% 0%,rgba(167,139,250,.16),transparent 55%);pointer-events:none}
+.mask-num{font-family:Orbitron,sans-serif;font-size:.78rem;color:#A78BFA;letter-spacing:.14em}
+.mask-card h4{font-family:Orbitron,sans-serif;font-size:.95rem;color:#F5F7FA;margin:.5rem 0 .2rem;line-height:1.3}
+.mask-card p{font-size:.85rem;color:#B8BCC6;margin:.3rem 0 0}
+.mask-check{font-size:.78rem;color:#00F0FF;margin-top:.7rem}
+/* === Интерактивный протокол: ИИ сказал / сайт подтвердил === */
+.gcw-count{font-family:Orbitron,sans-serif;font-size:.7rem;letter-spacing:.12em;color:#B8BCC6;margin-bottom:.9rem}
+.gcw-row{border:1px solid rgba(184,188,198,.25);border-radius:12px;padding:1rem;margin-bottom:.9rem;background:rgba(13,6,24,.6);transition:border-color .25s}
+.gcw-row.sel{border-color:rgba(0,240,255,.55)}
+.gcw-what{font-family:Orbitron,sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#00F0FF;margin-bottom:.5rem}
+.gcw-fields{display:grid;grid-template-columns:1fr;gap:.5rem}
+@media(min-width:760px){.gcw-fields{grid-template-columns:1fr 1fr}}
+.gcw-lab{font-size:.72rem;color:#B8BCC6;display:block;margin-bottom:.25rem}
+.gcw-in{width:100%;box-sizing:border-box;background:rgba(255,255,255,.05);border:1px solid rgba(184,188,198,.3);border-radius:8px;color:#F5F7FA;padding:.55rem .7rem;font-size:.9rem;font-family:'Exo 2',sans-serif}
+.gcw-in:focus{outline:none;border-color:rgba(0,240,255,.7);box-shadow:0 0 10px rgba(0,240,255,.18)}
+.gcw-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem}
+.gcw-pill{font-size:.78rem;padding:.4rem .8rem;border-radius:9999px;border:1px solid rgba(184,188,198,.35);color:#B8BCC6;background:transparent;cursor:pointer;transition:all .2s;font-family:'Exo 2',sans-serif}
+.gcw-pill:hover{border-color:rgba(0,240,255,.6);color:#F5F7FA}
+.gcw-pill.on-match{background:rgba(52,211,153,.15);border-color:rgba(52,211,153,.7);color:#34D399}
+.gcw-pill.on-wrong{background:rgba(248,113,113,.15);border-color:rgba(248,113,113,.7);color:#F87171}
+.gcw-pill.on-unknown{background:rgba(167,139,250,.18);border-color:rgba(167,139,250,.7);color:#A78BFA}
+.gcw-hint{font-size:.8rem;color:#F87171;margin-top:.6rem}
+.gcw-hint a{color:#00F0FF;text-decoration:underline}
+.gcw-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.1rem}
+.gcw-btn{font-family:Orbitron,sans-serif;font-size:.78rem;letter-spacing:.08em;padding:.65rem 1.15rem;border-radius:8px;border:1px solid rgba(0,240,255,.5);background:rgba(0,240,255,.1);color:#00F0FF;cursor:pointer;transition:all .25s}
+.gcw-btn:hover{box-shadow:0 0 14px rgba(0,240,255,.35)}
+.gcw-btn--solid{background:#00F0FF;color:#0D0618}
+.gcw-verdict{margin-top:1.2rem;padding:1rem 1.2rem;border-radius:10px;border:1px solid;font-size:.95rem}
+.gcw-vtitle{font-family:Orbitron,sans-serif;letter-spacing:.08em;display:block;margin-bottom:.45rem;font-size:.9rem}
+.gcw-verdict a{color:#00F0FF;text-decoration:underline}
+.gcw-verdict ul{margin:.5rem 0 0 1.15rem}
+.gcw-verdict li{margin-bottom:.3rem}
+.gcw-acc{font-size:.8rem;color:#B8BCC6;margin-top:.5rem}
+.gcw-v-green{background:rgba(52,211,153,.08);border-color:rgba(52,211,153,.5);color:#E7FFF4}
+.gcw-v-amber{background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.5);color:#FFF7E0}
+.gcw-v-red{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.55);color:#FFECEC}
+.gcw-v-violet{background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.55);color:#F1E9FF}
+.gcw-v-hint{background:rgba(184,188,198,.06);border-color:rgba(184,188,198,.4);color:#B8BCC6}
+.gcw-note{font-size:.75rem;color:#B8BCC6;margin-top:.8rem}
+@media(prefers-reduced-motion:reduce){.gcw-btn{transition:none}}
+</style>
+<link rel="canonical" href="https://geo-upgrade.ru/blog-post-gallyutsinatsii-neurosetey.html">
+<meta property="og:url" content="https://geo-upgrade.ru/blog-post-gallyutsinatsii-neurosetey.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://geo-upgrade.ru/cover-gallyutsinatsii-neurosetey.jpg">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="GEO-Апгрейд">
+<meta property="og:title" content="Галлюцинации ИИ о бренде: что делать, если нейросеть ошибается">
+<meta property="og:description" content="Почему нейросеть достраивает пустоту о бренде: эффект цифрового эха, три маски галлюцинаций и протокол канонизации фактов — 4 шага, чек-лист и мини-тест.">
+  <meta property="article:published_time" content="2026-10-07T21:00:00+07:00">
+<meta property="article:modified_time" content="2026-10-07T21:00:00+07:00">
+<link rel="stylesheet" href="tailwind.min.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<style>
+.badge-experiment{background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.5);color:#A78BFA}
+.badge-visibility{background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.5);color:#34D399}
+.t160-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 0}
+.t160-chip{font-size:.78rem;padding:.3rem .7rem;border:1px solid rgba(184,188,198,.3);border-radius:9999px;color:#B8BCC6;background:rgba(13,6,24,.6);cursor:pointer;transition:all .25s ease;font-family:'Exo 2',sans-serif}
+.t160-chip:hover{border-color:rgba(0,240,255,.65);color:#F5F7FA}
+.t160-chip.on{border-color:rgba(0,240,255,.75);color:#00F0FF;background:rgba(0,240,255,.08);box-shadow:0 0 8px rgba(0,240,255,.15)}
+.t160-note{font-size:.8rem;color:#B8BCC6;margin-top:.6rem}
+.t160-scheme{display:grid;grid-template-columns:1fr;gap:.75rem;align-items:stretch;margin:1.5rem 0}
+.t160-op{text-align:center;font-family:Orbitron,sans-serif;font-size:1.4rem;color:#00F0FF;padding:.25rem 0}
+.t160-cap{font-family:Orbitron,sans-serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#00F0FF;margin:0}
+.t160-big{font-family:Orbitron,sans-serif;font-size:2rem;font-weight:700;color:#F5F7FA;margin:.25rem 0}
+.t160-eq{font-family:Orbitron,sans-serif;font-size:1rem;color:#00F0FF;margin:.25rem 0}
+@media(min-width:820px){.t160-scheme{grid-template-columns:1fr auto 1fr auto 1.4fr}.t160-op{display:flex;align-items:center;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.t160-chip{transition:none}}
+</style>
+<style>
+/* фикс цвета плашек (badge-*), палитра сайта */
+.badge-visibility{background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.5);color:#34D399}
+</style>
+<link rel="stylesheet" href="perf-fixes.css">
+</head><body><header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><main class="max-w-4xl mx-auto px-5 py-16 md:py-24">
+<article>
+<header class="mb-8">
+<p class="font-heading text-xs tracking-[.2em] text-[#00F0FF] uppercase mb-3">Лаборатория AI-видимости бренда · GEO-Апгрейд</p>
+<div class="flex flex-wrap gap-2 mb-4"><a href="blog-visibility.html" class="badge badge-visibility hover:opacity-80">AI-ВИДИМОСТЬ</a></div>
+<h1 class="text-3xl md:text-5xl font-bold">Галлюцинации нейросетей: что делать, если ИИ пишет о бренде неточности</h1>
+<p class="mt-4 text-lg text-[#B8BCC6]">Эффект цифрового эха: почему нейросеть достраивает пустоту — и протокол канонизации фактов</p>
+<div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#B8BCC6]">
+<time datetime="2026-10-07">7 октября 2026</time><span>•</span><span>12–15 минут</span><span>•</span><span><a href="about-daria-zharkikh.html" class="text-[#00F0FF] hover:underline">Дарья Жарких</a></span>
+</div>
+</header>
+
+<aside class="lab-card mb-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+<div><span class="font-heading text-[#00F0FF]">Тема:</span><p class="mt-1">Галлюцинации ИИ о бренде: эффект цифрового эха</p></div>
+<div><span class="font-heading text-[#00F0FF]">Дата разбора:</span><p class="mt-1">сентябрь–октябрь 2026</p></div>
+<div><span class="font-heading text-[#00F0FF]">Метод:</span><p class="mt-1">Замеры и прогоны в AI-системах</p></div>
+<div><span class="font-heading text-[#00F0FF]">Объём:</span><p class="mt-1">21 упоминание · 3 маски · 4 шага</p></div>
+</div>
+<div class="mt-4 text-xs"><span class="font-heading text-[#00F0FF]">Для кого:</span><p class="mt-1">Владельцы брендов, эксперты и маркетологи, которым нейросеть приписывает чужие кейсы, услуги и цены</p></div>
+</aside>
+
+<figure class="cover-figure">
+<img src="cover-gallyutsinatsii-neurosetey.jpg" alt="Обложка статьи: голографический силуэт источника сигнала расходится на концентрические кольца эха с призрачными копиями, неоново-голубое свечение на тёмно-фиолетовом фоне" width="1200" height="630" loading="eager" decoding="async">
+<figcaption>Эффект цифрового эха: пустоту о бренде достраивает первый, кто её канонизирует — протокол от GEO-Апгрейд</figcaption>
+</figure>
+
+<div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Главный вывод:</span> галлюцинация — это не «ИИ врёт». Это эффект цифрового эха: когда сигналов о бренде недостаточно, нейросеть достраивает пустоту сама — уверенно, красиво и совершенно неверно. Управляем входом, а не спорим с выходом.</p></div>
+
+<p>Вы спрашиваете нейросеть: «Кто делает GEO-продвижение в Томске?» — и получаете уверенный ответ с ценами, сроками и списком конкурентов. Через неделю проверяете снова — и видите, что ИИ приписал вам чужой кейс, назвал несуществующую услугу или поставил цену, которой у вас никогда не было.</p>
+<p>Это не «ИИ врёт». Это эффект цифрового эха: когда сигналов о бренде недостаточно, нейросеть достраивает пустоту сама — уверенно, красиво и совершенно неверно.</p>
+<p>В этой статье я покажу, как мы в GEO-Апгрейд прошли путь от 21 упоминания чужого кейса в ответах о нас до полной точности цен и услуг — и какой протокол работы с галлюцинациями вы можете применить к своему бренду уже на этой неделе.</p>
+<p>Это лабораторный протокол: сначала — как сбой выглядит изнутри, потом — почему он происходит, в конце — четыре шага и чек-лист, которые превращают галлюцинации из головной боли в управляемый процесс.</p>
+
+<nav class="card p-6 mb-8"><h2 class="text-lg font-semibold mb-4">Содержание</h2><ul class="space-y-2 text-sm">
+<li><a href="#pochemu" class="text-[#00F0FF] hover:underline">Почему ИИ «выдумывает» факты о вашем бренде</a></li>
+<li><a href="#keis" class="text-[#00F0FF] hover:underline">Наш кейс: как Алиса путала нас с чужим проектом 21 раз</a></li>
+<li><a href="#diagnoz" class="text-[#00F0FF] hover:underline">Галлюцинация или устаревание?</a></li>
+<li><a href="#eho" class="text-[#00F0FF] hover:underline">Что такое эффект цифрового эха?</a></li>
+<li><a href="#cifry" class="text-[#00F0FF] hover:underline">Почему цифры — магнит галлюцинаций?</a></li>
+<li><a href="#maski" class="text-[#00F0FF] hover:underline">Три маски одной галлюцинации</a></li>
+<li><a href="#sled" class="text-[#00F0FF] hover:underline">Почему проблема не в нейросети?</a></li>
+<li><a href="#shagi" class="text-[#00F0FF] hover:underline">Как мы работаем с неточностями: 4 шага</a></li>
+<li><a href="#shans" class="text-[#00F0FF] hover:underline">Галлюцинация как шанс: пустоту достраивает кто-то первый</a></li>
+<li><a href="#borba" class="text-[#00F0FF] hover:underline">Нужно ли бороться с галлюцинациями?</a></li>
+<li><a href="#chek-list" class="text-[#00F0FF] hover:underline">Что делать, если ИИ пишет неточности: чек-лист и протокол</a></li>
+<li><a href="#interaktiv" class="text-[#00F0FF] hover:underline">Интерактивный протокол проверки: ИИ сказал / сайт подтвердил</a></li>
+<li><a href="#marshrut" class="text-[#00F0FF] hover:underline">Маршрут для бизнеса</a></li>
+</ul></nav>
+
+<section class="article-content space-y-8">
+
+<h2 id="pochemu" class="text-2xl md:text-3xl font-bold mt-12">Почему ИИ «выдумывает» факты о вашем бренде</h2>
+<p>Нейросеть не имеет цели обмануть. У неё другая задача: быть полезной и ответить на запрос пользователя любым доступным способом.</p>
+<p>Когда в её корпусе нет достаточного количества согласованных сигналов о вашем бренде — точных цен, описания услуг, подтверждённого города, машиночитаемой структуры страницы — она не говорит «я не знаю». Она достраивает.</p>
+<p>Это не устаревшее знание, когда модель видела мир на дату обучения, а рынок ушёл вперёд. Это не неполное знание, когда сигналов просто мало. Это галлюцинация — предсказуемый эффект отсутствия данных.</p>
+<p>Самое коварное — тон. Нейросеть звучит одинаково уверенно и тогда, когда отвечает по данным, и тогда, когда выдумывает их на ходу: интонации «я не уверена» у неё просто нет. Единственный надёжный способ отличить факт от достройки — сверка с источниками, а не чтение вслух.</p>
+<div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Главный вывод:</span> галлюцинация — это всегда вопрос «что было доступно в данных». Управляем входом, а не спорим с выходом.</p></div>
+
+<h2 id="keis" class="text-2xl md:text-3xl font-bold mt-12">Наш кейс: как Алиса путала нас с чужим проектом 21 раз</h2>
+<p>Первое время после запуска GEO-Апгрейд мы столкнулись с системной проблемой: Алиса постоянно путала нас с кейсом другой компании.</p>
+<p>В одном аудите нас смешали с чужим проектом в 21 упоминании. Кейс был описан как «GEO-апгрейд», и нейросеть склеила две сущности: нашу лабораторию и чужой кейс в единый образ.</p>
+<p>Такая же история была с ценами. Пока мы не привели к общему знаменателю прайс на всех площадках, нейросеть собирала данные непонятно откуда и выдумывала итоговые цены сама: где-то 8–20 тысяч, где-то 80–250 тысяч с vc.ru, где-то «неверная цена» без источника.</p>
+<p>С точки зрения нейросети это была не ошибка, а честный вывод: «GEO-апгрейд» — одно название в одном месте, значит, одна сущность. Модель не виновата, что маркетинг чужого проекта совпал с нашим брендом. Виновата пустота: у нашего названия не было достаточно собственных определений, чтобы вытеснить чужое.</p>
+<div class="stat-band">
+<div class="stat-box"><div class="stat-num">21 → 0</div><div class="stat-cap">упоминаний чужого кейса в ответах о нас</div></div>
+<div class="stat-box"><div class="stat-num">1.0</div><div class="stat-cap">точность по ценовым запросам</div></div>
+<div class="stat-box"><div class="stat-num">4</div><div class="stat-cap">шага протокола канонизации фактов</div></div>
+</div>
+<p>Что мы сделали:</p>
+<ul class="checklist">
+<li>Создали несколько статей, которые отделяют нас от этого смешивания.</li>
+<li>Улучшили цифровой след: согласовали описания, термины, позиционирование.</li>
+<li>Выровняли цены на сайте, Яндекс Услугах и в карточках.</li>
+<li>Создали контентные маяки: страницы с точными формулировками, ценами, сроками и составом работ.</li>
+</ul>
+<p>В последних исследованиях упоминания чужого кейса сократились до нуля. Точность по ценовым запросам выросла до 1.0.</p>
+<p>Замечу: ни одной «жалобы нейросети» мы не писали и не ждали, пока она исправится сама. Каждый пункт исправления — это страница, карточка или формулировка, которую модель находит сама.</p>
+
+<h2 id="diagnoz" class="text-2xl md:text-3xl font-bold mt-12">Галлюцинация или устаревание?</h2>
+<p>Большинство путает в одно «ИИ ошибся» два разных явления:</p>
+<div class="table-wrapper"><table class="table">
+<thead><tr><th>Механизм</th><th>Что происходит</th><th>Как лечить</th></tr></thead>
+<tbody>
+<tr><td>Устаревшее знание</td><td>Модель видела мир на дату отсечки, а рынок ушёл вперёд.</td><td>Обновление сигналов: свежие публикации, новые страницы.</td></tr>
+<tr><td>Галлюцинация</td><td>В корпусе нет данных, модель достраивает пустоту.</td><td>Канонизация фактов: schema, llms.txt, свои страницы-определения, согласованность площадок.</td></tr>
+</tbody>
+</table></div>
+<p>Диагностика простая. Если нейросеть называет старую цену или услугу, которой больше нет, — это устаревание, лечится обновлением. Если она называет цену или услугу, которых не существовало никогда, — это галлюцинация, лечится канонизацией.</p>
+<p><strong>ИИ не врёт — он достраивает.</strong></p>
+<p>Если вы видите ошибку в ответе нейросети, первый вопрос не «как заставить ИИ замолчать», а «каких данных ему не хватило, чтобы не выдумывать?»</p>
+
+<h2 id="eho" class="text-2xl md:text-3xl font-bold mt-12">Что такое эффект цифрового эха?</h2>
+<p>Один из самых неочевидных углов — эхо-кольцо. ИИ-тексты попадают в индекс, на них цитируются другие сайты, и следующие генерации обучаются уже на этих ответах. Галлюцинация через два цикла может стать «фактом», который «подтверждают» другие ответы.</p>
+<div class="echo-fig">
+<div class="echo-rings" role="img" aria-label="Схема эхо-кольца: источник сигнала расходится на три кольца, на каждом — призрачные копии">
+<div class="echo-ring r3"></div><div class="echo-ring r2"></div><div class="echo-ring r1"></div>
+<div class="echo-ghost" style="left:50%;top:24%"></div>
+<div class="echo-ghost" style="left:72%;top:40%"></div>
+<div class="echo-ghost" style="left:30%;top:63%"></div>
+<div class="echo-ghost" style="left:64%;top:76%"></div>
+<div class="echo-ghost" style="left:50%;top:8%"></div>
+<div class="echo-core"></div>
+</div>
+<div class="echo-caps"><span><b>Прогон 1</b> — выдумка</span><span><b>Прогон 2</b> — «подтверждение»</span><span><b>Прогон 3</b> — «факт»</span></div>
+</div>
+<p>В нашем замере чужой «GEO-апгрейд» приписывался нам в 21 упоминании. Пять повторов подряд — и нейросеть уже «уверена».</p>
+<p>Вывод: чужие выдумки о себе надо перехватывать рано. Потом их уже «подтверждают» другие ответы, и исправить становится дороже.</p>
+
+<h2 id="cifry" class="text-2xl md:text-3xl font-bold mt-12">Почему цифры — магнит галлюцинаций?</h2>
+<p>Цены, проценты и годы модель выдаёт охотнее всего — и с полной уверенностью.</p>
+<ul>
+<li>Склейка ценовых полок: наши 8–20 тыс. против чужих «80–250 тыс.» с vc.ru.</li>
+<li>Смешанные цены Яндекс Услуг: где-то 5–30 тыс., где-то 8–55 тыс.</li>
+<li>«Неверная цена» в ответе без источника.</li>
+</ul>
+<p>Число — самый дешёвый способ сделать ответ правдоподобным: цифра с потолка звучит так же убедительно, как цифра с сайта, а модель не различает их по происхождению.</p>
+<p><strong>Правило: числа требуют канонизации в машиночитаемом виде. Иначе модель дорисует.</strong></p>
+
+<h2 id="maski" class="text-2xl md:text-3xl font-bold mt-12">Три маски одной галлюцинации</h2>
+<p>За время замеров мы собрали три самые коварные маски — они почти не выглядят ошибкой:</p>
+<div class="mask-grid">
+<div class="mask-card"><span class="mask-num">МАСКА 01</span><h4>Композитный бренд</h4><p>Модель склеивает похожие названия и кейсы в один образ — так родилась наша история с 21 упоминанием.</p><p class="mask-check">Проверка: в ответе о вашем бренде появляются детали, которых у вас никогда не было.</p></div>
+<div class="mask-card"><span class="mask-num">МАСКА 02</span><h4>Фиктивная атрибуция</h4><p>ИИ приписывает бренду чужой отзыв, чужую услугу или чужую цифру, потому что источник формально «похож». Ответ почти правилен — самый сложный случай для диагностики.</p><p class="mask-check">Проверка: каждый факт в ответе сверяется с вашим сайтом и карточками.</p></div>
+<div class="mask-card"><span class="mask-num">МАСКА 03</span><h4>Ложный отказ</h4><p>Иногда вместо выдумки модель отказывается отвечать: «информация недоступна», «не могу проверить». Это тоже симптом тонкого следа: модель не нашла сигналов — а клиент уже читает о вас что-то другое.</p><p class="mask-check">Проверка: ИИ отвечает «не знаю» там, где факты у вас есть.</p></div>
+</div>
+
+<h2 id="sled" class="text-2xl md:text-3xl font-bold mt-12">Почему проблема не в нейросети?</h2>
+<p>Многие не понимают: проблема не в нейросети, а в цифровом следе бренда. Также нужно учитывать, как пользователь формулирует запрос: небольшое отхождение — и ответ уже будет другим.</p>
+<p>Если на сайте вы «лаборатория», в каталоге — «SEO-агентство», а в соцсетях — «AI-копирайтер», модель получает несколько конкурирующих версий бренда. Все версии правдивы по-своему, но собрать их в одну она не может.</p>
+<p>Так появляется зона слепоты: бренд вроде есть, а в нужном контексте его нет.</p>
+<p>Цифровой призрак устроен так же: бренд присутствует в индексе, но его сигналы размыты — и модель, не опираясь на них, достраивает свой вариант. Призрак живёт не потому, что о вас нет информации, а потому, что она не совпадает сама с собой.</p>
+
+<h2 id="shagi" class="text-2xl md:text-3xl font-bold mt-12">Как мы работаем с неточностями: 4 шага</h2>
+<p>Если я вижу, что в ответах ChatGPT, Perplexity или другого AI о бренде есть ошибка, я не спорю с выходом. Я вношу поправки во вход.</p>
+<h3 class="text-xl font-semibold mt-8"><span class="step-num" style="margin-right:.5rem">1</span>Создаю контентные маяки</h3>
+<p>Это страницы с точными формулировками, ценами, сроками и составом работ.</p>
+<ul>
+<li>Страница-определение термина «GEO-Апгрейд» — чтобы отделить нас от чужих кейсов.</li>
+<li>Статья «Сколько стоит GEO-продвижение в 2026» — с вилкой по рынку и нашими тарифами.</li>
+<li>Страница «Разовый аудит с передачей методики» — с ценой, сроком и артефактами.</li>
+</ul>
+<h3 class="text-xl font-semibold mt-8"><span class="step-num" style="margin-right:.5rem">2</span>Выравниваю формулировки</h3>
+<p>Единая формулировка на сайте, Услугах, ВК и Telegram: «GEO-Апгрейд — название лаборатории Дарьи Жарких, не название услуги».</p>
+<p>Отдельно закрепляю персональную связку: «Дарья Жарких = основатель лаборатории GEO-Апгрейд».</p>
+<p>Это скучная работа — и именно она работает. Формулировка, повторённая пятью разными словами на пяти площадках, для модели — пять разных фактов. Формулировка, повторённая одинаково, — один сильный сигнал.</p>
+<h3 class="text-xl font-semibold mt-8"><span class="step-num" style="margin-right:.5rem">3</span>Довожу информационные страницы до блеска</h3>
+<ul>
+<li>Карточки бренда: Яндекс Карты, Яндекс Бизнес, 2ГИС.</li>
+<li>Аккаунты на Авито и Профи.ру.</li>
+<li>Первые настоящие отзывы: 3–5 сигналов.</li>
+</ul>
+<h3 class="text-xl font-semibold mt-8"><span class="step-num" style="margin-right:.5rem">4</span>Быстро обновляю след</h3>
+<p>Если что-то поменялось — нужно в ближайшее время поправить свой цифровой след, чтобы нейросеть не опиралась на старые данные.</p>
+
+<h2 id="shans" class="text-2xl md:text-3xl font-bold mt-12">Галлюцинация как шанс: пустоту достраивает кто-то первый</h2>
+<p>Есть и обратная сторона. Если нейросеть выдумывает там, где нет данных, — значит, там есть свободное место.</p>
+<p>Для бренда это возможность: определение вашего термина, вилка ваших цен, описание вашей методики. Канонизирует тот, кто написал первым: модель берёт определения из самых устойчивых источников, и если ваши страницы — единственный машиночитаемый ответ на вопрос «что такое X», они и станут этим ответом.</p>
+<p>Мы этим и воспользовались: вместо того чтобы спорить со случайными описаниями GEO, мы написали собственные — и они закрепились.</p>
+
+<h2 id="borba" class="text-2xl md:text-3xl font-bold mt-12">Нужно ли бороться с галлюцинациями?</h2>
+<p>Я считаю, что галлюцинации — это неизбежный шум, часть системы ИИ. С этим нужно не бороться, а вносить поправки, которые помогут нейросети ориентироваться правильно.</p>
+<p>Чем чаще информация повторяется на разных площадках, тем убедительнее она становится для ИИ — и тем выше шанс, что модель использует её в своих ответах.</p>
+<p>Если бренд не имеет цифрового следа в нужном контексте, ИИ будет достраивать. Если след есть, но устарел — обновлять. Если след противоречив — согласовывать.</p>
+
+<h2 id="chek-list" class="text-2xl md:text-3xl font-bold mt-12">Что делать, если ИИ пишет неточности?</h2>
+<h3 class="text-xl font-semibold mt-8">Чек-лист самопроверки</h3>
+<ol class="space-y-2 text-[#B8BCC6] list-decimal list-inside">
+<li>Спросите нейросеть: «Кто делает [ваша услуга] в [ваш город]?». Сохраните ответ, дату и систему.</li>
+<li>Проверьте официальный сайт каждой названной компании: город, услуга, цена, формат оплаты.</li>
+<li>Отметьте расхождения: что ИИ сказал и что сайт подтвердил.</li>
+<li>Повторите замер через месяц: изменился ли ответ?</li>
+</ol>
+<h3 class="text-xl font-semibold mt-8">Протокол канонизации фактов</h3>
+<div class="table-wrapper"><table class="table">
+<thead><tr><th>Действие</th><th>Зачем</th><th>Критерий успеха</th></tr></thead>
+<tbody>
+<tr><td>Создать страницу-определение термина бренда</td><td>Отделить от чужих кейсов и похожих названий.</td><td>ИИ не вставляет чужие проекты в ответы о вас.</td></tr>
+<tr><td>Выровнять цены на всех площадках</td><td>Убрать галлюцинации ценовых полок.</td><td>ИИ цитирует ваши цены без искажений.</td></tr>
+<tr><td>Заполнить карточки на картах и в каталогах</td><td>Дать локальный сигнал.</td><td>Бренд появляется в локальных ответах «рядом со мной».</td></tr>
+<tr><td>Собрать 3–5 настоящих отзывов</td><td>Дать социальный сигнал.</td><td>ИИ цитирует реальные отзывы, а не «рейтинг новый, без отзывов».</td></tr>
+<tr><td>Создать контентные маяки</td><td>Дать машиночитаемый контекст.</td><td>ИИ описывает услуги по составу, а не по позиции.</td></tr>
+</tbody>
+</table></div>
+<h3 class="text-xl font-semibold mt-8">Мини-тест для читателя</h3>
+<p>Спросите свою нейросеть: «Кто делает [ваша услуга] в [ваш город]?». Посчитайте, сколько названий существуют в реальности.</p>
+<ul>
+<li>Ноль ошибок — можно не читать дальше.</li>
+<li>Одна-две — самое время заняться канонизацией фактов о своём бренде.</li>
+<li>Три и больше — у вас зона слепоты, и ИИ достраивает рынок сам.</li>
+</ul>
+
+<h2 id="interaktiv" class="text-2xl md:text-3xl font-bold mt-12">Интерактивный протокол проверки: ИИ сказал / сайт подтвердил</h2>
+<p>Закрепим протокол на практике. Прогоните один запрос «Кто делает [ваша услуга] в [ваш город]?» через собственную нейросеть и занесите результат в лабораторную форму: что сказал ИИ — и что подтвердил ваш сайт.</p>
+<div class="card p-6 gcw" id="gcw-root">
+<div class="gcw-count">LAB TOOL · ПРОТОКОЛ ПРОВЕРКИ</div>
+<div class="gcw-row" id="gcw-row-0">
+<div class="gcw-what">Название и услуга</div>
+<div class="gcw-fields">
+<div><span class="gcw-lab">Что сказал ИИ</span><input type="text" class="gcw-in" id="gcw-ai-0" placeholder="Например: «GEO-апгрейд — услуга вывода сайта в ИИ-поиск»"></div>
+<div><span class="gcw-lab">Что подтвердил ваш сайт</span><input type="text" class="gcw-in" id="gcw-site-0" placeholder="Например: «GEO-Апгрейд — лаборатория Дарьи Жарких»"></div>
+</div>
+<div class="gcw-pills" data-row="0">
+<button type="button" class="gcw-pill" data-v="match">Совпадает</button>
+<button type="button" class="gcw-pill" data-v="wrong">ИИ ошибся</button>
+<button type="button" class="gcw-pill" data-v="unknown">ИИ не знает</button>
+</div>
+<div class="gcw-hint" id="gcw-hint-0"></div>
+</div>
+<div class="gcw-row" id="gcw-row-1">
+<div class="gcw-what">Город</div>
+<div class="gcw-fields">
+<div><span class="gcw-lab">Что сказал ИИ</span><input type="text" class="gcw-in" id="gcw-ai-1" placeholder="Например: «работает в Москве»"></div>
+<div><span class="gcw-lab">Что подтвердил ваш сайт</span><input type="text" class="gcw-in" id="gcw-site-1" placeholder="Например: «г. Томск»"></div>
+</div>
+<div class="gcw-pills" data-row="1">
+<button type="button" class="gcw-pill" data-v="match">Совпадает</button>
+<button type="button" class="gcw-pill" data-v="wrong">ИИ ошибся</button>
+<button type="button" class="gcw-pill" data-v="unknown">ИИ не знает</button>
+</div>
+<div class="gcw-hint" id="gcw-hint-1"></div>
+</div>
+<div class="gcw-row" id="gcw-row-2">
+<div class="gcw-what">Цена</div>
+<div class="gcw-fields">
+<div><span class="gcw-lab">Что сказал ИИ</span><input type="text" class="gcw-in" id="gcw-ai-2" placeholder="Например: «от 80 000 ₽»"></div>
+<div><span class="gcw-lab">Что подтвердил ваш сайт</span><input type="text" class="gcw-in" id="gcw-site-2" placeholder="Например: «8 000–20 000 ₽»"></div>
+</div>
+<div class="gcw-pills" data-row="2">
+<button type="button" class="gcw-pill" data-v="match">Совпадает</button>
+<button type="button" class="gcw-pill" data-v="wrong">ИИ ошибся</button>
+<button type="button" class="gcw-pill" data-v="unknown">ИИ не знает</button>
+</div>
+<div class="gcw-hint" id="gcw-hint-2"></div>
+</div>
+<div class="gcw-actions">
+<button type="button" class="gcw-btn gcw-btn--solid" id="gcw-run">Проверить протокол</button>
+<button type="button" class="gcw-btn" id="gcw-copy">Скопировать протокол</button>
+<button type="button" class="gcw-btn" id="gcw-reset">Сбросить</button>
+</div>
+<div class="gcw-verdict" id="gcw-verdict" hidden></div>
+<div class="gcw-note">Данные не сохраняются и не отправляются: протокол работает только на вашей странице.</div>
+</div>
+<p class="mt-6">Три строки формы — это три самых частых источника галлюцинаций: композитный бренд, локальный сигнал и числа-магнит. Расхождения по названию — самые дорогие: модель склеила сущности. По городу — размыт локальный след. По цене — цифры не канонизированы, и модель дорисует их снова.</p>
+
+<h2 id="marshrut" class="text-2xl md:text-3xl font-bold mt-12">Маршрут для бизнеса</h2>
+<p>Галлюцинации — это не приговор. Это диагностический снимок: каких данных о вашем бренде не хватило нейросети, чтобы не выдумывать.</p>
+<p>Начните с пяти проверок:</p>
+<ol class="space-y-2 text-[#B8BCC6] list-decimal list-inside">
+<li>Что ИИ говорит о бренде сегодня.</li>
+<li>Какие источники использует.</li>
+<li>Правильно ли описывает услуги и город.</li>
+<li>Есть ли расхождения между сайтом, картами, каталогами и соцсетями.</li>
+<li>Появляетесь ли вы в запросах реальных клиентов.</li>
+</ol>
+<p>Если бренд не назван — это ещё не приговор: возможно, он находится в зоне слепоты. Если описан неправильно — это задача на канонизацию. Если конкурент стоит первым — это не всегда означает, что он лучше: возможно, у него плотнее цифровой след или понятнее машиночитаемая страница.</p>
+<div class="card p-6 quote-card">
+<p class="mb-3">Следующий шаг — бесплатный мини-аудит GEO-Апгрейда. Он показывает не обещание «вывести в топ», а карту текущего AI-следа, источников и слепых зон.</p>
+<a href="contacts.html?service=free-audit#form" class="btn glow inline-block rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618]">Пройти бесплатный мини-аудит</a>
+<p class="mt-4 text-sm text-[#B8BCC6]">Хотите не отчёт, а рабочую методику работы с точностью данных? Посмотрите <a href="geo-shturval.html" class="text-[#00F0FF] hover:underline">GEO-штурвал</a> — разовый аудит с передачей методики: метрики, протокол замеров и промпт-библиотека остаются у вас.</p>
+</div>
+</section>
+
+<p class="mt-8 text-sm text-[#B8BCC6]">Связанные термины: <a href="glossary.html" class="text-[#00F0FF] hover:underline">Hallucination</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">AI-видимость</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">Цифровой призрак</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">Зона слепоты</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">Контентный маяк</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">AI-след бренда</a>, <a href="glossary.html" class="text-[#00F0FF] hover:underline">Query</a></p>
+
+<nav class="card p-6 mt-8"><h2 class="text-lg font-semibold mb-4">Похожие материалы</h2><ul class="space-y-2 text-sm">
+<li><a href="blog-post-geo-ne-geo.html" class="text-[#00F0FF] hover:underline">← GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом</a></li>
+<li><a href="blog-post-geo-upgrade-laboratoria-geo-marketinga.html" class="text-[#00F0FF] hover:underline">← GEO-Апгрейд как термин: как нейросеть смешала лабораторию Дарьи Жарких с услугой Сайт Мейкерс</a></li>
+<li><a href="blog-post-digital-ghost.html" class="text-[#00F0FF] hover:underline">← Что такое цифровой призрак: 10 причин невидимости бренда</a></li>
+<li><a href="blog-post-kak-ii-sobiraet-reytingi-i-topy.html" class="text-[#00F0FF] hover:underline">← Как нейросеть собирает рейтинги и топы: анатомия AI-списка</a></li>
+<li><a href="blog-post-skolko-stoit-geo.html" class="text-[#00F0FF] hover:underline">← Сколько стоит GEO-продвижение в 2026: вилки по рынку и наш прайс</a></li>
+<li><a href="blog.html" class="text-[#00F0FF] hover:underline">← Все материалы лаборатории</a></li>
+</ul></nav>
+</article>
+
+</main>
+<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="256" height="256"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p><p class="text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера 22</p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p></div><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer><script>document.addEventListener('DOMContentLoaded',function(){var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduceMotion||!('IntersectionObserver' in window)){document.querySelectorAll('.card,.btn').forEach(function(el){el.classList.add('visible')});return}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.card').forEach(function(card){observer.observe(card)});document.querySelectorAll('.btn').forEach(function(btn){if(!btn.closest('.card')){observer.observe(btn)}});var headerBtn=document.querySelector('header .btn');if(headerBtn){headerBtn.classList.add('visible')}});</script><script>
+(function(){
+  var list=document.getElementById('geo-calc-list');
+  if(!list) return;
+  var boxes=list.querySelectorAll('input[type=checkbox]');
+  var res=document.getElementById('geo-calc-res');
+  var KEYL='geo-calc-anatomiya';
+  function upd(){
+    var n=0; boxes.forEach(function(b){ if(b.checked) n++; });
+    var txt;
+    if(n===7) txt='Пройдено <strong>7 из 7</strong> — все слои закрыты: вы вне зоны слепоты. Держите систему в тонусе перезамерами.';
+    else if(n>=5) txt='Пройдено <strong>'+n+' из 7</strong> — база есть. Остальные пункты — слабые места, которые нейросеть достраивает сама.';
+    else if(n>=3) txt='Пройдено <strong>'+n+' из 7</strong> — половина слоёв закрыта. Оставшиеся — ваша зона слепоты.';
+    else txt='Пройдено <strong>'+n+' из 7</strong> — вы глубоко в зоне слепоты: сигнал о вас неполный, и нейросеть заполняет пробелы не в вашу пользу.';
+    res.innerHTML=txt;
+    var st=[]; boxes.forEach(function(b){ st.push(b.checked?1:0); });
+    try{ localStorage.setItem(KEYL, st.join(',')); }catch(e){}
+  }
+  try{ var saved=localStorage.getItem(KEYL); if(saved){ saved.split(',').forEach(function(v,i){ if(boxes[i] && v==='1') boxes[i].checked=true; }); } }catch(e){}
+  boxes.forEach(function(b){ b.addEventListener('change',upd); });
+  upd();
+})();
+</script>
+<script>
+/* ===== Интерактивный протокол: ИИ сказал / сайт подтвердил ===== */
+(function(){
+  var KEYS = [
+    {label:'Название и услуга', mask:'<a href="blog-post-geo-upgrade-laboratoria-geo-marketinga.html">Композитный бренд</a>: модель склеила похожие названия и кейсы — разводим сущности страницей-определением.'},
+    {label:'Город', mask:'<a href="blog-post-local-visibility.html">Локальный сигнал</a>: проверьте карточки на Яндекс Картах, в 2ГИС и каталогах.'},
+    {label:'Цена', mask:'<a href="blog-post-skolko-stoit-geo.html">Числа-магнит</a>: цены требуют канонизации в машиночитаемом виде.'}
+  ];
+  var states = [null, null, null];
+  var lastVerdict = null;
+
+  function byId(id){ return document.getElementById(id); }
+  function setHint(i){
+    var el = byId('gcw-hint-'+i);
+    if(states[i] === 'wrong'){ el.innerHTML = KEYS[i].mask; }
+    else { el.innerHTML = ''; }
+  }
+  function setRowClass(i){
+    var row = byId('gcw-row-'+i);
+    if(states[i]) row.classList.add('sel'); else row.classList.remove('sel');
+  }
+  function updatePills(i){
+    var pills = document.querySelectorAll('.gcw-pills[data-row="'+i+'"] .gcw-pill');
+    pills.forEach(function(p){
+      var v = p.getAttribute('data-v');
+      p.classList.remove('on-match','on-wrong','on-unknown');
+      if(states[i] === v){ p.classList.add('on-'+v); p.setAttribute('aria-pressed','true'); }
+      else { p.setAttribute('aria-pressed','false'); }
+    });
+  }
+  function countStates(){
+    var match = 0, wrong = 0, unknown = 0;
+    states.forEach(function(s){
+      if(s === 'match') match++;
+      if(s === 'wrong') wrong++;
+      if(s === 'unknown') unknown++;
+    });
+    return {match: match, wrong: wrong, unknown: unknown};
+  }
+  function verdictBox(cls, title, bodyHtml, accLine){
+    var v = byId('gcw-verdict');
+    v.className = 'gcw-verdict ' + cls;
+    v.hidden = false;
+    var html = '<strong class="gcw-vtitle">' + title + '</strong>' + bodyHtml;
+    if(accLine){ html += '<p class="gcw-acc">' + accLine + '</p>'; }
+    v.innerHTML = html;
+  }
+  function buildSummary(){
+    var c = countStates();
+    var lines = ['ПРОТОКОЛ ПРОВЕРКИ «ИИ СКАЗАЛ / САЙТ ПОДТВЕРДИЛ» · GEO-Апгрейд'];
+    var marked = 0;
+    for(var i=0;i<KEYS.length;i++){
+      if(!states[i]) continue;
+      marked++;
+      var ai = byId('gcw-ai-'+i).value.trim();
+      var site = byId('gcw-site-'+i).value.trim();
+      var label = {match:'совпадает', wrong:'расхождение', unknown:'ИИ не знает'}[states[i]];
+      lines.push(KEYS[i].label + ': ИИ сказал «' + (ai||'—') + '» / сайт подтвердил «' + (site||'—') + '» → ' + label);
+    }
+    if(marked === 0){ lines.push('Строки не отмечены.'); }
+    if(lastVerdict){ lines.push('ИТОГ: ' + lastVerdict.summary); }
+    lines.push('Дата протокола: ' + new Date().toLocaleDateString('ru-RU'));
+    return lines.join('\n');
+  }
+  function ruPlural(n, forms){
+    var n10 = n % 10, n100 = n % 100;
+    if(n10 === 1 && n100 !== 11) return forms[0];
+    if(n10 >= 2 && n10 <= 4 && (n100 < 12 || n100 > 14)) return forms[1];
+    return forms[2];
+  }
+  function showHint(){
+    verdictBox('gcw-v-hint', 'ЗАПОЛНИТЕ ПРОТОКОЛ', 'Отметьте статус хотя бы для одной строки: «Совпадает», «ИИ ошибся» или «ИИ не знает». Форма считает не текст, а ваш вердикт — так исключаются ложные срабатывания на близкие формулировки.', null);
+  }
+  function showVerdict(){
+    var c = countStates();
+    var marked = c.match + c.wrong + c.unknown;
+    if(marked === 0){ lastVerdict = null; showHint(); return; }
+    var acc = 'Согласовано ' + c.match + ' из ' + marked + ' отмеченных фактов.';
+    var stepsHtml = '<ul>' +
+      '<li>Создайте страницу-определение термина бренда и <a href="blog-post-kontentnye-mayaki.html">контентные маяки</a>.</li>' +
+      '<li>Выровняйте цены на всех площадках: <a href="blog-post-skolko-stoit-geo.html">вилки цен и прайс</a>.</li>' +
+      '<li>Заполните карточки: <a href="blog-post-local-visibility.html">карты, каталоги, отзывы</a>.</li>' +
+      '<li>Повторите замер через месяц и сравните ответы.</li></ul>';
+    if(c.wrong === 0 && c.unknown === 0){
+      lastVerdict = {summary:'след согласован: ' + c.match + ' из ' + marked + ' фактов совпадают.'};
+      verdictBox('gcw-v-green', 'СЛЕД СОГЛАСОВАН', 'Факты в ответах совпадают с реальностью. Это не «навсегда»: поддерживайте след — обновляйте данные при изменениях и повторяйте проверку.', acc);
+    } else if(c.wrong >= 3){
+      lastVerdict = {summary:'зона слепоты: ' + c.wrong + ' расхождений, ИИ достраивает рынок сам.'};
+      verdictBox('gcw-v-red', 'ЗОНА СЛЕПОТЫ: ИИ ДОСТРАИВАЕТ РЫНОК САМ', '<p>Три и больше расхождений — сигнал плотной галлюцинации. Модель не находит ваших сигналов и собирает образ бренда из чужих данных. Запускайте протокол канонизации фактов:</p>' + stepsHtml, acc);
+    } else if(c.wrong > 0){
+      lastVerdict = {summary:'режим канонизации: ' + c.wrong + ' ' + ruPlural(c.wrong, ['расхождение','расхождения','расхождений']) + (c.unknown ? ', ' + c.unknown + ' ' + ruPlural(c.unknown, ['пробел','пробела','пробелов']) : '') + '.'};
+      verdictBox('gcw-v-amber', 'РЕЖИМ КАНОНИЗАЦИИ ФАКТОВ', '<p>Есть расхождения — значит, в корпусе данных о бренде противоречие или пустота. Не спорьте с выходом: внесите поправки во вход.</p>' + stepsHtml, acc);
+    } else {
+      lastVerdict = {summary:'мягкая зона слепоты: ИИ не знает о ' + c.unknown + ' ' + ruPlural(c.unknown, ['отмеченном факте','отмеченных фактах','отмеченных фактах']) + '.'};
+      verdictBox('gcw-v-violet', 'МЯГКАЯ ЗОНА СЛЕПОТЫ: ИИ НЕ ЗНАЕТ О ФАКТАХ', '<p>Модель не выдумывает — она молчит или отказывается отвечать. Это тоже симптом тонкого следа. Свободное место достраивает кто-то первый: канонизируйте факты раньше рынка.</p>' + stepsHtml, acc);
+    }
+  }
+  function init(){
+    if(!byId('gcw-root')) return;
+    for(var i=0;i<KEYS.length;i++){
+      (function(i){
+        var pills = document.querySelectorAll('.gcw-pills[data-row="'+i+'"] .gcw-pill');
+        pills.forEach(function(p){
+          p.addEventListener('click', function(){
+            var v = p.getAttribute('data-v');
+            states[i] = (states[i] === v) ? null : v;
+            updatePills(i); setHint(i); setRowClass(i);
+          });
+        });
+      })(i);
+    }
+    byId('gcw-run').addEventListener('click', showVerdict);
+    byId('gcw-reset').addEventListener('click', function(){
+      states = [null, null, null]; lastVerdict = null;
+      for(var j=0;j<3;j++){ updatePills(j); setHint(j); setRowClass(j); }
+      byId('gcw-verdict').hidden = true;
+      byId('gcw-verdict').innerHTML = '';
+    });
+    byId('gcw-copy').addEventListener('click', function(){
+      var text = buildSummary();
+      var done = function(){ var btn = byId('gcw-copy'); btn.textContent = 'Скопировано ✓'; setTimeout(function(){ btn.textContent = 'Скопировать протокол'; }, 1600); };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text); done(); });
+      } else { fallbackCopy(text); done(); }
+    });
+  }
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body></html>

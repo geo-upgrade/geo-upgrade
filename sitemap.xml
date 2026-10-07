@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://geo-upgrade.ru/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-07</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/services.html</loc>
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-post-geo-upgrade-laboratoria-geo-marketinga.html</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-07</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-post-geo-ne-geo.html</loc>
@@ -245,6 +245,12 @@
     <lastmod>2026-10-07</lastmod>
   </url><url>
     <loc>https://geo-upgrade.ru/blog-post-kak-ii-sobiraet-reytingi-i-topy.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://geo-upgrade.ru/blog-post-gallyutsinatsii-neurosetey.html</loc>
     <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
