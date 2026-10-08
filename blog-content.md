@@ -1,4 +1,5 @@
 # Контентная лаборатория — раздел блога GEO-Апгрейд
+> URL: https://geo-upgrade.ru/blog-content.html
 
 > https://geo-upgrade.ru/blog-content.html
 

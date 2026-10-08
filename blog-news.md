@@ -1,4 +1,5 @@
 # AI-сигналы — раздел блога GEO-Апгрейд
+> URL: https://geo-upgrade.ru/blog-news.html
 
 > https://geo-upgrade.ru/blog-news.html
 

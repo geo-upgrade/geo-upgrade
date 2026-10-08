@@ -1,4 +1,5 @@
 # Эксперименты — раздел блога GEO-Апгрейд
+> URL: https://geo-upgrade.ru/blog-experiments.html
 
 > https://geo-upgrade.ru/blog-experiments.html
 

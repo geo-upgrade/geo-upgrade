@@ -1,4 +1,5 @@
 # Локальный GEO — раздел блога GEO-Апгрейд
+> URL: https://geo-upgrade.ru/blog-local.html
 
 > https://geo-upgrade.ru/blog-local.html
 

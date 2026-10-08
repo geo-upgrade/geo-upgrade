@@ -1,4 +1,4 @@
-# AI-автоматизация для маркетинга: человек, AI-штурман и нейросеть
+# AI-автоматизация для маркетинга: человек, AI-штурман и нейросеть | GEO-Апгрейд
 
 > https://geo-upgrade.ru/blog-post-ai-avtomatizaciya-dlya-marketinga.html
 
