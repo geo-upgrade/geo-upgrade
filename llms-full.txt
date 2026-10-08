@@ -7031,6 +7031,8 @@ URL: https://geo-upgrade.ru/mentions.html
 «Создание лаборатории GEO-Апгрейд» — кейс Дарьи Жарких: как собиралась лаборатория AI-видимости, из чего складывается рабочий процесс, что входит в эксперименты и услуги и что видит заказчик на выходе. Кейс открыт для всех — не нужен аккаунт (https://workspace.ru/cases/soddanie-laboratorii-geo-apgreyd/)
 Профиль специалиста на Workspace: кейсы, опыт и подтверждения (https://workspace.ru/id/darya-zharkih/)
 Второй кейс на Workspace: «Первое публичное исследование AI-видимости бизнеса Томска: AI Visibility Index — Топ-160» — опубликован 2026-10-08 (https://workspace.ru/cases/pervoe-publichnoe-issledovanie-ai-vidimosti-biznesa-tomska-ai-visibility-index-top-160/)
+Кейс отслеживателя на Workspace: «Разработка отслеживателя упоминаний — собственный инструмент замера видимости в ответах нейросети» — учебный замер упоминаний (прогон №001: YandexGPT, 20 вопросов, итог 57 из 80) (https://workspace.ru/cases/razrabotka-otslezhivatelya-upominaniy-sobstvennyy-instrument-zamera-vidimosti-v-otvetah-neyroseti/)
+Кейс конвейера отзывов на Workspace: «Автоматизация работы с отзывами и ответами на них (Конвейер на живой карточке в Томске)» — 493 отзыва с живой карточки Яндекс Карт, методика 22 метрики и формула качества 0–10, опубликован 2026-10-08 (https://workspace.ru/cases/avtomatizaciya-raboty-s-otzyvami-i-otvetami-na-nih-konveyer-na-zhivoy-kartochke-v-tomske/)
 Топ-160 Томска — публикация исследования в Дзене
 Первая публикация исследования «Как нейросети видят бизнес Томска» на внешней площадке: разбор первого замера AI Visibility Index. Полная версия с методикой, формулой и таблицей рейтинга — на сайте.
 ЗАПИСЬ №002 · ИСТОЧНИК: ДЗЕН · ТИП: СОБСТВЕННАЯ ПУБЛИКАЦИЯ · СТАТЬЯ · ДАТА: 2026-10-06

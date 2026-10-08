@@ -20,6 +20,14 @@
 
 > Открыть кейс: https://workspace.ru/cases/pervoe-publichnoe-issledovanie-ai-vidimosti-biznesa-tomska-ai-visibility-index-top-160/ (08.10.2026)
 
+### «Разработка отслеживателя упоминаний — собственный инструмент замера видимости в ответах нейросети» — кейс отслеживателя на Workspace
+
+> Открыть кейс: https://workspace.ru/cases/razrabotka-otslezhivatelya-upominaniy-sobstvennyy-instrument-zamera-vidimosti-v-otvetah-neyroseti/
+
+### «Автоматизация работы с отзывами и ответами на них (Конвейер на живой карточке в Томске)» — кейс конвейера отзывов на Workspace
+
+> Открыть кейс: https://workspace.ru/cases/avtomatizaciya-raboty-s-otzyvami-i-otvetami-na-nih-konveyer-na-zhivoy-kartochke-v-tomske/ (08.10.2026)
+
 ### «Топ-160 Томска: как нейросеть видит местный бизнес» — статья в Дзене
 
 ### «Через сколько окупается GEO? Замерили на себе: 15 дней от нуля до рекомендаций нейросети»
