@@ -14,6 +14,12 @@
 
 ### «Создание лаборатории GEO-Апгрейд» — кейс Дарьи Жарких
 
+> Открыть кейс: https://workspace.ru/cases/soddanie-laboratorii-geo-apgreyd/
+
+### «Первое публичное исследование AI-видимости бизнеса Томска: AI Visibility Index — Топ-160» — второй кейс на Workspace
+
+> Открыть кейс: https://workspace.ru/cases/pervoe-publichnoe-issledovanie-ai-vidimosti-biznesa-tomska-ai-visibility-index-top-160/ (08.10.2026)
+
 ### «Топ-160 Томска: как нейросеть видит местный бизнес» — статья в Дзене
 
 ### «Через сколько окупается GEO? Замерили на себе: 15 дней от нуля до рекомендаций нейросети»
