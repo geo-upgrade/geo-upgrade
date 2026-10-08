@@ -286,9 +286,9 @@
 <p>Тройка лидеров — 2ГИС, Zoon и Яндекс Карты — забрала почти девять ответов из десяти. Это не совпадение: это инфраструктура, через которую ИИ видит локальный бизнес. И таблица эта не про Томск — она про механику. <strong>У каждой ниши — свои площадки, через которые ИИ собирает «рыночную картину».</strong> Для агентств это могут быть Рейтинг Рунета, Tagline, Workspace и подборки VC.ru; для стоматологий — ПроДокторов и 2ГИС; для перевозчиков — Авито и карты. Площадку не нужно выдумывать — нужно знать свою.</p>
 <section id="razborka-topa" class="mt-12" aria-label="Интерактив: разборка топа">
   <h2 class="text-2xl md:text-3xl font-bold">Разборка топа: паспорт каждого источника</h2>
-  <p class="mt-4 text-[#B8BCC6] max-w-3xl">Это те же цифры замера, что в таблице выше — но теперь по ним можно пройтись руками. Откройте строку — раскроется «паспорт источника»: какую роль он играет в списке, что именно даёт нейросети и почему поднимается в ответах. Роль считается разобранной, когда открыты все её строки. Разберите все три — и станет видно, из чего реально собирается AI-топ.</p>
+  <p class="mt-4 text-[#B8BCC6] max-w-3xl">Это те же цифры замера, что в таблице выше — но теперь по ним можно пройтись руками. Откройте строку — раскроется «паспорт источника»: какую роль он играет в списке, что именно даёт нейросети и почему поднимается в ответах. Роль считается разобранной, когда открыты все её строки. Разберите все 10 источников — и станет видно, из чего реально собирается AI-топ.</p>
   <div class="rtop-jsly" hidden>
-    <p class="mt-4 text-sm font-semibold text-[#00F0FF]" id="rtop-progress" role="status" aria-live="polite">Разобрано ролей: 0 из 3</p>
+    <p class="mt-4 text-sm font-semibold text-[#00F0FF]" id="rtop-progress" role="status" aria-live="polite">Разобрано источников: 0 из 10</p>
   </div>
   <div class="mt-6 space-y-2">
 <details class="rtop-row card visible" data-role="cards">
@@ -318,7 +318,7 @@
         <p class="mt-2"><strong class="text-[#00F0FF]">Вес в списке:</strong> 66 из 79 ответов (84%).</p>
       </div>
     </details>
-<details class="rtop-row card visible" data-role="community">
+<details class="rtop-row card visible" data-role="catalog">
       <summary class="rtop-sum flex items-center gap-3 rounded-md px-4 py-3" title="Открыть паспорт источника">
         <span class="rtop-rank" aria-hidden="true">04</span><span class="rtop-name">VK</span><span class="rtop-bar" aria-hidden="true"><span style="width:48%"></span></span><span class="rtop-pct">38/79</span>
       </summary>
@@ -540,17 +540,18 @@ document.addEventListener('DOMContentLoaded',function(){
   jsly.forEach(function(el){el.hidden=false});
   var roles={cards:false,reviews:false,catalog:false};
   function check(){
+    var opened=0;
     var counts={cards:0,cardsTotal:0,reviews:0,reviewsTotal:0,catalog:0,catalogTotal:0};
-    rows.forEach(function(r){var k=r.getAttribute('data-role');counts[k+'Total']++;if(r.open){counts[k]++}});
+    rows.forEach(function(r){var k=r.getAttribute('data-role');counts[k+'Total']++;if(r.open){counts[k]++;opened++}});
     var done=0;
     ['cards','reviews','catalog'].forEach(function(k){
       var full=counts[k+'Total']>0&&counts[k]===counts[k+'Total'];
       if(full){done++;roles[k]=true}else{roles[k]=false}
       rows.forEach(function(r){if(r.getAttribute('data-role')===k){r.classList.toggle('rtop-done',full)}});
     });
-    if(progress){progress.textContent='Разобрано ролей: '+done+' из 3'+(done===3?' — все три роли разобраны':'')}
-    btn.disabled=done!==3;
-    if(done===3){btn.classList.remove('border-[#B8BCC6]/40');btn.classList.add('bg-[#00F0FF]','text-[#0D0618]','glow')}
+    if(progress){progress.textContent='Разобрано источников: '+opened+' из 10'+(opened===10?' — все роли разобраны целиком':' · ролей: '+done+' из 3')}
+    btn.disabled=opened!==10;
+    if(opened===10){btn.classList.remove('border-[#B8BCC6]/40');btn.classList.add('bg-[#00F0FF]','text-[#0D0618]','glow')}
   }
   rows.forEach(function(r){r.addEventListener('toggle',check)});
   btn.addEventListener('click',function(){if(panel){panel.classList.remove('hidden');panel.classList.add('visible')}});
