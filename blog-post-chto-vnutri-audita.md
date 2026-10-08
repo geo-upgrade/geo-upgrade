@@ -1,4 +1,4 @@
-# Что внутри нашего аудита: уровни, артефакты и протокол GEO-сканера | GEO-Апгрейд
+# Что внутри нашего аудита: этапы, артефакты и методологический протокол GEO-сканера | GEO-Апгрейд
 
 > URL: https://geo-upgrade.ru/blog-post-chto-vnutri-audita.html
 
@@ -249,7 +249,7 @@ LAB TOOL · GHOST GAP
 [← Как GEO-Апгрейд оптимизирован для AI: проверка по 17 пунктам](blog-post-geo-apgreyd-ai-ready.html)
 [← Аудит на себе. Этап 1: как мы собрали запросный двойник — 6 аватаров и 66 запросов](blog-post-zaprosny-dvoinik-geo-audit.html)
 [← Метрики AI-видимости: второй этап GEO-аудита](blog-post-metriki-ai-vidimosti-geo-audit.html)
-[← Карта запросов клиента: методика GEO-Апгрейд](blog-post-karta-zaprosov-klienta.html)
+[← Что на самом деле спрашивает ваш клиент у нейросети?](blog-post-karta-zaprosov-klienta.html)
 [← Технический GEO-аудит: 20 проверок чек-листа](blog-post-tehnicheskiy-geo-audit.html)
 [← GEO-метрики: как считаются пять метрик AI-видимости](blog-post-geo-metrics-full.html)
 [← Как ИИ видит наш бренд: живые цифры замера](brand-visibility.html)

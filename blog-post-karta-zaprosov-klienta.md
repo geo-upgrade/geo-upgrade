@@ -1,4 +1,4 @@
-# Карта запросов клиента: методика GEO-Апгрейд
+# Что на самом деле спрашивает ваш клиент у нейросети? | GEO-Апгрейд
 
 > URL: https://geo-upgrade.ru/blog-post-karta-zaprosov-klienta.html
 
@@ -339,9 +339,9 @@ Google Maps
 [← Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ](blog-post-tehnicheskiy-geo-audit.html)
 [← Отзывы, карты и каталоги: где AI собирает образ локального бизнеса](blog-post-local-visibility.html)
 [← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)
-[← Контентные маяки: как сделать бренд понятнее для людей и AI](blog-post-kontentnye-mayaki.html)
+[← Контентные маяки: как создавать материалы, которые ведут клиента к решению](blog-post-kontentnye-mayaki.html)
 
-[← AI-автоматизация для маркетинга: человек, AI-штурман и нейросеть](blog-post-ai-avtomatizaciya-dlya-marketinga.html)[← Все материалы лаборатории](blog.html)
+[← AI-автоматизация в маркетинге: как освободить время, не потеряв голос бренда](blog-post-ai-avtomatizaciya-dlya-marketinga.html)[← Все материалы лаборатории](blog.html)
 
 ---
 

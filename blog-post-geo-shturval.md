@@ -185,8 +185,8 @@ GEO-штурвал — не «ещё одна услуга». Это аудит,
 Похожие материалы:
 - [Страница услуги GEO-штурвал](geo-shturval.html)
 - [Что внутри нашего аудита: этапы, артефакты и методологический протокол GEO-сканера](blog-post-chto-vnutri-audita.html)
-- [Карта запросов клиента: методика GEO-Апгрейд](blog-post-karta-zaprosov-klienta.html)
-- [Почему AI видит бренд, но не рекомендует: второй этап GEO-аудита](blog-post-metriki-ai-vidimosti-geo-audit.html)
+- [Что на самом деле спрашивает ваш клиент у нейросети?](blog-post-karta-zaprosov-klienta.html)
+- [Метрики AI-видимости: второй этап GEO-аудита бренда](blog-post-metriki-ai-vidimosti-geo-audit.html)
 - [GEO-маркетинг ≠ геомаркетинг: три разные стратегии](blog-post-geo-ne-geo.html)
 - [Все материалы лаборатории](blog.html)
 

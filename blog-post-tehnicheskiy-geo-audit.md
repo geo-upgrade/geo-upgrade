@@ -1,4 +1,4 @@
-# Технический GEO-аудит: 20 проверок видимости сайта в ИИ | GEO-Апгрейд
+# Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ | GEO-Апгрейд
 
 > URL: https://geo-upgrade.ru/blog-post-tehnicheskiy-geo-audit.html
 
@@ -171,7 +171,7 @@ PageSpeed Insights — скорость Rich Results Test — разметка S
 Похожие материалы
 
 [← Что такое GEO простыми словами?](blog-post-what-is-geo.html)
-[← Цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
+[← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
 [← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)
 [← Все материалы лаборатории](blog.html)
 
