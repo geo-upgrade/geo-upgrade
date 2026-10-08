@@ -239,9 +239,43 @@
 .jnav-beige-panel + .jnav-strip a.jnav-here{border-color:rgba(212,184,150,.8);color:#D4B896;background:rgba(212,184,150,.12)}
 }
 </style>
-<noscript><style>@media(max-width:767.98px){.jnav-nav{position:static;display:flex!important;opacity:1}.jnav-nav a{opacity:1;transform:none}}</style></noscript></head>
+<noscript><style>@media(max-width:767.98px){.jnav-nav{position:static;display:flex!important;opacity:1}.jnav-nav a{opacity:1;transform:none}}</style></noscript><style>
+/* jnav B6.4: единый стиль с главной (текстовые ссылки, неон-ховер) */
+.jnav-quick a{border:none;background:none;padding:6px 4px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none}
+.jnav-quick a:hover{color:#00F0FF;background:none}
+.jnav-quick a.jnav-here{color:#00F0FF;background:none}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{border:none;background:none;padding:6px 2px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none;white-space:nowrap}
+.jnav-strip a:hover{color:#00F0FF;background:none}
+.jnav-strip a.jnav-here{color:#00F0FF;background:none}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+@media(max-width:767.98px){
+.jnav-strip::-webkit-scrollbar{display:none}
+}
+</style>
+<style>/* jnav B6.4: быстрые пункты в хедере (стиль главной) + полоса «остальное» */
+.jnav-quick{display:none}
+@media(min-width:768px){.jnav-quick{display:none!important}}
+@media(max-width:767.98px){
+.jnav-quick{display:flex;gap:10px;align-items:center;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-quick::-webkit-scrollbar{display:none}
+.jnav-quick a{flex:0 0 auto;padding:6px 4px;font-size:.8rem;line-height:1.2;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-quick a:hover,.jnav-quick a.jnav-here{color:#00F0FF}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{flex:0 0 auto;padding:6px 2px;font-size:.8rem;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-strip a:hover,.jnav-strip a.jnav-here{color:#00F0FF}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+}
+</style>
+</head>
 <body>
-<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Быстрый доступ к разделам"><a href="index.html">Главная</a><a href="services.html">Услуги</a><a href="blog.html">Блог</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="contacts.html">Контакты</a></div>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div>
 <main class="max-w-4xl mx-auto px-5 py-16 md:py-24">
 
 <article>
@@ -479,6 +513,17 @@ document.addEventListener('DOMContentLoaded',function(){
       if(t===cur||(cur==='index'&&t==='index')){a.classList.add('jnav-here')}
     });
   }
+});
+</script>
+<script>
+/* jnav B6.4: подсветка текущей страницы в quick и strip */
+document.addEventListener('DOMContentLoaded',function(){
+  var cur=(location.pathname.split('/').pop()||'').replace('.html','');
+  if(cur===''){cur='index'}
+  document.querySelectorAll('.jnav-quick a,.jnav-strip a').forEach(function(a){
+    var t=a.getAttribute('href').replace('./','').replace('.html','');
+    if(t===cur){a.classList.add('jnav-here')}
+  });
 });
 </script>
 </body></html>
