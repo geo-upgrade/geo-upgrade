@@ -257,49 +257,80 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#1A0
 <div class="divider"></div>
 <div id="rvchk">
 <style>
-#rvchk{margin:28px 0;padding:22px;border:1px solid rgba(0,240,255,.35);border-radius:12px;background:linear-gradient(150deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);font-family:'Exo 2',sans-serif;color:#F5F7FA}
-#rvchk .r-chip{display:inline-block;padding:.3rem .7rem;border-radius:9999px;font-size:.72rem;letter-spacing:.06em;border:1px solid rgba(0,240,255,.35);color:#00F0FF;background:rgba(0,240,255,.06);font-family:'Orbitron',sans-serif}
-#rvchk .r-h{font-family:'Orbitron',sans-serif;font-size:1.25rem;margin:12px 0 6px}
-#rvchk .r-sub{font-size:.92rem;color:#B8BCC6;margin-bottom:14px}
-#rvchk textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(0,240,255,.35);background:rgba(255,255,255,.06);color:#F5F7FA;font-family:'Exo 2',sans-serif;font-size:15px;outline:none;resize:vertical}
-#rvchk textarea:focus{border-color:rgba(0,240,255,.7);box-shadow:0 0 12px rgba(0,240,255,.2)}
-#rvchk .r-btn{display:inline-block;padding:10px 20px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:#00F0FF;color:#0D0618;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:12px}
+#rvchk{margin:28px 0;padding:22px;border:1px solid rgba(212,184,150,.4);border-radius:12px;background:rgba(31,14,26,.55);font-family:'Exo 2',sans-serif;color:#F5F0E8}
+#rvchk .r-chip{display:inline-block;padding:.3rem .7rem;border-radius:9999px;font-size:.72rem;letter-spacing:.06em;border:1px solid rgba(212,184,150,.4);color:#D4B896;background:rgba(212,184,150,.08);font-family:'Orbitron',sans-serif}
+#rvchk .r-h{font-family:'Orbitron',sans-serif;font-size:1.25rem;margin:12px 0 6px;color:#F5F0E8}
+#rvchk .r-sub{font-size:.92rem;color:#B8B0A8;margin-bottom:14px}
+#rvchk textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(212,184,150,.4);background:rgba(255,255,255,.05);color:#F5F0E8;font-family:'Exo 2',sans-serif;font-size:15px;outline:none;resize:vertical}
+#rvchk textarea:focus{border-color:rgba(212,184,150,.75);box-shadow:0 0 12px rgba(212,184,150,.18)}
+#rvchk .r-btn{display:inline-block;padding:10px 20px;border-radius:10px;border:1px solid rgba(212,184,150,.6);background:#D4B896;color:#1A0A14;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:12px;transition:all .25s}
+#rvchk .r-btn:hover{box-shadow:0 0 16px rgba(212,184,150,.4)}
 #rvchk .r-res{margin-top:14px}
-#rvchk .r-card{padding:16px;border-radius:10px;border:1px solid rgba(0,240,255,.6);box-shadow:0 0 16px rgba(0,240,255,.28);background:rgba(13,6,24,.9)}
+#rvchk .r-card{padding:16px;border-radius:10px;border:1px solid rgba(212,184,150,.55);box-shadow:0 0 14px rgba(212,184,150,.18);background:rgba(13,6,24,.75)}
 #rvchk .r-verdict{font-weight:600;margin-bottom:8px}
 #rvchk .r-ok{color:#34D399}
-#rvchk .r-warn{color:#FBBF24}
+#rvchk .r-good{color:#D4B896}
+#rvchk .r-mid{color:#FBBF24}
+#rvchk .r-weak{color:#E8A87C}
 #rvchk .r-bad{color:#F87171}
-#rvchk .r-row{display:flex;gap:10px;align-items:baseline;margin-bottom:4px}
-#rvchk .r-hint{font-size:.78rem;color:#B8BCC6;margin-top:10px}
+#rvchk .r-score{font-family:'Orbitron',sans-serif;font-size:13px;color:#D4B896;margin-bottom:10px}
+#rvchk .r-row{display:flex;gap:10px;align-items:baseline;margin-bottom:4px;flex-wrap:wrap}
+#rvchk .r-dim{color:#8f867c}
+#rvchk .r-tip{font-size:.8rem;color:#B8B0A8}
+#rvchk .r-hint{font-size:.78rem;color:#B8B0A8;margin-top:10px}
 </style>
 <span class="r-chip">LAB TOOL · REVIEWS</span>
 <div class="r-h">Проверка ответа на отзыв</div>
-<p class="r-sub">Три оси из кейса Make Love Pizza: названа ли проблема, предложено ли решение, есть ли эмпатия. Вставьте свой ответ на негативный отзыв — разберём.</p>
-<textarea id="rvchk-txt" rows="5" placeholder="Вставьте свой ответ на негативный отзыв…"></textarea>
+<p class="r-sub">Оценим ответ на негативный отзыв по пяти осям: признание, решение, срок, переход в личку, живой тон. Вставьте ваш ответ — разберём.</p>
+<textarea id="rvchk-txt" rows="5" placeholder="Вставьте ваш ответ на негативный отзыв…"></textarea>
 <div><button class="r-btn" onclick="rvchk_run()">Разобрать</button></div>
 <div class="r-res" id="rvchk-res"></div>
 <script>
 var RV_AXES = [
-  {name:'Проблема названа', keys:['жаль','простите','извин','проблема','ошибк','недостаток','просчёт','не подошл','не устроил','сорвал','задерж','минус','некомпетентн']},
-  {name:'Решение предложено', keys:['верн','заменим','замени','компенс','скидк','пересобер','перепод','повтор','позвон','напишите','перезвон','замен','вернём','вернем','исправ','переработа','обновим','чек','обмен']},
-  {name:'Эмпатия', keys:['сочувств','понимаем','понимаю','извин','жаль','раздраж','недостойн','приносим']}
+  {name:'Признание проблемы', hint:'Признайте факт: «вы правы», «такого быть не должно», извинение за конкретный промах — не за «неудобства».', keys:['извин','простит','сожале','жаль','вы правы','признаём','признаем','сорвал','не сработало','не вышло','недоработ','ошибка с нашей','наш косяк','такого быть не должно']},
+  {name:'Конкретное решение', hint:'Назовите действие: что именно сделаем — вернём, заменим, пересоберём, перезвоним, исправим.', keys:['верн','замени','пересоб','переподготов','повторим','компенс','скидк','промокод','обмен','исправ','переделаем','пересылаем','сделаем','пересчита','уберём','уберем','перезвон']},
+  {name:'Срок или следующий шаг', hint:'Добавьте конкретику: срок («в течение часа»), номер заказа, адрес — чтобы решение не повисло в воздухе.', keys:['сегодня','завтра','в течение','в течении','минут','часа','дня','дней','номер заказа','заказа №','адрес','вместо']},
+  {name:'Переход в личный контакт', hint:'Предложите связаться напрямую: личные сообщения, телефон, почта — детали в переписке с отзывом не работают.', keys:['личные сообщения','личку','в личн','напишите нам','напишите в','позвоните','позвоним','перезвоним','телефон','почт','whatsapp','телеграм','telegram','direct']},
+  {name:'Живой тон без шаблона', hint:'Уберите казённые фразы («благодарим за обратную связь», «надеемся на понимание») — ответьте как живой человек.', isTone:true}
 ];
+var RV_CLICHES = ['благодарим за обратную связь','ценем ваше мнение','ценим ваше мнение','надеемся на понимание','благодарим за отзыв','спасибо за отзыв','спасибо за обратную связь'];
+function rvchk_axes(t){
+  t = (t||'').toLowerCase();
+  var out = [];
+  RV_AXES.forEach(function(a){
+    if(a.isTone){
+      var clich = RV_CLICHES.some(function(c){return t.indexOf(c)>=0});
+      out.push({name:a.name, on:(!clich && t.length>=60), hint:a.hint});
+    } else {
+      out.push({name:a.name, on:a.keys.some(function(k){return t.indexOf(k)>=0}), hint:a.hint});
+    }
+  });
+  return out;
+}
+function rvchk_verdict(score){
+  if(score>=5) return {t:'Маяк. Такой ответ запоминают клиенты — и его нейросеть цитирует, когда собирает мнения.', c:'r-ok'};
+  if(score===4) return {t:'Хороший ответ. Одна ось не дотянута — добейте её, и это будет маяк.', c:'r-good'};
+  if(score===3) return {t:'Рабочий, но сырой. Три оси из пяти уже есть — добавьте недостающие, и ответ станет сильным.', c:'r-mid'};
+  if(score===2) return {t:'Пока шаблонно. Две оси на месте — ответ дежурный: нейросеть его скопирует, но клиенты не запомнят.', c:'r-mid'};
+  if(score===1) return {t:'Дежурный. Одна ось из пяти — ответ выглядит как заглушка от бота.', c:'r-weak'};
+  return {t:'Шаблон-призрак. Ни одной оси — такой ответ читается как автоответчик: и клиенты его не запомнят, и нейросеть не повторит.', c:'r-bad'};
+}
 function rvchk_run(){
-  var t = (document.getElementById('rvchk-txt').value||'').toLowerCase();
+try{
+  var t = (document.getElementById('rvchk-txt').value||'');
   var res = document.getElementById('rvchk-res');
   if(!t.trim()){res.innerHTML='';return}
-  var hits = RV_AXES.map(function(a){return {name:a.name, on:a.keys.some(function(k){return t.indexOf(k)>=0})}});
-  var on = hits.filter(function(h){return h.on}).length;
-  var pct = Math.round(on/3*100);
-  var verdict, cls;
-  if(pct===100){verdict='Маяк: ответ закрывает все три оси. Так отвечает конвейер с ручным контролем.';cls='r-ok'}
-  else if(pct>=67){verdict='Хорошо: две оси на месте, третья — по тексту ниже.';cls='r-warn'}
-  else if(pct>=34){verdict='Частично: ответ дежурный. Нейтральный ответ нейросеть тоже копирует — и это копия без бренда.';cls='r-warn'}
-  else {verdict='Призрак отзыва: без проблемы, решения и эмпатии ответ читается как шаблон. Клиенты и нейросеть его не запоминают.';cls='r-bad'}
-  res.innerHTML='<div class="r-card"><div class="r-verdict '+cls+'">'+verdict+'</div>'+
-   hits.map(function(h){return '<div class="r-row"><span class="'+(h.on?'r-ok':'r-bad')+'">'+(h.on?'✓':'✕')+'</span><span>'+h.name+'</span></div>'}).join('')+
-   '<div class="r-hint">Живые слова клиента («привезли за полчаса», «горячая пицца») нейросеть собирает из отзывов и воспроизводит в ответах. Проверка идёт в браузере — текст никуда не отправляется.</div></div>';
+  var hits = rvchk_axes(t);
+  var score = hits.filter(function(h){return h.on}).length;
+  var v = rvchk_verdict(score);
+  res.innerHTML='<div class="r-card"><div class="r-verdict '+v.c+'">'+v.t+'</div>'+
+   '<div class="r-score">'+score+' из 5 · '+ (score>=4?'сильный ответ':(score>=2?'средний':'слабый')) +'</div>'+
+   hits.map(function(h){return '<div class="r-row '+(h.on?'':'r-miss')+'"><span class="'+(h.on?'r-ok':'r-dim')+'">'+(h.on?'✓':'✕')+'</span><span>'+h.name+'</span>'+(h.on?'':'<span class="r-tip">'+h.hint+'</span>')+'</div>'}).join('')+
+   '<div class="r-hint">Оси взяты из кейса Make Love Pizza: проблема 20% · решение 20% · эмпатия 40%. Проверка идёт в браузере — текст никуда не отправляется.</div></div>';
+}catch(e){
+  var r2=document.getElementById('rvchk-res');
+  if(r2) r2.innerHTML='<div class="r-card"><span class="r-bad">Виджет не смог разобрать текст.</span> Обновите страницу и попробуйте ещё раз.</div>';
+}
 }
 </script>
 </div>
