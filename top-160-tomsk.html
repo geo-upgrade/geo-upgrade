@@ -383,7 +383,65 @@ tr.top1 td.brand{color:#fff;font-weight:600}
     <p class="disclaimer">Индекс отражает ответы одной системы на дату замера — это факты первого прогона, а не оценка качества компаний. Следующий выпуск покажет динамику позиций.</p>
   </div>
 
-  <nav class="toc" aria-label="Категории"><a href="#cat1">Стоматологии</a><a href="#cat2">Кафе и рестораны</a><a href="#cat3">Салоны красоты</a><a href="#cat4">IT-компании и веб-студии</a><a href="#cat5">Ветклиники и груминг</a><a href="#cat6">Ремонт телефонов и ноутбуков</a><a href="#cat7">Грузоперевозки и переезды</a><a href="#cat8">Организация праздников</a><a href="#cat9">Образование: репетиторы, курсы и школы</a><a href="#cat10">Фитнес и спортзалы</a><a href="#cat11">Недвижимость</a><a href="#cat12">Тату-студии</a><a href="#cat13">Автосервисы</a><a href="#cat14">Юристы и юридические компании</a><a href="#cat15">Типографии</a><a href="#cat16">GEO-маркетинг</a>
+  <div id="t160f">
+<style>
+#t160f{margin:28px 0;padding:22px;border:1px solid rgba(0,240,255,.35);border-radius:12px;background:linear-gradient(150deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);font-family:'Exo 2',sans-serif;color:#F5F7FA}
+#t160f .t-chip{display:inline-block;padding:.3rem .7rem;border-radius:9999px;font-size:.72rem;letter-spacing:.06em;border:1px solid rgba(0,240,255,.35);color:#00F0FF;background:rgba(0,240,255,.06);font-family:'Orbitron',sans-serif}
+#t160f .t-h{font-family:'Orbitron',sans-serif;font-size:1.25rem;margin:12px 0 6px;color:#F5F7FA}
+#t160f .t-sub{font-size:.92rem;color:#B8BCC6;margin-bottom:14px}
+#t160f input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(0,240,255,.35);background:rgba(255,255,255,.06);color:#F5F7FA;font-family:'Exo 2',sans-serif;font-size:16px;outline:none}
+#t160f input:focus{border-color:rgba(0,240,255,.7);box-shadow:0 0 12px rgba(0,240,255,.2)}
+#t160f .t-btn{display:inline-block;padding:10px 20px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:#00F0FF;color:#0D0618;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:12px;transition:all .25s}
+#t160f .t-btn:hover{box-shadow:0 0 18px rgba(0,240,255,.45)}
+#t160f .t-hint{font-size:.78rem;color:#B8BCC6;margin-top:8px}
+#t160f .t-res{margin-top:14px}
+#t160f .t-card{padding:16px;border-radius:10px;border:1px solid rgba(0,240,255,.6);box-shadow:0 0 16px rgba(0,240,255,.28);background:rgba(13,6,24,.9)}
+#t160f .t-place{font-family:'Orbitron',sans-serif;font-size:30px;color:#00F0FF;margin-right:12px}
+#t160f .t-name{font-size:17px;font-weight:600}
+#t160f .t-note{font-size:.82rem;color:#B8BCC6}
+#t160f .t-row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
+#t160f .t-score{font-family:'Orbitron',sans-serif;font-size:13px;color:#00F0FF}
+#t160f .t-bar{height:8px;border-radius:4px;background:rgba(184,188,198,.18);overflow:hidden;margin-top:10px}
+#t160f .t-bar>span{display:block;height:100%;background:linear-gradient(90deg,#00F0FF,#7b5cff);border-radius:4px;transition:width .8s cubic-bezier(.22,1,.36,1)}
+#t160f .t-ok{color:#34D399}
+#t160f .t-blind{padding:16px;border-radius:10px;border:1px solid rgba(248,113,113,.5);background:rgba(13,6,24,.9)}
+#t160f .t-bad{color:#F87171;font-weight:600}
+#t160f .t-cta{margin-top:14px;font-size:.9rem;color:#B8BCC6}
+#t160f .t-cta a{display:inline-block;margin-top:10px;padding:10px 20px;border-radius:10px;background:#00F0FF;color:#0D0618;text-decoration:none;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+@media(prefers-reduced-motion:reduce){#t160f .t-bar>span{transition:none}}
+</style>
+<span class="t-chip">LAB TOOL · AI VISIBILITY INDEX</span>
+<div class="t-h">Найди себя в Топ-160</div>
+<p class="t-sub">Введите название вашей компании — покажем, видит ли вас нейросеть в замере 06.10.2026 (79 запросов, 16 категорий).</p>
+<input type="text" id="t160f-q" placeholder="Название компании: например, Cosmodent или Снегири" autocomplete="off">
+<div><button class="t-btn" onclick="t160f_find()">Проверить</button></div>
+<div class="t-hint">Поиск без учёта регистра; можно ввести часть названия. Данные не отправляются — проверка идёт в браузере.</div>
+<div class="t-res" id="t160f-res"></div>
+<script>
+function t160f_norm(s){return (s||'').toLowerCase().replace(/ё/g,'е').replace(/[^a-zа-я0-9\s-]/gi,'').trim()}
+function t160f_find(){
+  var q = t160f_norm(document.getElementById('t160f-q').value);
+  var res = document.getElementById('t160f-res');
+  if(!q){res.innerHTML='';return}
+  var hits = [];
+  TOP160_DATA.categories.forEach(function(c){c.rows.forEach(function(r){var n=t160f_norm(r.name); if(n.indexOf(q)>=0 || (q.indexOf(n)>=0 && n.length>3)) hits.push({c:c,r:r});})});
+  if(!hits.length){
+    res.innerHTML='<div class="t-blind"><span class="t-bad">Зона слепоты.</span> В рейтинге из 160 компаний такой бренд не найден — нейросеть в замере 06.10 его не называла. Это не оценка качества: бренд есть для людей, но нейросеть его не видит.<div class="t-cta"><a href="https://geo-upgrade.ru/contacts.html?service=free-audit#form">Бесплатный мини-аудит</a></div></div>';
+    return;
+  }
+  hits.sort(function(a,b){return (a.r.score-b.r.score)||(a.r.place-b.r.place)});
+  var h = hits[0];
+  var pct = Math.min(100, Math.round(h.r.score/24*100));
+  res.innerHTML='<div class="t-card"><div class="t-row"><span class="t-place">№'+h.r.place+'</span><span class="t-name">'+h.r.name+'</span><span class="t-note">'+(h.r.note?'· '+h.r.note:'широкий профиль')+'</span></div>'+
+   '<div class="t-score">'+h.r.score+' балла · категория «'+h.c.name+'» · '+h.r.detail+'</div>'+
+   '<div class="t-bar"><span style="width:'+pct+'%"></span></div>'+
+   (hits.length>1?'<div class="t-hint">Также совпало: '+hits.slice(1,4).map(function(x){return x.r.name+' (№'+x.r.place+')'}).join(', ')+'</div>':'')+
+   '</div>';
+}
+</script>
+</div>
+<script src="top160-finder-data.js"></script>
+<nav class="toc" aria-label="Категории"><a href="#cat1">Стоматологии</a><a href="#cat2">Кафе и рестораны</a><a href="#cat3">Салоны красоты</a><a href="#cat4">IT-компании и веб-студии</a><a href="#cat5">Ветклиники и груминг</a><a href="#cat6">Ремонт телефонов и ноутбуков</a><a href="#cat7">Грузоперевозки и переезды</a><a href="#cat8">Организация праздников</a><a href="#cat9">Образование: репетиторы, курсы и школы</a><a href="#cat10">Фитнес и спортзалы</a><a href="#cat11">Недвижимость</a><a href="#cat12">Тату-студии</a><a href="#cat13">Автосервисы</a><a href="#cat14">Юристы и юридические компании</a><a href="#cat15">Типографии</a><a href="#cat16">GEO-маркетинг</a>
   </nav>
 </header>
 
@@ -601,6 +659,37 @@ tr.top1 td.brand{color:#fff;font-weight:600}
 </section>
 </main>
 
+<div id="srcmap">
+<style>
+#srcmap{margin:28px 0;padding:22px;border:1px solid rgba(0,240,255,.35);border-radius:12px;background:linear-gradient(150deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);font-family:'Exo 2',sans-serif;color:#F5F7FA}
+#srcmap .s-chip{display:inline-block;padding:.3rem .7rem;border-radius:9999px;font-size:.72rem;letter-spacing:.06em;border:1px solid rgba(0,240,255,.35);color:#00F0FF;background:rgba(0,240,255,.06);font-family:'Orbitron',sans-serif}
+#srcmap .s-h{font-family:'Orbitron',sans-serif;font-size:1.25rem;margin:12px 0 6px}
+#srcmap .s-sub{font-size:.92rem;color:#B8BCC6;margin-bottom:14px}
+#srcmap table{width:100%;border-collapse:collapse}
+#srcmap th{background:rgba(0,240,255,.08);color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.08em;padding:.5rem .6rem;border:1px solid rgba(184,188,198,.3);text-align:left}
+#srcmap td{border:1px solid rgba(184,188,198,.3);padding:.5rem .6rem;font-size:.9rem}
+#srcmap .sm-bar{height:8px;border-radius:4px;background:rgba(184,188,198,.18);overflow:hidden;min-width:80px}
+#srcmap .sm-bar>span{display:block;height:100%;background:linear-gradient(90deg,#00F0FF,#7b5cff)}
+#srcmap .s-list{margin:12px 0 0 18px}
+#srcmap li{margin-bottom:6px;font-size:.92rem}
+#srcmap .s-cta{margin-top:16px;padding:14px;border-radius:10px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(90deg,rgba(0,240,255,.06),rgba(139,92,246,.05),rgba(0,240,255,.06));font-size:.92rem}
+#srcmap .s-cta a{display:inline-block;margin-top:10px;padding:10px 20px;border-radius:10px;background:#00F0FF;color:#0D0618;text-decoration:none;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+@media(prefers-reduced-motion:reduce){#srcmap .sm-bar>span{transition:none}}
+</style>
+<span class="s-chip">LAB DATA · AI VISIBILITY INDEX</span>
+<div class="s-h">Карта кормящих источников</div>
+<p class="s-sub">Какие источники нейросеть берёт в ответы о бизнесе Томска. Замер 06.10.2026: 79 ответов по 16 категориям.</p>
+<table>
+  <tr><th>Источник</th><th>Ответов с ним</th><th>Доля</th><th> </th></tr>
+  <tr><td>2ГИС</td><td>68 из 79</td><td>86%</td><td><div class='sm-bar'><span style='width:86%'></span></div></td></tr><tr><td>Яндекс Карты</td><td>68 из 79</td><td>86%</td><td><div class='sm-bar'><span style='width:86%'></span></div></td></tr><tr><td>Zoon</td><td>67 из 79</td><td>85%</td><td><div class='sm-bar'><span style='width:85%'></span></div></td></tr><tr><td>Yell.ru</td><td>21 из 79</td><td>27%</td><td><div class='sm-bar'><span style='width:27%'></span></div></td></tr><tr><td>Авито</td><td>16 из 79</td><td>20%</td><td><div class='sm-bar'><span style='width:20%'></span></div></td></tr><tr><td>Профи.ру</td><td>12 из 79</td><td>15%</td><td><div class='sm-bar'><span style='width:15%'></span></div></td></tr><tr><td>vc.ru</td><td>3 из 79</td><td>4%</td><td><div class='sm-bar'><span style='width:4%'></span></div></td></tr><tr><td>Habr</td><td>3 из 79</td><td>4%</td><td><div class='sm-bar'><span style='width:4%'></span></div></td></tr><tr><td>Sostav</td><td>3 из 79</td><td>4%</td><td><div class='sm-bar'><span style='width:4%'></span></div></td></tr><tr><td>workspace.ru</td><td>2 из 79</td><td>2%</td><td><div class='sm-bar'><span style='width:2%'></span></div></td></tr>
+</table>
+<ul class="s-list">
+  <li><strong>Базовый слой:</strong> 2ГИС, Яндекс Карты, Zoon — в 85–86% ответов. Карточка там — необходимое условие попадания бренда в ответ.</li>
+  <li><strong>Профильный слой:</strong> Yell.ru, Авито, Профи.ру — подхватывают узкие и сравнительные запросы.</li>
+  <li><strong>Пресс-слой:</strong> Sostav, vc.ru, Habr, workspace.ru — редкие, но весомые: питают информационные ответы и дают связку «кейс → бренд → сайт».</li>
+</ul>
+<div class="s-cta"><strong>Вас нет на этих площадках?</strong> Это и есть зона слепоты — начните с бесплатного мини-аудита: покажем, где бренд теряет сигнал.<br><a href="https://geo-upgrade.ru/contacts.html?service=free-audit#form">Бесплатный мини-аудит</a></div>
+</div>
 <footer class="site-footer">
   <div class="inner">
     <div>

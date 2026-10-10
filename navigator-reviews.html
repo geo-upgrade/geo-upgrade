@@ -255,6 +255,54 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#1A0
 <div class="divider"></div>
 <section id="limits" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">ГРАНИЦЫ ДЕЛА</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Честные рамки</h2><div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"><article class="card p-6"><h3 class="text-lg font-semibold accent-beige">Входит в дело</h3><ul class="checklist mt-4"><li>Библиотека промптов для системной работы с отзывами</li><li>Корректировочная сессия под ваши реальные отзывы</li><li>Инструкция по адаптации под разные площадки</li></ul></article><article class="card p-6"><h3 class="text-lg font-semibold accent-burgundy">Не входит в дело</h3><ul class="checklist-x mt-4"><li>Не настройка чат-бота для автоматических ответов</li><li>Не мониторинг и репутационный менеджмент на постоянной основе</li><li>Не глубокий аудит AI-видимости — это GEO-Апгрейд</li></ul></article></div></section>
 <div class="divider"></div>
+<div id="rvchk">
+<style>
+#rvchk{margin:28px 0;padding:22px;border:1px solid rgba(0,240,255,.35);border-radius:12px;background:linear-gradient(150deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);font-family:'Exo 2',sans-serif;color:#F5F7FA}
+#rvchk .r-chip{display:inline-block;padding:.3rem .7rem;border-radius:9999px;font-size:.72rem;letter-spacing:.06em;border:1px solid rgba(0,240,255,.35);color:#00F0FF;background:rgba(0,240,255,.06);font-family:'Orbitron',sans-serif}
+#rvchk .r-h{font-family:'Orbitron',sans-serif;font-size:1.25rem;margin:12px 0 6px}
+#rvchk .r-sub{font-size:.92rem;color:#B8BCC6;margin-bottom:14px}
+#rvchk textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(0,240,255,.35);background:rgba(255,255,255,.06);color:#F5F7FA;font-family:'Exo 2',sans-serif;font-size:15px;outline:none;resize:vertical}
+#rvchk textarea:focus{border-color:rgba(0,240,255,.7);box-shadow:0 0 12px rgba(0,240,255,.2)}
+#rvchk .r-btn{display:inline-block;padding:10px 20px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:#00F0FF;color:#0D0618;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:12px}
+#rvchk .r-res{margin-top:14px}
+#rvchk .r-card{padding:16px;border-radius:10px;border:1px solid rgba(0,240,255,.6);box-shadow:0 0 16px rgba(0,240,255,.28);background:rgba(13,6,24,.9)}
+#rvchk .r-verdict{font-weight:600;margin-bottom:8px}
+#rvchk .r-ok{color:#34D399}
+#rvchk .r-warn{color:#FBBF24}
+#rvchk .r-bad{color:#F87171}
+#rvchk .r-row{display:flex;gap:10px;align-items:baseline;margin-bottom:4px}
+#rvchk .r-hint{font-size:.78rem;color:#B8BCC6;margin-top:10px}
+</style>
+<span class="r-chip">LAB TOOL · REVIEWS</span>
+<div class="r-h">Проверка ответа на отзыв</div>
+<p class="r-sub">Три оси из кейса Make Love Pizza: названа ли проблема, предложено ли решение, есть ли эмпатия. Вставьте свой ответ на негативный отзыв — разберём.</p>
+<textarea id="rvchk-txt" rows="5" placeholder="Вставьте свой ответ на негативный отзыв…"></textarea>
+<div><button class="r-btn" onclick="rvchk_run()">Разобрать</button></div>
+<div class="r-res" id="rvchk-res"></div>
+<script>
+var RV_AXES = [
+  {name:'Проблема названа', keys:['жаль','простите','извин','проблема','ошибк','недостаток','просчёт','не подошл','не устроил','сорвал','задерж','минус','некомпетентн']},
+  {name:'Решение предложено', keys:['верн','заменим','замени','компенс','скидк','пересобер','перепод','повтор','позвон','напишите','перезвон','замен','вернём','вернем','исправ','переработа','обновим','чек','обмен']},
+  {name:'Эмпатия', keys:['сочувств','понимаем','понимаю','извин','жаль','раздраж','недостойн','приносим']}
+];
+function rvchk_run(){
+  var t = (document.getElementById('rvchk-txt').value||'').toLowerCase();
+  var res = document.getElementById('rvchk-res');
+  if(!t.trim()){res.innerHTML='';return}
+  var hits = RV_AXES.map(function(a){return {name:a.name, on:a.keys.some(function(k){return t.indexOf(k)>=0})}});
+  var on = hits.filter(function(h){return h.on}).length;
+  var pct = Math.round(on/3*100);
+  var verdict, cls;
+  if(pct===100){verdict='Маяк: ответ закрывает все три оси. Так отвечает конвейер с ручным контролем.';cls='r-ok'}
+  else if(pct>=67){verdict='Хорошо: две оси на месте, третья — по тексту ниже.';cls='r-warn'}
+  else if(pct>=34){verdict='Частично: ответ дежурный. Нейтральный ответ нейросеть тоже копирует — и это копия без бренда.';cls='r-warn'}
+  else {verdict='Призрак отзыва: без проблемы, решения и эмпатии ответ читается как шаблон. Клиенты и нейросеть его не запоминают.';cls='r-bad'}
+  res.innerHTML='<div class="r-card"><div class="r-verdict '+cls+'">'+verdict+'</div>'+
+   hits.map(function(h){return '<div class="r-row"><span class="'+(h.on?'r-ok':'r-bad')+'">'+(h.on?'✓':'✕')+'</span><span>'+h.name+'</span></div>'}).join('')+
+   '<div class="r-hint">Живые слова клиента («привезли за полчаса», «горячая пицца») нейросеть собирает из отзывов и воспроизводит в ответах. Проверка идёт в браузере — текст никуда не отправляется.</div></div>';
+}
+</script>
+</div>
 <section class="max-w-6xl mx-auto px-5 pb-8">
   <div class="card p-6">
     <h3 class="text-lg font-semibold accent-beige">Методика в работе — живой кейс</h3>
