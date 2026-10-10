@@ -9,7 +9,225 @@
 <title>Навигатор отзывов: промпт-система для отзывов — GEO-Навигатор</title>
 <meta name="description" content="Навигатор отзывов — 25–50 промптов для анализа тональности, генерации ответов в голосе бренда и выделения проблем. Встраивается в Ozon, WB, сайт, соцсети.">
 <meta name="theme-color" content="#0D0618">
-<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin><link rel="stylesheet" href="fonts.css">
+<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin><style>
+/* fonts.css (inlined, PSI #4) */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(orbitron-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(orbitron-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(orbitron-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(orbitron-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
 <link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
 <link rel="canonical" href="https://geo-upgrade.ru/navigator-reviews.html">
 <meta property="og:url" content="https://geo-upgrade.ru/navigator-reviews.html">
@@ -130,9 +348,28 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#1A0
 @media(min-width:640px){.sm\:gap-4{gap:1rem}}
 .bg-\[\#0D0618\]\/90{background-color:rgba(13,6,24,.9)}
 
-#calc-wrap{--bg:#1A0A14;--card:#1F0E1A;--card-hover:#2A1422;--border:#3A2230;--text:#F5F0E8;--text-dim:#B8B0A8;--accent:#D4B896;--accent-hover:#E8D5B7;--accent-dim:#8B2635;--radius:12px}#calc-wrap *{margin:0;padding:0;box-sizing:border-box}#calc-wrap{font-family:'Exo 2',sans-serif;color:var(--text);line-height:1.6}#calc-wrap .calc-container{max-width:720px;margin:0 auto}#calc-wrap .step-label{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);margin-bottom:12px}#calc-wrap .param-group{margin-bottom:20px}#calc-wrap .param-group label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}#calc-wrap .param-hint{font-size:12px;color:var(--text-dim);margin-bottom:8px}#calc-wrap .radio-row{display:flex;gap:8px;flex-wrap:wrap}#calc-wrap .radio-pill{display:inline-flex;align-items:center;padding:8px 16px;border:2px solid var(--border);border-radius:8px;cursor:pointer;font-size:14px;transition:all .15s;background:var(--card);user-select:none}#calc-wrap .radio-pill:hover{border-color:var(--accent-dim)}#calc-wrap .radio-pill.active{border-color:var(--accent);background:var(--accent-dim);color:#fff}#calc-wrap .radio-pill input{display:none}#calc-wrap .toggle-row{display:flex;align-items:center;gap:10px}#calc-wrap .toggle{position:relative;width:44px;height:24px;background:var(--border);border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}#calc-wrap .toggle.on{background:var(--accent)}#calc-wrap .toggle::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s}#calc-wrap .toggle.on::after{transform:translateX(20px)}#calc-wrap .toggle-label{font-size:14px}#calc-wrap .result-section{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:8px}#calc-wrap .result-section.has-result{border-color:var(--accent)}#calc-wrap .result-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}#calc-wrap .result-row:last-child{border-bottom:none}#calc-wrap .result-row .label{color:var(--text-dim)}#calc-wrap .result-row .value{font-weight:600}#calc-wrap .result-total{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:16px;border-top:2px solid var(--border)}#calc-wrap .result-total .label{font-size:16px;font-weight:700}#calc-wrap .result-total .price{font-size:28px;font-weight:800;color:var(--accent)}#calc-wrap .result-meta{font-size:12px;color:var(--text-dim);margin-top:12px;text-align:center}#calc-wrap .cta-btn{display:block;width:100%;padding:14px;background:var(--accent);color:#1A0A14;border:none;border-radius:var(--radius);font-size:16px;font-weight:600;cursor:pointer;transition:background .2s;margin-top:16px;text-decoration:none;text-align:center}#calc-wrap .cta-btn:hover{background:var(--accent-hover)}@media(max-width:600px){#calc-wrap .radio-row{flex-direction:column}}
+#calc-wrap{--bg:#1A0A14;--card:#1F0E1A;--card-hover:#2A1422;--border:#3A2230;--text:#F5F0E8;--text-dim:#B8B0A8;--accent:#D4B896;--accent-hover:#E8D5B7;--accent-dim:#8B2635;--radius:12px}#calc-wrap *{margin:0;padding:0;box-sizing:border-box}#calc-wrap{font-family:'Exo 2',sans-serif;color:var(--text);line-height:1.6}#calc-wrap .calc-container{max-width:720px;margin:0 auto}#calc-wrap .step-label{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);margin-bottom:12px}#calc-wrap .param-group{margin-bottom:20px}#calc-wrap .param-group label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}#calc-wrap .param-hint{font-size:12px;color:var(--text-dim);margin-bottom:8px}#calc-wrap .radio-row{display:flex;gap:8px;flex-wrap:wrap}#calc-wrap .radio-pill{display:inline-flex;align-items:center;padding:8px 16px;border:2px solid var(--border);border-radius:8px;cursor:pointer;font-size:14px;transition:all .15s;background:var(--card);user-select:none}#calc-wrap .radio-pill:hover{border-color:var(--accent-dim)}#calc-wrap .radio-pill.active{border-color:var(--accent);background:var(--accent-dim);color:#fff}#calc-wrap .radio-pill input{display:none}#calc-wrap .toggle-row{display:flex;align-items:center;gap:10px}#calc-wrap .toggle{position:relative;width:44px;height:24px;background:var(--border);border-radius:12px;cursor:pointer;transition:background .2s;flex-shrink:0}#calc-wrap .toggle.on{background:var(--accent)}#calc-wrap .toggle::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s}#calc-wrap .toggle.on::after{transform:translateX(20px)}#calc-wrap .toggle-label{font-size:14px}#calc-wrap .result-section{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:8px}#calc-wrap .result-section.has-result{border-color:var(--accent)}#calc-wrap .result-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}#calc-wrap .result-row:last-child{border-bottom:none}#calc-wrap .result-row .label{color:var(--text-dim)}#calc-wrap .result-row .value{font-weight:600}#calc-wrap .result-total{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:16px;border-top:2px solid var(--border)}#calc-wrap .result-total .label{font-size:16px;font-weight:700}#calc-wrap .result-total .price{font-size:28px;font-weight:700;color:var(--accent)}#calc-wrap .result-meta{font-size:12px;color:var(--text-dim);margin-top:12px;text-align:center}#calc-wrap .cta-btn{display:block;width:100%;padding:14px;background:var(--accent);color:#1A0A14;border:none;border-radius:var(--radius);font-size:16px;font-weight:600;cursor:pointer;transition:background .2s;margin-top:16px;text-decoration:none;text-align:center}#calc-wrap .cta-btn:hover{background:var(--accent-hover)}@media(max-width:600px){#calc-wrap .radio-row{flex-direction:column}}
 </style>
-<link rel="stylesheet" href="perf-fixes.css">
+<style>
+/* perf-fixes.css (inlined, PSI #4) */
+/* perf-fixes.css — расширение зон тапа (Accessibility). Визуально ничего не меняет. */
+header a, footer a, .geoas-chip, .fc-btn, a.btn { position: relative; }
+header a::before, footer a::before, .geoas-chip::before { content: ""; position: absolute; inset: -10px; }
+.fc-btn::before, a.btn::before { content: ""; position: absolute; inset: -4px; }
+
+
+/* ── v2 (07.10, вечер): A11Y — тап-зоны основной навигации ──────────────
+   Пункты меню были меньше 24px по высоте (text-sm без отступов).
+   Увеличиваем зону нажатия и расстояние между пунктами до ≥24px (WCAG 2.5.8).
+   Визуально меню становится чуть «воздушнее» — это ожидаемо. */
+nav[aria-label="Основная навигация"] {
+  gap: 4px 24px; /* было gap-x-4 (16px) gap-y-2 (8px) */
+}
+nav[aria-label="Основная навигация"] a {
+  display: inline-block;
+  padding: 6px 8px; /* зона нажатия 14+12 = 26px по высоте */
+}
+</style>
 <style>
 /* jnav B6.1: мобильное меню + полоса основных страниц (не применяется на index) */
 .jnav-btn{display:none;position:relative;z-index:60;width:44px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid rgba(0,240,255,.55);border-radius:8px;background:rgba(0,240,255,.08);cursor:pointer;transition:border-color .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1)}
@@ -205,7 +442,7 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#1A0
 </style>
 </head>
 <body>
-<header class="jnav-beige-panel sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn jnav-beige" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-3 md:gap-x-4 gap-y-2 text-sm text-[#B8B0A8]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#D4B896]">Главная</a><a href="about.html" class="hover:text-[#D4B896]">О лаборатории</a><a href="services.html" class="hover:text-[#D4B896]">Услуги</a><a href="blog.html" class="hover:text-[#D4B896]">Блог</a><a href="reviews.html" class="hover:text-[#D4B896]">Отзывы</a><a href="mentions.html" class="hover:text-[#D4B896]">Упоминания</a><a href="cases.html" class="hover:text-[#D4B896]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#D4B896]">Топ-160</a><a href="geo_navigator.html" class="accent-beige font-semibold">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#D4B896]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#D4B896]">Контакты</a><a href="faq.html" class="hover:text-[#D4B896]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#D4B896]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
+<header class="jnav-beige-panel sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn jnav-beige" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-3 md:gap-x-4 gap-y-2 text-sm text-[#B8B0A8]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#D4B896]">Главная</a><a href="about.html" class="hover:text-[#D4B896]">О лаборатории</a><a href="services.html" class="hover:text-[#D4B896]">Услуги</a><a href="blog.html" class="hover:text-[#D4B896]">Блог</a><a href="reviews.html" class="hover:text-[#D4B896]">Отзывы</a><a href="mentions.html" class="hover:text-[#D4B896]">Упоминания</a><a href="cases.html" class="hover:text-[#D4B896]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#D4B896]">Топ-160</a><a href="geo_navigator.html" class="accent-beige font-semibold">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#D4B896]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#D4B896]">Контакты</a><a href="faq.html" class="hover:text-[#D4B896]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#D4B896]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
 <figure class="cover-figure"><img src="cover-navigator-reviews.jpg" alt="Обложка: Навигатор отзывов — пять светящихся звёзд над графиком откликов" width="1200" height="630" loading="eager" decoding="async"></figure>
 <main>
 <section class="nav-grid scan-line"><div class="max-w-6xl mx-auto px-5 py-20 md:py-28"><div class="max-w-3xl">

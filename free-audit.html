@@ -9,7 +9,225 @@
 <title>Бесплатный мини-аудит AI-видимости — 3 запроса × 2 нейросети</title>
 <meta name="description" content="Бесплатный мини-аудит AI-видимости: 3 запроса × 2 нейросети. Что ИИ говорит о вашем бренде, кого называет вместо вас и что делать дальше.">
 <meta name="theme-color" content="#0D0618">
-<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin><link rel="stylesheet" href="fonts.css">
+<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin><style>
+/* fonts.css (inlined, PSI #4) */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(orbitron-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(orbitron-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(orbitron-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(orbitron-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
 <link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
 <link rel="canonical" href="https://geo-upgrade.ru/free-audit.html">
 <meta property="og:url" content="https://geo-upgrade.ru/free-audit.html">
@@ -114,7 +332,26 @@
 <style>
 html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px;opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.22,1,.36,1)}.card.visible{opacity:1;transform:translateY(0)}.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13)}.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}.btn{opacity:0;transform:translateY(20px);transition:all .8s cubic-bezier(.22,1,.36,1)}.btn.visible{opacity:1;transform:translateY(0)}.btn:hover{transform:translateY(-2px)}.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}.table{width:100%;border-collapse:collapse;margin:1.5rem 0}.table th,.table td{border:1px solid rgba(184,188,198,.3);padding:.75rem;text-align:left}.table th{background:rgba(0,240,255,.08);color:#00F0FF}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none;opacity:1;transform:none}.card:hover,.btn:hover{transform:none}}
 .checklist{list-style:none;margin:0;padding:0}.checklist li{position:relative;padding-left:1.5em;margin-bottom:.5rem;color:#B8BCC6;font-size:.95rem;line-height:1.55}.checklist li::before{content:'\25C6';position:absolute;left:0;top:.18em;color:#00F0FF;font-size:.75rem}.proto-steps{list-style:none;margin:0;padding:0}.proto-steps li{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.6rem;color:#B8BCC6;font-size:.95rem;line-height:1.55}.step-num{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:1.7rem;height:1.7rem;border-radius:9999px;background:rgba(0,240,255,.14);border:1px solid rgba(0,240,255,.5);color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.75rem;font-weight:700}.faq-item{border:1px solid rgba(184,188,198,.25);border-radius:10px;background:rgba(13,6,24,.88);padding:1rem 1.25rem;margin-bottom:.75rem}.faq-item summary{cursor:pointer;font-family:'Orbitron',sans-serif;font-size:.98rem;font-weight:600;color:#F5F7FA;list-style:none}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary::before{content:'\25B8';display:inline-block;margin-right:.5rem;color:#00F0FF;transform:rotate(90deg)}.faq-item[open] summary::before{transform:rotate(0)}.faq-item summary:hover{color:#00F0FF}.faq-item p{margin-top:.5rem;color:#B8BCC6;font-size:.95rem;line-height:1.6}.scan-line{position:relative}.scan-line::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 0%,rgba(0,240,255,.05) 50%,transparent 100%);background-size:100% 120px;animation:scanmove 9s linear infinite;opacity:.6}@keyframes scanmove{from{background-position:0 -120px}to{background-position:0 100vh}}.card-featured{border-color:rgba(0,240,255,.45)!important;box-shadow:0 0 16px rgba(0,240,255,.22)}.table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch}</style>
-<link rel="stylesheet" href="perf-fixes.css">
+<style>
+/* perf-fixes.css (inlined, PSI #4) */
+/* perf-fixes.css — расширение зон тапа (Accessibility). Визуально ничего не меняет. */
+header a, footer a, .geoas-chip, .fc-btn, a.btn { position: relative; }
+header a::before, footer a::before, .geoas-chip::before { content: ""; position: absolute; inset: -10px; }
+.fc-btn::before, a.btn::before { content: ""; position: absolute; inset: -4px; }
+
+
+/* ── v2 (07.10, вечер): A11Y — тап-зоны основной навигации ──────────────
+   Пункты меню были меньше 24px по высоте (text-sm без отступов).
+   Увеличиваем зону нажатия и расстояние между пунктами до ≥24px (WCAG 2.5.8).
+   Визуально меню становится чуть «воздушнее» — это ожидаемо. */
+nav[aria-label="Основная навигация"] {
+  gap: 4px 24px; /* было gap-x-4 (16px) gap-y-2 (8px) */
+}
+nav[aria-label="Основная навигация"] a {
+  display: inline-block;
+  padding: 6px 8px; /* зона нажатия 14+12 = 26px по высоте */
+}
+</style>
 <style>
 /* jnav B6.1: мобильное меню + полоса основных страниц (не применяется на index) */
 .jnav-btn{display:none;position:relative;z-index:60;width:44px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid rgba(0,240,255,.55);border-radius:8px;background:rgba(0,240,255,.08);cursor:pointer;transition:border-color .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1)}
@@ -187,7 +424,7 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#160
 </style>
 </head>
 <body>
-<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
 <figure class="cover-figure"><img src="cover-free-audit.jpg" alt="Обложка: бесплатный мини-аудит AI-видимости — радарный луч сканирует тёмное поле" width="1200" height="630" loading="eager" decoding="async"></figure>
 
 <main>
@@ -214,7 +451,7 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#160
 <section class="lab-grid"><div class="max-w-6xl mx-auto px-5 py-16 md:py-24"><div class="max-w-3xl mx-auto text-center"><h2 class="text-3xl md:text-5xl font-bold">Проверьте, что AI уже говорит о вашем бизнесе</h2><p class="mt-5 text-[#B8BCC6]">Оставьте ссылку на бренд — проведём первичную проверку и покажем, с чего начать.</p>
 <p class="mt-3 text-sm text-[#B8BCC6]">Хотите сначала прикинуть бюджет? <a href="blog-post-skolko-stoit-geo.html" class="text-[#00F0FF] hover:underline">Сколько стоит GEO-продвижение в 2026: вилки по рынку и наш прайс →</a></p><p class="mt-4 text-sm text-[#B8BCC6]">Методика в действии: как выглядит разбор отзывов по авторской методике — <a href="blog-post-avtoobrabotka-otzyvov.html" class="text-[#00F0FF] hover:underline">разбор Make Love Pizza: 493 отзыва →</a></p><a href="contacts.html?service=free-audit#form" class="btn glow mt-8 inline-block rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618]">Получить бесплатный мини-аудит</a><p class="mt-4 text-sm text-[#B8BCC6]">Заявка оформляется через форму на странице контактов.</p></div></div></section>
 </main>
-<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="256" height="256"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p><p class="text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера 22</p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p></div><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
+<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="96" height="96"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p><p class="text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера 22</p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p></div><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
 <script>
 document.addEventListener('DOMContentLoaded',function(){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});var cards=document.querySelectorAll('.card,.btn');cards.forEach(function(card){observer.observe(card)});var headerBtn=document.querySelector('header .btn');if(headerBtn){headerBtn.classList.add('visible')}});
 </script>

@@ -6,7 +6,225 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейда</title>
   <meta name="description" content="Практические материалы о GEO, AI-поиске, цифровом следе бренда, локальной видимости, контенте и автоматизации бизнеса.">
-  <link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin=""><link rel="stylesheet" href="fonts.css">  <style>
+  <link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin=""><style>
+/* fonts.css (inlined, PSI #4) */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(orbitron-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(orbitron-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(orbitron-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(orbitron-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>  <style>
     html { scroll-behavior: smooth }
   .cover-figure{margin-top:2rem}.cover-figure img{width:100%;height:auto;border:1px solid rgba(0,240,255,.32);box-shadow:0 0 30px rgba(0,240,255,.12);border-radius:10px}
  body { margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6 } h1,h2,h3 { font-family:Orbitron,sans-serif;line-height:1.15 }.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px;opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.22,1,.36,1)}.card.visible{opacity:1;transform:translateY(0)}.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13)}
@@ -62,7 +280,26 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-<link rel="stylesheet" href="perf-fixes.css">
+<style>
+/* perf-fixes.css (inlined, PSI #4) */
+/* perf-fixes.css — расширение зон тапа (Accessibility). Визуально ничего не меняет. */
+header a, footer a, .geoas-chip, .fc-btn, a.btn { position: relative; }
+header a::before, footer a::before, .geoas-chip::before { content: ""; position: absolute; inset: -10px; }
+.fc-btn::before, a.btn::before { content: ""; position: absolute; inset: -4px; }
+
+
+/* ── v2 (07.10, вечер): A11Y — тап-зоны основной навигации ──────────────
+   Пункты меню были меньше 24px по высоте (text-sm без отступов).
+   Увеличиваем зону нажатия и расстояние между пунктами до ≥24px (WCAG 2.5.8).
+   Визуально меню становится чуть «воздушнее» — это ожидаемо. */
+nav[aria-label="Основная навигация"] {
+  gap: 4px 24px; /* было gap-x-4 (16px) gap-y-2 (8px) */
+}
+nav[aria-label="Основная навигация"] a {
+  display: inline-block;
+  padding: 6px 8px; /* зона нажатия 14+12 = 26px по высоте */
+}
+</style>
 <style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
 #geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
 #geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
@@ -171,7 +408,7 @@
 }
 </style>
 </head><body>
-<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="256" height="256"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
 <main><section class="lab-grid"><div class="max-w-6xl mx-auto px-5 py-20 md:py-28"><div class="max-w-3xl"><p class="font-heading text-xs tracking-[.2em] text-[#00F0FF] animate-pulse">LAB STATUS: OPEN</p><h1 class="mt-4 text-4xl md:text-6xl font-bold">GEO-лаборатория: журнал AI-видимости</h1><p class="mt-6 text-base md:text-lg text-[#B8BCC6]">Здесь мы разбираем вопросы бизнеса, экспертов и маркетологов о нейросетях, GEO и новом поиске. Проверяем гипотезы, показываем ограничения и переводим сложные технологии в конкретные действия.</p><p class="mt-4 text-[#B8BCC6]">Проверяем, как нейросети видят бренды, разбираем цифровые следы и ищем практические способы сделать бизнес понятнее для AI и заметнее для клиентов.</p><div class="mt-8 flex flex-col sm:flex-row gap-4"><a href="#latest" class="btn glow inline-block rounded-md bg-[#00F0FF] px-7 py-4 text-center font-semibold text-[#0D0618] visible">Читать последние материалы</a><a href="contacts.html?service=free-audit#form" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold visible">Получить бесплатный мини-аудит</a></div></div></div></section><div class="divider"></div>
 
 <!-- TERM OF DAY WIDGET -->
@@ -335,7 +572,7 @@ try{
 <script>const TOP160_DATA = {"title": "AI Visibility Index Томска — Топ-160", "date": "2026-10-06", "categories": [{"num": 1, "name": "Стоматологии", "rows": [{"place": 1, "name": "Авторская клиника Cosmodent", "note": "детская стоматология + имплантация зубов", "score": 14, "detail": "5 уп. + 3×№1"}, {"place": 2, "name": "Клиника Святителя Луки", "note": "сеть «Медстар») (детская стоматология", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 3, "name": "Радуга", "note": "широкий профиль", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 4, "name": "Детская клиника св. Варвары", "note": "детская стоматология", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 5, "name": "Эликсир", "note": "детская стоматология + брекеты и элайнеры", "score": 4, "detail": "4 уп. + 0×№1"}, {"place": 6, "name": "Центр дентальной имплантации", "note": "имплантация зубов", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 7, "name": "Мастер Дент", "note": "детская стоматология", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 8, "name": "Центр Современной Стоматологии", "note": "широкий профиль", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 9, "name": "Зуб-ОК", "note": "детская стоматология", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 10, "name": "Денталия", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 2, "name": "Кафе и рестораны", "rows": [{"place": 1, "name": "Снегири", "note": "завтраки + деловой ужин", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 2, "name": "Хачапури Марико", "note": "широкий профиль", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 3, "name": "Make Love Pizza", "note": "пиццерии", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 4, "name": "Нарым", "note": "деловой ужин", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 5, "name": "Сибирская трапеза", "note": "банкетные залы", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 6, "name": "Бамбук", "note": "суши и роллы", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 7, "name": "Poly bistro", "note": "завтраки", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 8, "name": "Кухтерин", "note": "завтраки", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 9, "name": "Панда", "note": "суши и роллы", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 10, "name": "Славянский БазарЪ", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 3, "name": "Салоны красоты", "rows": [{"place": 1, "name": "Barbie Studio", "note": "маникюр + свадебный образ", "score": 13, "detail": "4 уп. + 3×№1"}, {"place": 2, "name": "Подружка невесты", "note": "широкий профиль", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 3, "name": "OldBoy", "note": "барбершопы", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 4, "name": "I-cosmo", "note": "косметология, чистка кожи", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 5, "name": "Рубе", "note": "свадебный образ", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 6, "name": "Кватро", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 7, "name": "Место beauty", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 8, "name": "Ns & Beauty bar", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 9, "name": "Пространство стиля Нины Шустер", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "Мана про", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 4, "name": "IT-компании и веб-студии", "rows": [{"place": 1, "name": "Аплинк", "note": "широкий профиль", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 2, "name": "Сибкод", "note": "мобильные приложения", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 3, "name": "Аппокс", "note": "разработка сайтов", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 4, "name": "Sibedge", "note": "широкий профиль", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 5, "name": "Team-B", "note": "SEO-продвижение", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 6, "name": "Ама Диджитал", "note": "интернет-магазины", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 7, "name": "Алекс-групп", "note": "разработка сайтов", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 8, "name": "Студия Т", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 9, "name": "Веб дизайнер Мелехина М.", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "UniSiter", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 5, "name": "Ветклиники и груминг", "rows": [{"place": 1, "name": "Доктор Хвост", "note": "широкий профиль", "score": 8, "detail": "2 уп. + 2×№1"}, {"place": 2, "name": "ИнноВет", "note": "стерилизация кошек", "score": 6, "detail": "3 уп. + 1×№1"}, {"place": 3, "name": "Ветеринарная клиника Недзельского", "note": "круглосуточные", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 4, "name": "Мальтезе", "note": "груминг", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 5, "name": "Ваш грумер", "note": "груминг крупных собак", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 6, "name": "ТомВет", "note": "стерилизация кошек", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 7, "name": "Капибара", "note": "стерилизация кошек", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 8, "name": "Велес", "note": "широкий профиль", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 9, "name": "Рыжий лис", "note": "круглосуточные", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 10, "name": "БиоВетЦентр", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 6, "name": "Ремонт телефонов и ноутбуков", "rows": [{"place": 1, "name": "Pedant.ru", "note": "ремонт iPhone", "score": 9, "detail": "3 уп. + 2×№1"}, {"place": 2, "name": "Аксеум", "note": "ремонт ноутбуков + техника Apple", "score": 7, "detail": "4 уп. + 1×№1"}, {"place": 3, "name": "Дигишоп", "note": "ремонт iPhone", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 4, "name": "Статус", "note": "техника Apple + ремонт iPhone", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 5, "name": "АйПрофикс", "note": "ремонт ноутбуков + техника Apple", "score": 5, "detail": "5 уп. + 0×№1"}, {"place": 6, "name": "Ваш техник №1", "note": "восстановление данных", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 7, "name": "АйСервис", "note": "ремонт ноутбуков + ремонт iPhone", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 8, "name": "Ремком", "note": "ремонт ноутбуков + восстановление данных", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 9, "name": "Лайк Сервис", "note": "ремонт ноутбуков", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 10, "name": "ЭпплТомск", "note": "техника Apple + ремонт iPhone", "score": 2, "detail": "2 уп. + 0×№1"}]}, {"num": 7, "name": "Грузоперевозки и переезды", "rows": [{"place": 1, "name": "Атлант", "note": "офисный переезд + такелажные работы", "score": 8, "detail": "2 уп. + 2×№1"}, {"place": 2, "name": "Богатыри", "note": "грузотакси + такелажные работы", "score": 7, "detail": "4 уп. + 1×№1"}, {"place": 3, "name": "Везун", "note": "грузотакси", "score": 6, "detail": "3 уп. + 1×№1"}, {"place": 4, "name": "Грузз70", "note": "грузотакси", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 5, "name": "Грузчики70", "note": "грузотакси", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 6, "name": "Грузовичок", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 7, "name": "Абсолют", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 8, "name": "ЦентрМув-тмс", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 9, "name": "Тетрис-Груз", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "100 пудовъ", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 8, "name": "Организация праздников", "rows": [{"place": 1, "name": "Я на Праздник", "note": "аниматоры + детские праздники", "score": 8, "detail": "2 уп. + 2×№1"}, {"place": 2, "name": "ProActive", "note": "широкий профиль", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 3, "name": "Idealist", "note": "широкий профиль", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 4, "name": "Мир Квестов", "note": "квесты", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 5, "name": "Павел Брасалин", "note": "свадебный ведущий", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 6, "name": "Show Today", "note": "широкий профиль", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 7, "name": "Теория Отрыва", "note": "детские праздники", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 8, "name": "Другие Миры", "note": "детские праздники", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 9, "name": "Крыша в Томске", "note": "детские праздники", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 10, "name": "Помпеи Шоу", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 9, "name": "Образование: репетиторы, курсы и школы", "rows": [{"place": 1, "name": "Постоянная Планка", "note": "подготовка к ЕГЭ + ОГЭ по математике", "score": 12, "detail": "3 уп. + 3×№1"}, {"place": 2, "name": "Спик Инглиш", "note": "языковые школы", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 3, "name": "Компьютерная академия ТОП", "note": "курсы программирования", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 4, "name": "НиХао", "note": "китайский язык", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 5, "name": "Квентин", "note": "подготовка к ЕГЭ + ОГЭ по математике", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 6, "name": "Билингвёнок", "note": "языковые школы", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 7, "name": "Прыжок в английский", "note": "языковые школы", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 8, "name": "Tell me", "note": "языковые школы", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 9, "name": "Англомама", "note": "языковые школы", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "ЕС", "note": "языковые школы", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 10, "name": "Фитнес и спортзалы", "rows": [{"place": 1, "name": "Супер Джим", "note": "спортзалы + кроссфит", "score": 10, "detail": "4 уп. + 2×№1"}, {"place": 2, "name": "Мартен", "note": "спортзалы", "score": 6, "detail": "3 уп. + 1×№1"}, {"place": 3, "name": "Акватика", "note": "бассейн", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 4, "name": "Сила Кроссфит", "note": "кроссфит", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 5, "name": "Стретч Хаус", "note": "растяжка и йога", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 6, "name": "МетроFitness", "note": "спортзалы", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 7, "name": "Дельта Томи", "note": "широкий профиль", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 8, "name": "Wellness Park", "note": "спортзалы + бассейн", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 9, "name": "Факел", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "Фристайл", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 11, "name": "Недвижимость", "rows": [{"place": 1, "name": "Этажи", "note": "широкий профиль", "score": 8, "detail": "2 уп. + 2×№1"}, {"place": 2, "name": "Грасиона", "note": "срочный выкуп квартир", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 3, "name": "Лагуна", "note": "широкий профиль", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 4, "name": "Алатарцев Недвижимость", "note": "широкий профиль", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 5, "name": "Самолет Плюс", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 6, "name": "Единый центр недвижимости", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 7, "name": "Губерния", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 8, "name": "К2", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 9, "name": "АЖ GROUP", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "100 Домов", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 12, "name": "Тату-студии", "rows": [{"place": 1, "name": "Мален", "note": "первое тату", "score": 9, "detail": "3 уп. + 2×№1"}, {"place": 2, "name": "Paradox", "note": "первое тату", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 3, "name": "Модуль", "note": "широкий профиль", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 4, "name": "Кисти", "note": "первое тату", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 5, "name": "Stk", "note": "первое тату", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 6, "name": "Тату Культ", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 7, "name": "Твилл", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 8, "name": "Эволюция", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 9, "name": "Sat Club", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "Тату-мастер Звонцов Евгений", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 13, "name": "Автосервисы", "rows": [{"place": 1, "name": "Автосервис FourV", "note": "широкий профиль", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 2, "name": "Гибрид-сервис", "note": "широкий профиль", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 3, "name": "ДвижОК", "note": "капремонт двигателя", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 4, "name": "Фильтр", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 5, "name": "Магистраль авто", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 6, "name": "Тойота Центр Томск", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 7, "name": "Драйв", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 8, "name": "Автогик", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 9, "name": "Black Auto", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "Академия ГБО", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 14, "name": "Юристы и юридические компании", "rows": [{"place": 1, "name": "Правовой статус", "note": "широкий профиль", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 2, "name": "Делу время", "note": "банкротство физлиц", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 3, "name": "ФПК Альтернатива", "note": "банкротство физлиц", "score": 5, "detail": "2 уп. + 1×№1"}, {"place": 4, "name": "Восход", "note": "банкротство физлиц", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 5, "name": "Правовой центр Екатерины Жихровой", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 6, "name": "Юридическое бюро", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 7, "name": "Приоритет", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 8, "name": "Махоткина и Партнёры", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 9, "name": "Мои Права", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "Превентива", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 15, "name": "Типографии", "rows": [{"place": 1, "name": "Демос", "note": "широкий профиль", "score": 8, "detail": "2 уп. + 2×№1"}, {"place": 2, "name": "Печать и Точка", "note": "срочная полиграфия", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 3, "name": "Апостроф", "note": "срочная полиграфия", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 4, "name": "Д'Принт", "note": "срочная полиграфия", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 5, "name": "Графика", "note": "широкий профиль", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 6, "name": "Милон", "note": "широкий профиль", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 7, "name": "Фокус", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 8, "name": "Томская полиграфическая компания", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 9, "name": "Курсив", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "Серджум", "note": "широкий профиль", "score": 1, "detail": "1 уп. + 0×№1"}]}, {"num": 16, "name": "GEO-маркетинг", "rows": [{"place": 1, "name": "GEO-Апгрейд", "note": "GEO-видимость", "score": 12, "detail": "3 уп. + 3×№1"}, {"place": 2, "name": "ИИ-агентство «Максимум»", "note": "Фиеста) (GEO-видимость", "score": 4, "detail": "1 уп. + 1×№1"}, {"place": 3, "name": "GracieDigital", "note": "GEO-видимость", "score": 3, "detail": "3 уп. + 0×№1"}, {"place": 4, "name": "аАкцент", "note": "GEO-видимость", "score": 2, "detail": "2 уп. + 0×№1"}, {"place": 5, "name": "Анна Бессонова", "note": "GEO-видимость", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 6, "name": "Granat.red", "note": "GEO-видимость", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 7, "name": "ZEUS MEDIA", "note": "GEO-видимость", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 8, "name": "KULIKOVA GEO", "note": "GEO-видимость", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 9, "name": "RACURS", "note": "GEO-видимость", "score": 1, "detail": "1 уп. + 0×№1"}, {"place": 10, "name": "TRINET.Group", "note": "GEO-видимость", "score": 1, "detail": "1 уп. + 0×№1"}]}]};</script>
 <div class="divider"></div>
 <section class="max-w-6xl mx-auto px-5 py-16 md:py-24"><h2 class="text-3xl md:text-5xl font-bold">Выберите свой маршрут</h2><div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6"><article class="card p-6"><h3 class="text-lg font-semibold">Владелец бизнеса</h3><p class="mt-2 text-sm text-[#B8BCC6]">Проверьте, как AI видит ваш бренд, и найдите зоны невидимости.</p><a href="contacts.html?service=free-audit#form" class="btn mt-4 inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Бесплатный мини-аудит</a></article><article class="card p-6"><h3 class="text-lg font-semibold">Маркетолог</h3><p class="mt-2 text-sm text-[#B8BCC6]">Изучите методики GEO и получите инструменты для отчётов.</p><a href="services.html#geo-scanner" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">GEO-сканер</a></article><article class="card p-6"><h3 class="text-lg font-semibold">Эксперт</h3><p class="mt-2 text-sm text-[#B8BCC6]">Усильте экспертность и сделайте бренд заметнее для AI.</p><a href="services.html#geo-route" class="btn mt-4 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">GEO-маршрут</a></article></div></section><div class="divider"></div><section class="lab-grid"><div class="max-w-6xl mx-auto px-5 py-16 md:py-24"><div class="max-w-3xl mx-auto text-center"><h2 class="text-3xl md:text-5xl font-bold">Есть вопрос к лаборатории?</h2><p class="mt-6 text-[#B8BCC6]">Мы проверяем реальные вопросы бизнеса и публикуем результаты в блоге. Если вашего вопроса нет в списке — предложите его нам.</p><div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center"><a href="contacts.html#form" class="btn glow inline-block rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618]">Предложить вопрос</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-7 py-4 font-semibold">Написать в Telegram</a></div></div></div></section></main>
-<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="256" height="256"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p><p class="text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера 22</p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p></div><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
+<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="96" height="96"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p><p class="text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера 22</p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p></div><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
 <script>document.addEventListener('DOMContentLoaded',function(){var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(r||!('IntersectionObserver'in window)){document.querySelectorAll('.card,.btn').forEach(function(e){e.classList.add('visible')});return}var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.card').forEach(function(e){o.observe(e)});document.querySelectorAll('.btn').forEach(function(e){if(!e.closest('.card'))o.observe(e)});document.querySelectorAll('header .btn').forEach(function(e){e.classList.add('visible')});document.querySelectorAll('.start-route[href^="#"]').forEach(function(link){link.addEventListener('click',function(){var target=document.querySelector(link.getAttribute('href'));if(!target)return;target.classList.add('ring-2','ring-[#00F0FF]','ring-offset-4','ring-offset-[#0D0618]');setTimeout(function(){target.classList.remove('ring-2','ring-[#00F0FF]','ring-offset-4','ring-offset-[#0D0618]')},1800)})})});</script><script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
 <script src="/geo-assistant-widget.js" defer=""></script>
 <div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div>
