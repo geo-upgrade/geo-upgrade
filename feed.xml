@@ -5,11 +5,18 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Wed, 07 Oct 2026 22:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
     
         <item>
+      <title>Алиса для бизнеса: мой опыт раннего пользователя</title>
+      <link>https://geo-upgrade.ru/blog-post-alisa-dlya-biznesa.html</link>
+      <description><![CDATA[Как Алиса AI для бизнеса помогает в реальной работе: база знаний, автоматизация рутины, анализ данных и границы ИИ-ассистента. Опыт GEO-Апгрейд.]]></description>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-alisa-dlya-biznesa.html</guid>
+    </item>
+    <item>
       <title>Когда окупается GEO: две недели от нуля до ответов ИИ</title>
       <link>https://geo-upgrade.ru/blog-post-kogda-okupaetsya-geo.html</link>
       <description><![CDATA[Реальный таймлайн GEO-Апгрейд: первые упоминания на 4-й день, замер на 8-й, рекомендации на 14-й. Формула окупаемости GEO для вашего бизнеса и чек-лист протокола.]]></description>
@@ -217,3 +224,4 @@
     </item>
   </channel>
 </rss>
+
