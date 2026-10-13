@@ -102,7 +102,7 @@
 
 ---
 
-Похожие материалы: [← AI-автоматизация в маркетинге: человек, AI-штурман и нейросеть](blog-post-ai-avtomatizaciya-dlya-marketinga.html), [← Что внутри нашего аудита](blog-post-chto-vnutri-audita.html), [← Что нейросети говорят о нас: прогон №001](blog-post-chto-neiroseti-govoryat-o-nas.html), [← Кейсы и рекомендации](cases.html), [← Все материалы лаборатории](blog.html)
+Похожие материалы: [← Алиса для бизнеса: где ИИ уже становится частью команды, а где нужен человек](blog-post-alisa-dlya-biznesa.html), [← AI-автоматизация в маркетинге: человек, AI-штурман и нейросеть](blog-post-ai-avtomatizaciya-dlya-marketinga.html), [← Что внутри нашего аудита](blog-post-chto-vnutri-audita.html), [← Что нейросети говорят о нас: прогон №001](blog-post-chto-neiroseti-govoryat-o-nas.html), [← Кейсы и рекомендации](cases.html), [← Все материалы лаборатории](blog.html)
 
 ---
 
