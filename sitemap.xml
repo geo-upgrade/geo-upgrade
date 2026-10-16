@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://geo-upgrade.ru/</loc>
-<lastmod>2026-10-14</lastmod>
+<lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/services.html</loc>
@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog.html</loc>
-<lastmod>2026-10-14</lastmod>
+<lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-basics.html</loc>
@@ -40,7 +40,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-visibility.html</loc>
-<lastmod>2026-10-14</lastmod>
+<lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -115,7 +115,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-post-local-visibility.html</loc>
-<lastmod>2026-10-14</lastmod>
+<lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-post-ai-avtomatizaciya-dlya-marketinga.html</loc>
@@ -131,7 +131,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-post-tehnicheskiy-geo-audit.html</loc>
-<lastmod>2026-10-14</lastmod>
+<lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-post-komu-nuzhno-geo.html</loc>
@@ -251,7 +251,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-post-gallyutsinatsii-neurosetey.html</loc>
-<lastmod>2026-10-14</lastmod>
+<lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -285,5 +285,11 @@
   <url>
     <loc>https://geo-upgrade.ru/blog-post-kogda-okupaetsya-geo.html</loc>
 <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://geo-upgrade.ru/blog-post-chastye-oshibki-ai-vidimosti.html</loc>
+<lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

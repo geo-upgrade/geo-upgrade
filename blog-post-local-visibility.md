@@ -1,6 +1,14 @@
-# Отзывы, карты и каталоги: где AI берёт образы локального бизнеса | GEO-Апгрейд
+<html><head><meta name="\&quot;color-scheme\&quot;" content="\&quot;light" dark\"="">
+    <style>
+        pre {
+          content-visibility: auto;
+          line-height: 1.2em;
+          margin: 0;
+        }
+    </style>
+    </head><body><pre style="width: 1124ch; contain-intrinsic-height: 264em; content-visibility: visible"># Отзывы, карты и каталоги: где AI берёт образы локального бизнеса | GEO-Апгрейд
 
-> URL: https://geo-upgrade.ru/blog-post-local-visibility.html
+&gt; URL: https://geo-upgrade.ru/blog-post-local-visibility.html
 
 **Назначение:** Отзывы, карты и каталоги: где AI берёт образы локального бизнеса
 
@@ -205,6 +213,7 @@ yell.ru
 
 Похожие материалы
 
+[← Частые ошибки брендов в AI-видимости: кабинет диагностики](blog-post-chastye-oshibki-ai-vidimosti.html)
 [← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
 [← Что такое GEO простыми словами?](blog-post-what-is-geo.html)
 [← Чем GEO отличается от SEO?](blog-post-geo-vs-seo.html)
@@ -218,3 +227,4 @@ yell.ru
 ---
 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
+</pre></body></html>

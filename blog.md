@@ -1,8 +1,16 @@
-# GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейда
+<html><head><meta name="\&quot;color-scheme\&quot;" content="\&quot;light" dark\"="">
+    <style>
+        pre {
+          content-visibility: auto;
+          line-height: 1.2em;
+          margin: 0;
+        }
+    </style>
+    </head><body><pre style="width: 353ch; contain-intrinsic-height: 321.6em; content-visibility: visible"># GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейда
 
-> URL: https://geo-upgrade.ru/blog.html
+&gt; URL: https://geo-upgrade.ru/blog.html
 
-**Назначение:** Журнал AI-видимости: 29 статей, категории, поиск по темам, CTA.
+**Назначение:** Журнал AI-видимости: 30 статей, категории, поиск по темам, CTA.
 
 **Описание (meta):** Практические материалы о GEO, AI-поиске, цифровом следе бренда, локальной видимости, контенте и автоматизации бизнеса.
 
@@ -67,6 +75,14 @@ AI-сценарии, промпт-цех и контроль человека в
 [Открыть GEO-глоссарий →](glossary.html)
 
 FRESH SIGNALS
+
+AI-ВИДИМОСТЬ
+
+[Частые ошибки брендов в AI-видимости: кабинет диагностики](blog-post-chastye-oshibki-ai-vidimosti.html)
+
+Кабинет диагностики частых ошибок AI-видимости: полувидимость, старые цены, карточки без сигналов и техслой. С интерактивом «Кабинет диагностики». 16 октября 202610–13 минут
+
+[Читать статью](blog-post-chastye-oshibki-ai-vidimosti.html)
 
 AI ДЛЯ БИЗНЕСА
 
@@ -134,6 +150,7 @@ AI-ВИДИМОСТЬ
 AI-видимость бренда
 
 Почему нейросети не рекомендуют ваш бренд и что с этим делать.
+[◆ Кабинет диагностики ошибок брендов →](blog-post-chastye-oshibki-ai-vidimosti.html)
 [◆ Галлюцинации ИИ о бренде: что делать, если нейросеть ошибается →](blog-post-gallyutsinatsii-neurosetey.html)
 [◆ Как ИИ собирает рейтинги и топы →](blog-post-kak-ii-sobiraet-reytingi-i-topy.html)
 [◆ Что такое цифровой призрак →](blog-post-digital-ghost.html)
@@ -266,3 +283,4 @@ GEO-глоссарий
 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
 
+</pre></body></html>
