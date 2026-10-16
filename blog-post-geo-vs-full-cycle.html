@@ -1,0 +1,980 @@
+<!DOCTYPE html><!-- pkg geo-vs-full-cycle 2026-10-16 --><html lang="ru" class=""><head>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA+AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgVJREFUeJylkztoVFEQhr8559zduw83RoKEaBRUVBQfIFgEBbERQQtLESJR1kiwkIiNFja2YmMXEUFbG1PoEoIg2ASCCUQhqMEHghhFTET3Ps4di7uJQdLtNDNn5p85A/8/Ug03Km2YaacZwAEgkr90xTJLuSVbraaKU2OQNIEsA+dATB6nKaD/GqwDY/JcnIAIGgQ4kohsXRcahsj8PJLGaLkC1SpqLYggzQhZWIA4AiDr7kbSFPk2j9gHzzTbsbs1NaF46QLasZZ45C58XYQQzNRrwsEz+J27iG/cRDdtA1XM9Etg6ocWT9S11LNXi8f6tbTloBZO1pWfqoXTw1rq2aOl3v1a6tyqpjGrMv1dwwPHtXBqSHnn1QUP72Oej5EOXoayRxYXEGPht5KcGyI93499Mo4dfUS2bzvu9h3MzBTyYQ47PobTWgf4DFRJrg5DEiKTE+AyXOMx5tUk8vlLzoIH1tQgiqDioVzBpWcHII4wb2bhD+BTEIUOixoLSYZ2rcdOvMCOPiUd6Ec+zqEbevFHDyHBlVvq+w6DK2DezhDcG0GrNeJr18EHUC0i7z9RHL4IhQJJfQjfdwSiJna8gVToVERa/KcQFMEFy5SRZbkvlfO4+QvEtYSlSLWyWZdVJpKDVHPRKCAtPWmW141hJd7h/eoiX/p55amp8j++7WNqe8BfwsTb5mYAskEAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFU0lEQVR42u2Xa4hd1RXHf2vvfc59TO5NZsYkkzhDoy1qBEFrBaUvaEsJlL5MExVbEBUKBFVEQCwVLP1QstdBWqQ2FPigllIDmg5WipTV9xKpVqgRbopYqJtGZzCt37p1z7z3n7L36YZ/rTNoG2k/5Mgs297DO3v/73+t9ZFN9WjmPYjjPskFgg8B5J+DUSHwSiUsBFDQuoVKNROScYKKgum63cDb26GyFHQk4h2iAPIeyBFXUCFgHSQIqEHxFTsGX6H8hIaooAsacTdZa8GXE9xWOc5DWUBEcwwHaaBAu3Y1esB2sRVZ7yOwp5ORJNHik0QAf0HodbbVADIwsp4AGVAPkBdLtIgoYQQHJeujkVsJFF6ObJ8CXyOlZzJtvQJHjiptuwX9+H+F9l0GrAQmQgywuY147RnLgEcwLz0JZ4D/yMfKHHoQVXbMIQAjQEMwrr1K7/QZUDGgAa8nvvJdy7w3o1DRsslACK33M317G/eKnuOL+B6KvLNBVZLGLpim6dRx/1eRN05QO/p7Qr2ONpvoeBsccaWsWWEMdH4HWIeKIBiG3/4B/gt7IKs8MtdFa3WYaBA+dB35B67DkXlwgnvsEPbxw8jSAiQJum07fs+nkFNvoWkafWkMDBUsyPHXSX7yw0i+yBH1sHwm7u2tUNx6B37vHlgoYNAn+f6D2BefQxtNyi/dhv/0Z6EMOFoWe/AQyf33QZpE0wZF/vk69pk/omNjaHszZBkYF0PbgSwvYX/zRLzaIEOGOaQpumUctkxQXn8jdAOMJSSPfA/3y5/B+CRSlqTf+gbD915CuOIyHJ0c9/ij0GyATWC1F32bJKhTGPShOQa2CjwBCkVndlHcc18kUOSQBMyLL2F/9yThiqvQnTOgBpb72KNPQ2szBIVaHVZ7mD8dIVy9GyeLS3DmTEy7fkZ599fwV14OfaBmkcVl0ge+DoNBdIEAuaIzU5R331IFIdAG+9Bh3K8eQycmIXUgIJ0zsNKtUjWgvozP83NQgou+rYpE8PhrriV84nI4DdRAZjO0VsMYieZXwAqy2EWePx4JlAU0BfP3Y5CkMe9H9WiEv746SaUXcLptEt1xIcy+De0tJN/5JnpB8UdX0Wnt0G3C2JikRmVxZogL79Keu9XAEWGA8hLsAbd1MLMzUJ/AM06OjGBTm5FlhbRJI1FqJ+hM7vAgqFm8F+8FVwC/Qzz0l+wT/82Vq7EVOWzKp1B1zpICEi2ivQzyDJkkCHdDhiDnHgT84/jkCg0HeXn9sdYGg6gs4xeOIP/+CchCzj64D/4YYYP/xj75BPI8hK6fQpabRj6qpQGxJeVaT0MFJ3aSfHluyLBskQI0B9gHz2ILMzjfv4j8msPQC/gr99Hbh32mSNoewt+/83o1FSMHY7nypwqC6rMqzJb/b6jyrKqHD2l9fe8X5v1nZruu1PpqHJSldOq9NatYTzbuPgabbYv0ubYtCZ3PRj3zqqyuA57XpU5VXluTl3ttv34z+wlXHk1Or413rjXRd45gX3hWexTv8Z0OjF8Zt/GHnkeHei7QRuzQBED9FYh68emlqYkB76LOfZXyhtvJlyyG9oT0VoLc5g//wF3+BDSbE4rRQHtNrqpFYEHA2Slg/T7kKYxsgENPoKbdbExaq8hRCJp7d22q9Yg/SzuGp9AG2OgAVnpQK8H9Toy1tqlKoJ4H/+g6mQYi4hEYNWoF8AY9JzzQEVkvVgbCfkSDQFEEGvBWAgBFwMo9m4RszZEeH82kK7p5RzDyL9PLwrxYlX+i7EVhoIv4kAiowP6P3yf6P/3XiqdjF7qxlC6QWCDwH/KvwASIpEQWO092wAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
+<title>Чем GEO-Апгрейд отличается от SEO и «полного цикла» | GEO-Апгрейд</title>
+<meta name="description" content="Чем GEO-Апгрейд отличается от SEO и агентств полного цикла: GEO как основное направление, SEO как один из слоёв, диагностика вместо «продажи всего сразу». С интерактивами: карта различий и мини-тест.">
+<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin=""><style>
+/* fonts.css (inlined, PSI #4) */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(orbitron-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(orbitron-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(orbitron-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(orbitron-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+<script async="" src="https://mc.yandex.ru/metrika/tag.js?id=113118311"></script><script>document.documentElement.classList.remove('no-js');</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Чем GEO-Апгрейд отличается от SEO и «полного цикла»",
+  "description": "Чем GEO-Апгрейд отличается от SEO и агентств полного цикла: GEO как основное направление, SEO как один из слоёв, диагностика вместо «продажи всего сразу».",
+  "author": {
+    "@type": "Person",
+    "name": "Жарких Дарья Александровна",
+    "jobTitle": "GEO-маркетолог и AI-консультант",
+    "sameAs": [
+      "https://t.me/geoupgrade",
+      "https://vk.ru/geo.upgrade",
+      "https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933",
+      "https://profi.ru/profile/ZharkikhDA3/",
+      "https://workspace.ru/id/darya-zharkih/",
+      "https://www.klerk.ru/user/2726432/",
+      "https://dzen.ru/id/6ab4b86296401f17f0716d4b",
+      "https://g.page/r/CSUI5EnmoeeoEBM/review",
+      "https://maps.app.goo.gl/R8nnURT4CwAqi3nc7",
+      "https://yandex.ru/profile/84156063982",
+      "https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7",
+      "https://2gis.ru/tomsk/geo/70000001118166258",
+      "https://tomsk.flamp.ru/geo_upgrade",
+      "https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/",
+      "https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GEO-Апгрейд",
+    "url": "https://geo-upgrade.ru",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://geo-upgrade.ru/favicon.ico"
+    },
+    "sameAs": [
+      "https://t.me/geoupgrade",
+      "https://vk.ru/geo.upgrade",
+      "https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933",
+      "https://profi.ru/profile/ZharkikhDA3/",
+      "https://workspace.ru/id/darya-zharkih/",
+      "https://www.klerk.ru/user/2726432/",
+      "https://dzen.ru/id/6ab4b86296401f17f0716d4b",
+      "https://g.page/r/CSUI5EnmoeeoEBM/review",
+      "https://maps.app.goo.gl/R8nnURT4CwAqi3nc7",
+      "https://yandex.ru/profile/84156063982",
+      "https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7",
+      "https://2gis.ru/tomsk/geo/70000001118166258",
+      "https://tomsk.flamp.ru/geo_upgrade",
+      "https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/",
+      "https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/"
+    ]
+  },
+  "datePublished": "2026-10-16",
+  "dateModified": "2026-10-16",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://geo-upgrade.ru/blog-post-geo-vs-full-cycle.html"
+  },
+  "image": "https://geo-upgrade.ru/cover-blog-post-geo-vs-full-cycle.jpg",
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "GEO — это замена SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Нет. GEO дополняет SEO: поисковая оптимизация отвечает за то, чтобы сайт находили и понимали, GEO — за то, чтобы нейросети называли бренд, правильно передавали его специализацию и включали в рекомендации."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Если SEO уже настроено, зачем ещё GEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SEO и AI-ответ — разные пользовательские сцены. Сайт может хорошо ранжироваться, но нейросеть всё равно будет называть конкурентов или неточно описывать бренд. GEO измеряет это и достраивает недостающие сигналы: контекстные якоря, источники, карточки и отзывы."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Вы гарантируете попадание бренда в ответы нейросетей?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Нет. Мы фиксируем состояние AI-видимости на дату замера, показываем динамику и создаём условия, при которых бренд получает реальный шанс попасть в рекомендацию. Гарантий попадания в AI не существует — и это честная позиция лаборатории."
+        }
+      }
+    ]
+  }
+}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://geo-upgrade.ru"},
+    {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://geo-upgrade.ru/blog.html"},
+    {"@type": "ListItem", "position": 3, "name": "Чем GEO-Апгрейд отличается от SEO и «полного цикла»", "item": "https://geo-upgrade.ru/blog-post-geo-vs-full-cycle.html"}
+  ]
+}
+</script>
+<style>html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}h1,h2,h3,h4{font-family:'Orbitron',sans-serif;line-height:1.15}[id]{scroll-margin-top:5.5rem}.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px;opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.22,1,.36,1)}.card.visible{opacity:1;transform:translateY(0)}.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13)}.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}.btn{opacity:0;transform:translateY(20px);transition:all .8s cubic-bezier(.22,1,.36,1)}.btn.visible{opacity:1;transform:translateY(0)}.btn:hover{transform:translateY(-2px)}.card .btn{opacity:1;transform:none}.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}.badge{display:inline-block;padding:.25rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600}.badge-ai{background:rgba(6,182,212,.15);border:1px solid rgba(6,182,212,.5);color:#22D3EE}.badge-business{background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.5);color:#818CF8}.badge-visibility{background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.5);color:#34D399}.badge-basics{background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.5);color:#60A5FA}.badge-author{background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.6);color:#A78BFA}.lab-card{background:rgba(0,240,255,.05);border:1px solid rgba(0,240,255,.2);border-radius:8px;padding:1rem}.table{width:100%;border-collapse:collapse;margin:1.5rem 0}.table-wrapper{overflow-x:auto;margin:1.5rem 0}.table th,.table td{border:1px solid rgba(184,188,198,.3);padding:.75rem;text-align:left;min-width:150px}.table th{background:rgba(0,240,255,.08);color:#00F0FF}blockquote{border-left:4px solid #00F0FF;padding-left:1rem;margin:1.5rem 0;font-style:italic;color:#B8BCC6}.callout{background:rgba(0,240,255,.03);border-left:4px solid #00F0FF;padding:1rem;margin:1.5rem 0;border-radius:0 8px 8px 0}.term{color:#00F0FF;font-weight:600}.checklist{list-style:none;padding-left:0}.checklist li{position:relative;padding-left:1.75rem;margin-bottom:.75rem}.checklist li:before{content:"✓";position:absolute;left:0;color:#00F0FF;font-weight:bold}.faq-item{border:1px solid rgba(184,188,198,.25);border-radius:8px;padding:1rem;margin:1rem 0;background:rgba(13,6,24,.6)}.faq-item summary{cursor:pointer;color:#00F0FF;font-weight:600;font-family:'Orbitron',sans-serif}.faq-item p{margin:1rem 0 0;color:#B8BCC6}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none;opacity:1;transform:none}.card:hover,.btn:hover{transform:none}}@media(max-width:768px){.table{display:block;overflow-x:auto}.table-wrapper{overflow-x:auto}}
+
+.check-list{list-style:none;padding:0;margin:0}
+.check-list li{margin-bottom:.65rem}
+.check-item{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;font-size:.95rem}
+.check-item input{margin-top:.25rem;accent-color:#00F0FF;width:1.05rem;height:1.05rem;flex-shrink:0}
+.check-result{margin-top:1rem;padding:.85rem 1rem;border:1px solid rgba(0,240,255,.35);border-radius:8px;background:rgba(0,240,255,.05);font-size:.92rem}
+.check-result strong{color:#00F0FF}
+
+.al-steps li strong{color:#F5F7FA;font-weight:600}
+.al-panel .table{margin:0}
+
+.article-section{margin-bottom:1.5rem}
+.cover-figure{margin:2rem 0}
+.cover-figure img{width:100%;height:auto;border-radius:8px;border:1px solid rgba(0,240,255,.2);display:block}
+.cover-figure figcaption{margin-top:.5rem;font-size:.75rem;color:#B8BCC6;text-align:center}
+.table tbody tr{transition:background .25s ease}.table tbody tr:hover{background:rgba(0,240,255,.06)}</style>
+
+<link rel="canonical" href="https://geo-upgrade.ru/blog-post-geo-vs-full-cycle.html">
+<meta property="og:url" content="https://geo-upgrade.ru/blog-post-geo-vs-full-cycle.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://geo-upgrade.ru/cover-blog-post-geo-vs-full-cycle.jpg">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="GEO-Апгрейд">
+<meta property="og:title" content="Чем GEO-Апгрейд отличается от SEO и «полного цикла»">
+<meta property="og:description" content="Чем GEO-Апгрейд отличается от SEO и агентств полного цикла: GEO как основное направление, SEO как один из слоёв, диагностика вместо «продажи всего сразу».">
+  <meta property="article:published_time" content="2026-10-16T12:00:00+07:00">
+<meta property="article:modified_time" content="2026-10-16T12:00:00+07:00">
+
+/* gv-: интерактив «Карта различий» (статья geo-vs-full-cycle) */
+.gv-map{padding:1.25rem}
+.gv-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.gv-chip{cursor:pointer;font-family:Orbitron,sans-serif;font-size:.72rem;letter-spacing:.06em;padding:.5rem .9rem;border-radius:9999px;border:1px solid rgba(184,188,198,.35);color:#B8BCC6;background:rgba(13,6,24,.5);transition:all .25s ease}
+.gv-chip:hover{border-color:rgba(0,240,255,.6);color:#F5F7FA}
+.gv-chip.is-on{background:#00F0FF;color:#0D0618;border-color:#00F0FF;box-shadow:0 0 14px rgba(0,240,255,.3)}
+.gv-board{display:grid;grid-template-columns:1fr;gap:.9rem}
+@media(min-width:640px){.gv-board{grid-template-columns:repeat(2,1fr)}}
+.gv-card{background:rgba(0,240,255,.04);border:1px solid rgba(0,240,255,.22);border-radius:10px;padding:1rem;animation:gvIn .35s cubic-bezier(.22,1,.36,1)}
+.gv-card:hover{border-color:rgba(0,240,255,.55);box-shadow:0 0 16px rgba(0,240,255,.12)}
+@keyframes gvIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.gv-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.gv-card-badge{font-family:Orbitron,sans-serif;font-size:.62rem;letter-spacing:.12em;padding:.2rem .55rem;border-radius:9999px;background:rgba(0,240,255,.12);border:1px solid rgba(0,240,255,.4);color:#22D3EE}
+.gv-card-num{font-family:Orbitron,sans-serif;font-size:.7rem;color:#B8BCC6}
+.gv-card-t{font-weight:600;color:#F5F7FA;font-size:.95rem;margin:0 0 .35rem;line-height:1.35}
+.gv-card-d{font-size:.82rem;color:#B8BCC6;margin:0;line-height:1.55}
+.gv-note{font-size:.8rem;color:#B8BCC6;margin-top:1rem}
+@media(prefers-reduced-motion:reduce){.gv-card{animation:none}}
+/* gq-: мини-тест (статья geo-vs-full-cycle) */
+.gq-wrap{padding:1.25rem}
+.gq-q{border:1px solid rgba(184,188,198,.22);border-radius:10px;padding:1rem;margin-bottom:.8rem;background:rgba(13,6,24,.55);transition:border-color .25s ease}
+.gq-q:has(input[type="radio"]:checked){border-color:rgba(0,240,255,.55)}
+.gq-q-head{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.7rem}
+.gq-num{font-family:Orbitron,sans-serif;font-size:.72rem;font-weight:700;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:9999px;padding:.2rem .5rem;flex-shrink:0}
+.gq-q-text{font-size:.92rem;color:#F5F7FA;line-height:1.45}
+.gq-answers{display:flex;gap:.6rem}
+.gq-a{cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .95rem;border-radius:8px;border:1px solid rgba(184,188,198,.3);font-size:.85rem;color:#B8BCC6;transition:all .2s ease}
+.gq-a input{accent-color:#00F0FF;margin:0;width:1rem;height:1rem}
+.gq-a:hover{border-color:rgba(0,240,255,.5);color:#F5F7FA}
+.gq-a:has(input:checked){border-color:#00F0FF;color:#F5F7FA;background:rgba(0,240,255,.08)}
+.gq-result{margin-top:1rem;padding:.85rem 1rem;border:1px solid rgba(0,240,255,.35);border-radius:8px;background:rgba(0,240,255,.05);font-size:.92rem}
+.gq-result strong{color:#00F0FF}
+.gq-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+.gq-note{font-size:.8rem;color:#B8BCC6;margin-top:.75rem}
+@media(prefers-reduced-motion:reduce){.gv-chip,.gq-a,.gq-q{transition:none}}
+/* oh-steps: нумерованный маршрут (маршрут дальше) */
+.oh-steps{counter-reset:ohstep;list-style:none;padding-left:0;margin:1.5rem 0}
+.oh-steps li{position:relative;padding-left:2.6rem;margin-bottom:.75rem;counter-increment:ohstep}
+.oh-steps li:before{content:counter(ohstep);position:absolute;left:0;top:.05rem;display:inline-flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;border-radius:9999px;background:#00F0FF;color:#0D0618;font-family:Orbitron,sans-serif;font-size:.8rem;font-weight:700}
+<link rel="stylesheet" href="tailwind.min.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<style>
+/* perf-fixes.css (inlined, PSI #4) */
+/* perf-fixes.css — расширение зон тапа (Accessibility). Визуально ничего не меняет. */
+header a, footer a, .geoas-chip, .fc-btn, a.btn { position: relative; }
+header a::before, footer a::before, .geoas-chip::before { content: ""; position: absolute; inset: -10px; }
+.fc-btn::before, a.btn::before { content: ""; position: absolute; inset: -4px; }
+
+
+/* ── v2 (07.10, вечер): A11Y — тап-зоны основной навигации ──────────────
+   Пункты меню были меньше 24px по высоте (text-sm без отступов).
+   Увеличиваем зону нажатия и расстояние между пунктами до ≥24px (WCAG 2.5.8).
+   Визуально меню становится чуть «воздушнее» — это ожидаемо. */
+nav[aria-label="Основная навигация"] {
+  gap: 4px 24px; /* было gap-x-4 (16px) gap-y-2 (8px) */
+}
+nav[aria-label="Основная навигация"] a {
+  display: inline-block;
+  padding: 6px 8px; /* зона нажатия 14+12 = 26px по высоте */
+}
+</style>
+<style>
+/* jnav B6.1: мобильное меню + полоса основных страниц (не применяется на index) */
+.jnav-btn{display:none;position:relative;z-index:60;width:44px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid rgba(0,240,255,.55);border-radius:8px;background:rgba(0,240,255,.08);cursor:pointer;transition:border-color .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn span{display:block;width:20px;height:2px;background:#00F0FF;border-radius:1px;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn:hover,.jnav-btn:focus-visible{border-color:rgba(0,240,255,.9);box-shadow:0 0 14px rgba(0,240,255,.35)}
+.jnav-btn:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+.jnav-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.jnav-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.jnav-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.jnav-beige{border-color:rgba(212,184,150,.55);background:rgba(212,184,150,.08)}
+.jnav-beige span{background:#D4B896}
+.jnav-beige:hover,.jnav-beige:focus-visible{border-color:rgba(212,184,150,.9);box-shadow:0 0 14px rgba(212,184,150,.3)}
+@media(min-width:768px){.jnav-btn,.jnav-strip{display:none!important}}
+@media(max-width:767.98px){
+.jnav-btn{display:flex}
+.jnav-nav{display:none!important;position:absolute;left:12px;right:12px;top:calc(100% + 8px);z-index:59;flex-direction:column;gap:2px;padding:10px;border:1px solid rgba(0,240,255,.35);border-radius:12px;background:rgba(13,6,24,.97);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(0,240,255,.12);backdrop-filter:blur(10px)}
+.jnav-open .jnav-nav{display:flex!important}
+.jnav-nav a{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:8px;font-size:1rem;color:#F5F7FA;text-decoration:none;opacity:0;transform:translateX(-8px);transition:opacity .25s ease,transform .25s ease}
+.jnav-open .jnav-nav a{opacity:1;transform:none}
+.jnav-nav a:nth-child(1){transition-delay:.02s}.jnav-nav a:nth-child(2){transition-delay:.05s}.jnav-nav a:nth-child(3){transition-delay:.08s}.jnav-nav a:nth-child(4){transition-delay:.11s}.jnav-nav a:nth-child(5){transition-delay:.14s}.jnav-nav a:nth-child(6){transition-delay:.17s}.jnav-nav a:nth-child(7){transition-delay:.2s}.jnav-nav a:nth-child(8){transition-delay:.23s}.jnav-nav a:nth-child(9){transition-delay:.26s}.jnav-nav a:nth-child(10){transition-delay:.29s}.jnav-nav a:nth-child(11){transition-delay:.32s}.jnav-nav a:nth-child(12){transition-delay:.35s}.jnav-nav a:nth-child(13){transition-delay:.38s}
+.jnav-nav a:hover{background:rgba(0,240,255,.08)}
+.jnav-nav a.text-\[\#00F0FF\]{background:rgba(0,240,255,.1);border:1px solid rgba(0,240,255,.4)}
+.jnav-nav a.accent-beige,.jnav-nav a.text-\[\#D4B896\]{background:rgba(212,184,150,.1);border:1px solid rgba(212,184,150,.4)}
+.jnav-nav::before{content:"МЕНЮ";display:block;font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:.25em;color:rgba(0,240,255,.7);padding:6px 12px 8px}
+.jnav-beige-panel .jnav-nav{border-color:rgba(212,184,150,.35);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(212,184,150,.1)}
+.jnav-beige-panel .jnav-nav::before{color:rgba(212,184,150,.8)}
+.jnav-beige-panel .jnav-nav a:hover{background:rgba(212,184,150,.08)}
+.jnav-strip{display:flex;gap:8px;overflow-x:auto;padding:8px 12px 10px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(0,240,255,.15);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-strip::-webkit-scrollbar{display:none}
+.jnav-strip a{flex:0 0 auto;padding:6px 12px;border-radius:999px;border:1px solid rgba(0,240,255,.3);font-size:.8rem;color:#F5F7FA;text-decoration:none;background:rgba(0,240,255,.05)}
+.jnav-strip a.jnav-here{border-color:rgba(0,240,255,.8);color:#00F0FF;background:rgba(0,240,255,.12)}
+.jnav-beige-panel + .jnav-strip{border-bottom-color:rgba(212,184,150,.2)}
+.jnav-beige-panel + .jnav-strip a{border-color:rgba(212,184,150,.3);background:rgba(212,184,150,.05)}
+.jnav-beige-panel + .jnav-strip a.jnav-here{border-color:rgba(212,184,150,.8);color:#D4B896;background:rgba(212,184,150,.12)}
+}
+</style>
+<noscript><style>@media(max-width:767.98px){.jnav-btn{display:none!important}.jnav-nav{position:static!important;display:flex!important;flex-wrap:wrap;gap:6px 8px;padding:10px 0 2px;opacity:1}.jnav-nav a{opacity:1;transform:none;display:inline-block;padding:8px 10px;font-size:.9rem}.jnav-nav::before{content:none}}</style></noscript><style>
+/* jnav B6.4: единый стиль с главной (текстовые ссылки, неон-ховер) */
+.jnav-quick a{border:none;background:none;padding:6px 4px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none}
+.jnav-quick a:hover{color:#00F0FF;background:none}
+.jnav-quick a.jnav-here{color:#00F0FF;background:none}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{border:none;background:none;padding:6px 2px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none;white-space:nowrap}
+.jnav-strip a:hover{color:#00F0FF;background:none}
+.jnav-strip a.jnav-here{color:#00F0FF;background:none}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+@media(max-width:767.98px){
+.jnav-strip::-webkit-scrollbar{display:none}
+}
+</style>
+<style>/* jnav B6.4: быстрые пункты в хедере (стиль главной) + полоса «остальное» */
+.jnav-quick{display:none}
+@media(min-width:768px){.jnav-quick{display:none!important}}
+@media(max-width:767.98px){
+.jnav-quick{display:flex;gap:10px;align-items:center;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-quick::-webkit-scrollbar{display:none}
+.jnav-quick a{flex:0 0 auto;padding:6px 4px;font-size:.8rem;line-height:1.2;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-quick a:hover,.jnav-quick a.jnav-here{color:#00F0FF}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{flex:0 0 auto;padding:6px 2px;font-size:.8rem;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-strip a:hover,.jnav-strip a.jnav-here{color:#00F0FF}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+}
+</style>
+<style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style><style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style></head>
+<body>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
+<main class="max-w-4xl mx-auto px-5 py-16 md:py-24">
+<article>
+<header class="mb-8">
+  <p class="font-heading text-xs tracking-[.2em] text-[#00F0FF] uppercase mb-3">Лаборатория AI-видимости бренда · GEO-Апгрейд</p>
+  <div class="flex flex-wrap gap-2 mb-4">
+    <a href="/blog-business.html" class="badge badge-business hover:opacity-80">GEO ДЛЯ БИЗНЕСА</a>
+    <span class="badge badge-business">ПОЗИЦИОНИРОВАНИЕ</span>
+  </div>
+  <h1 class="text-3xl md:text-5xl font-bold">Чем GEO-Апгрейд отличается от SEO и «полного цикла»</h1>
+  <p class="mt-4 text-lg text-[#B8BCC6]">Почему SEO — часть GEO-стратегии, а не наоборот: другая точка сборки, другая единица результата и честные границы метода</p>
+  <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#B8BCC6]">
+    <time datetime="2026-10-16">16 октября 2026</time><span>•</span><span>11–14 минут</span><span>•</span><span><a href="/about-daria-zharkikh.html" class="text-[#00F0FF] hover:underline">Дарья Жарких</a></span>
+  </div>
+</header>
+<aside class="lab-card mb-8">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+    <div><span class="font-heading text-[#00F0FF]">LAB NOTE:</span><p class="mt-1">POSITIONING PROTOCOL</p></div>
+    <div><span class="font-heading text-[#00F0FF]">Статус:</span><p class="mt-1">Разбор позиции лаборатории</p></div>
+    <div><span class="font-heading text-[#00F0FF]">Время чтения:</span><p class="mt-1">11–14 минут</p></div>
+    <div><span class="font-heading text-[#00F0FF]">Уровень:</span><p class="mt-1">Позиционный протокол</p></div>
+  </div>
+  <div class="mt-4 text-xs"><span class="font-heading text-[#00F0FF]">Для кого:</span><p class="mt-1">Владельцы бизнеса и маркетологи, у которых уже есть SEO-подрядчик или агентство «полного цикла» и встаёт вопрос: зачем ещё GEO и чем оно отличается</p></div>
+  <div class="mt-4 text-xs"><span class="font-heading text-[#00F0FF]">Главный вывод:</span><p class="mt-1">SEO помогает сайту быть найденным и проиндексированным. GEO помогает бренду быть названным, правильно понятым и рекомендованным в ответах нейросетей. GEO-Апгрейд не добавляет GEO к SEO как дополнение — мы начинаем с AI-видимости и собираем под неё нужные слои: SEO, локальный маркетинг, репутацию, контент и соцсети</p></div>
+</aside>
+<figure class="cover-figure">
+  <img src="/cover-blog-post-geo-vs-full-cycle.jpg" alt="Обложка статьи: две светящиеся панели — классический список ссылок и готовый AI-ответ, между ними мост из неоново-голубых точек на тёмно-фиолетовом фоне" width="1200" height="630" loading="eager" decoding="async">
+</figure>
+<nav class="lab-card mb-8" aria-label="Содержание статьи">
+  <p class="font-heading text-[#00F0FF] text-sm mb-2">Содержание</p>
+  <ul class="checklist text-sm">
+    <li><a href="#why" class="term">Почему возник вопрос «SEO уже есть — зачем GEO?»</a></li>
+    <li><a href="#position" class="term">Наша главная позиция: SEO — часть GEO-стратегии</a></li>
+    <li><a href="#diff" class="term">Чем GEO отличается от SEO: таблица</a></li>
+    <li><a href="#myths" class="term">Почему «просто добавьте FAQ» не работает</a></li>
+    <li><a href="#chatgpt" class="term">Почему нельзя ограничиваться ChatGPT</a></li>
+    <li><a href="#consultant" class="term">Чем мы отличаемся от AI-консультантов</a></li>
+    <li><a href="#cycle" class="term">Чем мы отличаемся от «полного цикла»</a></li>
+    <li><a href="#case" class="term">Пример: сайт есть в источниках, а бренда нет</a></li>
+    <li><a href="#who" class="term">Кому нужен именно GEO-Апгрейд: три признака</a></li>
+    <li><a href="#promises" class="term">Что мы обещаем — и что нет</a></li>
+    <li><a href="#map" class="term">Интерактив: карта различий с фильтром</a></li>
+    <li><a href="#test" class="term">Мини-тест: SEO у вас есть, а GEO?</a></li>
+    <li><a href="#faq" class="term">Частые вопросы</a></li>
+    <li><a href="#next" class="term">Маршрут дальше</a></li>
+  </ul>
+</nav>
+<section id="why" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Почему возник этот вопрос</h2>
+<p><strong>Клиент часто приходит с вполне разумным сомнением: «У меня уже есть SEO-подрядчик. Зачем мне ещё GEO? Или это то же самое, только с новым модным словом?»</strong></p>
+<p>Понимаю это сомнение. Рынок действительно любит переупаковывать старое в новую обёртку. Но GEO — не «SEO с приставкой AI». Это другая точка сборки: не позиция сайта в выдаче, а то, каким образом нейросеть собирает факты о бренде из разных источников и пересказывает их человеку.</p>
+<p>Google описывает AI Overviews как генеративный ответ, который опирается на качественные результаты из веба и даёт ссылки на источники; система может запускать несколько связанных поисков по подтемам и источникам, чтобы собрать ответ. Яндекс также объясняет, что Алиса анализирует запрос, изучает релевантные страницы и формирует структурированный ответ со ссылками. То есть ИИ не «читает только ваш сайт» — он собирает цифровой след бренда из сайта, карточек, отзывов, каталогов, соцсетей, упоминаний и контекста.</p>
+</section>
+<section id="position" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Наша главная позиция</h2>
+<p><strong>Если попытаться отделить SEO и GEO, то делать это можно только через иерархию — потому что эти два слоя неотрывно связаны друг с другом.</strong></p>
+<div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Позиция лаборатории:</span> SEO — часть GEO-стратегии, а не наоборот.</p></div>
+<p>Большинство маркетинговых агентств ставят в приоритет SEO, а GEO добавляют в довесок: как дополнительную услугу или пункт большого пакета. У GEO-Апгрейда всё устроено наоборот: GEO — основное направление, а SEO — один из необходимых слоёв внутри него.</p>
+<p>Рядом с SEO в этой системе работают:</p>
+<ul class="checklist">
+<li>геомаркетинг — карты, локальная видимость, карточки компаний;</li>
+<li>SERM — репутация, отзывы и тональность упоминаний;</li>
+<li>SMM — соцсети и контент, который создаёт контекст вокруг бренда;</li>
+<li>контентная оптимизация — страницы, FAQ, структура фактов, машиночитаемость;</li>
+<li>аналитика AI-видимости — замеры, конкуренты, зоны слепоты и повторные прогоны.</li>
+</ul>
+<p>Мы рассматриваем GEO как новую ветку маркетинга. У неё есть собственные правила: как строится видимость в нейросетях, какие источники становятся опорой ответа, где бренд теряется, а где — наоборот, попадает в рекомендацию.</p>
+</section>
+<section id="diff" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Чем GEO отличается от SEO</h2>
+<div class="table-wrapper">
+<table class="table">
+<thead><tr><th>Вопрос</th><th>SEO</th><th>GEO</th></tr></thead>
+<tbody>
+<tr><td>Главная цель</td><td>Сайт находят в поиске и открывают</td><td>Бренд называют, правильно описывают и рекомендуют в ответе ИИ</td></tr>
+<tr><td>Основной объект</td><td>Страница, техническая база, ключевые запросы</td><td>AI-след бренда: сайт, карточки, отзывы, упоминания, контент, репутация</td></tr>
+<tr><td>Результат</td><td>Трафик, позиции, переходы</td><td>Упоминание, точность фактов, попадание в шорт-лист, рекомендательный контекст</td></tr>
+<tr><td>Риск</td><td>Сайт не находят</td><td>ИИ находит конкурента, путает факты или описывает бренд не в той тональности</td></tr>
+<tr><td>Связь слоёв</td><td>Важный слой видимости</td><td>Верхний уровень, который объединяет SEO, локальность, SERM, контент и соцсети</td></tr>
+</tbody>
+</table>
+</div>
+<p>Это не спор «что важнее». Без нормального сайта, технической доступности и базового SEO GEO работать будет хуже. Но сайт может отлично ранжироваться — и при этом бренд всё равно не будет назван в ответе нейросети.</p>
+</section>
+<section id="myths" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Почему «просто добавьте FAQ» не работает</h2>
+<p>FAQ полезен. Это один из ведущих пунктов контентной оптимизации: он помогает ясно ответить на реальные вопросы аудитории и создать понятный контекст для ИИ.</p>
+<p>Но FAQ — лишь крупица большой системы.</p>
+<p>Утверждение «ИИ сам всё найдёт» тоже верно лишь наполовину. Да, найдёт. Но может найти не вас. Или найти вас, но не в той тональности, в какой вам хотелось бы. Или собрать ответ из чужих формулировок, устаревших данных, путаных карточек и отзывов — и в итоге исказить факты.</p>
+<p>Именно поэтому в нашей методике есть понятие цифрового призрака: бренд вроде присутствует в интернете, но в AI-ответах он появляется размыто, неточно или не появляется вовсе. А <a href="/glossary.html" class="term">зона слепоты</a> — это запросы и темы, где потенциальный клиент спрашивает ИИ о решении своей задачи, но ваш бренд в ответе отсутствует.</p>
+</section>
+<section id="chatgpt" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Почему нельзя ограничиваться ChatGPT</h2>
+<p>«Нужен только ChatGPT» — пожалуй, самое спорное из популярных утверждений.</p>
+<p>Даже среди моих клиентов и знакомых мнения расходятся: кто-то пользуется DeepSeek, кому-то удобнее Perplexity, а в России важную роль играет Алиса. OpenAI описывает ChatGPT Search как возможность получать своевременные ответы со ссылками на веб-источники. Яндекс выводит AI-ответы Алисы прямо в Поиск и опирается при их формировании на несколько релевантных источников.</p>
+<p>Опасность фразы «нужен только ChatGPT» в том, что она вводит в заблуждение людей, которые не работают с нейросетями напрямую или являются обычными пользователями. Человек не обязан знать, какая модель где используется. Он просто спрашивает: «Куда обратиться?», «Кого выбрать?», «Что лучше подойдёт в моём случае?» — и получает ответ в той системе, которой привык пользоваться.</p>
+<p>Поэтому мы не оптимизируем бренд «под один чат». Мы проверяем AI-видимость в нескольких системах и смотрим, где бренд есть, где его путают, а где он полностью выпадает из ответа.</p>
+</section>
+<section id="consultant" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Чем мы отличаемся от AI-консультантов</h2>
+<p>AI-консультация — нужное направление. У нас оно тоже есть и называется <a href="/geo_navigator.html" class="term">GEO-Навигатор</a>. Кроме того, AI-консультации и обучение работе с ИИ входят в GEO-тест-драйв и GEO-штурвал: мы помогаем автоматизировать повторяющиеся бизнес-процессы, которые отнимают время, — по отлаженной методике.</p>
+<p>Но это не ядро нашей работы.</p>
+<p>В GEO-Апгрейд всё начинается с вопроса: как нейросети видят ваш бренд прямо сейчас?</p>
+<ul class="checklist">
+<li>Кто вас называет?</li>
+<li>В каком контексте?</li>
+<li>Правильно ли передают специализацию?</li>
+<li>Какие источники становятся опорой ответа?</li>
+<li>Где вы присутствуете, а где работает только конкурент?</li>
+<li>Какие факты ИИ путает или придумывает?</li>
+</ul>
+<p>AI-консультант может научить работать с нейросетью. GEO-Апгрейд сначала измеряет, как нейросеть работает с вашим брендом, — и уже затем решает, что именно нужно менять.</p>
+</section>
+<section id="cycle" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Чем мы отличаемся от «полного цикла»</h2>
+<p>Полный цикл — хороший формат, и у нас он тоже предусмотрен. Но он нужен не всегда.</p>
+<p>Мы стараемся работать честно, даже если это немного в урон прибыли, и ускорять процессы, а не растягивать их. Иногда клиенту не нужен месячный контракт и «комплексное сопровождение». Иногда достаточно аудита, нескольких точечных статей или передачи методики команде.</p>
+<div class="table-wrapper">
+<table class="table">
+<thead><tr><th>Ситуация</th><th>Что чаще всего подходит</th></tr></thead>
+<tbody>
+<tr><td>Сайт, карточки и базовые сигналы в порядке, но непонятно, есть ли проблема в AI</td><td>Аудит: понять, нужна ли стратегия</td></tr>
+<tr><td>Стратегия нужна, но внедрять её удобнее своей команде</td><td><a href="/geo-route.html" class="term">GEO-маршрут</a></td></tr>
+<tr><td>Нужна методика, таблицы, промпты и возможность вести AI-видимость самим</td><td><a href="/geo-shturval.html" class="term">GEO-штурвал</a></td></tr>
+<tr><td>Нужно проверить гипотезу на одном направлении</td><td><a href="/geo-test-drive.html" class="term">GEO-тест-драйв</a></td></tr>
+<tr><td>Нужны несколько статей, оптимизированных под AI-видимость</td><td><a href="/content-lab.html" class="term">GEO-лаборатория контента</a></td></tr>
+<tr><td>Нужны AI-консультации и автоматизация повторяющихся процессов</td><td><a href="/geo_navigator.html" class="term">GEO-Навигатор</a>, тест-драйв или штурвал</td></tr>
+</tbody>
+</table>
+</div>
+<p>«Полный цикл» становится ловушкой, когда клиенту продают всё сразу без ответа на главный вопрос: что именно сейчас мешает ИИ правильно видеть и рекомендовать бренд? Тогда компания платит за активность, но не получает понимания причины.</p>
+<p>Наш подход другой: сначала диагностика, потом маршрут. Иногда достаточно небольшого вмешательства. Иногда нужен полный цикл. Но решение принимается не потому, что «так принято продавать», а потому что так выгоднее и понятнее клиенту.</p>
+</section>
+<section id="case" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Пример: сайт есть в источниках, а бренда нет</h2>
+<p>Недавний случай из нашей практики: сайт компании хорошо ранжируется и даже показывается в источниках. Но в самом ответе нейросети бренд не назван.</p>
+<p>То есть система видит материал, использует его как основу — но не связывает его с компанией достаточно уверенно, чтобы назвать её среди вариантов.</p>
+<p>В таком случае проблема может быть не в «плохом контенте». Текст может быть хорошим по всем обычным признакам: полезный, структурированный, экспертный. Но в нём может не хватать главного — машиночитаемости: ясных контекстных якорей, однозначных формулировок специализации, связки бренда с услугой, городом, кейсами и подтверждениями.</p>
+<p>Это и есть <a href="/glossary.html" class="term">контекстный якорь</a>: не набор ключевых слов, а понятная для модели связка «бренд — что делает — для кого — чем подтверждено». Если таких якорей мало, ИИ может взять факт из страницы, но не назвать автора этого факта.</p>
+<p>Этот кейс ещё не публичный, но скоро вы с ним познакомитесь: речь о подрядчике в нише полиграфии. Он хороший пример того, почему нельзя судить об AI-видимости только по позициям в поиске.</p>
+</section>
+<section id="who" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Кому нужен именно GEO-Апгрейд</h2>
+<p>GEO-Апгрейд нужен не каждому бизнесу и не вместо всех маркетинговых задач. Но есть три признака, при которых имеет смысл начинать именно с AI-видимости.</p>
+<div class="lab-card"><p><span class="font-heading text-[#00F0FF]">01 · Клиент приходит с готовым запросом.</span> Он уже знает, чего хочет, и обращается к нейросети за рекомендацией: «Кого выбрать?», «Какая компания подойдёт?», «Что посоветуешь?»</p></div>
+<div class="lab-card"><p><span class="font-heading text-[#00F0FF]">02 · Рынок перегрет и полон похожих предложений.</span> Здесь работает позиционирование: нужно не просто присутствовать, а быть узнаваемым в правильном контексте. В GEO позиционирование становится особенно важным, потому что ИИ выбирает, кого назвать и как объяснить выбор.</p></div>
+<div class="lab-card"><p><span class="font-heading text-[#00F0FF]">03 · Продажи зависят от аудитории, которая активно пользуется нейросетями.</span> Если ваши клиенты спрашивают советы у ChatGPT, Perplexity, DeepSeek или Алисы, то отсутствие бренда в таких ответах — это не абстрактная метрика, а потерянная точка контакта.</p></div>
+</section>
+<section id="promises" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Что мы обещаем — и что нет</h2>
+<p>Мы не обещаем контролировать ответ нейросети. Это было бы нечестно: AI-системы меняются, а их ответы зависят от запроса, региона, истории диалога и доступных источников.</p>
+<p>Но мы обещаем другое:</p>
+<ul class="checklist">
+<li>разработать правильную стратегию, следование которой даёт бренду реальный шанс попасть в рекомендации;</li>
+<li>зафиксировать состояние AI-видимости на дату замера и показать динамику;</li>
+<li>не подменять SEO, а сделать его одним из слоёв GEO-системы;</li>
+<li>не делать контент ради контента, а создавать его для пользы клиенту и для AI-видимости;</li>
+<li>не накручивать отзывы и не покупать места в рейтингах;</li>
+<li>помогать бренду появляться в рекомендациях естественно — чтобы вас советовали и нейросети, и живые клиенты.</li>
+</ul>
+<p>В <a href="/geo-shturval.html" class="term">GEO-штурвале</a> мы прямо фиксируем границы: не обещаем конкретное место бренда в каждом AI-ответе и не гарантируем рост продаж после цикла. Зато передаём протокол, таблицы, метрики и промпт-библиотеку, чтобы клиент мог повторить замер и продолжить работу самостоятельно.</p>
+</section>
+<section id="map" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-2">Интерактив: карта различий с фильтром</h2>
+<p class="text-[#B8BCC6] text-sm mb-4">Выберите свою задачу — и карта покажет, какой подход отвечает этой задаче: SEO, GEO, полный цикл, AI-консультант или GEO-Апгрейд. Данные не сохраняются и никуда не отправляются.</p>
+<div class="gv-map lab-card">
+  <div class="gv-filters" role="group" aria-label="Фильтр задач">
+    <button type="button" class="gv-chip is-on" data-gv="seo">SEO-задача</button>
+    <button type="button" class="gv-chip" data-gv="geo">GEO-задача</button>
+    <button type="button" class="gv-chip" data-gv="cycle">Полный цикл</button>
+    <button type="button" class="gv-chip" data-gv="consult">AI-консультант</button>
+    <button type="button" class="gv-chip" data-gv="apgrade">GEO-Апгрейд</button>
+  </div>
+  <div class="gv-board" id="gv-board" aria-live="polite"></div>
+  <p class="gv-note">Карта показывает типовые маршруты. Точный маршрут под ваш бренд — это задача аудита, а не готовой карточки.</p>
+</div>
+</section>
+<section id="test" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-2">Мини-тест: SEO у вас есть, а GEO?</h2>
+<p class="text-[#B8BCC6] text-sm mb-4">Шесть вопросов «да / нет». Отметьте ответы — тест посчитает результат по шкале 0–2 / 3–4 / 5–6 и подскажет маршрут. Данные не сохраняются и никуда не отправляются.</p>
+<div class="gq-wrap lab-card">
+  <div id="gq-questions"></div>
+  <div id="gq-result" class="gq-result" aria-live="polite" hidden></div>
+  <div class="gq-actions">
+    <button type="button" id="gq-btn" class="btn glow inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">Посчитать результат</button>
+    <a href="/contacts.html?service=free-audit#audit-form" id="gq-cta" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold" style="display:none">Проверить бренд в бесплатном мини-аудите</a>
+  </div>
+  <p class="gq-note">Тест не сохраняет данные и никуда их не отправляет. Он не заменяет аудит — это быстрый способ увидеть стартовую точку.</p>
+</div>
+</section>
+<section id="faq" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Частые вопросы</h2>
+<div class="faq-item"><details><summary>GEO — это замена SEO?</summary><p>Нет. GEO дополняет SEO: поисковая оптимизация отвечает за то, чтобы сайт находили и понимали, GEO — за то, чтобы нейросети называли бренд, правильно передавали его специализацию и включали в рекомендации.</p></details></div>
+<div class="faq-item"><details><summary>Если SEO уже настроено, зачем ещё GEO?</summary><p>SEO и AI-ответ — разные пользовательские сцены. Сайт может хорошо ранжироваться, но нейросеть всё равно будет называть конкурентов или неточно описывать бренд. GEO измеряет это и достраивает недостающие сигналы: контекстные якоря, источники, карточки и отзывы.</p></details></div>
+<div class="faq-item"><details><summary>Вы гарантируете попадание бренда в ответы нейросетей?</summary><p>Нет. Мы фиксируем состояние AI-видимости на дату замера, показываем динамику и создаём условия, при которых бренд получает реальный шанс попасть в рекомендацию. Гарантий попадания в AI не существует — и это честная позиция лаборатории.</p></details></div>
+</section>
+<section id="next" class="article-section">
+<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Маршрут дальше</h2>
+<ol class="oh-steps">
+<li><strong>Проведите быструю самопроверку.</strong> Задайте нейросетям 5–10 реальных вопросов ваших клиентов и посмотрите, называется ли ваш бренд, в каком контексте и с какими фактами.</li>
+<li><strong>Закажите GEO-аудит.</strong> Если хотите увидеть не догадки, а карту: какие запросы работают, где вы отсутствуете, какие источники формируют ответ и кто забирает вашу видимость. Подходит <a href="/geo-scanner-full.html" class="term">GEO-сканер Полный</a>.</li>
+<li><strong>Выберите формат по ситуации.</strong> GEO-тест-драйв — для проверки гипотезы, GEO-маршрут — для самостоятельного внедрения, GEO-штурвал — для полного цикла с передачей методики, GEO-лаборатория контента — для точечной работы со статьями.</li>
+<li><strong>Начните с бесплатного мини-аудита</strong>, если пока не готовы к большому проекту: мы поможем понять, есть ли у бренда AI-след и где он теряется.</li>
+</ol>
+</section>
+<section class="card p-7 mt-12 text-center">
+  <h2 class="text-2xl md:text-3xl font-bold">Хотите увидеть, как нейросети видят ваш бренд?</h2>
+  <p class="mt-4 text-[#B8BCC6]">Бесплатный мини-аудит: три ключевых запроса и две AI-системы на выбор. Увидите стартовую точку: где бренд есть, где его путают и с чего начинать правки.</p>
+  <div class="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+    <a href="/contacts.html?service=free-audit#audit-form" class="btn glow inline-block rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618]">Получить бесплатный мини-аудит</a>
+    <a href="/geo-scanner-full.html" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-7 py-4 font-semibold">GEO-сканер Полный</a>
+  </div>
+  <p class="mt-4 text-sm text-[#B8BCC6]">Без обещаний «магии»: сначала диагностика, потом маршрут.</p>
+</section>
+<section class="mt-12">
+  <h3 class="text-lg font-semibold mb-4">Связанные термины</h3>
+  <div class="flex flex-wrap gap-2">
+    <a href="/glossary.html" class="badge badge-basics hover:bg-[#5991f5]/20">SEO</a>
+    <a href="/glossary.html" class="badge badge-basics hover:bg-[#5991f5]/20">GEO</a>
+    <a href="/glossary.html" class="badge badge-basics hover:bg-[#5991f5]/20">AEO</a>
+    <a href="/glossary.html" class="badge badge-visibility hover:bg-[#10b981]/20">AI-видимость</a>
+    <a href="/glossary.html" class="badge hover:bg-[#8b5cf6]/20">Цифровой призрак</a>
+    <a href="/glossary.html" class="badge hover:bg-[#f59e0b]/20">Зона слепоты</a>
+    <a href="/glossary.html" class="badge hover:bg-[#ec4899]/20">Контекстный якорь</a>
+    <a href="/glossary.html" class="badge hover:bg-[#f472b6]/20">Контентный маяк</a>
+  </div>
+</section>
+<section class="mt-12 card p-6">
+  <h3 class="text-lg font-semibold mb-4">Похожие материалы</h3>
+  <ul class="space-y-2 text-sm">
+    <li><a href="/blog-post-geo-vs-seo.html" class="text-[#00F0FF] hover:underline">← Чем GEO отличается от SEO: простое объяснение для бизнеса</a></li>
+    <li><a href="/blog-post-what-is-geo.html" class="text-[#00F0FF] hover:underline">← Что такое GEO простыми словами?</a></li>
+    <li><a href="/blog-post-anatomiya-geo-marketinga.html" class="text-[#00F0FF] hover:underline">← Анатомия GEO-маркетинга: 5 услуг, 3 подхода, 1 лаборатория</a></li>
+    <li><a href="/blog-post-chto-vnutri-audita.html" class="text-[#00F0FF] hover:underline">← Что внутри нашего аудита: этапы, артефакты и методологический протокол GEO-сканера</a></li>
+    <li><a href="/cases.html" class="text-[#00F0FF] hover:underline">← Кейсы и рекомендации лаборатории</a></li>
+    <li><a href="/blog.html" class="text-[#00F0FF] hover:underline">← Все материалы лаборатории</a></li>
+  </ul>
+</section>
+</article>
+
+</main>
+
+
+<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="96" height="96"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">Жарких Дарья Александровна</p><p class="text-sm text-[#B8BCC6]">Томск, Россия · Пн–Пт, 12:00–20:00, UTC+7</p><p class="text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера 22</p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p></div><span class="flex items-center gap-2" aria-label="Соцсети GEO-Апгрейд"><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M21.94 4.05c.28-1.16-.9-2.1-1.94-1.68L2.3 9.62c-1.15.46-1.09 2.11.09 2.5l4.35 1.4 1.62 5.2c.34 1.1 1.72 1.32 2.42.42l2.16-2.65 4.5 3.32c.97.72 2.37.2 2.6-.98L21.94 4.05zM8.5 13.06l8.93-5.5c.26-.16.53.19.31.4l-7.1 6.44c-.3.28-.5.65-.56 1.05l-.3 2.2c-.04.28-.42.31-.51.04l-1.16-3.75c-.13-.4.05-.84.39-1.08z"></path></svg></a><a href="https://max.ru/u/f9LHodD0cOKn5NlqWfUehS5ZCaGQ9oLqwIkL5vvgygrWfsgupZ45s41702Q" target="_blank" rel="noopener" aria-label="MAX" title="MAX" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M4 4h16v13a2 2 0 0 1-2 2H9l-4 3V6a2 2 0 0 1 2-2h-3z"></path></svg></a><a href="https://dzen.ru/id/6ab4b86296401f17f0716d4b" target="_blank" rel="noopener" aria-label="Дзен" title="Дзен" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2h.9v8.1H21v1.8h-8.1V22h-1.8v-8.1H3v-1.8h8.1V2z"></path></svg></a></span><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
+<script>document.addEventListener('DOMContentLoaded',function(){var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduceMotion||!('IntersectionObserver' in window)){document.querySelectorAll('.card,.btn').forEach(function(el){el.classList.add('visible')});return}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.card').forEach(function(card){observer.observe(card)});document.querySelectorAll('.btn').forEach(function(btn){if(!btn.closest('.card')){observer.observe(btn)}});var headerBtn=document.querySelector('header .btn');if(headerBtn){headerBtn.classList.add('visible')}});</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4343a58c91e740dea8a9c104b4e4fd62&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+<script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
+<script src="/geo-assistant-widget.js" defer=""></script>
+
+<script>
+/* jnav B6.1: мобильное меню + полоса основных страниц */
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.querySelector('.jnav-btn'),panel=document.getElementById('jnav-panel');
+  if(!btn||!panel){return}
+  var hdr=btn.closest('header')||document.body;
+  function set(open){hdr.classList.toggle('jnav-open',open);btn.setAttribute('aria-expanded',open?'true':'false');btn.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню')}
+  btn.addEventListener('click',function(){set(btn.getAttribute('aria-expanded')!=='true')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false)}});
+  document.addEventListener('click',function(e){if(btn.getAttribute('aria-expanded')==='true'&&!panel.contains(e.target)&&!btn.contains(e.target)){set(false)}});
+  window.addEventListener('resize',function(){if(window.innerWidth>=768){set(false)}});
+  var strip=document.querySelector('.jnav-strip');
+  if(strip){
+    var cur=(location.pathname.split('/').pop()||'index.html');
+    if(cur===''||cur==='index.html'){cur='index'}
+    strip.querySelectorAll('a').forEach(function(a){
+      var t=a.getAttribute('href').replace('./','').replace('.html','');
+      if(t===cur||(cur==='index'&&t==='index')){a.classList.add('jnav-here')}
+    });
+  }
+});
+</script>
+<script>
+/* jnav B6.4: подсветка текущей страницы в quick и strip */
+document.addEventListener('DOMContentLoaded',function(){
+  var cur=(location.pathname.split('/').pop()||'').replace('.html','');
+  if(cur===''){cur='index'}
+  document.querySelectorAll('.jnav-quick a,.jnav-strip a').forEach(function(a){
+    var t=a.getAttribute('href').replace('./','').replace('.html','');
+    if(t===cur){a.classList.add('jnav-here')}
+  });
+});
+</script>
+<script>
+/* Дочитывание: пороги 25/50/75/90% статьи */
+(function(){
+  var marks={25:false,50:false,75:false,90:false};
+  function track(){
+    var total=document.body.scrollHeight-window.innerHeight;
+    if(total<=0){return}
+    var p=Math.round((window.scrollY/total)*100);
+    [25,50,75,90].forEach(function(m){
+      if(p>=m&&!marks[m]){marks[m]=true;if(window.ym){window.ym(113118311,'reachGoal','al_read_'+m)}}
+    });
+  }
+  window.addEventListener('scroll',track,{passive:true});
+})();
+</script>
+
+
+<div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div>
+<div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div><script>
+(function(){
+  var data = {
+    seo: [
+      {t:'Позиции и трафик', d:'SEO отвечает за поиск: чтобы страницу находили, индексировали и открывали по запросу.'},
+      {t:'Техническая база', d:'Без нормальной индексации, скорости и мобильной версии не работает ни поиск, ни AI-сборка ответа.'},
+      {t:'Ключевые запросы', d:'Страницы заточены под запросы, по которым человек ищет услугу в поисковике.'}
+    ],
+    geo: [
+      {t:'Бренд в ответе', d:'GEO отвечает за то, чтобы нейросеть называла бренд, а не только конкурентов.'},
+      {t:'Точность фактов', d:'Цены, услуги, специализация и регион — ИИ должен передавать их без искажений.'},
+      {t:'Рекомендательный контекст', d:'Кто вы, для кого, чем подтверждено — связка, по которой ИИ попадает в шорт-лист.'}
+    ],
+    cycle: [
+      {t:'Всё сразу', d:'Комплексное сопровождение уместно, когда есть команда внедрения и понятный план.'},
+      {t:'Риск активности без причины', d:'Без диагностики можно платить за работы, не решающие главную задачу: почему ИИ не рекомендует бренд.'}
+    ],
+    consult: [
+      {t:'Обучение работе с ИИ', d:'Консультант научит пользоваться нейросетями и автоматизировать рутину.'},
+      {t:'Промпты и сценарии', d:'Библиотеки промптов и внедрение ИИ в процессы — зона GEO-Навигатора.'}
+    ],
+    apgrade: [
+      {t:'Старт с измерения', d:'Сначала замер: как нейросети видят бренд прямо сейчас, где он теряется и кто забирает видимость.'},
+      {t:'Слои под AI-видимость', d:'SEO, геомаркетинг, SERM, контент и соцсети собираются под задачу AI-видимости, а не наоборот.'},
+      {t:'Динамика и повторные прогоны', d:'Замер на дату, повторные прогоны, метрики и зоны слепоты — без обещаний «магии».'}
+    ]
+  };
+  var labels = {seo:'SEO', geo:'GEO', cycle:'Полный цикл', consult:'AI-консультант', apgrade:'GEO-Апгрейд'};
+  var board = document.getElementById('gv-board');
+  var chips = document.querySelectorAll('.gv-chip');
+  function render(mode){
+    board.innerHTML = '';
+    var items = data[mode] || [];
+    items.forEach(function(item, idx){
+      var el = document.createElement('div');
+      el.className = 'gv-card';
+      el.innerHTML = '<div class="gv-card-head"><span class="gv-card-badge">'+labels[mode]+'</span><span class="gv-card-num">'+(idx+1)+'</span></div><p class="gv-card-t">'+item.t+'</p><p class="gv-card-d">'+item.d+'</p>';
+      board.appendChild(el);
+    });
+    if(!items.length){ board.innerHTML = '<p class="gv-empty">Выберите задачу — и карта покажет маршрут.</p>'; }
+  }
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('is-on'); });
+      chip.classList.add('is-on');
+      render(chip.getAttribute('data-gv'));
+    });
+  });
+  render('seo');
+})();
+</script>
+<script>
+(function(){
+  var questions = [
+    'Я знаю, называет ли ИИ мой бренд в ответах на запросы моих клиентов.',
+    'Я проверял(а) не только ChatGPT, но и другие системы, которыми пользуются мои клиенты.',
+    'Я знаю, какие источники ИИ использует, когда говорит о моей компании.',
+    'Я знаю, есть ли в AI-ответах ошибки о моих услугах, ценах, специализации или регионе.',
+    'Я понимаю, почему конкурент попадает в рекомендации, а я — нет.',
+    'У меня есть протокол повторного замера, а не разовая проверка «на глаз».'
+  ];
+  var wrap = document.getElementById('gq-questions');
+  questions.forEach(function(q, idx){
+    var el = document.createElement('div');
+    el.className = 'gq-q';
+    el.innerHTML = '<div class="gq-q-head"><span class="gq-num">'+String(idx+1).padStart(2,'0')+'</span><span class="gq-q-text">'+q+'</span></div>'
+      + '<div class="gq-answers">'
+      + '<label class="gq-a"><input type="radio" name="gq'+idx+'" value="yes"><span>Да</span></label>'
+      + '<label class="gq-a"><input type="radio" name="gq'+idx+'" value="no"><span>Нет</span></label>'
+      + '</div>';
+    wrap.appendChild(el);
+  });
+  var btn = document.getElementById('gq-btn');
+  var result = document.getElementById('gq-result');
+  var cta = document.getElementById('gq-cta');
+  btn.addEventListener('click', function(){
+    var yes = 0, unanswered = 0;
+    for(var i=0;i<questions.length;i++){
+      var val = document.querySelector('input[name="gq'+i+'"]:checked');
+      if(!val){ unanswered++; continue; }
+      if(val.value === 'yes') yes++;
+    }
+    if(unanswered){ result.hidden = false; result.innerHTML = '<strong>Ответьте на все 6 вопросов</strong> — осталось '+unanswered+'. Тогда тест посчитает зону слепоты.'; cta.style.display='none'; return; }
+    result.hidden = false;
+    if(yes <= 2){
+      result.innerHTML = '<strong>'+yes+' из 6.</strong> У бренда, вероятно, есть зона слепоты: бизнес может быть хорошим и заметным в поиске — но невидимым или неправильно понятым там, где человек уже выбирает подрядчика. Начните с бесплатного мини-аудита.';
+      cta.style.display='inline-block';
+    } else if(yes <= 4){
+      result.innerHTML = '<strong>'+yes+' из 6.</strong> База есть, но ключевые зоны AI-видимости ещё не закрыты: стоит провести замер и увидеть, где бренд теряется и кто забирает видимость.';
+      cta.style.display='inline-block';
+    } else {
+      result.innerHTML = '<strong>'+yes+' из 6.</strong> Сильная база: протокол и замеры уже в работе. Следующий шаг — повторный замер и проверка динамики: как изменились ответы нейросетей с последнего прогона.';
+      cta.style.display='none';
+    }
+  });
+})();
+</script>
+</body></html>

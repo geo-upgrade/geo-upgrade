@@ -1,6 +1,14 @@
-# GEO для бизнеса — раздел блога GEO-Апгрейд
+<html><head><meta name="\&quot;color-scheme\&quot;" content="\&quot;light" dark\"="">
+    <style>
+        pre {
+          content-visibility: auto;
+          line-height: 1.2em;
+          margin: 0;
+        }
+    </style>
+    </head><body><pre style="width: 412ch; contain-intrinsic-height: 74.4em; content-visibility: visible"># GEO для бизнеса — раздел блога GEO-Апгрейд
 
-> URL: https://geo-upgrade.ru/blog-business.html
+&gt; URL: https://geo-upgrade.ru/blog-business.html
 
 **Назначение:** Категорийная страница блога: статьи раздела «GEO для бизнеса» с краткими описаниями.
 
@@ -18,6 +26,9 @@ SECTION: GEO ДЛЯ БИЗНЕСА
 [Бесплатный мини-аудит](contacts.html#form)
 
 ## Статьи раздела
+- [Чем GEO-Апгрейд отличается от SEO и «полного цикла»](https://geo-upgrade.ru/blog-post-geo-vs-full-cycle.html) — 16 октября 2026 • 11–14 минут
+  Почему SEO — часть GEO-стратегии, а не наоборот: другая точка сборки, диагностический подход вместо «продажи всего сразу» и честные границы метода. С интерактивами: карта различий и мини-тест.
+
 - [Когда окупается GEO: таймлайн лаборатории — 15 дней от нуля до рекомендаций](https://geo-upgrade.ru/blog-post-kogda-okupaetsya-geo.html) — 7 октября 2026 • 12–14 минут
   От пустого домена до активных рекомендаций нейросети — две недели. Скрины 26.09–07.10, вехи по дням, три замера, честные оговорки и формула окупаемости под чек и конверсию.
 
@@ -60,3 +71,4 @@ SECTION: GEO ДЛЯ БИЗНЕСА
 - [Контентная лаборатория](https://geo-upgrade.ru/blog-content.html)
 - [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
 - [AI-сигналы](https://geo-upgrade.ru/blog-news.html)
+</pre></body></html>

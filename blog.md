@@ -6,11 +6,19 @@
           margin: 0;
         }
     </style>
-    </head><body><pre style="width: 353ch; contain-intrinsic-height: 321.6em; content-visibility: visible"># GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейда
+    </head><body><pre style="width: 353ch; contain-intrinsic-height: 333.6em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
+    &lt;style&gt;
+        pre {
+          content-visibility: auto;
+          line-height: 1.2em;
+          margin: 0;
+        }
+    &lt;/style&gt;
+    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 353ch; contain-intrinsic-height: 321.6em; content-visibility: visible"&gt;# GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейда
 
-&gt; URL: https://geo-upgrade.ru/blog.html
+&amp;gt; URL: https://geo-upgrade.ru/blog.html
 
-**Назначение:** Журнал AI-видимости: 30 статей, категории, поиск по темам, CTA.
+**Назначение:** Журнал AI-видимости: 31 статья, категории, поиск по темам, CTA.
 
 **Описание (meta):** Практические материалы о GEO, AI-поиске, цифровом следе бренда, локальной видимости, контенте и автоматизации бизнеса.
 
@@ -75,6 +83,14 @@ AI-сценарии, промпт-цех и контроль человека в
 [Открыть GEO-глоссарий →](glossary.html)
 
 FRESH SIGNALS
+
+GEO ДЛЯ БИЗНЕСА
+
+[Чем GEO-Апгрейд отличается от SEO и «полного цикла»](blog-post-geo-vs-full-cycle.html)
+
+Почему SEO — часть GEO-стратегии, а не наоборот: другая точка сборки, диагностический подход вместо «продажи всего сразу» и честные границы метода. С интерактивами: карта различий и мини-тест. 16 октября 202611–14 минут
+
+[Читать статью](blog-post-geo-vs-full-cycle.html)
 
 AI-ВИДИМОСТЬ
 
@@ -275,4 +291,4 @@ GEO-глоссарий
 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
 
-</pre></body></html>
+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>
