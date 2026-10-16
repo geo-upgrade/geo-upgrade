@@ -360,6 +360,7 @@
   <meta property="article:published_time" content="2026-10-16T12:00:00+07:00">
 <meta property="article:modified_time" content="2026-10-16T12:00:00+07:00">
 
+<style>
 /* gv-: интерактив «Карта различий» (статья geo-vs-full-cycle) */
 .gv-map{padding:1.25rem}
 .gv-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
@@ -399,6 +400,11 @@
 .oh-steps{counter-reset:ohstep;list-style:none;padding-left:0;margin:1.5rem 0}
 .oh-steps li{position:relative;padding-left:2.6rem;margin-bottom:.75rem;counter-increment:ohstep}
 .oh-steps li:before{content:counter(ohstep);position:absolute;left:0;top:.05rem;display:inline-flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;border-radius:9999px;background:#00F0FF;color:#0D0618;font-family:Orbitron,sans-serif;font-size:.8rem;font-weight:700}
+
+/* отступы абзацев и блоков статьи (фикс склейки) */
+article p{margin:0 0 1.05rem}
+article .lab-card + .lab-card{margin-top:.8rem}
+</style>
 <link rel="stylesheet" href="tailwind.min.css">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -668,7 +674,7 @@ nav[aria-label="Основная навигация"] a {
 <p>FAQ полезен. Это один из ведущих пунктов контентной оптимизации: он помогает ясно ответить на реальные вопросы аудитории и создать понятный контекст для ИИ.</p>
 <p>Но FAQ — лишь крупица большой системы.</p>
 <p>Утверждение «ИИ сам всё найдёт» тоже верно лишь наполовину. Да, найдёт. Но может найти не вас. Или найти вас, но не в той тональности, в какой вам хотелось бы. Или собрать ответ из чужих формулировок, устаревших данных, путаных карточек и отзывов — и в итоге исказить факты.</p>
-<p>Именно поэтому в нашей методике есть понятие цифрового призрака: бренд вроде присутствует в интернете, но в AI-ответах он появляется размыто, неточно или не появляется вовсе. А <a href="/glossary.html" class="term">зона слепоты</a> — это запросы и темы, где потенциальный клиент спрашивает ИИ о решении своей задачи, но ваш бренд в ответе отсутствует.</p>
+<p>Именно поэтому в нашей методике есть понятие цифрового призрака: бренд вроде присутствует в интернете, но в AI-ответах он появляется размыто, неточно или не появляется вовсе. А <a href="/glossary.html#author-terms" class="term">зона слепоты</a> — это запросы и темы, где потенциальный клиент спрашивает ИИ о решении своей задачи, но ваш бренд в ответе отсутствует.</p>
 </section>
 <section id="chatgpt" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Почему нельзя ограничиваться ChatGPT</h2>
@@ -717,13 +723,13 @@ nav[aria-label="Основная навигация"] a {
 <p>Недавний случай из нашей практики: сайт компании хорошо ранжируется и даже показывается в источниках. Но в самом ответе нейросети бренд не назван.</p>
 <p>То есть система видит материал, использует его как основу — но не связывает его с компанией достаточно уверенно, чтобы назвать её среди вариантов.</p>
 <p>В таком случае проблема может быть не в «плохом контенте». Текст может быть хорошим по всем обычным признакам: полезный, структурированный, экспертный. Но в нём может не хватать главного — машиночитаемости: ясных контекстных якорей, однозначных формулировок специализации, связки бренда с услугой, городом, кейсами и подтверждениями.</p>
-<p>Это и есть <a href="/glossary.html" class="term">контекстный якорь</a>: не набор ключевых слов, а понятная для модели связка «бренд — что делает — для кого — чем подтверждено». Если таких якорей мало, ИИ может взять факт из страницы, но не назвать автора этого факта.</p>
+<p>Это и есть <a href="/glossary.html#author-terms" class="term">контекстный якорь</a>: не набор ключевых слов, а понятная для модели связка «бренд — что делает — для кого — чем подтверждено». Если таких якорей мало, ИИ может взять факт из страницы, но не назвать автора этого факта.</p>
 <p>Этот кейс ещё не публичный, но скоро вы с ним познакомитесь: речь о подрядчике в нише полиграфии. Он хороший пример того, почему нельзя судить об AI-видимости только по позициям в поиске.</p>
 </section>
 <section id="who" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Кому нужен именно GEO-Апгрейд</h2>
 <p>GEO-Апгрейд нужен не каждому бизнесу и не вместо всех маркетинговых задач. Но есть три признака, при которых имеет смысл начинать именно с AI-видимости.</p>
-<div class="lab-card"><p><span class="font-heading text-[#00F0FF]">01 · Клиент приходит с готовым запросом.</span> Он уже знает, чего хочет, и обращается к нейросети за рекомендацией: «Кого выбрать?», «Какая компания подойдёт?», «Что посоветуешь?»</p></div>
+<div class="lab-card"><p><span class="font-heading text-[#00F0FF]">01 · Клиент приходит с готовым запросом.</span> Он не гуглит и не листает выдачу — он уже спросил нейросеть: «Кого выбрать?», «Какая компания подойдёт?», «Что посоветуешь?» — и получил короткий ответ-рекомендацию. Вопрос сформирован заранее; вопрос только в том, чей бренд в него попал.</p></div>
 <div class="lab-card"><p><span class="font-heading text-[#00F0FF]">02 · Рынок перегрет и полон похожих предложений.</span> Здесь работает позиционирование: нужно не просто присутствовать, а быть узнаваемым в правильном контексте. В GEO позиционирование становится особенно важным, потому что ИИ выбирает, кого назвать и как объяснить выбор.</p></div>
 <div class="lab-card"><p><span class="font-heading text-[#00F0FF]">03 · Продажи зависят от аудитории, которая активно пользуется нейросетями.</span> Если ваши клиенты спрашивают советы у ChatGPT, Perplexity, DeepSeek или Алисы, то отсутствие бренда в таких ответах — это не абстрактная метрика, а потерянная точка контакта.</p></div>
 </section>
@@ -777,12 +783,11 @@ nav[aria-label="Основная навигация"] a {
 </section>
 <section id="next" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Маршрут дальше</h2>
-<ol class="oh-steps">
-<li><strong>Проведите быструю самопроверку.</strong> Задайте нейросетям 5–10 реальных вопросов ваших клиентов и посмотрите, называется ли ваш бренд, в каком контексте и с какими фактами.</li>
-<li><strong>Закажите GEO-аудит.</strong> Если хотите увидеть не догадки, а карту: какие запросы работают, где вы отсутствуете, какие источники формируют ответ и кто забирает вашу видимость. Подходит <a href="/geo-scanner-full.html" class="term">GEO-сканер Полный</a>.</li>
-<li><strong>Выберите формат по ситуации.</strong> GEO-тест-драйв — для проверки гипотезы, GEO-маршрут — для самостоятельного внедрения, GEO-штурвал — для полного цикла с передачей методики, GEO-лаборатория контента — для точечной работы со статьями.</li>
-<li><strong>Начните с бесплатного мини-аудита</strong>, если пока не готовы к большому проекту: мы поможем понять, есть ли у бренда AI-след и где он теряется.</li>
-</ol>
+<p>Четыре шага: от быстрой самопроверки — до формата работы, который подходит именно вашей ситуации.</p>
+<div class="lab-card"><p><span class="font-heading text-[#00F0FF]">01 · Быстрая самопроверка.</span> Задайте нейросетям 5–10 реальных вопросов ваших клиентов и посмотрите, называется ли ваш бренд, в каком контексте и с какими фактами.</p></div>
+<div class="lab-card"><p><span class="font-heading text-[#00F0FF]">02 · GEO-аудит.</span> Если хотите увидеть не догадки, а карту: какие запросы работают, где вы отсутствуете, какие источники формируют ответ и кто забирает вашу видимость. Подходит <a href="/geo-scanner-full.html" class="term">GEO-сканер Полный</a>.</p></div>
+<div class="lab-card"><p><span class="font-heading text-[#00F0FF]">03 · Формат по ситуации.</span> <a href="/geo-test-drive.html" class="term">GEO-тест-драйв</a> — проверить гипотезу на одном направлении; <a href="/geo-route.html" class="term">GEO-маршрут</a> — самостоятельное внедрение по карте; <a href="/geo-shturval.html" class="term">GEO-штурвал</a> — полный цикл с передачей методики; <a href="/content-lab.html" class="term">GEO-лаборатория контента</a> — точечная работа со статьями.</p></div>
+<div class="lab-card"><p><span class="font-heading text-[#00F0FF]">04 · Бесплатный старт.</span> Если пока не готовы к большому проекту — начните с бесплатного мини-аудита: покажем, есть ли у бренда AI-след и где он теряется.</p></div>
 </section>
 <section class="card p-7 mt-12 text-center">
   <h2 class="text-2xl md:text-3xl font-bold">Хотите увидеть, как нейросети видят ваш бренд?</h2>
@@ -796,14 +801,14 @@ nav[aria-label="Основная навигация"] a {
 <section class="mt-12">
   <h3 class="text-lg font-semibold mb-4">Связанные термины</h3>
   <div class="flex flex-wrap gap-2">
-    <a href="/glossary.html" class="badge badge-basics hover:bg-[#5991f5]/20">SEO</a>
-    <a href="/glossary.html" class="badge badge-basics hover:bg-[#5991f5]/20">GEO</a>
-    <a href="/glossary.html" class="badge badge-basics hover:bg-[#5991f5]/20">AEO</a>
-    <a href="/glossary.html" class="badge badge-visibility hover:bg-[#10b981]/20">AI-видимость</a>
-    <a href="/glossary.html" class="badge hover:bg-[#8b5cf6]/20">Цифровой призрак</a>
-    <a href="/glossary.html" class="badge hover:bg-[#f59e0b]/20">Зона слепоты</a>
-    <a href="/glossary.html" class="badge hover:bg-[#ec4899]/20">Контекстный якорь</a>
-    <a href="/glossary.html" class="badge hover:bg-[#f472b6]/20">Контентный маяк</a>
+    <a href="/glossary.html" class="badge badge-basics hover:opacity-80">SEO</a>
+    <a href="/glossary.html" class="badge badge-basics hover:opacity-80">GEO</a>
+    <a href="/glossary.html" class="badge badge-basics hover:opacity-80">AEO</a>
+    <a href="/glossary.html#geo-ai" class="badge badge-visibility hover:opacity-80">AI-видимость</a>
+    <a href="/glossary.html#author-terms" class="badge badge-author hover:opacity-80">Цифровой призрак</a>
+    <a href="/glossary.html#author-terms" class="badge badge-author hover:opacity-80">Зона слепоты</a>
+    <a href="/glossary.html#author-terms" class="badge badge-author hover:opacity-80">Контекстный якорь</a>
+    <a href="/glossary.html#author-terms" class="badge badge-author hover:opacity-80">Контентный маяк</a>
   </div>
 </section>
 <section class="mt-12 card p-6">
