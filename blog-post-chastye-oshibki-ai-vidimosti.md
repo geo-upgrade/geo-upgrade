@@ -212,7 +212,7 @@ Google относит платные, фиктивные и вводящие в 
 
 Без обещаний «магии»: сначала диагностика, потом правки по приоритету.
 
-Связанные термины: [Зона слепоты](glossary.html#term-blind-zone), [Цифровой призрак](glossary.html#term-digital-ghost), [AI-след бренда](glossary.html#term-ai-trace), [Контентный маяк](glossary.html#term-content-lighthouse)
+Связанные термины: [Зона слепоты](glossary.html#term-blind-zone), [Цифровой призрак](glossary.html#term-digital-ghost), [AI-след бренда](glossary.html#term-ai-trace), [Контентный маяк](glossary.html#term-content-lighthouse), [AI-видимость](glossary.html#term-ai-visibility), [Structured data](glossary.html#term-structured-data), [NAP](glossary.html#term-nap), [AI-crawler](glossary.html#term-ai-crawler)
 
 Похожие материалы
 
