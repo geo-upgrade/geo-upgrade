@@ -214,6 +214,7 @@ Google относит платные, фиктивные и вводящие в 
 
 Связанные термины: [Зона слепоты](glossary.html#term-blind-zone), [Цифровой призрак](glossary.html#term-digital-ghost), [AI-след бренда](glossary.html#term-ai-trace), [Контентный маяк](glossary.html#term-content-lighthouse)
 
+[← Какие нейросети мы проверяем и что важно в каждой](blog-post-kakie-neyroseti-my-proveryaem.html)
 Похожие материалы
 
 [← Галлюцинации ИИ о бренде: что делать, если нейросеть ошибается](blog-post-gallyutsinatsii-neurosetey.html)

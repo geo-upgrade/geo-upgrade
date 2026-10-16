@@ -1,22 +1,6 @@
-<html><head><meta name="\&quot;color-scheme\&quot;" content="\&quot;light" dark\"="">
-    <style>
-        pre {
-          content-visibility: auto;
-          line-height: 1.2em;
-          margin: 0;
-        }
-    </style>
-    </head><body><pre style="width: 824ch; contain-intrinsic-height: 136.8em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
-    &lt;style&gt;
-        pre {
-          content-visibility: auto;
-          line-height: 1.2em;
-          margin: 0;
-        }
-    &lt;/style&gt;
-    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 824ch; contain-intrinsic-height: 124.8em; content-visibility: visible"&gt;# GEO-Апгрейд
+# GEO-Апгрейд
 
-&amp;gt; Лаборатория AI-видимости бренда. GEO-аудит, стратегия и контент для локального бизнеса и экспертов. Проверяем, как нейросети видят ваш бренд, и помогаем стать их рекомендацией.
+> Лаборатория AI-видимости бренда. GEO-аудит, стратегия и контент для локального бизнеса и экспертов. Проверяем, как нейросети видят ваш бренд, и помогаем стать их рекомендацией.
 
 ## Главная
 - [GEO-Апгрейд — главная](https://geo-upgrade.ru/): Бесплатный мини-аудит AI-видимости — 3 запроса × 2 AI-системы на выбор
@@ -117,7 +101,8 @@
 - г. Томск, ул. Набережная озера 22
 - Телефон: +7 952 944-92-39
 
+- [Какие нейросети мы проверяем и что важно в каждой](https://geo-upgrade.ru/blog-post-kakie-neyroseti-my-proveryaem.html): Паспорта нейросетей — как проверять видимость бренда в Алисе AI, ChatGPT, DeepSeek и Perplexity и что важно в каждой модели.
+
 ## Подробная версия
 
 Детальное индексирование: https://geo-upgrade.ru/llms-full.txt
-&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>

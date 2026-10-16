@@ -1,24 +1,8 @@
-<html><head><meta name="\&quot;color-scheme\&quot;" content="\&quot;light" dark\"="">
-    <style>
-        pre {
-          content-visibility: auto;
-          line-height: 1.2em;
-          margin: 0;
-        }
-    </style>
-    </head><body><pre style="width: 353ch; contain-intrinsic-height: 333.6em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
-    &lt;style&gt;
-        pre {
-          content-visibility: auto;
-          line-height: 1.2em;
-          margin: 0;
-        }
-    &lt;/style&gt;
-    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 353ch; contain-intrinsic-height: 321.6em; content-visibility: visible"&gt;# GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейда
+# GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейда
 
-&amp;gt; URL: https://geo-upgrade.ru/blog.html
+> URL: https://geo-upgrade.ru/blog.html
 
-**Назначение:** Журнал AI-видимости: 31 статья, категории, поиск по темам, CTA.
+**Назначение:** Журнал AI-видимости: 32 статьи, категории, поиск по темам, CTA.
 
 **Описание (meta):** Практические материалы о GEO, AI-поиске, цифровом следе бренда, локальной видимости, контенте и автоматизации бизнеса.
 
@@ -83,6 +67,14 @@ AI-сценарии, промпт-цех и контроль человека в
 [Открыть GEO-глоссарий →](glossary.html)
 
 FRESH SIGNALS
+
+ЭКСПЕРИМЕНТЫ
+
+[Какие нейросети мы проверяем и что важно в каждой](blog-post-kakie-neyroseti-my-proveryaem.html)
+
+Паспорта моделей: как Алиса AI, ChatGPT, DeepSeek и Perplexity по-разному видят бренд — и почему нельзя опираться на одну метрику. С интерактивной таблицей паспортов. 16 октября 20269–12 минут
+
+[Читать статью](blog-post-kakie-neyroseti-my-proveryaem.html)
 
 GEO ДЛЯ БИЗНЕСА
 
@@ -184,6 +176,7 @@ AI-видимость бренда
 Эксперименты
 
 Лабораторные протоколы, проверки гипотез, разборы цифровых призраков.
+[◆ Паспорта нейросетей: как проверять бренд в каждой →](blog-post-kakie-neyroseti-my-proveryaem.html)
 [◆ Проверка сайта по 17 пунктам AI-ready →](blog-post-geo-apgreyd-ai-ready.html)
 [◆ GEO-Апгрейд как термин: разведение сущностей →](blog-post-geo-upgrade-laboratoria-geo-marketinga.html)
 [◆ Этап 1 самоаудита: запросный двойник →](blog-post-zaprosny-dvoinik-geo-audit.html)
@@ -291,4 +284,3 @@ GEO-глоссарий
 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
 
-&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>

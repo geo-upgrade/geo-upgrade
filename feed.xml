@@ -5,7 +5,7 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 19:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
     
@@ -235,6 +235,14 @@
       <description><![CDATA[Яндекс представил суверенную модель Alice AI Foundation. Разбираем, что правда, что миф, как это повлияет на бизнес. Мини-исследование от GEO-Апгрейд.]]></description>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-alice-ai-foundation.html</guid>
+    </item>
+  
+    <item>
+      <title>Какие нейросети мы проверяем и что важно в каждой</title>
+      <link>https://geo-upgrade.ru/blog-post-kakie-neyroseti-my-proveryaem.html</link>
+      <description><![CDATA[Паспорта нейросетей: как GEO-Апгрейд проверяет видимость бренда в Алисе AI, ChatGPT, DeepSeek и Perplexity и что важно в каждой модели. Нас нашли или нас назвали, Ghost Gap, рейтинговые запросы и пары метрик. С интерактивной таблицей паспортов.]]></description>
+      <pubDate>Fri, 16 Oct 2026 19:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-kakie-neyroseti-my-proveryaem.html</guid>
     </item>
   </channel>
 </rss>
