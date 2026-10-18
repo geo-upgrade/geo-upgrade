@@ -5,7 +5,7 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Fri, 16 Oct 2026 19:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
     
@@ -244,6 +244,14 @@
       <pubDate>Fri, 16 Oct 2026 19:00:00 +0700</pubDate>
       <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-kakie-neyroseti-my-proveryaem.html</guid>
     </item>
+    <item>
+      <title>Призрак или маяк? Тест AI-видимости бренда</title>
+      <link>https://geo-upgrade.ru/quiz-prizrak-ili-mayak.html</link>
+      <description><![CDATA[Интерактивный тест из 8 вопросов: что нейросеть видит в вашем бренде — цифровой призрак, полупризрак, сигнал или контентный маяк. Шкала 0–24 и вердикт с первыми шагами.]]></description>
+      <pubDate>Sun, 18 Oct 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/quiz-prizrak-ili-mayak.html</guid>
+    </item>
+
   </channel>
 </rss>
 

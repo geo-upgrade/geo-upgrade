@@ -74,6 +74,10 @@
 - [GEO-сканер Полный](geo-scanner-full.html) — 4 AI-системы, 12–20 запросов, 3–5 конкурентов, карта зон слепоты
 - [GEO-маршрут](geo-route.html) — Стратегия AI-видимости на 3–6 месяцев с дорожной картой
 
+Сначала прикиньте уровень бренда: [тест «Призрак или маяк?» за 8 вопросов](quiz-prizrak-ili-mayak.html)
+
+Нужна стартовая тех-проверка прямо сейчас: [чат-бот лаборатории в Telegram](https://t.me/geo_upgrade_labbot)
+
 Заявка: [contacts.html?service=free-audit#form](contacts.html?service=free-audit#form)
 
 ---

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://geo-upgrade.ru/</loc>
-<lastmod>2026-10-17</lastmod>
+    <loc>https://geo-upgrade.ru/</loc><lastmod>2026-10-18</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/services.html</loc>
@@ -29,8 +28,7 @@
 <lastmod>2026-10-17</lastmod>
   </url>
   <url>
-    <loc>https://geo-upgrade.ru/blog.html</loc>
-<lastmod>2026-10-17</lastmod>
+    <loc>https://geo-upgrade.ru/blog.html</loc><lastmod>2026-10-18</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-basics.html</loc>
@@ -51,10 +49,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://geo-upgrade.ru/blog-experiments.html</loc>
-<lastmod>2026-10-17</lastmod>
+    <loc>https://geo-upgrade.ru/blog-experiments.html</loc><lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://geo-upgrade.ru/quiz-prizrak-ili-mayak.html</loc>
+<lastmod>2026-10-18</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-content.html</loc>
@@ -189,8 +190,7 @@
 <lastmod>2026-10-17</lastmod>
   </url>
   <url>
-    <loc>https://geo-upgrade.ru/free-audit.html</loc>
-<lastmod>2026-10-17</lastmod>
+    <loc>https://geo-upgrade.ru/free-audit.html</loc><lastmod>2026-10-18</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/geo-scanner-lite.html</loc>
@@ -287,8 +287,7 @@
 <lastmod>2026-10-17</lastmod>
   </url>
   <url>
-    <loc>https://geo-upgrade.ru/blog-post-chastye-oshibki-ai-vidimosti.html</loc>
-<lastmod>2026-10-17</lastmod>
+    <loc>https://geo-upgrade.ru/blog-post-chastye-oshibki-ai-vidimosti.html</loc><lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -300,8 +299,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://geo-upgrade.ru/blog-post-kakie-neyroseti-my-proveryaem.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <loc>https://geo-upgrade.ru/blog-post-kakie-neyroseti-my-proveryaem.html</loc><lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

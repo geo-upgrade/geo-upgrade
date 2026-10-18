@@ -215,6 +215,7 @@ Google относит платные, фиктивные и вводящие в 
 Связанные термины: [Зона слепоты](glossary.html#term-blind-zone), [Цифровой призрак](glossary.html#term-digital-ghost), [AI-след бренда](glossary.html#term-ai-trace), [Контентный маяк](glossary.html#term-content-lighthouse)
 
 [← Какие нейросети мы проверяем и что важно в каждой](blog-post-kakie-neyroseti-my-proveryaem.html)
+[← Тест «Призрак или маяк?»: проверьте AI-видимость бренда за 8 вопросов](quiz-prizrak-ili-mayak.html)
 Похожие материалы
 
 [← Галлюцинации ИИ о бренде: что делать, если нейросеть ошибается](blog-post-gallyutsinatsii-neurosetey.html)
@@ -223,6 +224,9 @@ Google относит платные, фиктивные и вводящие в 
 [← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
 [← Кейсы и рекомендации лаборатории](cases.html)
 [← Все материалы лаборатории](blog.html)
+
+
+Тех-проверка без ожидания: [чат-бот лаборатории в Telegram](https://t.me/geo_upgrade_labbot) — 10 приборов за пару минут.
 
 ---
 

@@ -171,7 +171,9 @@ DeepSeek показывает, почему нельзя проверять бр
 
 ---
 
-**Похожие материалы:** [← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html) · [← Частые ошибки брендов в AI-видимости: кабинет диагностики](blog-post-chastye-oshibki-ai-vidimosti.html) · [← Метрики AI-видимости: второй этап GEO-аудита бренда](blog-post-metriki-ai-vidimosti-geo-audit.html) · [← Как нейросеть собирает рейтинги и топы: анатомия AI-списка](blog-post-kak-ii-sobiraet-reytingi-i-topy.html) · [← Кейсы и рекомендации лаборатории](cases.html) · [← Все материалы лаборатории](blog.html)
+**Похожие материалы:** [← Тест «Призрак или маяк?»: проверьте AI-видимость бренда за 8 вопросов](quiz-prizrak-ili-mayak.html) · [← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html) · [← Частые ошибки брендов в AI-видимости: кабинет диагностики](blog-post-chastye-oshibki-ai-vidimosti.html) · [← Метрики AI-видимости: второй этап GEO-аудита бренда](blog-post-metriki-ai-vidimosti-geo-audit.html) · [← Как нейросеть собирает рейтинги и топы: анатомия AI-списка](blog-post-kak-ii-sobiraet-reytingi-i-topy.html) · [← Кейсы и рекомендации лаборатории](cases.html) · [← Все материалы лаборатории](blog.html)
+
+Тех-проверка без рук: [чат-бот лаборатории в Telegram](https://t.me/geo_upgrade_labbot) — 10 приборов за пару минут.
 
 ---
 
