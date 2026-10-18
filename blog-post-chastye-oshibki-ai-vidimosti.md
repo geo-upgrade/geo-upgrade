@@ -218,6 +218,7 @@ Google относит платные, фиктивные и вводящие в 
 [← Тест «Призрак или маяк?»: проверьте AI-видимость бренда за 8 вопросов](quiz-prizrak-ili-mayak.html)
 Похожие материалы
 
+[← Кому не нужен GEO: тест и 3 честных случая](blog-post-komu-ne-nuzhen-geo.html)
 [← Галлюцинации ИИ о бренде: что делать, если нейросеть ошибается](blog-post-gallyutsinatsii-neurosetey.html)
 [← Отзывы, карты и каталоги: где AI берёт образы локального бизнеса](blog-post-local-visibility.html)
 [← Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ](blog-post-tehnicheskiy-geo-audit.html)

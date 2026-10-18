@@ -133,7 +133,7 @@ robots.txt, sitemap.xml, llms.txt, разметка Schema.org — что из �
 
 ---
 
-**Похожие материалы:** [← Какие нейросети мы проверяем и что важно в каждой](blog-post-kakie-neyroseti-my-proveryaem.html) · [← Частые ошибки брендов в AI-видимости: кабинет диагностики](blog-post-chastye-oshibki-ai-vidimosti.html) · [← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html) · [← Контентные маяки: как сделать бренд понятнее для людей и AI](blog-post-kontentnye-mayaki.html) · [← Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ](blog-post-tehnicheskiy-geo-audit.html) · [← Кейсы и рекомендации лаборатории](cases.html) · [← Все материалы лаборатории](blog.html)
+**Похожие материалы:** [← Кому не нужен GEO: тест и 3 честных случая](blog-post-komu-ne-nuzhen-geo.html) · [← Какие нейросети мы проверяем и что важно в каждой](blog-post-kakie-neyroseti-my-proveryaem.html) · [← Частые ошибки брендов в AI-видимости: кабинет диагностики](blog-post-chastye-oshibki-ai-vidimosti.html) · [← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html) · [← Контентные маяки: как сделать бренд понятнее для людей и AI](blog-post-kontentnye-mayaki.html) · [← Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ](blog-post-tehnicheskiy-geo-audit.html) · [← Кейсы и рекомендации лаборатории](cases.html) · [← Все материалы лаборатории](blog.html)
 
 ---
 
