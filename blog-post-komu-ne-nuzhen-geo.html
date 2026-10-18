@@ -231,6 +231,36 @@
 article p{margin:0 0 1.05rem}
 article .lab-card + .lab-card{margin-top:.8rem}
 </style>
+<style>
+/* списки статьи: отступы и маркеры (tailwind не компилирует pl-5/space-y) */
+article .tlist{margin:1rem 0 1.05rem;padding-left:1.6rem;list-style-position:outside}
+article ul.tlist{list-style-type:disc}
+article ol.tlist{list-style-type:decimal}
+article .tlist>li{margin-bottom:.55rem;padding-left:.15rem}
+article .tlist>li::marker{color:#00F0FF}
+
+/* mtest: мини-тест с отметками (уникальный набор) */
+.mtest-wrap{margin:1.25rem 0;border:1px solid rgba(0,240,255,.25);border-radius:12px;background:rgba(13,6,24,.55);padding:1.1rem 1.15rem}
+.mtest-list{list-style:none;margin:0;padding:0}
+.mtest-item{display:flex;gap:.7rem;align-items:flex-start;width:100%;text-align:left;background:none;border:1px solid rgba(184,188,198,.22);border-radius:10px;padding:.7rem .8rem;margin-bottom:.55rem;cursor:pointer;color:#F5F7FA;font-family:'Exo 2',sans-serif;font-size:.95rem;line-height:1.5;transition:border-color .25s ease,background .25s ease,box-shadow .25s ease}
+.mtest-item:hover{border-color:rgba(0,240,255,.45)}
+.mtest-item:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+.mtest-box{flex-shrink:0;width:1.15rem;height:1.15rem;margin-top:.15rem;border-radius:4px;border:1px solid rgba(0,240,255,.55);background:rgba(13,6,24,.7);position:relative;transition:all .2s ease}
+.mtest-num{font-family:Orbitron,sans-serif;color:#B8BCC6;font-size:.8rem;flex-shrink:0;margin-top:.2rem}
+.mtest-on{border-color:rgba(0,240,255,.75);background:rgba(0,240,255,.08);box-shadow:0 0 12px rgba(0,240,255,.12)}
+.mtest-on .mtest-box{background:#00F0FF;border-color:#00F0FF;box-shadow:0 0 8px rgba(0,240,255,.6)}
+.mtest-on .mtest-box::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#0D0618;font-size:.75rem;font-weight:700}
+.mtest-meter{display:flex;align-items:center;gap:.7rem;margin-top:.9rem}
+.mtest-bar{flex:1;height:12px;border-radius:3px;background:rgba(255,255,255,.06);border:1px solid rgba(0,240,255,.15);overflow:hidden}
+.mtest-bar span{display:block;height:100%;width:0;background:#00F0FF;box-shadow:0 0 10px rgba(0,240,255,.5);transition:width .35s ease}
+.mtest-count{font-family:Orbitron,sans-serif;font-size:.75rem;color:#B8BCC6}
+.mtest-verdict{margin-top:.8rem;font-size:.95rem;color:#B8BCC6}
+.mtest-verdict.mtest-good{color:#34D399}
+.mtest-controls{margin-top:.5rem}
+.mtest-reset{background:none;border:none;color:#B8BCC6;text-decoration:underline;cursor:pointer;font-size:.8rem}
+.mtest-reset:hover{color:#00F0FF}
+</style>
+
 
 <script async="" src="https://mc.yandex.ru/metrika/tag.js?id=113118311"></script><script>document.documentElement.classList.remove('no-js');</script><script type="application/ld+json">
 {
@@ -636,7 +666,7 @@ nav[aria-label="Основная навигация"] a {
 <p>Это самый честный пример: GEO не нужен, если вы уже первые в большинстве ответов нейросетей по своим запросам и получаете AI-лиды прямо сейчас.</p>
 <p>Иногда для этого достаточно бесплатного мини-аудита. Мы проверяем, как нейросети видят бренд сейчас, какие источники они называют, есть ли искажения и насколько устойчиво это первенство. Если всё подтверждается, я честно скажу: никакая развёрнутая стратегия здесь не нужна.</p>
 <p>Что делать дальше? Продолжать в том же духе:</p>
-<ul class="mt-4 ml-5 list-disc space-y-2">
+<ul class="tlist">
 <li>выпускать качественный контент;</li>
 <li>следить за техническим состоянием сайта;</li>
 <li>обновлять информацию об услугах, ценах и контактах;</li>
@@ -660,7 +690,7 @@ nav[aria-label="Основная навигация"] a {
 <p>Вот здесь я буду прямолинейна: если вы сами ещё не понимаете, кто вы, как себя позиционировать и какие услуги можете выполнять качественно, GEO не поможет.</p>
 <p>Не потому что направление бесполезно. А потому что оно начнёт усиливать пустоту.</p>
 <p>Нейросеть не сможет собрать убедительный ответ о бизнесе, у которого нет:</p>
-<ul class="mt-4 ml-5 list-disc space-y-2">
+<ul class="tlist">
 <li>понятного позиционирования;</li>
 <li>описания услуг или продукта;</li>
 <li>хотя бы минимального цифрового следа;</li>
@@ -677,7 +707,7 @@ nav[aria-label="Основная навигация"] a {
 <p>Молодой бизнес — не помеха для GEO. Иногда это даже плюс: гораздо легче создать новый чистый цифровой след, чем годами исправлять то, что накопилось в интернете.</p>
 <p>Мы сами тому пример. Когда бизнеса ещё нет в ответах нейросетей, у вас есть возможность сразу заложить правильные <a href="/glossary.html#term-context-anchor" class="term">контекстные якоря</a>: ясные формулировки, подтверждаемые факты, понятные услуги, единые данные о компании.</p>
 <p>Чем раньше начать, тем лучше:</p>
-<ul class="mt-4 ml-5 list-disc space-y-2">
+<ul class="tlist">
 <li>меньше исправлений в будущем;</li>
 <li>раньше проверите гипотезы;</li>
 <li>быстрее выработаете верную стратегию;</li>
@@ -689,17 +719,52 @@ nav[aria-label="Основная навигация"] a {
 
 <section id="test" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Мини-тест: нужен ли вам GEO прямо сейчас?</h2>
-<p>Ответьте «да» или «нет»:</p>
-<ol class="mt-4 ml-5 list-decimal space-y-2">
-<li>У меня есть продукт, услуга или хотя бы ясная идея, что я продаю.</li>
-<li>Я могу объяснить за 30 секунд, кому помогаю и чем отличаюсь.</li>
-<li>У меня есть сайт, соцсети, карточки или хотя бы один подтверждаемый цифровой след.</li>
-<li>Мои потенциальные клиенты могут искать меня через Google, Яндекс, ChatGPT или другие ИИ-сервисы.</li>
-<li>Я готов хотя бы минимально поддерживать информацию о себе в актуальном состоянии.</li>
-<li>Я хочу не «попасть в нейросети вообще», а получать понятные заявки и AI-лиды.</li>
-</ol>
-<p>Если вы ответили «да» хотя бы на четыре пункта — GEO вам скорее всего нужен, вопрос только в масштабе: аудит, мини-стратегия или полноценное сопровождение.</p>
-<p>Если «да» меньше четырёх — не покупайте полный GEO-цикл. Сначала соберите базу: позиционирование, оффер, базовые страницы, карточки, отзывы. Потом вернитесь к видимости.</p>
+<p>Отвечайте «да» или «нет» — отметьте утверждения, с которыми согласны:</p>
+<div class="mtest-wrap" id="mtest-widget">
+  <ul class="mtest-list" id="mtest-list">
+    <li><button type="button" class="mtest-item" data-q="1" aria-pressed="false"><span class="mtest-box" aria-hidden="true"></span><span class="mtest-num">1.</span><span class="mtest-text">У меня есть продукт, услуга или хотя бы ясная идея, что я продаю.</span></button></li>
+    <li><button type="button" class="mtest-item" data-q="2" aria-pressed="false"><span class="mtest-box" aria-hidden="true"></span><span class="mtest-num">2.</span><span class="mtest-text">Я могу объяснить за 30 секунд, кому помогаю и чем отличаюсь.</span></button></li>
+    <li><button type="button" class="mtest-item" data-q="3" aria-pressed="false"><span class="mtest-box" aria-hidden="true"></span><span class="mtest-num">3.</span><span class="mtest-text">У меня есть сайт, соцсети, карточки или хотя бы один подтверждаемый цифровой след.</span></button></li>
+    <li><button type="button" class="mtest-item" data-q="4" aria-pressed="false"><span class="mtest-box" aria-hidden="true"></span><span class="mtest-num">4.</span><span class="mtest-text">Мои потенциальные клиенты могут искать меня через Google, Яндекс, ChatGPT или другие ИИ-сервисы.</span></button></li>
+    <li><button type="button" class="mtest-item" data-q="5" aria-pressed="false"><span class="mtest-box" aria-hidden="true"></span><span class="mtest-num">5.</span><span class="mtest-text">Я готов хотя бы минимально поддерживать информацию о себе в актуальном состоянии.</span></button></li>
+    <li><button type="button" class="mtest-item" data-q="6" aria-pressed="false"><span class="mtest-box" aria-hidden="true"></span><span class="mtest-num">6.</span><span class="mtest-text">Я хочу не «попасть в нейросети вообще», а получать понятные заявки и AI-лиды.</span></button></li>
+  </ul>
+  <div class="mtest-meter"><div class="mtest-bar"><span id="mtest-fill"></span></div><span class="mtest-count" id="mtest-count">0/6</span></div>
+  <p class="mtest-verdict" id="mtest-verdict" aria-live="polite">Отметьте утверждения, с которыми согласны, — покажу, что делать дальше.</p>
+  <div class="mtest-controls"><button type="button" id="mtest-reset" class="mtest-reset" hidden>Сбросить ответы</button></div>
+  <noscript><p class="mt-4 text-sm text-[#B8BCC6]">Интерактив требует JavaScript. Без него — простое правило: посчитайте утверждения, с которыми вы согласны. Четыре и больше — GEO вам скорее всего нужен, вопрос в масштабе. Меньше — сначала соберите базу.</p></noscript>
+</div>
+<script>
+/* mtest: интерактивный мини-тест «нужен ли вам GEO» (только эта страница) */
+(function(){
+  var items=document.querySelectorAll('.mtest-item'),fill=document.getElementById('mtest-fill'),cnt=document.getElementById('mtest-count'),verdict=document.getElementById('mtest-verdict'),reset=document.getElementById('mtest-reset');
+  if(!items.length||!cnt){return}
+  var marks=[false,false,false,false,false,false],done=false;
+  function texts(n){return n>=4?'GEO вам скорее всего нужен — вопрос только в масштабе: аудит, мини-стратегия или полноценное сопровождение.':'Пока не покупайте полный GEO-цикл. Сначала соберите базу: позиционирование, оффер, базовые страницы, карточки, отзывы — потом вернитесь к видимости.'}
+  function paint(){
+    var n=marks.filter(Boolean).length;
+    fill.style.width=(n/6*100)+'%';
+    cnt.textContent=n+'/6';
+    verdict.textContent=texts(n);
+    verdict.className='mtest-verdict'+(n>=4?' mtest-good':' mtest-weak');
+    reset.hidden=!n;
+  }
+  items.forEach(function(btn,idx){
+    btn.addEventListener('click',function(){
+      marks[idx]=!marks[idx];
+      btn.classList.toggle('mtest-on',marks[idx]);
+      btn.setAttribute('aria-pressed',String(marks[idx]));
+      paint();
+      if(!done&&marks.filter(Boolean).length>=4){done=true;if(window.ym){window.ym(113118311,'reachGoal','mtest_geo_needed')}}
+    });
+  });
+  reset.addEventListener('click',function(){
+    marks=[false,false,false,false,false,false];done=false;
+    items.forEach(function(btn){btn.classList.remove('mtest-on');btn.setAttribute('aria-pressed','false')});
+    paint();
+  });
+})();
+</script>
 </section>
 
 <section id="echo" class="article-section">
@@ -807,7 +872,7 @@ nav[aria-label="Основная навигация"] a {
 <section id="instead" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Что я предлагаю вместо пустых обещаний</h2>
 <p>Я не верю в универсальное «GEO нужен всем и срочно». Но я также не вижу безвыходных ситуаций.</p>
-<ul class="mt-4 ml-5 list-disc space-y-2">
+<ul class="tlist">
 <li>Подтверждённое первенство в ответах ИИ — не нужен полный цикл, достаточно контроля и поддержки.</li>
 <li>Клиент приходит не через поиск и ИИ — развивайте реальные каналы продаж; GEO-аудит может быть полезен, но не обязателен.</li>
 <li>Нет позиционирования и оффера — сначала создайте то, что можно рекомендовать.</li>
@@ -822,7 +887,7 @@ nav[aria-label="Основная навигация"] a {
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Ваш следующий шаг</h2>
 <p>Если вы не знаете, в какой точке находитесь, начните не со стратегии, а с диагностики.</p>
 <p>Бесплатный мини-аудит GEO-Апгрейд покажет:</p>
-<ul class="mt-4 ml-5 list-disc space-y-2">
+<ul class="tlist">
 <li>как нейросети отвечают о вашем бизнесе сейчас;</li>
 <li>упоминает ли ИИ вас в релевантных запросах;</li>
 <li>какие источники он называет;</li>
