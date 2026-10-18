@@ -488,83 +488,7 @@ nav[aria-label="Основная навигация"] a {
 #geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
 #geoas-send:hover{background:rgba(0,240,255,.3)}
 #geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
-@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}
-
-/* quiz: стили интерактивного теста «Призрак или маяк?» (уникальный набор) */
-.badge-experiment{background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.6);color:#A78BFA}
-.quiz-progress{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
-.quiz-counter{font-family:Orbitron,sans-serif;font-size:.8rem;letter-spacing:.15em;color:#00F0FF;white-space:nowrap}
-.quiz-barwrap{flex:1 1 200px;height:6px;border-radius:9999px;background:rgba(184,188,198,.18);overflow:hidden}
-.quiz-bar{height:100%;width:0%;background:linear-gradient(90deg,#00F0FF,#818CF8);border-radius:9999px;transition:width .35s ease}
-.quiz-q{display:block;margin-bottom:1rem}
-.quiz-num{font-family:Orbitron,sans-serif;color:#00F0FF;font-weight:700;font-size:.8rem;border:1px solid rgba(0,240,255,.4);border-radius:9999px;padding:.2rem .55rem;flex-shrink:0}
-.quiz-tag{font-family:Orbitron,sans-serif;font-size:.7rem;letter-spacing:.2em;color:#B8BCC6}
-.quiz-qtext{font-weight:600;color:#F5F7FA;font-size:1rem;margin:.35rem 0 0;line-height:1.4}
-.quiz-opts{display:flex;flex-direction:column;gap:.5rem}
-.quiz-pill{display:flex;align-items:flex-start;gap:.6rem;background:rgba(13,6,24,.6);border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:.7rem .9rem;cursor:pointer;font-size:.92rem;color:#B8BCC6;transition:border-color .25s ease,background .25s ease,box-shadow .25s ease}
-.quiz-pill:hover{border-color:rgba(0,240,255,.5)}
-.quiz-pill input{accent-color:#00F0FF;width:1.05rem;height:1.05rem;flex-shrink:0;margin-top:.2rem}
-.quiz-pill.quiz-on{border-color:rgba(0,240,255,.65);background:rgba(0,240,255,.06);box-shadow:0 0 12px rgba(0,240,255,.16);color:#F5F7FA}
-.quiz-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1rem}
-.quiz-btn{opacity:0;transform:translateY(20px);transition:all .8s cubic-bezier(.22,1,.36,1)}
-.quiz-btn.visible{opacity:1;transform:translateY(0)}
-.quiz-btn:hover{transform:translateY(-2px)}
-.quiz-btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
-.quiz-note{font-size:.8rem;color:#B8BCC6}
-.quiz-result{margin-top:2rem}
-.quiz-rescard{position:relative}
-.quiz-resimg{width:100%;height:auto;border:1px solid rgba(0,240,255,.25);border-radius:10px;display:block}
-.quiz-score{font-family:Orbitron,sans-serif;font-size:2.2rem;color:#00F0FF;font-weight:700;line-height:1}
-.quiz-v{display:inline-block;padding:.3rem .8rem;border-radius:9999px;font-size:.8rem;font-weight:700;letter-spacing:.05em;font-family:Orbitron,sans-serif}
-.quiz-v-ghost{background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.6);color:#A78BFA}
-.quiz-v-half{background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.5);color:#FBBF24}
-.quiz-v-signal{background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.5);color:#60A5FA}
-.quiz-v-mayak{background:rgba(0,240,255,.12);border:1px solid rgba(0,240,255,.6);color:#00F0FF}
-.quiz-steps{list-style:none;padding-left:0;margin:0}
-.quiz-steps li{position:relative;padding-left:1.75rem;margin-bottom:.6rem;color:#B8BCC6}
-.quiz-steps li:before{content:"✓";position:absolute;left:0;color:#00F0FF;font-weight:bold}
-.quiz-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
-.quiz-vs{display:grid;grid-template-columns:1fr;gap:1rem}
-@media(min-width:640px){.quiz-vs{grid-template-columns:1fr 1fr}}
-@media(prefers-reduced-motion:reduce){.quiz-btn{transition:none}.quiz-bar{transition:none}}
-</style><style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
-#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
-#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
-#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
-#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
-#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
-#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
-@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
-#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
-#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
-#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
-#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
-#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
-#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
-#geoas-close:hover{color:#00F0FF}
-#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
-.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
-.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
-.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
-.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
-.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
-.geoas-src a:hover{text-decoration:underline;opacity:1}
-.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
-.geoas-typing span{animation:geoasBlink 1.2s infinite}
-.geoas-typing span:nth-child(2){animation-delay:.2s}
-.geoas-typing span:nth-child(3){animation-delay:.4s}
-@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
-#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
-.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
-.geoas-chip:hover{background:rgba(0,240,255,.16)}
-#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
-#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
-#geoas-input::placeholder{color:rgba(255,255,255,.35)}
-#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
-#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
-#geoas-send:hover{background:rgba(0,240,255,.3)}
-#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
-@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}
 
 /* quiz: стили интерактивного теста «Призрак или маяк?» (уникальный набор) */
 .badge-experiment{background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.6);color:#A78BFA}
@@ -630,49 +554,16 @@ nav[aria-label="Основная навигация"] a {
     <div><span class="font-heading text-[#00F0FF]">Шкала:</span><p class="mt-1">8 вопросов · 0–24 балла</p></div>
   </div>
   <div class="mt-4 text-xs"><span class="font-heading text-[#00F0FF]">Для кого:</span><p class="mt-1">Владельцы бизнеса и маркетологи, у которых сайт и контент есть, а ответов нейросетей нет — или есть, но не те</p></div>
-  <div class="mt-4 text-xs"><span class="font-heading text-[#00F0FF]">Главный вывод:</span><p class="mt-1">Призрак и маяк различаются не бюджетом, а набором сигналов: собранных, согласованных и свежих. Тест показывает, где вы на этой шкале прямо сейчас</p></div>
+  <div class="mt-4 text-xs"><span class="font-heading text-[#00F0FF]">Главный вывод:</span><p class="mt-1">Тест показывает, где бренд сейчас на шкале «призрак → маяк»</p></div>
 </aside>
 
 <figure class="cover-figure">
   <img src="/cover-quiz-prizrak-ili-mayak.jpg" alt="Обложка теста: слева блеклый полупрозрачный призрак из рассеивающихся частиц, справа яркий неоново-голубой маяк с лучом, на тёмно-фиолетовом лабораторном фоне" width="1200" height="630" loading="eager" decoding="async">
 </figure>
 
-<div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Главный вывод:</span> нейросеть собирает ответ о бренде из сигналов: карточек на картах и в каталогах, отзывов, структуры сайта, свежести контента и уникальных формулировок, которые можно процитировать. Сигналы разрознены или отсутствуют — и бренд превращается в цифровой призрак. Сигналы согласованы — бренд становится контентным маяком, которого ИИ видит, цитирует и рекомендует.</p></div>
-
 <section id="why" class="article-section">
   <h2>Зачем этот тест</h2>
-  <p>Нейросети не читают мысли. Они собирают ответ из того, что могут прочитать: описание компании, NAP (название, адрес, телефон), цены, отзывы, техническую доступность сайта. Если хотя бы один слой противоречит остальным — ИИ достраивает пустоту и рекомендует не вас.</p>
   <p>Этот тест — короткая самодиагностика по восьми областям. Восемь вопросов, четыре варианта ответа в каждом, шкала 0–24. В конце — вердикт и первые шаги. Тест не заменяет аудит: он показывает стартовую точку, с которой начинается системная работа над AI-видимостью.</p>
-</section>
-
-<section class="article-section">
-  <h2>Две крайности: призрак и маяк</h2>
-  <div class="quiz-vs mt-6">
-    <article class="card p-5">
-      <img src="/quiz-result-ghost.jpg" alt="Иллюстрация: блеклый полупрозрачный призрак из рассеивающихся частиц на тёмно-фиолетовом фоне — бренд невидим для нейросетей" width="1200" height="675" loading="lazy" decoding="async" class="quiz-resimg">
-      <h3 class="mt-4 text-lg font-semibold">Цифровой призрак</h3>
-      <p class="mt-2 text-sm text-[#B8BCC6]">Бренд работает, клиенты приходят, но нейросеть его не находит — или отвечает чужими словами. Причина не в «карме ИИ»: сигналы, по которым ИИ собирает ответ, отсутствуют или разрозненны. Бренд технически существует, но для нейросети его нет.</p>
-    </article>
-    <article class="card p-5">
-      <img src="/quiz-result-mayak.jpg" alt="Иллюстрация: мощный контентный маяк — светящаяся неоново-голубая башня с лучом, собирающим потоки данных, на тёмно-фиолетовом фоне" width="1200" height="675" loading="lazy" decoding="async" class="quiz-resimg">
-      <h3 class="mt-4 text-lg font-semibold">Контентный маяк</h3>
-      <p class="mt-2 text-sm text-[#B8BCC6]">Сигналы согласованы и свежи: ИИ находит бренд, цитирует его материалы и называет в ответах. Маяк светит во все стороны: одна и та же картина бренда в карточках, на сайте и в источниках, которые читает нейросеть.</p>
-    </article>
-  </div>
-</section>
-
-<section class="article-section">
-  <h2>Как считается результат</h2>
-  <p>Каждый вопрос приносит от 0 до 3 баллов: чем выше балл, тем ближе ваш бренд к маяку. Максимум — 24. Вердикт по шкале:</p>
-  <div class="table-wrapper"><table class="table">
-    <thead><tr><th>Баллы</th><th>Вердикт</th><th>Что это значит</th></tr></thead>
-    <tbody>
-      <tr><td>0–6</td><td><span class="quiz-v quiz-v-ghost">ЦИФРОВОЙ ПРИЗРАК</span></td><td>Сигналов нет: ИИ не находит бренд</td></tr>
-      <tr><td>7–12</td><td><span class="quiz-v quiz-v-half">ПОЛУПРИЗРАК</span></td><td>Сигналы есть, но противоречат друг другу</td></tr>
-      <tr><td>13–18</td><td><span class="quiz-v quiz-v-signal">СИГНАЛ ЕСТЬ</span></td><td>ИИ видит бренд, но не рекомендует</td></tr>
-      <tr><td>19–24</td><td><span class="quiz-v quiz-v-mayak">КОНТЕНТНЫЙ МАЯК</span></td><td>ИИ видит, цитирует и рекомендует</td></tr>
-    </tbody>
-  </table></div>
 </section>
 
 <section id="quiz" class="article-section card p-5 md:p-7">
@@ -807,6 +698,39 @@ nav[aria-label="Основная навигация"] a {
     <div class="quiz-cta" id="quiz-result-ctas"></div>
     <button type="button" id="quiz-again" class="btn mt-5 inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Пройти заново</button>
   </article>
+</section>
+
+<section id="scale" class="article-section">
+  <h2>Как считается результат</h2>
+  <p>Каждый вопрос приносит от 0 до 3 баллов: чем выше балл, тем ближе ваш бренд к маяку. Максимум — 24. Вердикт по шкале:</p>
+  <div class="table-wrapper"><table class="table">
+    <thead><tr><th>Баллы</th><th>Вердикт</th><th>Что это значит</th></tr></thead>
+    <tbody>
+      <tr><td>0–6</td><td><span class="quiz-v quiz-v-ghost">ЦИФРОВОЙ ПРИЗРАК</span></td><td>Сигналов нет: ИИ не находит бренд</td></tr>
+      <tr><td>7–12</td><td><span class="quiz-v quiz-v-half">ПОЛУПРИЗРАК</span></td><td>Сигналы есть, но противоречат друг другу</td></tr>
+      <tr><td>13–18</td><td><span class="quiz-v quiz-v-signal">СИГНАЛ ЕСТЬ</span></td><td>ИИ видит бренд, но не рекомендует</td></tr>
+      <tr><td>19–24</td><td><span class="quiz-v quiz-v-mayak">КОНТЕНТНЫЙ МАЯК</span></td><td>ИИ видит, цитирует и рекомендует</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="article-section">
+  <h2>Что означает результат</h2>
+  <div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Главный вывод:</span> нейросеть собирает ответ о бренде из сигналов: карточек на картах и в каталогах, отзывов, структуры сайта, свежести контента и уникальных формулировок, которые можно процитировать. Сигналы разрознены или отсутствуют — и бренд превращается в цифровой призрак. Сигналы согласованы — бренд становится контентным маяком, которого ИИ видит, цитирует и рекомендует.</p></div>
+  <p>Нейросети не читают мысли. Они собирают ответ из того, что могут прочитать: описание компании, NAP (название, адрес, телефон), цены, отзывы, техническую доступность сайта. Если хотя бы один слой противоречит остальным — ИИ достраивает пустоту и рекомендует не вас.</p>
+  <h3 class="mt-6 text-lg font-semibold">Две крайности: призрак и маяк</h3>
+  <div class="quiz-vs mt-6">
+    <article class="card p-5">
+      <img src="/quiz-result-ghost.jpg" alt="Иллюстрация: блеклый полупрозрачный призрак из рассеивающихся частиц на тёмно-фиолетовом фоне — бренд невидим для нейросетей" width="1200" height="675" loading="lazy" decoding="async" class="quiz-resimg">
+      <h3 class="mt-4 text-lg font-semibold">Цифровой призрак</h3>
+      <p class="mt-2 text-sm text-[#B8BCC6]">Бренд работает, клиенты приходят, но нейросеть его не находит — или отвечает чужими словами. Причина не в «карме ИИ»: сигналы, по которым ИИ собирает ответ, отсутствуют или разрозненны. Бренд технически существует, но для нейросети его нет.</p>
+    </article>
+    <article class="card p-5">
+      <img src="/quiz-result-mayak.jpg" alt="Иллюстрация: мощный контентный маяк — светящаяся неоново-голубая башня с лучом, собирающим потоки данных, на тёмно-фиолетовом фоне" width="1200" height="675" loading="lazy" decoding="async" class="quiz-resimg">
+      <h3 class="mt-4 text-lg font-semibold">Контентный маяк</h3>
+      <p class="mt-2 text-sm text-[#B8BCC6]">Сигналы согласованы и свежи: ИИ находит бренд, цитирует его материалы и называет в ответах. Маяк светит во все стороны: одна и та же картина бренда в карточках, на сайте и в источниках, которые читает нейросеть.</p>
+    </article>
+  </div>
 </section>
 
 <section id="next" class="article-section">
