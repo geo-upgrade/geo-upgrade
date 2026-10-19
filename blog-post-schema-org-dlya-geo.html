@@ -686,106 +686,77 @@ nav[aria-label="Основная навигация"] a {
 
 <section id="experiment" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Лабораторный эксперимент: где ИИ теряет бренд</h2>
-<p>Рассинхронизированную географию не обязательно вылавливать в живом замере — её можно смоделировать. Ниже на этой странице работает интерактив: бренд, у которого на карточках одно количество городов, на сайте — другое, в разметке — третье.</p>
-<p>Соберите такую конфигурацию — и посмотрите, как выглядит «ответ ИИ» в этой ситуации: он время от времени «спотыкается» — не может собрать цельную картину, в каких городах бренд действительно оказывает услуги. Формально разметка может быть валидной. Практически — она не работает, потому что не совпадает с реальностью бренда.</p>
+<p>Рассинхронизированную географию не обязательно вылавливать в живом замере — её можно смоделировать. Возьмём бренд, который работает в двух городах. Три слоя сигналов — карточка каталога, страница сайта и разметка — показывают одни и те же города, и модель отвечает уверенно.</p>
+<p>А теперь сломаем согласованность: ниже на этой странице работает интерактив. Переключите любой слой в «разошлось» — и прочитайте, как меняется «ответ ИИ» на вопрос «В каких городах работает бренд?». Сломайте два слоя — и получите <a href="/glossary.html#term-digital-ghost" class="term">цифровой призрак</a>: ИИ находит данные о вас, но не может уверенно подписать их вашим именем.</p>
+<p>Формально разметка может оставаться валидной: JSON-LD синтаксически корректен, но подписывает не те факты. Практически — она не работает, потому что не совпадает с реальностью бренда.</p>
 <p>Это и есть <a href="/glossary.html#term-blind-zone" class="term">зона слепоты</a>: не «ИИ нас не видит», а «ИИ видит обрывки и не может собрать из них достоверный образ».</p>
+<style>
+.sync-wrap{border:1px solid rgba(0,240,255,.25);border-radius:14px;background:rgba(13,6,24,.55);padding:1.25rem 1.25rem 1rem;margin:1.25rem 0}
+.sync-h{font-family:"Orbitron",sans-serif;font-size:1rem;color:#F5F7FA;margin:0 0 .35rem}
+.sync-sub{font-size:.9rem;color:#B8BCC6;margin:0 0 1rem}
+.sync-row{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;padding:.45rem .6rem;border-radius:8px;border:1px solid rgba(184,188,198,.18);margin-bottom:.4rem;transition:border-color .2s,background .2s}
+.sync-row.sync-broken{border-color:rgba(255,99,132,.55);background:rgba(255,99,132,.08)}
+.sync-name{font-family:"Orbitron",sans-serif;font-size:.78rem;color:#00F0FF;flex:0 0 240px}
+.sync-val{font-family:"Exo 2",sans-serif;font-size:.82rem;color:#B8BCC6;flex:1;min-width:160px}
+.sync-toggle{font-family:"Exo 2",sans-serif;font-size:.75rem;padding:.3rem .7rem;border-radius:999px;border:1px solid rgba(184,188,198,.4);background:transparent;color:#B8BCC6;cursor:pointer;transition:all .2s}
+.sync-toggle:hover{border-color:#00F0FF;color:#00F0FF}
+.sync-toggle.is-broken{border-color:#FF6384;color:#FF6384}
+.sync-answer{margin-top:1rem;border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:1rem;font-size:.9rem;line-height:1.55;color:#E8EAF0;background:rgba(13,6,24,.45)}
+.sync-q{font-family:"Orbitron",sans-serif;font-size:.72rem;letter-spacing:.08em;color:#B8BCC6;display:block;margin-bottom:.4rem}
+.sync-verdict{margin-top:.6rem;font-family:"Exo 2",sans-serif;font-size:.85rem;font-weight:600}
+.sync-verdict.ok{color:#2DD4A7}.sync-verdict.warn{color:#FFC857}.sync-verdict.bad{color:#FF6384}
+.sync-ctrl{margin-top:.75rem}
+.sync-reset-btn{font-size:.78rem;padding:.35rem .9rem;border-radius:8px;border:1px solid rgba(0,240,255,.5);background:transparent;color:#00F0FF;cursor:pointer}
+.sync-reset-btn:hover{background:rgba(0,240,255,.1)}
+@media (max-width:520px){.sync-name{flex:0 0 100%}.sync-val{min-width:100%}}
+</style>
 <div class="sync-wrap" id="sync-widget">
-  <p class="sync-h">Симулятор: где ИИ теряет бренд</p>
-  <p class="sync-sub">Настройте три слоя сигналов — карточки, сайт и разметку. Посмотрите, как «отвечает» ИИ, когда факты рассинхронизированы.</p>
-  <div id="sync-controls" class="sync-controls">
-    <div class="sync-row"><span class="sync-label">Карточки (2ГИС, Яндекс, каталоги):</span>
-      <span id="sync-chip-count" class="sync-val">2</span>
-      <button type="button" class="sync-btn" id="sync-chip-minus" aria-label="Минус">−</button>
-      <button type="button" class="sync-btn" id="sync-chip-plus" aria-label="Плюс">+</button>
-    </div>
-    <div class="sync-row"><span class="sync-label">Сайт:</span>
-      <span id="sync-site-count" class="sync-val">2</span>
-      <button type="button" class="sync-btn" id="sync-site-minus" aria-label="Минус">−</button>
-      <button type="button" class="sync-btn" id="sync-site-plus" aria-label="Плюс">+</button>
-    </div>
-    <div class="sync-row"><span class="sync-label">Разметка (JSON-LD):</span>
-      <span id="sync-markup-count" class="sync-val">2</span>
-      <button type="button" class="sync-btn" id="sync-markup-minus" aria-label="Минус">−</button>
-      <button type="button" class="sync-btn" id="sync-markup-plus" aria-label="Плюс">+</button>
-    </div>
-  </div>
-  <div class="sync-response" id="sync-response" aria-live="polite">Карточки 2 · Сайт 2 · Разметка 2 — сигналы согласованы: ИИ уверенно называет бренд и города.</div>
-  <div class="sync-ctrl"><button type="button" id="sync-reset" class="sync-reset-btn" hidden>Сбросить симуляцию</button></div>
-  <noscript><p class="mt-4 text-sm text-[#B8BCC6]">Интерактив требует JavaScript. Без него — правило из статьи: если города, цены и названия бренда расходятся между карточками, сайтом и разметкой — ИИ не собирает достоверный образ.</p></noscript>
+<p class="sync-h">Симулятор: соберите рассинхрон и прочитайте ответ ИИ</p>
+<p class="sync-sub">Бренд работает в двух городах. Три слоя — карточка каталога, страница сайта и разметка — показывают одни и те же города. Переключите любой слой в «разошлось» и посмотрите, как меняется ответ нейросети.</p>
+<div id="sync-controls" class="sync-controls">
+<div class="sync-row" data-layer="chip"><span class="sync-name">Карточка каталога (2ГИС)</span><span class="sync-val" id="sync-v-chip">Города: Томск, Новосибирск</span><button type="button" class="sync-toggle" id="sync-t-chip" data-state="ok" aria-pressed="false">Разошлось</button></div>
+<div class="sync-row" data-layer="site"><span class="sync-name">Страница сайта «О нас»</span><span class="sync-val" id="sync-v-site">Работаем в Томске и Новосибирске</span><button type="button" class="sync-toggle" id="sync-t-site" data-state="ok" aria-pressed="false">Разошлось</button></div>
+<div class="sync-row" data-layer="markup"><span class="sync-name">Разметка JSON-LD</span><span class="sync-val" id="sync-v-markup">areaServed: Томск, Новосибирск</span><button type="button" class="sync-toggle" id="sync-t-markup" data-state="ok" aria-pressed="false">Разошлось</button></div>
+</div>
+<div class="sync-answer" id="sync-answer" aria-live="polite"><span class="sync-q">ЗАПРОС: «В каких городах работает GEO-Апгрейд?»</span><span class="sync-ai" id="sync-ai-text"></span></div>
+<p class="sync-verdict ok" id="sync-verdict"></p>
+<div class="sync-ctrl"><button type="button" id="sync-reset" class="sync-reset-btn" hidden>Сбросить симуляцию</button></div>
+<noscript><p class="mt-4 text-sm text-[#B8BCC6]">Интерактив требует JavaScript. Без него — правило из статьи: если города расходятся между карточками, сайтом и разметкой — ИИ не собирает достоверный образ бренда.</p></noscript>
 </div>
 <script>
 (function(){
-  var chip=document.getElementById('sync-chip-count'),site=document.getElementById('sync-site-count'),mark=document.getElementById('sync-markup-count'),
-      chp=document.getElementById('sync-chip-plus'),chm=document.getElementById('sync-chip-minus'),
-      stp=document.getElementById('sync-site-plus'),stm=document.getElementById('sync-site-minus'),
-      mkp=document.getElementById('sync-markup-plus'),mkm=document.getElementById('sync-markup-minus'),
-      resp=document.getElementById('sync-response'),reset=document.getElementById('sync-reset');
-  if(!chip||!site||!mark||!resp){return}
-  var state={chip:2,site:2,mark:2},done=false;
-  function clamp(n){return Math.max(1,Math.min(6,n))}
-  function texts(){
-    var arr=[state.chip,state.site,state.mark];
-    var allSame=arr[0]===arr[1]&&arr[1]===arr[2];
-    if(allSame){return 'Карточки '+arr[0]+' · Сайт '+arr[1]+' · Разметка '+arr[2]+' — сигналы согласованы: ИИ уверенно называет бренд и города.'}
-    var spread=Math.max.apply(null,arr)-Math.min.apply(null,arr);
-    if(spread<=2){return 'Карточки '+arr[0]+' · Сайт '+arr[1]+' · Разметка '+arr[2]+' — ИИ начнёт гадать: отвечает по-разному в зависимости от источника, который «под рукой».'}
-    return 'Карточки '+arr[0]+' · Сайт '+arr[1]+' · Разметка '+arr[2]+' — цифровой призрак: ИИ не может собрать достоверный образ бренда, город или цену — данные «ходят без подписи».';
-  }
-  function paint(){
-    chip.textContent=state.chip; site.textContent=state.site; mark.textContent=state.mark;
-    var t=texts(); resp.textContent=t;
-    var isAllSame=state.chip===state.site&&state.site===state.mark;
-    resp.className='sync-response'+(isAllSame?' sync-ok':(Math.max.apply(null,[state.chip,state.site,state.mark])-Math.min.apply(null,[state.chip,state.site,state.mark])<=2?' sync-mid':' sync-bad'));
-    reset.hidden=state.chip===2&&state.site===2&&state.mark===2;
-    if(!done&&!isAllSame){done=true;if(window.ym){window.ym(113118311,'reachGoal','sync_done')}}
-  }
-  function bind(btn,minus,key){btn.addEventListener('click',function(){if(minus){state[key]=clamp(state[key]-1)}else{state[key]=clamp(state[key]+1)}paint();});}
-  bind(chp,false,'chip'); bind(chm,true,'chip');
-  bind(stp,false,'site'); bind(stm,true,'site');
-  bind(mkp,false,'mark'); bind(mkm,true,'mark');
-  reset.addEventListener('click',function(){state={chip:2,site:2,mark:2};done=false;paint();});
-  if(window.ym){window.ym(113118311,'reachGoal','sync_start')}
-  paint();
+var LAYERS=[["chip","карточка каталога"],["site","страница сайта"],["markup","разметка JSON-LD"]];
+var OK_FACT={chip:"Города: Томск, Новосибирск",site:"Работаем в Томске и Новосибирске",markup:"areaServed: Томск, Новосибирск"};
+var BROKEN_FACT={chip:"Города: только Томск",site:"Работаем только в Новосибирске",markup:"areaServed: только Москва"};
+var BROKEN_STORY={chip:"на карточках каталогов у GEO-Апгрейд указан только один город — Томск",site:"на самой странице сайта упомянут только Новосибирск",markup:"в JSON-LD значится только Москва"};
+var state={chip:false,site:false,markup:false};
+function broken(){return LAYERS.filter(function(l){return state[l[0]];});}
+function render(){
+ LAYERS.forEach(function(l){
+  var row=document.querySelector('[data-layer="'+l[0]+'"]');
+  var btn=document.getElementById('sync-t-'+l[0]);
+  var val=document.getElementById('sync-v-'+l[0]);
+  if(state[l[0]]){row.classList.add('sync-broken');btn.classList.add('is-broken');btn.textContent='Вернуть как было';btn.setAttribute('aria-pressed','true');val.textContent=BROKEN_FACT[l[0]];}
+  else{row.classList.remove('sync-broken');btn.classList.remove('is-broken');btn.textContent='Разошлось';btn.setAttribute('aria-pressed','false');val.textContent=OK_FACT[l[0]];}
+ });
+ var n=broken().length, ai=document.getElementById('sync-ai-text'), v=document.getElementById('sync-verdict'), rst=document.getElementById('sync-reset');
+ if(n===0){ai.textContent="GEO-Апгрейд — экспертная лаборатория AI-видимости бренда. Работает в двух городах: офис в Томске (Набережная озера, 22) и в Новосибирске (ул. Гоголя, 209), плюс удалённо по России. Города совпадают во всех источниках, поэтому модель отвечает уверенно.";
+  v.textContent="✅ Сигналы согласованы — ИИ собирает достоверный образ бренда";v.className="sync-verdict ok";rst.hidden=true;}
+ else if(n===1){var b=broken()[0];
+  ai.textContent="GEO-Апгрейд — лаборатория AI-видимости. Однако "+BROKEN_STORY[b[0]]+", а остальные источники называют два города — Томск и Новосибирск. Уверенно ответить модель не может: она выбирает между «одним» и «двумя», и выбор зависит от того, какой источник попал в контекст ответа.";
+  v.textContent="⚠️ ИИ начнёт гадать: "+b[1]+" противоречит остальным слоям";v.className="sync-verdict warn";rst.hidden=false;}
+ else{var w=broken().map(function(b){return b[1];}).join(", ");
+  ai.textContent="Данные о GEO-Апгрейд противоречивы: "+w+". В разных источниках у бренда разные города, и ни один слой не подтверждает другой. Модель либо не решит, чему верить, либо возьмёт случайный вариант — и напишет не то, что вы хотели. Разметка при этом может быть валидной: JSON-LD синтаксически корректен, но подписывает не те факты.";
+  v.textContent="❌ Цифровой призрак: ИИ видит обрывки сигналов и не может подписать их брендом";v.className="sync-verdict bad";rst.hidden=false;}
+}
+LAYERS.forEach(function(l){
+ document.getElementById('sync-t-'+l[0]).addEventListener('click',function(){state[l[0]]=!state[l[0]];render();});
+});
+document.getElementById('sync-reset').addEventListener('click',function(){state={chip:false,site:false,markup:false};render();});
+render();
 })();
 </script>
-<style>
-.sync-wrap{margin:1.25rem 0;border:1px solid rgba(0,240,255,.25);border-radius:12px;background:rgba(13,6,24,.55);padding:1.1rem 1.15rem}
-.sync-h{font-family:"Orbitron",sans-serif;font-size:1rem;color:#F5F7FA;margin:0 0 .35rem}
-.sync-sub{font-size:.9rem;color:#B8BCC6;margin:0 0 1rem}
-.sync-controls{margin-top:1rem}
-.sync-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap}
-.sync-label{font-size:.9rem;color:#B8BCC6;min-width:190px}
-.sync-val{font-family:"Orbitron",sans-serif;font-size:1rem;color:#00F0FF;min-width:1.6rem;text-align:center}
-.sync-btn{cursor:pointer;border:1px solid rgba(0,240,255,.45);border-radius:8px;padding:.35rem .9rem;font-size:.95rem;color:#F5F7FA;background:rgba(0,240,255,.08);font-family:"Exo 2",sans-serif;transition:all .2s ease}
-.sync-btn:hover{border-color:#00F0FF;box-shadow:0 0 10px rgba(0,240,255,.3)}
-.sync-response{margin-top:1rem;padding:.85rem 1rem;border-radius:8px;font-size:.95rem;color:#F5F7FA;background:rgba(0,240,255,.06);border-left:4px solid #00F0FF}
-.sync-response.sync-ok{border-left-color:#34D399;background:rgba(52,211,153,.08)}
-.sync-response.sync-mid{border-left-color:#FBBF24;background:rgba(251,191,36,.08)}
-.sync-response.sync-bad{border-left-color:#F87171;background:rgba(248,113,113,.08)}
-.sync-ctrl{margin-top:.5rem}
-.sync-reset-btn{background:none;border:none;color:#B8BCC6;text-decoration:underline;cursor:pointer;font-size:.8rem}
-.sync-reset-btn:hover{color:#00F0FF}
-@media(max-width:640px){.sync-label{min-width:100%}}
-</style>
-
-
 </section>
-<section id="why-not-equal" class="article-section">
-<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Почему разметка не равна GEO</h2>
-<p>Многие слышали: «Добавьте Schema.org — и вы попадёте в ChatGPT». Это упрощение.</p>
-<p>Официально структурированные данные помогают поисковым системам понимать содержание страницы и формировать расширенные результаты поиска. Google рекомендует формат JSON-LD как наиболее удобный для внедрения и поддержки, особенно когда данные вложены друг в друга.</p>
-<p>Но GEO — это не только техническая валидность. Нейросеть собирает ответ из текста страницы, структуры, FAQ, карточек, упоминаний и других источников. Если в одном месте у вас три города, на сайте пять, а в JSON-LD — семь, модель не «усреднит» информацию. Она либо не решит, чему верить, либо выберет случайный вариант.</p>
-<p><strong>Моя позиция:</strong> разметка — это не заклинание для ИИ. Это способ подписать факты бренда так, чтобы у модели не было повода перепутать вас с кем-то другим.</p>
-</section>
-
-<section id="experiment" class="article-section">
-<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Лабораторный эксперимент: где ИИ теряет бренд</h2>
-<p>Рассинхронизированную географию не обязательно вылавливать в живом замере — её можно смоделировать. Ниже на этой странице работает интерактив: бренд, у которого на карточках одно количество городов, на сайте — другое, в разметке — третье.</p>
-<p>Соберите такую конфигурацию — и посмотрите, как выглядит «ответ ИИ» в этой ситуации: он время от времени «спотыкается» — не может собрать цельную картину, в каких городах бренд действительно оказывает услуги. Формально разметка может быть валидной. Практически — она не работает, потому что не совпадает с реальностью бренда.</p>
-<p>Это и есть <a href="/glossary.html#term-blind-zone" class="term">зона слепоты</a>: не «ИИ нас не видит», а «ИИ видит обрывки и не может собрать из них достоверный образ».</p>
-
-</section>
-
 <section id="mini-test" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Мини-тест до внедрения Schema.org</h2>
 <p>Проведите его до того, как заказывать или писать разметку.</p>
@@ -850,7 +821,7 @@ nav[aria-label="Основная навигация"] a {
 <section id="org" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">JSON-LD: Organization</h2>
 <p>Поставьте этот блок на главную страницу или в общий шаблон сайта. Замените данные на свои — и обязательно сверьте их с карточками, шапкой сайта, страницей контактов и профилями.</p>
-<div class="code-block"><pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+<div class="card p-6 my-6"><p class="font-semibold text-[#00F0FF]">Куда ставить: главная страница или общий шаблон сайта</p><p class="mt-1 text-xs text-[#B8BCC6]">Один блок на весь сайт. Замените данные на свои — и сверьте их с карточками, шапкой сайта, страницей контактов и профилями.</p><div class="code-block"><pre><code class="language-html">&lt;script type="application/ld+json"&gt;
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -882,7 +853,7 @@ nav[aria-label="Основная навигация"] a {
     "продвижение в нейросетях"
   ]
 }
-&lt;/script&gt;</code></pre></div>
+&lt;/script&gt;</code></pre></div></div>
 <p>Organization поддерживает свойства name, url, address, areaServed, sameAs, logo, contactPoint и другие. Особенно важны sameAs: это ссылки на профили, которые однозначно подтверждают, что вы — именно эта организация, а не тёзка.</p>
 <p><strong>Важно:</strong> не добавляйте в sameAs всё подряд. Только официальные и релевантные профили: сайт, VK, Telegram-канал, Яндекс.Услуги, профиль на профессиональной площадке — если они действительно принадлежат бренду.</p>
 </section>
@@ -890,7 +861,7 @@ nav[aria-label="Основная навигация"] a {
 <section id="service" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">JSON-LD: услуга</h2>
 <p>Для страницы услуги используйте Service, а при публичной цене — вложенный Offer.</p>
-<div class="code-block"><pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+<div class="card p-6 my-6"><p class="font-semibold text-[#00F0FF]">Куда ставить: страница услуги</p><p class="mt-1 text-xs text-[#B8BCC6]">Service с названием, описанием и, если публичная цена — вложенным Offer.</p><div class="code-block"><pre><code class="language-html">&lt;script type="application/ld+json"&gt;
 {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -915,164 +886,14 @@ nav[aria-label="Основная навигация"] a {
     "url": "https://geo-upgrade.ru/geo-scanner-lite.html"
   }
 }
-&lt;/script&gt;</code></pre></div>
+&lt;/script&gt;</code></pre></div></div>
 <p>Если цена зависит от объёма, не выдумывайте «среднюю» цифру только для разметки. Лучше опишите состав услуги и укажите страницу, где пользователь может запросить расчёт.</p>
 <p>В Schema.org у Service есть свойства для описания предложения, а hasOfferCatalog позволяет связать услугу с каталогом предложений.</p>
 </section>
-<section id="why-not-equal" class="article-section">
-<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Почему разметка не равна GEO</h2>
-<p>Многие слышали: «Добавьте Schema.org — и вы попадёте в ChatGPT». Это упрощение.</p>
-<p>Официально структурированные данные помогают поисковым системам понимать содержание страницы и формировать расширенные результаты поиска. Google рекомендует формат JSON-LD как наиболее удобный для внедрения и поддержки, особенно когда данные вложены друг в друга.</p>
-<p>Но GEO — это не только техническая валидность. Нейросеть собирает ответ из текста страницы, структуры, FAQ, карточек, упоминаний и других источников. Если в одном месте у вас три города, на сайте пять, а в JSON-LD — семь, модель не «усреднит» информацию. Она либо не решит, чему верить, либо выберет случайный вариант.</p>
-<p><strong>Моя позиция:</strong> разметка — это не заклинание для ИИ. Это способ подписать факты бренда так, чтобы у модели не было повода перепутать вас с кем-то другим.</p>
-</section>
-
-<section id="experiment" class="article-section">
-<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Лабораторный эксперимент: где ИИ теряет бренд</h2>
-<p>Рассинхронизированную географию не обязательно вылавливать в живом замере — её можно смоделировать. Ниже на этой странице работает интерактив: бренд, у которого на карточках одно количество городов, на сайте — другое, в разметке — третье.</p>
-<p>Соберите такую конфигурацию — и посмотрите, как выглядит «ответ ИИ» в этой ситуации: он время от времени «спотыкается» — не может собрать цельную картину, в каких городах бренд действительно оказывает услуги. Формально разметка может быть валидной. Практически — она не работает, потому что не совпадает с реальностью бренда.</p>
-<p>Это и есть <a href="/glossary.html#term-blind-zone" class="term">зона слепоты</a>: не «ИИ нас не видит», а «ИИ видит обрывки и не может собрать из них достоверный образ».</p>
-
-</section>
-
-<section id="mini-test" class="article-section">
-<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Мини-тест до внедрения Schema.org</h2>
-<p>Проведите его до того, как заказывать или писать разметку.</p>
-<p>1. Выберите 5–7 конкретных вопросов о бренде:</p>
-<ul class="tlist">
-<li>«Кто такие [название бренда]?»</li>
-<li>«Какие услуги оказывает [название бренда] в [город]?»</li>
-<li>«Сколько стоит [конкретная услуга] у [название бренда]?»</li>
-<li>«В каких городах работает [название бренда]?»</li>
-<li>«Как связаться с [название бренда]?»</li>
-<li>«Чем [название бренда] отличается от [тип конкурента]?»</li>
-</ul>
-<p>2. Задайте их в 2–3 нейросетях: например, ChatGPT, Алисе AI и Perplexity.</p>
-<p>3. Зафиксируйте для каждого ответа:</p>
-<ul class="tlist">
-<li>назван ли бренд;</li>
-<li>назван ли сайт;</li>
-<li>верны ли услуга, город, цена, контакты;</li>
-<li>есть ли ссылка на сайт в источниках;</li>
-<li>не подменил ли ИИ вас другой компанией с похожим названием.</li>
-</ul>
-<p>4. Сравните ответы с тем, что написано на сайте, в карточках и в текущей разметке.</p>
-<p>Если ИИ называет услугу, но не бренд; приводит сайт в источниках, но не упоминает вас в тексте; путает города или цены — проблема не в том, что «нужно ещё больше Schema.org». Проблема в рассогласовании фактов.</p>
-<p>В нашем аудите мы отдельно фиксируем <strong>Ghost Gap</strong> (метрика AI-видимости: сайт появляется в источниках ответа, но имени бренда в самом тексте ответа нет). Это особенно коварно: данные о вас «ходят без подписи», а пользу из них могут забрать каталоги и конкуренты.</p>
-</section>
-
-<section id="priority" class="article-section">
-<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Что размечать в первую очередь</h2>
-<p>Не нужно размечать всё подряд. Нейросети любят не объём сигналов, а точность и согласованность.</p>
-<div class="table-wrapper"><table class="table">
-<thead><tr><th scope="col">Тип разметки</th><th scope="col">Что подписывает</th><th scope="col">Когда нужен</th><th scope="col">Главная ошибка</th></tr></thead>
-<tbody>
-<tr><td>Organization / LocalBusiness</td><td>Кто вы: название, сайт, контакты, логотип, география, соцсети</td><td>Почти всегда; для локального бизнеса — в приоритете</td><td>Разные телефоны, адреса и названия на сайте, в карточках и в JSON-LD</td></tr>
-<tr><td>Service</td><td>Конкретную услугу: что входит, для кого, какие условия</td><td>На странице услуги или в каталоге услуг</td><td>Общее описание «качественные услуги» без состава, результата и аудитории</td></tr>
-<tr><td>Offer</td><td>Коммерческие условия: цена, валюта, доступность</td><td>Когда цена или пакет действительно публичны</td><td>Указать цену в разметке, которой нет в видимом тексте</td></tr>
-<tr><td>FAQPage</td><td>Вопросы и ответы, которые реально есть на странице</td><td>На страницах услуг, в блоге, на странице «Вопросы и ответы»</td><td>Придумать вопросы ради ИИ, которых нет в контенте</td></tr>
-<tr><td>BlogPosting</td><td>Статью: заголовок, автор, дата, тема, издатель</td><td>Для экспертных статей и кейсов</td><td>Разметить черновик, страницу без автора или материал без фактической пользы</td></tr>
-<tr><td>Person</td><td>Эксперта: кто автор, его роль, опыт, темы</td><td>Для личного бренда, авторских колонок, экспертных страниц</td><td>Приписать эксперту регалии, которых нет на странице</td></tr>
-<tr><td>BreadcrumbList</td><td>Путь пользователя по разделам сайта</td><td>Для крупных сайтов и блогов</td><td>Разметить навигацию, которая не совпадает с реальной структурой</td></tr>
-</tbody>
-</table></div>
-<p>FAQPage в Schema.org описывает страницу с одним или несколькими часто задаваемыми вопросами; Service позволяет описать услугу и связанные с ней предложения. При этом важно помнить: Google с 7 мая 2026 года больше не показывает FAQ rich results в поиске, но сама разметка FAQPage не запрещена и по-прежнему может быть полезна как машиночитаемая структура для других систем и ИИ-сервисов.</p>
-</section>
-
-<section id="anchor" class="article-section">
-<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Правило контекстного якоря</h2>
-<p>Каждый важный факт должен существовать в трёх слоях:</p>
-<ol class="tlist">
-<li><strong>В видимом тексте.</strong> Пользователь читает его без раскрытия кода.</li>
-<li><strong>В структуре страницы.</strong> Заголовок, подзаголовок, список, FAQ, таблица.</li>
-<li><strong>В JSON-LD.</strong> Машиночитаемая подпись того же факта.</li>
-</ol>
-<p>Например, если вы пишете: «GEO-сканер Лайт — проверка AI-видимости и технических данных сайта», то эта же услуга должна быть:</p>
-<ul class="tlist">
-<li>в заголовке и первом абзаце страницы;</li>
-<li>в блоке «Что входит»;</li>
-<li>в разметке Service с названием, описанием и, если уместно, Offer.</li>
-</ul>
-<p>Это и есть <a href="/glossary.html#term-context-anchor" class="term">контекстный якорь</a>: не отдельный тег, а повторяющийся, непротиворечивый факт в разных слоях страницы.</p>
-</section>
-
-<section id="org" class="article-section">
-<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">JSON-LD: Organization</h2>
-<p>Поставьте этот блок на главную страницу или в общий шаблон сайта. Замените данные на свои — и обязательно сверьте их с карточками, шапкой сайта, страницей контактов и профилями.</p>
-<div class="code-block"><pre><code class="language-html">&lt;script type="application/ld+json"&gt;
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "GEO-Апгрейд",
-  "alternateName": "GEO Upgrade",
-  "url": "https://geo-upgrade.ru/",
-  "logo": "https://geo-upgrade.ru/logo-round-min.webp",
-  "description": "Студия AI-видимости сайтов: аудит, GEO-стратегия, контентные маяки и техническая подготовка брендов к ответам нейросетей.",
-  "email": "geo.upgrade@bk.ru",
-  "telephone": "+79529449239",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "ул. Набережная озера, 22",
-    "postalCode": "634009",
-    "addressLocality": "Томск",
-    "addressRegion": "Томская область",
-    "addressCountry": "RU"
-  },
-  "areaServed": ["Томск", "Россия"],
-  "sameAs": [
-    "https://t.me/geoupgrade",
-    "https://vk.ru/geo.upgrade"
-  ],
-  "knowsAbout": [
-    "GEO",
-    "AI-видимость",
-    "Schema.org",
-    "структурированные данные",
-    "продвижение в нейросетях"
-  ]
-}
-&lt;/script&gt;</code></pre></div>
-<p>Organization поддерживает свойства name, url, address, areaServed, sameAs, logo, contactPoint и другие. Особенно важны sameAs: это ссылки на профили, которые однозначно подтверждают, что вы — именно эта организация, а не тёзка.</p>
-<p><strong>Важно:</strong> не добавляйте в sameAs всё подряд. Только официальные и релевантные профили: сайт, VK, Telegram-канал, Яндекс.Услуги, профиль на профессиональной площадке — если они действительно принадлежат бренду.</p>
-</section>
-
-<section id="service" class="article-section">
-<h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">JSON-LD: услуга</h2>
-<p>Для страницы услуги используйте Service, а при публичной цене — вложенный Offer.</p>
-<div class="code-block"><pre><code class="language-html">&lt;script type="application/ld+json"&gt;
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "GEO-сканер Лайт",
-  "serviceType": "Аудит AI-видимости и технической готовности сайта",
-  "description": "Проверка того, как бренд представлен в ответах нейросетей: разметка Schema.org, технические данные, FAQ, контакты и базовые сигналы AI-видимости.",
-  "provider": {
-    "@type": "Organization",
-    "name": "GEO-Апгрейд",
-    "url": "https://geo-upgrade.ru/"
-  },
-  "areaServed": "Россия",
-  "audience": {
-    "@type": "BusinessAudience",
-    "name": "Малый и локальный бизнес, эксперты, онлайн-школы"
-  },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "RUB",
-    "lowPrice": "8000",
-    "highPrice": "12000",
-    "url": "https://geo-upgrade.ru/geo-scanner-lite.html"
-  }
-}
-&lt;/script&gt;</code></pre></div>
-<p>Если цена зависит от объёма, не выдумывайте «среднюю» цифру только для разметки. Лучше опишите состав услуги и укажите страницу, где пользователь может запросить расчёт.</p>
-<p>В Schema.org у Service есть свойства для описания предложения, а hasOfferCatalog позволяет связать услугу с каталогом предложений.</p>
-</section>
-
 <section id="faq" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">JSON-LD: FAQPage</h2>
 <p>FAQ — не декоративный блок «для SEO». Это <a href="/glossary.html#term-content-lighthouse" class="term">контентный маяк</a>: готовые, короткие и проверяемые ответы на реальные вопросы клиента.</p>
-<div class="code-block"><pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+<div class="card p-6 my-6"><p class="font-semibold text-[#00F0FF]">Куда ставить: страница с FAQ</p><p class="mt-1 text-xs text-[#B8BCC6]">Вопросы должны быть на странице видимым текстом: разметка подписывает то, что уже опубликовано.</p><div class="code-block"><pre><code class="language-html">&lt;script type="application/ld+json"&gt;
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -1103,7 +924,7 @@ nav[aria-label="Основная навигация"] a {
     }
   ]
 }
-&lt;/script&gt;</code></pre></div>
+&lt;/script&gt;</code></pre></div></div>
 <p>Каждый вопрос должен быть реальным, а ответ — полным и совпадать с текстом на странице. FAQ-разметка предназначена для официальных вопросов и ответов, а не для форумов или пользовательских обсуждений.</p>
 <h3 class="text-xl md:text-2xl font-semibold mt-8 mb-3">Какие вопросы стоит добавить в FAQ</h3>
 <p>Для GEO-агентства, локальной услуги или экспертного бизнеса я бы начинала с таких:</p>
@@ -1122,7 +943,7 @@ nav[aria-label="Основная навигация"] a {
 <section id="blogposting" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">JSON-LD: BlogPosting</h2>
 <p>Для статей используйте BlogPosting. Он не заменяет хороший текст, но помогает связать материал с автором, издателем, темой и датой.</p>
-<div class="code-block"><pre><code class="language-html">&lt;script type="application/ld+json"&gt;
+<div class="card p-6 my-6"><p class="font-semibold text-[#00F0FF]">Куда ставить: статьи блога</p><p class="mt-1 text-xs text-[#B8BCC6]">Связывает материал с автором, издателем, темой и датой.</p><div class="code-block"><pre><code class="language-html">&lt;script type="application/ld+json"&gt;
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -1160,7 +981,7 @@ nav[aria-label="Основная навигация"] a {
     }
   ]
 }
-&lt;/script&gt;</code></pre></div>
+&lt;/script&gt;</code></pre></div></div>
 <p>Не размечайте статью, если у неё нет понятного автора, даты, темы и реальной пользы. BlogPosting — это подпись экспертного материала, а не способ выдать генерированный текст за экспертный.</p>
 </section>
 
@@ -1235,14 +1056,14 @@ nav[aria-label="Основная навигация"] a {
 <section class="mt-12">
   <h3 class="text-lg font-semibold mb-4">Связанные термины</h3>
   <div class="flex flex-wrap gap-2">
-    <a href="/glossary.html#term-structured-data" class="badge badge-standard">Structured data</a>
+    <a href="/glossary.html#term-structured-data" class="badge badge-basics">Structured data</a>
     <a href="/glossary.html#term-context-anchor" class="badge badge-author">Контекстный якорь</a>
     <a href="/glossary.html#term-signal-coherence" class="badge badge-author">Сигнальная связность</a>
     <a href="/glossary.html#term-content-lighthouse" class="badge badge-author">Контентный маяк</a>
     <a href="/glossary.html#term-digital-ghost" class="badge badge-author">Цифровой призрак</a>
     <a href="/glossary.html#term-blind-zone" class="badge badge-author">Зона слепоты</a>
-    <a href="/glossary.html#term-citation" class="badge badge-standard">Цитирование</a>
-    <a href="/glossary.html#term-ai-visibility" class="badge badge-standard">AI-видимость</a>
+    <a href="/glossary.html#term-citation" class="badge badge-basics">Цитирование</a>
+    <a href="/glossary.html#term-ai-visibility" class="badge badge-basics">AI-видимость</a>
     <a href="/glossary.html#term-nap" class="badge badge-basics">NAP</a>
   </div>
 </section>

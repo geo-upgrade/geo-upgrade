@@ -1,14 +1,6 @@
-<html><head><meta name="\&quot;color-scheme\&quot;" content="\&quot;light" dark\"="">
-    <style>
-        pre {
-          content-visibility: auto;
-          line-height: 1.2em;
-          margin: 0;
-        }
-    </style>
-    </head><body><pre style="width: 895ch; contain-intrinsic-height: 132em; content-visibility: visible"># GEO-Апгрейд
+# GEO-Апгрейд
 
-&gt; Лаборатория AI-видимости бренда. GEO-аудит, стратегия и контент для локального бизнеса и экспертов. Проверяем, как нейросети видят ваш бренд, и помогаем стать их рекомендацией.
+> Лаборатория AI-видимости бренда. GEO-аудит, стратегия и контент для локального бизнеса и экспертов. Проверяем, как нейросети видят ваш бренд, и помогаем стать их рекомендацией.
 
 ## Главная
 - [GEO-Апгрейд — главная](https://geo-upgrade.ru/): Бесплатный мини-аудит AI-видимости — 3 запроса × 2 AI-системы на выбор
@@ -33,6 +25,8 @@
 - [О GEO-Апгрейде](https://geo-upgrade.ru/about.html): Лаборатория AI-видимости бренда — команда, подход, контакты
 - [Об основателе — Дарья Жарких](https://geo-upgrade.ru/about-daria-zharkikh.html): Путь к GEO, методика, формат работы и границы — от первого лица
 - [Контакты](https://geo-upgrade.ru/contacts.html): Бесплатный аудит AI-видимости, форма заявки
+
+- [Schema.org для GEO: разметка, которая работает](https://geo-upgrade.ru/blog-post-schema-org-dlya-geo.html): Пошаговый протокол внедрения JSON-LD для GEO: Organization, Service, FAQPage, BlogPosting. Примеры кода, таблица типовых ошибок и чек-лист согласованности фактов.
 
 - [Почему не стоит «накручивать» упоминания: тёмная сторона GEO](https://geo-upgrade.ru/blog-post-riski-nakrutki-upominanij.html): Нейросеть нельзя убедить частотой: эхо-кольцо, цифровой призрак, 7 красных флагов накрутки и тест «переживёт ли сигнал проверку». С интерактивным стендом проверки предложения.
 ## Блог
@@ -117,4 +111,3 @@
 ## Подробная версия
 
 Детальное индексирование: https://geo-upgrade.ru/llms-full.txt
-</pre></body></html>
