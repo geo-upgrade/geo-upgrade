@@ -10,6 +10,13 @@
 
     
     <item>
+      <title>Schema.org для GEO: разметка, которая работает</title>
+      <link>https://geo-upgrade.ru/blog-post-schema-org-dlya-geo.html</link>
+      <description><![CDATA[Пошаговый протокол внедрения JSON-LD для Organization, услуг, FAQ и статей: примеры кода, таблица типовых ошибок и чек-лист согласованности фактов. С интерактивом «где ИИ теряет бренд».]]></description>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-schema-org-dlya-geo.html</guid>
+    </item>
+    <item>
       <title>Почему не стоит «накручивать» упоминания: тёмная сторона GEO</title>
       <link>https://geo-upgrade.ru/blog-post-riski-nakrutki-upominanij.html</link>
       <description><![CDATA[Нейросеть нельзя убедить частотой: эхо-кольцо, цифровой призрак, 7 красных флагов накрутки и тест «переживёт ли сигнал проверку». С интерактивным стендом проверки предложения.]]></description>

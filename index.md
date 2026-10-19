@@ -6,9 +6,17 @@
           margin: 0;
         }
     </style>
-    </head><body><pre style="width: 768ch; contain-intrinsic-height: 235.2em; content-visibility: visible"># GEO-Апгрейд — Лаборатория AI-видимости бренда
+    </head><body><pre style="width: 768ch; contain-intrinsic-height: 247.2em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
+    &lt;style&gt;
+        pre {
+          content-visibility: auto;
+          line-height: 1.2em;
+          margin: 0;
+        }
+    &lt;/style&gt;
+    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 768ch; contain-intrinsic-height: 235.2em; content-visibility: visible"&gt;# GEO-Апгрейд — Лаборатория AI-видимости бренда
 
-&gt; URL: https://geo-upgrade.ru/index.html
+&amp;gt; URL: https://geo-upgrade.ru/index.html
 
 **Назначение:** Витрина лаборатории: статус, услуги, чат-бот тех-проверки в Telegram, блог-сигналы, CTA мини-аудита. Точка входа и маршрутизация по разделам.
 
@@ -170,6 +178,12 @@ FRESH SIGNALS / БЛОГ
 Разбираем GEO, локальный поиск, цифровой след бренда и контент, который помогает людям и AI точнее понять бизнес.
 AI-ВИДИМОСТЬ
 
+[Schema.org для GEO: разметка, которая работает](blog-post-schema-org-dlya-geo.html)
+
+Пошаговый протокол JSON-LD: Organization, услуга, FAQPage, BlogPosting. Примеры кода, таблица типовых ошибок и интерактив «где ИИ теряет бренд».
+
+AI-ВИДИМОСТЬ
+
 [Почему не стоит «накручивать» упоминания: тёмная сторона GEO](blog-post-riski-nakrutki-upominanij.html)
 
 Нейросеть нельзя убедить частотой: эхо-кольцо, цифровой призрак, красные флаги накрутки и тест «переживёт ли сигнал проверку».
@@ -186,11 +200,6 @@ GEO ДЛЯ БИЗНЕСА
 
 Интерактивный тест из 8 вопросов: что нейросеть видит в вашем бренде — цифровой призрак, полупризрак, сигнал или контентный маяк. Шкала 0–24 и вердикт с первыми шагами.
 
-ЭКСПЕРИМЕНТЫ
-
-[Какие нейросети мы проверяем и что важно в каждой](blog-post-kakie-neyroseti-my-proveryaem.html)
-
-Паспорта моделей: как Алиса AI, ChatGPT, DeepSeek и Perplexity по-разному видят бренд — и почему нельзя опираться на одну метрику. С интерактивной таблицей паспортов.
 
 
 Получить бесплатный мини-аудит](contacts.html#form)
@@ -203,4 +212,4 @@ GEO ДЛЯ БИЗНЕСА
 ---
 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
-</pre></body></html>
+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>

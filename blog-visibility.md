@@ -6,7 +6,7 @@
           margin: 0;
         }
     </style>
-    </head><body><pre style="width: 517ch; contain-intrinsic-height: 79.2em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
+    </head><body><pre style="width: 517ch; contain-intrinsic-height: 92.4em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
     &lt;style&gt;
         pre {
           content-visibility: auto;
@@ -14,9 +14,17 @@
           margin: 0;
         }
     &lt;/style&gt;
-    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 517ch; contain-intrinsic-height: 64.8em; content-visibility: visible"&gt;# AI-видимость бренда — раздел блога GEO-Апгрейд
+    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 517ch; contain-intrinsic-height: 79.2em; content-visibility: visible"&gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta name="\&amp;amp;quot;color-scheme\&amp;amp;quot;" content="\&amp;amp;quot;light" dark\"=""&amp;gt;
+    &amp;lt;style&amp;gt;
+        pre {
+          content-visibility: auto;
+          line-height: 1.2em;
+          margin: 0;
+        }
+    &amp;lt;/style&amp;gt;
+    &amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;pre style="width: 517ch; contain-intrinsic-height: 64.8em; content-visibility: visible"&amp;gt;# AI-видимость бренда — раздел блога GEO-Апгрейд
 
-&amp;gt; URL: https://geo-upgrade.ru/blog-visibility.html
+&amp;amp;gt; URL: https://geo-upgrade.ru/blog-visibility.html
 
 **Назначение:** Категорийная страница блога: статьи раздела «AI-видимость бренда» с краткими описаниями.
 
@@ -35,6 +43,8 @@ SECTION: AI-ВИДИМОСТЬ
 
 ## Статьи раздела
 
+- [Schema.org для GEO: разметка, которая работает](https://geo-upgrade.ru/blog-post-schema-org-dlya-geo.html) — 19 октября 2026 • 12–15 минут
+  Пошаговый протокол JSON-LD: Organization, услуга, FAQPage, BlogPosting. Примеры кода, таблица типовых ошибок и интерактив «где ИИ теряет бренд».
 - [Почему не стоит «накручивать» упоминания: тёмная сторона GEO](https://geo-upgrade.ru/blog-post-riski-nakrutki-upominanij.html) — 19 октября 2026 • 10–13 минут
   Нейросеть нельзя убедить частотой: эхо-кольцо, цифровой призрак, красные флаги накрутки и тест «переживёт ли сигнал проверку». С интерактивным стендом.
 - [Частые ошибки брендов в AI-видимости: кабинет диагностики](https://geo-upgrade.ru/blog-post-chastye-oshibki-ai-vidimosti.html) — 16 октября 2026 • 10–13 минут
@@ -56,6 +66,7 @@ SECTION: AI-ВИДИМОСТЬ
 
 Как измерять AI-видимость и что делать с зонами слепоты: метрики, причины невидимости, техническая база.
 
+- Schema.org для GEO: разметка, которая работает — Пошаговый протокол JSON-LD: Organization, услуга, FAQPage, BlogPosting. Примеры кода, таблица типовых ошибок и интерактив «где ИИ теряет бренд».
 - Почему не стоит «накручивать» упоминания: тёмная сторона GEO — Нейросеть нельзя убедить частотой: эхо-кольцо, цифровой призрак, красные флаги накрутки и тест «переживёт ли сигнал проверку».
 - [Частые ошибки брендов в AI-видимости: кабинет диагностики](https://geo-upgrade.ru/blog-post-chastye-oshibki-ai-vidimosti.html) — Кабинет диагностики частых ошибок AI-видимости: полувидимость, старые цены, карточки без сигналов и техслой. С интерактивом «Кабинет диагностики».
 - [Галлюцинации ИИ о бренде: что делать, если нейросеть ошибается](https://geo-upgrade.ru/blog-post-gallyutsinatsii-neurosetey.html) — Эффект цифрового эха: почему нейросеть достраивает пустоту, три маски галлюцинаций, числа-магнит и протокол канонизации фактов. 4 шага, чек-лист и интерактивный протокол проверки.
@@ -74,4 +85,4 @@ SECTION: AI-ВИДИМОСТЬ
 - [GEO для бизнеса](https://geo-upgrade.ru/blog-business.html)
 - [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
 - [AI-сигналы](https://geo-upgrade.ru/blog-news.html)
-&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>
+&amp;lt;/pre&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>

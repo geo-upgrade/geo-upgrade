@@ -6,11 +6,19 @@
           margin: 0;
         }
     </style>
-    </head><body><pre style="width: 386ch; contain-intrinsic-height: 346.8em; content-visibility: visible"># GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейда
+    </head><body><pre style="width: 386ch; contain-intrinsic-height: 360em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
+    &lt;style&gt;
+        pre {
+          content-visibility: auto;
+          line-height: 1.2em;
+          margin: 0;
+        }
+    &lt;/style&gt;
+    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 386ch; contain-intrinsic-height: 346.8em; content-visibility: visible"&gt;# GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейда
 
-&gt; URL: https://geo-upgrade.ru/blog.html
+&amp;gt; URL: https://geo-upgrade.ru/blog.html
 
-**Назначение:** Журнал AI-видимости: 34 статьи и интерактивный тест, категории, поиск по темам, CTA.
+**Назначение:** Журнал AI-видимости: 35 статей и интерактивный тест, категории, поиск по темам, CTA.
 
 **Описание (meta):** Практические материалы о GEO, AI-поиске, цифровом следе бренда, локальной видимости, контенте и автоматизации бизнеса.
 
@@ -78,6 +86,14 @@ FRESH SIGNALS
 
 AI-ВИДИМОСТЬ
 
+[Schema.org для GEO: разметка, которая работает](blog-post-schema-org-dlya-geo.html)
+
+Пошаговый протокол JSON-LD: Organization, услуга, FAQPage, BlogPosting. Примеры кода, таблица типовых ошибок и интерактив «где ИИ теряет бренд». 19 октября 202612–15 минут
+
+[Читать статью](blog-post-schema-org-dlya-geo.html)
+
+AI-ВИДИМОСТЬ
+
 [Почему не стоит «накручивать» упоминания: тёмная сторона GEO](blog-post-riski-nakrutki-upominanij.html)
 
 Нейросеть нельзя убедить частотой: эхо-кольцо, цифровой призрак, 7 красных флагов накрутки и тест «переживёт ли сигнал проверку». С интерактивным стендом проверки предложения. 19 октября 202610–13 минут
@@ -134,13 +150,6 @@ AI-ВИДИМОСТЬ
 [Читать статью](blog-post-gallyutsinatsii-neurosetey.html)
 
 
-AI-ВИДИМОСТЬ
-
-[Как нейросеть собирает рейтинги и топы: анатомия AI-списка](blog-post-kak-ii-sobiraet-reytingi-i-topy.html)
-
-Три слоя происхождения AI-списка, формула «рейтинг ИИ = рейтинг его площадок» и таблица источников из замера. Как проверить любой топ за один вечер. 7 октября 202612–15 минут
-
-[Читать статью](blog-post-kak-ii-sobiraet-reytingi-i-topy.html)
 
 ОСНОВЫ GEO
 
@@ -157,6 +166,7 @@ AI-ВИДИМОСТЬ
 AI-ВИДИМОСТЬ
 
 [◆ Почему не стоит накручивать упоминания →](blog-post-riski-nakrutki-upominanij.html)
+[◆ Schema.org для GEO →](blog-post-schema-org-dlya-geo.html)
 AI-видимость бренда
 
 Почему нейросети не рекомендуют ваш бренд и что с этим делать.
@@ -297,4 +307,4 @@ GEO-глоссарий
 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
 
-</pre></body></html>
+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>
