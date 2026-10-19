@@ -220,6 +220,7 @@ JSON-LD на всех страницах создаёт машинно чита�
 Похожие материалы
 
 [← Технический GEO-аудит: 20 проверок чек-листа](blog-post-tehnicheskiy-geo-audit.html)
+[← Schema.org для GEO: разметка, которая работает](/blog-post-schema-org-dlya-geo.html)
 [← Что внутри нашего аудита: этапы, артефакты и методологический протокол](blog-post-chto-vnutri-audita.html)
 [← Метрики AI-видимости: второй этап GEO-аудита](blog-post-metriki-ai-vidimosti-geo-audit.html)
 [← Автоматизация в GEO-Апгрейд: какие инструменты мы используем](blog-post-avtomatizaciya-v-geo-apgreyd.html)
