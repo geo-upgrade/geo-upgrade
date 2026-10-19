@@ -6,9 +6,17 @@
           margin: 0;
         }
     </style>
-    </head><body><pre style="width: 848ch; contain-intrinsic-height: 702em; content-visibility: visible"># GEO-словарь — термины AI-поиска, нейросетей и видимости бренда | GEO-Апгрейд
+    </head><body><pre style="width: 848ch; contain-intrinsic-height: 733.2em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
+    &lt;style&gt;
+        pre {
+          content-visibility: auto;
+          line-height: 1.2em;
+          margin: 0;
+        }
+    &lt;/style&gt;
+    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 848ch; contain-intrinsic-height: 702em; content-visibility: visible"&gt;# GEO-словарь — термины AI-поиска, нейросетей и видимости бренда | GEO-Апгрейд
 
-&gt; URL: https://geo-upgrade.ru/glossary.html
+&amp;gt; URL: https://geo-upgrade.ru/glossary.html
 
 **Назначение:** Термины AI-поиска и видимости простыми словами: GEO, AEO, цифровой призрак, зоны слепоты и др.
 
@@ -497,6 +505,15 @@ GEO-UPGRADE TERMINOLOGY
 
 **Лабораторный протокол** — зафиксированный порядок проверки: какие шаги выполняются, что измеряется, какие данные собираются и как делаются выводы.**Где используется:** технический аудит; замер AI-видимости; повторный замер.**Разница с GEO-протоколом:** GEO-протокол — документ о результатах; лабораторный протокол — порядок проверки, по которому этот документ получен.
 
+Авторский термин
+
+29. Эхо-кольцо
+
+**Эхо-кольцо** — цикл самоподдерживающейся ошибки: неточная формулировка о бренде копируется с площадки на площадку, модель видит несколько похожих упоминаний, принимает повторение за подтверждение — и ошибка тиражируется в новых ответах.
+**Как рождается:** фейковый отзыв, неточный каталог или чужая формулировка → копирование на другие площадки → модель считает совпадение «консенсусом» → ошибка возвращается в ответах ИИ.
+**Связано:** [цифровой призрак](#term-digital-ghost), [сигнальная связность](#term-signal-coherence), [эффект цифрового эха](blog-post-gallyutsinatsii-neurosetey.html) в статье о галлюцинациях.
+
+
 Метрики и методики
 
 Стандартная метрика
@@ -608,4 +625,4 @@ Presence Score
 ---
 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. Томск, Россия. Тел. +7 952 944-92-39, e-mail geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
-</pre></body></html>
+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>

@@ -5,10 +5,17 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sun, 18 Oct 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
     
+    <item>
+      <title>Почему не стоит «накручивать» упоминания: тёмная сторона GEO</title>
+      <link>https://geo-upgrade.ru/blog-post-riski-nakrutki-upominanij.html</link>
+      <description><![CDATA[Нейросеть нельзя убедить частотой: эхо-кольцо, цифровой призрак, 7 красных флагов накрутки и тест «переживёт ли сигнал проверку». С интерактивным стендом проверки предложения.]]></description>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-riski-nakrutki-upominanij.html</guid>
+    </item>
         <item>
       <title>Кому не нужен GEO: тест и 3 честных случая</title>
       <link>https://geo-upgrade.ru/blog-post-komu-ne-nuzhen-geo.html</link>

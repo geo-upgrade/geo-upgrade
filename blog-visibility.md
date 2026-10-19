@@ -6,9 +6,17 @@
           margin: 0;
         }
     </style>
-    </head><body><pre style="width: 517ch; contain-intrinsic-height: 64.8em; content-visibility: visible"># AI-видимость бренда — раздел блога GEO-Апгрейд
+    </head><body><pre style="width: 517ch; contain-intrinsic-height: 79.2em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
+    &lt;style&gt;
+        pre {
+          content-visibility: auto;
+          line-height: 1.2em;
+          margin: 0;
+        }
+    &lt;/style&gt;
+    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 517ch; contain-intrinsic-height: 64.8em; content-visibility: visible"&gt;# AI-видимость бренда — раздел блога GEO-Апгрейд
 
-&gt; URL: https://geo-upgrade.ru/blog-visibility.html
+&amp;gt; URL: https://geo-upgrade.ru/blog-visibility.html
 
 **Назначение:** Категорийная страница блога: статьи раздела «AI-видимость бренда» с краткими описаниями.
 
@@ -27,6 +35,8 @@ SECTION: AI-ВИДИМОСТЬ
 
 ## Статьи раздела
 
+- [Почему не стоит «накручивать» упоминания: тёмная сторона GEO](https://geo-upgrade.ru/blog-post-riski-nakrutki-upominanij.html) — 19 октября 2026 • 10–13 минут
+  Нейросеть нельзя убедить частотой: эхо-кольцо, цифровой призрак, красные флаги накрутки и тест «переживёт ли сигнал проверку». С интерактивным стендом.
 - [Частые ошибки брендов в AI-видимости: кабинет диагностики](https://geo-upgrade.ru/blog-post-chastye-oshibki-ai-vidimosti.html) — 16 октября 2026 • 10–13 минут
   Кабинет диагностики частых ошибок AI-видимости: полувидимость, старые цены, карточки без сигналов и техслой. С интерактивом «Кабинет диагностики».
 - [Галлюцинации нейросетей: что делать, если ИИ пишет о бренде неточности](https://geo-upgrade.ru/blog-post-gallyutsinatsii-neurosetey.html) — 7 октября 2026 • 12–15 минут
@@ -46,6 +56,7 @@ SECTION: AI-ВИДИМОСТЬ
 
 Как измерять AI-видимость и что делать с зонами слепоты: метрики, причины невидимости, техническая база.
 
+- Почему не стоит «накручивать» упоминания: тёмная сторона GEO — Нейросеть нельзя убедить частотой: эхо-кольцо, цифровой призрак, красные флаги накрутки и тест «переживёт ли сигнал проверку».
 - [Частые ошибки брендов в AI-видимости: кабинет диагностики](https://geo-upgrade.ru/blog-post-chastye-oshibki-ai-vidimosti.html) — Кабинет диагностики частых ошибок AI-видимости: полувидимость, старые цены, карточки без сигналов и техслой. С интерактивом «Кабинет диагностики».
 - [Галлюцинации ИИ о бренде: что делать, если нейросеть ошибается](https://geo-upgrade.ru/blog-post-gallyutsinatsii-neurosetey.html) — Эффект цифрового эха: почему нейросеть достраивает пустоту, три маски галлюцинаций, числа-магнит и протокол канонизации фактов. 4 шага, чек-лист и интерактивный протокол проверки.
 - Как нейросеть собирает рейтинги и топы: анатомия AI-списка — Три слоя происхождения списка: память модели, поисковый контекст и машиночитаемый слой. Формула «рейтинг ИИ = рейтинг его площадок» и протокол проверки любого топа за один вечер.
@@ -63,4 +74,4 @@ SECTION: AI-ВИДИМОСТЬ
 - [GEO для бизнеса](https://geo-upgrade.ru/blog-business.html)
 - [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
 - [AI-сигналы](https://geo-upgrade.ru/blog-news.html)
-</pre></body></html>
+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>
