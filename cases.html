@@ -425,10 +425,10 @@ nav[aria-label="Основная навигация"] a {
       <div class="flex items-center gap-3">
         <span class="exh-chip">● СТЕЛЛАЖ: ОТКРЫТ</span>
         <span class="exh-chip exh-chip-run">В РАБОТЕ: 2</span>
-        <span class="exh-chip exh-chip-ok">ЗАМЕРЫ ГОТОВЫ: 5</span>
+        <span class="exh-chip exh-chip-ok">ЗАМЕРЫ ГОТОВЫ: 6</span>
         <span class="exh-chip exh-chip-plan">ЗАПЛАНИРОВАНО: 2</span>
       </div>
-      <div class="text-sm text-[#B8BCC6]">Экспонатов на стенде: <span class="exh-num" style="font-size:1.5rem;vertical-align:middle">9</span></div>
+      <div class="text-sm text-[#B8BCC6]">Экспонатов на стенде: <span class="exh-num" style="font-size:1.5rem;vertical-align:middle">10</span></div>
     </div>
     <p class="mt-4 text-xs text-[#B8BCC6] mb-2">Статусы честные: «в работе» — материал собирается, «ждут данных» — цифры появятся после первого прогона, «запланировано» — тема выбрана, замер впереди. Страницы готовых замеров уже открыты: отслеживатель упоминаний, автообработка ответов на отзывы, проверка сайта по 17 пунктам и рейтинг Топ-160.</p>
   </div>
@@ -550,6 +550,21 @@ nav[aria-label="Основная навигация"] a {
         <a href="case-labbot.html" class="btn inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Открыть кейс: бот-лаборант →</a>
         <a href="https://workspace.ru/cases/razrabotka-telegram-bota-dlya-geo-apgreyd-teh-proverka-saytov-baza-znaniy-i-priem-zayavok/" target="_blank" rel="noopener" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Кейс на Workspace →</a>
         <a href="https://t.me/geo_upgrade_labbot" target="_blank" rel="noopener" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Попробовать Лаббота →</a>
+      </div>
+    </article>
+
+    <article id="exh-10" class="exhibit"><span class="exh-node exh-node-ok"></span>
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <span class="exh-id">EXH-10 · КЕЙС · 21.10.2026</span>
+        <span class="exh-chip exh-chip-ok">КЕЙС ОПУБЛИКОВАН · ЗАМЕРЫ ДВАЖДЫ В НЕДЕЛЮ</span>
+      </div>
+      <h3 class="mt-3 text-xl font-semibold">Бот «Отчёты»: автозамеры AI-видимости дважды в неделю</h3>
+      <p class="mt-3 text-sm text-[#B8BCC6] mb-2">Учебный замер отслеживателя вырос в автоматическую систему: по вторникам и субботам в 12:00 по Новосибирску робот прогоняет 20 фиксированных вопросов по двум упоминателям (компания и основатель), размечает ответы по шкале шотов 0–4, сравнивает с baseline и присылает в Telegram две сводки и два полных DOCX-отчёта с дословными текстами ответов и источниками.</p>
+      <p class="mt-3 text-sm text-[#B8BCC6] mb-2">Baseline обновляется сам, диф считается к предыдущему замеру: по каждому вопросу — «было → стало», новые и исчезнувшие источники, процент совпадения ответа. Шоты размечаются автоматически, спорные бот сам помечает «сверить вручную». Вариативность канала измерена: сдвиги меньше ±5 не считаются трендом. В живом отчёте нейросеть называет Дарью Жарких специалистом №1 по AI-видимости в Томске — и цитирует как источник наш собственный кейс Топ-160.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="case-reports.html" class="btn inline-block rounded-md bg-[#00F0FF] px-5 py-3 text-sm font-semibold text-[#0D0618]">Открыть кейс: бот «Отчёты» →</a>
+        <a href="https://workspace.ru/cases/avtomatizaciya-zamera-ai-vidimosti-bot-otchety-geo-apgreyd-svodki-dvazhdy-v-nedelyu/" target="_blank" rel="noopener" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Кейс на Workspace →</a>
+        <a href="case-tracker-mentions.html" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-5 py-3 text-sm font-semibold">Учебный отслеживатель — где всё началось →</a>
       </div>
     </article>
 
