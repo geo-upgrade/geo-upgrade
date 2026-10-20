@@ -103,6 +103,7 @@
 - Telegram: https://t.me/geoupgrade
 - [🔬 Чат-бот тех-проверки в Telegram](https://t.me/geo_upgrade_labbot): Бесплатная тех-проверка сайта по 10 приборам прямо в Telegram — отчёт за пару минут. Полная ссылка: https://t.me/geo_upgrade_labbot. Там же: заявка на бесплатный мини-аудит и вопросы лаборатории.
 - ВКонтакте: https://vk.ru/geo.upgrade
+- WhatsApp: https://wa.me/79521572955 (мессенджер лаборатории, номер офиса в Новосибирске)
 - [2ГИС Новосибирск](https://2gis.ru/novosibirsk/geo/70000001118650762): карточка офиса в Новосибирске, ул. Гоголя, 209
 - [Авито Новосибирск](https://www.avito.ru/brands/a689faf0fc1a53cfe40d4eab4e5e3aa4): бренд-страница GEO-Апгрейд в Новосибирске
 - [Zoon Новосибирск](https://zoon.ru/nsk/business/ekspertnaya_laboratoriya_geo-apgrejd/): карточка «Экспертная лаборатория GEO-Апгрейд», ул. Гоголя, 209
