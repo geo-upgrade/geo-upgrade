@@ -33,6 +33,10 @@
 > Открыть кейс: https://workspace.ru/cases/razrabotka-telegram-bota-dlya-geo-apgreyd-teh-proverka-saytov-baza-znaniy-i-priem-zayavok/
 > Страница кейса на сайте: /case-labbot.html
 
+### «Разработка бота Сигнал: заявки с сайта GEO-Апгрейд приходят в Telegram за секунды» — кейс бота Сигнал на Workspace (21.10.2026)
+
+> Открыть кейс: https://workspace.ru/cases/razrabotka-bota-signal/
+
 ### «Топ-160 Томска: как нейросеть видит местный бизнес» — статья в Дзене
 
 ### «Через сколько окупается GEO? Замерили на себе: 15 дней от нуля до рекомендаций нейросети»
