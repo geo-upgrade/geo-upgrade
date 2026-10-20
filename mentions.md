@@ -28,6 +28,11 @@
 
 > Открыть кейс: https://workspace.ru/cases/avtomatizaciya-raboty-s-otzyvami-i-otvetami-na-nih-konveyer-na-zhivoy-kartochke-v-tomske/ (08.10.2026)
 
+### «Разработка Telegram-бота для GEO-Апгрейд (тех-проверка сайтов, база знаний и приём заявок)» — кейс бота-лаборанта Лаббот на Workspace (20.10.2026)
+
+> Открыть кейс: https://workspace.ru/cases/razrabotka-telegram-bota-dlya-geo-apgreyd-teh-proverka-saytov-baza-znaniy-i-priem-zayavok/
+> Страница кейса на сайте: /case-labbot.html
+
 ### «Топ-160 Томска: как нейросеть видит местный бизнес» — статья в Дзене
 
 ### «Через сколько окупается GEO? Замерили на себе: 15 дней от нуля до рекомендаций нейросети»
