@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA+AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgVJREFUeJylkztoVFEQhr8559zduw83RoKEaBRUVBQfIFgEBbERQQtLESJR1kiwkIiNFja2YmMXEUFbG1PoEoIg2ASCCUQhqMEHghhFTET3Ps4di7uJQdLtNDNn5p85A/8/Ug03Km2YaacZwAEgkr90xTJLuSVbraaKU2OQNIEsA+dATB6nKaD/GqwDY/JcnIAIGgQ4kohsXRcahsj8PJLGaLkC1SpqLYggzQhZWIA4AiDr7kbSFPk2j9gHzzTbsbs1NaF46QLasZZ45C58XYQQzNRrwsEz+J27iG/cRDdtA1XM9Etg6ocWT9S11LNXi8f6tbTloBZO1pWfqoXTw1rq2aOl3v1a6tyqpjGrMv1dwwPHtXBqSHnn1QUP72Oej5EOXoayRxYXEGPht5KcGyI93499Mo4dfUS2bzvu9h3MzBTyYQ47PobTWgf4DFRJrg5DEiKTE+AyXOMx5tUk8vlLzoIH1tQgiqDioVzBpWcHII4wb2bhD+BTEIUOixoLSYZ2rcdOvMCOPiUd6Ec+zqEbevFHDyHBlVvq+w6DK2DezhDcG0GrNeJr18EHUC0i7z9RHL4IhQJJfQjfdwSiJna8gVToVERa/KcQFMEFy5SRZbkvlfO4+QvEtYSlSLWyWZdVJpKDVHPRKCAtPWmW141hJd7h/eoiX/p55amp8j++7WNqe8BfwsTb5mYAskEAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFU0lEQVR42u2Xa4hd1RXHf2vvfc59TO5NZsYkkzhDoy1qBEFrBaUvaEsJlL5MExVbEBUKFVEQCwVLP1QstdBWqQ2FPigllIDmg5WipTV9xKpVqgRbopYqJtGZzCt37p1z7z3n7L36YZ/rTNoG2k/5Mgs297DO3v/73+t9ZFN9WjmPYjjPskFgg8B5J+DUSHwSiUsBFDQuoVKNROScYKKgum63cDb26GyFHQk4h2iAPIeyBFXUCFgHSQIqEHxFTsGX6H8hIaooAsacTdZa8GXE9xWOc5DWUBEcwwHaaBAu3Y1esB2sRVZ7yOwp5ORJNHik0QAf0HodbbVADIwsp4AGVAPkBdLtIgoYQQHJeujkVsJFF6ObJ8CXyOlZzJtvQJHjiptuwX9+H+F9l0GrAQmQgywuY147RnLgEcwLz0JZ4D/yMfKHHoZVXbMIQAjQEMwrr1K7/QZUDGgAa8nvvJdy7w3o1DRsslACK33M317G/eKnuOL+B6KvLNBVZLGLpim6dRx/1UeRN05QO/p7Qr2ONpvoeBsccaWsWWEMdH4HWIeKIBiG3/4B/gt7IKs8MtdFa3WYaBA+dB35B67DkXlwgnvsEPbxw8jSAiQJum07fs+nkFNvoWkafWkMDBUsyPHXSX7yw0i+yBH1sHwm7u2tUNx6B37vHlgoYNAn+f6D2BefQxtNyi/dhv/0Z6EMOFoWe/AQyf33QZpE0wZF/vk69pk/omNjaHszZBkYF0PbgSwvYX/zRLzaIEOGOaQpumUctkxQXn8jdAOMJSSPfA/3y5/B+CRSlqTf+gbD915CuOIyHJ0c9/ij0GyATWC1F32bJKhTGPShOQa2CjwBCkVndlHcc18kUOSQBMyLL2F/9yThiqvQnTOgBpb72KNPQ2szBIVaHVZ7mD8dIVy9GyeLS3DmTEy7fkZ599fwV14OfaBmkcVl0ge+DoNBdIEAuaIzU5R331IFIdAG+9Bh3K8eQycmIXUgIJ0zsNKtUjWgvozP83NQgou+rYpE8PhrriV84nI4DdRAZjO0VsMYieZXwAqy2EWePx4JlAU0BfP3Y5CkMe9H9WiEv746SaUXcLptEt1xIcy+De0tJN/5JnpwB8UdX0Wnt0G3C2JikRmVxZogL79Keu9XAEWGA8hLsAbd1MLMzUJ/AM06OjGBTm5FlhbRJI1FqJ+hM7vAgqFm8F+8FVwC/Qzz0l+wT/82Vq7EVOWzKp1B1zpICEi2ivQzyDJkkCHdDhiDnHgT84/jkCg0HeXn9sdYGg6gs4xeOIP/+CchCzj64D/4YYYP/xj75BPI8hK6fQpabRj6qpQGxJeVaT0MFJ3aSfHluyLBskQI0B9gHz2ILMzjfv4j8msPQC/gr99Hbh32mSNoewt+/83o1FSMHY7nypwqC6rMqzJb/b6jyrKqHD2l9fe8X5v1nZruu1PpqHJSldOq9NatYTzbuPgabbYv0ubYtCZ3PRj3zqqyuA57XpU5VXluTl3ttv34z+wlXHk1Or413rjXRd45gX3hWexTv8Z0OjF8Zt/GHnkeHei7QRuzQBED9FYh68emlqYkB76LOfZXyhtvJlyyG9oT0VoLc5g//wF3+BDSbE4rRQHtNrqpFYEHA2Slg/T7kKYxsgENPoKbdbExaq8hRCJp7d22q9Yg/SzuGp9AG2OgAVnpQK8H9Toy1tqlKoJ4H/+g6mQYi4hEYNWoF8AY9JzzQEVkvVgbCfkSDQFEEGvBWAgBFwMo9m4RszZEeH82kK7p5RzDyL9PLwrxYlX+i7EVhoIv4kAiowP6P3yf6P/3XiqdjF7qxlC6QWCDwH/KvwASIpEQWO092wAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta charset="UTF-8"><link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мини-продукты GEO-Апгрейда — быстрый вход в AI-видимость</title>
+<meta name="description" content="GEO-Зеркало 2 500 ₽, GEO-Детектор конкурента 3 000 ₽ и AI-Паспорт компании 3 500 ₽ — фиксированные цены, сроки от 24 часов. Быстрый вход в AI-видимость бренда.">
+<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin><style>
+/* fonts.css (inlined, PSI #4) */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(orbitron-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(orbitron-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(orbitron-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(orbitron-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+<style>
+html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px;opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.22,1,.36,1)}.card.visible{opacity:1;transform:translateY(0)}.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13)}.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}.btn{opacity:0;transform:translateY(20px);transition:all .8s cubic-bezier(.22,1,.36,1)}.btn.visible{opacity:1;transform:translateY(0)}.btn:hover{transform:translateY(-2px)}.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}.table{width:100%;border-collapse:collapse;margin:1.5rem 0}.table th,.table td{border:1px solid rgba(184,188,198,.3);padding:.75rem;text-align:left}.table th{background:rgba(0,240,255,.08);color:#00F0FF}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none;opacity:1;transform:none}.card:hover,.btn:hover{transform:none}}
+
+.faq-item{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px;transition:border-color .3s,box-shadow .3s}.faq-item:hover{border-color:rgba(0,240,255,.5)}.faq-item[open]{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13)}.faq-item summary{list-style:none;cursor:pointer;position:relative;padding-right:2.5rem}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary::after{content:'+';position:absolute;right:1.1rem;top:1.05rem;font-family:'Orbitron',sans-serif;color:#00F0FF;font-size:1.15rem;line-height:1;transition:transform .3s}.faq-item[open] summary::after{transform:rotate(45deg)}.faq-item .faq-a{padding:0 1.25rem 1.25rem}@media(prefers-reduced-motion:reduce){.faq-item{transition:none}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"GEO-аудит и AI-видимость бренда","provider":{"@type":"Organization","name":"GEO-Апгрейд","url":"https://geo-upgrade.ru","email":"geo.upgrade@bk.ru","telephone":"+79529449239","founder":{"@type":"Person","name":"Жарких Дарья Александровна","jobTitle":"GEO-маркетолог и AI-консультант","address":{"@type":"PostalAddress","addressLocality":"Томск","addressCountry":"RU"}},"sameAs": ["https://t.me/geoupgrade", "https://vk.ru/geo.upgrade", "https://2gis.ru/novosibirsk/geo/70000001118650762", "https://www.avito.ru/brands/a689faf0fc1a53cfe40d4eab4e5e3aa4", "https://zoon.ru/nsk/business/ekspertnaya_laboratoriya_geo-apgrejd/", "https://www.yell.ru/novosibirsk/com/geo-apgrejd_14527356/"]},"areaServed":"RU","url":"https://geo-upgrade.ru/mini-products.html","sameAs": ["https://t.me/geoupgrade", "https://vk.ru/geo.upgrade", "https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933", "https://profi.ru/profile/ZharkikhDA3/", "https://workspace.ru/id/darya-zharkih/", "https://www.klerk.ru/user/2726432/", "https://dzen.ru/id/6ab4b86296401f17f0716d4b", "https://g.page/r/CSUI5EnmoeeoEBM/review", "https://maps.app.goo.gl/R8nnURT4CwAqi3nc7", "https://yandex.ru/profile/84156063982", "https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7", "https://2gis.ru/tomsk/geo/70000001118166258", "https://tomsk.flamp.ru/geo_upgrade", "https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/", "https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/", "https://2gis.ru/novosibirsk/geo/70000001118650762", "https://www.avito.ru/brands/a689faf0fc1a53cfe40d4eab4e5e3aa4", "https://zoon.ru/nsk/business/ekspertnaya_laboratoriya_geo-apgrejd/", "https://www.yell.ru/novosibirsk/com/geo-apgrejd_14527356/"]}</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://geo-upgrade.ru"}, {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://geo-upgrade.ru/mini-products.html"}, {"@type": "ListItem", "position": 3, "name": "Мини-продукты", "item": "https://geo-upgrade.ru/mini-products.html"}]}
+</script>
+
+  <link rel="canonical" href="https://geo-upgrade.ru/mini-products.html">
+  <meta property="og:url" content="https://geo-upgrade.ru/mini-products.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://geo-upgrade.ru/og-cover.jpg">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="GEO-Апгрейд">
+  <meta property="og:title" content="Мини-продукты GEO-Апгрейда — быстрый вход в AI-видимость">
+  <meta property="og:description" content="GEO-Зеркало 2 500 ₽, GEO-Детектор конкурента 3 000 ₽ и AI-Паспорт компании 3 500 ₽ — фиксированные цены, сроки от 24 часов. Быстрый вход в AI-видимость бренда.">
+  <style>.h1-calc{font-size:inherit;font-weight:inherit}</style>
+  <style>
+#calc-wrap {
+    --bg: #0D0618;
+    --card: #16092A;
+    --card-hover: #1B0B31;
+    --border: rgba(184,188,198,.28);
+    --text: #F5F7FA;
+    --text-dim: #B8BCC6;
+    --accent: #00F0FF;
+    --accent-hover: #4FF5FF;
+    --accent-dim: rgba(0,240,255,.32);
+    --green: #34D399;
+    --radius: 10px;
+  }
+#calc-wrap * { margin: 0; padding: 0; box-sizing: border-box; }
+#calc-wrap {
+    font-family: 'Exo 2', sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+  }
+#calc-wrap .calc-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+#calc-wrap .calc-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+#calc-wrap .calc-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+#calc-wrap .calc-header p {
+    color: var(--text-dim);
+    font-size: 15px;
+  }
+#calc-wrap .step-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #00F0FF;
+    margin-bottom: 12px;
+  }
+#calc-wrap .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+#calc-wrap .service-card {
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+#calc-wrap .service-card:hover {
+    background: var(--card-hover);
+    border-color: var(--accent-dim);
+  }
+#calc-wrap .service-card.active {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, var(--card) 0%, #1a1a2e 100%);
+  }
+#calc-wrap .service-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+#calc-wrap .service-card .price-range {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+#calc-wrap .service-card .service-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 6px;
+  }
+#calc-wrap .params-section {
+    display: none;
+    margin-bottom: 32px;
+  }
+#calc-wrap .params-section.visible {
+    display: block;
+    animation: fadeIn 0.3s;
+  }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+#calc-wrap .param-group {
+    margin-bottom: 20px;
+  }
+#calc-wrap .param-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+#calc-wrap .param-hint {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+#calc-wrap .radio-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+#calc-wrap .radio-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.15s;
+    background: var(--card);
+    user-select: none;
+  }
+#calc-wrap .radio-pill:hover { border-color: var(--accent-dim); }
+#calc-wrap .radio-pill.active {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    color: #fff;
+  }
+#calc-wrap .radio-pill input { display: none; }
+#calc-wrap .toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+#calc-wrap .toggle {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+#calc-wrap .toggle.on { background: var(--accent); }
+#calc-wrap .toggle::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+#calc-wrap .toggle.on::after { transform: translateX(20px); }
+#calc-wrap .toggle-label { font-size: 14px; }
+
+#calc-wrap .result-section {
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 8px;
+  }
+#calc-wrap .result-section.has-result {
+    border-color: var(--accent);
+  }
+#calc-wrap .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+#calc-wrap .result-row:last-child { border-bottom: none; }
+#calc-wrap .result-row .label { color: var(--text-dim); }
+#calc-wrap .result-row .value { font-weight: 600; }
+#calc-wrap .result-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 2px solid var(--border);
+  }
+#calc-wrap .result-total .label {
+    font-size: 16px;
+    font-weight: 700;
+  }
+#calc-wrap .result-total .price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+#calc-wrap .result-meta {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 12px;
+    text-align: center;
+  }
+#calc-wrap .cta-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: #0D0618;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 16px;
+    text-decoration: none;
+    text-align: center;
+  }
+#calc-wrap .cta-btn:hover { background: var(--accent-hover); }
+#calc-wrap .cta-btn:disabled {
+    background: var(--border);
+    color: var(--text-dim);
+    cursor: not-allowed;
+  }
+@media (max-width: 600px) {
+#calc-wrap .service-grid { grid-template-columns: 1fr; }
+
+#calc-wrap .calc-header h1 { font-size: 22px; }
+}
+</style>
+<link rel="stylesheet" href="tailwind.min.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script><script>document.documentElement.classList.remove('no-js');</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Почему цены фиксированные?", "acceptedAnswer": {"@type": "Answer", "text": "Состав каждого мини-продукта ограничен и одинаков для всех: замер, разбор или сборка в понятных рамках. Поэтому цена — одно число, без вилок и скрытых условий."}}, {"@type": "Question", "name": "Чем мини-продукты отличаются от GEO-сканера Лайт?", "acceptedAnswer": {"@type": "Answer", "text": "Зеркало — точечный замер «как видят сейчас», Детектор — конкурентный разбор по данным замера, Паспорт — готовый материал для сайта и площадок. GEO-сканер Лайт — полноценная диагностика с локальным GEO, картой зон слепоты и отчётом: она шире всех трёх вместе."}}, {"@type": "Question", "name": "С чего начать, если непонятно, что нужно?", "acceptedAnswer": {"@type": "Answer", "text": "С бесплатного мини-аудита: три запроса и две AI-системы покажут стартовую точку. Дальше мы подскажем, какой мини-продукт закроет задачу."}}, {"@type": "Question", "name": "Засчитывается ли Зеркало в большую услугу?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Стоимость GEO-Зеркала засчитывается в GEO-сканер Лайт или Полный при заказе в течение 14 дней с даты отчёта."}}]}
+</script>
+<style>
+/* perf-fixes.css (inlined, PSI #4) */
+/* perf-fixes.css — расширение зон тапа (Accessibility). Визуально ничего не меняет. */
+header a, footer a, .geoas-chip, .fc-btn, a.btn { position: relative; }
+header a::before, footer a::before, .geoas-chip::before { content: ""; position: absolute; inset: -10px; }
+.fc-btn::before, a.btn::before { content: ""; position: absolute; inset: -4px; }
+
+
+/* ── v2 (07.10, вечер): A11Y — тап-зоны основной навигации ──────────────
+   Пункты меню были меньше 24px по высоте (text-sm без отступов).
+   Увеличиваем зону нажатия и расстояние между пунктами до ≥24px (WCAG 2.5.8).
+   Визуально меню становится чуть «воздушнее» — это ожидаемо. */
+nav[aria-label="Основная навигация"] {
+  gap: 4px 24px; /* было gap-x-4 (16px) gap-y-2 (8px) */
+}
+nav[aria-label="Основная навигация"] a {
+  display: inline-block;
+  padding: 6px 8px; /* зона нажатия 14+12 = 26px по высоте */
+}
+</style>
+<style>
+/* jnav B6.1: мобильное меню + полоса основных страниц (не применяется на index) */
+.jnav-btn{display:none;position:relative;z-index:60;width:44px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid rgba(0,240,255,.55);border-radius:8px;background:rgba(0,240,255,.08);cursor:pointer;transition:border-color .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn span{display:block;width:20px;height:2px;background:#00F0FF;border-radius:1px;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn:hover,.jnav-btn:focus-visible{border-color:rgba(0,240,255,.9);box-shadow:0 0 14px rgba(0,240,255,.35)}
+.jnav-btn:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+.jnav-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.jnav-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.jnav-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.jnav-beige{border-color:rgba(212,184,150,.55);background:rgba(212,184,150,.08)}
+.jnav-beige span{background:#D4B896}
+.jnav-beige:hover,.jnav-beige:focus-visible{border-color:rgba(212,184,150,.9);box-shadow:0 0 14px rgba(212,184,150,.3)}
+@media(min-width:768px){.jnav-btn,.jnav-strip{display:none!important}}
+@media(max-width:767.98px){
+.jnav-btn{display:flex}
+.jnav-nav{display:none!important;position:absolute;left:12px;right:12px;top:calc(100% + 8px);z-index:59;flex-direction:column;gap:2px;padding:10px;border:1px solid rgba(0,240,255,.35);border-radius:12px;background:rgba(13,6,24,.97);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(0,240,255,.12);backdrop-filter:blur(10px)}
+.jnav-open .jnav-nav{display:flex!important}
+.jnav-nav a{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:8px;font-size:1rem;color:#F5F7FA;text-decoration:none;opacity:0;transform:translateX(-8px);transition:opacity .25s ease,transform .25s ease}
+.jnav-open .jnav-nav a{opacity:1;transform:none}
+.jnav-nav a:nth-child(1){transition-delay:.02s}.jnav-nav a:nth-child(2){transition-delay:.05s}.jnav-nav a:nth-child(3){transition-delay:.08s}.jnav-nav a:nth-child(4){transition-delay:.11s}.jnav-nav a:nth-child(5){transition-delay:.14s}.jnav-nav a:nth-child(6){transition-delay:.17s}.jnav-nav a:nth-child(7){transition-delay:.2s}.jnav-nav a:nth-child(8){transition-delay:.23s}.jnav-nav a:nth-child(9){transition-delay:.26s}.jnav-nav a:nth-child(10){transition-delay:.29s}.jnav-nav a:nth-child(11){transition-delay:.32s}.jnav-nav a:nth-child(12){transition-delay:.35s}.jnav-nav a:nth-child(13){transition-delay:.38s}
+.jnav-nav a:hover{background:rgba(0,240,255,.08)}
+.jnav-nav a.text-\[\#00F0FF\]{background:rgba(0,240,255,.1);border:1px solid rgba(0,240,255,.4)}
+.jnav-nav a.accent-beige,.jnav-nav a.text-\[\#D4B896\]{background:rgba(212,184,150,.1);border:1px solid rgba(212,184,150,.4)}
+.jnav-nav::before{content:"МЕНЮ";display:block;font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:.25em;color:rgba(0,240,255,.7);padding:6px 12px 8px}
+.jnav-beige-panel .jnav-nav{border-color:rgba(212,184,150,.35);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(212,184,150,.1)}
+.jnav-beige-panel .jnav-nav::before{color:rgba(212,184,150,.8)}
+.jnav-beige-panel .jnav-nav a:hover{background:rgba(212,184,150,.08)}
+.jnav-strip{display:flex;gap:8px;overflow-x:auto;padding:8px 12px 10px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(0,240,255,.15);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-strip::-webkit-scrollbar{display:none}
+.jnav-strip a{flex:0 0 auto;padding:6px 12px;border-radius:999px;border:1px solid rgba(0,240,255,.3);font-size:.8rem;color:#F5F7FA;text-decoration:none;background:rgba(0,240,255,.05)}
+.jnav-strip a.jnav-here{border-color:rgba(0,240,255,.8);color:#00F0FF;background:rgba(0,240,255,.12)}
+.jnav-beige-panel + .jnav-strip{border-bottom-color:rgba(212,184,150,.2)}
+.jnav-beige-panel + .jnav-strip a{border-color:rgba(212,184,150,.3);background:rgba(212,184,150,.05)}
+.jnav-beige-panel + .jnav-strip a.jnav-here{border-color:rgba(212,184,150,.8);color:#D4B896;background:rgba(212,184,150,.12)}
+}
+</style>
+<noscript><style>@media(max-width:767.98px){.jnav-btn{display:none!important}.jnav-nav{position:static!important;display:flex!important;flex-wrap:wrap;gap:6px 8px;padding:10px 0 2px;opacity:1}.jnav-nav a{opacity:1;transform:none;display:inline-block;padding:8px 10px;font-size:.9rem}.jnav-nav::before{content:none}}</style></noscript><style>
+/* jnav B6.4: единый стиль с главной (текстовые ссылки, неон-ховер) */
+.jnav-quick a{border:none;background:none;padding:6px 4px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none}
+.jnav-quick a:hover{color:#00F0FF;background:none}
+.jnav-quick a.jnav-here{color:#00F0FF;background:none}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{border:none;background:none;padding:6px 2px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none;white-space:nowrap}
+.jnav-strip a:hover{color:#00F0FF;background:none}
+.jnav-strip a.jnav-here{color:#00F0FF;background:none}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+@media(max-width:767.98px){
+.jnav-strip::-webkit-scrollbar{display:none}
+}
+</style>
+<style>/* jnav B6.4: быстрые пункты в хедере (стиль главной) + полоса «остальное» */
+.jnav-quick{display:none}
+@media(min-width:768px){.jnav-quick{display:none!important}}
+@media(max-width:767.98px){
+.jnav-quick{display:flex;gap:10px;align-items:center;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-quick::-webkit-scrollbar{display:none}
+.jnav-quick a{flex:0 0 auto;padding:6px 4px;font-size:.8rem;line-height:1.2;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-quick a:hover,.jnav-quick a.jnav-here{color:#00F0FF}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{flex:0 0 auto;padding:6px 2px;font-size:.8rem;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-strip a:hover,.jnav-strip a.jnav-here{color:#00F0FF}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+}
+</style>
+</head>
+<body>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><section class="max-w-6xl mx-auto px-5 pt-10"><div class="card p-6 md:p-8 visible glow"><p class="font-heading text-xs tracking-[.2em] text-[#00F0FF]">MINI PRODUCTS / БЫСТРЫЙ ВХОД В ЛАБОРАТОРИЮ</p><h1 class="mt-4 text-3xl md:text-5xl font-bold">Мини-продукты GEO-Апгрейда</h1><p class="mt-6 text-base md:text-lg text-[#B8BCC6]">Быстрый вход в GEO и AI-видимость: три компактных формата с фиксированной ценой — чтобы познакомиться с методикой до большого аудита.</p><p class="mt-4 text-[#B8BCC6]">Мини-продукты — первая платная ступень после бесплатного мини-аудита. Каждый формат ограничен по объёму и сроку: вы получаете конкретный результат за фиксированную цену — без вилок, брифов «на потом» и скрытых условий.</p><div class="mt-8 flex flex-col sm:flex-row gap-4"><a href="contacts.html?service=mini-mirror#form" class="btn glow inline-block rounded-md bg-[#00F0FF] px-7 py-4 text-center font-semibold text-[#0D0618] visible">Заказать мини-продукт</a><a href="#mini-products" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold visible">Смотреть все три формата</a></div><p class="mt-5 text-sm text-[#B8BCC6]">Заявки принимаются через форму на странице контактов — как и у всех услуг лаборатории.</p></div></section><div class="divider"></div><section id="mini-products" class="lab-grid max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] text-center text-[#00F0FF]">ЛИНЕЙКА МИНИ-ПРОДУКТОВ</p><h2 class="mt-4 text-center text-3xl md:text-5xl font-bold">Три ступени входа</h2><p class="mt-4 text-center text-[#B8BCC6] max-w-2xl mx-auto">«Посмотреть» → «сравнить» → «получить материал». Каждый продукт — фиксированная цена, фиксированный срок и понятный состав работ.</p><div class="mt-10 space-y-8"><article id="geo-mirror" class="card p-6 md:p-8"><p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">SNAPSHOT</p><h3 class="mt-3 text-2xl font-semibold">GEO-Зеркало</h3><p class="mt-3 text-[#B8BCC6]">Снапшот AI-видимости: как нейросети видят бренд прямо сейчас. Первый платный шаг после бесплатного мини-аудита — до того, как выбирать большое исследование.</p><div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"><div><h4 class="font-semibold text-[#00F0FF]">Что делаем</h4><ul class="mt-3 space-y-2 text-sm text-[#B8BCC6]"><li>◆ Замер по 10–15 запросам: 7–10 шопинг-интентных («лучший X в городе», «где купить X») и 3–5 репутационных («стоит ли X», «отзывы о X»)</li><li>◆ Прогон по методике замеров лаборатории — модели, как в замерах Топ-160</li><li>◆ Скрин каждого ответа и фиксация источников</li><li>◆ Карта: где бренд появляется, где нет, где искажён</li></ul></div><div><h4 class="font-semibold text-[#00F0FF]">Что получает клиент</h4><ul class="mt-3 space-y-2 text-sm text-[#B8BCC6]"><li>◆ Карту ответов по каждому запросу</li><li>◆ Ровно 3 зоны слепоты с приоритетами P0/P1/P2</li><li>◆ Вердикт с рекомендацией следующего шага</li><li>◆ Лабораторную карточку-отчёт (DOCX) со скринами в приложении</li></ul></div></div><article class="mt-6 p-4 bg-[#130A20]/50 rounded-md border border-[#B8BCC6]/20"><p class="text-xs text-[#B8BCC6]"><strong>Важно:</strong> Зеркало фиксирует состояние AI-систем на дату замера и не обещает позиций в ответах. Если в ответах есть искажения — они фиксируются как находки, а не как «появился».</p></article><p class="mt-3 text-sm font-semibold text-[#00F0FF]">2 500 ₽ · 24 часа · фиксированная цена</p><article class="mt-6 p-4 bg-[#130A20]/50 rounded-md border border-[#B8BCC6]/20"><p class="text-xs text-[#B8BCC6]"><strong>Зачёт:</strong> стоимость GEO-Зеркала засчитывается в GEO-сканер Лайт или Полный при заказе в течение 14 дней с даты отчёта.</p></article><a href="contacts.html?service=mini-mirror#form" class="btn mt-6 inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">Заказать GEO-Зеркало</a><a href="free-audit.html" class="btn mt-3 inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold">Начать с бесплатного мини-аудита →</a></article><article id="geo-detector" class="card p-6 md:p-8"><p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">COMPETITOR SCAN</p><h3 class="mt-3 text-2xl font-semibold">GEO-Детектор конкурента</h3><p class="mt-3 text-[#B8BCC6]">Кого нейросети называют вместо вас — и почему их цитируемо больше. Разбор привязан к реальным ответам, а не к списку «с кем мы себя сравниваем».</p><div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"><div><h4 class="font-semibold text-[#00F0FF]">Что делаем</h4><ul class="mt-3 space-y-2 text-sm text-[#B8BCC6]"><li>◆ Замер по 10 запросам ниши: шопинг-интенты, сравнения, репутация — город вписывается в запросы</li><li>◆ Конкурент №1 — назван вами; конкуренты №2–№3 — два бренда, которых нейросети реально называют чаще всего по данным замера</li><li>◆ Разбор каждого: на каких площадках берут факты, чем цитируем — по методикам лаборатории</li><li>◆ Слабые стороны конкурентов — только подкреплённые замером</li></ul></div><div><h4 class="font-semibold text-[#00F0FF]">Что получает клиент</h4><ul class="mt-3 space-y-2 text-sm text-[#B8BCC6]"><li>◆ Сводную карту «кто звучит вместо нас»</li><li>◆ Три карточки конкурентов с пометкой: источник выбора (клиент / замер) и тип (компания / агрегатор)</li><li>◆ По каждому: что перенять и где можем обогнать</li><li>◆ План контрдействий: 3–5 действий со сроками и ожидаемым эффектом</li><li>◆ Отчёт DOCX со скринами в приложении</li></ul></div></div><article class="mt-6 p-4 bg-[#130A20]/50 rounded-md border border-[#B8BCC6]/20"><p class="text-xs text-[#B8BCC6]"><strong>Важно:</strong> если в ответах вместо компаний звучат агрегаторы и каталоги, они включаются в разбор с пометкой «агрегатор» — это тоже конкурент за место в ответе.</p></article><p class="mt-3 text-sm font-semibold text-[#00F0FF]">3 000 ₽ · 48 часов · фиксированная цена</p><a href="contacts.html?service=mini-detector#form" class="btn mt-6 inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">Заказать GEO-Детектор</a><a href="geo-scanner-lite.html" class="btn mt-3 inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold">Подробнее: GEO-сканер Лайт →</a></article><article id="ai-passport" class="card p-6 md:p-8"><p class="font-heading text-xs tracking-[.16em] text-[#00F0FF]">BRAND PASSPORT</p><h3 class="mt-3 text-2xl font-semibold">AI-Паспорт компании</h3><p class="mt-3 text-[#B8BCC6]">Факт-файл, который нейросети могут цитировать честно: позиционирование, услуги, цифры, кейсы и FAQ — собранные из ваших данных, без выдумок.</p><div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"><div><h4 class="font-semibold text-[#00F0FF]">Что делаем</h4><ul class="mt-3 space-y-2 text-sm text-[#B8BCC6]"><li>◆ Короткая анкета из 9 блоков — вы отвечаете своими словами</li><li>◆ Факты превращаем в формулировки, готовые к цитированию: прямой ответ в первом предложении, конкретные числа, без оценочных обещаний</li><li>◆ В паспорт вносятся только подтверждённые вами факты — ничего не придумываем</li><li>◆ Рекомендации, куда встраивать: сайт, JSON-LD, страницы-носители, карточки и профили</li></ul></div><div><h4 class="font-semibold text-[#00F0FF]">Что получает клиент</h4><ul class="mt-3 space-y-2 text-sm text-[#B8BCC6]"><li>◆ Готовый факт-файл (паспорт компании)</li><li>◆ Рекомендации по встраиванию: носитель + формат для каждого</li><li>◆ Чек-лист публикации площадок</li><li>◆ Контрольный замер по 5 запросам через 2–4 недели после публикации — входит в стоимость</li></ul></div></div><article class="mt-6 p-4 bg-[#130A20]/50 rounded-md border border-[#B8BCC6]/20"><p class="text-xs text-[#B8BCC6]"><strong>Важно:</strong> паспорт не гарантирует цитирование. Он даёт нейросетям точный и цитируемый источник фактов — вместо пустоты, которую они достраивают сами.</p></article><p class="mt-3 text-sm font-semibold text-[#00F0FF]">3 500 ₽ · 48 часов (от заполненной анкеты) · фиксированная цена</p><a href="contacts.html?service=mini-passport#form" class="btn mt-6 inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">Заказать AI-Паспорт</a><a href="blog-post-schema-org-dlya-geo.html" class="btn mt-3 inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold">Подробнее: Schema.org для GEO →</a></article></div></section><section class="max-w-6xl mx-auto px-5 py-16 md:py-24"><h2 class="text-3xl md:text-5xl font-bold">Как мини-продукты вписываются в линейку</h2><p class="mt-6 text-[#B8BCC6]">Мини-продукты — первая платная ступень лестницы. Дальше — полноценные исследования и стратегии, когда понадобится масштаб.</p><div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"><article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">01</b><h3 class="mt-3 font-semibold">Бесплатный мини-аудит</h3><p class="mt-2 text-sm text-[#B8BCC6]">0 ₽ · 3 запроса × 2 AI-системы. Стартовая точка.</p></article><article class="card p-5 border-[#00F0FF]/40 glow"><b class="font-heading text-2xl text-[#00F0FF]">02</b><h3 class="mt-3 font-semibold">Мини-продукты</h3><p class="mt-2 text-sm text-[#B8BCC6]">2 500–3 500 ₽ · от 24 часов. Вы здесь.</p></article><article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">03</b><h3 class="mt-3 font-semibold">GEO-сканер Лайт</h3><p class="mt-2 text-sm text-[#B8BCC6]">8 000 ₽ · 5–7 дней. Полноценная диагностика.</p></article><article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">04</b><h3 class="mt-3 font-semibold">GEO-сканер Полный</h3><p class="mt-2 text-sm text-[#B8BCC6]">12 000–20 000 ₽ · 7–10 дней. Расширенный аудит.</p></article><article class="card p-5"><b class="font-heading text-2xl text-[#00F0FF]">05</b><h3 class="mt-3 font-semibold">Тест-драйв / Штурвал</h3><p class="mt-2 text-sm text-[#B8BCC6]">от 30 000 ₽. Цикл с внедрением и методикой.</p></article></div><article class="mt-8 p-4 bg-[#130A20]/50 rounded-md border border-[#B8BCC6]/20"><p class="text-xs text-[#B8BCC6]"><strong>Зачёт:</strong> стоимость GEO-Зеркала (2 500 ₽) засчитывается в GEO-сканер Лайт или Полный при заказе в течение 14 дней с даты отчёта — как GEO-тест-драйв засчитывается в GEO-штурвал.</p></article></section><section class="max-w-6xl mx-auto px-5 py-16 md:py-24"><h2 class="text-3xl md:text-5xl font-bold">Частые вопросы</h2><div class="mt-8 space-y-4"><details class="faq-item"><summary class="px-5 py-4 font-semibold">Почему цены фиксированные?</summary><div class="faq-a px-5 pb-5 text-sm text-[#B8BCC6]">Состав каждого мини-продукта ограничен и одинаков для всех: замер, разбор или сборка в понятных рамках. Поэтому цена — одно число, без вилок и скрытых условий.</div></details><details class="faq-item"><summary class="px-5 py-4 font-semibold">Чем мини-продукты отличаются от GEO-сканера Лайт?</summary><div class="faq-a px-5 pb-5 text-sm text-[#B8BCC6]">Зеркало — точечный замер «как видят сейчас», Детектор — конкурентный разбор по данным замера, Паспорт — готовый материал для сайта и площадок. GEO-сканер Лайт — полноценная диагностика с локальным GEO, картой зон слепоты и отчётом: она шире всех трёх вместе.</div></details><details class="faq-item"><summary class="px-5 py-4 font-semibold">С чего начать, если непонятно, что нужно?</summary><div class="faq-a px-5 pb-5 text-sm text-[#B8BCC6]">С бесплатного мини-аудита: три запроса и две AI-системы покажут стартовую точку. Дальше мы подскажем, какой мини-продукт закроет задачу.</div></details><details class="faq-item"><summary class="px-5 py-4 font-semibold">Засчитывается ли Зеркало в большую услугу?</summary><div class="faq-a px-5 pb-5 text-sm text-[#B8BCC6]">Да. Стоимость GEO-Зеркала засчитывается в GEO-сканер Лайт или Полный при заказе в течение 14 дней с даты отчёта.</div></details></div></section><section class="max-w-6xl mx-auto px-5 pb-16 md:pb-24"><div class="card p-6 md:p-8 glow text-center"><h2 class="text-2xl md:text-4xl font-bold">Готовы заглянуть в зеркало?</h2><p class="mt-4 text-[#B8BCC6]">Подайте заявку через форму на контактах — укажите бренд и сайт, остальное уточним в переписке. Отвечаем в рабочие часы: Пн–Пт, 12:00–20:00 (UTC+7).</p><a href="contacts.html?service=mini-mirror#form" class="btn glow inline-block mt-6 rounded-md bg-[#00F0FF] px-7 py-4 font-semibold text-[#0D0618]">Подать заявку на мини-продукт</a></div></section><footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="96" height="96"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">GEO-маркетолог и AI-консультант Жарких Дарья Александровна</p><p class="mt-2 text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера, 22, 634009 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a></p><p class="mt-2 text-sm text-[#B8BCC6]">г. Новосибирск, ул. Гоголя, 209, 630015 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79521572955" class="hover:text-[#00F0FF]">+7 952 157-29-55</a></p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p></div><span class="flex items-center gap-2" aria-label="Соцсети GEO-Апгрейд"><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M21.94 4.05c.28-1.16-.9-2.1-1.94-1.68L2.3 9.62c-1.15.46-1.09 2.11.09 2.5l4.35 1.4 1.62 5.2c.34 1.1 1.72 1.32 2.42.42l2.16-2.65 4.5 3.32c.97.72 2.37.2 2.6-.98L21.94 4.05zM8.5 13.06l8.93-5.5c.26-.16.53.19.31.4l-7.1 6.44c-.3.28-.5.65-.56 1.05l-.3 2.2c-.04.28-.42.31-.51.04l-1.16-3.75c-.13-.4.05-.84.39-1.08z"/></svg></a><a href="https://max.ru/u/f9LHodD0cOKn5NlqWfUehS5ZCaGQ9oLqwIkL5vvgygrWfsgupZ45s41702Q" target="_blank" rel="noopener" aria-label="MAX" title="MAX" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M4 4h16v13a2 2 0 0 1-2 2H9l-4 3V6a2 2 0 0 1 2-2h-3z"/></svg></a><a href="https://dzen.ru/id/6ab4b86296401f17f0716d4b" target="_blank" rel="noopener" aria-label="Дзен" title="Дзен" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2h.9v8.1H21v1.8h-8.1V22h-1.8v-8.1H3v-1.8h8.1V2z"/></svg></a></span><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
+<script>
+document.addEventListener('DOMContentLoaded',function(){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});var cards=document.querySelectorAll('.card,.btn');cards.forEach(function(card){observer.observe(card)});var headerBtn=document.querySelector('header .btn');if(headerBtn){headerBtn.classList.add('visible')}});
+</script>
+<script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
+<script src="/geo-assistant-widget.js" defer></script>
+
+<script>
+/* jnav B6.1: мобильное меню + полоса основных страниц */
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.querySelector('.jnav-btn'),panel=document.getElementById('jnav-panel');
+  if(!btn||!panel){return}
+  var hdr=btn.closest('header')||document.body;
+  function set(open){hdr.classList.toggle('jnav-open',open);btn.setAttribute('aria-expanded',open?'true':'false');btn.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню')}
+  btn.addEventListener('click',function(){set(btn.getAttribute('aria-expanded')!=='true')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false)}});
+  document.addEventListener('click',function(e){if(btn.getAttribute('aria-expanded')==='true'&&!panel.contains(e.target)&&!btn.contains(e.target)){set(false)}});
+  window.addEventListener('resize',function(){if(window.innerWidth>=768){set(false)}});
+  var strip=document.querySelector('.jnav-strip');
+  if(strip){
+    var cur=(location.pathname.split('/').pop()||'index.html');
+    if(cur===''||cur==='index.html'){cur='index'}
+    strip.querySelectorAll('a').forEach(function(a){
+      var t=a.getAttribute('href').replace('./','').replace('.html','');
+      if(t===cur||(cur==='index'&&t==='index')){a.classList.add('jnav-here')}
+    });
+  }
+});
+</script>
+<script>
+/* jnav B6.4: подсветка текущей страницы в quick и strip */
+document.addEventListener('DOMContentLoaded',function(){
+  var cur=(location.pathname.split('/').pop()||'').replace('.html','');
+  if(cur===''){cur='index'}
+  document.querySelectorAll('.jnav-quick a,.jnav-strip a').forEach(function(a){
+    var t=a.getAttribute('href').replace('./','').replace('.html','');
+    if(t===cur){a.classList.add('jnav-here')}
+  });
+});
+</script>
+</body>
+</html>
