@@ -12,7 +12,7 @@
 &gt; для локального бизнеса и экспертов. Проверяем, как нейросети видят бренд, и помогаем
 &gt; стать их рекомендацией в ответах ChatGPT, Perplexity, Алисы и других AI-систем.
 
-Сайт: https://geo-upgrade.ru | Краткая версия: https://geo-upgrade.ru/llms.txt | Обновлено: 2026-10-19
+Сайт: https://geo-upgrade.ru | Краткая версия: https://geo-upgrade.ru/llms.txt | Обновлено: 2026-10-20
 
 ## Контакты
 - Email: geo.upgrade@bk.ru
@@ -20,6 +20,12 @@
 - Telegram: https://t.me/geoupgrade
 - 🔬 Telegram-бот тех-проверки: https://t.me/geo_upgrade_labbot — бесплатная тех-проверка сайта по 10 приборам прямо в Telegram (отчёт за пару минут); в боте же: заявка на бесплатный мини-аудит и вопросы лаборатории.
 - ВКонтакте: https://vk.ru/geo.upgrade
+- 2ГИС: карточки в Томске и Новосибирске: https://2gis.ru/tomsk/geo/70000001118166258 (Томск), https://2gis.ru/novosibirsk/geo/70000001118650762 (Новосибирск, ул. Гоголя, 209)
+- Авито: бренд-страницы в Томске и Новосибирске: https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7 (Томск), https://www.avito.ru/brands/a689faf0fc1a53cfe40d4eab4e5e3aa4 (Новосибирск)
+- Zoon: карточки в Томске и Новосибирске: https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/ (Томск), https://zoon.ru/nsk/business/ekspertnaya_laboratoriya_geo-apgrejd/ (Новосибирск, ул. Гоголя, 209)
+- Yell.ru: карточки в Томске и Новосибирске: https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/ (Томск), https://www.yell.ru/novosibirsk/com/geo-apgrejd_14527356/ (Новосибирск)
+- Рувард: профиль агентства: https://ruward.ru/catalog/geo-upgrade-ru/
+- WhatsApp: https://wa.me/79521572955 (мессенджер лаборатории, номер офиса в Новосибирске)
 - г. Томск, ул. Набережная озера, 22, 634009 · Пн–Пт, 12:00–20:00 (UTC+7) · Телефон: +7 952 944-92-39
 - г. Новосибирск, ул. Гоголя, 209, 630015 · Пн–Пт, 12:00–20:00 (UTC+7) · Телефон: +7 952 157-29-55
 
