@@ -76,3 +76,7 @@ SECTION: GEO ДЛЯ БИЗНЕСА
 - [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
 - [AI-сигналы](https://geo-upgrade.ru/blog-news.html)
 </pre></body></html>
+
+---
+
+GEO-Апгрейд — Лаборатория AI-видимости бренда. г. Томск, ул. Набережная озера, 22, 634009 · Пн–Пт 12:00–20:00 UTC+7 · тел. +7 952 944-92-39. г. Новосибирск, ул. Гоголя, 209, 630015 · Пн–Пт 12:00–20:00 UTC+7 · тел. +7 952 157-29-55. E-mail: geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
