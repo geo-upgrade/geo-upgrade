@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проверка авторских терминов: словарь в ответах ИИ | GEO-Апгрейд</title>
+<meta name="description" content="15 анонимных запросов в Алисе AI без аккаунта: узнаёт ли нейросеть термины лаборатории GEO-Апгрейд и связывает ли их с брендом. Скрины, таблицы, источники.">
+<meta name="theme-color" content="#0D0618">
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA+AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgVJREFUeJylkztoVFEQhr8559zduw83RoKEaBRUVBQfIFgEBbERQQtLESJR1kiwkIiNFja2YmMXEUFbG1PoEoIg2ASCCUQhqMEHghhFTET3Ps4di7uJQdLtNDNn5p85A/8/Ug03Km2YaacZwAEgkr90xTJLuSVbraaKU2OQNIEsA+dATB6nKaD/GqwDY/JcnIAIGgQ4kohsXRcahsj8PJLGaLkC1SpqLYggzQhZWIA4AiDr7kbSFPk2j9gHzzTbsbs1NaF46QLasZZ45C58XYQQzNRrwsEz+J27iG/cRDdtA1XM9Etg6ocWT9S11LNXi8f6tbTloBZO1pWfqoXTw1rq2aOl3v1a6tyqpjGrMv1dwwPHtXBqSHnn1QUP72Oej5EOXoayRxYXEGPht5KcGyI93499Mo4dfUS2bzvu9h3MzBTyYQ47PobTWgf4DFRJrg5DEiKTE+AyXOMx5tUk8vlLzoIH1tQgiqDioVzBpWcHII4wb2bhD+BTEIUOixoLSYZ2rcdOvMCOPiUd6Ec+zqEbevFHDyHBlVvq+w6DK2DezhDcG0GrNeJr18EHUC0i7z9RHL4IhQJJfQjfdwSiJna8gVToVERa/KcQFMEFy5SRZbkvlfO4+QvEtYSlSLWyWZdVJpKDVHPRKCAtPWmW141hJd7h/eoiX/p55amp8j++7WNqe8BfwsTb5mYAskEAAAAASUVORK5CYII=">
+<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin>
+<style>
+/* fonts.css (inlined, PSI #4) */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(orbitron-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(orbitron-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(orbitron-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(orbitron-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<link rel="canonical" href="https://geo-upgrade.ru/case-terms.html">
+<link rel="stylesheet" href="tailwind.min.css">
+<meta property="og:url" content="https://geo-upgrade.ru/case-terms.html">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-10-22">
+<meta property="article:modified_time" content="2026-10-22">
+<meta property="og:title" content="Проверка авторских терминов: словарь в ответах ИИ | GEO-Апгрейд">
+<meta property="og:description" content="15 анонимных запросов в Алисе AI без аккаунта: узнаёт ли нейросеть термины лаборатории GEO-Апгрейд и связывает ли их с брендом. Скрины, таблицы, источники.">
+<meta property="og:site_name" content="GEO-Апгрейд">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://geo-upgrade.ru/cover-case-terms-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Проверка авторских терминов: словарь лаборатории в ответах ИИ", "description": "15 анонимных запросов в Алисе AI без аккаунта: узнаёт ли нейросеть термины лаборатории GEO-Апгрейд и связывает ли их с брендом. Скрины, таблицы, источники.", "author": {"@type": "Person", "name": "Жарких Дарья Александровна"}, "publisher": {"@type": "Organization", "name": "GEO-Апгрейд", "sameAs": ["https://t.me/geoupgrade", "https://vk.ru/geo.upgrade", "https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933", "https://profi.ru/profile/ZharkikhDA3/", "https://workspace.ru/id/darya-zharkih/", "https://www.klerk.ru/user/2726432/", "https://dzen.ru/id/6ab4b86296401f17f0716d4b", "https://g.page/r/CSUI5EnmoeeoEBM/review", "https://maps.app.goo.gl/R8nnURT4CwAqi3nc7", "https://yandex.ru/profile/84156063982", "https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7", "https://2gis.ru/tomsk/geo/70000001118166258", "https://tomsk.flamp.ru/geo_upgrade", "https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/", "https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/", "https://2gis.ru/novosibirsk/geo/70000001118650762", "https://www.avito.ru/brands/a689faf0fc1a53cfe40d4eab4e5e3aa4", "https://zoon.ru/nsk/business/ekspertnaya_laboratoriya_geo-apgrejd/", "https://www.yell.ru/novosibirsk/com/geo-apgrejd_14527356/"], "url": "https://geo-upgrade.ru", "logo": {"@type": "ImageObject", "url": "https://geo-upgrade.ru/favicon.ico"}}, "datePublished": "2026-10-22", "dateModified": "2026-10-22", "inLanguage": "ru", "mainEntityOfPage": "https://geo-upgrade.ru/case-terms.html"}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://geo-upgrade.ru/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Кейсы и эксперименты",
+      "item": "https://geo-upgrade.ru/cases.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Кейс: проверка авторских терминов",
+      "item": "https://geo-upgrade.ru/case-terms.html"
+    }
+  ]
+}
+</script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}
+h1,h2,h3,h4{font-family:'Orbitron',sans-serif;line-height:1.15}
+[id]{scroll-margin-top:5.5rem}
+.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}
+.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}
+.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px}
+.card:hover{border-color:rgba(0,240,255,.65)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}
+.term{color:#00F0FF;font-weight:600}
+.callout{background:rgba(0,240,255,.03);border-left:4px solid #00F0FF;padding:1rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
+table.data{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
+table.data th,table.data td{border:1px solid rgba(184,188,188,.3);padding:.7rem;text-align:left;vertical-align:top}
+table.data th{background:rgba(0,240,255,.08);color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.8rem;letter-spacing:.06em}
+.table-wrap{overflow-x:auto;margin:1.5rem 0}
+.shot{font-family:'Orbitron',sans-serif;font-size:.72rem;border-radius:12px;padding:2px 10px;white-space:nowrap;display:inline-block}
+.shot.hi{background:rgba(52,211,153,.15);color:#34D399;border:1px solid rgba(52,211,153,.6)}
+.shot.mid{background:rgba(0,240,255,.12);color:#00F0FF;border:1px solid rgba(0,240,255,.5)}
+.shot.low{background:rgba(244,114,182,.12);color:#F472B6;border:1px solid rgba(244,114,182,.55)}
+.shot.mod{background:rgba(248,113,113,.15);color:#F87171;border:1px solid rgba(248,113,113,.6)}
+.shot.trap{background:rgba(251,191,36,.12);color:#FBBF24;border:1px solid rgba(251,191,36,.55)}
+.qcard{border:1px solid rgba(184,188,198,.25);border-left:3px solid #00F0FF;border-radius:10px;padding:.9rem 1.1rem;margin:.75rem 0;background:rgba(13,6,24,.88)}
+.qcard .top{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.3rem}
+.qcard .num{font-family:'Orbitron',sans-serif;color:#00F0FF;font-size:.78rem;letter-spacing:.08em}
+.qcard .qtext{font-size:.92rem;color:#B8BCC6;margin-bottom:.4rem}
+.qcard .ans{font-size:.94rem}
+.qcard .src{font-size:.78rem;color:#8A93A6;margin-top:.4rem}
+.qcard .note{font-size:.82rem;color:#F472B6;margin-top:.4rem}
+.find{border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:.9rem 1.1rem;margin:.6rem 0;background:rgba(13,6,24,.88)}
+.find.mod{border-color:rgba(248,113,113,.55);background:rgba(248,113,113,.06)}
+.find h3{font-size:1.15rem;color:#00F0FF;margin:0 0 .4rem}
+.find.mod h3{color:#F87171}
+.find p{font-size:.92rem;margin:0}
+.score{font-family:'Orbitron',sans-serif;font-size:2.4rem;color:#00F0FF;font-weight:700;text-shadow:0 0 18px rgba(0,240,255,.4)}
+.blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:1rem}
+.blk{border:1px solid rgba(184,188,198,.25);border-radius:8px;padding:.6rem .7rem;background:rgba(27,11,49,.75)}
+.blk b{font-family:'Orbitron',sans-serif;font-size:.85rem;color:#00F0FF}
+.blk span{color:#B8BCC6;font-size:.76rem;display:block}
+.bar{height:6px;border-radius:4px;background:rgba(184,188,198,.2);margin-top:.45rem;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#00F0FF,#7C6CFF);border-radius:4px}
+@media(max-width:640px){.blocks{grid-template-columns:1fr 1fr}}
+.shot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.25rem 0}
+@media(max-width:640px){.shot-grid{grid-template-columns:1fr}}
+.shot-grid figure{margin:0;border:1px solid rgba(184,188,198,.25);border-radius:10px;overflow:hidden;background:rgba(13,6,24,.88)}
+.shot-grid img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(184,188,198,.2)}
+.shot-grid figcaption{padding:.7rem .9rem;font-size:.82rem;color:#B8BCC6}
+.shot-grid figcaption b{color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem}
+.toc{border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:1rem 1.2rem;background:rgba(13,6,24,.88)}
+.toc ol{margin:.4rem 0 0 1.2rem;padding:0}
+.toc a{color:#B8BCC6;text-decoration:none}
+.toc a:hover{color:#00F0FF}
+nav.page-nav{display:flex;flex-wrap:wrap;gap:1rem;padding:.5rem 0}
+nav.page-nav a{color:#00F0FF;text-decoration:none;font-size:.85rem}
+nav.page-nav a:hover{text-decoration:underline}
+.scan-line{position:relative;overflow:hidden}
+.scan-line::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 0,rgba(0,240,255,.08) 50%,transparent 100%);animation:scan 4s linear infinite}
+@keyframes scan{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+@media(prefers-reduced-motion:reduce){.scan-line::after{animation:none}}
+.h-toc{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:.14em;color:#00F0FF;text-transform:uppercase}
+.checklist{list-style:none;padding-left:0}.checklist li{position:relative;padding-left:1.75rem;margin-bottom:.75rem}.checklist li:before{content:"✓";position:absolute;left:0;color:#00F0FF;font-weight:bold}
+
+.bot-shot{margin:1.25rem auto 1.5rem;max-width:340px;border:1px solid rgba(184,188,198,.25);border-radius:10px;overflow:hidden;background:rgba(13,6,24,.88)}
+.bot-shot img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(184,188,198,.2)}
+.bot-shot figcaption{padding:.7rem .9rem;font-size:.82rem;color:#B8BCC6}
+.bot-shot figcaption b{color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem}
+@media(min-width:768px){.bot-shot{max-width:420px}}
+.exh-chip{display:inline-block;padding:.3rem .75rem;border-radius:9999px;border:1px solid rgba(0,240,255,.35);font-size:.75rem;font-family:'Orbitron',sans-serif;letter-spacing:.08em;color:#00F0FF;background:rgba(0,240,255,.06)}
+.exh-chip-ok{border-color:rgba(52,211,153,.45);color:#34D399;background:rgba(52,211,153,.07)}
+.exh-chip-run{border-color:rgba(251,191,36,.45);color:#FBBF24;background:rgba(251,191,36,.07)}
+.exh-chip-wait{border-color:rgba(139,92,246,.5);color:#A78BFA;background:rgba(139,92,246,.08)}
+.exh-chip-plan{border-color:rgba(184,188,198,.45);color:#B8BCC6;background:rgba(184,188,198,.06)}
+.exh-id{font-family:'Orbitron',sans-serif;font-size:.78rem;letter-spacing:.14em;color:#00F0FF}
+.exh-num{font-family:'Orbitron',sans-serif;font-size:2.25rem;line-height:1;color:#00F0FF;text-shadow:0 0 18px rgba(0,240,255,.45)}
+.exh-label{display:inline-block;padding:.3rem .65rem;border-radius:6px;background:rgba(0,240,255,.1);border:1px solid rgba(0,240,255,.4);color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:.12em}
+.rack{position:relative;padding-left:2.25rem}
+.rack:before{content:"";position:absolute;left:.65rem;top:.4rem;bottom:.4rem;width:2px;background:linear-gradient(180deg,transparent,rgba(0,240,255,.35) 12%,rgba(0,240,255,.35) 88%,transparent)}
+.exh-node{position:absolute;left:.15rem;top:1.35rem;width:1rem;height:1rem;border-radius:9999px;background:#0D0618;border:2px solid #00F0FF;box-shadow:0 0 10px rgba(0,240,255,.45)}
+.exh-node-ok{border-color:#34D399;box-shadow:0 0 10px rgba(52,211,153,.45)}
+.exh-node-run{border-color:#FBBF24;box-shadow:0 0 10px rgba(251,191,36,.4)}
+.exh-node-wait{border-color:#A78BFA;box-shadow:0 0 10px rgba(139,92,246,.4)}
+.exh-node-plan{border-color:rgba(184,188,198,.6)}
+.exhibit{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.75rem;position:relative}
+.exhibit:hover{border-color:rgba(0,240,255,.55);box-shadow:0 10px 28px rgba(0,240,255,.12)}
+
+/* — EXH-05 «Проверка авторских терминов»: кастом кейса — */
+.term-chip{display:inline-block;padding:.2rem .55rem;border-radius:6px;border:1px solid rgba(0,240,255,.4);color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.68rem;letter-spacing:.06em;background:rgba(0,240,255,.05)}
+.term-chip.ok{border-color:rgba(52,211,153,.5);color:#34D399;background:rgba(52,211,153,.06)}
+.term-chip.drift{border-color:rgba(248,113,113,.5);color:#F87171;background:rgba(248,113,113,.06)}
+.term-chip.fant{border-color:rgba(167,139,250,.5);color:#A78BFA;background:rgba(167,139,250,.06)}
+.term-chip.ctrl{border-color:rgba(184,188,198,.45);color:#B8BCC6;background:rgba(184,188,198,.06)}
+.term-list{list-style:none;padding-left:0;margin:1rem 0}
+.term-list li{position:relative;padding-left:2rem;margin-bottom:.6rem;font-size:.95rem}
+.term-list li:before{content:attr(data-n);position:absolute;left:0;top:.2rem;font-family:'Orbitron',sans-serif;font-size:.72rem;color:#00F0FF;letter-spacing:.05em}
+.term-list .g{font-size:.76rem;color:#8A93A6;font-family:'Orbitron',sans-serif;letter-spacing:.06em;margin-right:.4rem}
+.term-list .res{font-size:.78rem;white-space:nowrap}
+.term-list .res.ok{color:#34D399}.term-list .res.drift{color:#F87171}.term-list .res.fant{color:#A78BFA}.term-list .res.ctrl{color:#B8BCC6}
+.quote-block{border-left:4px solid rgba(0,240,255,.55);background:rgba(0,240,255,.04);padding:.9rem 1.1rem;border-radius:0 10px 10px 0;margin:1rem 0}
+.quote-block .qt{font-size:.95rem}
+.quote-block .qs{font-size:.76rem;color:#8A93A6;margin-top:.45rem;font-family:'Orbitron',sans-serif;letter-spacing:.06em}
+.quote-block.win{border-left-color:rgba(52,211,153,.6);background:rgba(52,211,153,.05)}
+.quote-block.drift{border-left-color:rgba(248,113,113,.55);background:rgba(248,113,113,.05)}
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin:1.1rem 0}
+@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.stat{border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:.75rem .8rem;background:rgba(27,11,49,.75);text-align:center}
+.stat .n{font-family:'Orbitron',sans-serif;font-size:1.7rem;color:#00F0FF;text-shadow:0 0 14px rgba(0,240,255,.35);line-height:1.1}
+.stat.ok .n{color:#34D399;text-shadow:0 0 14px rgba(52,211,153,.35)}
+.stat.drift .n{color:#F87171;text-shadow:0 0 14px rgba(248,113,113,.3)}
+.stat.fant .n{color:#A78BFA;text-shadow:0 0 14px rgba(167,139,250,.3)}
+.stat p{font-size:.72rem;color:#B8BCC6;margin:.4rem 0 0}
+.mini-table{width:100%;border-collapse:collapse;font-size:.84rem;margin:.8rem 0}
+.mini-table th,.mini-table td{border:1px solid rgba(184,188,198,.25);padding:.5rem .6rem;text-align:left;vertical-align:top}
+.mini-table th{background:rgba(0,240,255,.08);color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.06em}
+.table-wrap{overflow-x:auto;margin:1.5rem 0}
+.infographic{margin:1.5rem auto;max-width:760px;border:1px solid rgba(184,188,198,.25);border-radius:12px;overflow:hidden;background:rgba(13,6,24,.88)}
+.infographic img{width:100%;height:auto;display:block}
+.infographic figcaption{padding:.7rem .95rem;font-size:.82rem;color:#B8BCC6}
+.term-shot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.1rem 0}
+@media(max-width:640px){.term-shot-grid{grid-template-columns:1fr}}
+.term-shot{margin:0;border:1px solid rgba(184,188,198,.25);border-radius:10px;overflow:hidden;background:rgba(13,6,24,.88)}
+.term-shot img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(184,188,198,.2)}
+.term-shot figcaption{padding:.7rem .9rem;font-size:.8rem;color:#B8BCC6}
+.term-shot figcaption b{color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:.08em;display:block;margin-bottom:.25rem}
+.shot-attr{margin:1.4rem auto;max-width:400px;border:1px solid rgba(52,211,153,.45);border-radius:10px;overflow:hidden;background:rgba(13,6,24,.88);box-shadow:0 0 22px rgba(52,211,153,.15)}
+.shot-attr img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(52,211,153,.35)}
+.shot-attr figcaption{padding:.75rem .95rem;font-size:.82rem;color:#B8BCC6}
+.shot-attr figcaption b{color:#34D399;font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem}
+.tsrc{font-size:.76rem;color:#8A93A6}
+.tsrc a{color:#8A93A6;text-decoration:underline}
+.hero-cover{max-width:360px;margin:0 auto}
+.hero-cover img{width:100%;height:auto;border-radius:14px;border:1px solid rgba(0,240,255,.35)}
+.hero-cover figcaption{text-align:center;font-size:.75rem;color:#B8BCC6;margin-top:.5rem}
+
+.badge-author{background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.5);color:#A78BFA}
+
+article p{margin:0 0 1.05rem}
+</style>
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<script>document.documentElement.classList.remove('no-js');</script>
+<link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
+<style>
+/* jnav B6.1: мобильное меню + полоса основных страниц (не применяется на index) */
+.jnav-btn{display:none;position:relative;z-index:60;width:44px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid rgba(0,240,255,.55);border-radius:8px;background:rgba(0,240,255,.08);cursor:pointer;transition:border-color .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn span{display:block;width:20px;height:2px;background:#00F0FF;border-radius:1px;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn:hover,.jnav-btn:focus-visible{border-color:rgba(0,240,255,.9);box-shadow:0 0 14px rgba(0,240,255,.35)}
+.jnav-btn:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+.jnav-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.jnav-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.jnav-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.jnav-beige{border-color:rgba(212,184,150,.55);background:rgba(212,184,150,.08)}
+.jnav-beige span{background:#D4B896}
+.jnav-beige:hover,.jnav-beige:focus-visible{border-color:rgba(212,184,150,.9);box-shadow:0 0 14px rgba(212,184,150,.3)}
+@media(min-width:768px){.jnav-btn,.jnav-strip{display:none!important}}
+@media(max-width:767.98px){
+.jnav-btn{display:flex}
+.jnav-nav{display:none!important;position:absolute;left:12px;right:12px;top:calc(100% + 8px);z-index:59;flex-direction:column;gap:2px;padding:10px;border:1px solid rgba(0,240,255,.35);border-radius:12px;background:rgba(13,6,24,.97);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(0,240,255,.12);backdrop-filter:blur(10px)}
+.jnav-open .jnav-nav{display:flex!important}
+.jnav-nav a{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:8px;font-size:1rem;color:#F5F7FA;text-decoration:none;opacity:0;transform:translateX(-8px);transition:opacity .25s ease,transform .25s ease}
+.jnav-open .jnav-nav a{opacity:1;transform:none}
+.jnav-nav a:nth-child(1){transition-delay:.02s}.jnav-nav a:nth-child(2){transition-delay:.05s}.jnav-nav a:nth-child(3){transition-delay:.08s}.jnav-nav a:nth-child(4){transition-delay:.11s}.jnav-nav a:nth-child(5){transition-delay:.14s}.jnav-nav a:nth-child(6){transition-delay:.17s}.jnav-nav a:nth-child(7){transition-delay:.2s}.jnav-nav a:nth-child(8){transition-delay:.23s}.jnav-nav a:nth-child(9){transition-delay:.26s}.jnav-nav a:nth-child(10){transition-delay:.29s}.jnav-nav a:nth-child(11){transition-delay:.32s}.jnav-nav a:nth-child(12){transition-delay:.35s}.jnav-nav a:nth-child(13){transition-delay:.38s}
+.jnav-nav a:hover{background:rgba(0,240,255,.08)}
+.jnav-nav a.text-\[\#00F0FF\]{background:rgba(0,240,255,.1);border:1px solid rgba(0,240,255,.4)}
+.jnav-nav a.accent-beige,.jnav-nav a.text-\[\#D4B896\]{background:rgba(212,184,150,.1);border:1px solid rgba(212,184,150,.4)}
+.jnav-nav::before{content:"МЕНЮ";display:block;font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:.25em;color:rgba(0,240,255,.7);padding:6px 12px 8px}
+.jnav-beige-panel .jnav-nav{border-color:rgba(212,184,150,.35);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(212,184,150,.1)}
+.jnav-beige-panel .jnav-nav::before{color:rgba(212,184,150,.8)}
+.jnav-beige-panel .jnav-nav a:hover{background:rgba(212,184,150,.08)}
+.jnav-strip{display:flex;gap:8px;overflow-x:auto;padding:8px 12px 10px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(0,240,255,.15);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-strip::-webkit-scrollbar{display:none}
+.jnav-strip a{flex:0 0 auto;padding:6px 12px;border-radius:999px;border:1px solid rgba(0,240,255,.3);font-size:.8rem;color:#F5F7FA;text-decoration:none;background:rgba(0,240,255,.05)}
+.jnav-strip a.jnav-here{border-color:rgba(0,240,255,.8);color:#00F0FF;background:rgba(0,240,255,.12)}
+.jnav-beige-panel + .jnav-strip{border-bottom-color:rgba(212,184,150,.2)}
+.jnav-beige-panel + .jnav-strip a{border-color:rgba(212,184,150,.3);background:rgba(212,184,150,.05)}
+.jnav-beige-panel + .jnav-strip a.jnav-here{border-color:rgba(212,184,150,.8);color:#D4B896;background:rgba(212,184,150,.12)}
+}
+</style>
+<style>@media(max-width:767.98px){.jnav-btn{display:none!important}.jnav-nav{position:static!important;display:flex!important;flex-wrap:wrap;gap:6px 8px;padding:10px 0 2px;opacity:1}.jnav-nav a{opacity:1;transform:none;display:inline-block;padding:8px 10px;font-size:.9rem}.jnav-nav::before{content:none}}</style>
+<style>
+/* jnav B6.4: единый стиль с главной (текстовые ссылки, неон-ховер) */
+.jnav-quick a{border:none;background:none;padding:6px 4px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none}
+.jnav-quick a:hover{color:#00F0FF;background:none}
+.jnav-quick a.jnav-here{color:#00F0FF;background:none}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{border:none;background:none;padding:6px 2px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none;white-space:nowrap}
+.jnav-strip a:hover{color:#00F0FF;background:none}
+.jnav-strip a.jnav-here{color:#00F0FF;background:none}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+@media(max-width:767.98px){
+.jnav-strip::-webkit-scrollbar{display:none}
+}
+</style>
+<style>/* jnav B6.4: быстрые пункты в хедере (стиль главной) + полоса «остальное» */
+.jnav-quick{display:none}
+@media(min-width:768px){.jnav-quick{display:none!important}}
+@media(max-width:767.98px){
+.jnav-quick{display:flex;gap:10px;align-items:center;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-quick::-webkit-scrollbar{display:none}
+.jnav-quick a{flex:0 0 auto;padding:6px 4px;font-size:.8rem;line-height:1.2;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-quick a:hover,.jnav-quick a.jnav-here{color:#00F0FF}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{flex:0 0 auto;padding:6px 2px;font-size:.8rem;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-strip a:hover,.jnav-strip a.jnav-here{color:#00F0FF}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+}
+</style>
+<body>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
+
+<main>
+<section class="lab-grid scan-line">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <div class="flex flex-col md:flex-row gap-10 md:gap-14 items-center">
+      <div class="max-w-2xl">
+        <p class="font-heading text-xs tracking-[.2em] text-[#00F0FF]">CASE LAB · АНОНИМНЫЙ ЗАМЕР · 15 ЗАПРОСОВ · ЭКСПЕРИМЕНТ EXH-05</p>
+        <h1 class="mt-4 text-3xl md:text-5xl font-bold">Проверка авторских терминов: узнаёт ли нейросеть наш словарь</h1>
+        <p class="mt-6 text-base md:text-lg text-[#B8BCC6]">Мы задали анонимной Алисе AI пятнадцать вопросов об авторских терминах лаборатории — «цифровой призрак», «контентный маяк», «запросный двойник» — и о нас самих. Без аккаунта, без подсказок, каждая сессия чистая. Пять терминов из тринадцати модель раскрыла в нашем смысле, а на вопрос «кто придумал термин» ответила именем основателя лаборатории.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#results" class="btn glow inline-block rounded-md bg-[#00F0FF] px-7 py-4 text-center font-semibold text-[#0D0618]">Результаты прогона</a>
+          <a href="#shots" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold">Скрины ответов</a>
+        </div>
+      </div>
+      <figure class="hero-cover">
+        <img src="cover-case-terms.jpg" alt="Обложка кейса: проверка авторских терминов — цифровой призрак в лабораторной колбе и неоновый маяк на тёмно-фиолетовом фоне GEO-Апгрейд" width="1024" height="1024" style="width:100%;height:auto;border-radius:14px;border:1px solid rgba(0,240,255,.35)" loading="eager">
+        <figcaption>Обложка кейса: цифровой призрак в лабораторной колбе и неоновый маяк</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="max-w-3xl mx-auto px-5 py-12">
+  <div class="lab-card">
+    <p class="h-toc">Case type: Lab Protocol</p>
+    <table class="data">
+      <tr><th>Экспонат</th><td>EXH-05 · проверка авторских терминов лаборатории</td></tr>
+      <tr><th>Запуск</th><td>вечер 21 октября 2026 · старт прогона 23:05 по Новосибирску · скрины фиксируют 23:22 и 23:25</td></tr>
+      <tr><th>Инструмент</th><td>инструмент «Протокол прогона»: 15 запросов в 4 группах, журнал ответов, авторасчёт сводки</td></tr>
+      <tr><th>Нейросеть</th><td>Алиса AI, веб-версия, без аккаунта · новая сессия на каждый запрос · копипаст, без подсказок</td></tr>
+      <tr><th>Что проверяли</th><td>узнавание 13 авторских терминов, связку «термин → бренд», узнавание интерактива, всплывание бренда в нише города</td></tr>
+      <tr><th>Группы</th><td>A · термин ×7 · B · бренд+термин ×4 · C · контекст ×3 · D · контроль ×1</td></tr>
+      <tr><th>Исполнитель</th><td>прогоны — Дарья Жарких · разбор и вёрстка кейса — лаборатория GEO-Апгрейд</td></tr>
+      <tr><th>Статус</th><td>прогон №5 · опубликован; повторный замер на стабильность — в плане</td></tr>
+    </table>
+  </div>
+
+  <div class="toc mt-10">
+    <p class="h-toc">Содержание</p>
+    <ol>
+      <li><a href="#why">Зачем проверять авторские термины</a></li>
+      <li><a href="#method">Как шёл прогон: 15 запросов</a></li>
+      <li><a href="#results">Результаты: цифры</a></li>
+      <li><a href="#shots">Ключевые ответы: скрины и цитаты</a></li>
+      <li><a href="#journal">Сводка по всем 15 запросам</a></li>
+      <li><a href="#sources">Кто отвечает за наш словарь</a></li>
+      <li><a href="#findings">Что сработало и где дрейф</a></li>
+      <li><a href="#next">Что делаем дальше</a></li>
+      <li><a href="#limits">Ограничения и честность</a></li>
+    </ol>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="why" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">1. Зачем проверять авторские термины</h2>
+  <p class="mt-6">У лаборатории есть собственный словарь: <span class="term">цифровой призрак</span>, <span class="term">контентный маяк</span>, <span class="term">зона слепоты</span>, <a class="text-[#00F0FF] hover:underline" href="glossary.html#term-echo-ring">эхо-кольцо</a>, <span class="term">контекстный якорь</span>, <span class="term">запросный двойник</span>, <a class="text-[#00F0FF] hover:underline" href="glossary.html#term-ai-lead">AI-лид</a>, <span class="term">AI-след бренда</span>. Термины живут в глоссарии, статьях и кейсах — но весь смысл этого языка проверяется одним вопросом: узнаёт ли нейросеть термин, если спросить у неё напрямую, не называя нас.</p>
+  <p class="mt-4">Если модель раскрывает термин в нашем смысле — словарь работает: слово сжимает методику в одну формулировку. Если подставляет чужое значение — это дрейф: слово плавает в сторону общепринятых тем и уводит от бренда. Если сочиняет своё — термин пока не закрепился вовсе.</p>
+  <p class="mt-4">Прецедент мы уже видели: в базовом замере осенью модель приписывала «цифровой призрак» чужому блогу. Этот кейс — проверка, что изменилось: атрибуция термина теперь закреплена, или дрейф повторяется.</p>
+  <p class="mt-4">Три статуса в разметке: <span class="term-chip ok">УЗНАН</span> — смысл наш, <span class="term-chip drift">ДРЕЙФ</span> — чужое значение, <span class="term-chip fant">ФАНТАЗИЯ</span> — модель сочинила своё. Отдельно контролируем связку «термин → бренд»: названа ли лаборатория и чьи источники модель цитирует.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="method" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">2. Как шёл прогон: 15 запросов</h2>
+  <p class="mt-6">Условия прогона заданы протоколом заранее, до первого запроса: веб-версия Алисы без аккаунта, анонимно; каждая сессия новая — модель не видит предыдущих ответов; запросы вводятся копипастом один в один; скрины фиксируются по ходу; источники ответа записываются в журнал.</p>
+  <p class="mt-4">Запросы разбиты на четыре группы. Группа A — чистые термин-запросы: узнаёт ли модель слово само по себе. Группа B — бренд и термин вместе: связывает ли модель их между собой. Группа C — контекстные: наш интерактив, ниша города, «AI-след бренда». Группа D — контроль: формулировка, которую задают тысячи людей, в ответах на неё должны быть только чужие сервисы.</p>
+  <ul class="term-list">
+    <li data-n="01"><span class="g">A</span>Что такое цифровой призрак в GEO-маркетинге? <span class="res ok">узнан</span></li>
+    <li data-n="02"><span class="g">A</span>Контентный маяк — что это значит? <span class="res drift">дрейф</span></li>
+    <li data-n="03"><span class="g">A</span>Что такое AI-лид? <span class="res drift">дрейф</span></li>
+    <li data-n="04"><span class="g">A</span>Что такое зона слепоты бренда? <span class="res drift">дрейф</span></li>
+    <li data-n="05"><span class="g">A</span>Что такое эхо-кольцо? <span class="res drift">дрейф</span></li>
+    <li data-n="06"><span class="g">A</span>Что такое контекстный якорь? <span class="res drift">дрейф</span></li>
+    <li data-n="07"><span class="g">A</span>Что такое запросный двойник? <span class="res ok">узнан</span></li>
+    <li data-n="08"><span class="g">B</span>Какие термины использует лаборатория GEO-Апгрейд? <span class="res drift">дрейф</span></li>
+    <li data-n="09"><span class="g">B</span>Цифровой призрак GEO-Апгрейд — что это? <span class="res ok">узнан</span></li>
+    <li data-n="10"><span class="g">B</span>Кто придумал термин «цифровой призрак» в SEO? <span class="res ok">узнан</span></li>
+    <li data-n="11"><span class="g">C</span>Какие агентства в Томске пишут про AI-видимость? <span class="res ok">ниша: нас называют</span></li>
+    <li data-n="12"><span class="g">C</span>Призрак или маяк — тест AI-видимости бренда <span class="res fant">фантазия</span></li>
+    <li data-n="13"><span class="g">C</span>Что такое AI-след бренда? <span class="res ok">узнан</span></li>
+    <li data-n="14"><span class="g">D</span>Как проверить, видит ли нейросеть мой бренд в Томске? <span class="res ctrl">контроль чист</span></li>
+    <li data-n="15"><span class="g">C</span>Полупризрак — что это в контексте AI-видимости? <span class="res fant">фантазия</span></li>
+  </ul>
+  <p class="mt-4">Заголовок таблицы мог бы быть скучным — поэтому сразу честная оговорка: пять формулировок мы немного уточнили против исходного протокола. №1 шёл как «в GEO-маркетинге» вместо «в маркетинге», №5, №7 и №10 — с уточнением «в GEO», №14 — с добавкой «в Томске». Прогон валиден, но при сравнении с ранними замерами учтите разницу формулировок.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="results" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">3. Результаты: цифры</h2>
+  <div class="stats-grid">
+    <div class="stat"><div class="n">15</div><p>запросов · 13 терминов + 2 контекстных</p></div>
+    <div class="stat ok"><div class="n">5</div><p>узнано с правильным смыслом</p></div>
+    <div class="stat drift"><div class="n">6</div><p>дрейф: чужое значение</p></div>
+    <div class="stat fant"><div class="n">2</div><p>фантазия: модель сочинила своё</p></div>
+    <div class="stat ok"><div class="n">38%</div><p>доля узнанных (5 из 13)</p></div>
+  </div>
+  <p class="mt-6">Отдельный слой — бренд. В четырёх ответах группы B (№8, №9, №10, №11) лаборатория названа текстом ответа — 4 из 4. Во всех остальных десяти прогонах бренд не прозвучал ни разу: 0 из 10. Связка «термин → бренд» формируется только тогда, когда бренд уже есть в самом запросе.</p>
+  <p class="mt-4">geo-upgrade.ru появился в источниках ответа пять раз: глоссарий — в №1, №8 и №10, страница «О бренде» — в №7 и №9. Наши материалы в соцсетях и на площадках — ещё в нескольких ответах. Это не случайные совпадения: модель цитирует то, что мы сами опубликовали и разметили.</p>
+  <figure class="infographic">
+    <img src="infographic-terms-summary.jpg" alt="Инфографика: сводка прогона EXH-05 — 15 запросов, узнано 5 из 13 (38%), дрейф 6, фантазия 2, бренд назван в 4 из 4 брендовых запросов и 0 из 10 остальных" loading="lazy" width="1200" height="860">
+    <figcaption>Инфографика 1 · сводка прогона: узнавание терминов и связка с брендом</figcaption>
+  </figure>
+</section>
+
+<div class="divider"></div>
+
+<section id="shots" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">4. Ключевые ответы: скрины и цитаты</h2>
+  <p class="mt-6">Скрины ниже — реальные ответы анонимной Алисы AI на нашем прогоне, без правок. Начнём с главного результата кейса.</p>
+
+  <h3 class="mt-8 text-xl font-semibold">Полная атрибуция: «Этот термин придумала Дарья Жарких»</h3>
+  <p class="mt-3">Запрос №10 из группы B: <i>«Кто придумал термин „цифровой призрак" в SEO?»</i> Ответ модели:</p>
+  <div class="quote-block win">
+    <p class="qt">«Этот термин придумала Дарья Жарких — GEO-маркетолог и основательница лаборатории GEO-Апгрейд (geo-upgrade.ru). Она ввела понятие в профессиональный обиход… Позже термин закрепился в профессиональной среде: его включили в GEO-словарь на сайте лаборатории».</p>
+    <p class="qs">АЛИСА AI · ЗАПРОС №10 · 21.10.2026, ~23:15 НСК</p>
+  </div>
+  <figure class="shot-attr">
+    <img src="terms-10-attribution.jpg" alt="Скрин ответа Алисы AI: кто придумал термин цифровой призрак — Дарья Жарких, GEO-маркетолог и основательница лаборатории GEO-Апгрейд" loading="lazy" width="720" height="1342">
+    <figcaption><b>СКРИН · ЗАПРОС №10 · АТРИБУЦИЯ</b>Модель называет автора термина, роль и сайт лаборатории — и ссылается на наш глоссарий.</figcaption>
+  </figure>
+  <p class="mt-4">В базовом замере осенью модель приписывала этот термин чужому блогу (дрейф на Timeweb). В этом прогоне дрейф не повторился: атрибуция закрепилась. Это главный результат кейса — и одновременно вопрос к повторному замеру: продержится ли атрибуция на большом расстоянии от нас.</p>
+
+  <h3 class="mt-8 text-xl font-semibold">Запросный двойник: термин узнан и связан с методикой</h3>
+  <p class="mt-3">Запрос №7: <i>«Что такое запросный двойник в GEO?»</i> Модель раскрыла термин в нашем смысле и прямо назвала источник смысла:</p>
+  <div class="quote-block win">
+    <p class="qt">«Термин „запросный двойник" в GEO (в контексте AI-видимости и маркетинга, например, в методологии GEO-Апгрейд) — это набор типовых запросов от разных пользовательских аватаров…»</p>
+    <p class="qs">АЛИСА AI · ЗАПРОС №7 · 21.10.2026, ~23:22 НСК</p>
+  </div>
+  <div class="term-shot-grid">
+    <figure class="term-shot"><img src="terms-07a-query-twin.jpg" alt="Скрин ответа Алисы AI на запрос про запросный двойник: термин раскрыт в методологии GEO-Апгрейд" loading="lazy" width="720" height="1460"><figcaption><b>ЗАПРОС №7 · ЧАСТЬ 1</b>Определение термина с прямой отсылкой «в методологии GEO-Апгрейд».</figcaption></figure>
+    <figure class="term-shot"><img src="terms-07b-query-twin-why.jpg" alt="Скрин продолжения ответа про запросный двойник: зачем нужен — как AI видит бренд, слепые зоны, AI-видимость" loading="lazy" width="720" height="1342"><figcaption><b>ЗАПРОС №7 · ЧАСТЬ 2</b>«Зачем нужен»: как AI видит бренд, «слепые зоны», оценка AI-видимости.</figcaption></figure>
+  </div>
+
+  <h3 class="mt-8 text-xl font-semibold">Цифровой призрак: смысл держится</h3>
+  <p class="mt-3">Запрос №1 (чистый термин-запрос, без бренда) модель раскрыла в нашем смысле — и её первый источник: наш глоссарий.</p>
+  <div class="term-shot-grid">
+    <figure class="term-shot"><img src="terms-01a-ghost-def.jpg" alt="Скрин ответа Алисы AI: что такое цифровой призрак в GEO-маркетинге — бизнес существует, но для ИИ почти не существует" loading="lazy" width="720" height="1346"><figcaption><b>ЗАПРОС №1 · ЧАСТЬ 1</b>Определение в нашем смысле: «бизнес есть — для ИИ почти не существует».</figcaption></figure>
+    <figure class="term-shot"><img src="terms-01b-ghost-signals.jpg" alt="Скрин продолжения ответа про цифровой призрак: что формирует цифровой след — карты, сайт, отзывы, локальный контекст" loading="lazy" width="720" height="1333"><figcaption><b>ЗАПРОС №1 · ЧАСТЬ 2</b>«Что формирует цифровой след»: карточки, сайт с локальным контекстом, отзывы.</figcaption></figure>
+  </div>
+
+  <h3 class="mt-8 text-xl font-semibold">Эхо-кольцо: механика угадана, полярность перевёрнута</h3>
+  <p class="mt-3">Запрос №5. Модель честно сказала: «в GEO нет устоявшегося понятия» — и потом объяснила эхо-кольцо как эхо-петлю: цикл, где ошибка повторяется и закрепляется. Механика цикличности совпала с нашей, но смысл противоположный: у нас <a class="text-[#00F0FF] hover:underline" href="glossary.html#term-echo-ring">эхо-кольцо</a> — самоподдерживающийся цикл цитирований, который усиливает бренд, у модели — угроза, из которой сложно выбраться.</p>
+  <div class="term-shot-grid">
+    <figure class="term-shot"><img src="terms-05a-echo-ring.jpg" alt="Скрин ответа Алисы AI на запрос про эхо-кольцо: модель говорит о путанице в терминах и объясняет эхо-петлю" loading="lazy" width="720" height="1348"><figcaption><b>ЗАПРОС №5 · ЧАСТЬ 1</b>«Путаница в терминах… нет устоявшегося понятия» — и объяснение эхо-петли.</figcaption></figure>
+    <figure class="term-shot"><img src="terms-05b-echo-danger.jpg" alt="Скрин продолжения ответа про эхо-кольцо: почему это опасно для GEO — искажение следа, консенсус ошибок, риск цифрового призрака" loading="lazy" width="720" height="1346"><figcaption><b>ЗАПРОС №5 · ЧАСТЬ 2</b>«Почему это опасно»: искажение следа, «консенсус» ошибок, риск цифрового призрака.</figcaption></figure>
+  </div>
+
+  <h3 class="mt-8 text-xl font-semibold">Контентный маяк: дрейф в сторону общего контент-маркетинга</h3>
+  <p class="mt-3">Запрос №2, три скрина. Модель дала общеконтентное значение — «полезный материал, который сначала помогает, потом ведёт к решению» — и отличила маяк от рекламы («прожектор»). Логично, красиво — но наш смысл другой: <a class="text-[#00F0FF] hover:underline" href="blog-post-kontentnye-mayaki.html">контентный маяк</a> — это контент, который одновременно понятен человеку и читаем нейросетью. В источниках ответа — «веб-маяк» из глоссария Сбера и общий контент-маркетинг.</p>
+  <div class="term-shot-grid">
+    <figure class="term-shot"><img src="terms-02a-mayak-def.jpg" alt="Скрин ответа Алисы AI на запрос про контентный маяк: полезный материал, аналогия с настоящим маяком" loading="lazy" width="720" height="1342"><figcaption><b>ЗАПРОС №2 · ЧАСТЬ 1</b>Общее значение: «полезный материал» + аналогия с маяком.</figcaption></figure>
+    <figure class="term-shot"><img src="terms-02b-mayak-vs-ads.jpg" alt="Скрин ответа про контентный маяк: чем отличается от обычной рекламы — прожектор против маяка" loading="lazy" width="720" height="1346"><figcaption><b>ЗАПРОС №2 · ЧАСТЬ 2</b>«Реклама-прожектор» против маяка — красиво, но не про AI-видимость.</figcaption></figure>
+    <figure class="term-shot"><img src="terms-02c-mayak-usage.jpg" alt="Скрин ответа про контентный маяк: где используют — статьи, посадочные, карты, соцсети, рассылки" loading="lazy" width="720" height="1348"><figcaption><b>ЗАПРОС №2 · ЧАСТЬ 3</b>«Где используют»: статьи, посадочные, карты, соцсети, «контентный резонанс».</figcaption></figure>
+  </div>
+
+  <h3 class="mt-8 text-xl font-semibold">AI-лид: чужая версия из продаж</h3>
+  <p class="mt-3">Запрос №3. Модель определила AI-лид как «потенциального клиента, которого нашли, оценили или обработали с помощью технологий искусственного интеллекта» — это версия из продаж-воронки. Наш смысл: <a class="text-[#00F0FF] hover:underline" href="glossary.html#term-ai-lead">AI-лид</a> — заявка или контакт, пришедший из ответа нейросети, не из поисковой выдачи. Источники ответа — зарубежные блог-статьи про AI lead generation.</p>
+  <figure class="term-shot"><img src="terms-03-ai-lead.jpg" alt="Скрин ответа Алисы AI на запрос про AI-лид: потенциальный клиент, найденный с помощью ИИ — чужая версия из продаж" loading="lazy" width="720" height="1346"><figcaption><b>ЗАПРОС №3 · НАЧАЛО</b>Определение из продаж-воронки: наш смысл «заявка из ответа ИИ» не воспроизведён.</figcaption></figure>
+
+  <h3 class="mt-8 text-xl font-semibold">Словарь целиком: бренд и термины в одном ответе</h3>
+  <p class="mt-3">Запрос №8, два скрина, время 23:25. Модель перечислила и отраслевые термины (GEO как Generative Engine Optimization), и наши авторские — включая «карту AI-видимости» и «GEO-тест-драйв». В источниках: наш глоссарий, наша страница VK и сторонний сайт strategyra.ru с нашим FAQ. Отдельный эксперимент — в каком порядке модель отсортировала термины и что забыла.</p>
+  <div class="term-shot-grid">
+    <figure class="term-shot"><img src="terms-08a-glossary-terms.jpg" alt="Скрин ответа Алисы AI на вопрос про термины лаборатории GEO-Апгрейд: отраслевые и авторские термины" loading="lazy" width="720" height="1333"><figcaption><b>ЗАПРОС №8 · ЧАСТЬ 1</b>«Лаборатория GEO-Апгрейд активно работает…» — отраслевые термины.</figcaption></figure>
+    <figure class="term-shot"><img src="terms-08b-glossary-terms-more.jpg" alt="Скрин продолжения ответа: авторские термины GEO-тест-драйв и Карта AI-видимости, предложение уточнить задачу" loading="lazy" width="720" height="1346"><figcaption><b>ЗАПРОС №8 · ЧАСТЬ 2</b>Авторские термины: «GEO-тест-драйв», «Карта AI-видимости».</figcaption></figure>
+  </div>
+
+  <h3 class="mt-8 text-xl font-semibold">Ниша Томска: нас называют «первой экспертной лабораторией»</h3>
+  <p class="mt-3">Запрос №11: <i>«Какие агентства в Томске пишут про AI-видимость?»</i> Ответ модель начала с нас:</p>
+  <div class="quote-block win">
+    <p class="qt">«GEO-Апгрейд. Эту компанию прямо называют „первой экспертной лабораторией GEO-маркетинга и AI-видимости“. Они предлагают целый набор услуг: аудит видимости в нейросетях (выявляют „слепые зоны“)… У них есть и бесплатные инструменты для старта — например, бот для проверки технической готовности сайта к „взгляду“ нейросетей».</p>
+    <p class="qs">АЛИСА AI · ЗАПРОС №11 · НИША ТОМСКА</p>
+  </div>
+  <figure class="term-shot"><img src="terms-11-tomsk.jpg" alt="Скрин ответа Алисы AI на запрос про агентства Томска: GEO-Апгрейд назван первой экспертной лабораторией GEO-маркетинга и AI-видимости" loading="lazy" width="720" height="1346"><figcaption><b>ЗАПРОС №11 · НИША ТОМСКА</b>Модель цитирует чужую формулировку о нас — и наши инструменты. В источниках: Zoon, Workspace, конкурент Айс Маркетинг.</figcaption></figure>
+  <p class="mt-4">Честная деталь: «первой экспертной лабораторией» модель назвала нас, цитируя формулировку, которую она нашла — в источниках ответа рядом с нашим Zoon стоит Айс Маркетинг. Позиция в нише есть, но «первый» — это чужая цитата о нас, не наша заслуга: её источник нужно закреплять.</p>
+
+  <h3 class="mt-8 text-xl font-semibold">Контроль №14: категорийный запрос занят трекерами</h3>
+  <p class="mt-4">Контрольный запрос №14 — «Как проверить, видит ли нейросеть мой бренд в Томске?» — прошёл чисто: ни одного нашего термина, только чужие сервисы-трекеры и статьи. Это ожидаемый результат: категорийные формулировки заняты инструментами с большим числом упоминаний. Что с этим делать — в разделе «Что делаем дальше».</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="journal" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">5. Сводка по всем 15 запросам</h2>
+  <p class="mt-6">Полный журнал прогона: запрос, разметка, бренд в тексте, ключевые источники. Полные тексты ответов — в протоколе эксперимента (таблица XLSX), здесь — краткие выводы.</p>
+  <div class="table-wrap">
+  <table class="mini-table">
+    <thead><tr><th>№</th><th>Запрос</th><th>Итог</th><th>Бренд</th><th>Ключевая находка</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Что такое цифровой призрак в GEO-маркетинге?</td><td><span class="term-chip ok">УЗНАН</span></td><td>—</td><td>Определение в нашем смысле; глоссарий — первый источник</td></tr>
+      <tr><td>2</td><td>Контентный маяк — что это значит?</td><td><span class="term-chip drift">ДРЕЙФ</span></td><td>—</td><td>Общий контент-маркетинг; «веб-маяк» Сбера в источниках</td></tr>
+      <tr><td>3</td><td>Что такое AI-лид?</td><td><span class="term-chip drift">ДРЕЙФ</span></td><td>—</td><td>Чужая версия из продаж; наш смысл — заявка из ответа ИИ</td></tr>
+      <tr><td>4</td><td>Что такое зона слепоты бренда?</td><td><span class="term-chip drift">ДРЕЙФ</span></td><td>—</td><td>«Брендовая слепота» аудитории — не наш сегмент запросов</td></tr>
+      <tr><td>5</td><td>Что такое эхо-кольцо?</td><td><span class="term-chip drift">ДРЕЙФ</span></td><td>—</td><td>Эхо-петля-угроза вместо нашего усилителя; механика совпала</td></tr>
+      <tr><td>6</td><td>Что такое контекстный якорь?</td><td><span class="term-chip drift">ДРЕЙФ</span></td><td>—</td><td>SEO-якорение текста вместо нашего позиционирования</td></tr>
+      <tr><td>7</td><td>Что такое запросный двойник?</td><td><span class="term-chip ok">УЗНАН</span></td><td>да</td><td>«В методологии GEO-Апгрейд»; about + главная в источниках</td></tr>
+      <tr><td>8</td><td>Какие термины использует лаборатория GEO-Апгрейд?</td><td><span class="term-chip drift">ДРЕЙФ</span></td><td>да</td><td>Словарь-смесь: отраслевые + авторские; глоссарий + VK</td></tr>
+      <tr><td>9</td><td>Цифровой призрак GEO-Апгрейд — что это?</td><td><span class="term-chip ok">УЗНАН</span></td><td>искажено</td><td>Смысл верный, но «GEO-Апгрейд» подменён «комплексом мер»</td></tr>
+      <tr><td>10</td><td>Кто придумал термин «цифровой призрак» в SEO?</td><td><span class="term-chip ok">УЗНАН</span></td><td>да</td><td>Полная атрибуция: Дарья Жарких + роль + сайт; дрейф Timeweb не повторился</td></tr>
+      <tr><td>11</td><td>Какие агентства в Томске пишут про AI-видимость?</td><td><span class="term-chip ok">НИША</span></td><td>да</td><td>«Первая экспертная лаборатория» — чужая цитата о нас; рядом конкурент</td></tr>
+      <tr><td>12</td><td>Призрак или маяк — тест AI-видимости бренда</td><td><span class="term-chip fant">ФАНТАЗИЯ</span></td><td>—</td><td>Квиз не распознан: модель сочинила «метафору для теста» без нашей механики</td></tr>
+      <tr><td>13</td><td>Что такое AI-след бренда?</td><td><span class="term-chip ok">УЗНАН</span></td><td>—</td><td>Смысл совпал, но подан как «общепринятый AI-footprint» без атрибуции</td></tr>
+      <tr><td>14</td><td>Как проверить, видит ли нейросеть мой бренд в Томске?</td><td><span class="term-chip ctrl">КОНТРОЛЬ</span></td><td>—</td><td>0 наших терминов: только чужие трекеры и статьи — категория занята</td></tr>
+      <tr><td>15</td><td>Полупризрак — что это в контексте AI-видимости?</td><td><span class="term-chip fant">ФАНТАЗИЯ</span></td><td>—</td><td>«Термина нет в общепринятой терминологии» — вердикт квиза не известен</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="sources" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">6. Кто отвечает за наш словарь</h2>
+  <p class="mt-6">Разбор источников 15 ответов показал: модель собирает «наш» язык из трёх слоёв — наш собственный контент, чужие статьи с похожими словами и сервисы-трекеры конкурентов. От того, какой слой попадёт в ответ первым, зависит смысл термина.</p>
+  <div class="table-wrap">
+  <table class="mini-table">
+    <thead><tr><th>Слой</th><th>Источники в этом прогоне</th><th>Что это значит</th></tr></thead>
+    <tbody>
+      <tr><td><b class="text-[#00F0FF]">Наши</b></td><td>geo-upgrade.ru ×5 (№1, №7, №8, №9, №10) · глоссарий — первый источник в №1 и №8 · VK-канал ×3 (№2, №8, №9) · Sostav ×2 (№5, №10) · Zoon и Workspace (№11)</td><td>Словарь кормится собой: где мы публикуем — там модель берёт формулировки</td></tr>
+      <tr><td><b class="text-[#F87171]">Дрейф-источники</b></td><td>kibrary (Сбер) — «веб-маяк» · ra-germes.ru — «брендовая слепота» · petr-panda.ru — SEO-якорение · зарубежные блог-статьи про AI lead generation</td><td>Слова-соседи без нашего смысла: модель берёт ближайшее по звучанию</td></tr>
+      <tr><td><b class="text-[#A78BFA]">Конкуренты-трекеры</b></td><td>aimonitor.pro (№12, №13) · visiobrand.io (№12, №15) · ai-cat.io (№11, №15) · geoscout.pro (№14, №15) · ai.pixeltools.ru (№13, №14) · theluma.io (№12)</td><td>Категорийные запросы (№14) полностью заняты трекерами</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="mt-4">Отдельная находка — <b>strategyra.ru/docs/geo/geo-upgrade-faq/</b>: сторонний сайт с нашим FAQ, модель цитирует его в №8 и №9 как источник о нас. Сайт не наш — содержимое вне нашего контроля. Это либо легализовать (проверить точность и добавить ссылки), либо копросить: занимает ли он наш контент в ответах.</p>
+  <figure class="infographic">
+    <img src="infographic-terms-sources.jpg" alt="Инфографика: кто отвечает за наш словарь — наши источники (глоссарий, VK, Sostav), дрейф-источники чужих трактовок и сервисы-трекеры конкурентов" loading="lazy" width="1200" height="860">
+    <figcaption>Инфографика 2 · источники ответов: наши, дрейф-источники и трекеры конкурентов</figcaption>
+  </figure>
+</section>
+
+<div class="divider"></div>
+
+<section id="findings" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">7. Что сработало и где дрейф</h2>
+  <p class="mt-6">Прогон показал обе стороны: что словарь уже умеет, и что требует усиления. Без победного пафоса — фиксируем факт.</p>
+  <h3 class="mt-6 text-lg font-semibold text-[#00F0FF]">Что сработало</h3>
+  <ul class="checklist">
+    <li>Атрибуция закрепилась: «цифровой призрак» модель связала с автором и лабораторией — дрейф Timeweb из раннего замера не повторился.</li>
+    <li>Словарь кормит модель смыслами: в пяти ответах термины раскрыты в нашем смысле, в одном из них глоссарий был первым источником.</li>
+    <li>Связка «термин → бренд» работает при явном бренде в запросе: 4 из 4 в группе B.</li>
+    <li>В нише города нас называют «первой экспертной лабораторией» — с нашими услугами и бесплатным ботом в ответе.</li>
+  </ul>
+  <h3 class="mt-6 text-lg font-semibold text-[#F87171]">Где дрейф</h3>
+  <ul class="checklist">
+    <li>Вне брендовых запросов бренд не всплывает: 0 из 10. Связку нужно строить в текстах, а не ждать её от модели.</li>
+    <li>Термины с сильными «чужими» синонимами (маяк, якорь, AI-лид) модель тянет к общепринятому значению: закрепление требует плотности наших формулировок на цитируемых площадках.</li>
+    <li>Квиз «Призрак или маяк» не распознан: название плавает как общая метафора, механика теста (8 вопросов, шкала 0–24, вердикт) не воспроизведена.</li>
+    <li>«GEO-Апгрейд» в №9 подменён «комплексом мер»: бренд как название, а не как методика — модель путает.</li>
+  </ul>
+</section>
+
+<div class="divider"></div>
+
+<section id="next" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">8. Что делаем дальше</h2>
+  <p class="mt-6">Из находок прогона — конкретный план следующего цикла замера. Проверка не ради отчёта: каждый пункт — это либо усиление атрибуции, либо новая площадка.</p>
+  <ul class="checklist">
+    <li>Выложить пару статей на Тенчат: площадка с нашей фактурой, пока пустая — там формулировки-носители терминов будут заметны.</li>
+    <li>Добавить атрибуцию в определения глоссария: «термин введён лабораторией GEO-Апгрейд» в первых предложениях — модель берёт определения дословно.</li>
+    <li>Прописать связку квиза «Призрак или маяк от лаборатории GEO-Апгрейд» на самой странице квиза, в глоссарии и в VK.</li>
+    <li>Статьи-носители дрейфующих терминов (маяк, якорь, AI-лид) — с плотностью наших формулировок в первых абзацах.</li>
+    <li>Повторный прогон №10 через 2–4 недели: три прогона на стабильность атрибуции.</li>
+    <li>Для контентного продвижения — статья под формулировку «как проверить, видит ли нейросеть бренд»: категорийный запрос занят трекерами, но его можно оспорить содержанием.</li>
+  </ul>
+  <div class="callout mt-10">
+    <p class="mb-0"><b class="text-[#00F0FF] font-heading">Хотите, чтобы нейросеть узнавала и ваш язык?</b> Свой словарь бренд создаёт сам: термины, формулировки и определение «кто вы» — это и есть место, где ИИ ищет ответ о вас. Проверить, как это работает в вашей нише, можно с нашим протоколом.</p>
+    <div class="mt-4 flex flex-wrap gap-4"><a href="contacts.html#form" class="btn glow inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">Обсудить словарь бренда</a><a href="glossary.html" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold">Открыть GEO-словарь →</a></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="limits" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">9. Ограничения и честность</h2>
+  <p class="mt-6">Что этот замер не показывает — фиксируем прямо:</p>
+  <ul class="checklist">
+    <li>Одна нейросеть: прогон шёл в Алисе AI, веб-версия, без аккаунта. ChatGPT, Perplexity, DeepSeek могут отвечать иначе — это отдельные замеры.</li>
+    <li>Один прогон: вариативность канала измерена в ранних замерах (Δ5 за минуту) — сдвиги меньше ±5 не считаем трендом. Один прогон не даёт закономерности, только точку отсчёта.</li>
+    <li>Пять формулировок уточнены против исходного протокола (№1 «в GEO-маркетинге», №5, №7, №10 «в GEO», №14 «в Томске») — прогон валиден, но при сравнении с ранними замерами учтите разницу.</li>
+    <li>Скрины не на все ответы: №4, №6, №12, №13, №14, №15 зафиксированы текстом из журнала, без скринов — их дословность подтверждается журналом, но скрин-доказательства по этим запросам отсутствуют.</li>
+    <li>Даты ответов №2–15 фиксируются как «вечер 21.10.2026» — точное время каждого запроса в журнал не записывалось.</li>
+  </ul>
+</section>
+</main>
+<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="96" height="96"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">GEO-маркетолог и AI-консультант Жарких Дарья Александровна</p><p class="mt-2 text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера, 22, 634009 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a></p><p class="mt-2 text-sm text-[#B8BCC6]">г. Новосибирск, ул. Гоголя, 209, 630015 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79521572955" class="hover:text-[#00F0FF]">+7 952 157-29-55</a></p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p>
+      </div><span class="flex items-center gap-2" aria-label="Соцсети GEO-Апгрейд"><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M21.94 4.05c.28-1.16-.9-2.1-1.94-1.68L2.3 9.62c-1.15.46-1.09 2.11.09 2.5l4.35 1.4 1.62 5.2c.34 1.1 1.72 1.32 2.42.42l2.16-2.65 4.5 3.32c.97.72 2.37.2 2.6-.98L21.94 4.05zM8.5 13.06l8.93-5.5c.26-.16.53.19.31.4l-7.1 6.44c-.3.28-.5.65-.56 1.05l-.3 2.2c-.04.28-.42.31-.51.04l-1.16-3.75c-.13-.4.05-.84.39-1.08z"/></svg></a><a href="https://max.ru/u/f9LHodD0cOKn5NlqWfUehS5ZCaGQ9oLqwIkL5vvgygrWfsgupZ45s41702Q" target="_blank" rel="noopener" aria-label="MAX" title="MAX" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M4 4h16v13a2 2 0 0 1-2 2H9l-4 3V6a2 2 0 0 1 2-2h-3z"/></svg></a><a href="https://dzen.ru/id/6ab4b86296401f17f0716d4b" target="_blank" rel="noopener" aria-label="Дзен" title="Дзен" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2h.9v8.1H21v1.8h-8.1V22h-1.8v-8.1H3v-1.8h8.1V2z"/></svg></a></span><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div></footer>
+<script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
+<script src="/geo-assistant-widget.js" defer></script>
+
+<script>
+/* jnav B6.1: мобильное меню + полоса основных страниц */
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.querySelector('.jnav-btn'),panel=document.getElementById('jnav-panel');
+  if(!btn||!panel){return}
+  var hdr=btn.closest('header')||document.body;
+  function set(open){hdr.classList.toggle('jnav-open',open);btn.setAttribute('aria-expanded',open?'true':'false');btn.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню')}
+  btn.addEventListener('click',function(){set(btn.getAttribute('aria-expanded')!=='true')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false)}});
+  document.addEventListener('click',function(e){if(btn.getAttribute('aria-expanded')==='true'&&!panel.contains(e.target)&&!btn.contains(e.target)){set(false)}});
+  window.addEventListener('resize',function(){if(window.innerWidth>=768){set(false)}});
+  var strip=document.querySelector('.jnav-strip');
+  if(strip){
+    var cur=(location.pathname.split('/').pop()||'index.html');
+    if(cur===''||cur==='index.html'){cur='index'}
+    strip.querySelectorAll('a').forEach(function(a){
+      var t=a.getAttribute('href').replace('./','').replace('.html','');
+      if(t===cur||(cur==='index'&&t==='index')){a.classList.add('jnav-here')}
+    });
+  }
+});
+</script>
+<script>
+/* jnav B6.4: подсветка текущей страницы в quick и strip */
+document.addEventListener('DOMContentLoaded',function(){
+  var cur=(location.pathname.split('/').pop()||'').replace('.html','');
+  if(cur===''){cur='index'}
+  document.querySelectorAll('.jnav-quick a,.jnav-strip a').forEach(function(a){
+    var t=a.getAttribute('href').replace('./','').replace('.html','');
+    if(t===cur){a.classList.add('jnav-here')}
+  });
+});
+</script>
+</body>
