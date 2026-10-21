@@ -419,6 +419,27 @@ article p{margin:0 0 1.05rem}
 <script>document.documentElement.classList.remove('no-js');</script>
 <link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
 <style>
+/* perf-fixes.css (inlined, PSI #4) */
+/* perf-fixes.css — расширение зон тапа (Accessibility). Визуально ничего не меняет. */
+header a, footer a, .geoas-chip, .fc-btn, a.btn { position: relative; }
+header a::before, footer a::before, .geoas-chip::before { content: ""; position: absolute; inset: -10px; }
+.fc-btn::before, a.btn::before { content: ""; position: absolute; inset: -4px; }
+
+
+/* ── v2 (07.10, вечер): A11Y — тап-зоны основной навигации ──────────────
+   Пункты меню были меньше 24px по высоте (text-sm без отступов).
+   Увеличиваем зону нажатия и расстояние между пунктами до ≥24px (WCAG 2.5.8).
+   Визуально меню становится чуть «воздушнее» — это ожидаемо. */
+nav[aria-label="Основная навигация"] {
+  gap: 4px 24px; /* было gap-x-4 (16px) gap-y-2 (8px) */
+}
+nav[aria-label="Основная навигация"] a {
+  display: inline-block;
+  padding: 6px 8px; /* зона нажатия 14+12 = 26px по высоте */
+}
+</style>
+
+<style>
 /* jnav B6.1: мобильное меню + полоса основных страниц (не применяется на index) */
 .jnav-btn{display:none;position:relative;z-index:60;width:44px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid rgba(0,240,255,.55);border-radius:8px;background:rgba(0,240,255,.08);cursor:pointer;transition:border-color .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1)}
 .jnav-btn span{display:block;width:20px;height:2px;background:#00F0FF;border-radius:1px;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .3s cubic-bezier(.22,1,.36,1)}
@@ -505,9 +526,9 @@ article p{margin:0 0 1.05rem}
           <a href="#shots" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold">Скрины ответов</a>
         </div>
       </div>
-      <figure class="hero-cover">
+      <figure class="mx-auto mt-10 md:mt-0" style="max-width:360px;margin:0">
         <img src="cover-case-terms.jpg" alt="Обложка кейса: проверка авторских терминов — цифровой призрак в лабораторной колбе и неоновый маяк на тёмно-фиолетовом фоне GEO-Апгрейд" width="1024" height="1024" style="width:100%;height:auto;border-radius:14px;border:1px solid rgba(0,240,255,.35)" loading="eager">
-        <figcaption>Обложка кейса: цифровой призрак в лабораторной колбе и неоновый маяк</figcaption>
+        <figcaption class="text-center text-xs text-[#B8BCC6] mt-2">Обложка кейса: цифровой призрак в лабораторной колбе и неоновый маяк</figcaption>
       </figure>
     </div>
   </div>
@@ -657,7 +678,7 @@ article p{margin:0 0 1.05rem}
   <figure class="term-shot"><img src="terms-03-ai-lead.jpg" alt="Скрин ответа Алисы AI на запрос про AI-лид: потенциальный клиент, найденный с помощью ИИ — чужая версия из продаж" loading="lazy" width="720" height="1346"><figcaption><b>ЗАПРОС №3 · НАЧАЛО</b>Определение из продаж-воронки: наш смысл «заявка из ответа ИИ» не воспроизведён.</figcaption></figure>
 
   <h3 class="mt-8 text-xl font-semibold">Словарь целиком: бренд и термины в одном ответе</h3>
-  <p class="mt-3">Запрос №8, два скрина, время 23:25. Модель перечислила и отраслевые термины (GEO как Generative Engine Optimization), и наши авторские — включая «карту AI-видимости» и «GEO-тест-драйв». В источниках: наш глоссарий, наша страница VK и сторонний сайт strategyra.ru с нашим FAQ. Отдельный эксперимент — в каком порядке модель отсортировала термины и что забыла.</p>
+  <p class="mt-3">Запрос №8, два скрина, время 23:25. Модель перечислила и отраслевые термины (GEO как Generative Engine Optimization), и наши авторские — включая «карту AI-видимости» и «GEO-тест-драйв». В источниках: наш глоссарий, наша страница VK и сторонний сайт strategyra.ru — их FAQ по GEO, где упоминается лаборатория. Отдельный эксперимент — в каком порядке модель отсортировала термины и что забыла.</p>
   <div class="term-shot-grid">
     <figure class="term-shot"><img src="terms-08a-glossary-terms.jpg" alt="Скрин ответа Алисы AI на вопрос про термины лаборатории GEO-Апгрейд: отраслевые и авторские термины" loading="lazy" width="720" height="1333"><figcaption><b>ЗАПРОС №8 · ЧАСТЬ 1</b>«Лаборатория GEO-Апгрейд активно работает…» — отраслевые термины.</figcaption></figure>
     <figure class="term-shot"><img src="terms-08b-glossary-terms-more.jpg" alt="Скрин продолжения ответа: авторские термины GEO-тест-драйв и Карта AI-видимости, предложение уточнить задачу" loading="lazy" width="720" height="1346"><figcaption><b>ЗАПРОС №8 · ЧАСТЬ 2</b>Авторские термины: «GEO-тест-драйв», «Карта AI-видимости».</figcaption></figure>
@@ -720,7 +741,7 @@ article p{margin:0 0 1.05rem}
     </tbody>
   </table>
   </div>
-  <p class="mt-4">Отдельная находка — <b>strategyra.ru/docs/geo/geo-upgrade-faq/</b>: сторонний сайт с нашим FAQ, модель цитирует его в №8 и №9 как источник о нас. Сайт не наш — содержимое вне нашего контроля. Это либо легализовать (проверить точность и добавить ссылки), либо копросить: занимает ли он наш контент в ответах.</p>
+  <p class="mt-4">Отдельная находка — <b>strategyra.ru/docs/geo/geo-upgrade-faq/</b>: страница FAQ стороннего сайта strategyra.ru — это их собственный FAQ по GEO, в котором упоминается лаборатория. Модель цитирует его в №8 и №9 как источник о нас; содержимое вне нашего контроля. Что именно модель берёт оттуда — проверить при следующем прогоне.</p>
   <figure class="infographic">
     <img src="infographic-terms-sources.jpg" alt="Инфографика: кто отвечает за наш словарь — наши источники (глоссарий, VK, Sostav), дрейф-источники чужих трактовок и сервисы-трекеры конкурентов" loading="lazy" width="1200" height="860">
     <figcaption>Инфографика 2 · источники ответов: наши, дрейф-источники и трекеры конкурентов</figcaption>
