@@ -14,7 +14,7 @@
           margin: 0;
         }
     &lt;/style&gt;
-    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 386ch; contain-intrinsic-height: 346.8em; content-visibility: visible"&gt;# GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейда
+    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 386ch; contain-intrinsic-height: 346.8em; content-visibility: visible"&gt;# GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейд
 
 &amp;gt; URL: https://geo-upgrade.ru/blog.html
 
@@ -79,7 +79,7 @@ AI-сценарии, промпт-цех и контроль человека в
 
 Путаюсь в терминах
 
-Откройте словарь GEO, AI-поиска и авторских терминов GEO-Апгрейда.
+Откройте словарь GEO, AI-поиска и авторских терминов GEO-Апгрейд.
 [Открыть GEO-глоссарий →](glossary.html)
 
 FRESH SIGNALS
@@ -269,7 +269,7 @@ AI-СИГНАЛЫ
 
 GEO-глоссарий
 
-Термины GEO, AI-поиска, нейросетей и авторские понятия GEO-Апгрейда.
+Термины GEO, AI-поиска, нейросетей и авторские понятия GEO-Апгрейд.
 ◆ AI-видимость
 ◆ Цифровой призрак
 ◆ Контентный маяк
