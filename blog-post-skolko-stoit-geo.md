@@ -212,7 +212,7 @@
 - [GEO-штурвал: разовый аудит AI-видимости с передачей методики](https://geo-upgrade.ru/blog-post-geo-shturval.html)
 - [Кому нужно GEO-продвижение и почему](https://geo-upgrade.ru/blog-post-komu-nuzhno-geo.html)
 - [GEO-метрики: как считаются пять метрик AI-видимости](https://geo-upgrade.ru/blog-post-geo-metrics-full.html)
-- [Услуги GEO-Апгрейда: полный прайс](https://geo-upgrade.ru/services.html)
+- [Услуги GEO-Апгрейд: полный прайс](https://geo-upgrade.ru/services.html)
 - [Все материалы лаборатории](https://geo-upgrade.ru/blog.html)
 
 ---

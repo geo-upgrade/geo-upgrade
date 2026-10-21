@@ -131,7 +131,7 @@ GEO-штурвал — все услуги лаборатории в одном 
 
 🔍 Индикатор невидимости
 
-Digital Footprint Index (DFI) — авторская метрика GEO-Апгрейда
+Digital Footprint Index (DFI) — авторская метрика GEO-Апгрейд
 
 DFI из 10
 
