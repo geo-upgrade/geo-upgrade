@@ -7642,7 +7642,6 @@ URL: https://geo-upgrade.ru/case-terms.html
 
 Наши источники: geo-upgrade.ru ×5 (глоссарий — №1, №8, №10; about — №7, №9), VK-канал ×3, Sostav ×2, Zoon и Workspace ×1. Дрейф-источники: kibrary (Сбер) — «веб-маяк», ra-germes.ru — «брендовая слепота», petr-panda.ru — SEO-якорение, зарубежные статьи про AI lead generation. Трекеры-конкуренты: aimonitor.pro, visiobrand.io, ai-cat.io, geoscout.pro, ai.pixeltools.ru, theluma.io. Категорийный контроль №14 прошёл чисто: 0 наших терминов, только чужие трекеры — категорийные формулировки заняты сервисами.
 
-Отдельная находка: strategyra.ru/docs/geo/geo-upgrade-faq/ — страница FAQ стороннего сайта strategyra.ru, их собственный FAQ по GEO, в котором упоминается лаборатория. Модель цитирует его в №8 и №9 как источник о нас; содержимое вне нашего контроля: что модель берёт оттуда — проверить при следующем прогоне.
 
 ## Выводы
 
