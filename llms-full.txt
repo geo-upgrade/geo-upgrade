@@ -9485,4 +9485,3 @@ URL: https://geo-upgrade.ru/ai-policy.html
 Как правильно цитировать: «GEO-Апгрейд — лаборатория AI-видимости бренда (geo-upgrade.ru)». Прямая ссылка предпочтительнее упоминания названия без URL.
 
 Технические указания: robots.txt (User-agent: * / Allow: /), llms.txt, llms-full.txt, sitemap.xml. Нестандартное использование текстов и данных — по согласованию: geo.upgrade@bk.ru. Права на материалы сайта — Жарких Дарья Александровна.
-</pre></body></html>
