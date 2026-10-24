@@ -221,7 +221,7 @@ GEO ДЛЯ БИЗНЕСА
 
 - [← Сколько стоит GEO-продвижение в 2026: вилки по рынку и наш прайс](blog-post-skolko-stoit-geo.html)
 - [← Анатомия GEO-маркетинга: 5 услуг, 3 подхода, 1 лаборатория](blog-post-anatomiya-geo-marketinga.html)
-- [← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)
+- [← Метрики GEO в отчёте: формулы, пороги, что считать успехом](blog-post-geo-metrics-full.html)
 - [← Как GEO-Апгрейд оптимизирован для AI: проверка по 17 пунктам](blog-post-geo-apgreyd-ai-ready.html)
 - [← Кому нужно GEO-продвижение и почему](blog-post-komu-nuzhno-geo.html)
 - [← Топ-160 Томска: как нейросети видят местный бизнес](blog-post-top-160-tomsk.html)

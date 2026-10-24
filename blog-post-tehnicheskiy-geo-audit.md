@@ -174,7 +174,7 @@ PageSpeed Insights — скорость Rich Results Test — разметка S
 [← Schema.org для GEO: разметка, которая работает](/blog-post-schema-org-dlya-geo.html)
 [← Что такое GEO простыми словами?](blog-post-what-is-geo.html)
 [← Почему нейросеть не знает про ваш бизнес: анатомия цифрового призрака](blog-post-digital-ghost.html)
-[← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)
+[← Метрики GEO в отчёте: формулы, пороги, что считать успехом](blog-post-geo-metrics-full.html)
 [← Все материалы лаборатории](blog.html)
 
 ---

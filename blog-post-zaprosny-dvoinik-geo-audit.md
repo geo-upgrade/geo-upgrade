@@ -618,7 +618,7 @@
     - [← Что на самом деле спрашивает ваш клиент у нейросети?](blog-post-karta-zaprosov-klienta.html)
     - [← Кому нужно GEO-продвижение и почему](blog-post-komu-nuzhno-geo.html)
     - [← Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ](blog-post-tehnicheskiy-geo-audit.html)
-    - [← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)
+    - [← Метрики GEO в отчёте: формулы, пороги, что считать успехом](blog-post-geo-metrics-full.html)
     - [← Все материалы лаборатории](blog.html)
     - [← AI-автоматизация в маркетинге: как освободить время, не потеряв голос бренда](blog-post-ai-avtomatizaciya-dlya-marketinga.html)
 
