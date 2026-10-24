@@ -222,7 +222,7 @@ AI для бизнеса
 ◆ Автоматизация отзывов
 ◆ Промпт-библиотеки
 
-[Открыть материал](blog-post-ai-avtomatizaciya-dlya-marketinga.html)
+[Открыть раздел](blog-ai-business.html)
 
 AI-СИГНАЛЫ
 
@@ -232,7 +232,7 @@ AI-СИГНАЛЫ
 [◆ Alice AI Foundation →](blog-post-alice-ai-foundation.html)
 ◆ AI-сигнал: проверка новости
 
-Открыть раздел
+[Открыть раздел](blog-news.html)
 
 ГЛОССАРИЙ
 
