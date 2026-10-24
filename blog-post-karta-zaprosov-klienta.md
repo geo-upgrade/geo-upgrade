@@ -338,7 +338,7 @@ Google Maps
 [← Контент для нейросетей: как писать, чтобы нейросети цитировали ваш сайт](blog-post-kontent-dlya-neyrosetey.html)
 [← Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ](blog-post-tehnicheskiy-geo-audit.html)
 [← Отзывы, карты и каталоги: где AI собирает образ локального бизнеса](blog-post-local-visibility.html)
-[← Метрики GEO в отчёте: формулы, пороги, что считать успехом](blog-post-geo-metrics-full.html)
+[← Какие метрики GEO показывать в отчёте: формулы, пороги и что считать успехом](blog-post-geo-metrics-full.html)
 [← Контентные маяки: как создавать материалы, которые ведут клиента к решению](blog-post-kontentnye-mayaki.html)
 
 [← AI-автоматизация в маркетинге: как освободить время, не потеряв голос бренда](blog-post-ai-avtomatizaciya-dlya-marketinga.html)[← Все материалы лаборатории](blog.html)

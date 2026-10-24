@@ -61,7 +61,7 @@
 - [Чем GEO отличается от SEO](https://geo-upgrade.ru/blog-post-geo-vs-seo.html): Простое объяснение для бизнеса
 - [Почему нейросеть не знает про ваш бизнес: анатомия цифрового призрака](https://geo-upgrade.ru/blog-post-digital-ghost.html): 10 причин невидимости бренда
 - [Контентные маяки](https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html): Как сделать бренд понятнее для людей и AI
-- [Метрики GEO в отчёте](https://geo-upgrade.ru/blog-post-geo-metrics-full.html): Формулы, пороги, что считать успехом
+- [Какие метрики GEO показывать в отчёте: формулы, пороги и что считать успехом](https://geo-upgrade.ru/blog-post-geo-metrics-full.html): Формулы, пороги и живые замеры: как измерить AI-видимость бренда и что показывать клиенту в отчёте. Методика GEO-Апгрейд.
 - [Отзывы, карты и каталоги](https://geo-upgrade.ru/blog-post-local-visibility.html): Где AI берёт образы локального бизнеса
 - [AI-автоматизация для маркетинга](https://geo-upgrade.ru/blog-post-ai-avtomatizaciya-dlya-marketinga.html): Человек, AI-штурман и нейросеть
 - [Alice AI Foundation](https://geo-upgrade.ru/blog-post-alice-ai-foundation.html): Суверенная нейросеть Яндекса — что это значит для бизнеса
