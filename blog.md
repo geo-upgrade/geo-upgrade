@@ -141,7 +141,7 @@ AI-видимость бренда
 [◆ Кабинет диагностики ошибок брендов →](blog-post-chastye-oshibki-ai-vidimosti.html)
 [◆ Галлюцинации ИИ о бренде: что делать, если нейросеть ошибается →](blog-post-gallyutsinatsii-neurosetey.html)
 [◆ Как ИИ собирает рейтинги и топы →](blog-post-kak-ii-sobiraet-reytingi-i-topy.html)
-[◆ Что такое цифровой призрак →](blog-post-digital-ghost.html)
+[◆ Почему нейросеть не знает про ваш бизнес →](blog-post-digital-ghost.html)
 [◆ Какие GEO-метрики использовать в отчёте →](blog-post-geo-metrics-full.html)
 ◆ Почему AI не видит бренд
 ◆ Технический GEO-аудит: 20 проверок →](blog-post-tehnicheskiy-geo-audit.html)

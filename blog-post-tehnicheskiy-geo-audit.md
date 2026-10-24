@@ -173,7 +173,7 @@ PageSpeed Insights — скорость Rich Results Test — разметка S
 [← Частые ошибки брендов в AI-видимости: кабинет диагностики](blog-post-chastye-oshibki-ai-vidimosti.html)
 [← Schema.org для GEO: разметка, которая работает](/blog-post-schema-org-dlya-geo.html)
 [← Что такое GEO простыми словами?](blog-post-what-is-geo.html)
-[← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
+[← Почему нейросеть не знает про ваш бизнес: анатомия цифрового призрака](blog-post-digital-ghost.html)
 [← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)
 [← Все материалы лаборатории](blog.html)
 

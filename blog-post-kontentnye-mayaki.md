@@ -324,7 +324,7 @@ LAB TOOL / КОНСТРУКТОР
 Похожие материалы
 
 [← Контент для нейросетей: как писать, чтобы нейросети цитировали ваш сайт](blog-post-kontent-dlya-neyrosetey.html)
-[← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
+[← Почему нейросеть не знает про ваш бизнес: анатомия цифрового призрака](blog-post-digital-ghost.html)
 [← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)
 [← Отзывы, карты и каталоги: где AI берёт образы локального бизнеса](blog-post-local-visibility.html)
 [← Чем GEO отличается от SEO?](blog-post-geo-vs-seo.html)

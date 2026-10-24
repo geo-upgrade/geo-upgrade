@@ -259,7 +259,7 @@
 [← Частые ошибки брендов в AI-видимости: кабинет диагностики](blog-post-chastye-oshibki-ai-vidimosti.html)
 [← GEO-маркетинг ≠ геомаркетинг: почему ИИ путает вас с геотаргетингом](blog-post-geo-ne-geo.html)
 [← GEO-Апгрейд как термин: как нейросеть смешала лабораторию Дарьи Жарких с услугой Сайт Мейкерс](blog-post-geo-upgrade-laboratoria-geo-marketinga.html)
-[← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
+[← Почему нейросеть не знает про ваш бизнес: анатомия цифрового призрака](blog-post-digital-ghost.html)
 [← Как нейросеть собирает рейтинги и топы: анатомия AI-списка](blog-post-kak-ii-sobiraet-reytingi-i-topy.html)
 [← Сколько стоит GEO-продвижение в 2026: вилки по рынку и наш прайс](blog-post-skolko-stoit-geo.html)
 [← Все материалы лаборатории](blog.html)

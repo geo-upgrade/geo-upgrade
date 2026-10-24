@@ -59,7 +59,7 @@
 - [AI-сигналы](https://geo-upgrade.ru/blog-news.html): Страница категории блога
 - [Что такое GEO простыми словами](https://geo-upgrade.ru/blog-post-what-is-geo.html): Как нейросети видят бренд
 - [Чем GEO отличается от SEO](https://geo-upgrade.ru/blog-post-geo-vs-seo.html): Простое объяснение для бизнеса
-- [Что такое цифровой призрак](https://geo-upgrade.ru/blog-post-digital-ghost.html): 10 причин невидимости бренда
+- [Почему нейросеть не знает про ваш бизнес: анатомия цифрового призрака](https://geo-upgrade.ru/blog-post-digital-ghost.html): 10 причин невидимости бренда
 - [Контентные маяки](https://geo-upgrade.ru/blog-post-kontentnye-mayaki.html): Как сделать бренд понятнее для людей и AI
 - [GEO-метрики в отчёте](https://geo-upgrade.ru/blog-post-geo-metrics-full.html): Полная система измерения
 - [Отзывы, карты и каталоги](https://geo-upgrade.ru/blog-post-local-visibility.html): Где AI берёт образы локального бизнеса

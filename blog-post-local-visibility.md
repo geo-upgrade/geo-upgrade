@@ -214,7 +214,7 @@ yell.ru
 Похожие материалы
 
 [← Частые ошибки брендов в AI-видимости: кабинет диагностики](blog-post-chastye-oshibki-ai-vidimosti.html)
-[← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
+[← Почему нейросеть не знает про ваш бизнес: анатомия цифрового призрака](blog-post-digital-ghost.html)
 [← Что такое GEO простыми словами?](blog-post-what-is-geo.html)
 [← Чем GEO отличается от SEO?](blog-post-geo-vs-seo.html)
 [← GEO для салонов красоты: что ИИ спрашивает про бьюти](blog-post-geo-dlya-salonov-krasoty.html)

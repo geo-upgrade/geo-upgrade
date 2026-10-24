@@ -236,7 +236,7 @@ GEO прощает медленный старт, но не прощает фо�
 Похожие материалы
 
 [← Что такое GEO простыми словами?](blog-post-what-is-geo.html)
-[← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
+[← Почему нейросеть не знает про ваш бизнес: анатомия цифрового призрака](blog-post-digital-ghost.html)
 [← Карта запросов клиента](blog-post-karta-zaprosov-klienta.html)
 [← Контентные маяки](blog-post-kontentnye-mayaki.html)
 [← Все материалы лаборатории](blog.html)

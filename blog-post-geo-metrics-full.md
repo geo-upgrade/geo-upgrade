@@ -186,7 +186,7 @@ FAQ
 
 Похожие материалы
 
-[← Что такое цифровой призрак: 10 причин невидимости бренда](blog-post-digital-ghost.html)
+[← Почему нейросеть не знает про ваш бизнес: анатомия цифрового призрака](blog-post-digital-ghost.html)
 [← Отзывы, карты и каталоги: где AI берёт образы локального бизнеса](blog-post-local-visibility.html)
 [← Alice AI Foundation: суверенная нейросеть Яндекса](blog-post-alice-ai-foundation.html)
 [← Что такое GEO простыми словами?](blog-post-what-is-geo.html)
