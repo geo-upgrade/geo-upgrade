@@ -335,6 +335,7 @@ Google Maps
 
 Похожие материалы
 
+[← Контент для нейросетей: как писать, чтобы нейросети цитировали ваш сайт](blog-post-kontent-dlya-neyrosetey.html)
 [← Технический GEO-аудит: 20 проверок, которые делают сайт видимым для ИИ](blog-post-tehnicheskiy-geo-audit.html)
 [← Отзывы, карты и каталоги: где AI собирает образ локального бизнеса](blog-post-local-visibility.html)
 [← Какие GEO-метрики можно использовать в отчёте](blog-post-geo-metrics-full.html)

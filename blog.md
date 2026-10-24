@@ -1,24 +1,8 @@
-<html><head><meta name="\&quot;color-scheme\&quot;" content="\&quot;light" dark\"="">
-    <style>
-        pre {
-          content-visibility: auto;
-          line-height: 1.2em;
-          margin: 0;
-        }
-    </style>
-    </head><body><pre style="width: 386ch; contain-intrinsic-height: 360em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
-    &lt;style&gt;
-        pre {
-          content-visibility: auto;
-          line-height: 1.2em;
-          margin: 0;
-        }
-    &lt;/style&gt;
-    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 386ch; contain-intrinsic-height: 346.8em; content-visibility: visible"&gt;# GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейд
+# GEO-лаборатория: журнал AI-видимости — блог GEO-Апгрейд
 
-&amp;gt; URL: https://geo-upgrade.ru/blog.html
+> URL: https://geo-upgrade.ru/blog.html
 
-**Назначение:** Журнал AI-видимости: 35 статей и интерактивный тест, категории, поиск по темам, CTA.
+**Назначение:** Журнал AI-видимости: 36 статей и интерактивный тест, категории, поиск по темам, CTA.
 
 **Описание (meta):** Практические материалы о GEO, AI-поиске, цифровом следе бренда, локальной видимости, контенте и автоматизации бизнеса.
 
@@ -84,6 +68,14 @@ AI-сценарии, промпт-цех и контроль человека в
 
 FRESH SIGNALS
 
+КОНТЕНТ
+
+[Контент для нейросетей: как писать, чтобы нейросети цитировали ваш сайт?](blog-post-kontent-dlya-neyrosetey.html)
+
+Что цитируют нейросети: форматы, alt-тексты, инфографика и повторяемость фактов. С конструктором alt-текста и мини-тестом цитируемости. 24 октября 202610–13 минут
+
+[Читать статью](blog-post-kontent-dlya-neyrosetey.html)
+
 AI-ВИДИМОСТЬ
 
 [Schema.org для GEO: разметка, которая работает](blog-post-schema-org-dlya-geo.html)
@@ -124,30 +116,6 @@ GEO ДЛЯ БИЗНЕСА
 
 [Читать статью](blog-post-kakie-neyroseti-my-proveryaem.html)
 
-GEO ДЛЯ БИЗНЕСА
-
-[Чем GEO-Апгрейд отличается от SEO и «полного цикла»](blog-post-geo-vs-full-cycle.html)
-
-Почему SEO — часть GEO-стратегии, а не наоборот: другая точка сборки, диагностический подход вместо «продажи всего сразу» и честные границы метода. С интерактивами: карта различий и мини-тест. 16 октября 202611–14 минут
-
-[Читать статью](blog-post-geo-vs-full-cycle.html)
-
-AI-ВИДИМОСТЬ
-
-[Частые ошибки брендов в AI-видимости: кабинет диагностики](blog-post-chastye-oshibki-ai-vidimosti.html)
-
-Кабинет диагностики частых ошибок AI-видимости: полувидимость, старые цены, карточки без сигналов и техслой. С интерактивом «Кабинет диагностики». 16 октября 202610–13 минут
-
-[Читать статью](blog-post-chastye-oshibki-ai-vidimosti.html)
-
-
-AI-ВИДИМОСТЬ
-
-[Галлюцинации нейросетей: что делать, если ИИ пишет о бренде неточности](blog-post-gallyutsinatsii-neurosetey.html)
-
-Почему нейросеть достраивает пустоту о бренде: эффект цифрового эха, три маски галлюцинаций и протокол канонизации фактов — 4 шага, чек-лист и мини-тест. 7 октября 202612–15 минут
-
-[Читать статью](blog-post-gallyutsinatsii-neurosetey.html)
 
 
 
@@ -215,6 +183,7 @@ AI-видимость бренда
 Контентная лаборатория
 
 Для маркетологов и авторов сайтов. Как писать тексты, понятные людям, поиску и AI.
+◆ [Контент для нейросетей: как писать, чтобы нейросети цитировали ваш сайт →](blog-post-kontent-dlya-neyrosetey.html)
 ◆ Страницы услуг для AI
 ◆ Полезный FAQ
 [◆ Карта запросов клиента →](blog-post-karta-zaprosov-klienta.html)
@@ -307,4 +276,4 @@ GEO-глоссарий
 
 GEO-Апгрейд — Лаборатория AI-видимости бренда. ИП Жарких Дарья Александровна, ОГРНИП 326700000056258, ИНН 700233102822. г. Томск, ул. Набережная озера, 22, 634009 · Пн–Пт 12:00–20:00 UTC+7 · тел. +7 952 944-92-39. г. Новосибирск, ул. Гоголя, 209, 630015 · Пн–Пт 12:00–20:00 UTC+7 · тел. +7 952 157-29-55. E-mail: geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru
 
-&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>
+</pre>

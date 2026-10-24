@@ -5,12 +5,18 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
     
     <item>
-      <title>Schema.org для GEO: разметка, которая работает</title>
+      <title>Контент для нейросетей: как писать, чтобы нейросети цитировали ваш сайт?</title>
+      <link>https://geo-upgrade.ru/blog-post-kontent-dlya-neyrosetey.html</link>
+      <description><![CDATA[Что цитируют нейросети: форматы (определения, цифры, таблицы, FAQ), alt-тексты и инфографика. Формула alt-текста, конструктор и мини-тест цитируемости контента.]]></description>
+      <pubDate>Sat, 24 Oct 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-kontent-dlya-neyrosetey.html</guid>
+    </item>
+    <item>
       <link>https://geo-upgrade.ru/blog-post-schema-org-dlya-geo.html</link>
       <description><![CDATA[Пошаговый протокол внедрения JSON-LD для Organization, услуг, FAQ и статей: примеры кода, таблица типовых ошибок и чек-лист согласованности фактов. С интерактивом «где ИИ теряет бренд».]]></description>
       <pubDate>Mon, 19 Oct 2026 12:00:00 +0700</pubDate>
