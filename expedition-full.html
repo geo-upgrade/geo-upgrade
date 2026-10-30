@@ -452,7 +452,7 @@ nav[aria-label="Основная навигация"] a {
 <p class="mt-5 text-base md:text-lg text-[#B8B0A8]">Две сессии и письменный план внедрения: что внедрять, в какой последовательности, какие инструменты и промпты, кто за что отвечает.</p>
 <div class="mt-8 flex flex-col sm:flex-row gap-4">
 <a href="mailto:geo.navigator@bk.ru?subject=AI-%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D1%8F%20%D0%9F%D0%BE%D0%BB%D0%BD%D0%B0%D1%8F%20%E2%80%94%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%C2%ABAI-%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D1%8F%20%D0%9F%D0%BE%D0%BB%D0%BD%D0%B0%D1%8F%C2%BB.%0A%0A%D0%9E%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B5%3A%0A%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%3A%0A%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%3A%0A" class="btn glow-beige inline-block rounded-md bg-beige px-7 py-4 text-center font-semibold">Построить маршрут</a>
-<a href="#calc" class="btn inline-block rounded-md border border-[#D4B896]/40 px-7 py-4 text-center font-semibold accent-beige">Рассчитать стоимость</a>
+<a href="#calc" class="btn inline-block rounded-md border border-[#D4B896]/40 px-7 py-4 text-center font-semibold accent-beige">Смотреть прайс</a>
 </div>
 <p class="mt-5 text-sm text-[#B8B0A8]">Не абстрактное «используйте ИИ» — конкретный маршрут с этапами и сроками.</p>
 <div class="mt-8"><span class="compass text-4xl" aria-hidden="true">&#129517;</span><p class="mt-2 font-heading text-xs tracking-[.2em] text-[#B8B0A8]">NAVIGATION STATUS: ACTIVE</p></div>
@@ -474,20 +474,10 @@ nav[aria-label="Основная навигация"] a {
 <div class="divider"></div>
 <section id="calc" class="nav-grid max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">ТАРИФ</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Стоимость дела</h2>
 <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-<article class="card card-featured p-6"><h3 class="text-xl font-semibold">AI-экспедиция Полная</h3><div class="mt-4"><span class="text-3xl font-bold accent-beige">15 000 ₽</span><p class="mt-1 text-sm text-[#B8B0A8]">Срок: 3–5 рабочих дней</p></div><p class="mt-4 text-sm text-[#B8B0A8]">Потолок цены фиксированный: даже если маршрут окажется сложнее, выше потолка не платите.</p><ul class="checklist mt-4"><li>Один раунд правок включён в стоимость</li><li>Точный расчёт — после вводной сессии</li><li>Заявка — письмом на geo.navigator@bk.ru</li></ul></article>
-<article class="card p-6"><h3 class="text-lg font-semibold accent-beige">Прикинуть в поле</h3><p class="mt-2 text-sm text-[#B8B0A8]">Соберите параметры дела — расчёт обновится сразу.</p>
-<div id="calc-wrap"><div class="calc-container">
-<div class="step-label" style="margin-top:16px;">Параметры дела</div>
-<div id="paramsArea"></div>
-<div class="result-section" id="resultSection">
-<div class="result-total"><span class="label">Ориентировочная стоимость</span><span class="price" id="resPrice">10 000 ₽</span></div>
-<div class="result-meta" id="resMeta">Потолок цены: 18 000 ₽. Точный расчёт — после вводной сессии.</div>
-<a href="mailto:geo.navigator@bk.ru?subject=AI-%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D1%8F%20%D0%9F%D0%BE%D0%BB%D0%BD%D0%B0%D1%8F%20%E2%80%94%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%C2%ABAI-%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D1%8F%20%D0%9F%D0%BE%D0%BB%D0%BD%D0%B0%D1%8F%C2%BB.%0A%0A%D0%9E%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B5%3A%0A%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%3A%0A%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%3A%0A" class="cta-btn" id="ctaBtn">Отправить заявку с расчётом</a>
+<article class="card card-featured p-6"><h3 class="text-xl font-semibold">AI-экспедиция Полная</h3><div class="mt-4"><span class="text-3xl font-bold accent-beige">15 000 ₽</span><p class="mt-1 text-sm text-[#B8B0A8]">Срок: 3–5 рабочих дней</p></div><p class="mt-4 text-sm text-[#B8B0A8]">Цена фиксированная: даже если задача окажется сложнее, выше прайса не платите.</p><ul class="checklist mt-4"><li>Один раунд правок включён в стоимость</li><li>Точный расчёт — после вводной сессии</li><li>Заявка — письмом на geo.navigator@bk.ru</li></ul></article>
+
 </div>
-</div></div>
-</article>
-</div>
-<p class="mt-6 text-sm text-[#B8B0A8]">Цены ориентировочные: точная стоимость зависит от объёма задачи и сложности ниши. Точный расчёт — после вводной сессии.</p>
+<p class="mt-6 text-sm text-[#B8B0A8]">Цена фиксированная. Расширение объёма — опции с фиксированными ценами.</p>
 </section>
 <div class="divider"></div>
 <section id="limits" class="max-w-6xl mx-auto px-5 py-16 md:py-24"><p class="font-heading text-xs tracking-[.2em] accent-beige">ГРАНИЦЫ ДЕЛА</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Честные рамки</h2><div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"><article class="card p-6"><h3 class="text-lg font-semibold accent-beige">Входит в дело</h3><ul class="checklist mt-4"><li>Глубокий разбор и письменный план с этапами и сроками</li><li>Конкретные инструменты и промпты под ваши процессы</li><li>Рекомендации по обучению команды</li></ul></article><article class="card p-6"><h3 class="text-lg font-semibold accent-burgundy">Не входит в дело</h3><ul class="checklist-x mt-4"><li>Не готовая библиотека промптов — это Компас или Карта</li><li>Не настройка автоматизаций и чат-ботов</li><li>Не сопровождение после передачи плана</li></ul></article></div></section>
@@ -509,63 +499,7 @@ nav[aria-label="Основная навигация"] a {
 </main>
 <footer class="border-t border-white/10 bg-[#0D0618]/90"><div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between gap-4"><div class="text-sm text-[#B8B0A8]"><span class="font-heading font-bold accent-beige">GEO</span>-<span class="font-heading font-bold accent-beige">Навигатор</span> — дочернее направление <a href="index.html" class="accent-beige hover:underline">GEO-Апгрейд</a><div class="mt-2 text-xs text-[#B8B0A8]">г. Томск, ул. Набережная озера, 22, 634009 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79529449239" class="hover:text-[#D4B896]">+7 952 944-92-39</a> · г. Новосибирск, ул. Гоголя, 209, 630015 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79521572955" class="hover:text-[#D4B896]">+7 952 157-29-55</a> · <a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#D4B896]">geo.upgrade@bk.ru</a></div>
       </div><span class="flex items-center gap-2" aria-label="Соцсети GEO-Апгрейд"><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#D4B896"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M21.94 4.05c.28-1.16-.9-2.1-1.94-1.68L2.3 9.62c-1.15.46-1.09 2.11.09 2.5l4.35 1.4 1.62 5.2c.34 1.1 1.72 1.32 2.42.42l2.16-2.65 4.5 3.32c.97.72 2.37.2 2.6-.98L21.94 4.05zM8.5 13.06l8.93-5.5c.26-.16.53.19.31.4l-7.1 6.44c-.3.28-.5.65-.56 1.05l-.3 2.2c-.04.28-.42.31-.51.04l-1.16-3.75c-.13-.4.05-.84.39-1.08z"/></svg></a><a href="https://max.ru/u/f9LHodD0cOKn5NlqWfUehS5ZCaGQ9oLqwIkL5vvgygrWfsgupZ45s41702Q" target="_blank" rel="noopener" aria-label="MAX" title="MAX" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#D4B896"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M4 4h16v13a2 2 0 0 1-2 2H9l-4 3V6a2 2 0 0 1 2-2h-3z"/></svg></a><a href="https://dzen.ru/id/6ab4b86296401f17f0716d4b" target="_blank" rel="noopener" aria-label="Дзен" title="Дзен" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#D4B896"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2h.9v8.1H21v1.8h-8.1V22h-1.8v-8.1H3v-1.8h8.1V2z"/></svg></a></span><div class="flex flex-wrap gap-x-3 md:gap-x-4 gap-y-2 text-sm text-[#B8B0A8]"><a href="index.html" class="hover:text-[#D4B896]">Главная</a><a href="about.html" class="hover:text-[#D4B896]">О лаборатории</a><a href="services.html" class="hover:text-[#D4B896]">Услуги</a><a href="blog.html" class="hover:text-[#D4B896]">Блог</a><a href="reviews.html" class="hover:text-[#D4B896]">Отзывы</a><a href="mentions.html" class="hover:text-[#D4B896]">Упоминания</a><a href="cases.html" class="hover:text-[#D4B896]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#D4B896]">Топ-160</a><a href="geo_navigator.html" class="font-semibold text-[#D4B896] hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#D4B896]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#D4B896]">Контакты</a><a href="faq.html" class="hover:text-[#D4B896]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#D4B896]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#D4B896]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#D4B896]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#D4B896]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#D4B896]">Email</a><a href="offer.html" class="hover:text-[#00F0FF]">Оферта</a><a href="privacy.html" class="hover:text-[#D4B896]">Политика</a></div></div><div class="max-w-6xl mx-auto px-5"><div class="mt-6 text-xs text-[#B8BCC6]">© 2026 GEO-Апгрейд · ИП Жарких Дарья Александровна · ОГРНИП 326700000056258 · ИНН 700233102822</div></div>
-</footer><script>
-var SVC = {name:"AI-экспедиция Полная", base:10000, ceiling:18000, subject:"AI-экспедиция Полная — запрос услуги", fields:"О бизнесе:\nПроцессы для анализа:\nКонтакт:", params:[{"key": "p0", "label": "Горизонт планирования", "hint": "На какой срок строим план", "type": "radio", "options": [{"label": "1 месяц (база)", "price": 0}, {"label": "2 месяца (+2 000 ₽)", "price": 2000}, {"label": "3 месяца (+4 000 ₽)", "price": 4000}], "default": "1 месяц (база)"}, {"key": "p1", "label": "Число процессов", "hint": "Сколько процессов разберём", "type": "radio", "options": [{"label": "3 процесса (база)", "price": 0}, {"label": "4 процесса (+1 000 ₽)", "price": 1000}, {"label": "5 процессов (+3 000 ₽)", "price": 3000}], "default": "3 процесса (база)"}, {"key": "p2", "label": "Развёрнутое обучение команды", "hint": "Детальные рекомендации по обучению", "type": "toggle", "default": false, "price": 1000}]};
-var currentParams = {};
-function renderParams(){
-  var html = '';
-  SVC.params.forEach(function(p) {
-    currentParams[p.key] = (p.type==='toggle') ? false : p.default;
-    currentParams[p.key+'_price'] = (p.type==='toggle') ? 0 : (p.options[0].price);
-    html += '<div class="param-group"><label>'+p.label+'</label>';
-    if (p.hint) html += '<div class="param-hint">'+p.hint+'</div>';
-    if (p.type==='radio') {
-      html += '<div class="radio-row">';
-      p.options.forEach(function(opt, idx) {
-        var active = idx===0 ? ' active' : '';
-        html += '<div class="radio-pill'+active+'" data-param="'+p.key+'" data-price="'+opt.price+'" onclick="pickRadio(this)">'+opt.label+'</div>';
-      });
-      html += '</div>';
-    } else {
-      html += '<div class="toggle-row"><div class="toggle" data-param="'+p.key+'" data-price="'+p.price+'" onclick="flipToggle(this)"></div><span class="toggle-label">Нет</span></div>';
-    }
-    html += '</div>';
-  });
-  document.getElementById('paramsArea').innerHTML = html;
-  calc();
-}
-function pickRadio(el) {
-  var group = el.parentElement;
-  group.querySelectorAll('.radio-pill').forEach(function(p){p.classList.remove('active')});
-  el.classList.add('active');
-  currentParams[el.dataset.param+'_price'] = parseInt(el.dataset.price);
-  calc();
-}
-function flipToggle(el) {
-  var isOn = el.classList.toggle('on');
-  el.parentElement.querySelector('.toggle-label').textContent = isOn ? 'Да' : 'Нет';
-  currentParams[el.dataset.param] = isOn;
-  currentParams[el.dataset.param+'_price'] = isOn ? parseInt(el.dataset.price) : 0;
-  calc();
-}
-function calc() {
-  var total = SVC.base;
-  SVC.params.forEach(function(p) { total += (currentParams[p.key+'_price'] || 0); });
-  var capped = Math.min(total, SVC.ceiling);
-  document.getElementById('resPrice').textContent = capped.toLocaleString('ru-RU') + ' ' + '\u20BD';
-  document.getElementById('resultSection').classList.add('has-result');
-  var chosen = [];
-  SVC.params.forEach(function(p) {
-    var price = currentParams[p.key+'_price'] || 0;
-    if (price>0) chosen.push(p.label);
-  });
-  var body = 'Здравствуйте!\n\nХочу заказать услугу «'+SVC.name+'».\n\nОриентировочная стоимость: '+capped.toLocaleString('ru-RU')+' руб. (потолок '+SVC.ceiling.toLocaleString('ru-RU')+' руб.)\n\nВыбранные параметры: '+(chosen.length?chosen.join('; '):'базовые')+'\n\n'+SVC.fields+'\n';
-  document.getElementById('ctaBtn').href = 'mailto:geo.navigator@bk.ru?subject='+encodeURIComponent(SVC.subject)+'&body='+encodeURIComponent(body);
-}
-document.addEventListener('DOMContentLoaded', renderParams);
-var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('.card, .btn').forEach(function(el){observer.observe(el)});
-</script>
+</footer>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"4343a58c91e740dea8a9c104b4e4fd62"}' crossorigin="anonymous"></script>
 <script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
 <script src="/geo-assistant-widget.js" defer></script>
