@@ -1,7 +1,7 @@
-/* GEO-Апгрейд — lab-account.js v5.
-   «ЛК» — закреплённая пилюля в ПРАВОМ НИЖНЕМ углу экрана: не пересекается ни с меню,
-   ни с бургером. Вход/регистрация — login.html; кабинет — cabinet.html.
-   «♡ В избранное» — слева снизу (fixed, вёрстку не двигает). */
+/* GEO-Апгрейд — lab-account.js v6.
+   «ЛК» — пилюля в правом нижнем углу НАД кнопкой ассистента (58px @ right:22/bottom:22):
+   bottom:88px — не наезжает ни на меню, ни на ассистента.
+   «♡ В избранное» — 44px, простая плоская, слева снизу (SVG-сердце без свечения). */
 (function(){
   function session(){
     try{
@@ -20,23 +20,24 @@
     a.href='cabinet.html';
     a.setAttribute('aria-label','Личный кабинет');
     a.textContent=s&&s.name?('ЛК · '+String(s.name).slice(0,12)):'ЛК';
-    a.style.cssText='position:fixed;right:14px;bottom:14px;z-index:60;padding:9px 16px;border-radius:999px;border:1px solid rgba(212,184,150,.55);background:rgba(13,6,24,.94);color:#FFD66E;font:600 13px/1.2 system-ui,-apple-system,sans-serif;letter-spacing:.04em;text-decoration:none;white-space:nowrap;box-shadow:0 0 12px rgba(255,214,110,.28);cursor:pointer';
+    a.style.cssText='position:fixed;right:14px;bottom:88px;z-index:60;padding:9px 16px;border-radius:999px;border:1px solid rgba(212,184,150,.55);background:rgba(13,6,24,.94);color:#FFD66E;font:600 13px/1.2 system-ui,-apple-system,sans-serif;letter-spacing:.04em;text-decoration:none;white-space:nowrap;cursor:pointer';
     document.body.appendChild(a);
   }
-  /* «♡ В избранное» — fixed-кнопка слева снизу, вёрстку не двигает */
+  /* «♡ В избранное» — слева снизу, 44px, плоская */
   if(!document.getElementById('lab-fav-btn')&&/\.html$/.test(page)){
     var btn=document.createElement('button');
     btn.id='lab-fav-btn';
     btn.type='button';
     btn.setAttribute('aria-label','В избранное');
-    btn.style.cssText='position:fixed;left:14px;bottom:14px;z-index:60;width:34px;height:34px;border-radius:50%;border:1px solid rgba(212,184,150,.45);background:rgba(13,6,24,.85);color:#C9B27F;font-size:15px;line-height:1;cursor:pointer;box-shadow:0 0 10px rgba(255,214,110,.18)';
+    btn.style.cssText='position:fixed;left:16px;bottom:16px;z-index:60;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.30);background:#150B26;color:#F4F4FA;cursor:pointer;display:flex;align-items:center;justify-content:center';
+    var heartOn='<svg viewBox="0 0 24 24" width="20" height="20" fill="#FFD66E" stroke="#FFD66E" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9C1 8.6 2.9 5.4 6.2 5.1c2-.2 3.9.9 4.8 2.6l1 1.7 1-1.7c.9-1.7 2.8-2.8 4.8-2.6 3.3.3 5.2 3.5 3.7 6.9-2 4.4-9.5 9-9.5 9z"/></svg>';
+    var heartOff='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#F4F4FA" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9C1 8.6 2.9 5.4 6.2 5.1c2-.2 3.9.9 4.8 2.6l1 1.7 1-1.7c.9-1.7 2.8-2.8 4.8-2.6 3.3.3 5.2 3.5 3.7 6.9-2 4.4-9.5 9-9.5 9z"/></svg>';
     function favs(){try{return JSON.parse(localStorage.getItem('geo_lab_fav')||'[]')}catch(_){return []}}
     function save(f){try{localStorage.setItem('geo_lab_fav',JSON.stringify(f))}catch(_){}}
     function mark(){
       var inlist=favs().some(function(f){return f.url===page});
-      btn.textContent=inlist?'♥':'♡';
+      btn.innerHTML=inlist?heartOn:heartOff;
       btn.title=inlist?'Убрать из избранного':'В избранное';
-      btn.style.color=inlist?'#FFD66E':'#C9B27F';
     }
     mark();
     btn.onclick=function(){
