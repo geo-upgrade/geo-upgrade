@@ -1,19 +1,523 @@
-<!doctype html>
-<html lang="ru" class="no-js">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html><html lang="ru" class=""><head>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA+AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgVJREFUeJylkztoVFEQhr8559zduw83RoKEaBRUVBQfIFgEBbERQQtLESJR1kiwkIiNFja2YmMXEUFbG1PoEoIg2ASCCUQhqMEHghhFTET3Ps4di7uJQdLtNDNn5p85A/8/Ug03Km2YaacZwAEgkr90xTJLuSVbraaKU2OQNIEsA+dATB6nKaD/GqwDY/JcnIAIGgQ4kohsXRcahsj8PJLGaLkC1SpqLYggzQhZWIA4AiDr7kbSFPk2j9gHzzTbsbs1NaF46QLasZZ45C58XYQQzNRrwsEz+J27iG/cRDdtA1XM9Etg6ocWT9S11LNXi8f6tbTloBZO1pWfqoXTw1rq2aOl3v1a6tyqpjGrMv1dwwPHtXBqSHnn1QUP72Oej5EOXoayRxYXEGPht5KcGyI93499Mo4dfUS2bzvu9h3MzBTyYQ47PobTWgf4DFRJrg5DEiKTE+AyXOMx5tUk8vlLzoIH1tQgiqDioVzBpWcHII4wb2bhD+BTEIUOixoLSYZ2rcdOvMCOPiUd6Ec+zqEbevFHDyHBlVvq+w6DK2DezhDcG0GrNeJr18EHUC0i7z9RHL4IhQJJfQjfdwSiJna8gVToVERa/KcQFMEFy5SRZbkvlfO4+QvEtYSlSLWyWZdVJpKDVHPRKCAtPWmW141hJd7h/eoiX/p55amp8j++7WNqe8BfwsTb5mYAskEAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFU0lEQVR42u2Xa4hd1RXHf2vvfc59TO5NZsYkkzhDoy1qBEFrBaUvaEsJlL5MExVbEBUKFVEQCwVLP1QstdBWqQ2FPigllIDmg5WipTV9xKpVqgRbopYqJtGZzCt37p1z7z3n7L36YZ/rTNoG2k/5Mgs297DO3v/73+t9ZFN9WjmPYjjPskFgg8B5J+DUSHwSiUsBFDQuoVKNROScYKKgum63cDb26GyFHQk4h2iAPIeyBFXUCFgHSQIqEHxFTsGX6H8hIaooAsacTdZa8GXE9xWOc5DWUBEcwwHaaBAu3Y1esB2sRVZ7yOwp5ORJNHik0QAf0HodbbVADIwsp4AGVAPkBdLtIgoYQQHJeujkVsJFF6ObJ8CXyOlZzJtvQJHjiptuwX9+H+F9l0GrAQmQgywuY147RnLgEcwLz0JZ4D/yMfKHHoZVXbMIQAjQEMwrr1K7/QZUDGgAa8nvvJdy7w3o1DRsslACK33M317G/eKnuOL+B6KvLNBVZLGLpim6dRx/1UeRN05QO/p7Qr2ONpvoeBsccaWsWWEMdH4HWIeKIBiG3/4B/gt7IKs8MtdFa3WYaBA+dB35B67DkXlwgnvsEPbxw8jSAiQJum07fs+nkFNvoWkafWkMDBUsyPHXSX7yw0i+yBH1sHwm7u2tUNx6B37vHlgoYNAn+f6D2BefQxtNyi/dhv/0Z6EMOFoWe/AQyf33QZpE0wZF/vk69pk/omNjaHszZBkYF0PbgSwvYX/zRLzaIEOGOaQpumUctkxQXn8jdAOMJSSPfA/3y5/B+CRSlqTf+gbD915CuOIyHJ0c9/ij0GyATWC1F32bJKhTGPShOQa2CjwBCkVndlHcc18kUOSQBMyLL2F/9yThiqvQnTOgBpb72KNPQ2szBIVaHVZ7mD8dIVy9GyeLS3DmTEy7fkZ599fwV14OfaBmkcVl0ge+DoNBdIEAuaIzU5R331IFIdAG+9Bh3K8eQycmIXUgIJ0zsNKtUjWgvozP83NQgou+rYpE8PhrriV84nI4DdRAZjO0VsMYieZXwAqy2EWePx4JlAU0BfP3Y5CkMe9H9WiEv746SaUXcLptEt1xIcy+De0tJN/5JnpwB8UdX0Wnt0G3C2JikRmVxZogL79Keu9XAEWGA8hLsAbd1MLMzUJ/AM06OjGBTm5FlhbRJI1FqJ+hM7vAgqFm8F+8FVwC/Qzz0l+wT/82Vq7EVOWzKp1B1zpICEi2ivQzyDJkkCHdDhiDnHgT84/jkCg0HeXn9sdYGg6gs4xeOIP/+CchCzj64D/4YYYP/xj75BPI8hK6fQpabRj6qpQGxJeVaT0MFJ3aSfHluyLBskQI0B9gHz2ILMzjfv4j8msPQC/gr99Hbh32mSNoewt+/83o1FSMHY7nypwqC6rMqzJb/b6jyrKqHD2l9fe8X5v1nZruu1PpqHJSldOq9NatYTzbuPgabbYv0ubYtCZ3PRj3zqqyuA57XpU5VXluTl3ttv34z+wlXHk1Or413rjXRd45gX3hWexTv8Z0OjF8Zt/GHnkeHei7QRuzQBED9FYh68emlqYkB76LOfZXyhtvJlyyG9oT0VoLc5g//wF3+BDSbE4rRQHtNrqpFYEHA2Slg/T7kKYxsgENPoKbdbExaq8hRCJp7d22q9Yg/SzuGp9AG2OgAVnpQK8H9Toy1tqlKoJ4H/+g6mQYi4hEYNWoF8AY9JzzQEVkvVgbCfkSDQFEEGvBWAgBFwMo9m4RszZEeH82kK7p5RzDyL9PLwrxYlX+i7EVhoIv4kAiowP6P3yf6P/3XiqdjF7qxlC6QWCDwH/KvwASIpEQWO092wAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta charset="UTF-8"><link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Личный кабинет — личная лаборатория клиента | GEO-Апгрейд</title>
 <meta name="description" content="Личный кабинет GEO-Апгрейд: анкета клиента, купленные услуги и статусы, избранное статей, заявка и оплата. Регистрация бесплатна.">
-<meta property="og:title" content="Личный кабинет — личная лаборатория клиента | GEO-Апгрейд">
-<meta property="og:description" content="Ваш личный экран лаборатории: анкета, купленные услуги, избранное, заявка и оплата с проверкой.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://geo-upgrade.ru/cabinet.html">
-<meta property="og:image" content="https://geo-upgrade.ru/cover-blog-post-geo-vs-full-cycle.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin=""><style>
+/* fonts.css (inlined, PSI #4) */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(orbitron-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(orbitron-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(orbitron-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(orbitron-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
 <style>
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Orbitron',sans-serif;line-height:1.15}
+.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}
+.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}
+.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px}
+.card:hover{border-color:rgba(0,240,255,.65);box-shadow:0 10px 28px rgba(0,240,255,.13);transform:translateY(-3px)}
+.card,.btn{transition:all .3s cubic-bezier(.22,1,.36,1)}
+.btn-city-tomsk{background:#00F0FF;color:#0D0618}
+.btn-city-nsk{background:#8B5CF6;color:#F5F7FA}
+.btn-city-tomsk:hover{box-shadow:0 0 18px rgba(0,240,255,.45)}
+.btn-city-nsk:hover{box-shadow:0 0 18px rgba(139,92,246,.45)}
+.btn:hover{transform:translateY(-2px)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}
+.table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.table th,.table td{border:1px solid rgba(184,188,198,.3);padding:.75rem;text-align:left}
+.table th{background:rgba(0,240,255,.08);color:#00F0FF}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}.card:hover,.btn:hover{transform:none}}
+</style>
+<script async="" src="https://mc.yandex.ru/metrika/tag.js?id=113118311"></script><script>document.documentElement.classList.remove('no-js');</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"О лаборатории GEO-Апгрейд","description":"GEO-Апгрейд — лаборатория AI-видимости бренда. Исследуем, как нейросети видят бренды, и помогаем бизнесу стать понятнее для AI, заметнее для клиентов и свободнее от рутины.","url":"https://geo-upgrade.ru/about.html","mainEntity":{"@type":"Organization","name":"GEO-Апгрейд","url":"https://geo-upgrade.ru","email":"geo.upgrade@bk.ru","telephone":"+79529449239","foundingDate":"2026-08","founder":{"@type":"Person","name":"Жарких Дарья Александровна","jobTitle":"GEO-маркетолог и AI-консультант","description":"Специалист с 11-летним опытом в маркетинге, продажах, контенте и SEO. Развивает экспертизу в GEO-маркетинге, промпт-инжиниринге и автоматизации бизнес-процессов.","sameAs":["https://workspace.ru/id/darya-zharkih/","https://www.klerk.ru/user/2726432/","https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933","https://2gis.ru/novosibirsk/geo/70000001118650762","https://www.avito.ru/brands/a689faf0fc1a53cfe40d4eab4e5e3aa4","https://zoon.ru/nsk/business/ekspertnaya_laboratoriya_geo-apgrejd/","https://www.yell.ru/novosibirsk/com/geo-apgrejd_14527356/"],"address":{"@type":"PostalAddress","addressLocality":"Томск","addressCountry":"RU"}},"address":{"@type":"PostalAddress","streetAddress":"Набережная Озера, 22","postalCode":"634009","addressLocality":"Томск","addressCountry":"RU"},"sameAs":["https://t.me/geoupgrade","https://vk.ru/geo.upgrade","https://yandex.ru/profile/84156063982","https://maps.app.goo.gl/R8nnURT4CwAqi3nc7","https://2gis.ru/tomsk/geo/70000001118166258","https://tomsk.flamp.ru/firm/geo_apgrejjd-70000001118166258","https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7","https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933","https://profi.ru/profile/ZharkikhDA3/","https://workspace.ru/id/darya-zharkih/","https://www.klerk.ru/user/2726432/","https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/","https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/","https://2gis.ru/novosibirsk/geo/70000001118650762","https://www.avito.ru/brands/a689faf0fc1a53cfe40d4eab4e5e3aa4","https://zoon.ru/nsk/business/ekspertnaya_laboratoriya_geo-apgrejd/","https://www.yell.ru/novosibirsk/com/geo-apgrejd_14527356/"]},"sameAs":["https://t.me/geoupgrade","https://vk.ru/geo.upgrade","https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933","https://profi.ru/profile/ZharkikhDA3/","https://workspace.ru/id/darya-zharkih/","https://www.klerk.ru/user/2726432/","https://dzen.ru/id/6ab4b86296401f17f0716d4b","https://g.page/r/CSUI5EnmoeeoEBM/review","https://maps.app.goo.gl/R8nnURT4CwAqi3nc7","https://yandex.ru/profile/84156063982","https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7","https://2gis.ru/tomsk/geo/70000001118166258","https://tomsk.flamp.ru/geo_upgrade","https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/","https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/","https://2gis.ru/novosibirsk/geo/70000001118650762","https://www.avito.ru/brands/a689faf0fc1a53cfe40d4eab4e5e3aa4","https://zoon.ru/nsk/business/ekspertnaya_laboratoriya_geo-apgrejd/","https://www.yell.ru/novosibirsk/com/geo-apgrejd_14527356/"]}</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://geo-upgrade.ru"},{"@type":"ListItem","position":2,"name":"О лаборатории","item":"https://geo-upgrade.ru/about.html"}]}</script>
+
+  <link rel="canonical" href="https://geo-upgrade.ru/cabinet.html">
+  <meta property="og:url" content="https://geo-upgrade.ru/cabinet.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://geo-upgrade.ru/og-cover.jpg">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="GEO-Апгрейд">
+  <meta property="og:title" content="Личный кабинет — личная лаборатория клиента | GEO-Апгрейд">
+  <meta property="og:description" content="Личный кабинет GEO-Апгрейд: анкета клиента, купленные услуги и статусы, избранное статей, заявка и оплата. Регистрация бесплатна.">
+<style id="xray-css">
+/* ===== GEO-XRAY (виджет «Рентген») ===== */
+#xray-root{--x:0;position:relative}
+.x-veil{
+  position:fixed;inset:0;z-index:5;pointer-events:none;
+  opacity:calc(var(--x,0)*.6);
+  background:
+    repeating-linear-gradient(0deg,rgba(0,240,255,.045) 0 1px,transparent 1px 4px),
+    radial-gradient(120% 90% at 50% 0%,rgba(13,6,24,.25),rgba(13,6,24,.9));
+}
+.x-keep{
+  position:relative;
+  outline:1px dashed rgba(0,240,255,calc(var(--x)*.75));
+  outline-offset:7px;
+}
+.x-keep::before{
+  content:attr(data-tag);
+  position:absolute;top:-20px;left:0;
+  font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:.22em;
+  color:#00F0FF;opacity:var(--x);pointer-events:none;white-space:nowrap;z-index:2;
+}
+.x-text{
+  text-shadow:0 0 calc(var(--x)*14px) rgba(0,240,255,calc(var(--x)*.5));
+}
+.x-decor{
+  opacity:calc(1 - var(--x));
+  filter:grayscale(calc(var(--x))) brightness(calc(1 - var(--x)*.55));
+}
+.x-img-wrap{position:relative;display:inline-block;max-width:100%}
+.x-blind{
+  position:absolute;inset:auto 0 0 0;
+  padding:5px 8px;text-align:center;
+  font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:.22em;
+  color:#00F0FF;background:rgba(13,6,24,.78);
+  border-top:1px dashed rgba(0,240,255,.55);
+  opacity:var(--x);pointer-events:none;
+}
+#xray-root.ai-mode .x-text{
+  font-family:ui-monospace,'JetBrains Mono',Consolas,monospace;
+  font-size:.95em;
+}
+#xray-root.ai-mode .x-keep::before{color:#7dffe0}
+.xray-bar{
+  position:fixed;left:50%;bottom:14px;transform:translateX(-50%);
+  z-index:60;width:min(680px,calc(100vw - 24px));
+  display:flex;align-items:center;gap:14px;
+  padding:12px 18px;border-radius:14px;
+  background:rgba(13,6,24,.92);backdrop-filter:blur(10px);
+  border:1px solid rgba(0,240,255,.4);
+  box-shadow:0 0 34px rgba(0,240,255,.2);
+  font-family:'Orbitron',sans-serif;
+}
+.xray-bar .lbl{font-size:9px;letter-spacing:.2em;color:#B8BCC6;text-transform:uppercase;white-space:nowrap}
+.xray-bar .lbl.on{color:#00F0FF}
+.xray-bar input[type=range]{
+  -webkit-appearance:none;appearance:none;flex:1;height:4px;border-radius:2px;
+  background:linear-gradient(90deg,#00F0FF,#7b5cff);outline:none;cursor:ew-resize;
+}
+.xray-bar input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;
+  background:#0D0618;border:2px solid #00F0FF;box-shadow:0 0 14px rgba(0,240,255,.85);cursor:ew-resize;
+}
+.xray-bar input[type=range]::-moz-range-thumb{
+  width:18px;height:18px;border-radius:50%;
+  background:#0D0618;border:2px solid #00F0FF;box-shadow:0 0 14px rgba(0,240,255,.85);cursor:ew-resize;
+}
+.xray-bar .pct{font-size:11px;color:#00F0FF;min-width:44px;text-align:right}
+.xray-bar .mode{font-size:9px;letter-spacing:.16em;color:#B8BCC6;text-transform:uppercase;white-space:nowrap}
+@media(max-width:560px){.xray-bar .mode{display:none}}
+</style>
+
+<style>
+/* Оффер лаборатории — полоса под героем */
+.lab-offer-strip{padding:26px 0;border-top:1px solid rgba(0,240,255,.35);border-bottom:1px solid rgba(0,240,255,.35);background:linear-gradient(90deg,rgba(0,240,255,.06),rgba(139,92,246,.05),rgba(0,240,255,.06))}
+.lab-offer-chip{display:inline-block;padding:.3rem .7rem;border-radius:9999px;font-size:.72rem;letter-spacing:.06em;border:1px solid rgba(0,240,255,.35);color:#00F0FF;background:rgba(0,240,255,.06);font-family:'Orbitron',sans-serif}
+.lab-offer-line{margin:12px 0 0;font-size:clamp(17px,2.4vw,22px);line-height:1.5;color:#F5F7FA}
+.lab-offer-line strong{color:#00F0FF;font-weight:600}
+</style>
+<link rel="stylesheet" href="tailwind.min.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style><style>
+/* perf-fixes.css (inlined, PSI #4) */
+/* perf-fixes.css — расширение зон тапа (Accessibility). Визуально ничего не меняет. */
+header a, footer a, .geoas-chip, .fc-btn, a.btn { position: relative; }
+header a::before, footer a::before, .geoas-chip::before { content: ""; position: absolute; inset: -10px; }
+.fc-btn::before, a.btn::before { content: ""; position: absolute; inset: -4px; }
+
+
+/* ── v2 (07.10, вечер): A11Y — тап-зоны основной навигации ──────────────
+   Пункты меню были меньше 24px по высоте (text-sm без отступов).
+   Увеличиваем зону нажатия и расстояние между пунктами до ≥24px (WCAG 2.5.8).
+   Визуально меню становится чуть «воздушнее» — это ожидаемо. */
+nav[aria-label="Основная навигация"] {
+  gap: 4px 24px; /* было gap-x-4 (16px) gap-y-2 (8px) */
+}
+nav[aria-label="Основная навигация"] a {
+  display: inline-block;
+  padding: 6px 8px; /* зона нажатия 14+12 = 26px по высоте */
+}
+</style>
+<style>
+/* jnav B6.1: мобильное меню + полоса основных страниц (не применяется на index) */
+.jnav-btn{display:none;position:relative;z-index:60;width:44px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid rgba(0,240,255,.55);border-radius:8px;background:rgba(0,240,255,.08);cursor:pointer;transition:border-color .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn span{display:block;width:20px;height:2px;background:#00F0FF;border-radius:1px;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn:hover,.jnav-btn:focus-visible{border-color:rgba(0,240,255,.9);box-shadow:0 0 14px rgba(0,240,255,.35)}
+.jnav-btn:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+.jnav-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.jnav-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.jnav-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.jnav-beige{border-color:rgba(212,184,150,.55);background:rgba(212,184,150,.08)}
+.jnav-beige span{background:#D4B896}
+.jnav-beige:hover,.jnav-beige:focus-visible{border-color:rgba(212,184,150,.9);box-shadow:0 0 14px rgba(212,184,150,.3)}
+@media(min-width:768px){.jnav-btn,.jnav-strip{display:none!important}}
+@media(max-width:767.98px){
+.jnav-btn{display:flex}
+.jnav-nav{display:none!important;position:absolute;left:12px;right:12px;top:calc(100% + 8px);z-index:59;flex-direction:column;gap:2px;padding:10px;border:1px solid rgba(0,240,255,.35);border-radius:12px;background:rgba(13,6,24,.97);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(0,240,255,.12);backdrop-filter:blur(10px)}
+.jnav-open .jnav-nav{display:flex!important}
+.jnav-nav a{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:8px;font-size:1rem;color:#F5F7FA;text-decoration:none;opacity:0;transform:translateX(-8px);transition:opacity .25s ease,transform .25s ease}
+.jnav-open .jnav-nav a{opacity:1;transform:none}
+.jnav-nav a:nth-child(1){transition-delay:.02s}.jnav-nav a:nth-child(2){transition-delay:.05s}.jnav-nav a:nth-child(3){transition-delay:.08s}.jnav-nav a:nth-child(4){transition-delay:.11s}.jnav-nav a:nth-child(5){transition-delay:.14s}.jnav-nav a:nth-child(6){transition-delay:.17s}.jnav-nav a:nth-child(7){transition-delay:.2s}.jnav-nav a:nth-child(8){transition-delay:.23s}.jnav-nav a:nth-child(9){transition-delay:.26s}.jnav-nav a:nth-child(10){transition-delay:.29s}.jnav-nav a:nth-child(11){transition-delay:.32s}.jnav-nav a:nth-child(12){transition-delay:.35s}.jnav-nav a:nth-child(13){transition-delay:.38s}
+.jnav-nav a:hover{background:rgba(0,240,255,.08)}
+.jnav-nav a.text-\[\#00F0FF\]{background:rgba(0,240,255,.1);border:1px solid rgba(0,240,255,.4)}
+.jnav-nav a.accent-beige,.jnav-nav a.text-\[\#D4B896\]{background:rgba(212,184,150,.1);border:1px solid rgba(212,184,150,.4)}
+.jnav-nav::before{content:"МЕНЮ";display:block;font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:.25em;color:rgba(0,240,255,.7);padding:6px 12px 8px}
+.jnav-beige-panel .jnav-nav{border-color:rgba(212,184,150,.35);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(212,184,150,.1)}
+.jnav-beige-panel .jnav-nav::before{color:rgba(212,184,150,.8)}
+.jnav-beige-panel .jnav-nav a:hover{background:rgba(212,184,150,.08)}
+.jnav-strip{display:flex;gap:8px;overflow-x:auto;padding:8px 12px 10px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(0,240,255,.15);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-strip::-webkit-scrollbar{display:none}
+.jnav-strip a{flex:0 0 auto;padding:6px 12px;border-radius:999px;border:1px solid rgba(0,240,255,.3);font-size:.8rem;color:#F5F7FA;text-decoration:none;background:rgba(0,240,255,.05)}
+.jnav-strip a.jnav-here{border-color:rgba(0,240,255,.8);color:#00F0FF;background:rgba(0,240,255,.12)}
+.jnav-beige-panel + .jnav-strip{border-bottom-color:rgba(212,184,150,.2)}
+.jnav-beige-panel + .jnav-strip a{border-color:rgba(212,184,150,.3);background:rgba(212,184,150,.05)}
+.jnav-beige-panel + .jnav-strip a.jnav-here{border-color:rgba(212,184,150,.8);color:#D4B896;background:rgba(212,184,150,.12)}
+}
+</style>
+<noscript><style>@media(max-width:767.98px){.jnav-btn{display:none!important}.jnav-nav{position:static!important;display:flex!important;flex-wrap:wrap;gap:6px 8px;padding:10px 0 2px;opacity:1}.jnav-nav a{opacity:1;transform:none;display:inline-block;padding:8px 10px;font-size:.9rem}.jnav-nav::before{content:none}}</style></noscript><style>
+/* jnav B6.4: единый стиль с главной (текстовые ссылки, неон-ховер) */
+.jnav-quick a{border:none;background:none;padding:6px 4px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none}
+.jnav-quick a:hover{color:#00F0FF;background:none}
+.jnav-quick a.jnav-here{color:#00F0FF;background:none}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{border:none;background:none;padding:6px 2px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none;white-space:nowrap}
+.jnav-strip a:hover{color:#00F0FF;background:none}
+.jnav-strip a.jnav-here{color:#00F0FF;background:none}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+@media(max-width:767.98px){
+.jnav-strip::-webkit-scrollbar{display:none}
+}
+</style>
+<style>/* jnav B6.4: быстрые пункты в хедере (стиль главной) + полоса «остальное» */
+.jnav-quick{display:none}
+@media(min-width:768px){.jnav-quick{display:none!important}}
+@media(max-width:767.98px){
+.jnav-quick{display:flex;gap:10px;align-items:center;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-quick::-webkit-scrollbar{display:none}
+.jnav-quick a{flex:0 0 auto;padding:6px 4px;font-size:.8rem;line-height:1.2;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-quick a:hover,.jnav-quick a.jnav-here{color:#00F0FF}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{flex:0 0 auto;padding:6px 2px;font-size:.8rem;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-strip a:hover,.jnav-strip a.jnav-here{color:#00F0FF}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+}
+</style>
+<style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style><style>
 :root{--bg:#0D0618;--panel:#150B26;--panel2:#1C1033;--neon:#00F0FF;--gold:#FFD66E;--gold2:#F0CC82;--txt:#EDEBF2;--muted:#B8BCC6;--line:rgba(184,188,198,.18)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -75,19 +579,26 @@ label{display:block;font-size:13px;color:var(--muted);margin:12px 0 6px}
 footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:13px}
 .scanline{position:relative;overflow:hidden}
 .scanline::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(0,240,255,.05) 50%,transparent 52%);pointer-events:none}
+
+/* --- анкета-карточка (v4) --- */
+.prof-card{margin:14px 0 18px}
+.pc-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid rgba(0,240,255,.18);padding-bottom:8px;margin-bottom:10px}
+.pc-head b{color:#00F0FF;font-size:12px;letter-spacing:.14em}
+.pc-date{color:#B8BCC6;font-size:12px}
+.pf-row{display:flex;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px dashed rgba(255,255,255,.07);font-size:14px}
+.pf-row span{color:#B8BCC6;min-width:150px;font-size:12px;letter-spacing:.03em}
+.pf-row b{color:#F4F4FA;word-break:break-word}
+.chip{display:inline-block;padding:3px 10px;margin:2px 4px 2px 0;border-radius:999px;border:1px solid rgba(0,240,255,.35);color:#00F0FF;font-size:12px}
+.pc-actions{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.pc-actions .btn{width:auto;padding:9px 16px;font-size:13px}
 </style>
-<!-- Yandex.Metrika counter --><script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(113118311, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });</script><noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt=""></div></noscript><!-- /Yandex.Metrika counter -->
-<link rel="canonical" href="https://geo-upgrade.ru/cabinet.html">
+<meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<header class="top"><div class="wrap toprow">
-  <a class="brand" href="index.html"><img class="logo" src="logo-round-min.webp" alt="GEO-Апгрейд" width="44" height="44"><b>GEO-Апгрейд</b></a>
-  <nav class="main" aria-label="Основная навигация">
-    <a href="index.html">Главная</a><a href="about.html">О лаборатории</a><a href="services.html">Услуги</a><a href="blog.html">Блог</a><a href="cases.html">Кейсы</a><a href="contacts.html">Контакты</a><a href="cabinet.html" class="nav-here" id="lab-nav-link">Личный кабинет</a>
-  </nav>
-</div></header>
 
-<main class="wrap" style="padding-top:28px">
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html" class="jnav-here">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
+
+<main id="main" style="padding-top:28px">
   <div id="lab-dash" class="hide">
     <p class="kicker">LAB CONSOLE · ЛИЧНЫЙ ЭКРАН</p>
     <h1 style="font-size:clamp(26px,4.5vw,40px);margin:10px 0 4px" id="dash-title">Лаборатория</h1>
@@ -131,6 +642,13 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
         <p class="kicker">PROFILE · АНКЕТА КЛИЕНТА</p>
         <h2 style="margin:8px 0 4px">Ваш профиль в лаборатории</h2>
         <p class="note">Анкета экономит первый разговор: мы видим нишу, запросы и цель до старта. Данные пригодятся в работе и при идентификации ваших платежей. Отправка — в приёмник лаборатории, сохранение — в вашем кабинете.</p>
+        
+        <div id="pf-card" class="hide prof-card card" style="margin:6px 0 14px">
+          <div class="pc-head"><b>ЛАБОРАТОРНАЯ КАРТОЧКА КЛИЕНТА</b><span class="pc-date" id="pf-card-date"></span></div>
+          <div id="pf-card-body"></div>
+          <div class="pc-actions"><button type="button" class="btn btn-ghost" id="pf-edit">Редактировать анкету</button><button type="button" class="btn btn-ghost" id="pf-copy">Скопировать текст</button></div>
+        </div>
+
         <form id="f-profile" novalidate>
           <div class="formgrid two">
             <div class="field"><label for="pf-brand">Бренд / компания</label><input id="pf-brand" type="text"></div>
@@ -195,14 +713,135 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
     </div>
   </div>
 </main>
+<footer class="border-t border-white/10 py-10">
+  <div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="96" height="96"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div>
+      <p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p>
+      <p class="mt-4 text-sm text-[#B8BCC6]">GEO-маркетолог и AI-консультант Жарких Дарья Александровна</p>
+      <p class="mt-2 text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера, 22, 634009 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a></p><p class="mt-2 text-sm text-[#B8BCC6]">г. Новосибирск, ул. Гоголя, 209, 630015 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79521572955" class="hover:text-[#00F0FF]">+7 952 157-29-55</a></p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p>
+      
+    </div>
+    <span class="flex items-center gap-2" aria-label="Соцсети GEO-Апгрейд"><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M21.94 4.05c.28-1.16-.9-2.1-1.94-1.68L2.3 9.62c-1.15.46-1.09 2.11.09 2.5l4.35 1.4 1.62 5.2c.34 1.1 1.72 1.32 2.42.42l2.16-2.65 4.5 3.32c.97.72 2.37.2 2.6-.98L21.94 4.05zM8.5 13.06l8.93-5.5c.26-.16.53.19.31.4l-7.1 6.44c-.3.28-.5.65-.56 1.05l-.3 2.2c-.04.28-.42.31-.51.04l-1.16-3.75c-.13-.4.05-.84.39-1.08z"></path></svg></a><a href="https://max.ru/u/f9LHodD0cOKn5NlqWfUehS5ZCaGQ9oLqwIkL5vvgygrWfsgupZ45s41702Q" target="_blank" rel="noopener" aria-label="MAX" title="MAX" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M4 4h16v13a2 2 0 0 1-2 2H9l-4 3V6a2 2 0 0 1 2-2h-3z"></path></svg></a><a href="https://dzen.ru/id/6ab4b86296401f17f0716d4b" target="_blank" rel="noopener" aria-label="Дзен" title="Дзен" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2h.9v8.1H21v1.8h-8.1V22h-1.8v-8.1H3v-1.8h8.1V2z"></path></svg></a></span><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="offer.html" class="hover:text-[#00F0FF]">Оферта</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div>
+<div class="max-w-6xl mx-auto px-5"><div class="mt-6 text-xs text-[#B8BCC6]">© 2026 GEO-Апгрейд · ИП Жарких Дарья Александровна · ОГРНИП 326700000056258 · ИНН 700233102822</div></div>
+</footer>
 
-<footer class="ft"><div class="wrap">
-  <span class="glyph">GEO-UPGRADE / LAB ACCOUNT v3.1</span>
-  <p style="margin:6px 0 0">630015, Новосибирск, ул. Гоголя, 209 · Пн–Пт, 12:00–20:00 · НСК-ЛАБОРАТОРИЯ</p>
-  <p style="margin:8px 0 0">GEO-Апгрейд — лаборатория AI-видимости. Кабинет работает локально в вашем браузере: пароль хранится хэшем, анкета и покупки — у вас на устройстве. В лабораторию уходят только заявки, анкета и данные чека.</p>
-</div></footer>
 
+<!-- ===== GEO-XRAY: панель управления ===== -->
+<div class="xray-bar" role="group" aria-label="Режим просмотра страницы">
+  <span class="lbl on">ЧЕЛОВЕК</span>
+  <input type="range" id="xray" min="0" max="100" value="0" step="1" aria-label="Переключение между режимом человека и режимом ИИ" title="Человек ⟷ ИИ" style="box-shadow: rgba(0, 240, 255, 0.9) 0px 0px 7.65896px;">
+  <span class="lbl">ИИ</span>
+  <span class="pct" id="xray-pct">0%</span>
+  <span class="mode" id="xray-mode">человеческий режим</span>
+</div>
 <script>
+/* ===== GEO-XRAY: скрипт виджета «Рентген» =====
+   Управляет одной CSS-переменной --x (0…1) на #xray-root.
+   Никаких зависимостей и бэкенда. */
+(function(){
+  var slider = document.getElementById('xray');
+  var root   = document.getElementById('xray-root');
+  var pct    = document.getElementById('xray-pct');
+  var mode   = document.getElementById('xray-mode');
+  if(!slider || !root) return;
+
+  /* --- авторазметка контента --- */
+  function tag(sel, cls, labelFn){
+    root.querySelectorAll(sel).forEach(function(el){
+      if(el.closest('.xray-bar')) return;
+      el.classList.add(cls);
+      if(labelFn && !el.dataset.tag) el.dataset.tag = labelFn(el);
+    });
+  }
+  tag('h1,h2,h3', 'x-keep', function(el){ return '<'+el.tagName.toLowerCase()+'>'; });
+  tag('article.card, table, .table, ul, ol, blockquote', 'x-keep', function(el){
+    return '<'+el.tagName.toLowerCase()+'>';
+  });
+  tag('a.btn', 'x-keep', function(el){ return '<a class=btn>'; });
+  tag('p, li, td, th, blockquote', 'x-text');
+  tag('div.divider, .hero-decor', 'x-decor');
+
+  /* изображения: гаснут + плашка «зона слепоты» */
+  root.querySelectorAll('img,video').forEach(function(el){
+    if(el.closest('.x-img-wrap')) return;
+    var w = document.createElement('span');
+    w.className = 'x-img-wrap';
+    el.parentNode.insertBefore(w, el);
+    w.appendChild(el);
+    var b = document.createElement('span');
+    b.className = 'x-blind';
+    b.textContent = 'ЗОНА СЛЕПОТЫ';
+    w.appendChild(b);
+  });
+
+  function apply(){
+    var v = +slider.value / 100;
+    root.style.setProperty('--x', v);
+    pct.textContent = Math.round(v*100) + '%';
+    root.classList.toggle('ai-mode', v >= 0.98);
+    mode.textContent = v === 0 ? 'человеческий режим'
+                     : v >= 0.98 ? 'режим ИИ: зона слепоты проявлена'
+                     : 'смешанный режим';
+  }
+  slider.addEventListener('input', apply);
+  slider.addEventListener('dblclick', function(){ slider.value = 0; apply(); });
+
+  /* пульс-подсказка, пока пользователь не тронул ползунок */
+  var touched = false;
+  slider.addEventListener('pointerdown', function(){ touched = true; });
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var t = 0, iv = setInterval(function(){
+      if(touched){ clearInterval(iv); return; }
+      t = (t + 1) % 60;
+      if(+slider.value === 0){
+        slider.style.boxShadow = '0 0 ' + (6 + 10*Math.abs(Math.sin(t/6))) + 'px rgba(0,240,255,.9)';
+      } else { clearInterval(iv); }
+    }, 90);
+  }
+
+  apply();
+})();
+</script>
+
+
+<script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
+<script src="/geo-assistant-widget.js" defer=""></script>
+<div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div>
+<script>
+/* jnav B6.1: мобильное меню + полоса основных страниц */
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.querySelector('.jnav-btn'),panel=document.getElementById('jnav-panel');
+  if(!btn||!panel){return}
+  var hdr=btn.closest('header')||document.body;
+  function set(open){hdr.classList.toggle('jnav-open',open);btn.setAttribute('aria-expanded',open?'true':'false');btn.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню')}
+  btn.addEventListener('click',function(){set(btn.getAttribute('aria-expanded')!=='true')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false)}});
+  document.addEventListener('click',function(e){if(btn.getAttribute('aria-expanded')==='true'&&!panel.contains(e.target)&&!btn.contains(e.target)){set(false)}});
+  window.addEventListener('resize',function(){if(window.innerWidth>=768){set(false)}});
+  var strip=document.querySelector('.jnav-strip');
+  if(strip){
+    var cur=(location.pathname.split('/').pop()||'index.html');
+    if(cur===''||cur==='index.html'){cur='index'}
+    strip.querySelectorAll('a').forEach(function(a){
+      var t=a.getAttribute('href').replace('./','').replace('.html','');
+      if(t===cur||(cur==='index'&&t==='index')){a.classList.add('jnav-here')}
+    });
+  }
+});
+</script>
+<script>
+/* jnav B6.4: подсветка текущей страницы в quick и strip */
+document.addEventListener('DOMContentLoaded',function(){
+  var cur=(location.pathname.split('/').pop()||'').replace('.html','');
+  if(cur===''){cur='index'}
+  document.querySelectorAll('.jnav-quick a,.jnav-strip a').forEach(function(a){
+    var t=a.getAttribute('href').replace('./','').replace('.html','');
+    if(t===cur){a.classList.add('jnav-here')}
+  });
+});
+</script>
+<div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div><script>
 /* ===== lab-account.js ядро (инлайн для cabinet.html) ===== */
 const LAB_SERVICES = {
  'a3d554e5-f2ff-4b4e-b34a-dafcf14b4356':{n:'GEO-сканер Лайт',a:10000,l:'https://tochkaplace.com/ia/a3d554e5-f2ff-4b4e-b34a-dafcf14b4356',p:'geo-scanner-lite.html'},
@@ -293,22 +932,41 @@ function renderFav(){
   });
 }
 function fillProfile(){
-  const p=store.get('geo_lab_profile',{});if(!p.done&&Object.keys(p).length===0)return;
+  const p=store.get('geo_lab_profile',{});
   ['brand','city','sphere','site','q1','q2','q3','goal','tried','note'].forEach(k=>{const el=$('pf-'+k);if(el&&p[k])el.value=p[k]});
   (p.ch||[]).forEach(v=>{const el=document.querySelector('#f-profile input[value="'+v+'"]');if(el)el.checked=true});
+  if(p.done)pfCard(p);else $('f-profile').classList.remove('hide');
 }
+
+function pfCard(p){
+  const rows=[['Бренд / компания',p.brand],['Город / регион',p.city],['Сфера деятельности',p.sphere],['Сайт',p.site],
+    ['Запрос 1',p.q1],['Запрос 2',p.q2],['Запрос 3',p.q3],['Цель',p.goal],['Что уже пробовал(а)',p.tried],['Комментарий',p.note]];
+  let html=rows.map(r=>r[1]?('<div class="pf-row"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>'):'').join('');
+  if((p.ch||[]).length)html+='<div class="pf-row"><span>Где важна видимость</span><b>'+(p.ch||[]).map(c=>'<span class="chip">'+c+'</span>').join(' ')+'</b></div>';
+  $('pf-card-body').innerHTML=html||'<p class="note">Карточка пока пустая — заполните анкету ниже.</p>';
+  $('pf-card-date').textContent=p.upd?('обновлено: '+p.upd):'';
+  $('pf-card').classList.remove('hide');
+  $('f-profile').classList.add('hide');
+}
+$('pf-edit').addEventListener('click',()=>{$('pf-card').classList.add('hide');$('f-profile').classList.remove('hide');$('pf-brand').focus();});
+$('pf-copy').addEventListener('click',()=>{
+  const rows=[...document.querySelectorAll('#pf-card .pf-row')].map(r=>r.innerText.replace(/\n/g,' '));
+  navigator.clipboard.writeText(rows.join('\n')).then(()=>toast('Карточка скопирована в буфер.')).catch(()=>toast('Не удалось скопировать — выделите текст вручную.'));
+});
+
 $('f-profile').addEventListener('submit',e=>{
   e.preventDefault();const s=session();
   const p={done:true,brand:$('pf-brand').value.trim(),city:$('pf-city').value.trim(),sphere:$('pf-sphere').value.trim(),site:$('pf-site').value.trim(),
     q1:$('pf-q1').value.trim(),q2:$('pf-q2').value.trim(),q3:$('pf-q3').value.trim(),
     ch:[...document.querySelectorAll('#f-profile input[type=checkbox]:checked')].map(x=>x.value),
-    goal:$('pf-goal').value,tried:$('pf-tried').value.trim(),note:$('pf-note').value.trim()};
+    goal:$('pf-goal').value,tried:$('pf-tried').value.trim(),note:$('pf-note').value.trim(),upd:new Date().toLocaleString('ru-RU')};
   store.set('geo_lab_profile',p);
   postLab('[Кабинет] АНКЕТА — '+(s.name||'')+' — '+s.email,
    'Анкета клиента из личной лаборатории.\nИмя/бренд: '+p.brand+'\nРегион: '+p.city+'\nСфера: '+p.sphere+'\nСайт: '+p.site+
    '\nЗапросы: '+[p.q1,p.q2,p.q3].filter(Boolean).join(' | ')+'\nСистемы: '+p.ch.join(', ')+'\nЦель: '+p.goal+'\nПробовал: '+p.tried+'\nКомментарий: '+p.note+
    '\nEmail: '+s.email);
   $('pf-saved').textContent='— сохранено и отправлено ✓';
+  pfCard(p);
   toast('Анкета сохранена и отправлена в лабораторию.');
 });
 $('btn-logout').onclick=()=>{localStorage.removeItem('geo_lab_session');location.href='cabinet.html'};
@@ -345,5 +1003,6 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
 
 </script>
 <script src="lab-account.js" defer></script>
-</body>
-</html>
+
+<script src="lab-account.js" defer></script>
+</body></html>
