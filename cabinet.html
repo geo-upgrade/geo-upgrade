@@ -623,7 +623,7 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
 
     <section id="sec-orders" class="panel" style="margin-top:16px">
       <p class="kicker">ORDERS · МОИ ПОКУПКИ</p>
-      <h2 style="margin:8px 0 4px">Купленные услуги</h2>
+      <h2 style="margin:8px 0 4px">Купленные услуги</h2><p class="note" style="margin-top:6px">Заявки со статусом «На проверке» можно удалить кнопкой «Удалить заявку». Оплаченные покупки — со статусом «Подтверждено» — остаются в кабинете навсегда: их нельзя удалить ни при каких условиях.</p>
       <div id="orders-box"><p class="note" id="orders-empty">Пока пусто. Нажмите «Оплатить» на странице любой услуги — заявка и оплата соберутся здесь.</p></div>
       <form id="f-confirm" class="hide" style="max-width:560px" novalidate>
         <div class="formgrid two">
@@ -765,7 +765,13 @@ function renderOrders(){
     const isOk=conf.has(o.uid+'|'+o.email.toLowerCase())||o.status==='Подтверждено';
     const d=document.createElement('div');d.className='order';
     d.innerHTML='<div class="row"><div><b>'+o.name+'</b><br><span class="note">'+fmt(o.amount)+' · '+(o.date||'')+(o.check?' · чек '+o.check:'')+'</span></div><span class="status '+(isOk?'st-ok':'st-wait')+'">'+(isOk?'ПОДТВЕРЖДЕНО':'НА ПРОВЕРКЕ')+'</span></div>';
-    if(!isOk&&!o.check){const b=document.createElement('button');b.className='btn btn-ghost';b.style.marginTop='10px';b.textContent='Указать чек';b.onclick=()=>showConfirm(o.id);d.appendChild(b)}
+    if(!isOk){
+      const acts=document.createElement('div');acts.className='pc-actions';acts.style.marginTop='10px';
+      if(!o.check){const b=document.createElement('button');b.className='btn btn-ghost';b.textContent='Указать чек';b.onclick=()=>showConfirm(o.id);acts.appendChild(b)}
+      const del=document.createElement('button');del.className='btn btn-mute';del.textContent='Удалить заявку';
+      del.onclick=()=>{if(confirm('Удалить заявку «'+o.name+'» из кабинета? Оплаченные и подтверждённые покупки не удаляются.')){const L=orders().filter(x=>x.id!==o.id);store.set('geo_lab_orders',L);renderOrders();toast('Заявка удалена.');}};
+      acts.appendChild(del);d.appendChild(acts);
+    }
     box.appendChild(d);
   });
 }
