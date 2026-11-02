@@ -547,41 +547,6 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
 
     <div class="divider"></div>
 
-    <section id="sec-pay" class="panel hide" style="border-color:rgba(255,214,110,.45)">
-      <p class="kicker" style="color:var(--gold2)">ORDER DESK · ЗАЯВКА И ОПЛАТА</p>
-      <h2 style="margin:8px 0 4px" id="pay-title">Оплата услуги</h2>
-      <div class="stat" style="margin:12px 0"><div class="k">УСЛУГА</div><div class="v" id="pay-service">—</div></div>
-      <div class="stat" style="margin:12px 0"><div class="k">СУММА</div><div class="v gold" id="pay-amount">—</div></div>
-      <form id="f-pay" novalidate>
-        <div class="formgrid two">
-          <div class="field"><label for="pay-name">Имя</label><input id="pay-name" type="text" required></div>
-          <div class="field"><label for="pay-email">Email для чека и связи</label><input id="pay-email" type="email" required></div>
-        </div>
-        <div class="field"><label for="pay-note">Комментарий к заявке (ниша, задача, ссылка на сайт — необязательно)</label><textarea id="pay-note" rows="3"></textarea></div>
-        <p class="big-err" id="pay-err"></p>
-        <button class="btn btn-gold" type="submit">Перейти к оплате через Точку →</button>
-        <p class="note" style="margin-top:10px">Заявка уйдёт в лабораторию вместе с переходом к оплате. После оплаты вернитесь сюда и укажите номер чека — статус «На проверке» сменится на «Подтверждено», как только лаборатория сверит чек.</p>
-      </form>
-      <form id="f-check" class="hide" novalidate>
-        <div class="formgrid two">
-          <div class="field"><label for="chk-num">Номер чека или операции</label><input id="chk-num" type="text" required></div>
-          <div class="field"><label for="chk-date">Дата оплаты</label><input id="chk-date" type="date" required></div>
-        </div>
-        <p class="big-err" id="chk-err"></p>
-        <button class="btn btn-neon" type="submit">Подтвердить покупку — заявка и чек уйдут в лабораторию</button>
-      </form>
-      <button class="btn btn-mute" type="button" id="pay-close" style="margin-top:12px">Вернуться в кабинет</button>
-    </section>
-
-    <section id="sec-catalog">
-      <div class="panel">
-        <p class="kicker">ORDER DESK · КАТАЛОГ УСЛУГ</p>
-        <h2 style="margin:8px 0 4px">Выберите услугу — заявка и оплата здесь же</h2>
-        <p class="note">Кнопка «Оплатить» открывает заявку с вашими данными: она уйдёт в лабораторию и откроется оплата в Точке. Оплаченное помечается «ОПЛАЧЕНО» и остаётся в кабинете навсегда.</p>
-        <div id="catalog-box"></div>
-      </div>
-    </section>
-
     <section id="sec-profile">
       <div class="panel">
         <p class="kicker">PROFILE · АНКЕТА КЛИЕНТА</p>
@@ -650,6 +615,50 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
       <p class="kicker">SHELF · ИЗБРАННОЕ</p>
       <h2 style="margin:8px 0 4px">Статьи и страницы, которые вы сохранили</h2>
       <div id="fav-box"><p class="note" id="fav-empty">Пока пусто. На любой странице сайта есть кнопка «В избранное» — она сохранит статью сюда.</p></div>
+    </section>
+
+    <section id="sec-pay" class="panel hide" style="border-color:rgba(255,214,110,.45)">
+      <p class="kicker" style="color:var(--gold2)">ORDER DESK · ЗАЯВКА И ОПЛАТА</p>
+      <h2 style="margin:8px 0 4px" id="pay-title">Оплата услуги</h2>
+      <div class="stat" style="margin:12px 0"><div class="k">УСЛУГА</div><div class="v" id="pay-service">—</div></div>
+      <div class="stat" style="margin:12px 0"><div class="k">СУММА</div><div class="v gold" id="pay-amount">—</div></div>
+      <form id="f-pay" novalidate>
+        <div class="formgrid two">
+          <div class="field"><label for="pay-name">Имя</label><input id="pay-name" type="text" required></div>
+          <div class="field"><label for="pay-email">Email для чека и связи</label><input id="pay-email" type="email" required></div>
+        </div>
+        <div class="field"><label for="pay-note">Комментарий к заявке (ниша, задача, ссылка на сайт — необязательно)</label><textarea id="pay-note" rows="3"></textarea></div>
+        <p class="big-err" id="pay-err"></p>
+        <button class="btn btn-gold" type="submit">Перейти к оплате через Точку →</button>
+        <p class="note" style="margin-top:10px">Заявка уйдёт в лабораторию вместе с переходом к оплате. После оплаты вернитесь сюда и укажите номер чека — статус «На проверке» сменится на «Подтверждено», как только лаборатория сверит чек.</p>
+      </form>
+      <form id="f-check" class="hide" novalidate>
+        <div class="formgrid two">
+          <div class="field"><label for="chk-num">Номер чека или операции</label><input id="chk-num" type="text" required></div>
+          <div class="field"><label for="chk-date">Дата оплаты</label><input id="chk-date" type="date" required></div>
+        </div>
+        <p class="big-err" id="chk-err"></p>
+        <button class="btn btn-neon" type="submit">Подтвердить покупку — заявка и чек уйдут в лабораторию</button>
+      </form>
+      <button class="btn btn-mute" type="button" id="pay-close" style="margin-top:12px">Вернуться в кабинет</button>
+    </section>
+
+    <section id="sec-reports">
+      <div class="panel">
+        <p class="kicker">REPORT SHELF · ОТЧЁТЫ И ДОКУМЕНТЫ</p>
+        <h2 style="margin:8px 0 4px">Ваши отчёты и рабочие документы</h2>
+        <p class="note">Здесь лаборатория выкладывает отчёты, протоколы и рабочие материалы по вашим задачам. Новые документы появляются после заливки лабораторией.</p>
+        <div id="reports-box"><p class="note">Пока пусто. Документы появятся здесь, когда лаборатория их выгрузит.</p></div>
+      </div>
+    </section>
+
+    <section id="sec-catalog">
+      <div class="panel">
+        <p class="kicker">ORDER DESK · КАТАЛОГ УСЛУГ</p>
+        <h2 style="margin:8px 0 4px">Выберите услугу — заявка и оплата здесь же</h2>
+        <p class="note">Кнопка «Оплатить» открывает заявку с вашими данными: она уйдёт в лабораторию и откроется оплата в Точке. Оплаченное помечается «ОПЛАЧЕНО» и остаётся в кабинете навсегда.</p>
+        <div id="catalog-box"></div>
+      </div>
     </section>
 
     <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
@@ -761,7 +770,7 @@ function showDash(){
   $('dash-title').textContent='Лаборатория '+ (s.name||'клиента');
   $('dash-sub').textContent='Вы вошли как '+s.email+' · данные и покупки хранятся локально в вашем браузере';
   $('st-account').textContent='онлайн';
-  renderOrders();renderCatalog();renderFav();fillProfile();
+  renderOrders();renderCatalog();renderFav();fillProfile();renderReports();
   const q=new URLSearchParams(location.search);
   if(q.get('pay')){openPay(q.get('pay'))}
 }
@@ -771,7 +780,7 @@ function renderOrders(){
   const conf=new Set((statuses().confirmed||[]).map(x=>x.uid+'|'+(x.email||'').toLowerCase()));
   const box=$('orders-box');box.innerHTML='';
   if(!list.length){box.innerHTML='<p class="note">Пока пусто. Нажмите «Оплатить» на странице любой услуги — заявка и оплата соберутся здесь.</p>';return}
-  list.slice().reverse().forEach(o=>{
+  list.slice().reverse().sort((a,b)=>((conf.has(b.uid+'|'+(b.email||'').toLowerCase())||b.status==='Подтверждено')?1:0)-((conf.has(a.uid+'|'+(a.email||'').toLowerCase())||a.status==='Подтверждено')?1:0)).forEach(o=>{
     const isOk=conf.has(o.uid+'|'+o.email.toLowerCase())||o.status==='Подтверждено';
     const d=document.createElement('div');d.className='order';
     d.innerHTML='<div class="row"><div><b>'+o.name+'</b><br><span class="note">'+fmt(o.amount)+' · '+(o.date||'')+(o.check?' · чек '+o.check:'')+'</span></div><span class="status '+(isOk?'st-ok':'st-wait')+'">'+(isOk?'ПОДТВЕРЖДЕНО':'НА ПРОВЕРКЕ')+'</span></div>';
@@ -816,6 +825,20 @@ function renderCatalog(){
     if(!done){const b=document.createElement('button');b.className='btn btn-gold';b.textContent='Оплатить';b.style.cssText='padding:9px 16px;font-size:12px';b.onclick=()=>openPay(uid);d.appendChild(b)}
     box.appendChild(d);
   });
+}
+function renderReports(){
+  const s=session();const box=$('reports-box');if(!box||!s)return;
+  fetch('reports.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(j=>{
+    const items=(j.docs||[]).filter(x=>(x.email||'').toLowerCase()===s.email.toLowerCase());
+    if(!items.length)return;
+    box.innerHTML='';
+    items.slice().reverse().forEach(x=>{
+      const d=document.createElement('div');d.className='catalog-item';
+      d.innerHTML='<div style="min-width:170px;flex:1"><b>'+(x.name||'Документ')+'</b><br><span class="note">'+(x.date||'')+(x.note?' · '+x.note:'')+'</span></div>';
+      const a=document.createElement('a');a.className='btn btn-neon';a.href=x.url||'#';a.textContent='Скачать';a.target='_blank';a.rel='noopener';a.style.cssText='padding:9px 16px;font-size:12px';
+      d.appendChild(a);box.appendChild(d);
+    });
+  }).catch(function(){});
 }
 function renderFav(){
   const f=favs();$('st-fav').textContent=String(f.length);
@@ -885,9 +908,14 @@ $('f-pay').addEventListener('submit',e=>{
   if(nm.length<2){$('pay-err').textContent='Укажите имя.';return}
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){$('pay-err').textContent='Проверьте email.';return}
   $('pay-err').textContent='';
-  const list=orders();const o={id:'o'+Date.now(),uid:PAY_UID,name:svc.n,amount:svc.a,email:em,name2:nm,note:nt,date:new Date().toLocaleDateString('ru-RU'),status:'На проверке',check:''};
+  const list=orders();
+  const today=new Date().toISOString().slice(0,10);
+  const dup=list.find(x=>x.uid===PAY_UID&&(x.email||'').toLowerCase()===em.toLowerCase()&&x.isodate===today);
+  let o;
+  if(dup){o=dup;o.note=nt||o.note}
+  else{o={id:'o'+Date.now(),uid:PAY_UID,name:svc.n,amount:svc.a,email:em,name2:nm,note:nt,date:new Date().toLocaleDateString('ru-RU'),isodate:today,status:'На проверке',check:''};
   list.push(o);store.set('geo_lab_orders',list);
-  postLab('[Кабинет] ЗАЯВКА НА ОПЛАТУ — '+nm+' — '+em,'Клиент переходит к оплате.\nУслуга: '+svc.n+'\nСумма: '+fmt(svc.a)+'\nИмя: '+nm+'\nEmail: '+em+'\nКомментарий: '+nt+'\nЛК: '+s.email);
+  postLab('[Кабинет] ЗАЯВКА НА ОПЛАТУ — '+nm+' — '+em,'Клиент переходит к оплате.\nУслуга: '+svc.n+'\nСумма: '+fmt(svc.a)+'\nИмя: '+nm+'\nEmail: '+em+'\nКомментарий: '+nt+'\nЛК: '+s.email);}
   PAY_STAGE=1;$('f-pay').classList.add('hide');
   showConfirm(o.id);
   renderOrders();
