@@ -1,71 +1,60 @@
-/* GEO-Апгрейд — lab-account.js: шапка (кто зашёл + Личный кабинет) и кнопка «В избранное» */
+/* GEO-Апгрейд — lab-account.js v2 (лёгкий).
+   Задача: пункт «ЛК» в СУЩЕСТВУЮЩЕМ меню сайта + кнопка «♡ В избранное» слева внизу.
+   Никаких новых блоков над шапкой — вёрстку не двигает. Вход и регистрация — на отдельной
+   странице login.html; кабинет после входа — cabinet.html. */
 (function(){
-  var CAB='cabinet.html';
-  function store(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
   function session(){
-    var e=store('geo_lab_session',null);if(!e)return null;
-    var u=store('geo_lab_users',{})[e];
-    return u?{email:e,name:u.name}:null;
+    try{
+      var e=JSON.parse(localStorage.getItem('geo_lab_session')||'null');
+      if(!e)return null;
+      var u=JSON.parse(localStorage.getItem('geo_lab_users')||'{}')[e];
+      return u?{email:e,name:u.name}:null;
+    }catch(_){return null}
   }
-  function linkText(){
-    var s=session();
-    return s?('Личный кабинет · '+s.name):'Личный кабинет';
+  var s=session();
+  var nav=document.getElementById('jnav-panel');
+  if(nav&&!nav.querySelector('a[data-lk]')){
+    var a=document.createElement('a');
+    a.href='cabinet.html';
+    a.setAttribute('data-lk','1');
+    a.className='text-[#D4B896] font-semibold hover:text-[#E8D5B7]';
+    a.textContent=s&&s.name?('ЛК · '+String(s.name).slice(0,14)):'ЛК';
+    nav.appendChild(a);
   }
-  function patchHeader(){
-    /* быстрые разделы (desktop) */
-    var q=document.querySelector('.jnav-quick');
-    if(q&&!q.querySelector('#lab-acc-quick')){
-      var a=document.createElement('a');
-      a.href=CAB;a.id='lab-acc-quick';a.textContent=linkText();
-      var here=q.querySelector('.jnav-here');
-      if(here&&here.nextSibling)a.insertBefore(a,here.nextSibling);else q.appendChild(a);
+  /* «♡ В избранное» — fixed-кнопка слева снизу, не двигает вёрстку */
+  if(!document.getElementById('lab-fav-btn')&&/\.html$/.test(location.pathname.split('/').pop())&&!/cabinet\.html$|login\.html$/.test(location.pathname.split('/').pop())){
+    var btn=document.createElement('button');
+    btn.id='lab-fav-btn';
+    btn.type='button';
+    btn.setAttribute('aria-label','В избранное');
+    btn.style.cssText='position:fixed;left:14px;bottom:14px;z-index:60;width:40px;height:40px;border-radius:50%;border:1px solid rgba(212,184,150,.45);background:rgba(13,6,24,.85);color:#FFD66E;font-size:17px;line-height:1;cursor:pointer;box-shadow:0 0 10px rgba(255,214,110,.22)';
+    var url=location.pathname.split('/').pop();
+    function favs(){try{return JSON.parse(localStorage.getItem('geo_lab_fav')||'[]')}catch(_){return []}}
+    function save(f){try{localStorage.setItem('geo_lab_fav',JSON.stringify(f))}catch(_){}}
+    function mark(){
+      var inlist=favs().some(function(f){return f.url===url});
+      btn.textContent=inlist?'♥':'♡';
+      btn.title=inlist?'Убрать из избранного':'В избранное';
+      btn.style.color=inlist?'#FFD66E':'#C9B27F';
     }
-    /* мобильная навигация */
-    var n=document.getElementById('jnav-panel');
-    if(n&&!n.querySelector('#lab-acc-nav')){
-      var a2=document.createElement('a');
-      a2.href=CAB;a2.id='lab-acc-nav';a2.textContent=linkText();
-      a2.className='hover:text-[#00F0FF]';
-      n.appendChild(a2);
-    }
-  }
-  function favToggle(){
-    var url=location.origin+location.pathname;
-    var f=store('geo_lab_fav',[]);
-    var inList=f.some(function(x){return x.url===url});
-    var btn=document.getElementById('lab-fav-btn');
-    if(inList){btn.textContent='♥ В избранном';btn.classList.add('lab-fav-on')}
-    else{btn.textContent='♡ В избранное';btn.classList.remove('lab-fav-on')}
-  }
-  function mountFav(){
-    if(location.pathname.split('/').pop()===''||location.pathname.split('/').pop()==='cabinet.html'||/cabinet\.html$/.test(location.pathname))return;
-    if(document.getElementById('lab-fav-btn'))return;
-    var b=document.createElement('button');
-    b.id='lab-fav-btn';b.type='button';
-    b.style.cssText='position:fixed;left:16px;bottom:16px;z-index:40;font-family:inherit;font-size:13px;font-weight:600;padding:9px 14px;border-radius:999px;background:rgba(13,6,24,.92);color:#00F0FF;border:1px solid rgba(0,240,255,.45);cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.45)';
-    b.addEventListener('click',function(){
-      var s=session();
-      if(!s){if(confirm('Чтобы сохранять статьи в избранное, нужна бесплатная регистрация в личной лаборатории. Открыть личный кабинет?'))location.href=CAB;return}
-      var url=location.origin+location.pathname;
-      var f=store('geo_lab_fav',[]);
-      if(f.some(function(x){return x.url===url})){
-        f=f.filter(function(x){return x.url!==url});
-        localStorage.setItem('geo_lab_fav',JSON.stringify(f));
-        favToggle();
-      }else{
-        f.push({t:document.title.replace(/\s*\|\s*GEO-Апгрейд.*$/,'')||document.title,url:url,at:new Date().toISOString().slice(0,10)});
-        localStorage.setItem('geo_lab_fav',JSON.stringify(f));
-        favToggle();
-        if(!store('geo_lab_fav_tip',false)){alert('Статья сохранена — она на полке «Избранное» в вашем личном кабинете.');localStorage.setItem('geo_lab_fav_tip','true')}
+    mark();
+    btn.onclick=function(){
+      var who=session();
+      if(!who){
+        var q=location.search?location.search.replace(/^\?/,''):'fav=1';
+        if(!/fav=/.test(q))q='fav=1&'+q;
+        location.href='login.html?fav=1&'+q;
+        return;
       }
-    });
-    document.body.appendChild(b);
-    favToggle();
+      var L=favs();
+      var i=-1;L.forEach(function(f,ix){if(f.url===url)i=ix});
+      if(i>=0){L.splice(i,1)}
+      else{
+        var t=document.querySelector('h1');
+        L.push({url:url,title:t?t.textContent.trim():url,at:new Date().toISOString().slice(0,10)});
+      }
+      save(L);mark();
+    };
+    document.body.appendChild(btn);
   }
-  function init(){
-    patchHeader();
-    mountFav();
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
-  else init();
 })();

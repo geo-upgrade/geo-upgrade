@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вход и регистрация — личная лаборатория | GEO-Апгрейд</title>
+<meta name="description" content="Вход и бесплатная регистрация в личной лаборатории GEO-Апгрейд: анкета клиента, купленные услуги, избранное, заявка и оплата.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{--bg:#0D0618;--panel:#160A2B;--neon:#00F0FF;--gold:#FFD66E;--txt:#F4F4FA;--muted:#B8BCC6}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;display:flex;flex-direction:column}
+  a{color:var(--neon)}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .top a{color:var(--muted);text-decoration:none;font-size:14px}
+  .top .brand{color:var(--txt);font-weight:700;letter-spacing:.06em}
+  .wrap{width:100%;max-width:520px;margin:auto;padding:28px 18px 48px}
+  .panel{background:var(--panel);border:1px solid rgba(0,240,255,.28);border-radius:14px;padding:22px;box-shadow:0 0 26px rgba(0,240,255,.08)}
+  h1{font-size:22px;margin:0 0 6px}
+  .note{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 14px}
+  .tabs{display:flex;gap:8px;margin-bottom:14px}
+  .tab{flex:1;padding:9px 10px;border-radius:9px;border:1px solid rgba(0,240,255,.25);background:transparent;color:var(--muted);font-size:14px;cursor:pointer}
+  .tab.here{background:rgba(0,240,255,.12);color:var(--neon);border-color:var(--neon)}
+  .field{margin-bottom:12px}
+  .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;letter-spacing:.04em}
+  .field input{width:100%;padding:10px 12px;border-radius:9px;border:1px solid rgba(255,255,255,.16);background:rgba(13,6,24,.6);color:var(--txt);font-size:14px}
+  .field input:focus{outline:none;border-color:var(--neon)}
+  .err{color:#FF6B6B;font-size:12px;min-height:16px;margin:2px 0 8px}
+  .btn{width:100%;padding:11px 14px;border-radius:9px;border:none;background:var(--gold);color:#0D0618;font-weight:700;font-size:14px;cursor:pointer}
+  .btn:hover{filter:brightness(1.07)}
+  .paynote{display:none;border:1px solid rgba(255,214,110,.45);border-radius:10px;padding:10px 14px;margin-bottom:14px}
+  .paynote .tag{color:var(--gold);font-size:11px;letter-spacing:.12em;margin:0}
+  .paynote p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
+  .foot{color:var(--muted);font-size:12px;text-align:center;padding:18px}
+  .hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="top"><span class="brand">GEO-АПГРЕЙД</span><a href="index.html">← на главную</a></div>
+<div class="wrap">
+  <div class="panel">
+    <h1>Личная лаборатория</h1>
+    <p class="note">Анкета клиента, купленные услуги и их статусы, избранное, заявка и оплата. Регистрация бесплатна, данные хранятся локально в вашем браузере.</p>
+    <div class="paynote" id="pay-note">
+      <p class="tag">ОПЛАТА ПОСЛЕ РЕГИСТРАЦИИ</p>
+      <p id="pay-text"></p>
+    </div>
+    <div class="tabs">
+      <button class="tab here" id="t-login" type="button">Вход</button>
+      <button class="tab" id="t-reg" type="button">Регистрация</button>
+    </div>
+    <form id="f-login" novalidate>
+      <div class="field"><label for="li-email">Email</label><input id="li-email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="li-pass">Пароль</label><input id="li-pass" type="password" autocomplete="current-password" required></div>
+      <p class="err" id="li-err"></p>
+      <button class="btn" type="submit">Войти в лабораторию</button>
+    </form>
+    <form id="f-reg" class="hide" novalidate>
+      <div class="field"><label for="rg-name">Имя или название компании</label><input id="rg-name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="rg-email">Email</label><input id="rg-email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="rg-pass">Пароль (минимум 6 символов)</label><input id="rg-pass" type="password" autocomplete="new-password" minlength="6" required></div>
+      <p class="err" id="rg-err"></p>
+      <button class="btn" type="submit">Создать личную лабораторию</button>
+    </form>
+  </div>
+  <p class="foot">GEO-Апгрейд · AI-видимость сайтов · <a href="contacts.html">контакты</a></p>
+</div>
+<script>
+const FORMSPREE='https://formspree.io/f/mljdyaqo';
+const $=id=>document.getElementById(id);
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){localStorage.setItem(k,JSON.stringify(v))}};
+function session(){const e=store.get('geo_lab_session',null);if(!e)return null;const u=store.get('geo_lab_users',{})[e];return u?{email:e,...u}:null}
+function users(){return store.get('geo_lab_users',{})}
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function postLab(subject,text){try{await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({subject:subject,text:text,from:'cabinet@geo-upgrade.ru'})})}catch(e){return false}return true}
+const q=new URLSearchParams(location.search);
+const PAY=q.get('pay')||null;
+function back(){location.replace('cabinet.html'+(PAY?('?pay='+encodeURIComponent(PAY)):''))}
+if(session()){back()}
+else if(PAY){
+  const SVCS={'geo_scanner_lite':{n:'GEO-сканер Лайт',a:10000},'geo_scanner_full':{n:'GEO-сканер Полный',a:15000}};
+  $('pay-note').style.display='block';
+  $('pay-text').textContent='Вы переходите к оплате услуги. Создайте личную лабораторию или войдите — после этого откроются заявка и оплата.';
+}
+function go(tab){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('here'));
+  if(tab==='reg'){$('t-reg').classList.add('here');$('f-reg').classList.remove('hide');$('f-login').classList.add('hide')}
+  else{$('t-login').classList.add('here');$('f-login').classList.remove('hide');$('f-reg').classList.add('hide')}
+}
+$('t-login').onclick=()=>go('login');
+$('t-reg').onclick=()=>go('reg');
+if(PAY)go('reg');
+$('f-login').addEventListener('submit',async e=>{
+  e.preventDefault();const em=$('li-email').value.trim().toLowerCase(),pw=$('li-pass').value;
+  const u=users()[em];if(!u){$('li-err').textContent='Такого аккаунта нет — сначала регистрация.';return}
+  if(u.h!==await sha256(em+'|'+pw)){$('li-err').textContent='Неверный пароль.';return}
+  store.set('geo_lab_session',em);back();
+});
+$('f-reg').addEventListener('submit',async e=>{
+  e.preventDefault();const em=$('rg-email').value.trim().toLowerCase(),nm=$('rg-name').value.trim(),pw=$('rg-pass').value;
+  if(nm.length<2){$('rg-err').textContent='Укажите имя или название компании.';return}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){$('rg-err').textContent='Проверьте email.';return}
+  if(pw.length<6){$('rg-err').textContent='Пароль — минимум 6 символов.';return}
+  const U=users();if(U[em]){$('rg-err').textContent='Такой email уже зарегистрирован. Войдите.';return}
+  U[em]={name:nm,h:await sha256(em+'|'+pw),at:new Date().toISOString().slice(0,10)};store.set('geo_lab_users',U);store.set('geo_lab_session',em);
+  postLab('[Кабинет] РЕГИСТРАЦИЯ: '+nm+' — '+em,'Новый клиент в личной лаборатории.\nИмя: '+nm+'\nEmail: '+em+'\nДата: '+new Date().toLocaleString('ru-RU'));
+  back();
+});
+</script>
+</body>
+</html>

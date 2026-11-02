@@ -86,39 +86,6 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
 </div></header>
 
 <main class="wrap" style="padding-top:28px">
-  <div id="lab-gate">
-    <p class="kicker">LAB ACCOUNT · ВХОД В ЛИЧНУЮ ЛАБОРАТОРИЮ</p>
-    <h1 style="font-size:clamp(28px,5vw,44px);margin:10px 0 6px">Личный кабинет</h1>
-    <p class="note" style="max-width:720px">Ваш личный экран в стиле лаборатории: анкета клиента, купленные услуги и их статусы, избранное статей, заявка и оплата с проверкой. Оплата услуг доступна только после регистрации — так заявки и чеки не теряются.</p>
-
-    <div class="tabs" id="gate-tabs">
-      <button class="tab here" id="t-login" type="button">Вход</button>
-      <button class="tab" id="t-reg" type="button">Регистрация</button>
-    </div>
-
-    <div class="panel scanline" style="max-width:560px">
-      <form id="f-login" novalidate>
-        <div class="field"><label for="li-email">Email</label><input id="li-email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="li-pass">Пароль</label><input id="li-pass" type="password" autocomplete="current-password" required></div>
-        <p class="big-err" id="li-err"></p>
-        <button class="btn btn-neon" type="submit">Войти в лабораторию</button>
-        <p class="note" style="margin-top:12px">Данные хранятся только в вашем браузере (пароль — в виде хэша). Отдельно письмо-подтверждение не приходит: после входа заполните анкету — она уйдёт в лабораторию и мы сработаем быстрее.</p>
-      </form>
-    </div>
-
-    <div class="panel scanline hide" style="max-width:560px" id="reg-panel">
-      <form id="f-reg" novalidate>
-        <div class="field"><label for="rg-name">Имя или название компании</label><input id="rg-name" type="text" autocomplete="name" required></div>
-        <div class="field"><label for="rg-email">Email</label><input id="rg-email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="rg-pass">Пароль (минимум 6 символов)</label><input id="rg-pass" type="password" autocomplete="new-password" minlength="6" required></div>
-        <div id="reg-paynote" class="hide" style="border:1px solid rgba(255,214,110,.4);border-radius:10px;padding:10px 14px;margin-top:10px"><p class="tag gold">ОПЛАТА ПОСЛЕ РЕГИСТРАЦИИ</p><p class="note" id="reg-paytext" style="margin-top:6px"></p></div>
-        <p class="big-err" id="rg-err"></p>
-        <button class="btn btn-gold" type="submit">Создать личную лабораторию</button>
-        <p class="note" style="margin-top:12px">Регистрация бесплатна. После неё откроются: заявка и оплата услуг, анкета, покупки и избранное.</p>
-      </form>
-    </div>
-  </div>
-
   <div id="lab-dash" class="hide">
     <p class="kicker">LAB CONSOLE · ЛИЧНЫЙ ЭКРАН</p>
     <h1 style="font-size:clamp(26px,4.5vw,40px);margin:10px 0 4px" id="dash-title">Лаборатория</h1>
@@ -272,33 +239,11 @@ function favs(){return store.get('geo_lab_fav',[])}
 function statuses(){return store.get('geo_lab_statuses_cache',{confirmed:[]})}
 
 let PAY_UID=null,PAY_STAGE=0;
-function go(tab){
-  document.querySelectorAll('#gate-tabs .tab').forEach(b=>b.classList.remove('here'));
-  if(tab==='reg'){$('t-reg').classList.add('here');$('reg-panel').classList.remove('hide');document.querySelector('#f-login').parentElement.classList.add('hide')}
-  else{$('t-login').classList.add('here');$('reg-panel').classList.add('hide');document.querySelector('#f-login').parentElement.classList.remove('hide')}
-}
-$('t-login').onclick=()=>go('login');$('t-reg').onclick=()=>go('reg');
 
-$('f-login').addEventListener('submit',async e=>{
-  e.preventDefault();const em=$('li-email').value.trim().toLowerCase(),pw=$('li-pass').value;
-  const u=users()[em];if(!u){$('li-err').textContent='Такого аккаунта нет — сначала регистрация.';return}
-  if(u.h!==await sha256(em+'|'+pw)){$('li-err').textContent='Неверный пароль.';return}
-  store.set('geo_lab_session',em);showDash();toast('С возвращением, '+(u.name||em)+'!');
-});
-$('f-reg').addEventListener('submit',async e=>{
-  e.preventDefault();const em=$('rg-email').value.trim().toLowerCase(),nm=$('rg-name').value.trim(),pw=$('rg-pass').value;
-  if(nm.length<2){$('rg-err').textContent='Укажите имя или название компании.';return}
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){$('rg-err').textContent='Проверьте email.';return}
-  if(pw.length<6){$('rg-err').textContent='Пароль — минимум 6 символов.';return}
-  const U=users();if(U[em]){$('rg-err').textContent='Такой email уже зарегистрирован. Войдите.';return}
-  U[em]={name:nm,h:await sha256(em+'|'+pw),at:new Date().toISOString().slice(0,10)};store.set('geo_lab_users',U);store.set('geo_lab_session',em);
-  postLab('[Кабинет] РЕГИСТРАЦИЯ: '+nm+' — '+em,'Новый клиент в личной лаборатории.\nИмя: '+nm+'\nEmail: '+em+'\nДата: '+new Date().toLocaleString('ru-RU'));
-  showDash();toast('Личная лаборатория создана. Заполните анкету — это ускорит первый разговор.');
-});
 
 function showDash(){
-  const s=session();if(!s){$('lab-gate').classList.remove('hide');$('lab-dash').classList.add('hide');return}
-  $('lab-gate').classList.add('hide');$('lab-dash').classList.remove('hide');
+  const s=session();if(!s){const pq=new URLSearchParams(location.search).get('pay');location.replace('login.html'+(pq?('?pay='+encodeURIComponent(pq)):''));return}
+  $('lab-dash').classList.remove('hide');
   $('dash-title').textContent='Лаборатория '+ (s.name||'клиента');
   $('dash-sub').textContent='Вы вошли как '+s.email+' · данные и покупки хранятся локально в вашем браузере';
   $('st-account').textContent='онлайн';
@@ -394,11 +339,6 @@ $('f-check').addEventListener('submit',()=>{});
 /* статусы: лаборатория подтверждает оплату обновлением lab-statuses.json */
 fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{if(j)store.set('geo_lab_statuses_cache',j)}).catch(()=>{});
 
-/* старт: pay-ссылка без сессии = регистрация с подсказкой услуги */
-(function(){const q=new URLSearchParams(location.search);const pu=q.get('pay');
-  if(pu){go('reg');const svc=LAB_SERVICES[pu];
-    if(svc&&!session()){$('reg-paynote').classList.remove('hide');$('reg-paytext').textContent='Вы хотите оплатить: '+svc.n+' ('+fmt(svc.a)+'). Создайте личную лабораторию — после регистрации сразу откроется заявка и оплата этой услуги.'}}
-  showDash();})();
 </script>
 <script src="lab-account.js" defer></script>
 </body>
