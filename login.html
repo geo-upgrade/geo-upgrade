@@ -716,7 +716,8 @@ async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEn
 async function postLab(subject,text){try{await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({subject:subject,text:text,from:'cabinet@geo-upgrade.ru'})})}catch(e){return false}return true}
 const q=new URLSearchParams(location.search);
 const PAY=q.get('pay')||null;
-function back(){location.replace('cabinet.html'+(PAY?('?pay='+encodeURIComponent(PAY)):''))}
+const TO=q.get('to')||null;
+function back(){if(PAY){location.replace('cabinet.html?pay='+encodeURIComponent(PAY));return}if(TO){location.replace(TO+'.html');return}location.replace('cabinet.html')}
 if(session()){back()}
 else if(PAY){
   const SVCS={'geo_scanner_lite':{n:'GEO-сканер Лайт',a:10000},'geo_scanner_full':{n:'GEO-сканер Полный',a:15000}};
@@ -728,6 +729,7 @@ function go(tab){
   if(tab==='reg'){$('t-reg').classList.add('here');$('f-reg').classList.remove('hide');$('f-login').classList.add('hide')}
   else{$('t-login').classList.add('here');$('f-login').classList.remove('hide');$('f-reg').classList.add('hide')}
 }
+if(TO){go('reg')}
 $('t-login').onclick=()=>go('login');
 $('t-reg').onclick=()=>go('reg');
 if(PAY)go('reg');

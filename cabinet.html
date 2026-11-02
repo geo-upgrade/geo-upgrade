@@ -495,6 +495,7 @@ label{display:block;font-size:13px;color:var(--muted);margin:12px 0 6px}
 .hide{display:none}
 .order{border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;background:rgba(13,6,24,.5);margin-top:10px}
 .order .row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.catalog-item{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 16px;background:rgba(13,6,24,.5);margin-top:10px}
 .status{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;border-radius:999px;padding:4px 10px;border:1px solid}
 .st-wait{color:#FFD66E;border-color:rgba(255,214,110,.5)}
 .st-ok{color:#6EE7B7;border-color:rgba(110,231,183,.5)}
@@ -570,6 +571,15 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
         <button class="btn btn-neon" type="submit">Подтвердить покупку — заявка и чек уйдут в лабораторию</button>
       </form>
       <button class="btn btn-mute" type="button" id="pay-close" style="margin-top:12px">Вернуться в кабинет</button>
+    </section>
+
+    <section id="sec-catalog">
+      <div class="panel">
+        <p class="kicker">ORDER DESK · КАТАЛОГ УСЛУГ</p>
+        <h2 style="margin:8px 0 4px">Выберите услугу — заявка и оплата здесь же</h2>
+        <p class="note">Кнопка «Оплатить» открывает заявку с вашими данными: она уйдёт в лабораторию и откроется оплата в Точке. Оплаченное помечается «ОПЛАЧЕНО» и остаётся в кабинете навсегда.</p>
+        <div id="catalog-box"></div>
+      </div>
     </section>
 
     <section id="sec-profile">
@@ -751,7 +761,7 @@ function showDash(){
   $('dash-title').textContent='Лаборатория '+ (s.name||'клиента');
   $('dash-sub').textContent='Вы вошли как '+s.email+' · данные и покупки хранятся локально в вашем браузере';
   $('st-account').textContent='онлайн';
-  renderOrders();renderFav();fillProfile();
+  renderOrders();renderCatalog();renderFav();fillProfile();
   const q=new URLSearchParams(location.search);
   if(q.get('pay')){openPay(q.get('pay'))}
 }
@@ -787,6 +797,26 @@ $('f-confirm').addEventListener('submit',e=>{
   $('f-confirm').classList.add('hide');renderOrders();toast('Чек отправлен в лабораторию — статус «На проверке».');
 });
 
+function renderCatalog(){
+  const box=$('catalog-box');if(!box)return;
+  const s=session();
+  const conf=new Set((statuses().confirmed||[]).map(x=>x.uid+'|'+(x.email||'').toLowerCase()));
+  const waits=new Set(orders().filter(o=>!conf.has(o.uid+'|'+(o.email||'').toLowerCase())).map(o=>o.uid));
+  box.innerHTML='';
+  Object.keys(LAB_SERVICES).forEach(uid=>{
+    const svc=LAB_SERVICES[uid];
+    const done=conf.has(uid+'|'+(s.email||'').toLowerCase());
+    const d=document.createElement('div');d.className='catalog-item';
+    d.innerHTML='<div style="min-width:170px;flex:1"><b>'+svc.n+'</b><br><span class="note">'+fmt(svc.a)+'</span></div>';
+    const st=document.createElement('span');st.className='status '+(done?'st-ok':'st-wait');
+    st.textContent=done?'ОПЛАЧЕНО':'НА ПРОВЕРКЕ';
+    st.style.cssText='font-size:11px;letter-spacing:.08em;white-space:nowrap';
+    if(!done&&!waits.has(uid))st.style.display='none';
+    d.appendChild(st);
+    if(!done){const b=document.createElement('button');b.className='btn btn-gold';b.textContent='Оплатить';b.style.cssText='padding:9px 16px;font-size:12px';b.onclick=()=>openPay(uid);d.appendChild(b)}
+    box.appendChild(d);
+  });
+}
 function renderFav(){
   const f=favs();$('st-fav').textContent=String(f.length);
   const box=$('fav-box');box.innerHTML='';
