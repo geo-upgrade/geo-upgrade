@@ -133,3 +133,4 @@
 ## Подробная версия
 
 Детальное индексирование: https://geo-upgrade.ru/llms-full.txt
+https://geo-upgrade.ru/cabinet.html
