@@ -336,6 +336,7 @@ $('f-pay').addEventListener('submit',e=>{
 });
 $('f-check').addEventListener('submit',()=>{});
 
+showDash();
 /* статусы: лаборатория подтверждает оплату обновлением lab-statuses.json */
 fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{if(j)store.set('geo_lab_statuses_cache',j)}).catch(()=>{});
 
