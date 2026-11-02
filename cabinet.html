@@ -469,6 +469,9 @@ nav.main a:hover{color:var(--neon)}
 h1,h2,h3{font-family:'Exo 2',sans-serif;line-height:1.2}
 .kicker{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--neon)}
 .panel{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid rgba(0,240,255,.18);border-radius:16px;padding:22px}
+#lab-dash>section{margin-top:16px}
+#lab-dash>section.sec-neon{border-color:rgba(0,240,255,.30);box-shadow:0 0 28px rgba(0,240,255,.14)}
+#lab-dash>section.sec-gold{border-color:rgba(255,214,110,.42);box-shadow:0 0 28px rgba(255,214,110,.14)}
 .panel+.panel{margin-top:16px}
 .grid{display:grid;gap:16px}
 @media(min-width:860px){.grid.cols3{grid-template-columns:1fr 1fr 1fr}}
@@ -547,8 +550,7 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
 
     <div class="divider"></div>
 
-    <section id="sec-profile">
-      <div class="panel">
+    <section id="sec-profile" class="panel sec-neon">
         <p class="kicker">PROFILE · АНКЕТА КЛИЕНТА</p>
         <h2 style="margin:8px 0 4px">Ваш профиль в лаборатории</h2>
         <p class="note">Анкета экономит первый разговор: мы видим нишу, запросы и цель до старта. Данные пригодятся в работе и при идентификации ваших платежей. Отправка — в приёмник лаборатории, сохранение — в вашем кабинете.</p>
@@ -593,10 +595,9 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
           <button class="btn btn-neon" type="submit">Сохранить и отправить в лабораторию</button>
           <span class="note" id="pf-saved" style="margin-left:10px"></span>
         </form>
-      </div>
     </section>
 
-    <section id="sec-orders" class="panel" style="margin-top:16px">
+    <section id="sec-orders" class="panel sec-gold">
       <p class="kicker">ORDERS · МОИ ПОКУПКИ</p>
       <h2 style="margin:8px 0 4px">Купленные услуги</h2><p class="note" style="margin-top:6px">Заявки со статусом «На проверке» можно удалить кнопкой «Удалить заявку». Оплаченные покупки — со статусом «Подтверждено» — остаются в кабинете навсегда: их нельзя удалить ни при каких условиях.</p>
       <div id="orders-box"><p class="note" id="orders-empty">Пока пусто. Нажмите «Оплатить» на странице любой услуги — заявка и оплата соберутся здесь.</p></div>
@@ -611,13 +612,13 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
       </form>
     </section>
 
-    <section id="sec-fav" class="panel" style="margin-top:16px">
+    <section id="sec-fav" class="panel sec-neon">
       <p class="kicker">SHELF · ИЗБРАННОЕ</p>
       <h2 style="margin:8px 0 4px">Статьи и страницы, которые вы сохранили</h2>
       <div id="fav-box"><p class="note" id="fav-empty">Пока пусто. На любой странице сайта есть кнопка «В избранное» — она сохранит статью сюда.</p></div>
     </section>
 
-    <section id="sec-pay" class="panel hide" style="border-color:rgba(255,214,110,.45)">
+    <section id="sec-pay" class="panel sec-gold hide">
       <p class="kicker" style="color:var(--gold2)">ORDER DESK · ЗАЯВКА И ОПЛАТА</p>
       <h2 style="margin:8px 0 4px" id="pay-title">Оплата услуги</h2>
       <div class="stat" style="margin:12px 0"><div class="k">УСЛУГА</div><div class="v" id="pay-service">—</div></div>
@@ -643,22 +644,18 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
       <button class="btn btn-mute" type="button" id="pay-close" style="margin-top:12px">Вернуться в кабинет</button>
     </section>
 
-    <section id="sec-reports">
-      <div class="panel">
+    <section id="sec-reports" class="panel sec-gold">
         <p class="kicker">REPORT SHELF · ОТЧЁТЫ И ДОКУМЕНТЫ</p>
         <h2 style="margin:8px 0 4px">Ваши отчёты и рабочие документы</h2>
         <p class="note">Здесь лаборатория выкладывает отчёты, протоколы и рабочие материалы по вашим задачам. Новые документы появляются после заливки лабораторией.</p>
         <div id="reports-box"><p class="note">Пока пусто. Документы появятся здесь, когда лаборатория их выгрузит.</p></div>
-      </div>
     </section>
 
-    <section id="sec-catalog">
-      <div class="panel">
+    <section id="sec-catalog" class="panel sec-gold">
         <p class="kicker">ORDER DESK · КАТАЛОГ УСЛУГ</p>
         <h2 style="margin:8px 0 4px">Выберите услугу — заявка и оплата здесь же</h2>
         <p class="note">Кнопка «Оплатить» открывает заявку с вашими данными: она уйдёт в лабораторию и откроется оплата в Точке. Оплаченное помечается «ОПЛАЧЕНО» и остаётся в кабинете навсегда.</p>
         <div id="catalog-box"></div>
-      </div>
     </section>
 
     <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
@@ -886,7 +883,7 @@ $('f-profile').addEventListener('submit',e=>{
    'Анкета клиента из личной лаборатории.\nИмя/бренд: '+p.brand+'\nРегион: '+p.city+'\nСфера: '+p.sphere+'\nСайт: '+p.site+
    '\nЗапросы: '+[p.q1,p.q2,p.q3].filter(Boolean).join(' | ')+'\nСистемы: '+p.ch.join(', ')+'\nЦель: '+p.goal+'\nПробовал: '+p.tried+'\nКомментарий: '+p.note+
    '\nEmail: '+s.email);
-  $('pf-saved').textContent='— сохранено и отправлено ✓';
+  $('pf-saved').textContent='— сохранено и отправлено в лабораторию (дубль — в Telegram)';
   pfCard(p);
   toast('Анкета сохранена и отправлена в лабораторию.');
 });
@@ -926,7 +923,7 @@ $('f-check').addEventListener('submit',()=>{});
 
 showDash();
 /* статусы: лаборатория подтверждает оплату обновлением lab-statuses.json */
-fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{if(j)store.set('geo_lab_statuses_cache',j)}).catch(()=>{});
+fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{if(j){store.set('geo_lab_statuses_cache',j);try{if($('lab-dash')&&!$('lab-dash').classList.contains('hide')){renderOrders();renderCatalog()}}catch(_){}}}).catch(()=>{});
 
 </script>
 <script src="lab-account.js" defer></script>
