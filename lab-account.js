@@ -1,7 +1,7 @@
-/* GEO-Апгрейд — lab-account.js v4.
-   «ЛК» — маленький бейдж в ПРАВОМ ВЕРХНЕМ углу шапки (позиция absolute, меню не трогает и не ломает).
-   Вход/регистрация — отдельная страница login.html; кабинет — cabinet.html.
-   Плюс кнопка «♡ В избранное» слева снизу (fixed, вёрстку не двигает). */
+/* GEO-Апгрейд — lab-account.js v5.
+   «ЛК» — закреплённая пилюля в ПРАВОМ НИЖНЕМ углу экрана: не пересекается ни с меню,
+   ни с бургером. Вход/регистрация — login.html; кабинет — cabinet.html.
+   «♡ В избранное» — слева снизу (fixed, вёрстку не двигает). */
 (function(){
   function session(){
     try{
@@ -14,16 +14,14 @@
   var s=session();
   var page=location.pathname.split('/').pop();
   if(/^(cabinet\.html|login\.html)$/.test(page))return;
-  var header=document.querySelector('header');
-  if(header&&!document.getElementById('lab-lk-btn')){
+  if(!document.getElementById('lab-lk-btn')){
     var a=document.createElement('a');
     a.id='lab-lk-btn';
     a.href='cabinet.html';
     a.setAttribute('aria-label','Личный кабинет');
     a.textContent=s&&s.name?('ЛК · '+String(s.name).slice(0,12)):'ЛК';
-    a.style.cssText='position:absolute;top:10px;right:14px;z-index:61;padding:6px 11px;border-radius:999px;border:1px solid rgba(212,184,150,.55);background:rgba(13,6,24,.92);color:#FFD66E;font:600 12px/1.2 system-ui,-apple-system,sans-serif;letter-spacing:.03em;text-decoration:none;white-space:nowrap;box-shadow:0 0 10px rgba(255,214,110,.22)';
-    if(getComputedStyle(header).position==='static')header.style.position='relative';
-    header.appendChild(a);
+    a.style.cssText='position:fixed;right:14px;bottom:14px;z-index:60;padding:9px 16px;border-radius:999px;border:1px solid rgba(212,184,150,.55);background:rgba(13,6,24,.94);color:#FFD66E;font:600 13px/1.2 system-ui,-apple-system,sans-serif;letter-spacing:.04em;text-decoration:none;white-space:nowrap;box-shadow:0 0 12px rgba(255,214,110,.28);cursor:pointer';
+    document.body.appendChild(a);
   }
   /* «♡ В избранное» — fixed-кнопка слева снизу, вёрстку не двигает */
   if(!document.getElementById('lab-fav-btn')&&/\.html$/.test(page)){
