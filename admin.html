@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>ADMIN · GEO-Лаборатория — GEO-Апгрейд</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#100826;--panel:#1E1246;--panel2:#241950;--neon:#9D7BFF;--cyan:#00E5FF;--gold:#D4AF37;--goldb:#FFD66E;--txt:#B8BCC6;--dim:#8A86A0;--purp:#B794FF;--pink:#FF4FD8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 20% -10%,#2C1458 0%,transparent 60%),radial-gradient(900px 500px at 90% 110%,#1A0E3C 0%,transparent 55%),var(--bg);color:var(--txt);font-family:'Exo 2',system-ui,sans-serif;min-height:100vh;padding:26px 16px 60px}
+.wrap{max-width:1060px;margin:0 auto}
+.kicker{font-family:Orbitron;font-size:11px;letter-spacing:.28em;color:var(--neon);text-transform:uppercase}
+h1{font-family:Orbitron;color:#fff;font-size:26px;letter-spacing:.04em;margin-top:6px}
+.sub{font-size:13px;color:var(--purp);margin-top:8px}
+.glow{height:2px;background:linear-gradient(90deg,transparent,#00E5FF,#FFD66E,rgba(0,229,255,.4),transparent);margin:14px 0 22px;border:0}
+.panel{background:rgba(30,18,70,.86);border:1px solid rgba(157,123,255,.35);border-radius:16px;padding:16px;box-shadow:0 0 24px rgba(0,229,255,.08),inset 0 0 30px rgba(0,0,0,.25)}
+.panel.gold{border-color:rgba(212,175,55,.5);box-shadow:0 0 24px rgba(255,214,110,.10)}
+.sec{font-family:Orbitron;font-size:11px;letter-spacing:.12em;color:var(--purp);margin:26px 0 10px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input,select,textarea{background:#120A2E;border:1px solid #4A3A78;border-radius:12px;color:#fff;font-family:'Exo 2';font-size:13px;padding:11px 13px;width:100%}
+input:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 12px rgba(0,229,255,.25)}
+label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-family:Orbitron;margin:10px 0 5px;text-transform:uppercase}
+.btn{display:inline-block;font-family:Orbitron;font-size:12px;letter-spacing:.08em;padding:11px 16px;border-radius:14px;border:1px solid rgba(0,229,255,.5);background:#150B26;color:#fff;cursor:pointer}
+.btn:hover{box-shadow:0 0 14px rgba(0,229,255,.35)}
+.btn.gold{border-color:var(--gold);color:var(--goldb)}
+.btn.mute{border-color:#4A3A78;color:var(--dim)}
+.btn.danger{border-color:rgba(255,79,216,.6);color:var(--pink)}
+.err{color:var(--pink);font-size:12.5px;margin-top:9px;min-height:16px}
+.ok{color:var(--cyan);font-size:12.5px;margin-top:9px}
+.card{border:1px solid rgba(157,123,255,.3);border-radius:14px;padding:13px 14px;background:rgba(36,25,80,.55);margin-top:10px}
+.card .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.card b{color:#fff;font-family:Orbitron;font-size:13.5px;letter-spacing:.03em}
+.note{font-size:12px;color:var(--txt)}
+.badge{font-family:Orbitron;font-size:10px;letter-spacing:.1em;padding:5px 10px;border-radius:999px;border:1px solid}
+.badge.ok{color:var(--goldb);border-color:var(--gold);background:rgba(255,214,110,.08)}
+.badge.wait{color:var(--cyan);border-color:rgba(0,229,255,.55);background:rgba(0,229,255,.06)}
+.badge.dn{color:#FF9E9E;border-color:rgba(255,120,120,.4)}
+.acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.mono{font-family:monospace;font-size:11px;color:var(--dim)}
+.sp{font-size:11.5px;color:var(--dim);margin-top:14px}
+.stat{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
+.stat .b{flex:1;min-width:130px;background:rgba(18,10,46,.8);border:1px solid rgba(0,229,255,.25);border-radius:12px;padding:11px 13px}
+.stat .b span{display:block;font-family:Orbitron;font-size:10px;color:var(--dim);letter-spacing:.12em}
+.stat .b b{font-size:20px;color:var(--goldb)}
+.hide{display:none}
+.foot{margin-top:34px;text-align:center;font-family:Orbitron;font-size:9.5px;letter-spacing:.14em;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Lab Console · внутренний доступ</div>
+  <h1>ADMIN · GEO-ЛАБОРАТОРИЯ</h1>
+  <div class="sub">Заказы, клиенты и отчёты — общая база Supabase с сайтом и приложением.</div>
+  <hr class="glow">
+
+  <!-- ВХОД -->
+  <div id="f-auth" class="panel gold" style="max-width:520px">
+    <div class="kicker" style="color:var(--goldb)">Вход лаборатории</div>
+    <label for="au-email">email</label>
+    <input id="au-email" type="email" autocomplete="email">
+    <label for="au-pass">пароль</label>
+    <input id="au-pass" type="password" autocomplete="current-password">
+    <div class="err" id="au-err"></div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn gold" id="au-login">ВОЙТИ →</button>
+    </div>
+    <div class="sp">Аккаунт без прав администратора увидит сообщение «нет доступа». Права выдаются SQL: admins ← твой email.</div>
+  </div>
+
+  <!-- ПАНЕЛЬ -->
+  <div id="dash" class="hide">
+    <div class="stat">
+      <div class="b"><span>ЗАЯВКИ ВСЕГО</span><b id="n-all">0</b></div>
+      <div class="b"><span>НА ПРОВЕРКЕ</span><b id="n-wait">0</b></div>
+      <div class="b"><span>ПОДТВЕРЖДЕНО</span><b id="n-ok">0</b></div>
+      <div class="b"><span>КЛИЕНТОВ</span><b id="n-cli">0</b></div>
+    </div>
+
+    <div class="sec">◆ ЗАКАЗЫ · LAB_ORDERS</div>
+    <div class="row">
+      <select id="ord-filter" style="max-width:230px">
+        <option value="all">Все статусы</option>
+        <option value="pending">На проверке</option>
+        <option value="paid_check">Чек получен</option>
+        <option value="confirmed">Подтверждено</option>
+      </select>
+      <button class="btn" id="ord-refresh">ОБНОВИТЬ ↻</button>
+    </div>
+    <div id="ord-box"></div>
+
+    <div class="sec">◆ КЛИЕНТЫ · LAB_ORDERS + PROFILES</div>
+    <div id="cli-box"></div>
+
+    <div class="sec">◆ ОТЧЁТЫ · LAB_REPORTS</div>
+    <div class="panel">
+      <div class="row">
+        <div style="flex:1;min-width:200px"><label>email клиента</label><input id="rp-email" type="email"></div>
+        <div style="flex:1;min-width:200px"><label>название</label><input id="rp-name" placeholder="GEO-Зеркало — отчёт"></div>
+      </div>
+      <div class="row">
+        <div style="flex:1;min-width:200px"><label>ссылка на файл (url или путь)</label><input id="rp-url" placeholder="otchet-dafna-2026-11-03.pdf"></div>
+        <div style="min-width:120px"><label>дата</label><input id="rp-date" placeholder="03.11.2026"></div>
+      </div>
+      <label>комментарий</label>
+      <input id="rp-note">
+      <div class="row" style="margin-top:12px"><button class="btn gold" id="rp-add">ВЫДАТЬ ОТЧЁТ →</button><span class="ok" id="rp-ok"></span></div>
+    </div>
+    <div id="rp-box" style="margin-top:12px"></div>
+
+    <div class="row" style="margin-top:26px">
+      <button class="btn mute" id="out">ВЫЙТИ</button>
+      <span class="mono" id="who"></span>
+    </div>
+  </div>
+
+  <div class="foot">GEO-UPGRADE.RU · LAB CONSOLE · НЕ ДЛЯ ПОИСКА</div>
+</div>
+<script>
+const SB='https://cpaevaypyplwcdjrfzpj.supabase.co';
+const KEY='sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-';
+let TOKEN='',UID='',EMAIL='';
+const $=function(id){return document.getElementById(id)};
+function toast(t){const d=document.createElement('div');d.textContent=t;d.style.cssText='position:fixed;left:50%;transform:translateX(-50%);bottom:26px;background:#241950;border:1px solid rgba(0,229,255,.5);color:#fff;font:12.5px Exo 2;padding:12px 18px;border-radius:12px;z-index:99;box-shadow:0 0 18px rgba(0,229,255,.25)';document.body.appendChild(d);setTimeout(function(){d.remove()},3600)}
+async function api(path,method,body){
+  const o={method:method||'GET',headers:{'apikey':KEY,'Authorization':'Bearer '+TOKEN,'Content-Type':'application/json','Prefer':'return=representation'}};
+  if(body)o.body=JSON.stringify(body);
+  const r=await fetch(SB+path,o);
+  const j=await r.json().catch(function(){return r.ok?[]:{message:'ошибка '+r.status}});
+  if(!r.ok)throw new Error((j&&j.message)||('ошибка '+r.status));
+  return j;
+}
+function saveS(j,email){localStorage.setItem('geo_lab_admin_auth',JSON.stringify({email:email,uid:j.user.id,token:j.access_token,at:Date.now()}))}
+function loadS(){try{return JSON.parse(localStorage.getItem('geo_lab_admin_auth')||'null')}catch(_){return null}}
+function fmt(n){return n>0?Number(n).toLocaleString('ru-RU')+' ₽':'—'}
+function dt(s){return (s||'').slice(0,10).split('-').reverse().join('.')}
+async function login(){
+  const em=$('au-email').value.trim().toLowerCase(),pw=$('au-pass').value;
+  if(!em||!pw){$('au-err').textContent='Введи email и пароль.';return}
+  try{
+    const r=await fetch(SB+'/auth/v1/token?grant_type=password',{method:'POST',headers:{'apikey':KEY,'Content-Type':'application/json'},body:JSON.stringify({email:em,password:pw})});
+    const j=await r.json().catch(function(){return {}});
+    if(r.ok&&j.access_token){TOKEN=j.access_token;UID=(j.user||{}).id;EMAIL=(j.user||{}).email||em;saveS(j,EMAIL);start();return}
+    const d=(j.error_description||j.msg||'')+'';
+    $('au-err').textContent=/Invalid login/i.test(d)?'Неверный email или пароль.':(d||'Не удалось войти ('+r.status+').');
+  }catch(e){$('au-err').textContent='Нет связи с базой. Проверь интернет.'}
+}
+function logout(){localStorage.removeItem('geo_lab_admin_auth');TOKEN='';UID='';EMAIL='';$('dash').classList.add('hide');$('f-auth').classList.remove('hide')}
+async function isAdmin(){try{const a=await api('/rest/v1/admins?user_id=eq.'+UID);return a&&a.length>0}catch(e){return false}}
+async function start(){
+  $('f-auth').classList.add('hide');
+  const ok=await isAdmin();
+  if(!ok){$('f-auth').classList.remove('hide');$('au-err').textContent='Нет доступа: аккаунт не в списке admins. Добавь свой email через SQL (см. README).';return}
+  $('dash').classList.remove('hide');
+  $('who').textContent=EMAIL;
+  await Promise.all([renderOrders(),renderClients(),renderReports()]);
+}
+async function renderOrders(){
+  try{
+    const f=$('ord-filter').value;
+    const q=f==='all'?'/rest/v1/lab_orders?order=created_at.desc':'/rest/v1/lab_orders?status=eq.'+f+'&order=created_at.desc';
+    const list=await api(q);
+    $('n-all').textContent=String((await api('/rest/v1/lab_orders?select=id')).length);
+    $('n-wait').textContent=String(list.filter(function(x){return x.status!=='confirmed'}).length);
+    $('n-ok').textContent=String(list.filter(function(x){return x.status==='confirmed'}).length);
+    const box=$('ord-box');box.innerHTML='';
+    if(!list.length){box.innerHTML='<div class="panel sp">Пока нет заявок в этом фильтре.</div>';return}
+    list.forEach(function(o){
+      const d=document.createElement('div');d.className='card';
+      const top=document.createElement('div');top.className='top';
+      const l=document.createElement('div');
+      l.innerHTML='<b>'+(o.service_name||'услуга')+'</b><br><span class="note">'+(o.email||'—')+' · '+fmt(o.amount)+' · '+dt(o.created_at)+(o.pay_uid?' · <span class="mono">'+String(o.pay_uid).slice(0,13)+'</span>':'')+'</span>';
+      top.appendChild(l);
+      const st=document.createElement('span');
+      st.className='badge '+(o.status==='confirmed'?'ok':(o.status==='paid_check'?'wait':'wait'));
+      st.textContent=o.status==='confirmed'?'ПОДТВЕРЖДЕНО':(o.status==='paid_check'?'ЧЕК ПОЛУЧЕН':'НА ПРОВЕРКЕ');
+      top.appendChild(st);
+      d.appendChild(top);
+      const acts=document.createElement('div');acts.className='acts';
+      if(o.status!=='confirmed'){
+        const b1=document.createElement('button');b1.className='btn gold';b1.textContent='ПОДТВЕРДИТЬ';
+        b1.onclick=function(){setSt(o,'confirmed')};acts.appendChild(b1);
+        if(o.status!=='paid_check'){const b2=document.createElement('button');b2.className='btn';b2.textContent='ЧЕК ПОЛУЧЕН';
+          b2.onclick=function(){setSt(o,'paid_check')};acts.appendChild(b2)}
+        const b3=document.createElement('button');b3.className='btn danger';b3.textContent='УДАЛИТЬ';
+        b3.onclick=function(){if(confirm('Удалить заявку «'+(o.service_name||'')+'» от '+(o.email||'')+'?'))delOrder(o)};acts.appendChild(b3);
+      }
+      d.appendChild(acts);
+      box.appendChild(d);
+    });
+  }catch(e){$('ord-box').innerHTML='<div class="panel err">Ошибка загрузки: '+e.message+'</div>'}
+}
+async function setSt(o,s){
+  try{await api('/rest/v1/lab_orders?id=eq.'+o.id,'PATCH',{status:s});toast('Статус обновлён');await renderOrders()}catch(e){toast('Не вышло: '+e.message)}
+}
+async function delOrder(o){
+  try{await api('/rest/v1/lab_orders?id=eq.'+o.id,'DELETE');toast('Заявка удалена');await renderOrders()}catch(e){toast('Не вышло: '+e.message)}
+}
+async function renderClients(){
+  try{
+    const list=await api('/rest/v1/lab_orders?select=email,user_id,created_at');
+    const map={};
+    list.forEach(function(o){const e=(o.email||'').toLowerCase();if(!e)return;if(!map[e])map[e]={n:0,last:null,uid:o.user_id};map[e].n++;const c=o.created_at;if(!map[e].last||c>map[e].last)map[e].last=c});
+    let prof={};
+    try{prof=await api('/rest/v1/profiles?select=*');}catch(e){}
+    const byId={};(prof||[]).forEach(function(p){byId[p.id]=p});
+    $('n-cli').textContent=String(Object.keys(map).length);
+    const box=$('cli-box');box.innerHTML='';
+    const keys=Object.keys(map);
+    if(!keys.length){box.innerHTML='<div class="panel sp">Пока нет клиентов с заявками.</div>';return}
+    keys.sort().forEach(function(e){
+      const m=map[e];const p=byId[m.uid]||{};
+      const d=document.createElement('div');d.className='card';
+      d.innerHTML='<div class="top"><div><b>'+(p.full_name||e)+'</b><br><span class="note">'+e+' · заявок: '+m.n+' · последняя: '+dt(m.last)+'</span></div><span class="mono">uid '+(m.uid||'').slice(0,8)+'</span></div>';
+      box.appendChild(d);
+    });
+  }catch(e){$('cli-box').innerHTML='<div class="panel err">Ошибка: '+e.message+'</div>'}
+}
+async function renderReports(){
+  try{
+    const list=await api('/rest/v1/lab_reports?order=created_at.desc');
+    const box=$('rp-box');box.innerHTML='';
+    if(!list.length){box.innerHTML='<div class="panel sp">Отчётов пока нет.</div>';return}
+    list.forEach(function(x){
+      const d=document.createElement('div');d.className='card';
+      const top=document.createElement('div');top.className='top';
+      top.innerHTML='<div><b>'+(x.name||'документ')+'</b><br><span class="note">'+(x.email||'')+' · '+(x.date||dt(x.created_at))+(x.note?' · '+x.note:'')+'</span></div>';
+      const open=document.createElement('button');open.className='btn mute';open.textContent='ОТКРЫТЬ';
+      open.onclick=function(){const u=x.url||'';window.open(u.indexOf('http')===0?u:('https://geo-upgrade.ru/'+u),'_blank','noopener')};
+      top.appendChild(open);
+      const del=document.createElement('button');del.className='btn danger';del.textContent='УДАЛИТЬ';
+      del.onclick=async function(){try{await api('/rest/v1/lab_reports?id=eq.'+x.id,'DELETE');await renderReports()}catch(e){toast('Не вышло: '+e.message)}};
+      top.appendChild(del);
+      d.appendChild(top);
+      box.appendChild(d);
+    });
+  }catch(e){$('rp-box').innerHTML='<div class="panel err">Ошибка: '+e.message+'</div>'}
+}
+async function addReport(){
+  const em=$('rp-email').value.trim().toLowerCase(),nm=$('rp-name').value.trim(),url=$('rp-url').value.trim();
+  if(!em||!nm||!url){$('rp-ok').textContent='';toast('Заполни email, название и ссылку');return}
+  try{
+    // user_id по email: ищем среди lab_orders (клиент делал заявки)
+    const arr=await api('/rest/v1/lab_orders?email=eq.'+encodeURIComponent(em)+'&select=user_id');
+    const uid=(arr&&arr[0]&&arr[0].user_id)||'';
+    if(!uid){$('rp-ok').textContent='Клиент с таким email ещё не делал заявок — отчёт выдавать некому.';return}
+    await api('/rest/v1/lab_reports','POST',{user_id:uid,email:em,name:nm,url:url,date:$('rp-date').value.trim(),note:$('rp-note').value.trim()});
+    $('rp-ok').textContent='Выдано ✓';
+    $('rp-email').value='';$('rp-name').value='';$('rp-url').value='';$('rp-note').value='';$('rp-date').value='';
+    await renderReports();
+  }catch(e){$('rp-ok').textContent='Не вышло: '+e.message}
+}
+$('au-login').onclick=login;
+$('au-pass').addEventListener('keydown',function(e){if(e.key==='Enter')login()});
+$('out').onclick=logout;
+$('ord-refresh').onclick=renderOrders;
+$('ord-filter').onchange=renderOrders;
+$('rp-add').onclick=addReport;
+(function init(){const s=loadS();if(s&&s.token){TOKEN=s.token;UID=s.uid;EMAIL=s.email;start()}})();
+</script>
+</body>
+</html>
