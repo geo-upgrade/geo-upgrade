@@ -710,7 +710,7 @@ document.addEventListener('DOMContentLoaded',function(){
 const FORMSPREE='https://formspree.io/f/mljdyaqo';
 const $=id=>document.getElementById(id);
 const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){localStorage.setItem(k,JSON.stringify(v))}};
-function session(){const e=store.get('geo_lab_session',null);if(!e)return null;const u=store.get('geo_lab_users',{})[e];return u?{email:e,...u}:null}
+function session(){const a=(function(){try{return JSON.parse(localStorage.getItem('geo_lab_auth')||'null')}catch(_){return null}})();if(a&&a.token)return{email:a.email,name:a.name||a.email,sb:a};const e=store.get('geo_lab_session',null);if(!e)return null;const u=store.get('geo_lab_users',{})[e];return u?{email:e,...u}:null}
 function users(){return store.get('geo_lab_users',{})}
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 async function postLab(subject,text){try{await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({subject:subject,text:text,from:'cabinet@geo-upgrade.ru'})})}catch(e){return false}return true}
@@ -735,19 +735,33 @@ $('t-reg').onclick=()=>go('reg');
 if(PAY)go('reg');
 $('f-login').addEventListener('submit',async e=>{
   e.preventDefault();const em=$('li-email').value.trim().toLowerCase(),pw=$('li-pass').value;
-  const u=users()[em];if(!u){$('li-err').textContent='Такого аккаунта нет — сначала регистрация.';return}
-  if(u.h!==await sha256(em+'|'+pw)){$('li-err').textContent='Неверный пароль.';return}
-  store.set('geo_lab_session',em);back();
+  try{
+    const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/auth/v1/token?grant_type=password',{method:'POST',headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Content-Type':'application/json'},body:JSON.stringify({email:em,password:pw})});
+    const j=await r.json().catch(()=>({}));
+    if(r.ok&&j.access_token){localStorage.setItem('geo_lab_auth',JSON.stringify({email:(j.user||{}).email||em,uid:(j.user||{}).id||'',token:j.access_token,name:((j.user||{}).user_metadata||{}).full_name||em,at:Date.now()}));store.set('geo_lab_session',em);back();return}
+    const d=(j.error_description||j.msg||'')+'';
+    $('li-err').textContent=/Invalid login/i.test(d)?'Неверный email или пароль. Если аккаунт был создан раньше — пройдите короткую регистрацию ещё раз (сайт переехал на защищённую базу).':(d||'Не удалось войти ('+r.status+').');
+  }catch(err){$('li-err').textContent='Нет связи с базой лаборатории. Проверьте интернет.'}
 });
 $('f-reg').addEventListener('submit',async e=>{
   e.preventDefault();const em=$('rg-email').value.trim().toLowerCase(),nm=$('rg-name').value.trim(),pw=$('rg-pass').value;
   if(nm.length<2){$('rg-err').textContent='Укажите имя или название компании.';return}
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){$('rg-err').textContent='Проверьте email.';return}
   if(pw.length<6){$('rg-err').textContent='Пароль — минимум 6 символов.';return}
-  const U=users();if(U[em]){$('rg-err').textContent='Такой email уже зарегистрирован. Войдите.';return}
-  U[em]={name:nm,h:await sha256(em+'|'+pw),at:new Date().toISOString().slice(0,10)};store.set('geo_lab_users',U);store.set('geo_lab_session',em);
-  postLab('[Кабинет] РЕГИСТРАЦИЯ: '+nm+' — '+em,'Новый клиент в личной лаборатории.\nИмя: '+nm+'\nEmail: '+em+'\nДата: '+new Date().toLocaleString('ru-RU'));
-  back();
+  try{
+    const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/auth/v1/signup',{method:'POST',headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Content-Type':'application/json'},body:JSON.stringify({email:em,password:pw,data:{full_name:nm}})});
+    const j=await r.json().catch(()=>({}));
+    if(r.ok){
+      const s=j.session||null;
+      localStorage.setItem('geo_lab_auth',JSON.stringify({email:em,uid:(j.user||{}).id||'',token:(s||{}).access_token||'',name:nm,at:Date.now()}));
+      const U=users();U[em]={name:nm,h:await sha256(em+'|'+pw),at:new Date().toISOString().slice(0,10)};store.set('geo_lab_users',U);
+      postLab('[Кабинет] РЕГИСТРАЦИЯ: '+nm+' — '+em,'Новый клиент в личной лаборатории.\nИмя: '+nm+'\nEmail: '+em+'\nДата: '+new Date().toLocaleString('ru-RU'));
+      if(!s){$('rg-err').textContent='Аккаунт создан. Подтвердите email — придёт письмо — затем войдите.';return}
+      back();return;
+    }
+    const d=(j.error_description||j.msg||'')+'';
+    $('rg-err').textContent=/already registered/i.test(d)?'Такой email уже зарегистрирован. Войдите.':(d||'Не удалось зарегистрироваться ('+r.status+').');
+  }catch(err){$('rg-err').textContent='Нет связи с базой лаборатории. Проверьте интернет.'}
 });
 </script>
 </body>
