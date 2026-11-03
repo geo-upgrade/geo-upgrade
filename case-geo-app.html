@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Личный кабинет и приложение GEO-Апгрейд: кейс EXH-13</title>
+<meta name="description" content="Кейс EXH-13: как лаборатория GEO-Апгрейд собрала собственные приборы — личный кабинет на сайте, приложение для Android и админку — и замкнула цикл заявка → оплата → статусы → отчёт.">
+<meta name="theme-color" content="#0D0618">
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA+AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgVJREFUeJylkztoVFEQhr8559zduw83RoKEaBRUVBQfIFgEBbERQQtLESJR1kiwkIiNFja2YmMXEUFbG1PoEoIg2ASCCUQhqMEHghhFTET3Ps4di7uJQdLtNDNn5p85A/8/Ug03Km2YaacZwAEgkr90xTJLuSVbraaKU2OQNIEsA+dATB6nKaD/GqwDY/JcnIAIGgQ4kohsXRcahsj8PJLGaLkC1SpqLYggzQhZWIA4AiDr7kbSFPk2j9gHzzTbsbs1NaF46QLasZZ45C58XYQQzNRrwsEz+J27iG/cRDdtA1XM9Etg6ocWT9S11LNXi8f6tbTloBZO1pWfqoXTw1rq2aOl3v1a6tyqpjGrMv1dwwPHtXBqSHnn1QUP72Oej5EOXoayRxYXEGPht5KcGyI93499Mo4dfUS2bzvu9h3MzBTyYQ47PobTWgf4DFRJrg5DEiKTE+AyXOMx5tUk8vlLzoIH1tQgiqDioVzBpWcHII4wb2bhD+BTEIUOixoLSYZ2rcdOvMCOPiUd6Ec+zqEbevFHDyHBlVvq+w6DK2DezhDcG0GrNeJr18EHUC0i7z9RHL4IhQJJfQjfdwSiJna8gVToVERa/KcQFMEFy5SRZbkvlfO4+QvEtYSlSLWyWZdVJpKDVHPRKCAtPWmW141hJd7h/eoiX/p55amp8j++7WNqe8BfwsTb5mYAskEAAAAASUVORK5CYII=">
+<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin><style>
+/* fonts.css (inlined, PSI #4) */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(orbitron-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(orbitron-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(orbitron-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(orbitron-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<link rel="canonical" href="https://geo-upgrade.ru/case-geo-app.html">
+<link rel="stylesheet" href="tailwind.min.css">
+<meta property="og:url" content="https://geo-upgrade.ru/case-geo-app.html">
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-10-26"><meta property="article:modified_time" content="2026-10-26">
+<meta property="og:title" content="Личный кабинет и приложение GEO-Апгрейд: кейс EXH-13">
+<meta property="og:description" content="Кейс EXH-13: как лаборатория GEO-Апгрейд собрала собственные приборы — личный кабинет на сайте, приложение для Android и админку — и замкнула цикл заявка → оплата → статусы → отчёт.">
+<meta property="og:site_name" content="GEO-Апгрейд">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://geo-upgrade.ru/cover-case-geo-app-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Личный кабинет и приложение GEO-Апгрейд: кейс о своих приборах","description":"Кейс EXH-13: как лаборатория GEO-Апгрейд собрала собственные приборы — личный кабинет на сайте, приложение для Android и админку — и замкнула цикл заявка → оплата → статусы → отчёт.","author":{"@type":"Person","name":"Жарких Дарья Александровна"},"publisher":{"@type":"Organization","name":"GEO-Апгрейд","sameAs": ["https://t.me/geoupgrade", "https://vk.ru/geo.upgrade", "https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933", "https://profi.ru/profile/ZharkikhDA3/", "https://workspace.ru/id/darya-zharkih/", "https://www.klerk.ru/user/2726432/", "https://dzen.ru/id/6ab4b86296401f17f0716d4b", "https://g.page/r/CSUI5EnmoeeoEBM/review", "https://maps.app.goo.gl/R8nnURT4CwAqi3nc7", "https://yandex.ru/profile/84156063982", "https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7", "https://2gis.ru/tomsk/geo/70000001118166258", "https://tomsk.flamp.ru/geo_upgrade", "https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/", "https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/", "https://2gis.ru/novosibirsk/geo/70000001118650762", "https://www.avito.ru/brands/a689faf0fc1a53cfe40d4eab4e5e3aa4", "https://zoon.ru/nsk/business/ekspertnaya_laboratoriya_geo-apgrejd/", "https://www.yell.ru/novosibirsk/com/geo-apgrejd_14527356/"],"url":"https://geo-upgrade.ru","logo":{"@type":"ImageObject","url":"https://geo-upgrade.ru/favicon.ico"}},"datePublished":"2026-11-03","dateModified":"2026-11-03","inLanguage":"ru","mainEntityOfPage":"https://geo-upgrade.ru/case-geo-app.html"}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://geo-upgrade.ru/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Кейсы и эксперименты", "item": "https://geo-upgrade.ru/cases.html"},
+    {"@type": "ListItem", "position": 3, "name": "Личный кабинет и приложение GEO-Апгрейд", "item": "https://geo-upgrade.ru/case-geo-app.html"}
+  ]
+}
+</script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}
+h1,h2,h3,h4{font-family:'Orbitron',sans-serif;line-height:1.15}
+[id]{scroll-margin-top:5.5rem}
+.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}
+.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}
+.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px}
+.card:hover{border-color:rgba(0,240,255,.65)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}
+.term{color:#00F0FF;font-weight:600}
+.callout{background:rgba(0,240,255,.03);border-left:4px solid #00F0FF;padding:1rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
+table.data{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
+table.data th,table.data td{border:1px solid rgba(184,188,188,.3);padding:.7rem;text-align:left;vertical-align:top}
+table.data th{background:rgba(0,240,255,.08);color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.8rem;letter-spacing:.06em}
+.table-wrap{overflow-x:auto;margin:1.5rem 0}
+.shot{font-family:'Orbitron',sans-serif;font-size:.72rem;border-radius:12px;padding:2px 10px;white-space:nowrap;display:inline-block}
+.shot.hi{background:rgba(52,211,153,.15);color:#34D399;border:1px solid rgba(52,211,153,.6)}
+.shot.mid{background:rgba(0,240,255,.12);color:#00F0FF;border:1px solid rgba(0,240,255,.5)}
+.shot.low{background:rgba(244,114,182,.12);color:#F472B6;border:1px solid rgba(244,114,182,.55)}
+.shot.mod{background:rgba(248,113,113,.15);color:#F87171;border:1px solid rgba(248,113,113,.6)}
+.shot.trap{background:rgba(251,191,36,.12);color:#FBBF24;border:1px solid rgba(251,191,36,.55)}
+.qcard{border:1px solid rgba(184,188,198,.25);border-left:3px solid #00F0FF;border-radius:10px;padding:.9rem 1.1rem;margin:.75rem 0;background:rgba(13,6,24,.88)}
+.qcard .top{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.3rem}
+.qcard .num{font-family:'Orbitron',sans-serif;color:#00F0FF;font-size:.78rem;letter-spacing:.08em}
+.qcard .qtext{font-size:.92rem;color:#B8BCC6;margin-bottom:.4rem}
+.qcard .ans{font-size:.94rem}
+.qcard .src{font-size:.78rem;color:#8A93A6;margin-top:.4rem}
+.qcard .note{font-size:.82rem;color:#F472B6;margin-top:.4rem}
+.find{border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:.9rem 1.1rem;margin:.6rem 0;background:rgba(13,6,24,.88)}
+.find.mod{border-color:rgba(248,113,113,.55);background:rgba(248,113,113,.06)}
+.find h3{font-size:1.15rem;color:#00F0FF;margin:0 0 .4rem}
+.find.mod h3{color:#F87171}
+.find p{font-size:.92rem;margin:0}
+.score{font-family:'Orbitron',sans-serif;font-size:2.4rem;color:#00F0FF;font-weight:700;text-shadow:0 0 18px rgba(0,240,255,.4)}
+.blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:1rem}
+.blk{border:1px solid rgba(184,188,198,.25);border-radius:8px;padding:.6rem .7rem;background:rgba(27,11,49,.75)}
+.blk b{font-family:'Orbitron',sans-serif;font-size:.85rem;color:#00F0FF}
+.blk span{color:#B8BCC6;font-size:.76rem;display:block}
+.bar{height:6px;border-radius:4px;background:rgba(184,188,198,.2);margin-top:.45rem;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#00F0FF,#7C6CFF);border-radius:4px}
+@media(max-width:640px){.blocks{grid-template-columns:1fr 1fr}}
+.shot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.25rem 0}
+@media(max-width:640px){.shot-grid{grid-template-columns:1fr}}
+.shot-grid figure{margin:0;border:1px solid rgba(184,188,198,.25);border-radius:10px;overflow:hidden;background:rgba(13,6,24,.88)}
+.shot-grid img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(184,188,198,.2)}
+.shot-grid figcaption{padding:.7rem .9rem;font-size:.82rem;color:#B8BCC6}
+.shot-grid figcaption b{color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem}
+.toc{border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:1rem 1.2rem;background:rgba(13,6,24,.88)}
+.toc ol{margin:.4rem 0 0 1.2rem;padding:0}
+.toc a{color:#B8BCC6;text-decoration:none}
+.toc a:hover{color:#00F0FF}
+nav.page-nav{display:flex;flex-wrap:wrap;gap:1rem;padding:.5rem 0}
+nav.page-nav a{color:#00F0FF;text-decoration:none;font-size:.85rem}
+nav.page-nav a:hover{text-decoration:underline}
+.scan-line{position:relative;overflow:hidden}
+.scan-line::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 0,rgba(0,240,255,.08) 50%,transparent 100%);animation:scan 4s linear infinite}
+@keyframes scan{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+@media(prefers-reduced-motion:reduce){.scan-line::after{animation:none}}
+.h-toc{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:.14em;color:#00F0FF;text-transform:uppercase}
+.checklist{list-style:none;padding-left:0}.checklist li{position:relative;padding-left:1.75rem;margin-bottom:.75rem}.checklist li:before{content:"✓";position:absolute;left:0;color:#00F0FF;font-weight:bold}
+
+</style>
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script><script>document.documentElement.classList.remove('no-js');</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
+<style>
+/* perf-fixes.css (inlined, PSI #4) */
+/* perf-fixes.css — расширение зон тапа (Accessibility). Визуально ничего не меняет. */
+header a, footer a, .geoas-chip, .fc-btn, a.btn { position: relative; }
+header a::before, footer a::before, .geoas-chip::before { content: ""; position: absolute; inset: -10px; }
+.fc-btn::before, a.btn::before { content: ""; position: absolute; inset: -4px; }
+
+
+/* ── v2 (07.10, вечер): A11Y — тап-зоны основной навигации ──────────────
+   Пункты меню были меньше 24px по высоте (text-sm без отступов).
+   Увеличиваем зону нажатия и расстояние между пунктами до ≥24px (WCAG 2.5.8).
+   Визуально меню становится чуть «воздушнее» — это ожидаемо. */
+nav[aria-label="Основная навигация"] {
+  gap: 4px 24px; /* было gap-x-4 (16px) gap-y-2 (8px) */
+}
+nav[aria-label="Основная навигация"] a {
+  display: inline-block;
+  padding: 6px 8px; /* зона нажатия 14+12 = 26px по высоте */
+}
+</style>
+<style>
+/* jnav B6.1: мобильное меню + полоса основных страниц (не применяется на index) */
+.jnav-btn{display:none;position:relative;z-index:60;width:44px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid rgba(0,240,255,.55);border-radius:8px;background:rgba(0,240,255,.08);cursor:pointer;transition:border-color .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn span{display:block;width:20px;height:2px;background:#00F0FF;border-radius:1px;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn:hover,.jnav-btn:focus-visible{border-color:rgba(0,240,255,.9);box-shadow:0 0 14px rgba(0,240,255,.35)}
+.jnav-btn:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+.jnav-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.jnav-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.jnav-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.jnav-beige{border-color:rgba(212,184,150,.55);background:rgba(212,184,150,.08)}
+.jnav-beige span{background:#D4B896}
+.jnav-beige:hover,.jnav-beige:focus-visible{border-color:rgba(212,184,150,.9);box-shadow:0 0 14px rgba(212,184,150,.3)}
+@media(min-width:768px){.jnav-btn,.jnav-strip{display:none!important}}
+@media(max-width:767.98px){
+.jnav-btn{display:flex}
+.jnav-nav{display:none!important;position:absolute;left:12px;right:12px;top:calc(100% + 8px);z-index:59;flex-direction:column;gap:2px;padding:10px;border:1px solid rgba(0,240,255,.35);border-radius:12px;background:rgba(13,6,24,.97);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(0,240,255,.12);backdrop-filter:blur(10px)}
+.jnav-open .jnav-nav{display:flex!important}
+.jnav-nav a{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:8px;font-size:1rem;color:#F5F7FA;text-decoration:none;opacity:0;transform:translateX(-8px);transition:opacity .25s ease,transform .25s ease}
+.jnav-open .jnav-nav a{opacity:1;transform:none}
+.jnav-nav a:nth-child(1){transition-delay:.02s}.jnav-nav a:nth-child(2){transition-delay:.05s}.jnav-nav a:nth-child(3){transition-delay:.08s}.jnav-nav a:nth-child(4){transition-delay:.11s}.jnav-nav a:nth-child(5){transition-delay:.14s}.jnav-nav a:nth-child(6){transition-delay:.17s}.jnav-nav a:nth-child(7){transition-delay:.2s}.jnav-nav a:nth-child(8){transition-delay:.23s}.jnav-nav a:nth-child(9){transition-delay:.26s}.jnav-nav a:nth-child(10){transition-delay:.29s}.jnav-nav a:nth-child(11){transition-delay:.32s}.jnav-nav a:nth-child(12){transition-delay:.35s}.jnav-nav a:nth-child(13){transition-delay:.38s}
+.jnav-nav a:hover{background:rgba(0,240,255,.08)}
+.jnav-nav a.text-\[\#00F0FF\]{background:rgba(0,240,255,.1);border:1px solid rgba(0,240,255,.4)}
+.jnav-nav a.accent-beige,.jnav-nav a.text-\[\#D4B896\]{background:rgba(212,184,150,.1);border:1px solid rgba(212,184,150,.4)}
+.jnav-nav::before{content:"МЕНЮ";display:block;font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:.25em;color:rgba(0,240,255,.7);padding:6px 12px 8px}
+.jnav-beige-panel .jnav-nav{border-color:rgba(212,184,150,.35);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(212,184,150,.1)}
+.jnav-beige-panel .jnav-nav::before{color:rgba(212,184,150,.8)}
+.jnav-beige-panel .jnav-nav a:hover{background:rgba(212,184,150,.08)}
+.jnav-strip{display:flex;gap:8px;overflow-x:auto;padding:8px 12px 10px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(0,240,255,.15);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-strip::-webkit-scrollbar{display:none}
+.jnav-strip a{flex:0 0 auto;padding:6px 12px;border-radius:999px;border:1px solid rgba(0,240,255,.3);font-size:.8rem;color:#F5F7FA;text-decoration:none;background:rgba(0,240,255,.05)}
+.jnav-strip a.jnav-here{border-color:rgba(0,240,255,.8);color:#00F0FF;background:rgba(0,240,255,.12)}
+.jnav-beige-panel + .jnav-strip{border-bottom-color:rgba(212,184,150,.2)}
+.jnav-beige-panel + .jnav-strip a{border-color:rgba(212,184,150,.3);background:rgba(212,184,150,.05)}
+.jnav-beige-panel + .jnav-strip a.jnav-here{border-color:rgba(212,184,150,.8);color:#D4B896;background:rgba(212,184,150,.12)}
+}
+</style>
+<noscript><style>@media(max-width:767.98px){.jnav-btn{display:none!important}.jnav-nav{position:static!important;display:flex!important;flex-wrap:wrap;gap:6px 8px;padding:10px 0 2px;opacity:1}.jnav-nav a{opacity:1;transform:none;display:inline-block;padding:8px 10px;font-size:.9rem}.jnav-nav::before{content:none}}</style></noscript><style>
+/* jnav B6.4: единый стиль с главной (текстовые ссылки, неон-ховер) */
+.jnav-quick a{border:none;background:none;padding:6px 4px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none}
+.jnav-quick a:hover{color:#00F0FF;background:none}
+.jnav-quick a.jnav-here{color:#00F0FF;background:none}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{border:none;background:none;padding:6px 2px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none;white-space:nowrap}
+.jnav-strip a:hover{color:#00F0FF;background:none}
+.jnav-strip a.jnav-here{color:#00F0FF;background:none}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+@media(max-width:767.98px){
+.jnav-strip::-webkit-scrollbar{display:none}
+}
+</style>
+<style>/* jnav B6.4: быстрые пункты в хедере (стиль главной) + полоса «остальное» */
+.jnav-quick{display:none}
+@media(min-width:768px){.jnav-quick{display:none!important}}
+@media(max-width:767.98px){
+.jnav-quick{display:flex;gap:10px;align-items:center;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-quick::-webkit-scrollbar{display:none}
+.jnav-quick a{flex:0 0 auto;padding:6px 4px;font-size:.8rem;line-height:1.2;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-quick a:hover,.jnav-quick a.jnav-here{color:#00F0FF}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{flex:0 0 auto;padding:6px 2px;font-size:.8rem;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-strip a:hover,.jnav-strip a.jnav-here{color:#00F0FF}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+}
+</style>
+.badge{display:inline-block;padding:.25rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600}
+.badge-author{background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.5);color:#A78BFA}
+article p{margin:0 0 1.05rem}
+</style>
+</head>
+
+<body>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
+
+<main>
+<section class="lab-grid scan-line">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <div class="flex flex-col md:flex-row gap-12 md:gap-20 items-center">
+      <div class="max-w-2xl">
+        <p class="font-heading text-xs tracking-[.2em] text-[#00F0FF]">CASE LAB · EXH-13 · СВОИ ИНСТРУМЕНТЫ</p>
+        <h1 class="mt-4 text-3xl md:text-5xl font-bold">Личный кабинет и приложение GEO-Апгрейд</h1>
+        <p class="mt-6 text-base md:text-lg text-[#B8BCC6]">Кейс о нас самих: лаборатория собрала собственные приборы — кабинет на сайте, приложение для Android и админку — и замкнула полный цикл клиента: заявка → оплата через Точку → статусы → отчёт. Без переписки, без «где мой заказ», без потерянных документов. Как это устроено и что тут честно сломалось по дороге — разбираем по протоколу.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#protocol" class="btn glow inline-block rounded-md bg-[#00F0FF] px-7 py-4 text-center font-semibold text-[#0D0618]">Протокол клиента</a>
+          <a href="geo-app-v0.26.1.apk" class="btn inline-block rounded-md border border-[#00F0FF]/60 px-7 py-4 text-center font-semibold">Скачать APK · Android →</a>
+          <a href="services.html" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-7 py-4 text-center font-semibold">Каталог услуг →</a>
+        </div>
+      </div>
+      <figure class="mx-auto mt-10 md:mt-0 w-full max-w-[360px] shrink-0">
+        <img src="cover-case-geo-app.jpg" alt="Обложка кейса: личный кабинет и приложение GEO-Апгрейд — смартфон с неоновой приборной панелью на фоне тёмной лаборатории AI-видимости" width="1024" height="1024" style="width:100%;height:auto;border-radius:14px;border:1px solid rgba(0,240,255,.35)" loading="eager">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="max-w-3xl mx-auto px-5 py-12">
+  <div class="lab-card">
+    <p class="h-toc">Case type: Lab Protocol</p>
+    <table class="data">
+      <tr><th>Экспонат</th><td>EXH-13 · кейс о нас самих: личный кабинет на сайте + приложение GEO-Апгрейд для Android + админка</td></tr>
+      <tr><th>Период</th><td>30.10–03.11.2026 · Новосибирск · сборка и испытания на живой площадке</td></tr>
+      <tr><th>Стек</th><td>GitHub Pages (сайт) · Supabase (одна база: Auth, RLS) · Точка.Магазин (оплата) · Telegram-бот «Сигнал» (приёмник дублей) · Android (Kotlin, minSdk 24 · targetSdk 34)</td></tr>
+      <tr><th>Объём</th><td>23 услуги с индивидуальными ссылками оплаты · 88 терминов словаря · 10 приборов тех-проверки · блог с RSS · саундтрек · splash и HUD-интерфейс</td></tr>
+      <tr><th>Верификация</th><td>парсер сайта: 86/86 URL, P0 = P1 = P2 = 0 · API-прогон: регистрация → вход → заявка → проверка RLS · сборка APK: zipalign 0, подпись сертификата совпала с эталоном</td></tr>
+      <tr><th>Результат</th><td>полный клиентский цикл замкнут в двух интерфейсах: заявка из кабинета или приложения попадает в общую базу и админку мгновенно, статусы синхронны, отчёты выдаются в обоих местах</td></tr>
+      <tr><th>Статус</th><td>релиз приложения v0.26.1 (vc46) установлен и испытан · кабинет сайта v11.6 · APK скачивается со страницы кейса</td></tr>
+    </table>
+  </div>
+
+  <div class="toc mt-10">
+    <p class="h-toc">Содержание</p>
+    <ol>
+      <li><a href="#why">Зачем лаборатории свои приборы</a></li>
+      <li><a href="#parts">Три компонента: кабинет, приложение, админка</a></li>
+      <li><a href="#protocol">Сквозной протокол клиента</a></li>
+      <li><a href="#features">Возможности приложения</a></li>
+      <li><a href="#incident">Инцидент: «Сессия устарела» — протокол вскрытия</a></li>
+      <li><a href="#limits">Ограничения и честность</a></li>
+      <li><a href="#next">Что дальше</a></li>
+    </ol>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="why" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">1. Зачем лаборатории свои приборы</h2>
+  <p class="mt-6">Правило лаборатории: не рекомендовать клиенту то, что сама не пробуешь. GEO-Апгрейд ежедневно советует клиентам наводить порядок в сигналах — и первым прибором, который мы построили для себя, был не сайт и не бот. Это была связка: заявка → оплата → подтверждение → отчёт. Раньше она жила в переписках и папках. Теперь живёт в базе.</p>
+  <p class="mt-4">Зачем это клиенту? Чтобы заявка не терялась между «написал» и «увидел», чтобы статус работы был виден без вопросов в мессенджер, чтобы отчёты не рассыпались по почте. Сигнальная связность — термин из нашего словаря — применим не только к карточкам и статьям, но и к самому процессу работы: все части должны говорить одно и то же из одного источника.</p>
+  <p class="mt-4">И отдельно: мы делаем приложения для клиентов — значит, обязаны выпустить и поддерживать своё. Ссылка на APK — ниже и в карточке, приложение работает на Android 7.0+.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="parts" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">2. Три компонента: кабинет, приложение, админка</h2>
+  <table class="data mt-8">
+    <tr><th>Компонент</th><th>Что умеет</th><th>Под капотом</th></tr>
+    <tr><td>Личный кабинет на сайте</td><td>Регистрация и вход · заявки на услуги · номер чека · статусы работ · отчёты и документы · избранное</td><td>Supabase Auth, одна общая база; RLS: клиент видит только своё; заявки дублируются в Telegram-бот «Сигнал»</td></tr>
+    <tr><td>Приложение GEO-Апгрейд (Android)</td><td>Каталог услуг с ценами и оплатой через Точку · словарь · приборы тех-проверки · блог · кабинет</td><td>Kotlin, офлайн-первый; заявки и отчёты — та же общая база; refresh-сессия на 7 дней</td></tr>
+    <tr><td>Админка лаборатории</td><td>Заказы в четырёх статусах · клиенты · выдача отчётов · подтверждение оплаты</td><td>Тот же Supabase, единый администратор, политики защиты: клиент не может подтвердить себя сам</td></tr>
+  </table>
+  <p class="mt-6">Ключевое решение — одна база на всё. Не «у приложения своя база, у сайта своя», а одна таблица заявок, одна таблица отчётов, одна таблица клиентов. Отсюда два следствия: заявка, сделанная в приложении, видна и на сайте, и в админке; правка статуса в админке видна клиенту в обоих интерфейсах.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="protocol" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">3. Сквозной протокол клиента</h2>
+  <p class="mt-6">Полный путь занимает четыре шага со стороны клиента и два — со стороны лаборатории:</p>
+  <ol class="checklist mt-6">
+    <li><b>Заявка.</b> Клиент выбирает услугу в кабинете или приложении. Заявка записывается в общую базу и мгновенно дублируется в Telegram-бот «Сигнал» — дубль нужен, чтобы приёмник не зависел от одной трубы.</li>
+    <li><b>Оплата.</b> У каждой из 23 услуг — персональная ссылка Точки.Магазин: сумма и название уже вписаны, ошибиться нельзя. Клиент платит привычным способом.</li>
+    <li><b>Чек.</b> Номер чека вписывается в кабинете — с сайта или из приложения. Лаборатория видит его в админке и в «Сигнале».</li>
+    <li><b>Подтверждение.</b> Лаборатория сверяет платёж и переводит заявку в статус «Подтверждён» → «Выполняется» → «Завершён». Клиент видит смену статуса в обоих интерфейсах, подсветка шкалы меняется сама.</li>
+    <li><b>Отчёт.</b> Готовые документы выдаются в раздел «Отчёты и документы» — на сайте и в приложении, по совпадению почты аккаунта. Ничего не теряется в переписке.</li>
+  </ol>
+
+  <div class="callout mt-10">
+    <p class="mb-2"><b class="text-[#00F0FF] font-heading">ДЕМО: СИМУЛЯТОР ПРОТОКОЛА</b></p>
+    <p class="text-sm text-[#B8BCC6] mb-4">Нажмите кнопку и посмотрите, как идёт сигнал: каждый шаг цепочки зажигается в порядке реального протокола. Демо локальное — настоящих заявок оно не создаёт. Реальный путь начинается в <a href="services.html" class="text-[#00F0FF] hover:underline">каталоге услуг</a>.</p>
+    <div id="proto-steps" class="grid grid-cols-1 gap-2"></div>
+    <div class="mt-4 flex flex-wrap gap-4">
+      <button id="proto-run" class="btn inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">Запустить демо-протокол</button>
+      <span id="proto-status" class="self-center text-sm text-[#B8BCC6]">Готов к запуску · 8 шагов</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="features" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">4. Возможности приложения</h2>
+  <p class="mt-6">GEO-Апгрейд для Android — не «обёртка над сайтом», а самостоятельный прибор. Что внутри:</p>
+  <table class="data mt-8">
+    <tr><th>Модуль</th><th>Что делает</th></tr>
+    <tr><td>Каталог услуг</td><td>23 позиции с фиксированными ценами и описаниями; кнопка «Заказать · оплатить через Точку» открывает персональную ссылку услуги — прямо из приложения</td></tr>
+    <tr><td>Личный кабинет</td><td>Вход и регистрация, «Мои заявки» и «Отчёты и документы»; статусы синхронны с сайтом — данные из одной базы</td></tr>
+    <tr><td>GEO-словарь</td><td>88 терминов лаборатории с простыми объяснениями; «Термин дня» на главном экране</td></tr>
+    <tr><td>Тех-проверка</td><td>10 приборов тех-проверки сайта — те же, что в боте Лаббот: что проверить и по каким порогам</td></tr>
+    <tr><td>Блог</td><td>Статьи лаборатории через RSS — свежие материалы без магазина приложений</td></tr>
+    <tr><td>Интерфейс</td><td>Неоновый HUD: уголки-брекеты на панелях, скан-волна на фоне, каскадное появление элементов; саундтрек лаборатории включается тумблером</td></tr>
+    <tr><td>Устойчивость</td><td>Сессия живёт 7 дней и обновляется сама; при сбое приложение говорит честно, а не рисует галочку</td></tr>
+  </table>
+  <div class="callout mt-10">
+    <p class="mb-2"><b class="text-[#00F0FF] font-heading">СКАЧАТЬ ПРИЛОЖЕНИЕ</b></p>
+    <p class="text-sm text-[#B8BCC6] mb-4">Прямой APK с сайта: <a href="geo-app-v0.26.1.apk" class="text-[#00F0FF] hover:underline">geo-app-v0.26.1.apk</a> · Android 7.0+ · подписан ключом лаборатории · устанавливается в пару нажатий (разрешите установку из источника при первом запуске). Заявка в RuStore — на подходе, после модерации приложение появится и в магазине.</p>
+    <div class="mt-4 flex flex-wrap gap-4"><a href="geo-app-v0.26.1.apk" class="btn glow inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">СКАЧАТЬ APK · GEO-АПГРЕЙД v0.26.1</a><a href="dice-app.html" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold">Второе приложение: «Кости» →</a></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="incident" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">5. Инцидент: «Сессия устарела» — протокол вскрытия</h2>
+  <p class="mt-6">Кейс честный, поэтому покажем и то, что сломалось. В день испытаний заявка из приложения не появилась в админке — при этом приложение показывало «отправлено». Разбираем по протоколу вскрытия:</p>
+  <table class="data mt-8">
+    <tr><th>Симптом</th><td>Заявка из приложения не видна в админке; тост уверенно говорил «✓ Заявка отправлена в лабораторию»</td></tr>
+    <tr><th>Диагноз</th><td>Access-токен сессии живёт около часа. Клиент вошёл утром — к вечеру токен истёк; приложение отправляло заявку со старым токеном, получало отказ и молча его игнорировало</td></tr>
+    <tr><th>Лечение</th><td>Refresh-сессия: токен обновляется автоматически на 7 дней; при отказе — повтор; если и это не помогло, приложение честно говорит «Сессия устарела: войдите в кабинет и повторите» вместо ложной галочки</td></tr>
+    <tr><th>Бонус-находка</th><td>Попутно обнаружили: клиент теоретически мог сменить себе статус заявки через прямой запрос. Политика базы закрыта — теперь статус меняет только админка</td></tr>
+    <tr><th>Результат</th><td>Срок жизни сессии поднят до 7 дней; тест живым клиентом пройден: заявки из приложения доезжают до админки, статусы и отчёты синхронны</td></tr>
+  </table>
+  <p class="mt-6">Урок протокола: система считается готовой не тогда, когда сборка зелёная, а когда живой клиент сделал живую заявку и она дошла. Галочка, которая врёт, хуже отсутствия галочки.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="limits" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">6. Ограничения и честность</h2>
+  <ul class="checklist mt-6">
+    <li>Приложение для Android — APK распространяется напрямую с этой страницы; RuStore-версия готовится, модерация вне нашей власти.</li>
+    <li>Оплата проходит через Точку.Магазин — касса лаборатории. Подтверждение оплаты пока ручное: админка меняет статус после сверки чека.</li>
+    <li>Автоматическая касса (приём карт на сайте) — в очереди; текущая схема — «оплата по ссылке + чек в кабинете» — работала с первого дня.</li>
+    <li>Резервный канал приёма — Telegram: если сайт недоступен, «Сигнал» и Лаббот принимают заявки как раньше.</li>
+    <li>Все цифры в этом кейсе — факты проверок от 03.11.2026, а не ожидания.</li>
+  </ul>
+</section>
+
+<div class="divider"></div>
+
+<section id="next" class="max-w-3xl mx-auto px-5 py-12">
+  <h2 class="mt-10 text-2xl md:text-3xl font-bold">7. Что дальше</h2>
+  <ul class="checklist mt-6">
+    <li>Публикация приложения в RuStore после одобрения заявки — с тем же прямым APK в запасе.</li>
+    <li>Отчёты и документы — полностью в общей базе: выдача из админки уже работает, синхронизация дорабатывается по мелочи.</li>
+    <li>Следующий кейс — со стороны клиента: заявка, оплата, статус и отчёт глазами того, кто это всё получил.</li>
+  </ul>
+  <div class="callout mt-10">
+    <p class="mb-0"><b class="text-[#00F0FF] font-heading">Хотите такую же инфраструктуру под свой бренд?</b> Начните с бесплатного мини-аудита или обсудим связку «кабинет + оплата + отчёты» для вашего бизнеса: своя база, свои статусы, свои приборы.</p>
+    <div class="mt-4 flex flex-wrap gap-4"><a href="free-audit.html" class="btn glow inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">Бесплатный мини-аудит</a><a href="contacts.html#form" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold">Обсудить сборку →</a></div>
+  </div>
+</section>
+
+<div class="mt-8 mb-4 max-w-3xl mx-auto px-5">
+<p class="text-xs font-['Orbitron'] text-[#A78BFA] tracking-widest mb-2">СВЯЗАННЫЕ ТЕРМИНЫ</p>
+<div class="flex flex-wrap gap-2">
+<a class="badge badge-author" href="glossary.html#ai-sled-brenda">AI-след бренда</a>
+<a class="badge badge-author" href="glossary.html#kontekstnyy-yakor">контекстный якорь</a>
+<a class="badge badge-author" href="glossary.html#tsifrovoy-prizrak">цифровой призрак</a>
+<a class="badge badge-author" href="glossary.html#zona-slepoy">зона слепоты</a>
+</div>
+</div>
+</main>
+
+
+<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="96" height="96"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">GEO-маркетолог и AI-консультант Жарких Дарья Александровна</p><p class="mt-2 text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера, 22, 634009 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a></p><p class="mt-2 text-sm text-[#B8BCC6]">г. Новосибирск, ул. Гоголя, 209, 630015 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79521572955" class="hover:text-[#00F0FF]">+7 952 157-29-55</a></p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p>
+      </div><span class="flex items-center gap-2" aria-label="Соцсети GEO-Апгрейд"><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M21.94 4.05c.28-1.16-.9-2.1-1.94-1.68L2.3 9.62c-1.15.46-1.09 2.11.09 2.5l4.35 1.4 1.62 5.2c.34 1.1 1.72 1.32 2.42.42l2.16-2.65 4.5 3.32c.97.72 2.37.2 2.6-.98L21.94 4.05zM8.5 13.06l8.93-5.5c.26-.16.53.19.31.4l-7.1 6.44c-.3.28-.5.65-.56 1.05l-.3 2.2c-.04.28-.42.31-.51.04l-1.16-3.75c-.13-.4.05-.84.39-1.08z"/></svg></a><a href="https://max.ru/u/f9LHodD0cOKn5NlqWfUehS5ZCaGQ9oLqwIkL5vvgygrWfsgupZ45s41702Q" target="_blank" rel="noopener" aria-label="MAX" title="MAX" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M4 4h16v13a2 2 0 0 1-2 2H9l-4 3V6a2 2 0 0 1 2-2h-3z"/></svg></a><a href="https://dzen.ru/id/6ab4b86296401f17f0716d4b" target="_blank" rel="noopener" aria-label="Дзен" title="Дзен" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2h.9v8.1H21v1.8h-8.1V22h-1.8v-8.1H3v-1.8h8.1V2z"/></svg></a></span><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="offer.html" class="hover:text-[#00F0FF]">Оферта</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div><div class="max-w-6xl mx-auto px-5"><div class="mt-6 text-xs text-[#B8BCC6]">© 2026 GEO-Апгрейд · ИП Жарких Дарья Александровна · ОГРНИП 326700000056258 · ИНН 700233102822</div></div>
+</footer>
+<script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
+<script src="/geo-assistant-widget.js" defer></script>
+
+<script>
+/* jnav B6.1: мобильное меню + полоса основных страниц */
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.querySelector('.jnav-btn'),panel=document.getElementById('jnav-panel');
+  if(!btn||!panel){return}
+  var hdr=btn.closest('header')||document.body;
+  function set(open){hdr.classList.toggle('jnav-open',open);btn.setAttribute('aria-expanded',open?'true':'false');btn.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню')}
+  btn.addEventListener('click',function(){set(btn.getAttribute('aria-expanded')!=='true')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false)}});
+  document.addEventListener('click',function(e){if(btn.getAttribute('aria-expanded')==='true'&&!panel.contains(e.target)&&!btn.contains(e.target)){set(false)}});
+  window.addEventListener('resize',function(){if(window.innerWidth>=768){set(false)}});
+  var strip=document.querySelector('.jnav-strip');
+  if(strip){
+    var cur=(location.pathname.split('/').pop()||'index.html');
+    if(cur===''||cur==='index.html'){cur='index'}
+    strip.querySelectorAll('a').forEach(function(a){
+      var t=a.getAttribute('href').replace('./','').replace('.html','');
+      if(t===cur||(cur==='index'&&t==='index')){a.classList.add('jnav-here')}
+    });
+  }
+});
+</script>
+<script>
+/* jnav B6.4: подсветка текущей страницы в quick и strip */
+document.addEventListener('DOMContentLoaded',function(){
+  var cur=(location.pathname.split('/').pop()||'').replace('.html','');
+  if(cur===''){cur='index'}
+  document.querySelectorAll('.jnav-quick a,.jnav-strip a').forEach(function(a){
+    var t=a.getAttribute('href').replace('./','').replace('.html','');
+    if(t===cur){a.classList.add('jnav-here')}
+  });
+});
+</script>
+<script src="lab-account.js" defer></script>
+<script>(function(){var steps=[{t:"Заявка: клиент выбирает услугу",c:"База + дубль в Telegram-бот «Сигнал»"},{t:"Оплата: персональная ссылка Точки",c:"сумма и название уже вписаны"},{t:"Чек: номер вписан в кабинете",c:"админка и «Сигнал» видят его сразу"},{t:"Подтверждён",c:"админка сверила платёж — статус сменился у клиента"},{t:"Выполняется",c:"работа идёт — клиент видит голубой статус"},{t:"Завершён",c:"работа сдана — зелёная подсветка"},{t:"Отчёт и документы",c:"выданы в кабинете — сайт и приложение синхронны"}];var box=document.getElementById("proto-steps");var btn=document.getElementById("proto-run");var st=document.getElementById("proto-status");var timer=null;if(!box)return;function render(){box.innerHTML="";steps.forEach(function(s,idx){var d=document.createElement("div");d.className="flex items-center gap-3 rounded-md border border-[#B8BCC6]/25 px-4 py-3";d.style.opacity="0.45";d.id="pstep"+idx;var n=document.createElement("span");n.className="font-heading text-xs text-[#00F0FF] shrink-0";n.textContent=String(idx+1).padStart(2,"0");var w=document.createElement("div");var h=document.createElement("div");h.className="text-sm font-semibold";h.textContent=s.t;var c=document.createElement("div");c.className="text-xs text-[#B8BCC6]";c.textContent=s.c;w.appendChild(h);w.appendChild(c);d.appendChild(n);d.appendChild(w);box.appendChild(d)})}render();function run(){if(timer)return;render();st.textContent="Идёт прогон…";btn.disabled=true;btn.style.opacity="0.6";var i=0;(function next(){if(i>=steps.length){st.textContent="Протокол завершён · отчёт у клиента в кабинете";btn.disabled=false;btn.style.opacity="1";timer=null;return}var d=document.getElementById("pstep"+i);d.style.opacity="1";d.style.borderColor="rgba(0,240,255,.7)";d.style.boxShadow="0 0 14px rgba(0,240,255,.25)";i++;timer=setTimeout(next,900)})()}btn.addEventListener("click",run)})();</script></body>
+</html>
