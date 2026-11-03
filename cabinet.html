@@ -889,7 +889,7 @@ $('f-profile').addEventListener('submit',e=>{
   pfCard(p);
   toast('Анкета сохранена и отправлена в лабораторию.');
 });
-$('btn-logout').onclick=()=>{localStorage.removeItem('geo_lab_session');location.href='cabinet.html'};
+$('btn-logout').onclick=()=>{localStorage.removeItem('geo_lab_auth');localStorage.removeItem('geo_lab_session');location.href='cabinet.html'};
 
 function openPay(uid){
   const svc=LAB_SERVICES[uid];if(!svc){toast('Услуга не найдена — выберите её из списка.');return}
