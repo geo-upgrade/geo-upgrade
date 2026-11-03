@@ -753,7 +753,7 @@ function users(){return store.get('geo_lab_users',{})}
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 function toast(t){const d=document.createElement('div');d.className='toast';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),4200)}
 async function postLabOrder(s,svc,puid,em){try{await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders',{method:'POST',headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+s.sb.token,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({user_id:s.sb.uid,email:em,service_id:puid,service_name:svc.n,amount:svc.a,status:'pending',pay_uid:puid})})}catch(e){}}
-async function syncSbOrders(){try{const a=store.get('geo_lab_auth',null);if(!a||!a.token)return;const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders?user_id=eq."+a.uid+"&order=created_at.desc',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+a.token}});if(!r.ok)return;const arr=await r.json();const L=store.get('geo_lab_orders',[]);let added=0;arr.forEach(x=>{const isod=(x.created_at||'').slice(0,10);const same=L.some(o=>o.sb&&o.uid===x.pay_uid&&o.isodate===isod&&(o.email||'').toLowerCase()===(x.email||'').toLowerCase());if(!same){L.push({id:'sb'+x.id,uid:x.pay_uid||'',name:x.service_name||'услуга',amount:x.amount||0,email:x.email||'',name2:'',note:'',date:isod?new Date(isod).toLocaleDateString('ru-RU'):'',isodate:isod,status:'На проверке',check:'',sb:1});added++}});if(added)store.set('geo_lab_orders',L);if(added&&typeof renderOrders==='function')renderOrders()}catch(e){}}
+async function syncSbOrders(){try{const a=store.get('geo_lab_auth',null);if(!a||!a.token)return;const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders?user_id=eq.'+a.uid+'&order=created_at.desc',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+a.token}});if(!r.ok)return;const arr=await r.json();const L=store.get('geo_lab_orders',[]);let upd=0;arr.forEach(x=>{const isod=(x.created_at||'').slice(0,10);const idx=L.findIndex(o=>o.sb&&o.uid===x.pay_uid&&o.isodate===isod&&(o.email||'').toLowerCase()===(x.email||'').toLowerCase());const st=x.status==='confirmed'?'Подтверждено':'На проверке';if(idx<0){L.push({id:'sb'+x.id,uid:x.pay_uid||'',name:x.service_name||'услуга',amount:x.amount||0,email:x.email||'',name2:'',note:'',date:isod?new Date(isod).toLocaleDateString('ru-RU'):'',isodate:isod,status:st,check:'',sb:1});upd++}else if(x.status&&L[idx].status!==st){L[idx].status=st;upd++}});if(upd)store.set('geo_lab_orders',L);if(upd&&typeof renderOrders==='function')renderOrders()}catch(e){}}
 async function postLab(subject,text){try{await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({subject:subject,text:text,from:'cabinet@geo-upgrade.ru'}),keepalive:true})}catch(e){}try{const s=session()||{email:'—'};const fd=new FormData();fd.set('name',subject);fd.set('email',s.email||'—');fd.set('message',text);fd.set('source','Личный кабинет / сайт');fd.set('page',location.pathname.split('/').pop()||'cabinet.html');await fetch('https://geo-upgrade-inbox.dafna-acid.workers.dev/lead?secret=gu_-8LBI_jtmp8EF4vLHt2Xx1I3A6YZ_7Az',{method:'POST',body:fd,keepalive:true})}catch(e){}return true}
 function fmt(n){return n>0?n.toLocaleString('ru-RU')+' ₽':'цена по договорённости'}
 function orders(){return store.get('geo_lab_orders',[])}
@@ -813,7 +813,7 @@ function renderCatalog(){
   box.innerHTML='';
   Object.keys(LAB_SERVICES).forEach(uid=>{
     const svc=LAB_SERVICES[uid];
-    const done=conf.has(uid+'|'+(s.email||'').toLowerCase());
+    const done=conf.has(uid+'|'+(s.email||'').toLowerCase())||orders().some(o=>o.uid===uid&&(o.email||'').toLowerCase()===(s.email||'').toLowerCase()&&o.status==='Подтверждено');
     const d=document.createElement('div');d.className='catalog-item';
     d.innerHTML='<div style="min-width:170px;flex:1"><b>'+svc.n+'</b><br><span class="note">'+fmt(svc.a)+'</span></div>';
     const st=document.createElement('span');st.className='status '+(done?'st-ok':'st-wait');
@@ -825,8 +825,21 @@ function renderCatalog(){
     box.appendChild(d);
   });
 }
-function renderReports(){
+async function renderReports(){
   const s=session();const box=$('reports-box');if(!box||!s)return;
+  if(s.sb&&s.sb.token){try{
+    const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_reports?email=eq.'+encodeURIComponent(s.email.toLowerCase())+'&order=created_at.desc',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+s.sb.token}});
+    if(!r.ok)return;
+    const arr=await r.json();
+    if(!arr.length)return;
+    box.innerHTML='';
+    arr.forEach(x=>{
+      const d=document.createElement('div');d.className='catalog-item';
+      d.innerHTML='<div style="min-width:170px;flex:1"><b>'+(x.name||'Документ')+'</b><br><span class="note">'+(x.date||'')+(x.note?' · '+x.note:'')+'</span></div>';
+      const a=document.createElement('a');a.className='btn btn-neon';a.href=x.url||'#';a.textContent='Скачать';a.target='_blank';a.rel='noopener';a.style.cssText='padding:9px 16px;font-size:12px';
+      d.appendChild(a);box.appendChild(d);
+    });
+  }catch(e){}return}
   fetch('reports.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(j=>{
     const items=(j.docs||[]).filter(x=>(x.email||'').toLowerCase()===s.email.toLowerCase());
     if(!items.length)return;
