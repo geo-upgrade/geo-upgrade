@@ -767,7 +767,7 @@ function showDash(){
   const s=session();if(!s){const pq=new URLSearchParams(location.search).get('pay');location.replace('login.html'+(pq?('?pay='+encodeURIComponent(pq)):''));return}
   $('lab-dash').classList.remove('hide');
   $('dash-title').textContent='Лаборатория '+ (s.name||'клиента');
-  $('dash-sub').textContent='Вы вошли как '+s.email+' · данные и покупки хранятся локально в вашем браузере';
+  $('dash-sub').textContent='Вы вошли как '+s.email+' · данные хранятся'+(s.sb?' в защищённой базе лаборатории':' в вашем браузере');
   $('st-account').textContent='онлайн';
   renderOrders();renderCatalog();renderFav();fillProfile();renderReports();syncSbOrders();
   const q=new URLSearchParams(location.search);
