@@ -451,7 +451,7 @@ nav[aria-label="Основная навигация"] a {
     <p class="text-xs text-[#B8BCC6] mb-0">Линия приёма активна. Первый настоящий отзыв уже в приёмнике — сигнал №001 ниже. Следующие сигналы появятся здесь — с автором, датой и источником. Передать сигнал можно через форму ниже.</p>
   </div>
 
-  <div class="card p-6 md:p-8 mt-10" id="signal-001">
+  <div class="card p-6 md:p-8 mt-10" id="signal-001" itemscope itemtype="https://schema.org/Review">
     <p class="font-heading text-xs tracking-[.2em] text-[#00F0FF] mb-4">SIGNAL 001 / ПЕРВЫЙ ПРИНЯТ</p>
     <div class="flex flex-wrap items-center gap-2 mb-5">
       <span class="sig-chip">● СИГНАЛ №001</span>
@@ -459,9 +459,13 @@ nav[aria-label="Основная навигация"] a {
       <span class="sig-chip" style="border-color:rgba(52,211,153,.45);color:#34D399;background:rgba(52,211,153,.07)">ДАТА: 2026-11-05</span>
       <span class="sig-chip" style="border-color:rgba(52,211,153,.45);color:#34D399;background:rgba(52,211,153,.07)">★★★★★ 5/5</span>
     </div>
-    <blockquote>Обратились в компанию «GEO-Апгрейд» за анализом видимости нашего бизнеса в нейросетях. Нам бесплатно подготовили подробный отчёт с конкретными рекомендациями по улучшению сайта, карточек компании и продвижения в поисковых системах и нейросетях.</blockquote>
-    <blockquote style="margin-top:0">Приятно удивил подход: не просто общие советы, а детальный разбор с выявленными ошибками, конкретными решениями и расставленными приоритетами. Видно, что специалисты действительно погрузились в наш бизнес и проделали большую работу. Спасибо за профессионализм, внимательность и полезный анализ! Рекомендуем!</blockquote>
-    <p class="text-sm text-[#F5F7FA] mt-4 mb-0">— Светлана К., типография «Атмосфера Идей», Новосибирск · отзыв в 2ГИС, дословно</p>
+    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+      <meta itemprop="ratingValue" content="5"><meta itemprop="bestRating" content="5"><meta itemprop="worstRating" content="1">
+    </div>
+    <meta itemprop="datePublished" content="2026-11-05">
+    <blockquote itemprop="reviewBody">Обратились в компанию „GEO-Апгрейд“ за анализом видимости нашего бизнеса в нейросетях. Нам бесплатно подготовили подробный отчёт с конкретными рекомендациями по улучшению сайта, карточек компании и продвижения в поисковых системах и нейросетях.</blockquote>
+    <blockquote style="margin-top:0" itemprop="reviewBody">Приятно удивил подход: не просто общие советы, а детальный разбор с выявленными ошибками, конкретными решениями и расставленными приоритетами. Видно, что специалисты действительно погрузились в наш бизнес и проделали большую работу. Спасибо за профессионализм, внимательность и полезный анализ! Рекомендуем!</blockquote>
+    <p class="text-sm text-[#F5F7FA] mt-4 mb-0">— <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Светлана К.</span></span>, типография «Атмосфера Идей», Новосибирск · отзыв в <a itemprop="url" href="https://2gis.ru/novosibirsk/geo/70000001118650762" target="_blank" rel="noopener" class="text-[#00F0FF] hover:underline">2ГИС</a>, дословно</p>
     <div class="callout mt-4"><p class="mb-0 text-sm"><span class="font-heading text-[#00F0FF]">Официальный ответ лаборатории (в 2ГИС, дословно):</span> «Большое спасибо за такой развёрнутый и приятный отзыв 💜 Было очень интересно погрузиться в детали вашего бизнеса и поработать с такой крупной и крутой типографией Новосибирска! Надеемся, теперь Атмосфера идей получила новый канал рекламы и рекомендаций — нейросети. Если нужна будет помощь с внедрением рекомендаций или какие-то индивидуальные задачи — вплоть до разработки приложений, чат-ботов, контента для вашего сайта — обращайтесь снова, будем рады сотрудничеству с вами! ☀️»</p></div>
     <p class="text-xs text-[#B8BCC6] mt-4 mb-0">Проверить сигнал: <a href="https://2gis.ru/novosibirsk/geo/70000001118650762" target="_blank" rel="noopener" class="text-[#00F0FF] hover:underline">отзыв в карточке 2ГИС →</a> · детали работы — в <a href="case-atmosfera-idey.html" class="text-[#00F0FF] hover:underline">кейсе «Атмосфера Идей»</a>.</p>
   </div>
@@ -624,10 +628,9 @@ nav[aria-label="Основная навигация"] a {
     <p id="gp-status" class="gp-status" role="status" aria-live="polite"></p>
     <p id="gp-foot" class="gp-foot">Один голос с устройства. Свой вариант в деталях можно дописать в <a class="gp-link" href="contacts.html#form">форме на странице контактов</a>.</p>
   </div>
-  <!-- ШАБЛОН ОТЗЫВА (активировать, когда появится первый настоящий отзыв):
-       1) Каждый отзыв — карточка с микроразметкой itemtype="https://schema.org/Review":
-          имя автора, дата, текст, оценка (если клиент готов её назвать), ссылка на источник.
-       2) Когда отзывов станет 2+, добавить в JSON-LD страницы AggregateRating:
+  <!-- ОТЗЫВ АКТИВИРОВАН: сигнал №001 — первый настоящий отзыв (05.11.2026), микроразметка
+       Review добавлена в карточку #signal-001 (автор, дата, текст, оценка 5/5, источник 2ГИС).
+       Когда отзывов станет 2+, добавить в JSON-LD страницы AggregateRating:
           ratingValue = средняя реальная оценка, reviewCount = число отзывов.
        ВАЖНО: Review/AggregateRating в разметке должны отражать реальные отзывы на этой странице.
        Выдуманные значения нарушают политику Google по структурированным данным и разрушают
