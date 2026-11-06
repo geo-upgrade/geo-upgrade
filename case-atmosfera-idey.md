@@ -119,7 +119,7 @@ Case type: Lab Protocol
 
 — Светлана К., типография «Атмосфера Идей», Новосибирск · источник: 2ГИС · [сигнал №001 в приёмнике отзывов](https://geo-upgrade.ru/reviews.html#signal-001)
 
-Кейс опубликован и на Workspace (агентство Geo Upgrades): https://workspace.ru/cases/polnyy-geo-skaner-dlya-tipografii-polnogo-cikla-atmosfera-idey-novosibirsk/
+Кейс опубликован и на Workspace (агентство GEO-Апгрейд): https://workspace.ru/cases/polnyy-geo-skaner-dlya-tipografii-polnogo-cikla-atmosfera-idey-novosibirsk/
 
 ---
 
