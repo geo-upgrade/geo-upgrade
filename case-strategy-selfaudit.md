@@ -167,6 +167,7 @@ Case type: Lab Protocol
 - Этап 5: контрольный замер в Алисе AI по тому же протоколу — диф к baseline 30.09.
 - Динамика метрик «было → стало» — Mention Rate, Presence и Ghost Gap: итог кейса.
 - Закрытие открытых пунктов стратегии: юр. ниша, первые отзывы, этика GEO и локальные сигналы.
+- Первый клиентский сканер по этому протоколу: типография «Атмосфера Идей» — 117 прогонов, Ghost Gap 0,39 и стратегия внедрения (/case-atmosfera-idey.html; на Workspace: https://workspace.ru/cases/polnyy-geo-skaner-dlya-tipografii-polnogo-cikla-atmosfera-idey-novosibirsk/).
 
 
 ---

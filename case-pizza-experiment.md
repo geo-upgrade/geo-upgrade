@@ -168,7 +168,7 @@ GEO-АУДИТ · PERPLEXITY
 
 ◆ Конвейер обработки отзывов (blog-post-avtoobrabotka-otzyvov.html) — тот ручной разбор вырос в программу.
 
-◆ Реальные клиенты: пилоты и рабочие замеры — теперь по протоколу, с датами и честными ограничениями.
+◆ Реальные клиенты: полный сканер типографии «Атмосфера Идей» — 117 прогонов в четырёх нейросетях (кейс на сайте: /case-atmosfera-idey.html; на Workspace: https://workspace.ru/cases/polnyy-geo-skaner-dlya-tipografii-polnogo-cikla-atmosfera-idey-novosibirsk/) — по протоколу, с датами и честными ограничениями.
 
 Ограничения и честность
 

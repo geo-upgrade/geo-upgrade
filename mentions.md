@@ -10,7 +10,7 @@
 
 ---
 
-## Записи журнала (9 записей)
+## Записи журнала (10 записей)
 
 ### «Создание лаборатории GEO-Апгрейд» — кейс Дарьи Жарких
 
@@ -41,6 +41,11 @@
 
 > Открыть кейс: https://workspace.ru/cases/avtomatizaciya-zamera-ai-vidimosti-bot-otchety-geo-apgreyd-svodki-dvazhdy-v-nedelyu/
 > Страница кейса на сайте: /case-reports.html — автоматическое продолжение кейса учебного отслеживателя.
+
+### «Полный GEO-сканер для типографии полного цикла „Атмосфера Идей“, Новосибирск» — кейс агентства Geo Upgrades на Workspace (запись №010, 06.11.2026)
+
+> Открыть кейс: https://workspace.ru/cases/polnyy-geo-skaner-dlya-tipografii-polnogo-cikla-atmosfera-idey-novosibirsk/ (агентство: https://workspace.ru/contractors/geo-apgreyd/)
+> Страница кейса на сайте: /case-atmosfera-idey.html — в кейс вписан первый публичный отзыв клиента (5/5, 2ГИС).
 
 ### «Топ-160 Томска: как нейросеть видит местный бизнес» — статья в Дзене
 
