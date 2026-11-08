@@ -231,6 +231,17 @@
 article p{margin:0 0 1.05rem}
 article .lab-card + .lab-card{margin-top:.8rem}
 
+/* Отделения и плотность (v3) */
+main > article > header{margin-bottom:2.8rem}
+.article-section{margin-bottom:2.6rem}
+.article-section h2{margin-top:3rem;margin-bottom:1.15rem}
+.article-section p{margin:0 0 1.4rem}
+.article-section ul.checklist{margin:0 0 1.7rem}
+.article-section .table-wrap{margin:1.6rem 0 1.8rem}
+.callout{margin:1.9rem 0}
+blockquote{margin:2rem 0;font-size:1.06rem;color:#E6E7EC}
+.lab-card{padding:1.4rem 1.25rem}
+figure.cover-figure{margin:2.3rem 0}
 /* Светофор AI-видимости (уникальный интерактив статьи) */
 .tl-row{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:space-between;padding:.65rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .tl-row:last-of-type{border-bottom:none}
@@ -570,6 +581,8 @@ nav[aria-label="Основная навигация"] a {
 
 <div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Главный вывод:</span> AI-видимость складывается из пяти слоёв: стратегия и контент GEO, репутация, локальные карточки, техническая настройка и SEO-надстройки. По одиночке они не складываются в рекомендацию — нейросеть собирает бренд из совокупности сигналов. Поэтому мы работаем как агентство полного цикла: от замера и статей до сайтов, приложений и чат-ботов.</p></div>
 
+
+<div class="divider"></div>
 <nav class="lab-card mb-8" aria-label="Содержание статьи">
   <p class="font-heading text-[#00F0FF] text-sm mb-2">Содержание</p>
   <ul class="checklist text-sm">
@@ -594,13 +607,13 @@ nav[aria-label="Основная навигация"] a {
 <p>Если это не вы — клиент, скорее всего, даже не узнает, что вы существовали. Зона слепоты — это не про позицию в выдаче. Это про отсутствие в самом ответе.</p>
 <blockquote>Нейросеть не «выдаёт по запросу» — она вспоминает. Ваша задача — быть тем, кого она вспоминает.</blockquote>
 <p>SEO работает с поисковиком: тот смотрит на страницу, ссылки, поведенческие сигналы. Нейросеть устроена иначе: она собирает ответ из того, что успела прочитать о бренде в разных местах — статьи, карточки, отзывы, каталоги, сайт, — и свёрстывает из этого рекомендацию. У неё нет выдачи, которую можно нащупать руками. Есть внутренняя картина бренда — мы называем её AI-следом.</p>
-<p>AI-след собирается из сигналов, которые разбросаны по интернету — и о вашем бренде они далеко не всегда согласованы. Поэтому AI-видимость — это не один инструмент, а дисциплина: собрать сигналы, согласовать их между собой и убедиться, что картина, которую видит нейросеть, совпадает с тем, какой вы себя считаете.</p>
+<p>AI-след собирается из сигналов, которые разбросаны по интернету — и о вашем бренде они далеко не всегда согласованы. Поэтому AI-видимость — это не один инструмент, а дисциплина: собрать сигналы, согласовать их между собой и убедиться, что картина, которую видит нейросеть, совпадает с тем, каким вы себя считаете.</p>
 <p>Если этого не делать сознательно, получается цифровой призрак: вроде бренд есть, а для нейросети он полупрозрачный и всегда чуть-чуть не тот.</p>
 </section>
 
 <section id="layer-content" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Слой 1. Стратегия и контент GEO</h2>
-<p>Всё начинается с замера — это и есть GEO-сканирование. Мы задаём нейросетям реальные вопросы ваших клиентов и смотрим: в скольких ответах звучит ваш бренд, в скольких — конкуренты и что нейросети при этом рассказывают о вас. Иногда то, что они рассказывают, не совпадает с реальностью: цены с прошлых лендингов, чужие кейсы, «у них нет отдела разработки». Это зоны слепоты — их надо находить до того, как их найдёт ваш клиент.</p>
+<p>Всё начинается с замера — это и есть GEO-сканирование. Мы задаём нейросетям реальные вопросы ваших клиентов и смотрим: в скольких ответах звучит ваш бренд, в скольких — конкуренты, и что нейросети при этом рассказывают о вас. Иногда то, что они рассказывают, не совпадает с реальностью: цены с прошлых лендингов, чужие кейсы, «у них нет отдела разработки». Это зоны слепоты — их надо находить до того, как их найдёт ваш клиент.</p>
 <p>Дальше — стратегия и контент. Не «статья ради статьи», а материал, который отвечает на запросы вашей аудитории и выдерживает проверку фактами: структура по протоколу, проверенные цифры, живой голос.</p>
 <p>Нейросеть цитирует не самого громкого, а того, кто говорит понятно и последовательно. Это контентный маяк: ориентир, на который можно ссылаться.</p>
 <div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Суть слоя:</span> замер — диагноз, контент — лечение. Правки без замера — как лечение без диагноза: может, и полезно, но вслепую.</p></div>
@@ -628,7 +641,7 @@ nav[aria-label="Основная навигация"] a {
 <p>Сайт может быть красивым и понятным для человека — и при этом непрозрачным для машины. Нейросеть не листает страницы глазами: она читает разметку, llms.txt, schema.org, robots и sitemap. Если технический слой хромает, часть контента она просто не увидит — а увиденное не свяжет с брендом.</p>
 <p>Техническая настройка — это llms.txt, структурированные данные, корректный robots и sitemap, доступность и скорость для AI-краулеров. Проще говоря: сайт должен читаться нейросетями без потерь, и прочитанное должно связываться с вашим брендом, а не растворяться в общем котле.</p>
 <p><strong>Что здесь работает:</strong> <a href="mini-products.html" class="term">GEO-Техблок</a> — тех-аудит с внедрением: llms.txt, schema.org, robots, sitemap, доступность. Начать можно прямо сейчас — тех-проверка бесплатная в <a href="https://t.me/geo_upgrade_labbot" target="_blank" rel="noopener">боте-лаборанте</a>.</p>
-<div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Суть слоя:</span> красивый для людей ≠ прозрачный для машины. Пока техслой не в порядке, лучшему контенту невозможно попасть в ответы.</p></div>
+<div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Суть слоя:</span> красивый для людей ≠ прозрачный для машины. Пока техслой не в порядке, лучший контент не доходит до ответов.</p></div>
 </section>
 
 <section id="layer-seo" class="article-section">
@@ -638,6 +651,8 @@ nav[aria-label="Основная навигация"] a {
 <div class="callout"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Суть слоя:</span> GEO не отменяет SEO, а достраивает его. Поисковые сигналы — фундамент, на который опираются и поисковики, и нейросети.</p></div>
 </section>
 
+
+<div class="divider"></div>
 <section id="full-cycle" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Полный цикл: сайты, приложения, чат-боты, индивидуальные задачи</h2>
 <p>Если у бренда нет сайта, карточек или приложения — AI-видимость «надстройкой» не сделать: оптимизировать нечего. Поэтому в GEO-Апгрейд мы работаем как агентство полного цикла — берём не только GEO-контур, но и всё, из чего след собирается:</p>
@@ -703,6 +718,8 @@ nav[aria-label="Основная навигация"] a {
 </table></div>
 </section>
 
+
+<div class="divider"></div>
 <section id="honest" class="article-section">
 <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Чего мы не обещаем</h2>
 <p>Мы не обещаем «вывести вас в топ нейросетей за неделю». Мы не обещаем 100%.</p>
@@ -762,7 +779,7 @@ nav[aria-label="Основная навигация"] a {
 <ul class="checklist">
 <li>Пройти бесплатный мини-аудит (3 запроса × 2 AI-системы) и посмотреть на свои «слепые зоны».</li>
 <li>Проверить тех-подготовку сайта в боте-лаборанте: llms.txt, schema.org, robots.</li>
-<li>Спросить свой бренд у ChatGPT, Алисы и Perplexity: «выбери [вашу нишу] в [вашем городе]».</li>
+<li>Спросить у ChatGPT, Алисы и Perplexity: «выбери [вашу нишу] в [вашем городе]».</li>
 <li>Сверить карточки в Яндекс.Картах, 2ГИС, Zoon и на Авито: адрес, телефон, описание — одинаковые?</li>
 <li>Прочитать 5 последних отзывов и ответить хотя бы на один.</li>
 <li>Если картину хочется полной — заказать GEO-сканер Лайт или Полный и строить план на замере.</li>
@@ -808,7 +825,7 @@ nav[aria-label="Основная навигация"] a {
 </footer>
 <script>document.addEventListener('DOMContentLoaded',function(){var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduceMotion||!('IntersectionObserver' in window)){document.querySelectorAll('.card,.btn').forEach(function(el){el.classList.add('visible')});return}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.card').forEach(function(card){observer.observe(card)});document.querySelectorAll('.btn').forEach(function(btn){if(!btn.closest('.card')){observer.observe(btn)}});var headerBtn=document.querySelector('header .btn');if(headerBtn){headerBtn.classList.add('visible')}});</script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4343a58c91e740dea8a9c104b4e4fd62&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
-<script> /* Светофор AI-видимости: 5 слоёв x 3 состояния -> первый шаг */ (function(){   var root=document.getElementById('tl-root');   if(!root)return;   var names=['Стратегия и контент GEO','Репутация и отзывы','Локальные карточки и каталоги','Техническая настройка','SEO-надстройки'];   var btn=document.getElementById('tl-btn');   var res=document.getElementById('tl-result');   var cta=document.getElementById('tl-cta');   function val(i){     var el=root.querySelector('input[name="tl-l'+i+'"]:checked');     return el?el.value:null;   }   if(btn){     btn.addEventListener('click',function(){       var vals=[];for(var i=0;i<5;i++){vals.push(val(i));}       if(vals.indexOf(null)>=0){         res.hidden=false;res.innerHTML='Отметьте состояние по каждому из пяти слоёв — хотя бы одно в каждой строке. Светофор не умеет гадать: он честно считает, что ему показали.';         if(cta)cta.style.display='none';         return;       }       var unknown=[],doing=0,ok=0;       vals.forEach(function(v,i){if(v==='u')unknown.push(i);if(v==='d')doing++;if(v==='o')ok++;});       var html='';       var link='';       function p(s){html+='<p class="mb-2">'+s+'</p>';}       if(unknown.length===0){         p('<span class="term">Все пять слоёв в строю.</span> Это редкая и дорогая картина: сигнал согласован, и остаётся главный вопрос — «насколько сильно». Проверять не по ощущениям, а замером.');         p('<strong>Первый шаг:</strong> GEO-сканер Полный (базовый или расширенный) — 80–100 прогонов, конкуренты и обзор рынка. Дальше — GEO-маршрут, чтобы превратить замер в план.');         link='/geo-scanner-full.html';       } else if(unknown.length===5){         p('<span class="term">Полная тёмная зона.</span> Ни один слой не измерялся — это не «плохо», это нормальная стартовая точка. Самый дешёвый способ увидеть картину — бесплатный мини-аудит: 3 запроса × 2 AI-системы.');         p('<strong>Первый шаг:</strong> бесплатный мини-аудит — узнайте, что нейросети говорят о вас прямо сейчас.');         link='/contacts.html?service=free-audit#audit-form';       } else {         var first={'Техническая настройка':'GEO-Техблок — тех-аудит с внедрением: llms.txt, schema.org, robots и sitemap. Без техслоя остальное не читается, поэтому он в приоритете.','Стратегия и контент GEO':'GEO-сканер Лайт — замер 45 прогонов покажет, что из вашего контента нейросети видят и цитируют, а что проходит мимо.','Локальные карточки и каталоги':'Мини-аудит и сверка карточек: адреса, телефоны, цены и описания на картах и в каталогах должны говорить одно и то же.','Репутация и отзывы':'Навигатор отзывов — 30 промптов для ответов, сбора и аналитики: отзывы — часть AI-следа, и модели их читают.','SEO-надстройки':'GEO-сканер Лайт — замер покажет, какие поисковые сигналы уже доходят до нейросетей и чего не хватает.'};         var order=['Техническая настройка','Стратегия и контент GEO','Локальные карточки и каталоги','Репутация и отзывы','SEO-надстройки'];         var idx=unknown[0];         p('Слабое место — <span class="term">'+names[idx]+'</span>.'+(unknown.length>1?' Ещё «не знаю» у вас по слоям: '+unknown.slice(1).map(function(i){return names[i];}).join(', ')+'.':''));         p('<strong>Первый шаг:</strong> '+first[order[0]]);         if(order[0]==='Техническая настройка'){link='/mini-products.html';}         else if(order[0]==='Репутация и отзывы'){link='/geo_navigator.html';}         else{link='/geo-scanner-lite.html';}         if(doing>0){p('Слои, которые вы уже делаете ('+doing+' из 5), — держите ритм: сканер позже покажет, докатываются ли эти сигналы до моделей.');}       }       p('Интерактив не заменяет аудит и не гарантирует результат — он показывает, с чего начать.');       res.hidden=false;       res.innerHTML=html;       if(cta){cta.setAttribute('href',link);cta.style.display='inline-block';}     });   } })();</script>
+<script> /* Светофор AI-видимости: 5 слоёв x 3 состояния -> первый шаг */ (function(){   var root=document.getElementById('tl-root');   if(!root)return;   var names=['Стратегия и контент GEO','Репутация и отзывы','Локальные карточки и каталоги','Техническая настройка','SEO-надстройки'];   var btn=document.getElementById('tl-btn');   var res=document.getElementById('tl-result');   var cta=document.getElementById('tl-cta');   function val(i){     var el=root.querySelector('input[name="tl-l'+i+'"]:checked');     return el?el.value:null;   }   if(btn){     btn.addEventListener('click',function(){       var vals=[];for(var i=0;i<5;i++){vals.push(val(i));}       if(vals.indexOf(null)>=0){         res.hidden=false;res.innerHTML='Отметьте состояние по каждому из пяти слоёв — хотя бы одно в каждой строке. Светофор не умеет гадать: он честно считает, что ему показали.';         if(cta)cta.style.display='none';         return;       }       var unknown=[],doing=0,ok=0;       vals.forEach(function(v,i){if(v==='u')unknown.push(i);if(v==='d')doing++;if(v==='o')ok++;});       var html='';       var link='';       function p(s){html+='<p class="mb-2">'+s+'</p>';}       if(unknown.length===0){         p('<span class="term">Все пять слоёв в строю.</span> Это редкая и дорогая картина: сигнал согласован, и остаётся главный вопрос — насколько сильно всё это работает. Проверять не по ощущениям, а замером.');         p('<strong>Первый шаг:</strong> GEO-сканер Полный (базовый или расширенный) — 80–100 прогонов, конкуренты и обзор рынка. Дальше — GEO-маршрут, чтобы превратить замер в план.');         link='/geo-scanner-full.html';       } else if(unknown.length===5){         p('<span class="term">Полная тёмная зона.</span> Ни один слой не измерялся — это не «плохо», это нормальная стартовая точка. Самый дешёвый способ увидеть картину — бесплатный мини-аудит: 3 запроса × 2 AI-системы.');         p('<strong>Первый шаг:</strong> бесплатный мини-аудит — узнайте, что нейросети говорят о вас прямо сейчас.');         link='/contacts.html?service=free-audit#audit-form';       } else {         var first={'Техническая настройка':'GEO-Техблок — тех-аудит с внедрением: llms.txt, schema.org, robots и sitemap. Без техслоя остальное не читается, поэтому он в приоритете.','Стратегия и контент GEO':'GEO-сканер Лайт — замер 45 прогонов покажет, что из вашего контента нейросети видят и цитируют, а что проходит мимо.','Локальные карточки и каталоги':'Мини-аудит и сверка карточек: адреса, телефоны, цены и описания на картах и в каталогах должны говорить одно и то же.','Репутация и отзывы':'Навигатор отзывов — 30 промптов для ответов, сбора и аналитики: отзывы — часть AI-следа, и модели их читают.','SEO-надстройки':'GEO-сканер Лайт — замер покажет, какие поисковые сигналы уже доходят до нейросетей и чего не хватает.'};         var order=['Техническая настройка','Стратегия и контент GEO','Локальные карточки и каталоги','Репутация и отзывы','SEO-надстройки'];         var idx=unknown[0];         p('Слабое место — <span class="term">'+names[idx]+'</span>.'+(unknown.length>1?' Ещё «не знаю» у вас по слоям: '+unknown.slice(1).map(function(i){return names[i];}).join(', ')+'.':''));         p('<strong>Первый шаг:</strong> '+first[order[0]]);         if(order[0]==='Техническая настройка'){link='/mini-products.html';}         else if(order[0]==='Репутация и отзывы'){link='/geo_navigator.html';}         else{link='/geo-scanner-lite.html';}         if(doing>0){p('Слои, которые вы уже делаете ('+doing+' из 5), — держите ритм: сканер позже покажет, докатываются ли эти сигналы до моделей.');}       }       p('Интерактив не заменяет аудит и не гарантирует результат — он показывает, с чего начать.');       res.hidden=false;       res.innerHTML=html;       if(cta){cta.setAttribute('href',link);cta.style.display='inline-block';}     });   } })();</script>
 <script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
 <script src="/geo-assistant-widget.js" defer=""></script>
 
