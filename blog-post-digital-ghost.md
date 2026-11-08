@@ -178,6 +178,7 @@ STATUS: INVISIBLE BRAND
 Похожие материалы
 
 [← Что такое GEO простыми словами?](blog-post-what-is-geo.html)
+[← Что входит в AI-видимость: пять слоёв и полный цикл](blog-post-chto-vhodit-v-ai-vidimost.html)
 [← Чем GEO отличается от SEO?](blog-post-geo-vs-seo.html)
 [→ Кейс: трактир в центре Томска](case-traktir-tomsk.html)
 [→ Контентные маяки: бренд понятнее для людей и AI](blog-post-kontentnye-mayaki.html)

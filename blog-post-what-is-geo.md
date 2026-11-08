@@ -240,6 +240,7 @@ AI правильно описывает вашу деятельность?Он 
 Похожие материалы
 
 [← Чем GEO отличается от SEO?](blog-post-geo-vs-seo.html)
+[← Что входит в AI-видимость: пять слоёв и полный цикл](blog-post-chto-vhodit-v-ai-vidimost.html)
 [← Почему нейросеть не знает про ваш бизнес: анатомия цифрового призрака](blog-post-digital-ghost.html)
 [← Технический GEO-аудит: 20 проверок](blog-post-tehnicheskiy-geo-audit.html)
 [← Все материалы лаборатории](blog.html)
