@@ -192,7 +192,7 @@ GEO-штурвал — не «ещё одна услуга». Это аудит,
 
 ---
 
-**Примечание:** Категория: GEO ДЛЯ БИЗНЕСА. Разметка: BlogPosting + BreadcrumbList + Service (priceRange 55000–80000 RUB). Обложка: cover-geo-shturval.jpg.
+**Примечание:** Категория: GEO ДЛЯ БИЗНЕСА. Разметка: BlogPosting + BreadcrumbList + Service (priceRange 65000–80000 RUB). Обложка: cover-geo-shturval.jpg.
 
 ---
 
