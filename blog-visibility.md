@@ -1,30 +1,6 @@
-<html><head><meta name="\&quot;color-scheme\&quot;" content="\&quot;light" dark\"="">
-    <style>
-        pre {
-          content-visibility: auto;
-          line-height: 1.2em;
-          margin: 0;
-        }
-    </style>
-    </head><body><pre style="width: 517ch; contain-intrinsic-height: 92.4em; content-visibility: visible">&lt;html&gt;&lt;head&gt;&lt;meta name="\&amp;quot;color-scheme\&amp;quot;" content="\&amp;quot;light" dark\"=""&gt;
-    &lt;style&gt;
-        pre {
-          content-visibility: auto;
-          line-height: 1.2em;
-          margin: 0;
-        }
-    &lt;/style&gt;
-    &lt;/head&gt;&lt;body&gt;&lt;pre style="width: 517ch; contain-intrinsic-height: 79.2em; content-visibility: visible"&gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta name="\&amp;amp;quot;color-scheme\&amp;amp;quot;" content="\&amp;amp;quot;light" dark\"=""&amp;gt;
-    &amp;lt;style&amp;gt;
-        pre {
-          content-visibility: auto;
-          line-height: 1.2em;
-          margin: 0;
-        }
-    &amp;lt;/style&amp;gt;
-    &amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;pre style="width: 517ch; contain-intrinsic-height: 64.8em; content-visibility: visible"&amp;gt;# AI-видимость бренда — раздел блога GEO-Апгрейд
+# AI-видимость бренда — раздел блога GEO-Апгрейд
 
-&amp;amp;gt; URL: https://geo-upgrade.ru/blog-visibility.html
+> URL: https://geo-upgrade.ru/blog-visibility.html
 
 **Назначение:** Категорийная страница блога: статьи раздела «AI-видимость бренда» с краткими описаниями.
 
@@ -43,6 +19,8 @@ SECTION: AI-ВИДИМОСТЬ
 
 ## Статьи раздела
 
+- [Что входит в AI-видимость: пять слоёв и полный цикл](https://geo-upgrade.ru/blog-post-chto-vhodit-v-ai-vidimost.html) — 8 ноября 2026 • 14–17 минут
+  Пять слоёв AI-видимости: контент, репутация, карточки, техника и SEO. Лестница услуг от бесплатного мини-аудита до GEO-штурвала — с ценами. Со светофором AI-видимости.
 - [Schema.org для GEO: разметка, которая работает](https://geo-upgrade.ru/blog-post-schema-org-dlya-geo.html) — 19 октября 2026 • 12–15 минут
   Пошаговый протокол JSON-LD: Organization, услуга, FAQPage, BlogPosting. Примеры кода, таблица типовых ошибок и интерактив «где ИИ теряет бренд».
 - [Почему не стоит «накручивать» упоминания: тёмная сторона GEO](https://geo-upgrade.ru/blog-post-riski-nakrutki-upominanij.html) — 19 октября 2026 • 10–13 минут
@@ -85,8 +63,3 @@ SECTION: AI-ВИДИМОСТЬ
 - [GEO для бизнеса](https://geo-upgrade.ru/blog-business.html)
 - [AI для бизнеса](https://geo-upgrade.ru/blog-ai-business.html)
 - [AI-сигналы](https://geo-upgrade.ru/blog-news.html)
-&amp;lt;/pre&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;</pre></body></html>
-
----
-
-GEO-Апгрейд — Лаборатория AI-видимости бренда. ИП Жарких Дарья Александровна, ОГРНИП 326700000056258, ИНН 700233102822. г. Томск, ул. Набережная озера, 22, 634009 · Пн–Пт 12:00–20:00 UTC+7 · тел. +7 952 944-92-39. г. Новосибирск, ул. Гоголя, 209, 630015 · Пн–Пт 12:00–20:00 UTC+7 · тел. +7 952 157-29-55. E-mail: geo.upgrade@bk.ru. Сайт: https://geo-upgrade.ru

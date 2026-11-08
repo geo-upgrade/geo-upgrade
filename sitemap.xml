@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://geo-upgrade.ru/</loc><lastmod>2026-10-22</lastmod>
+    <loc>https://geo-upgrade.ru/</loc><lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/services.html</loc>
-<lastmod>2026-10-30</lastmod>
+<lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/mini-products.html</loc>
@@ -25,14 +25,14 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/contacts.html</loc>
-<lastmod>2026-10-30</lastmod>
+<lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/geo_navigator.html</loc>
 <lastmod>2026-10-30</lastmod>
   </url>
   <url>
-    <loc>https://geo-upgrade.ru/blog.html</loc><lastmod>2026-10-24</lastmod>
+    <loc>https://geo-upgrade.ru/blog.html</loc><lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-basics.html</loc>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/blog-visibility.html</loc>
-<lastmod>2026-10-25</lastmod>
+<lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -183,7 +183,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/cases.html</loc>
-<lastmod>2026-11-06</lastmod>
+<lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/about-daria-zharkikh.html</loc>
@@ -271,7 +271,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/case-geo-app.html</loc>
-<lastmod>2026-11-06</lastmod>
+<lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/case-strategy-selfaudit.html</loc>
@@ -342,6 +342,11 @@
 <lastmod>2026-10-30</lastmod>
   </url>
   <url>
+    <loc>https://geo-upgrade.ru/blog-post-chto-vhodit-v-ai-vidimost.html</loc>
+<lastmod>2026-11-08</lastmod>
+  </url>
+
+  <url>
     <loc>https://geo-upgrade.ru/blog-post-schema-org-dlya-geo.html</loc>
 <lastmod>2026-10-22</lastmod>
   </url>
@@ -367,6 +372,6 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/dice-app.html</loc>
-<lastmod>2026-11-01</lastmod>
+<lastmod>2026-11-08</lastmod>
   </url>
 </urlset>
