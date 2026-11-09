@@ -10,7 +10,7 @@
 
 ---
 
-## Записи журнала (10 записей)
+## Записи журнала (11 записей)
 
 ### «Создание лаборатории GEO-Апгрейд» — кейс Дарьи Жарких
 
@@ -46,6 +46,11 @@
 
 > Открыть кейс: https://workspace.ru/cases/polnyy-geo-skaner-dlya-tipografii-polnogo-cikla-atmosfera-idey-novosibirsk/ (агентство: https://workspace.ru/contractors/geo-apgreyd/)
 > Страница кейса на сайте: /case-atmosfera-idey.html — в кейс вписан первый публичный отзыв клиента (5/5, 2ГИС).
+
+### «Разработка мобильного приложения GEO-Апгрейд (личный кабинет, каталог услуг, приём заявок)» — кейс мобильного приложения на Workspace (запись №011, 09.11.2026)
+
+> Открыть кейс: https://workspace.ru/cases/razrabotka-mobilnogo-prilozheniya-geo-apgreyd-lichnyy-kabinet-katalog-uslug-priem-zayavok/
+> Страница кейса на сайте: /case-geo-app.html — кейс о собственных приборах лаборатории: кабинет, приложение, админка, сквозной протокол клиента.
 
 ### «Топ-160 Томска: как нейросеть видит местный бизнес» — статья в Дзене
 
