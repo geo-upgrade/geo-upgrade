@@ -779,7 +779,7 @@ function showDash(){
   $('st-account').textContent='онлайн';
   renderOrders();renderCatalog();renderFav();fillProfile();renderReports();syncSbOrders();
   const q=new URLSearchParams(location.search);
-  if(q.get('pay')){openPay(q.get('pay'))}
+  if(q.get('pay')){const du=DIGPAY[q.get('pay')];if(du){dgPayFlow(du)}else{openPay(q.get('pay'))}}
 }
 function renderOrders(){
   const list=orders().filter(o=>o.email===(session()||{}).email);
@@ -911,6 +911,35 @@ $('f-profile').addEventListener('submit',e=>{
   toast('Анкета сохранена и отправлена в лабораторию.');
 });
 $('btn-logout').onclick=()=>{localStorage.removeItem('geo_lab_auth');localStorage.removeItem('geo_lab_session');location.href='cabinet.html'};
+
+/* GEO-Апгрейд · цифровые продукты по ссылкам ?pay=: заказ идёт в digital_orders, а не в услуги */
+const DIGPAY={
+ '53aa63f7-6e05-4612-ae93-12c6d4c8f9c5':{code:'A10',name:'Курс «Проверь бренд в ИИ за вечер»',amount:990,pay:'https://tochkaplace.com/ia/53aa63f7-6e05-4612-ae93-12c6d4c8f9c5'},
+ '6f99084c-1173-4047-85ac-e63803b1b195':{code:'A1',name:'Чек-лист «Проверь бренд в нейросетях»',amount:190,pay:'https://tochkaplace.com/ia/6f99084c-1173-4047-85ac-e63803b1b195'},
+ 'e19621e4-54bb-477e-862d-1439faa2d6d9':{code:'A2',name:'20 промптов для AI-видимости + бонус-гайд',amount:150,pay:'https://tochkaplace.com/ia/e19621e4-54bb-477e-862d-1439faa2d6d9'},
+ '140c3c8a-e6c8-40e3-961f-33eece49c47f':{code:'A3',name:'Шаблон AI-Паспорта компании',amount:490,pay:'https://tochkaplace.com/ia/140c3c8a-e6c8-40e3-961f-33eece49c47f'}
+};
+async function dgPayFlow(p){
+  const s=session();
+  if(!s||!s.sb){toast('Для покупки цифрового продукта войдите в кабинет (регистрация на защищённой базе лаборатории).');return}
+  try{
+    const q='https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/digital_orders?email=eq.'+encodeURIComponent((s.email||'').toLowerCase())+'&product_id=eq.'+p.code;
+    const r=await fetch(q,{headers:{apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+s.sb.token}});
+    if(!r.ok) throw new Error('orders '+r.status);
+    const rows=await r.json().catch(function(){return []});
+    if((rows||[]).some(function(x){return x.status==='confirmed'})){
+      toast('Этот продукт уже куплен — доступ открыт в секции «Мои цифровые продукты».');
+      return;
+    }
+    const pend=(rows||[]).some(function(x){return x.status==='pending'});
+    if(!pend){
+      const r2=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/digital_orders',{method:'POST',headers:{apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+s.sb.token,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({email:(s.email||'').toLowerCase(),user_id:s.sb.uid||null,product_id:p.code,product_name:p.name,amount:p.amount,status:'pending',paid_at:null,note:null})});
+      if(!r2.ok){toast('Не удалось создать заказ (база ответила '+r2.status+'). Оплатить можно по ссылке — лаборатория подтвердит вручную по чеку.');}
+    }
+    window.open(p.pay,'_blank','noopener');
+    toast('Заявка на «'+p.name+'» создана и видна в кабинете. Завершите оплату на странице Точки — доступ откроется после подтверждения лабораторией.');
+  }catch(e){toast('Не удалось связаться с базой лаборатории. Попробуйте ещё раз.')}
+}
 
 function openPay(uid){
   const svc=LAB_SERVICES[uid];if(!svc){toast('Услуга не найдена — выберите её из списка.');return}
