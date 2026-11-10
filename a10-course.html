@@ -170,7 +170,7 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <div class="wsrow"><b>Рабочие документы урока:</b> Замер видимости (шаблон + отчёт), Журнал замеров</div>
 <p class="lcheck">Проверка урока: Таблица замера заполнена, доля присутствия записана с датой.</p>
 <p class="lnext">Дальше: <b>Урок 2: чистим то, что нейросети говорят о тебе.</b></p>
-<div class="hw" style="margin-top:18px"><b style="color:var(--neon)">Этот урок — бесплатная витрина курса.</b> Остальные открываются после покупки полного курса.<br><a class="donebtn" style="display:inline-block;margin-top:12px;text-decoration:none" href="https://tochkaplace.com/ia/53aa63f7-6e05-4612-ae93-12c6d4c8f9c5" target="_blank">Купить полный курс — 990 ₽</a></div>
+<div class="hw" id="paygate" style="margin-top:18px;border-color:var(--gold)"><b style="color:var(--goldb)">Урок 1 — бесплатный. Полный курс открывается после оплаты.</b><p style="margin:8px 0">Дальше — уроки 2–5: 25 этапов практики, 5 подробных лекций-PDF (включая все 21 правило регламента и полный список 22 площадок), квизы «Проверь себя», ДЗ с автосохранением и 6 рабочих документов. Оплата разовая — 990 ₽, без подписок.</p><a class="donebtn" style="display:inline-block;text-decoration:none" href="https://tochkaplace.com/ia/53aa63f7-6e05-4612-ae93-12c6d4c8f9c5" target="_blank">КУПИТЬ ПОЛНЫЙ КУРС · 990 ₽</a><div style="margin-top:14px"><input id="accode" placeholder="Код доступа из сообщения лаборатории (GEOA10-…)" style="max-width:300px;width:calc(100% - 150px);margin-right:10px"><button class="donebtn" id="acbtn" style="vertical-align:middle">ОТКРЫТЬ ПО КОДУ →</button></div><button class="donebtn" id="chkbtn" style="margin-top:10px;background:transparent;color:var(--cyan);border:1px solid var(--cyan)">Я ОПЛАТИЛ — ПРОВЕРИТЬ →</button><p class="err" id="paymsg" style="margin-top:10px"></p><p class="sp" style="margin-top:6px">Оплатил(а) и уже в кабинете? Кнопка «Проверить» сверится с базой лаборатории и откроет уроки. Или используй код доступа — его выдаёт лаборатория после оплаты.</p></div>
 </section>
 <section class="lesson" id="lesson1">
 <div class="lhead"><span class="lnum">УРОК 2</span><span class="ltime">20–30 минут</span><span class="donemark" id="done1" hidden>ПРОЙДЕН ✓</span></div>
@@ -381,3 +381,152 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <p class="nxt">Вопросы по курсу и пакетам — бот <a href="https://t.me/geo_upgrade_labbot" target="_blank">@geo_upgrade_labbot</a> · сайт: <a href="https://geo-upgrade.ru" target="_blank">geo-upgrade.ru</a></p>
 </section></main>
 <footer><span class="brand">GEO-АПГРЕЙД</span> · Лаборатория GEO-маркетинга и AI-видимости · Новосибирск</footer>
+<script>
+(function(){
+  var SB='https://cpaevaypyplwcdjrfzpj.supabase.co';
+  var SKEY='sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-';
+  var AUTH_LS_KEYS=['geo_lab_auth','geo_lab_admin_auth','geo-upgrade-auth'];
+  var PAIDKEY='a10-course-paid-v1';
+  var HWKEY='a10-course-v3-hw', DONEKEY='a10-course-done-v3', STEPKEY='a10-course-steps-v3', NOTEKEY='a10-course-notes-v3';
+  var done=[], steps={}, paid=false;
+  try{ done=JSON.parse(localStorage.getItem(DONEKEY)||'[]'); }catch(e){ done=[]; }
+  try{ steps=JSON.parse(localStorage.getItem(STEPKEY)||'{}'); }catch(e){ steps={}; }
+  try{ paid=JSON.parse(localStorage.getItem(PAIDKEY)||'false'); }catch(e){ paid=false; }
+  var lessonSecs=document.querySelectorAll('.lesson');
+  var total=lessonSecs.length;
+  var stepCount=document.querySelectorAll('.step').length;
+  function stepDone(l,s){ return steps[l+'_'+s]===true; }
+  function setPaid(v){ paid=!!v; try{ localStorage.setItem(PAIDKEY, JSON.stringify(paid)); }catch(e){} refresh(); }
+  function sess(){
+    for(var i=0;i<AUTH_LS_KEYS.length;i++){
+      var raw=null; try{ raw=localStorage.getItem(AUTH_LS_KEYS[i]); }catch(e){}
+      if(!raw) continue;
+      try{ var j=JSON.parse(raw); if(j&&j.token&&j.email) return j; }catch(e){}
+    }
+    return null;
+  }
+  function hdrs(tok){ return tok?{'apikey':SKEY,'Authorization':'Bearer '+tok,'Content-Type':'application/json'}:{'apikey':SKEY,'Content-Type':'application/json'}; }
+  function checkSupabase(cb){
+    var s=sess();
+    if(!s){ cb('no-session'); return; }
+    fetch(SB+'/rest/v1/digital_orders?email=eq.'+encodeURIComponent(s.email.toLowerCase())+'&product_id=eq.A10',{headers:hdrs(s.token)})
+      .then(function(r){ return r.json(); })
+      .then(function(rows){
+        var ok=(rows||[]).some(function(r){ return r.status==='confirmed'; });
+        if(ok){ setPaid(true); cb('ok'); } else { cb('pending'); }
+      }).catch(function(){ cb('error'); });
+  }
+  function tryCode(code){
+    code=(code||'').trim();
+    var msg=document.getElementById('paymsg');
+    if(!code){ if(msg) msg.textContent='Введи код доступа или оплати курс.'; return; }
+    var s=sess();
+    fetch(SB+'/rest/v1/rpc/check_access_code',{method:'POST',headers:{'apikey':SKEY,'Content-Type':'application/json'},body:JSON.stringify({p_code:code,p_email:s?s.email.toLowerCase():''})})
+      .then(function(r){ return r.json(); })
+      .then(function(ok){
+        if(ok===true){ setPaid(true); var pg=document.getElementById('paygate'); if(pg) pg.style.display='none'; if(msg) msg.textContent=''; var l1=document.getElementById('lesson1'); if(l1) l1.scrollIntoView({behavior:'smooth'}); }
+        else if(msg){ msg.textContent='Код не подошёл или уже использован. Вопросы — @geo_upgrade_labbot'; }
+      }).catch(function(){ if(msg) msg.textContent='Не удалось проверить код. Попробуй ещё раз или пиши @geo_upgrade_labbot'; });
+  }
+  function refresh(){
+    for(var i=0;i<total;i++){ var un=(i===0)||(paid&&done[i-1]); lessonSecs[i].classList.toggle('locked',!un); }
+    var pg=document.getElementById('paygate'); if(pg) pg.style.display=paid?'none':'';
+    for(var li=0; li<total; li++){
+      var slist=lessonSecs[li].querySelectorAll('.step');
+      for(var si=0; si<slist.length; si++){
+        var el=slist[si];
+        var visible=(si===0)||stepDone(li,si-1);
+        el.style.display=visible?'':'none';
+        el.classList.toggle('completed',stepDone(li,si));
+        var btn=el.querySelector('.sbtn'), note=el.querySelector('.sdonenote');
+        if(btn){ btn.dataset.l=li; btn.dataset.s=si; }
+        if(note) note.hidden=!stepDone(li,si);
+      }
+      var hw=lessonSecs[li].querySelector('.hw');
+      if(hw && li>0){
+        var all=slist.length, ready=stepDone(li,all-1);
+        hw.classList.toggle('blurred',!ready);
+        var ta=hw.querySelector('textarea'), b=hw.querySelector('.donebtn');
+        if(ta) ta.disabled=!ready;
+        if(b) b.disabled=!ready||!!done[li];
+      }
+    }
+    var ds=0; Object.keys(steps).forEach(function(k){ if(steps[k]) ds++; });
+    var d=done.filter(Boolean).length;
+    var bf=document.getElementById('bfill'); if(bf) bf.style.width=(ds/stepCount*100)+'%';
+    var pt=document.getElementById('ptxt'); if(pt) pt.textContent='Этапов выполнено: '+ds+' из '+stepCount+' | Уроков пройдено: '+d+' из '+total;
+    for(var j=0;j<total;j++){
+      var m=document.getElementById('done'+j); if(m) m.hidden=!done[j];
+      var bb=document.getElementById('dbtn'+j);
+      if(bb){ bb.textContent=done[j]?(paid?'Урок пройден ✓':'Урок 1 пройден ✓ — открой полный курс'):'Задание выполнено — открыть следующий урок'; }
+    }
+    var fs=document.getElementById('finalSec');
+    if(fs) fs.classList.toggle('blurred', !(paid&&done[total-1]));
+  }
+  function saveField(key){
+    var obj={};
+    for(var i=0;i<total;i++){
+      var a=document.getElementById('hw'+i); if(a) obj['hw'+i]=a.value;
+      var b=document.getElementById('cnote'+i); if(b) obj['cn'+i]=b.value;
+    }
+    try{ localStorage.setItem(key, JSON.stringify(obj)); }catch(e){}
+  }
+  function loadFields(){
+    var obj={}; try{ obj=JSON.parse(localStorage.getItem(HWKEY)||'{}'); }catch(e){}
+    var nt={}; try{ nt=JSON.parse(localStorage.getItem(NOTEKEY)||'{}'); }catch(e){}
+    for(var i=0;i<total;i++){
+      var a=document.getElementById('hw'+i); if(a&&obj['hw'+i]) a.value=obj['hw'+i];
+      var b=document.getElementById('cnote'+i); if(b&&nt['cn'+i]) b.value=nt['cn'+i];
+    }
+  }
+  document.querySelectorAll('.sbtn').forEach(function(b){
+    b.addEventListener('click',function(){
+      var l=this.dataset.l, s=this.dataset.s;
+      steps[l+'_'+s]=true; try{ localStorage.setItem(STEPKEY, JSON.stringify(steps)); }catch(e){}
+      refresh();
+      var sec=lessonSecs[parseInt(l,10)];
+      var slist=sec.querySelectorAll('.step');
+      var next=parseInt(s,10)+1;
+      if(next<slist.length){ slist[next].scrollIntoView({behavior:'smooth',block:'center'}); }
+      else { var qz=sec.querySelector('.quiz'); (qz||sec.querySelector('.hw')).scrollIntoView({behavior:'smooth',block:'center'}); }
+    });
+  });
+  document.querySelectorAll('.qopt').forEach(function(b){
+    b.addEventListener('click',function(){
+      var box=this.closest('.q');
+      if(box.dataset.done) return;
+      if(this.dataset.ok==='1'){ this.classList.add('ok'); box.querySelector('.qwhy').textContent='Верно! '+this.dataset.g; box.querySelector('.qwhy').classList.add('show'); box.dataset.done='1'; }
+      else { this.classList.add('err'); }
+    });
+  });
+  for(var i=0;i<total;i++){
+    var el=document.getElementById('hw'+i); if(el) el.addEventListener('input',function(){ saveField(HWKEY); });
+    var el2=document.getElementById('cnote'+i); if(el2) el2.addEventListener('input',function(){ saveField(NOTEKEY); });
+    var b=document.getElementById('dbtn'+i);
+    if(b){ b.dataset.i=i; b.addEventListener('click',function(){
+      var idx=parseInt(this.dataset.i,10);
+      done[idx]=true; try{ localStorage.setItem(DONEKEY, JSON.stringify(done)); }catch(e){}
+      refresh();
+      var nx = (!paid && idx+1<total) ? document.getElementById('paygate') : (lessonSecs[idx+1]||document.getElementById('finalSec'));
+      if(nx) nx.scrollIntoView({behavior:'smooth'});
+    }); }
+  }
+  var ac=document.getElementById('acbtn'); if(ac) ac.addEventListener('click',function(){ tryCode(document.getElementById('accode').value); });
+  var ac2=document.getElementById('accode'); if(ac2) ac2.addEventListener('keydown',function(e){ if(e.key==='Enter') tryCode(this.value); });
+  var cb=document.getElementById('chkbtn'); if(cb) cb.addEventListener('click',function(){
+    checkSupabase(function(r){
+      var msg=document.getElementById('paymsg');
+      if(r==='ok'){ var pg=document.getElementById('paygate'); if(pg) pg.style.display='none'; var l1=document.getElementById('lesson1'); if(l1) l1.scrollIntoView({behavior:'smooth'}); }
+      else if(r==='pending' && msg) msg.textContent='Оплата получена, но ещё не подтверждена лабораторией. Обычно это несколько часов — загляни позже.';
+      else if(r==='no-session' && msg) msg.textContent='Сначала войди в кабинет на сайте, затем нажми «Проверить». Или открой курс по коду доступа.';
+      else if(r==='error' && msg) msg.textContent='Не удалось связаться с базой. Попробуй ещё раз чуть позже.';
+    });
+  });
+  var up=new URLSearchParams(location.search).get('unlock');
+  if(up) tryCode(up);
+  checkSupabase(function(){});
+  loadFields(); refresh();
+})();
+</script>
+</body>
+</html>
