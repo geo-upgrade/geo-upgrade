@@ -868,7 +868,7 @@ function renderFav(){
     const d=document.createElement('div');d.className='fav';
     d.innerHTML='<div><a href="'+item.url+'">'+(item.t||item.url)+'</a><br><span class="note">'+item.url+'</span></div>';
     const b=document.createElement('button');b.className='btn btn-mute';b.textContent='Убрать';
-    b.onclick=()=>{store.set('geo_lab_fav',favs().filter(x=>x.url!==item.url));renderFav()};d.appendChild(b);
+    b.onclick=()=>{store.set('geo_lab_fav',favs().filter(x=>x.url!==item.url));try{const s2=session();if(s2&&s2.sb&&s2.sb.token)fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_fav?email=eq.'+encodeURIComponent((s2.email||'').toLowerCase())+'&url=eq.'+encodeURIComponent(item.url),{method:'DELETE',headers:{apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+s2.sb.token}}).catch(function(){})}catch(e){}renderFav()};d.appendChild(b);
     box.appendChild(d);
   });
 }
@@ -902,6 +902,7 @@ $('f-profile').addEventListener('submit',e=>{
     ch:[...document.querySelectorAll('#f-profile input[type=checkbox]:checked')].map(x=>x.value),
     goal:$('pf-goal').value,tried:$('pf-tried').value.trim(),note:$('pf-note').value.trim(),upd:new Date().toLocaleString('ru-RU')};
   store.set('geo_lab_profile',p);
+  if(s.sb&&s.sb.token){try{fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_profiles?on_conflict=id',{method:'POST',headers:{apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+s.sb.token,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},body:JSON.stringify({id:s.sb.uid,email:s.email,brand:p.brand,city:p.city,sphere:p.sphere,site:p.site,q1:p.q1,q2:p.q2,q3:p.q3,ch:p.ch,goal:p.goal,tried:p.tried,note:p.note,updated_at:new Date().toISOString()})}).catch(function(){})}catch(e){}}
   postLab('[Кабинет] АНКЕТА — '+(s.name||'')+' — '+s.email,
    'Анкета клиента из личной лаборатории.\nИмя/бренд: '+p.brand+'\nРегион: '+p.city+'\nСфера: '+p.sphere+'\nСайт: '+p.site+
    '\nЗапросы: '+[p.q1,p.q2,p.q3].filter(Boolean).join(' | ')+'\nСистемы: '+p.ch.join(', ')+'\nЦель: '+p.goal+'\nПробовал: '+p.tried+'\nКомментарий: '+p.note+

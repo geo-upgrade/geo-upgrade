@@ -53,6 +53,15 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
 .tabbtn.active{color:#fff;border-color:var(--cyan);box-shadow:0 0 14px rgba(0,229,255,.3);background:#241950}
 .tabpanel{display:none}
 .tabpanel.active{display:block}
+.udcard{border-color:rgba(0,229,255,.45)}
+.udh{font-family:Orbitron;font-size:10px;letter-spacing:.14em;color:var(--cyan);margin:14px 0 6px;text-transform:uppercase}
+.udh:first-child{margin-top:0}
+.udline{font-size:12.5px;margin:2px 0}
+.udline b{color:#fff}
+.udmsg{font-size:12.5px;color:#fff;margin:3px 0;word-break:break-word}
+.udmsg .who{color:var(--cyan);font-weight:700}
+.udmsg .tm{color:var(--dim);font-size:10.5px}
+.udclose{float:right;margin-left:10px}
 .hide{display:none}
 .foot{margin-top:34px;text-align:center;font-family:Orbitron;font-size:9.5px;letter-spacing:.14em;color:var(--dim)}
 </style>
@@ -355,6 +364,10 @@ async function renderClients(){
       const m=map[e];const p=byId[m.uid]||{};
       const d=document.createElement('div');d.className='card';
       d.innerHTML='<div class="top"><div><b>'+(p.full_name||e)+'</b><br><span class="note">'+e+' · заявок: '+m.n+' · последняя: '+dt(m.last)+'</span></div><span class="mono">uid '+(m.uid||'').slice(0,8)+'</span></div>';
+      const acts=document.createElement('div');acts.className='acts';
+      const bp=document.createElement('button');bp.className='btn';bp.textContent='ПРОФИЛЬ';
+      bp.onclick=function(){detailFor({id:m.uid,email:e},d)};acts.appendChild(bp);
+      d.appendChild(acts);
       box.appendChild(d);
     });
   }catch(e){$('cli-box').innerHTML='<div class="panel err">Ошибка: '+e.message+'</div>'}
@@ -415,6 +428,8 @@ async function renderUsers(){
       const d=document.createElement('div');d.className='card';
       d.innerHTML='<div class="top"><div><b>'+(u.email||'(без email)')+'</b><br><span class="note">'+(u.name||'имя не указано')+(u.created?' · с '+String(u.created).slice(0,10).split('-').reverse().join('.'):'')+'</span></div><span class="mono">uid '+(u.id||'').slice(0,8)+'</span></div>';
       const acts=document.createElement('div');acts.className='acts';
+      const bp=document.createElement('button');bp.className='btn';bp.textContent='ПРОФИЛЬ';
+      bp.onclick=function(){detailFor(u,d)};acts.appendChild(bp);
       const bd=document.createElement('button');bd.className='btn danger';bd.textContent='УДАЛИТЬ АККАУНТ';
       bd.onclick=function(){delUser(u)};acts.appendChild(bd);
       d.appendChild(acts);
@@ -447,6 +462,62 @@ async function delUser(u){
   }catch(e){toast('Не вышло: '+e.message)}
 }
 document.querySelectorAll('.tabbtn').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tabbtn').forEach(function(x){x.classList.remove('active')});b.classList.add('active');document.querySelectorAll('.tabpanel').forEach(function(p){p.classList.toggle('active',p.id===b.dataset.tab)})}});
+function escH(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function stLab(st){const m={pending:'ОЖИДАЕТ','paid_check':'ОПЛАТА ПРОВЕРЯЕТСЯ',confirmed:'ПОДТВЕРЖДЁН','Ожидает':'ОЖИДАЕТ','Обработка':'ОПЛАТА ПРОВЕРЯЕТСЯ','Подтверждено':'ПОДТВЕРЖДЁН'};return m[st]||String(st||'—').toUpperCase()}
+function stCol(st){return st==='confirmed'||st==='Подтверждено'?'#00F0FF':'#FFD66E'}
+async function detailFor(u,cardEl){
+  const ex=cardEl.nextElementSibling;
+  if(ex&&ex.classList.contains('udcard')){ex.remove();return}
+  document.querySelectorAll('.udcard').forEach(function(e2){e2.remove()});
+  const d2=document.createElement('div');d2.className='card udcard';
+  d2.innerHTML='<div class="udh">ПРОФИЛЬ · '+escH(u.email||'')+'<button class="btn mute udclose">ЗАКРЫТЬ</button></div><div class="sp">Загружаю данные клиента…</div>';
+  cardEl.insertAdjacentElement('afterend',d2);
+  d2.scrollIntoView({behavior:'smooth',block:'nearest'});
+  const em=(u.email||'').toLowerCase();
+  const uid=u.id||'';
+  const ors=uid?('(user_id.eq.'+uid+',email.eq.'+encodeURIComponent(em)+')'):('(email.eq.'+encodeURIComponent(em)+')');
+  const orb=uid?('(user_id.eq.'+uid+',email.eq.'+encodeURIComponent(em)+')'):('(email.eq.'+encodeURIComponent(em)+')');
+  const out=await Promise.all([
+    uid?api('/rest/v1/lab_profiles?id=eq.'+uid).catch(function(){return []}):Promise.resolve([]),
+    api('/rest/v1/lab_orders?or='+ors+'&order=created_at.desc&select=id,status,service_name,amount,created_at').catch(function(){return []}),
+    api('/rest/v1/digital_orders?or='+ors+'&order=created_at.desc&select=id,status,product_id,product_name,amount,created_at').catch(function(){return []}),
+    api('/rest/v1/lab_reports?or='+orb+'&order=created_at.desc&select=id,name,email,date,created_at').catch(function(){return []}),
+    api('/rest/v1/lab_fav?or='+orb+'&order=created_at.desc&select=id,url,title,created_at').catch(function(){return []}),
+    api('/rest/v1/assistant_log?or='+orb+'&order=created_at.desc&limit=40&select=id,role,text,page,created_at').catch(function(){return []})
+  ]);
+  const prof=(out[0]||[])[0]||null;
+  const orders=out[1]||[],digs=out[2]||[],reps=out[3]||[],favs=out[4]||[],chat=(out[5]||[]).slice().reverse();
+  let h='<div class="udh">ПРОФИЛЬ · '+escH(u.email||'')+'<button class="btn mute udclose">ЗАКРЫТЬ</button></div>';
+  h+='<div class="note">uid '+(uid||'—')+(u.created?' · регистрация: '+String(u.created).slice(0,10).split('-').reverse().join('.'):'')+'</div>';
+  h+='<div class="udh">◆ АНКЕТА</div>';
+  if(prof){
+    const rows=[['Имя / бренд',prof.brand],['Город / регион',prof.city],['Сфера деятельности',prof.sphere],['Сайт',prof.site],['Запрос 1',prof.q1],['Запрос 2',prof.q2],['Запрос 3',prof.q3],['Цель',prof.goal],['Что уже пробовал(а)',prof.tried],['Комментарий',prof.note]];
+    let got=false;
+    rows.forEach(function(r){if(r[1]){got=true;h+='<div class="udline"><b>'+escH(r[0])+':</b> '+escH(r[1])+'</div>'}});
+    if((prof.ch||[]).length){got=true;h+='<div class="udline"><b>Где важна видимость:</b> '+prof.ch.map(function(c){return '<span class="chip">'+escH(c)+'</span>'}).join(' ')+'</div>'}
+    if(prof.updated_at)h+='<div class="note">обновлено: '+dt(prof.updated_at)+'</div>';
+    if(!got)h+='<div class="sp">Анкета есть, но все поля пустые.</div>';
+  }else h+='<div class="sp">Анкеты пока нет. В базу попадают анкеты, сохранённые в кабинете ПОСЛЕ обновления, — попросите клиента заполнить и сохранить анкету заново.</div>';
+  h+='<div class="udh">◆ ЗАКАЗЫ УСЛУГ ('+orders.length+')</div>';
+  if(orders.length){orders.forEach(function(o){h+='<div class="udline"><span style="color:'+stCol(o.status)+';font-weight:700">['+stLab(o.status)+']</span> '+escH(o.service_name||'услуга')+' · '+(o.amount?o.amount+' ₽ · ':'')+dt(o.created_at)+'</div>'})}else h+='<div class="sp">Заявок на услуги нет.</div>';
+  h+='<div class="udh">◆ ЦИФРОВЫЕ ПОКУПКИ ('+digs.length+')</div>';
+  if(digs.length){digs.forEach(function(o){h+='<div class="udline"><span style="color:'+stCol(o.status)+';font-weight:700">['+stLab(o.status)+']</span> '+escH(o.product_name||o.product_id||'')+' · '+(o.amount?o.amount+' ₽ · ':'')+dt(o.created_at)+'</div>'})}else h+='<div class="sp">Цифровых покупок нет.</div>';
+  h+='<div class="udh">◆ ОТЧЁТЫ ('+reps.length+')</div>';
+  if(reps.length){reps.forEach(function(x){h+='<div class="udline">▸ '+escH(x.name||'документ')+' · '+(x.date||dt(x.created_at))+'</div>'})}else h+='<div class="sp">Отчётов нет.</div>';
+  h+='<div class="udh">◆ ИЗБРАННОЕ ('+favs.length+')</div>';
+  if(favs.length){favs.forEach(function(x){h+='<div class="udline">♡ '+escH(x.title||x.url)+' <span class="note">· '+dt(x.created_at)+'</span></div>'})}else h+='<div class="sp">Отметок «в избранное» нет. Синхронизируются отметки, сделанные ПОСЛЕ обновления кнопки на страницах.</div>';
+  h+='<div class="udh">◆ ЧАТ С АССИСТЕНТОМ ('+chat.length+')</div>';
+  if(chat.length){
+    chat.forEach(function(m){
+      const who=m.role==='user'?'<span class="who">Клиент:</span>':'<span class="who">Лаборант:</span>';
+      const t=String(m.text||'');
+      h+='<div class="udmsg"><span class="tm">'+dt(m.created_at)+(m.page?' · '+escH(m.page):'')+'</span> '+who+' '+escH(t.slice(0,300))+(t.length>300?' …':'')+'</div>';
+    });
+    if(chat.length>=40)h+='<div class="note">Показаны последние 40 сообщений.</div>';
+  }else h+='<div class="sp">Запросов к ассистенту пока нет. Логируются вопросы клиентов, вошедших в кабинет после обновления виджета.</div>';
+  d2.innerHTML=h;
+  const cl=d2.querySelector('.udclose');if(cl)cl.onclick=function(){d2.remove()};
+}
 (function init(){const s=loadS();if(s&&s.token){TOKEN=s.token;UID=s.uid;EMAIL=s.email;start()}})();
 </script>
 <script>/* GEO-Апгрейд · fix: magic-link/recovery подхват + авто-refresh сессии */

@@ -1,4 +1,4 @@
-/* GEO-Апгрейд — lab-account.js v6.
+/* GEO-Апгрейд — lab-account.js v7. Избранное синхронизируется в базу (lab_fav) — видно в админке.
    «ЛК» — пилюля в правом нижнем углу НАД кнопкой ассистента (58px @ right:22/bottom:22):
    bottom:88px — не наезжает ни на меню, ни на ассистента.
    «♡ В избранное» — 44px, простая плоская, слева снизу (SVG-сердце без свечения). */
@@ -10,6 +10,25 @@
       var u=JSON.parse(localStorage.getItem('geo_lab_users')||'{}')[e];
       return u?{email:e,name:u.name}:null;
     }catch(_){return null}
+  }
+  function labAuth(){
+    try{
+      var a=JSON.parse(localStorage.getItem('geo_lab_auth')||'null');
+      if(a&&a.token&&a.email)return a;
+    }catch(_){}
+    return null;
+  }
+  function favSync(action,url,title){
+    try{
+      var a=labAuth();
+      if(!a)return;
+      var H={apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+a.token,'Content-Type':'application/json'};
+      if(action==='add'){
+        fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_fav',{method:'POST',headers:H,body:JSON.stringify({email:a.email,user_id:a.uid||null,url:url,title:title||url})}).catch(function(){});
+      }else{
+        fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_fav?email=eq.'+encodeURIComponent((a.email||'').toLowerCase())+'&url=eq.'+encodeURIComponent(url),{method:'DELETE',headers:{apikey:H.apikey,Authorization:H.Authorization}}).catch(function(){});
+      }
+    }catch(_){}
   }
   var s=session();
   var page=location.pathname.split('/').pop();
@@ -45,11 +64,10 @@
       if(!who){location.href='login.html?fav=1';return}
       var L=favs(),i=-1;
       L.forEach(function(f,ix){if(f.url===page)i=ix});
-      if(i>=0){L.splice(i,1)}
-      else{
-        var t=document.querySelector('h1');
-        L.push({url:page,title:t?t.textContent.trim():page,at:new Date().toISOString().slice(0,10)});
-      }
+      var t=document.querySelector('h1');
+      var tt=t?t.textContent.trim():page;
+      if(i>=0){L.splice(i,1);favSync('del',page)}
+      else{L.push({url:page,title:tt,at:new Date().toISOString().slice(0,10)});favSync('add',page,tt)}
       save(L);mark();
     };
     document.body.appendChild(btn);

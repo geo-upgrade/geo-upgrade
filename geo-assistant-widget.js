@@ -1,5 +1,5 @@
 /*!
- * GEO-Апгрейд — AI-ассистент, виджет v1.2.1
+ * GEO-Апгрейд — AI-ассистент, виджет v1.2.2 (лог чата в базу — для админки)
  *
  * Подключение (вставить перед </body> на всех страницах):
  *   <script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://ВАШ-WORKER.workers.dev"};</script>
@@ -87,10 +87,28 @@
     }
   }
 
+  function labAuth(){
+    try{
+      var a=JSON.parse(localStorage.getItem('geo_lab_auth')||'null');
+      if(a&&a.token&&a.email)return a;
+    }catch(e){}
+    return null;
+  }
+  function labLog(role, text){
+    try{
+      var a=labAuth();
+      if(!a)return;
+      fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/assistant_log',{
+        method:'POST',
+        headers:{apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+a.token,'Content-Type':'application/json'},
+        body:JSON.stringify({email:a.email,user_id:a.uid||null,page:location.pathname.split('/').pop(),role:role,text:String(text||'').slice(0,2000)})
+      }).catch(function(){});
+    }catch(e){}
+  }
   function send(text) {
     text = (text || '').trim();
     if (!text || busy) return;
-    addMsg('user', text);
+    addMsg('user', text); labLog('user', text);
     busy = true; typing(true);
     if (CFG.demoMode) {
       setTimeout(function () {
@@ -118,6 +136,7 @@
           [{ t: 'Контакты GEO-Апгрейд', u: 'https://geo-upgrade.ru/contacts.html' }]);
       } else {
         addMsg('assistant', d.answer || 'Не удалось получить ответ.', d.sources || []);
+        labLog('assistant', d.answer || '');
       }
     }).catch(function () {
       clearTimeout(to); typing(false); busy = false;
