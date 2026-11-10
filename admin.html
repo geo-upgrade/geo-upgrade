@@ -38,7 +38,6 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
 .badge{font-family:Orbitron;font-size:10px;letter-spacing:.1em;padding:5px 10px;border-radius:999px;border:1px solid}
 .badge.ok{color:var(--goldb);border-color:var(--gold);background:rgba(255,214,110,.08)}
 .badge.wait{color:var(--cyan);border-color:rgba(0,229,255,.55);background:rgba(0,229,255,.06)}
-.badge.run{color:#00E5FF;border-color:rgba(0,229,255,.55);background:rgba(0,229,255,.06)}
 .badge.dn{color:#FF9E9E;border-color:rgba(255,120,120,.4)}
 .acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
 .mono{font-family:monospace;font-size:11px;color:var(--dim)}
@@ -79,20 +78,49 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
       <div class="b"><span>НА ПРОВЕРКЕ</span><b id="n-wait">0</b></div>
       <div class="b"><span>ПОДТВЕРЖДЕНО</span><b id="n-ok">0</b></div>
       <div class="b"><span>КЛИЕНТОВ</span><b id="n-cli">0</b></div>
+      <div class="b"><span>ЦИФРОВЫЕ · ЖДУТ</span><b id="n-dig">0</b></div>
     </div>
 
     <div class="sec">◆ ЗАКАЗЫ · LAB_ORDERS</div>
     <div class="row">
       <select id="ord-filter" style="max-width:230px">
         <option value="all">Все статусы</option>
-        <option value="Обработка">Обработка</option>
-        <option value="Подтверждён">Подтверждён</option>
-        <option value="Выполняется">Выполняется</option>
-        <option value="Завершён">Завершён</option>
+        <option value="pending">На проверке</option>
+        <option value="paid_check">Чек получен</option>
+        <option value="confirmed">Подтверждено</option>
       </select>
       <button class="btn" id="ord-refresh">ОБНОВИТЬ ↻</button>
     </div>
     <div id="ord-box"></div>
+
+    <div class="sec">◆ ЦИФРОВЫЕ ПРОДУКТЫ · DIGITAL_ORDERS</div>
+    <div class="row">
+      <select id="dig-filter" style="max-width:230px">
+        <option value="all">Все статусы</option>
+        <option value="pending">Ожидают</option>
+        <option value="confirmed">Подтверждено</option>
+      </select>
+      <button class="btn" id="dig-refresh">ОБНОВИТЬ ↻</button>
+    </div>
+    <div id="dig-box"></div>
+    <div class="panel" style="margin-top:14px">
+      <div class="row">
+        <div style="flex:1;min-width:200px"><label>email клиента</label><input id="dg-email" type="email"></div>
+        <div style="flex:1.4;min-width:220px"><label>продукт</label><select id="dg-product">
+          <option value="A10">A10 · Курс «Проверь бренд в ИИ за вечер» · 990 ₽</option>
+          <option value="A1">A1 · Чек-лист «Проверь бренд в нейросетях» · 190 ₽</option>
+          <option value="A2">A2 · 20 промптов для AI-видимости · 150 ₽</option>
+          <option value="A3">A3 · Шаблон AI-Паспорта компании · 490 ₽</option>
+        </select></div>
+      </div>
+      <div class="row">
+        <div style="flex:1;min-width:150px"><label>сумма (₽)</label><input id="dg-amount" type="number" value="990"></div>
+        <div style="flex:2;min-width:200px"><label>заметка (СБП чек № / подарок / тест-драйв)</label><input id="dg-note"></div>
+      </div>
+      <div class="row" style="margin-top:12px"><button class="btn gold" id="dg-add">ВЫДАТЬ ВРУЧНУЮ (сразу подтверждено)</button><button class="btn mute" id="dg-add-pend">В ОЖИДАНИЕ</button><span class="ok" id="dg-ok"></span></div>
+      <div class="sp">Оплата по собственной ссылке Точки каждого продукта — сверяй с выпиской. «Вручную» — для СБП, подарков и бэктестов; подтверждение открывает продукт в кабинете клиента.</div>
+    </div>
+    <div id="dig-paid" style="margin-top:12px"></div>
 
     <div class="sec">◆ КЛИЕНТЫ · LAB_ORDERS + PROFILES</div>
     <div id="cli-box"></div>
@@ -158,7 +186,7 @@ async function start(){
   if(!ok){$('f-auth').classList.remove('hide');$('au-err').textContent='Нет доступа: аккаунт не в списке admins. Добавь свой email через SQL (см. README).';return}
   $('dash').classList.remove('hide');
   $('who').textContent=EMAIL;
-  await Promise.all([renderOrders(),renderClients(),renderReports()]);
+  await Promise.all([renderOrders(),renderDigital(),renderClients(),renderReports()]);
 }
 async function renderOrders(){
   try{
@@ -166,8 +194,8 @@ async function renderOrders(){
     const q=f==='all'?'/rest/v1/lab_orders?order=created_at.desc':'/rest/v1/lab_orders?status=eq.'+f+'&order=created_at.desc';
     const list=await api(q);
     $('n-all').textContent=String((await api('/rest/v1/lab_orders?select=id')).length);
-    $('n-wait').textContent=String(list.filter(function(x){return x.status==='Обработка'||!['Обработка','Подтверждён','Выполняется','Завершён'].includes(x.status)}).length);
-    $('n-ok').textContent=String(list.filter(function(x){return x.status==='Подтверждён'||x.status==='confirmed'}).length);
+    $('n-wait').textContent=String(list.filter(function(x){return x.status!=='confirmed'}).length);
+    $('n-ok').textContent=String(list.filter(function(x){return x.status==='confirmed'}).length);
     const box=$('ord-box');box.innerHTML='';
     if(!list.length){box.innerHTML='<div class="panel sp">Пока нет заявок в этом фильтре.</div>';return}
     list.forEach(function(o){
@@ -177,28 +205,83 @@ async function renderOrders(){
       l.innerHTML='<b>'+(o.service_name||'услуга')+'</b><br><span class="note">'+(o.email||'—')+' · '+fmt(o.amount)+' · '+dt(o.created_at)+(o.pay_uid?' · <span class="mono">'+String(o.pay_uid).slice(0,13)+'</span>':'')+'</span>';
       top.appendChild(l);
       const st=document.createElement('span');
-      const LAB={'Обработка':'ОБРАБОТКА','Подтверждён':'ПОДТВЕРЖДЁН','Выполняется':'ВЫПОЛНЯЕТСЯ','Завершён':'ЗАВЕРШЁН',confirmed:'ПОДТВЕРЖДЁН',pending:'ОБРАБОТКА',paid_check:'ОБРАБОТКА'};
-      const CLS={'Обработка':'wait','Подтверждён':'ok','Выполняется':'run','Завершён':'ok',confirmed:'ok',pending:'wait',paid_check:'wait'};
-      st.className='badge '+(CLS[o.status]||'wait');
-      st.textContent=LAB[o.status]||'ОБРАБОТКА';
+      st.className='badge '+(o.status==='confirmed'?'ok':(o.status==='paid_check'?'wait':'wait'));
+      st.textContent=o.status==='confirmed'?'ПОДТВЕРЖДЕНО':(o.status==='paid_check'?'ЧЕК ПОЛУЧЕН':'НА ПРОВЕРКЕ');
       top.appendChild(st);
       d.appendChild(top);
       const acts=document.createElement('div');acts.className='acts';
-      const RAW={'confirmed':'Подтверждён',pending:'Обработка',paid_check:'Обработка'};
-      const cur=RAW[o.status]||o.status;
-      if(cur!=='Подтверждён'){const b1=document.createElement('button');b1.className='btn gold';b1.textContent='ПОДТВЕРДИТЬ';
-        b1.onclick=function(){setSt(o,'Подтверждён')};acts.appendChild(b1)}
-      if(cur==='Подтверждён'){const b2=document.createElement('button');b2.className='btn';b2.textContent='ВЫПОЛНЯЕТСЯ';
-        b2.onclick=function(){setSt(o,'Выполняется')};acts.appendChild(b2)}
-      if(cur==='Выполняется'){const b2b=document.createElement('button');b2b.className='btn gold';b2b.textContent='ЗАВЕРШИТЬ';
-        b2b.onclick=function(){setSt(o,'Завершён')};acts.appendChild(b2b)}
-      const b3=document.createElement('button');b3.className='btn danger';b3.textContent='УДАЛИТЬ';
-      b3.onclick=function(){if(confirm('Удалить заявку «'+(o.service_name||'')+'» от '+(o.email||'')+'?'))delOrder(o)};acts.appendChild(b3);
+      if(o.status!=='confirmed'){
+        const b1=document.createElement('button');b1.className='btn gold';b1.textContent='ПОДТВЕРДИТЬ';
+        b1.onclick=function(){setSt(o,'confirmed')};acts.appendChild(b1);
+        if(o.status!=='paid_check'){const b2=document.createElement('button');b2.className='btn';b2.textContent='ЧЕК ПОЛУЧЕН';
+          b2.onclick=function(){setSt(o,'paid_check')};acts.appendChild(b2)}
+        const b3=document.createElement('button');b3.className='btn danger';b3.textContent='УДАЛИТЬ';
+        b3.onclick=function(){if(confirm('Удалить заявку «'+(o.service_name||'')+'» от '+(o.email||'')+'?'))delOrder(o)};acts.appendChild(b3);
+      }
       d.appendChild(acts);
       box.appendChild(d);
     });
   }catch(e){$('ord-box').innerHTML='<div class="panel err">Ошибка загрузки: '+e.message+'</div>'}
 }
+const DIGP={'A10':['Курс «Проверь бренд в ИИ за вечер»',990],'A1':['Чек-лист «Проверь бренд в нейросетях»',190],'A2':['20 промптов для AI-видимости',150],'A3':['Шаблон AI-Паспорта компании',490]};
+async function renderDigital(){
+  try{
+    const f=$('dig-filter').value;
+    const q=f==='all'?'/rest/v1/digital_orders?order=created_at.desc':'/rest/v1/digital_orders?status=eq.'+f+'&order=created_at.desc';
+    const list=await api(q);
+    $('n-dig').textContent=String(list.filter(function(x){return x.status!=='confirmed'}).length);
+    const box=$('dig-box');box.innerHTML='';
+    const paidBox=$('dig-paid');paidBox.innerHTML='<div class="sp" style="margin:0 0 6px">ПОДТВЕРЖДЁННЫЕ (последние 20):</div>';
+    if(!list.length){box.innerHTML='<div class="panel sp">Цифровых заказов пока нет.</div>';paidBox.innerHTML='';return}
+    list.forEach(function(o){
+      const confirmed=o.status==='confirmed';
+      const d=document.createElement('div');d.className='card';
+      const top=document.createElement('div');top.className='top';
+      const l=document.createElement('div');
+      l.innerHTML='<b>'+(o.product_id||'—')+' · '+(o.product_name||'продукт')+'</b><br><span class="note">'+(o.email||'—')+' · '+fmt(o.amount)+' · '+dt(o.created_at)+(o.note?' · '+o.note:'')+'</span>';
+      top.appendChild(l);
+      const st=document.createElement('span');
+      st.className='badge '+(confirmed?'ok':'wait');
+      st.textContent=confirmed?('ПОДТВЕРЖДЕНО'+(o.paid_at?' · '+dt(o.paid_at):'')):'ОЖИДАЕТ';
+      top.appendChild(st);
+      d.appendChild(top);
+      if(!confirmed){
+        const acts=document.createElement('div');acts.className='acts';
+        const b1=document.createElement('button');b1.className='btn gold';b1.textContent='ПОДТВЕРДИТЬ ОПЛАТУ';
+        b1.onclick=function(){setDigitalSt(o)};acts.appendChild(b1);
+        const b2=document.createElement('button');b2.className='btn danger';b2.textContent='УДАЛИТЬ';
+        b2.onclick=function(){if(confirm('Удалить цифровую заявку «'+(o.product_id||'')+'» от '+(o.email||'')+'?'))delDigital(o)};acts.appendChild(b2);
+        d.appendChild(acts);
+      }
+      box.appendChild(d);
+      if(confirmed){const c2=document.createElement('div');c2.className='card';
+        c2.innerHTML='<div class="top"><div><b>'+(o.product_id||'—')+' · '+(o.product_name||'')+'</b><br><span class="note">'+(o.email||'')+' · '+dt(o.paid_at||o.created_at)+(o.note?' · '+o.note:'')+'</span></div></div>';
+        paidBox.appendChild(c2)}
+    });
+  }catch(e){$('dig-box').innerHTML='<div class="panel err">Ошибка цифровых заказов: '+e.message+'</div>'}
+}
+async function setDigitalSt(o){
+  try{await api('/rest/v1/digital_orders?id=eq.'+o.id,'PATCH',{status:'confirmed',paid_at:new Date().toISOString()});toast('Оплата подтверждена — продукт открыт клиенту');await renderDigital()}catch(e){toast('Не вышло: '+e.message)}
+}
+async function delDigital(o){
+  try{await api('/rest/v1/digital_orders?id=eq.'+o.id,'DELETE');toast('Заявка удалена');await renderDigital()}catch(e){toast('Не вышло: '+e.message)}
+}
+async function addDigital(confirmed){
+  const em=$('dg-email').value.trim().toLowerCase(),pid=$('dg-product').value,amt=parseInt($('dg-amount').value,10)||DIGP[pid][1];
+  if(!em){$('dg-ok').textContent='';toast('Введи email клиента');return}
+  let uid='';
+  try{const arr=await api('/rest/v1/lab_orders?email=eq.'+encodeURIComponent(em)+'&select=user_id');uid=(arr&&arr[0]&&arr[0].user_id)||''}catch(e){}
+  try{
+    await api('/rest/v1/digital_orders','POST',{email:em,user_id:uid||null,product_id:pid,product_name:DIGP[pid][0],amount:amt,status:confirmed?'confirmed':'pending',paid_at:confirmed?new Date().toISOString():null,note:$('dg-note').value.trim()||null});
+    $('dg-ok').textContent='Выдано ✓';
+    $('dg-email').value='';$('dg-note').value='';
+    await renderDigital();
+  }catch(e){$('dg-ok').textContent='Не вышло: '+e.message}
+}
+$('dig-refresh').onclick=renderDigital;
+$('dig-filter').onchange=renderDigital;
+$('dg-add').onclick=function(){addDigital(true)};
+$('dg-add-pend').onclick=function(){addDigital(false)};
 async function setSt(o,s){
   try{await api('/rest/v1/lab_orders?id=eq.'+o.id,'PATCH',{status:s});toast('Статус обновлён');await renderOrders()}catch(e){toast('Не вышло: '+e.message)}
 }
