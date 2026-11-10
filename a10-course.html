@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="ru">
-<head>
+<!DOCTYPE html><html lang="ru"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Курс «Проверь бренд в ИИ за вечер» v6 — лаборатория GEO-Апгрейд</title>
@@ -105,6 +103,8 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 .toolrow .tdesc { color:var(--muted); font-size:12.5px; flex-basis:100%; }
 .tbuy { font-family:var(--font-head); font-size:11px; letter-spacing:0.08em; color:#06121a; background:var(--neon); border-radius:14px; padding:7px 14px; text-decoration:none; font-weight:600; white-space:nowrap; }
 .final { border-color:var(--ok); }
+
+.lesson.locked > :not(.lhead):not(.lockover){display:none !important}
 </style>
 </head>
 <body>
@@ -114,7 +114,7 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <span class="badge">Написать первую статью, которую прочитают и человек, и нейросеть</span>
 <span class="badge">Получить маршрут на месяц и повторный замер</span>
 </div></div></header><main>
-<div class="progressbar"><span class="plabel2">ПРОГРЕСС КУРСА</span><div class="bar"><div class="bar-fill" id="bfill"></div></div><p class="ptxt" id="ptxt">Этапов выполнено: 0 из 25 | Уроков пройдено: 0 из 5</p></div>
+<div class="progressbar"><span class="plabel2">ПРОГРЕСС КУРСА</span><div class="bar"><div class="bar-fill" id="bfill" style="width: 0%;"></div></div><p class="ptxt" id="ptxt">Этапов выполнено: 0 из 25 | Уроков пройдено: 0 из 5</p></div>
 <div class="frame"><h2>Как устроен курс</h2><ol>
 <li>Урок открывается после выполнения домашнего задания предыдущего. Прогресс сохраняется автоматически.</li>
 <li>Каждое ДЗ — короткая форма с автосохранением. Нажми «Задание выполнено», чтобы открыть следующий урок.</li>
@@ -122,12 +122,12 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <li>Уроки 1–2 — за один вечер, уроки 3–5 — по шагам в течение недели.</li>
 <li>В каждом уроке: <b>скачай лекцию (PDF)</b> и прочитай — подробная методичка лаборатории с приложениями (все 21 правило, все 22 площадки); затем этапы практики, квиз «Проверь себя» и ДЗ; в конце урока — поле «Комментарии себе».</li></ol></div>
 <section class="lesson" id="lesson0">
-<div class="lhead"><span class="lnum">УРОК 1</span><span class="ltime">20–30 минут</span><span class="donemark" id="done0" hidden>ПРОЙДЕН ✓</span></div>
+<div class="lhead"><span class="lnum">УРОК 1</span><span class="ltime">20–30 минут</span><span class="donemark" id="done0" hidden="">ПРОЙДЕН ✓</span></div>
 <h2>Что нейросети знают о тебе прямо сейчас</h2>
 <p class="lout">Результат урока: <b>Первая карта видимости: кто назван источником в ответах на твои запросы</b></p>
 <p class="lintro">Нельзя улучшить то, что не замерено. Первый вечер начинается с честного замера: ты спрашиваешь нейросети о себе — как это делают твои клиенты — и фиксируешь, кто попадает в ответы.</p>
 <div class="plabel">ЛЕКЦИЯ УРОКА · ОТДЕЛЬНЫЙ ДОКУМЕНТ (PDF)</div>
-<div class="lecture"><div class="dlrow"><a class="dlbtn" href="a10-lecture-1.pdf" download>СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Как нейросети узнают бренды — четыре слоя сигнала · подробная методичка, 4+ страницы</span></div>
+<div class="lecture"><div class="dlrow"><a class="dlbtn" href="a10-lecture-1.pdf" download="">СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Как нейросети узнают бренды — четыре слоя сигнала · подробная методичка, 4+ страницы</span></div>
 <p class="llead">Прежде чем мерить, полезно понять механику. Нейросеть не «гуглит» твой сайт на лету — она отвечает из того, что успела выучить: из текстов, цитируемых источников, каталогов и карточек.</p>
 <p style="font-family:var(--font-head);font-size:11px;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px">ЧТО ВНУТРИ ЛЕКЦИИ:</p>
 <div class="toc">
@@ -138,11 +138,11 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <span><b>·</b> Почему важен замер</span>
 </div></div>
 <div class="plabel">ЭТАПЫ УРОКА · ОТКРЫВАЮТСЯ ПО ОДНОМУ</div><div class="steps">
-<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Составь 3–5 запросов клиента</b><br>Сядь на место клиента: что он напишет в ChatGPT, Perplexity или Нейро, когда ищет твою услугу? Запиши запросы его словами, без брендовых названий.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Прогони запросы через две нейросети</b><br>Задай каждый запрос в двух системах (например ChatGPT и Perplexity). Читай ответы как клиент: тебе кто-то назван? Кто — вместо тебя?</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Сведи замер в рабочий документ</b><br>Открой «Шаблон замера видимости» из комплекта: заполни таблицу «Запрос | Кто назван | Я в списке | Конкуренты» для обеих нейросетей.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Зафиксируй стартовую точку</b><br>Посчитай долю присутствия: в скольких ответах из всех тебя назвали. Запиши в отчёт замера с датой.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Составь 3–5 запросов клиента</b><br>Сядь на место клиента: что он напишет в ChatGPT, Perplexity или Нейро, когда ищет твою услугу? Запиши запросы его словами, без брендовых названий.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Прогони запросы через две нейросети</b><br>Задай каждый запрос в двух системах (например ChatGPT и Perplexity). Читай ответы как клиент: тебе кто-то назван? Кто — вместо тебя?</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Сведи замер в рабочий документ</b><br>Открой «Шаблон замера видимости» из комплекта: заполни таблицу «Запрос | Кто назван | Я в списке | Конкуренты» для обеих нейросетей.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Зафиксируй стартовую точку</b><br>Посчитай долю присутствия: в скольких ответах из всех тебя назвали. Запиши в отчёт замера с датой.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
 </div><div class="quiz"><div class="qzhead">ПРОВЕРЬ СЕБЯ · 3 ВОПРОСА</div>
 <div class="q"><p class="qq">Где нейросеть берёт факты о компании, когда отвечает клиенту?</p><div class="qopts">
 <button class="qopt" data-ok="0" data-g="Ответ строится на совокупности источников. Согласованные факты на многих площадках усиливают сигнал; расхождения — ослабляют.">Только из сайта компании</button>
@@ -166,19 +166,19 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <li>Посчитай и запиши свою долю присутствия и три причины, почему ты не попал в ответы (по шаблону).</li>
 </ol><textarea id="hw0" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
 <div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote0" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
-<button class="donebtn" id="dbtn0">Задание выполнено — открыть следующий урок</button></div>
+<button class="donebtn" id="dbtn0" data-i="0">Задание выполнено — открыть следующий урок</button></div>
 <div class="wsrow"><b>Рабочие документы урока:</b> Замер видимости (шаблон + отчёт), Журнал замеров</div>
 <p class="lcheck">Проверка урока: Таблица замера заполнена, доля присутствия записана с датой.</p>
 <p class="lnext">Дальше: <b>Урок 2: чистим то, что нейросети говорят о тебе.</b></p>
 <div class="hw" id="paygate" style="margin-top:18px;border-color:var(--gold)"><b style="color:var(--goldb)">Урок 1 — бесплатный. Полный курс открывается после оплаты.</b><p style="margin:8px 0">Дальше — уроки 2–5: 25 этапов практики, 5 подробных лекций-PDF (включая все 21 правило регламента и полный список 22 площадок), квизы «Проверь себя», ДЗ с автосохранением и 6 рабочих документов. Оплата разовая — 990 ₽, без подписок.</p><a class="donebtn" style="display:inline-block;text-decoration:none" href="https://tochkaplace.com/ia/53aa63f7-6e05-4612-ae93-12c6d4c8f9c5" target="_blank">КУПИТЬ ПОЛНЫЙ КУРС · 990 ₽</a><div style="margin-top:14px"><input id="accode" placeholder="Код доступа из сообщения лаборатории (GEOA10-…)" style="max-width:300px;width:calc(100% - 150px);margin-right:10px"><button class="donebtn" id="acbtn" style="vertical-align:middle">ОТКРЫТЬ ПО КОДУ →</button></div><button class="donebtn" id="chkbtn" style="margin-top:10px;background:transparent;color:var(--cyan);border:1px solid var(--cyan)">Я ОПЛАТИЛ — ПРОВЕРИТЬ →</button><p class="err" id="paymsg" style="margin-top:10px"></p><p class="sp" style="margin-top:6px">Оплатил(а) и уже в кабинете? Кнопка «Проверить» сверится с базой лаборатории и откроет уроки. Или используй код доступа — его выдаёт лаборатория после оплаты.</p></div>
 </section>
-<section class="lesson" id="lesson1">
-<div class="lhead"><span class="lnum">УРОК 2</span><span class="ltime">20–30 минут</span><span class="donemark" id="done1" hidden>ПРОЙДЕН ✓</span></div>
+<section class="lesson locked" id="lesson1">
+<div class="lhead"><span class="lnum">УРОК 2</span><span class="ltime">20–30 минут</span><span class="donemark" id="done1" hidden="">ПРОЙДЕН ✓</span></div><div class="lockover"><div class="lockcard"><div class="lockico">🔒</div><p><b>Урок 2 закрыт.</b> Открывается после покупки полного курса — 990 ₽ разово.</p><p class="locktxt">Оплати здесь (кнопка выше) или открой по коду доступа от лаборатории. Внутри: 5 этапов практики, подробная лекция-PDF, квиз «Проверь себя» и ДЗ с автосохранением. Тема урока: факт-база и AI-Паспорт — 26 полей в 5 блоках, позиционирование, «Кому не подойдёт».</p></div></div>
 <h2>Факт-база: чем ты интересен нейросети</h2>
 <p class="lout">Результат урока: <b>Собранное досье о бренде: факты, цифры, доказательства, позиционирование</b></p>
 <p class="lintro">Нейросеть не советует «понравившегося» — она цитирует проверяемые факты. Сегодня ты собираешь их в одном месте: шаблон AI-Паспорта делает это структурированно.</p>
 <div class="plabel">ЛЕКЦИЯ УРОКА · ОТДЕЛЬНЫЙ ДОКУМЕНТ (PDF)</div>
-<div class="lecture"><div class="dlrow"><a class="dlbtn" href="a10-lecture-2.pdf" download>СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">AI-Паспорт: фундамент, на который встаёт всё · подробная методичка, 4+ страницы</span></div>
+<div class="lecture"><div class="dlrow"><a class="dlbtn" href="a10-lecture-2.pdf" download="">СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">AI-Паспорт: фундамент, на который встаёт всё · подробная методичка, 4+ страницы</span></div>
 <p class="llead">Нейросети любят конкретику. «Качественная студия маникюра» — это шум. «Студия маникюра в Новосибирске, работаем с 2019 года, 2400 клиенток, стерилизация в сухожаре» — это факты, которые можно процитировать.</p>
 <p style="font-family:var(--font-head);font-size:11px;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px">ЧТО ВНУТРИ ЛЕКЦИИ:</p>
 <div class="toc">
@@ -189,11 +189,11 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <span class="app">★ Приложение: 22 площадки — полный список + 5 правил публикации</span>
 </div></div>
 <div class="plabel">ЭТАПЫ УРОКА · ОТКРЫВАЮТСЯ ПО ОДНОМУ</div><div class="steps">
-<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Заполни анкету AI-Паспорта</b><br>Открой «Шаблон AI-Паспорта компании» из комплекта: 26 полей в 5 блоках, живой пример заполнения, автосохранение. Заполняй только правду — пустые поля не блокируют сборку.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Собери формулу позиционирования</b><br>Шаблон сам сложит из ответов формулу: «Мы — [кто] в [город]. Помогаем [кому] [что]: [отличие] — [доказательство]». Прочитай вслух — узнаваемо?</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Добавь блок «Кому НЕ подойдёт»</b><br>Честность цитируется охотнее рекламы: укажи, кому твоя услуга не подойдёт.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Скачай паспорт</b><br>Файл AI-Паспорт-компании.txt готов к выкладке на сайт, в карточки и в промпты.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Заполни анкету AI-Паспорта</b><br>Открой «Шаблон AI-Паспорта компании» из комплекта: 26 полей в 5 блоках, живой пример заполнения, автосохранение. Заполняй только правду — пустые поля не блокируют сборку.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Собери формулу позиционирования</b><br>Шаблон сам сложит из ответов формулу: «Мы — [кто] в [город]. Помогаем [кому] [что]: [отличие] — [доказательство]». Прочитай вслух — узнаваемо?</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Добавь блок «Кому НЕ подойдёт»</b><br>Честность цитируется охотнее рекламы: укажи, кому твоя услуга не подойдёт.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Скачай паспорт</b><br>Файл AI-Паспорт-компании.txt готов к выкладке на сайт, в карточки и в промпты.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
 </div><div class="quiz"><div class="qzhead">ПРОВЕРЬ СЕБЯ · 3 ВОПРОСА</div>
 <div class="q"><p class="qq">Сколько полей в AI-Паспорте лаборатории и сколько в нём блоков?</p><div class="qopts">
 <button class="qopt" data-ok="1" data-g="Анкета A3 — 26 полей в пяти блоках: «Кто мы», «Что предлагаем», «Контакт-факты», «Доказательства», «Позиционирование».">26 полей в 5 блоках</button>
@@ -211,24 +211,24 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <button class="qopt" data-ok="0" data-g="Name–Address–Phone: одна и та же контактная фактура везде. Расхождения снижают доверие нейросети к каждому источнику.">Порядок публикации статей</button>
 </div><p class="qwhy"></p></div>
 </div>
-<div class="hw"><h2 style="font-size:15px">ДЗ к уроку 2: паспорт бренда</h2><ol class="hwlist">
+<div class="hw blurred"><h2 style="font-size:15px">ДЗ к уроку 2: паспорт бренда</h2><ol class="hwlist">
 <li>Заполни не менее 18 из 26 полей анкеты AI-Паспорта.</li>
 <li>Собери паспорт и проверь формулу позиционирования вслух.</li>
 <li>Впиши блок «Кому НЕ подойдёт» — хотя бы два честных пункта.</li>
-</ol><textarea id="hw1" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
+</ol><textarea id="hw1" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
 <div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote1" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
-<button class="donebtn" id="dbtn1">Задание выполнено — открыть следующий урок</button></div>
+<button class="donebtn" id="dbtn1" data-i="1" disabled="">Задание выполнено — открыть следующий урок</button></div>
 <div class="wsrow"><b>Рабочие документы урока:</b> Шаблон AI-Паспорта компании (A3, интерактив), Журнал автора</div>
 <p class="lcheck">Проверка урока: Паспорт собран и скачан. Формула позиционирования читается вслух без запинки.</p>
 <p class="lnext">Дальше: <b>Урок 3: из факт-базы рождаются запросы и структура.</b></p>
 </section>
-<section class="lesson" id="lesson2">
-<div class="lhead"><span class="lnum">УРОК 3</span><span class="ltime">25–35 минут</span><span class="donemark" id="done2" hidden>ПРОЙДЕН ✓</span></div>
+<section class="lesson locked" id="lesson2">
+<div class="lhead"><span class="lnum">УРОК 3</span><span class="ltime">25–35 минут</span><span class="donemark" id="done2" hidden="">ПРОЙДЕН ✓</span></div><div class="lockover"><div class="lockcard"><div class="lockico">🔒</div><p><b>Урок 3 закрыт.</b> Открывается после покупки полного курса — 990 ₽ разово.</p><p class="locktxt">Оплати здесь (кнопка выше) или открой по коду доступа от лаборатории. Внутри: 5 этапов практики, подробная лекция-PDF, квиз «Проверь себя» и ДЗ с автосохранением. Тема урока: запросы и фундамент контента — три типа запросов, редкие слова (IDF), матрица запросов.</p></div></div>
 <h2>Запросы и фундамент контента</h2>
 <p class="lout">Результат урока: <b>15 запросов с редкими словами и план первых материалов</b></p>
 <p class="lintro">Слова, по которым тебя находят, нельзя брать «с потолка». Промпт с IDF-моделью строит запросы, где редкие слова привязываются именно к тебе — конкуренты их не заметят.</p>
 <div class="plabel">ЛЕКЦИЯ УРОКА · ОТДЕЛЬНЫЙ ДОКУМЕНТ (PDF)</div>
-<div class="lecture"><div class="dlrow"><a class="dlbtn" href="a10-lecture-3.pdf" download>СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Запросы: как клиент на самом деле спрашивает нейросеть · подробная методичка, 4+ страницы</span></div>
+<div class="lecture"><div class="dlrow"><a class="dlbtn" href="a10-lecture-3.pdf" download="">СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Запросы: как клиент на самом деле спрашивает нейросеть · подробная методичка, 4+ страницы</span></div>
 <p class="llead">SEO-семантика «купить диван недорого» в нейросетях почти мертва. Клиент разговаривает с ИИ как с человеком: длинными, конкретными, эмоциональными фразами.</p>
 <p style="font-family:var(--font-head);font-size:11px;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px">ЧТО ВНУТРИ ЛЕКЦИИ:</p>
 <div class="toc">
@@ -238,11 +238,11 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <span><b>·</b> Проверка вслух</span>
 </div></div>
 <div class="plabel">ЭТАПЫ УРОКА · ОТКРЫВАЮТСЯ ПО ОДНОМУ</div><div class="steps">
-<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Сгенерируй запросы</b><br>Промпт «Генерация запросов пользователей»: 15 анкорных фраз 7–13 слов с редкими словами (IDF), географической привязкой и группировкой по интенту.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Проверь вопросами покупателя</b><br>Промпт «Вопросы пользователей нейросетям» (статус «работает») раскладывает вопросы клиента по этапам: проблема → выбор → сравнение → доверие → покупка. Это будущие заголовки.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Свяжи запросы с паспорт-фактами</b><br>Для каждого запроса ответь: какое доказательство из паспорта подтверждает его? Нет доказательства — это тема будущей статьи или кейса.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Заполни контент-план</b><br>Внеси первые темы в «Контент-план месяца»: один запрос = один материал. Возьми самый частый запрос клиента с хотя бы одним твоим доказательством.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Сгенерируй запросы</b><br>Промпт «Генерация запросов пользователей»: 15 анкорных фраз 7–13 слов с редкими словами (IDF), географической привязкой и группировкой по интенту.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Проверь вопросами покупателя</b><br>Промпт «Вопросы пользователей нейросетям» (статус «работает») раскладывает вопросы клиента по этапам: проблема → выбор → сравнение → доверие → покупка. Это будущие заголовки.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Свяжи запросы с паспорт-фактами</b><br>Для каждого запроса ответь: какое доказательство из паспорта подтверждает его? Нет доказательства — это тема будущей статьи или кейса.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Заполни контент-план</b><br>Внеси первые темы в «Контент-план месяца»: один запрос = один материал. Возьми самый частый запрос клиента с хотя бы одним твоим доказательством.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
 </div><div class="quiz"><div class="qzhead">ПРОВЕРЬ СЕБЯ · 3 ВОПРОСА</div>
 <div class="q"><p class="qq">Какой тип запросов клиента НЕ существует в разборке курса?</p><div class="qopts">
 <button class="qopt" data-ok="0" data-g="Три типа: проблемный, сравнительный, прямой («услуга рядом»). «Рекламный» — это твой язык, а не язык клиента.">Проблемный</button>
@@ -260,24 +260,24 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <button class="qopt" data-ok="0" data-g="Матрица связывает запросы с материалами и сразу превращается в контент-план месяца.">Матрица для сравнения двух CMS</button>
 </div><p class="qwhy"></p></div>
 </div>
-<div class="hw"><h2 style="font-size:15px">ДЗ к уроку 3: запросы и план</h2><ol class="hwlist">
+<div class="hw blurred"><h2 style="font-size:15px">ДЗ к уроку 3: запросы и план</h2><ol class="hwlist">
 <li>Сгенерируй 15 запросов промптом и сгруппируй их по интенту (что/как/почему).</li>
 <li>Сопоставь каждый запрос с доказательством из AI-Паспорта (или пометь «нужен материал»).</li>
 <li>Заполни минимум 8 строк в «Контент-плане месяца» — темы по запросам.</li>
-</ol><textarea id="hw2" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
+</ol><textarea id="hw2" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
 <div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote2" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
-<button class="donebtn" id="dbtn2">Задание выполнено — открыть следующий урок</button></div>
+<button class="donebtn" id="dbtn2" data-i="2" disabled="">Задание выполнено — открыть следующий урок</button></div>
 <div class="wsrow"><b>Рабочие документы урока:</b> Контент-план месяца, Журнал автора</div>
 <p class="lcheck">Проверка урока: 15 запросов сгруппированы, в плане месяца минимум 8 тем.</p>
 <p class="lnext">Дальше: <b>Урок 4: пишем первую статью по методике лаборатории.</b></p>
 </section>
-<section class="lesson" id="lesson3">
-<div class="lhead"><span class="lnum">УРОК 4</span><span class="ltime">40–60 минут</span><span class="donemark" id="done3" hidden>ПРОЙДЕН ✓</span></div>
+<section class="lesson locked" id="lesson3">
+<div class="lhead"><span class="lnum">УРОК 4</span><span class="ltime">40–60 минут</span><span class="donemark" id="done3" hidden="">ПРОЙДЕН ✓</span></div><div class="lockover"><div class="lockcard"><div class="lockico">🔒</div><p><b>Урок 4 закрыт.</b> Открывается после покупки полного курса — 990 ₽ разово.</p><p class="locktxt">Оплати здесь (кнопка выше) или открой по коду доступа от лаборатории. Внутри: 5 этапов практики, подробная лекция-PDF, квиз «Проверь себя» и ДЗ с автосохранением. Тема урока: первая статья, которую цитирует ИИ — все 21 правило регламента и Этап 0.</p></div></div>
 <h2>Первая статья, которую цитирует ИИ</h2>
 <p class="lout">Результат урока: <b>Готовая статья: живая для человека, извлекаемая для нейросети</b></p>
 <p class="lintro">Статья — главный источник цитирования. Методика из 21 правила сожмётся до пяти шагов: вопросы автору → позиция → факты → черновик по GEO-правилам → возврат голоса. Полная методика — в бонусе «Как писать статьи с помощью ИИ» из набора A2.</p>
 <div class="plabel">ЛЕКЦИЯ УРОКА · ОТДЕЛЬНЫЙ ДОКУМЕНТ (PDF)</div>
-<div class="lecture"><div class="dlrow"><a class="dlbtn" href="a10-lecture-4.pdf" download>СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Статья, которую ИИ процитирует · подробная методичка, 4+ страницы</span></div>
+<div class="lecture"><div class="dlrow"><a class="dlbtn" href="a10-lecture-4.pdf" download="">СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Статья, которую ИИ процитирует · подробная методичка, 4+ страницы</span></div>
 <p class="llead">Писать для нейросети — значит писать так, чтобы фрагмент текста можно было вытащить целиком и он сам по себе отвечал на вопрос.</p>
 <p style="font-family:var(--font-head);font-size:11px;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px">ЧТО ВНУТРИ ЛЕКЦИИ:</p>
 <div class="toc">
@@ -288,11 +288,11 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <span class="app">★ Приложение: 21 правило регламента — полный текст</span>
 </div></div>
 <div class="plabel">ЭТАПЫ УРОКА · ОТКРЫВАЮТСЯ ПО ОДНОМУ</div><div class="steps">
-<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Интервью автора</b><br>Промпт «Вопросы автору перед статьёй»: нейросеть задаёт 5–7 неочевидных вопросов по теме — по одному, ждёт ответов. Ответы и вопросы фиксируй в «Журнале автора» — они не повторяются между статьями.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Черновик по GEO-правилам</b><br>Промпт «Статья для сайта с GEO-фокусом»: прямой ответ в первом абзаце, заголовки-вопросы, определения, таблицы, FAQ, ограничения. Статистику нейросеть не придумывает — места для фактчекинга помечены.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Верни голос</b><br>Связка промптов редактора: «Очеловечивание» → «Убрать признаки ИИ» → «Чёткая точка зрения». GEO без потери стиля — так материал не станет шаблоном.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Финальная проверка</b><br>Прогони статью через «Чек-лист публикации (21 правило)» из комплекта: все блоки + фильтр «узнаваемости без названия». Незакрытые пункты правь до публикации.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Интервью автора</b><br>Промпт «Вопросы автору перед статьёй»: нейросеть задаёт 5–7 неочевидных вопросов по теме — по одному, ждёт ответов. Ответы и вопросы фиксируй в «Журнале автора» — они не повторяются между статьями.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Черновик по GEO-правилам</b><br>Промпт «Статья для сайта с GEO-фокусом»: прямой ответ в первом абзаце, заголовки-вопросы, определения, таблицы, FAQ, ограничения. Статистику нейросеть не придумывает — места для фактчекинга помечены.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Верни голос</b><br>Связка промптов редактора: «Очеловечивание» → «Убрать признаки ИИ» → «Чёткая точка зрения». GEO без потери стиля — так материал не станет шаблоном.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Финальная проверка</b><br>Прогони статью через «Чек-лист публикации (21 правило)» из комплекта: все блоки + фильтр «узнаваемости без названия». Незакрытые пункты правь до публикации.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
 </div><div class="quiz"><div class="qzhead">ПРОВЕРЬ СЕБЯ · 3 ВОПРОСА</div>
 <div class="q"><p class="qq">Что делает «Этап 0» перед написанием статьи?</p><div class="qopts">
 <button class="qopt" data-ok="0" data-g="Интервью выносит в текст экспертную фактуру, которую не вытащить из чужих статей — и это главный источник уникальности.">Покупает домен</button>
@@ -310,24 +310,24 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <button class="qopt" data-ok="0" data-g="Если текст узнаётся без имени бренда — это настоящий контекстный якорь, а не просто копирайтинг.">Фильтр спама в комментариях</button>
 </div><p class="qwhy"></p></div>
 </div>
-<div class="hw"><h2 style="font-size:15px">ДЗ к уроку 4: статья по методике</h2><ol class="hwlist">
+<div class="hw blurred"><h2 style="font-size:15px">ДЗ к уроку 4: статья по методике</h2><ol class="hwlist">
 <li>Проведи интервью автора: 5–7 вопросов, ответы — в «Журнале автора».</li>
 <li>Собери черновик промптом «Статья для сайта с GEO-фокусом» и верни голос связкой редактора.</li>
 <li>Пройди «Чек-лист публикации»: закрыть все 21 пункт, пометить незакрытые и исправить их.</li>
-</ol><textarea id="hw3" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
+</ol><textarea id="hw3" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
 <div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote3" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
-<button class="donebtn" id="dbtn3">Задание выполнено — открыть следующий урок</button></div>
+<button class="donebtn" id="dbtn3" data-i="3" disabled="">Задание выполнено — открыть следующий урок</button></div>
 <div class="wsrow"><b>Рабочие документы урока:</b> Журнал автора (вопросы и ответы), Чек-лист публикации (21 правило)</div>
 <p class="lcheck">Проверка урока: Статья опубликована. Есть «цитатник» — предложение, которое ИИ может взять дословно.</p>
 <p class="lnext">Дальше: <b>Урок 5: маршрут на месяц и повторный замер.</b></p>
 </section>
-<section class="lesson" id="lesson4">
-<div class="lhead"><span class="lnum">УРОК 5</span><span class="ltime">15–20 минут</span><span class="donemark" id="done4" hidden>ПРОЙДЕН ✓</span></div>
+<section class="lesson locked" id="lesson4">
+<div class="lhead"><span class="lnum">УРОК 5</span><span class="ltime">15–20 минут</span><span class="donemark" id="done4" hidden="">ПРОЙДЕН ✓</span></div><div class="lockover"><div class="lockcard"><div class="lockico">🔒</div><p><b>Урок 5 закрыт.</b> Открывается после покупки полного курса — 990 ₽ разово.</p><p class="locktxt">Оплати здесь (кнопка выше) или открой по коду доступа от лаборатории. Внутри: 5 этапов практики, подробная лекция-PDF, квиз «Проверь себя» и ДЗ с автосохранением. Тема урока: маршрут на месяц — ритм недели, апсейл-пункт, повторный замер и сравнение.</p></div></div>
 <h2>Маршрут на месяц</h2>
 <p class="lout">Результат урока: <b>План публикаций, площадки и дата повторного замера</b></p>
 <p class="lintro">Один вечер дал точку старта. Теперь — ритм: без него статья останется разовой попыткой, а не системой видимости.</p>
 <div class="plabel">ЛЕКЦИЯ УРОКА · ОТДЕЛЬНЫЙ ДОКУМЕНТ (PDF)</div>
-<div class="lecture"><div class="dlrow"><a class="dlbtn" href="a10-lecture-5.pdf" download>СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Маршрут: система вместо героического рывка · подробная методичка, 4+ страницы</span></div>
+<div class="lecture"><div class="dlrow"><a class="dlbtn" href="a10-lecture-5.pdf" download="">СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Маршрут: система вместо героического рывка · подробная методичка, 4+ страницы</span></div>
 <p class="llead">Курс — не тренировка, а настройка системы. После финального урока у тебя на руках замер, паспорт, банк запросов, первая статья и план месяца.</p>
 <p style="font-family:var(--font-head);font-size:11px;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px">ЧТО ВНУТРИ ЛЕКЦИИ:</p>
 <div class="toc">
@@ -337,11 +337,11 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <span><b>·</b> Терпение как стратегия</span>
 </div></div>
 <div class="plabel">ЭТАПЫ УРОКА · ОТКРЫВАЮТСЯ ПО ОДНОМУ</div><div class="steps">
-<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Спланируй месяц</b><br>Заполни «Контент-план месяца» до конца: сайт 2–3 материала в неделю, соцсети 5–7, внешние площадки 1 в неделю. Реалистично для твоих рук — не больше.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Не забудь площадки</b><br>В AI-Паспорте — список 22 площадок: «обязательно» (Яндекс Бизнес, Карты, 2ГИС, Zoon) — первая неделя; «желательно» — вторая; остальное — по силам.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Поставь дату повторного замера</b><br>Через 4–6 недель: те же запросы, те же нейросети, «Шаблон замера видимости» — вторая строка отчёта. Динамика покажет, какие материалы ИИ забрал в свой «словарь».</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
-<div class="step"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Включи сильные сниппеты</b><br>Промпт «Сниппеты для ответов на запросы»: 30 блоков 40–60 слов — самые сильные идут в карточки, посты и описания.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Спланируй месяц</b><br>Заполни «Контент-план месяца» до конца: сайт 2–3 материала в неделю, соцсети 5–7, внешние площадки 1 в неделю. Реалистично для твоих рук — не больше.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Не забудь площадки</b><br>В AI-Паспорте — список 22 площадок: «обязательно» (Яндекс Бизнес, Карты, 2ГИС, Zoon) — первая неделя; «желательно» — вторая; остальное — по силам.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Поставь дату повторного замера</b><br>Через 4–6 недель: те же запросы, те же нейросети, «Шаблон замера видимости» — вторая строка отчёта. Динамика покажет, какие материалы ИИ забрал в свой «словарь».</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step" style="display: none;"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Включи сильные сниппеты</b><br>Промпт «Сниппеты для ответов на запросы»: 30 блоков 40–60 слов — самые сильные идут в карточки, посты и описания.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden="">ВЫПОЛНЕНО ✓</span></div></div>
 </div><div class="quiz"><div class="qzhead">ПРОВЕРЬ СЕБЯ · 3 ВОПРОСА</div>
 <div class="q"><p class="qq">Когда делать повторный замер видимости?</p><div class="qopts">
 <button class="qopt" data-ok="0" data-g="Нейросети переучиваются с интервалами. Замер с датой превращает усилия в видимый тренд.">Через 1–2 дня</button>
@@ -359,18 +359,18 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <button class="qopt" data-ok="0" data-g="Выжившие маршруты всегда простые: регулярность бьёт рывки, а замеры показывают тренд, а не случайность.">Полная остановка контента до готовности</button>
 </div><p class="qwhy"></p></div>
 </div>
-<div class="hw"><h2 style="font-size:15px">ДЗ к уроку 5: план и дата</h2><ol class="hwlist">
+<div class="hw blurred"><h2 style="font-size:15px">ДЗ к уроку 5: план и дата</h2><ol class="hwlist">
 <li>Контент-план месяца заполнен полностью (темы, форматы, площадки, запросы).</li>
 <li>Из 22 площадок AI-Паспорта отмечены те, что запланированы на первые две недели.</li>
 <li>Дата повторного замера поставлена в календарь (4–6 недель от первого замера).</li>
-</ol><textarea id="hw4" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
+</ol><textarea id="hw4" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
 <div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote4" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
-<button class="donebtn" id="dbtn4">Задание выполнено — открыть следующий урок</button></div>
+<button class="donebtn" id="dbtn4" data-i="4" disabled="">Задание выполнено — открыть следующий урок</button></div>
 <div class="wsrow"><b>Рабочие документы урока:</b> Контент-план месяца, Журнал замеров (сравнение динамики)</div>
 <p class="lcheck">Проверка урока: План на месяц записан. Дата повторного замера стоит в календаре.</p>
 <p class="lnext">Дальше: <b>Через месяц — сравнение замеров. Дальше — диалог: мини-аудит или полный разбор.</b></p>
 </section>
-<section class="next final" id="finalSec"><h2>Курс пройден — что дальше</h2>
+<section class="next final blurred" id="finalSec"><h2>Курс пройден — что дальше</h2>
 <p>У тебя на руках: замер с датой, AI-Паспорт, банк запросов, первая статья и маршрут на месяц. Это больше, чем у 95% бизнесов, которые «как-нибудь разберутся с нейросетями».</p>
 <p>Повторный замер — через 4–6 недель. Запиши дату второго прогона в журнал замеров и сравни с первым: тренд важнее мгновенной картины.</p>
 <div class="plabel" style="margin-top:16px">ИНСТРУМЕНТЫ, КОТОРЫЕ ПРОДОЛЖАТ РАБОТУ</div>
@@ -528,5 +528,6 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
   loadFields(); refresh();
 })();
 </script>
-</body>
-</html>
+
+
+</body></html>
