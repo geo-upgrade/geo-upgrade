@@ -921,7 +921,7 @@ const DIGPAY={
 };
 async function dgPayFlow(p){
   const s=session();
-  if(!s||!s.sb){toast('Для покупки цифрового продукта войдите в кабинет (регистрация на защищённой базе лаборатории).');return}
+  if(!s||!s.sb){const _ls=(function(){try{return JSON.parse(localStorage.getItem('geo_lab_session')||'null')}catch(e){return null}})();toast(_ls?'Ваш вход в кабинете локальный или устаревший — ключа базы лаборатории нет, заказ не создаётся. Выйдите из кабинета и войдите по email и паролю, затем повторите покупку.':'Для покупки цифрового продукта войдите в кабинет (регистрация на защищённой базе лаборатории).');return}
   const AK='sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-';
   async function rtxt(r){try{const j=await r.json();return (j&&(j.message||j.error_description||j.msg||j.hint))||''}catch(e){return ''}}
   try{

@@ -545,10 +545,15 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
   function panel(html,border){var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;z-index:120;background:rgba(6,3,14,.78);display:flex;align-items:center;justify-content:center;padding:20px';d.innerHTML='<div style="max-width:460px;background:#16092A;border:1px solid '+border+';border-radius:16px;padding:24px;color:#F5F7FA;font-family:\'Exo 2\',sans-serif">'+html+'</div>';document.body.appendChild(d);return d}
   function relogin(){try{localStorage.removeItem('geo_lab_auth')}catch(e){};location.href='login.html?to='+TO}
   async function rtxt(r){try{var j=await r.json();return (j&&(j.message||j.error_description||j.msg||j.hint))||''}catch(e){return ''}}
+  function localSess(){try{return JSON.parse(localStorage.getItem('geo_lab_session')||'null')}catch(e){return null}}
+  function authObj(){try{return JSON.parse(localStorage.getItem('geo_lab_auth')||'null')}catch(e){return null}}
   function dlgGuest(a){
-    var d=panel('<div style="color:#00F0FF;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-family:Orbitron,sans-serif">ЦИФРОВОЙ ПРОДУКТ</div>'
+    var stale=(function(){var ao=authObj();if(ao&&!ao.token)return true;if(localSess()&&!sess())return true;return false})();
+    var d=panel('<div style="color:#00F0FF;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-family:Orbitron,sans-serif">'+(stale?'НУЖЕН ВХОД ПО EMAIL':'ЦИФРОВОЙ ПРОДУКТ')+'</div>'
       +'<h3 style="font-family:Orbitron,sans-serif;font-size:17px;margin:8px 0">'+a.name+'</h3>'
-      +'<p style="font-size:13.5px;color:#c8cbe0;margin:0 0 16px">Чтобы заказ появился в личном кабинете, а после подтверждения открылся доступ, нужен вход. Если оплатить без входа — лаборатория всё равно увидит платёж и подтвердит вручную по чеку.</p>'
+      +'<p style="font-size:13.5px;color:#c8cbe0;margin:0 0 16px">'+(stale
+        ?'У вас открыт старый локальный вход («ЛК» в шапке) — у него нет ключа базы лаборатории, поэтому заказ не создаётся. Введите email и пароль ещё раз: база выдаст ключ автоматически, и покупка сразу попадёт в кабинет и в админку. Если пароль забыли — зарегистрируйтесь заново с тем же email, база подтвердит учётную запись сама, без письма.'
+        :'Чтобы заказ появился в личном кабинете, а после подтверждения открылся доступ, нужен вход. Если оплатить без входа — лаборатория всё равно увидит платёж и подтвердит вручную по чеку.')+'</p>'
       +'<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="dg-l" href="login.html?to=digital-products" style="background:#00F0FF;color:#0D0618;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;text-decoration:none;font-weight:700">ВОЙТИ И КУПИТЬ &rarr;</a>'
       +'<a class="dg-p" href="'+a.pay+'" target="_blank" rel="noopener" style="color:#c8cbe0;border:1px solid rgba(184,188,198,.4);font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;text-decoration:none;font-weight:700">ПРОСТО ОПЛАТИТЬ &rarr;</a>'
       +'<button class="dg-c" style="color:#c8cbe0;border:1px solid rgba(184,188,198,.4);background:transparent;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;cursor:pointer;font-weight:700">ОТМЕНА</button></div>');
@@ -629,6 +634,5 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
     if(!a) return;
     dgBuy({code:a.dataset.code,name:a.dataset.name,amount:parseInt(a.dataset.amount,10)||0,pay:a.href},true);
   })();
-})();
-</script>
+})();</script>
 </body></html>
