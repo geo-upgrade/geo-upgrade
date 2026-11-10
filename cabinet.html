@@ -546,7 +546,7 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
     <div class="grid cols3" style="margin-top:18px">
       <div class="stat"><div class="k">СТАТУС</div><div class="v neon" id="st-account">—</div></div>
       <div class="stat"><div class="k">ПОКУПКИ</div><div class="v gold" id="st-orders">0</div></div>
-      <div class="stat"><div class="k">ИЗБРАННОЕ</div><div class="v neon" id="st-fav">0</div></div>
+      <div class="stat"><div class="k">ИЗБРАННОЕ</div><div class="v neon" id="st-fav">0</div></div><div class="stat"><div class="k">ЦИФРОВЫЕ</div><div class="v" id="st-digital" style="color:#A78BFA">0</div></div>
     </div>
 
     <div class="divider"></div>
@@ -611,6 +611,13 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
         <p class="big-err" id="cf-err"></p>
         <button class="btn btn-neon" type="submit">Подтвердить покупку</button>
       </form>
+    </section>
+
+    <section id="sec-digital" class="panel" style="border-color:rgba(167,139,250,.5)">
+      <p class="kicker" style="color:#A78BFA">DIGITAL · МОИ ЦИФРОВЫЕ ПРОДУКТЫ</p>
+      <h2 style="margin:8px 0 4px">Курсы и цифровые покупки</h2>
+      <p class="note" style="margin-top:6px">Доступ к курсам и материалам лаборатории. После подтверждения оплаты секция обновляется сама (каждую минуту) — страница можно не перезагружать.</p>
+      <div id="digital-box"><p class="note">Пока пусто.</p></div>
     </section>
 
     <section id="sec-fav" class="panel sec-neon">
@@ -942,6 +949,64 @@ showDash();
 /* статусы: лаборатория подтверждает оплату обновлением lab-statuses.json */
 fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{if(j){store.set('geo_lab_statuses_cache',j);try{if($('lab-dash')&&!$('lab-dash').classList.contains('hide')){renderOrders();renderCatalog()}}catch(_){}}}).catch(()=>{});
 
+</script>
+<script>
+/* GEO-Апгрейд · секция «Мои цифровые продукты» (digital_orders · Supabase) */
+(function(){
+  const $=id=>document.getElementById(id);
+  const KEY='sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-';
+  const SB='https://cpaevaypyplwcdjrfzpj.supabase.co';
+  const DIG=[
+    {code:'A10',name:'Курс «Проверь бренд в ИИ за вечер»',url:'a10-course.html',bot:false},
+    {code:'A1',name:'Чек-лист «Проверь бренд в нейросетях»',bot:true},
+    {code:'A2',name:'20 промптов для AI-видимости + бонус-гайд',bot:true},
+    {code:'A3',name:'Шаблон AI-Паспорта компании',bot:true}
+  ];
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  function badge(text,color,br){return '<span style="display:inline-block;padding:3px 10px;border-radius:999px;font-size:10.5px;font-family:Orbitron,sans-serif;letter-spacing:.08em;background:'+color+';border:1px solid '+br+';color:'+color+';font-weight:700">'+text+'</span>'}
+  function card(p,o){
+    if(o&&o.status==='confirmed'){
+      const act=p.bot
+        ?'<a class="btn btn-mute" style="margin-top:10px" href="https://t.me/geo_upgrade_labbot" target="_blank" rel="noopener">МАТЕРИАЛЫ · БОТ →</a>'
+        :'<a class="btn btn-neon" style="margin-top:10px" href="'+p.url+'">ОТКРЫТЬ КУРС →</a>';
+      return '<div style="border:1px solid rgba(110,231,160,.45);border-radius:10px;padding:12px 14px;margin-bottom:8px">'
+        +'<b>'+esc(p.name)+'</b> '+badge('✓ ДОСТУП ОТКРЫТ','rgba(52,211,153,.9)','rgba(52,211,153,.5)')
+        +'<p class="note" style="margin:8px 0 0">'+(p.bot?'Материалы выданы — повторно в письме о покупке или в боте лаборатории.':'Прогресс сохраняется в браузере и синхронизируется с приложением «ГЕО-Академия».')+'</p>'+act+'</div>';
+    }
+    if(o){
+      return '<div style="border:1px solid rgba(0,240,255,.4);border-radius:10px;padding:12px 14px;margin-bottom:8px">'
+        +'<b>'+esc(p.name)+'</b> '+badge('⏳ НА ПОДТВЕРЖДЕНИИ','rgba(251,191,36,.9)','rgba(251,191,36,.5)')
+        +'<p class="note" style="margin:8px 0 0">Оплата получена — лаборатория сверит её и откроет доступ. Обычно это несколько часов.</p></div>';
+    }
+    return '';
+  }
+  function dgSess(){try{const j=JSON.parse(localStorage.getItem('geo_lab_auth')||'null');return j&&j.token?j:null}catch(_){return null}}
+  async function renderDigital(){
+    const box=$('digital-box');if(!box)return;
+    const a=dgSess();
+    if(!a||!a.token){box.innerHTML='<p class="note">Войдите в кабинет — здесь появятся купленные цифровые продукты и доступ к курсам.</p>';const st=$('st-digital');if(st)st.textContent='0';return}
+    let q=SB+'/rest/v1/digital_orders?order=created_at.desc';
+    if(a.uid) q+='&or=(user_id.eq.'+a.uid+',email.eq.'+encodeURIComponent(String(a.email||'').toLowerCase())+')';
+    else q+='&email=eq.'+encodeURIComponent(String(a.email||'').toLowerCase());
+    try{
+      const r=await fetch(q,{headers:{apikey:KEY,Authorization:'Bearer '+a.token}});
+      const rows=await r.json().catch(()=>[]);
+      const st=$('st-digital'); if(st) st.textContent=String((rows||[]).length);
+      let html='';
+      DIG.forEach(function(p){
+        const o=(rows||[]).find(function(x){return x.product_id===p.code&&x.status!=='rejected';});
+        html+=card(p,o);
+      });
+      if(!html) html='<p class="note">Цифровых покупок пока нет. Урок 1 курса «Проверь бренд в ИИ за вечер» открыт всем бесплатно — <a href="a10-course.html" style="color:#00F0FF;text-decoration:none">начать урок 1</a>.</p>';
+      box.innerHTML=html;
+    }catch(e){box.innerHTML='<p class="note">Не удалось загрузить цифровые продукты — проверьте соединение.</p>'}
+  }
+  function dgVisible(){const d=$('lab-dash');return d&&!d.classList.contains('hide')}
+  function dgKick(){if(dgVisible())renderDigital()}
+  if(document.readyState!=='loading')dgKick();
+  else document.addEventListener('DOMContentLoaded',dgKick);
+  setInterval(dgKick,60000);
+})();
 </script>
 <script src="lab-account.js" defer></script>
 </body></html>
