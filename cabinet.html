@@ -543,6 +543,7 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
     <p class="kicker">LAB CONSOLE · ЛИЧНЫЙ ЭКРАН</p>
     <h1 style="font-size:clamp(26px,4.5vw,40px);margin:10px 0 4px" id="dash-title">Лаборатория</h1>
     <p class="note" id="dash-sub"></p>
+    <div id="sb-note" class="hide"></div>
     <div class="grid cols3" style="margin-top:18px">
       <div class="stat"><div class="k">СТАТУС</div><div class="v neon" id="st-account">—</div></div>
       <div class="stat"><div class="k">ПОКУПКИ</div><div class="v gold" id="st-orders">0</div></div>
@@ -761,7 +762,39 @@ function users(){return store.get('geo_lab_users',{})}
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 function toast(t){const d=document.createElement('div');d.className='toast';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),4200)}
 async function postLabOrder(s,svc,puid,em){try{await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders',{method:'POST',headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+s.sb.token,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({user_id:s.sb.uid,email:em,service_id:puid,service_name:svc.n,amount:svc.a,status:'Обработка',pay_uid:puid})})}catch(e){}}
-async function syncSbOrders(){try{const a=store.get('geo_lab_auth',null);if(!a||!a.token)return;const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders?user_id=eq.'+a.uid+'&order=created_at.desc',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+a.token}});if(!r.ok)return;const arr=await r.json();const L=store.get('geo_lab_orders',[]);const liveIds=new Set(arr.map(x=>x.id));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&o.id&&String(o.id).indexOf('sb')===0&&!liveIds.has(String(o.id).slice(2)))L.splice(i,1);}let upd=0;arr.forEach(x=>{const isod=(x.created_at||'').slice(0,10);const idx=L.findIndex(o=>o.sb&&o.uid===x.pay_uid&&o.isodate===isod&&(o.email||'').toLowerCase()===(x.email||'').toLowerCase());const SBMAP={'confirmed':'Подтверждён',pending:'Обработка',paid_check:'Обработка'};const st=SBMAP[x.status]||(SBMAP[x.status]===undefined&&['Обработка','Подтверждён','Выполняется','Завершён'].includes(x.status)?x.status:'Обработка');if(idx<0){L.push({id:'sb'+x.id,uid:x.pay_uid||'',name:x.service_name||'услуга',amount:x.amount||0,email:x.email||'',name2:'',note:'',date:isod?new Date(isod).toLocaleDateString('ru-RU'):'',isodate:isod,status:st,check:'',sb:1});upd++}else if(x.status&&L[idx].status!==st){L[idx].status=st;upd++}});const SK=new Set();arr.forEach(x=>SK.add((x.pay_uid||'')+'|'+(x.created_at||'').slice(0,10)+'|'+(x.email||'').toLowerCase()));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&!SK.has((o.uid||'')+'|'+(o.isodate||'')+'|'+(o.email||'').toLowerCase())){L.splice(i,1);upd++}}if(upd)store.set('geo_lab_orders',L);if(upd&&typeof renderOrders==='function')renderOrders()}catch(e){}}
+  function sbTok(){try{const a=store.get('geo_lab_auth',null);return a&&a.token?a:null}catch(_){return null}}
+  function sessionNote(){
+    const s=session();if(!s)return;
+    const el=$('sb-note');if(!el)return;
+    if(s.sb&&s.sb.token){el.classList.add('hide');el.innerHTML='';return}
+    el.classList.remove('hide');
+    el.style.cssText='margin:12px 0;padding:12px 16px;border:1px solid rgba(255,214,102,.5);border-radius:12px;background:rgba(255,214,102,.08);font-size:13.5px;line-height:1.5';
+    el.innerHTML='<b style="color:#FFD66E">Внимание: вы под старой локальной сессией.</b> Анкета, заявки и избранные сейчас НЕ попадают в базу — их не видно в админке лаборатории. Выйдите и войдите заново под email '+s.email+', тогда всё синхронизируется (старые призраки-заказы тоже уберутся). <a href="#" id="sb-note-out" style="color:#FFD66E;font-weight:700">Выйти сейчас</a>';
+    const out=el.querySelector('#sb-note-out');
+    if(out)out.onclick=function(e){e.preventDefault();localStorage.removeItem('geo_lab_auth');localStorage.removeItem('geo_lab_session');location.href='cabinet.html'};
+  }
+  async function rescueProfile(){
+    const a=sbTok();if(!a)return;
+    const p=store.get('geo_lab_profile',null);
+    if(!p||!p.done||!p.brand)return;
+    try{
+      const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_profiles?id=eq.'+a.uid,{headers:{apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+a.token}});
+      if(!r.ok)return;
+      const arr=await r.json();
+      if(arr.length&&arr[0].brand)return;
+      const st=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_profiles?on_conflict=id',{method:'POST',headers:{apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+a.token,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},body:JSON.stringify({id:a.uid,email:a.email,brand:p.brand,city:p.city,sphere:p.sphere,site:p.site,q1:p.q1,q2:p.q2,q3:p.q3,ch:p.ch,goal:p.goal,tried:p.tried,note:p.note,updated_at:new Date().toISOString()})});
+      if(st.ok)toast('Анкета из вашего браузера перенесена в базу — теперь видна в админке.');
+    }catch(e){}
+  }
+  async function syncProfile(p){
+    const s=session();
+    if(!(s&&s.sb&&s.sb.token)){sessionNote();return}
+    try{
+      const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_profiles?on_conflict=id',{method:'POST',headers:{apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+s.sb.token,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},body:JSON.stringify({id:s.sb.uid,email:s.email,brand:p.brand,city:p.city,sphere:p.sphere,site:p.site,q1:p.q1,q2:p.q2,q3:p.q3,ch:p.ch,goal:p.goal,tried:p.tried,note:p.note,updated_at:new Date().toISOString()})});
+      if(!r.ok){const t=await r.text();toast('Анкета НЕ сохранена в базу (код '+r.status+'). Текст для Алисы: '+String(t).slice(0,140))}
+    }catch(e){toast('Анкета не дошла до базы: '+e.message)}
+  }
+  async function syncSbOrders(){try{const a=store.get('geo_lab_auth',null);if(!a||!a.token)return;const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders?user_id=eq.'+a.uid+'&order=created_at.desc',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+a.token}});if(!r.ok)return;const arr=await r.json();const L=store.get('geo_lab_orders',[]);const liveIds=new Set(arr.map(x=>x.id));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&o.id&&String(o.id).indexOf('sb')===0&&!liveIds.has(String(o.id).slice(2)))L.splice(i,1);}let upd=0;arr.forEach(x=>{const isod=(x.created_at||'').slice(0,10);const idx=L.findIndex(o=>o.sb&&o.uid===x.pay_uid&&o.isodate===isod&&(o.email||'').toLowerCase()===(x.email||'').toLowerCase());const SBMAP={'confirmed':'Подтверждён',pending:'Обработка',paid_check:'Обработка'};const st=SBMAP[x.status]||(SBMAP[x.status]===undefined&&['Обработка','Подтверждён','Выполняется','Завершён'].includes(x.status)?x.status:'Обработка');if(idx<0){L.push({id:'sb'+x.id,uid:x.pay_uid||'',name:x.service_name||'услуга',amount:x.amount||0,email:x.email||'',name2:'',note:'',date:isod?new Date(isod).toLocaleDateString('ru-RU'):'',isodate:isod,status:st,check:'',sb:1});upd++}else if(x.status&&L[idx].status!==st){L[idx].status=st;upd++}});const SK=new Set();arr.forEach(x=>SK.add((x.pay_uid||'')+'|'+(x.created_at||'').slice(0,10)+'|'+(x.email||'').toLowerCase()));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&!SK.has((o.uid||'')+'|'+(o.isodate||'')+'|'+(o.email||'').toLowerCase())){L.splice(i,1);upd++}}for(let i=L.length-1;i>=0;i--){const o2=L[i];if(!o2.sb){L.splice(i,1);upd++}}if(upd)store.set('geo_lab_orders',L);if(upd&&typeof renderOrders==='function')renderOrders()}catch(e){}}
 async function postLab(subject,text){try{const s=session()||{email:'—'};const fd=new FormData();fd.set('name',subject);fd.set('email',s.email||'—');fd.set('message',text);fd.set('source','Личный кабинет / сайт');fd.set('page',location.pathname.split('/').pop()||'cabinet.html');await fetch('https://geo-upgrade-inbox.dafna-acid.workers.dev/lead?secret=gu_-8LBI_jtmp8EF4vLHt2Xx1I3A6YZ_7Az',{method:'POST',body:fd,keepalive:true})}catch(e){}try{fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({subject:subject,text:text,from:'cabinet@geo-upgrade.ru'}),keepalive:true})}catch(e){}return true}
 function fmt(n){return n>0?n.toLocaleString('ru-RU')+' ₽':'цена по договорённости'}
 function orders(){return store.get('geo_lab_orders',[])}
@@ -777,7 +810,7 @@ function showDash(){
   $('dash-title').textContent='Лаборатория '+ (s.name||'клиента');
   $('dash-sub').textContent='Вы вошли как '+s.email+' · данные хранятся'+(s.sb?' в защищённой базе лаборатории':' в вашем браузере');
   $('st-account').textContent='онлайн';
-  renderOrders();renderCatalog();renderFav();fillProfile();renderReports();syncSbOrders();
+  renderOrders();renderCatalog();renderFav();fillProfile();renderReports();syncSbOrders();rescueProfile();sessionNote();
   const q=new URLSearchParams(location.search);
   if(q.get('pay')){const du=DIGPAY[q.get('pay')];if(du){dgPayFlow(du)}else{openPay(q.get('pay'))}}
 }
@@ -902,7 +935,7 @@ $('f-profile').addEventListener('submit',e=>{
     ch:[...document.querySelectorAll('#f-profile input[type=checkbox]:checked')].map(x=>x.value),
     goal:$('pf-goal').value,tried:$('pf-tried').value.trim(),note:$('pf-note').value.trim(),upd:new Date().toLocaleString('ru-RU')};
   store.set('geo_lab_profile',p);
-  if(s.sb&&s.sb.token){try{fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_profiles?on_conflict=id',{method:'POST',headers:{apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+s.sb.token,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},body:JSON.stringify({id:s.sb.uid,email:s.email,brand:p.brand,city:p.city,sphere:p.sphere,site:p.site,q1:p.q1,q2:p.q2,q3:p.q3,ch:p.ch,goal:p.goal,tried:p.tried,note:p.note,updated_at:new Date().toISOString()})}).catch(function(){})}catch(e){}}
+  syncProfile(p);
   postLab('[Кабинет] АНКЕТА — '+(s.name||'')+' — '+s.email,
    'Анкета клиента из личной лаборатории.\nИмя/бренд: '+p.brand+'\nРегион: '+p.city+'\nСфера: '+p.sphere+'\nСайт: '+p.site+
    '\nЗапросы: '+[p.q1,p.q2,p.q3].filter(Boolean).join(' | ')+'\nСистемы: '+p.ch.join(', ')+'\nЦель: '+p.goal+'\nПробовал: '+p.tried+'\nКомментарий: '+p.note+
