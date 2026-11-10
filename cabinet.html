@@ -680,7 +680,7 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
     <section id="sec-catalog" class="panel sec-gold">
         <p class="kicker">ORDER DESK · КАТАЛОГ УСЛУГ</p>
         <h2 style="margin:8px 0 4px">Выберите услугу — заявка и оплата здесь же</h2>
-        <p class="note">Кнопка «Оплатить» открывает заявку с вашими данными: она уйдёт в лабораторию и откроется оплата в Точке. Оплаченное помечается «ОПЛАЧЕНО» и остаётся в кабинете навсегда.</p>
+        <p class="note">Кнопка «Оплатить» открывает заявку с вашими данными: она уйдёт в лабораторию и откроется оплата в Точке. Оплаченное помечается «ОПЛАЧЕНО» и остаётся в кабинете навсегда. Цифровые продукты (курс, чек-лист, промпты, AI-Паспорт) — в конце каталога.</p>
         <div id="catalog-box"></div>
     </section>
 
@@ -748,28 +748,28 @@ document.addEventListener('DOMContentLoaded',function(){
 <div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div><script>
 /* ===== lab-account.js ядро (инлайн для cabinet.html) ===== */
 const LAB_SERVICES = {
- 'a3d554e5-f2ff-4b4e-b34a-dafcf14b4356':{n:'GEO-сканер Лайт',a:10000,l:'https://tochkaplace.com/ia/a3d554e5-f2ff-4b4e-b34a-dafcf14b4356',p:'geo-scanner-lite.html'},
- 'c1a2c754-db6b-43c1-beff-597bc5e24bc6':{n:'GEO-сканер Полный — базовый',a:15000,l:'https://tochkaplace.com/ia/c1a2c754-db6b-43c1-beff-597bc5e24bc6',p:'geo-scanner-full.html'},
- 'd70420cc-931f-4a87-a6ea-b1d949d91cd9':{n:'GEO-сканер Полный — расширенный',a:18000,l:'https://tochkaplace.com/ia/d70420cc-931f-4a87-a6ea-b1d949d91cd9',p:'geo-scanner-full.html'},
- '94eafa1f-e876-48aa-b3ec-351590dd44a7':{n:'GEO-лаборатория Лайт',a:15000,l:'https://tochkaplace.com/ia/94eafa1f-e876-48aa-b3ec-351590dd44a7',p:'content-lab.html'},
- 'a2d467d7-769e-44e9-99ab-b0419fb7eb90':{n:'GEO-лаборатория Полная',a:25000,l:'https://tochkaplace.com/ia/a2d467d7-769e-44e9-99ab-b0419fb7eb90',p:'content-lab.html'},
- '3e166060-634c-4649-b82f-a857225f5c65':{n:'GEO-маршрут',a:22000,l:'https://tochkaplace.com/ia/3e166060-634c-4649-b82f-a857225f5c65',p:'geo-route.html'},
- 'd3aa7d9a-b536-469b-b7d5-0a7e46f3da95':{n:'GEO-тест-драйв',a:45000,l:'https://tochkaplace.com/ia/d3aa7d9a-b536-469b-b7d5-0a7e46f3da95',p:'geo-test-drive.html'},
- 'f278bd15-e4d1-4ea6-b917-788f1303bd88':{n:'GEO-штурвал — стандарт',a:65000,l:'https://tochkaplace.com/ia/f278bd15-e4d1-4ea6-b917-788f1303bd88',p:'geo-shturval.html'},
- 'c29f38f8-d69d-4962-8469-fa4a7c37b4bd':{n:'GEO-штурвал — расширенный',a:80000,l:'https://tochkaplace.com/ia/c29f38f8-d69d-4962-8469-fa4a7c37b4bd',p:'geo-shturval.html'},
- '4be969e7-1b46-459c-a836-cad98855ed07':{n:'Промпт-компас',a:10000,l:'https://tochkaplace.com/ia/4be969e7-1b46-459c-a836-cad98855ed07',p:'prompt-compass.html'},
- '67888f26-4dcd-478d-954b-d79bd738d407':{n:'Промпт-карта бренда',a:20000,l:'https://tochkaplace.com/ia/67888f26-4dcd-478d-954b-d79bd738d407',p:'prompt-map.html'},
- 'da2f1197-194b-4ba9-bcde-d5a6619267b2':{n:'AI-экспедиция Лайт',a:6000,l:'https://tochkaplace.com/ia/da2f1197-194b-4ba9-bcde-d5a6619267b2',p:'expedition-lite.html'},
- '907ebde7-b765-4b99-b977-11dcce78ca5b':{n:'AI-экспедиция Полная',a:15000,l:'https://tochkaplace.com/ia/907ebde7-b765-4b99-b977-11dcce78ca5b',p:'expedition-full.html'},
- '743611db-c37e-4f0a-bbd1-835d48209e51':{n:'Навигатор отзывов',a:9000,l:'https://tochkaplace.com/ia/743611db-c37e-4f0a-bbd1-835d48209e51',p:'navigator-reviews.html'},
- 'f21f6d66-72a6-4154-bb1a-bde7f246a66f':{n:'GEO-Зеркало',a:2500,l:'https://tochkaplace.com/ia/f21f6d66-72a6-4154-bb1a-bde7f246a66f',p:'mini-products.html#geo-mirror'},
- '3212b98b-5246-4ab8-9ca5-92eebe5db3be':{n:'GEO-Детектор конкурента',a:3000,l:'https://tochkaplace.com/ia/3212b98b-5246-4ab8-9ca5-92eebe5db3be',p:'mini-products.html#geo-detector'},
- 'a95d9286-5649-47b9-8d17-d21f64edccbc':{n:'AI-Паспорт компании',a:3500,l:'https://tochkaplace.com/ia/a95d9286-5649-47b9-8d17-d21f64edccbc',p:'mini-products.html#ai-passport'},
- '4302aab9-a9ac-4e11-8b06-17b07c99ea67':{n:'GEO-Техблок',a:5000,l:'https://tochkaplace.com/ia/4302aab9-a9ac-4e11-8b06-17b07c99ea67',p:'mini-products.html#geo-techblock'},
- '47467f79-e966-45c1-a97e-31b74fdf993c':{n:'GEO-Статья (шт)',a:3000,l:'https://tochkaplace.com/ia/47467f79-e966-45c1-a97e-31b74fdf993c',p:'mini-products.html#geo-article'},
- '824eae12-16be-4393-b787-1681943d1f17':{n:'Опция: доп. категория запросов (к Сканеру)',a:1000,l:'https://tochkaplace.com/ia/824eae12-16be-4393-b787-1681943d1f17',p:'geo-scanner-full.html'},
- '030238cb-1d0d-412a-9fae-c4b9a221b4e1':{n:'Опция: доп. сессия Штурвала',a:5000,l:'https://tochkaplace.com/ia/030238cb-1d0d-412a-9fae-c4b9a221b4e1',p:'geo-shturval.html'},
- 'd0216a47-0da7-4500-9f96-b207d7105c34':{n:'Индивидуальная задача (цену ставит покупатель)',a:0,l:'https://tochkaplace.com/ia/d0216a47-0da7-4500-9f96-b207d7105c34',p:'contacts.html'}
+ 'a3d554e5-f2ff-4b4e-b34a-dafcf14b4356':{n:'GEO-сканер Лайт',a:10000,l:'https://tochkaplace.com/ia/a3d554e5-f2ff-4b4e-b34a-dafcf14b4356',p:'geo-scanner-lite.html',d:'Стартовая диагностика AI-видимости: 45 прогонов — 15 запросов × 3 нейросети. Где бренд виден, где неточен и где обходят конкуренты. 5–7 дней.'},
+ 'c1a2c754-db6b-43c1-beff-597bc5e24bc6':{n:'GEO-сканер Полный — базовый',a:15000,l:'https://tochkaplace.com/ia/c1a2c754-db6b-43c1-beff-597bc5e24bc6',p:'geo-scanner-full.html',d:'Расширенное исследование: 80 прогонов — 20 запросов × 4 нейросети, конкуренты и источники. Приоритеты по страницам и темам. 7–10 дней.'},
+ 'd70420cc-931f-4a87-a6ea-b1d949d91cd9':{n:'GEO-сканер Полный — расширенный',a:18000,l:'https://tochkaplace.com/ia/d70420cc-931f-4a87-a6ea-b1d949d91cd9',p:'geo-scanner-full.html',d:'Всё из базового на объёме 100 прогонов — 25 запросов × 4 нейросети: глубже конкурентное поле и больше направлений.'},
+ '94eafa1f-e876-48aa-b3ec-351590dd44a7':{n:'GEO-лаборатория Лайт',a:15000,l:'https://tochkaplace.com/ia/94eafa1f-e876-48aa-b3ec-351590dd44a7',p:'content-lab.html',d:'Аудит контента + пакет из 5 статей: точность, структура и доказательность — для людей и нейросетей. 7–12 дней.'},
+ 'a2d467d7-769e-44e9-99ab-b0419fb7eb90':{n:'GEO-лаборатория Полная',a:25000,l:'https://tochkaplace.com/ia/a2d467d7-769e-44e9-99ab-b0419fb7eb90',p:'content-lab.html',d:'Аудит контента + пакет из 10 статей с проверкой фактов: каждый материал связывает ИИ бренд с нужной задачей.'},
+ '3e166060-634c-4649-b82f-a857225f5c65':{n:'GEO-маршрут',a:22000,l:'https://tochkaplace.com/ia/3e166060-634c-4649-b82f-a857225f5c65',p:'geo-route.html',d:'Стратегия AI-видимости на 3–6 месяцев: полный сканер, аудит контента и дорожная карта с приоритетами и точками контроля. 7–12 дней.'},
+ 'd3aa7d9a-b536-469b-b7d5-0a7e46f3da95':{n:'GEO-тест-драйв',a:45000,l:'https://tochkaplace.com/ia/d3aa7d9a-b536-469b-b7d5-0a7e46f3da95',p:'geo-test-drive.html',d:'Пилот с внедрением: сканер → контент → маршрут → внедрение → повторный замер. 4–6 недель, сопровождение до 1,5 месяца.'},
+ 'f278bd15-e4d1-4ea6-b917-788f1303bd88':{n:'GEO-штурвал — стандарт',a:65000,l:'https://tochkaplace.com/ia/f278bd15-e4d1-4ea6-b917-788f1303bd88',p:'geo-shturval.html',d:'Полный аудит AI-видимости с передачей методики: аватары, аудит ответов ИИ, метрики, стратегия, внедрение. 3–5 недель.'},
+ 'c29f38f8-d69d-4962-8469-fa4a7c37b4bd':{n:'GEO-штурвал — расширенный',a:80000,l:'https://tochkaplace.com/ia/c29f38f8-d69d-4962-8469-fa4a7c37b4bd',p:'geo-shturval.html',d:'Всё из стандартного плюс промпт-библиотека и инструменты — после передачи ведёте бренд сами. 3–5 недель.'},
+ '4be969e7-1b46-459c-a836-cad98855ed07':{n:'Промпт-компас',a:10000,l:'https://tochkaplace.com/ia/4be969e7-1b46-459c-a836-cad98855ed07',p:'prompt-compass.html',d:'30 промптов под одну задачу или нишу, каждый протестирован в 2–3 нейросетях. Брифинг и корректировочная сессия. 5–7 дней.'},
+ '67888f26-4dcd-478d-954b-d79bd738d407':{n:'Промпт-карта бренда',a:20000,l:'https://tochkaplace.com/ia/67888f26-4dcd-478d-954b-d79bd738d407',p:'prompt-map.html',d:'60 промптов по направлениям бренда: контент, продажи, сервис, аналитика. Три сессии с навигатором. 7–10 дней.'},
+ 'da2f1197-194b-4ba9-bcde-d5a6619267b2':{n:'AI-экспедиция Лайт',a:6000,l:'https://tochkaplace.com/ia/da2f1197-194b-4ba9-bcde-d5a6619267b2',p:'expedition-lite.html',d:'Разовая консультация по внедрению ИИ: час созвона, 3–5 конкретных сценариев и список доступных в РФ инструментов. 1–2 дня.'},
+ '907ebde7-b765-4b99-b977-11dcce78ca5b':{n:'AI-экспедиция Полная',a:15000,l:'https://tochkaplace.com/ia/907ebde7-b765-4b99-b977-11dcce78ca5b',p:'expedition-full.html',d:'План внедрения ИИ на 1–3 месяца: две сессии и письменный план с этапами, инструментами и ответственными. 3–5 дней.'},
+ '743611db-c37e-4f0a-bbd1-835d48209e51':{n:'Навигатор отзывов',a:9000,l:'https://tochkaplace.com/ia/743611db-c37e-4f0a-bbd1-835d48209e51',p:'navigator-reviews.html',d:'30 промптов для отзывов: тональность, ответы в голосе бренда, частые проблемы. Ozon, Wildberries, сайт, соцсети. 5–7 дней.'},
+ 'f21f6d66-72a6-4154-bb1a-bde7f246a66f':{n:'GEO-Зеркало',a:2500,l:'https://tochkaplace.com/ia/f21f6d66-72a6-4154-bb1a-bde7f246a66f',p:'mini-products.html#geo-mirror',d:'Снапшот AI-видимости: 10–15 запросов в одной AI-системе, 3 зоны слепоты, отчёт DOCX. 24 часа, засчитывается в Сканер.'},
+ '3212b98b-5246-4ab8-9ca5-92eebe5db3be':{n:'GEO-Детектор конкурента',a:3000,l:'https://tochkaplace.com/ia/3212b98b-5246-4ab8-9ca5-92eebe5db3be',p:'mini-products.html#geo-detector',d:'Кого ИИ называют вместо вас: 10 запросов, три карточки конкурентов и план контрдействий из 3–5 шагов. 48 часов.'},
+ 'a95d9286-5649-47b9-8d17-d21f64edccbc':{n:'AI-Паспорт компании',a:3500,l:'https://tochkaplace.com/ia/a95d9286-5649-47b9-8d17-d21f64edccbc',p:'mini-products.html#ai-passport',d:'Факт-файл, который ИИ может цитировать честно: анкета из 9 блоков, только ваши подтверждённые факты. 48 часов с контрольным замером.'},
+ '4302aab9-a9ac-4e11-8b06-17b07c99ea67':{n:'GEO-Техблок',a:5000,l:'https://tochkaplace.com/ia/4302aab9-a9ac-4e11-8b06-17b07c99ea67',p:'mini-products.html#geo-techblock',d:'Техника видимости: llms.txt, Schema.org, canonical, OG-теги — внедряем сами, чек-лист отдаём вашему специалисту. 48 часов.'},
+ '47467f79-e966-45c1-a97e-31b74fdf993c':{n:'GEO-Статья (шт)',a:3000,l:'https://tochkaplace.com/ia/47467f79-e966-45c1-a97e-31b74fdf993c',p:'mini-products.html#geo-article',d:'Одна статья по методике лаборатории: прямой ответ в начале, мета-теги и Schema.org, факт-проверка. Любой объём.'},
+ '824eae12-16be-4393-b787-1681943d1f17':{n:'Опция: доп. категория запросов (к Сканеру)',a:1000,l:'https://tochkaplace.com/ia/824eae12-16be-4393-b787-1681943d1f17',p:'geo-scanner-full.html',d:'Расширение Сканера: ещё одна категория запросов в замере.'},
+ '030238cb-1d0d-412a-9fae-c4b9a221b4e1':{n:'Опция: доп. сессия Штурвала',a:5000,l:'https://tochkaplace.com/ia/030238cb-1d0d-412a-9fae-c4b9a221b4e1',p:'geo-shturval.html',d:'Дополнительная сессия с командой лаборатории.'},
+ 'd0216a47-0da7-4500-9f96-b207d7105c34':{n:'Индивидуальная задача (цену ставит покупатель)',a:0,l:'https://tochkaplace.com/ia/d0216a47-0da7-4500-9f96-b207d7105c34',p:'contacts.html',d:'Нестандартная задача? Опишите её — согласуем объём и цену лично.'}
 };
 const FORMSPREE='https://formspree.io/f/mljdyaqo';
 const $=id=>document.getElementById(id);
@@ -932,9 +932,9 @@ function renderCatalog(){
   box.innerHTML='';
   Object.keys(LAB_SERVICES).forEach(uid=>{
     const svc=LAB_SERVICES[uid];
-    const done=conf.has(uid+'|'+(s.email||'').toLowerCase())||orders().some(o=>o.uid===uid&&(o.email||'').toLowerCase()===(s.email||'').toLowerCase()&&['Подтверждён','Подтверждено','Выполняется','Завершён'].includes(o.status));
+    const done=conf.has(uid+'|'+(s.email||'').toLowerCase())||orders().some(o=>o.uid===uid&&(o.email||'').toLowerCase()===(s.email||'').toLowerCase()&&['Подтверждён','Подтверждено','Выполняется','Готово','Завершён'].includes(o.status));
     const d=document.createElement('div');d.className='catalog-item';
-    d.innerHTML='<div style="min-width:170px;flex:1"><b>'+svc.n+'</b><br><span class="note">'+fmt(svc.a)+'</span></div>';
+    d.innerHTML='<div style="min-width:170px;flex:1"><b>'+svc.n+'</b>'+(svc.d?'<div class="note" style="margin:3px 0 2px">'+svc.d+'</div>':'')+'<div class="note" style="color:#FFD66E">'+fmt(svc.a)+'</div></div>';
     const st=document.createElement('span');st.className='status '+(done?'st-ok':'st-wait');
     st.textContent=done?'ОПЛАЧЕНО':'НА ПРОВЕРКЕ';
     st.style.cssText='font-size:11px;letter-spacing:.08em;white-space:nowrap';
@@ -943,6 +943,38 @@ function renderCatalog(){
     if(!done){const b=document.createElement('button');b.className='btn btn-gold';b.textContent='Оплатить';b.style.cssText='padding:9px 16px;font-size:12px';b.onclick=()=>openPay(uid);d.appendChild(b)}
     box.appendChild(d);
   });
+  const h2=document.createElement('div');h2.style.cssText='margin:18px 0 6px;font-family:Orbitron,sans-serif;font-size:13px;letter-spacing:.12em;color:#9D7BFF';
+  h2.textContent='◆ ЦИФРОВЫЕ ПРОДУКТЫ · КАТАЛОГ';box.appendChild(h2);
+  const sub=document.createElement('p');sub.className='note';sub.textContent='Без заявки и ожидания: платите по ссылке — доступ открывается после подтверждения лаборатории. Материалы чек-листа и промптов приходят в боте лаборатории.';box.appendChild(sub);
+  fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/digital_orders?select=product_id,status,email,user_id',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-'}})
+    .then(r=>r.ok?r.json():[]).catch(()=>[]).then(rows=>{
+      const em=(s&&s.email||'').toLowerCase();
+      const uidMy=(s&&s.sb&&s.sb.uid)||'';
+      const my=(rows||[]).filter(x=>(em&&String(x.email||'').toLowerCase()===em)||(uidMy&&x.user_id===uidMy));
+      Object.keys(DIGPAY).forEach(puid=>{
+        const p=DIGPAY[puid];
+        const o=my.find(x=>x.product_id===p.code);
+        const done=!!(o&&o.status==='confirmed');
+        const pend=!!(o&&!done);
+        const d=document.createElement('div');d.className='catalog-item';
+        d.innerHTML='<div style="min-width:170px;flex:1"><b>'+p.name+'</b>'+(p.d?'<div class="note" style="margin:3px 0 2px">'+p.d+'</div>':'')+'<div class="note" style="color:#FFD66E">'+fmt(p.amount)+'</div></div>';
+        const st=document.createElement('span');st.className='status '+(done?'st-ok':'st-wait');
+        st.textContent=done?'КУПЛЕНО':'НА ПРОВЕРКЕ';
+        st.style.cssText='font-size:11px;letter-spacing:.08em;white-space:nowrap';
+        if(!done&&!pend)st.style.display='none';
+        d.appendChild(st);
+        if(p.code==='A10'){
+          const l=document.createElement('a');l.className='btn btn-mute';l.href='a10-course.html';
+          l.textContent=done?'Открыть курс':'Урок 1 бесплатно';
+          l.style.cssText='padding:9px 16px;font-size:12px';d.appendChild(l);
+        }
+        if(!done){
+          const bb=document.createElement('button');bb.className='btn btn-gold';bb.textContent='Купить';
+          bb.style.cssText='padding:9px 16px;font-size:12px';bb.onclick=()=>dgPayFlow(puid);d.appendChild(bb);
+        }
+        box.appendChild(d);
+      });
+    });
 }
 async function renderReports(){
   const s=session();const box=$('reports-box');if(!box||!s)return;
@@ -1026,10 +1058,10 @@ $('btn-logout').onclick=()=>{localStorage.removeItem('geo_lab_auth');localStorag
 
 /* GEO-Апгрейд · цифровые продукты по ссылкам ?pay= v2: заказ идёт в digital_orders; понятные ошибки (сессия/RLS/сеть) */
 const DIGPAY={
- '53aa63f7-6e05-4612-ae93-12c6d4c8f9c5':{code:'A10',name:'Курс «Проверь бренд в ИИ за вечер»',amount:990,pay:'https://tochkaplace.com/ia/53aa63f7-6e05-4612-ae93-12c6d4c8f9c5'},
- '6f99084c-1173-4047-85ac-e63803b1b195':{code:'A1',name:'Чек-лист «Проверь бренд в нейросетях»',amount:190,pay:'https://tochkaplace.com/ia/6f99084c-1173-4047-85ac-e63803b1b195'},
- 'e19621e4-54bb-477e-862d-1439faa2d6d9':{code:'A2',name:'20 промптов для AI-видимости + бонус-гайд',amount:150,pay:'https://tochkaplace.com/ia/e19621e4-54bb-477e-862d-1439faa2d6d9'},
- '140c3c8a-e6c8-40e3-961f-33eece49c47f':{code:'A3',name:'Шаблон AI-Паспорта компании',amount:490,pay:'https://tochkaplace.com/ia/140c3c8a-e6c8-40e3-961f-33eece49c47f'}
+ '53aa63f7-6e05-4612-ae93-12c6d4c8f9c5':{code:'A10',name:'Курс «Проверь бренд в ИИ за вечер»',amount:990,pay:'https://tochkaplace.com/ia/53aa63f7-6e05-4612-ae93-12c6d4c8f9c5',d:'5 уроков с ДЗ и рабочими документами: замер → факт-база → запросы с редкими словами → первая статья за час → маршрут на месяц. Урок 1 — бесплатно.'},
+ '6f99084c-1173-4047-85ac-e63803b1b195':{code:'A1',name:'Чек-лист «Проверь бренд в нейросетях»',amount:190,pay:'https://tochkaplace.com/ia/6f99084c-1173-4047-85ac-e63803b1b195',d:'50 пунктов проверки: что нейросеть знает о вашем бренде, чего не знает и как это исправить. С примерами «зачем» и «как».'},
+ 'e19621e4-54bb-477e-862d-1439faa2d6d9':{code:'A2',name:'20 промптов для AI-видимости + бонус-гайд',amount:150,pay:'https://tochkaplace.com/ia/e19621e4-54bb-477e-862d-1439faa2d6d9',d:'Рабочие промпты лаборатории: аудит видимости, контент-стратегия, оценка ответов ИИ. Бонус — гайд «Как писать статьи с помощью ИИ».'},
+ '140c3c8a-e6c8-40e3-961f-33eece49c47f':{code:'A3',name:'Шаблон AI-Паспорта компании',amount:490,pay:'https://tochkaplace.com/ia/140c3c8a-e6c8-40e3-961f-33eece49c47f',d:'Интерактивный шаблон: 26 полей в 5 блоках, формула позиционирования, 22 площадки с приоритетами публикации, 10 чек-пунктов.'}
 };
 async function dgPayFlow(p){
   const s=session();
