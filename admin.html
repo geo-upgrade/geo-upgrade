@@ -354,8 +354,7 @@ $('ord-filter').onchange=renderOrders;
 $('rp-add').onclick=addReport;
 (function init(){const s=loadS();if(s&&s.token){TOKEN=s.token;UID=s.uid;EMAIL=s.email;start()}})();
 </script>
-
-/* GEO-Апгрейд · fix: magic-link/recovery подхват + авто-refresh сессии */
+<script>/* GEO-Апгрейд · fix: magic-link/recovery подхват + авто-refresh сессии */
 (function(){
   function ssave(j,email){try{localStorage.setItem('geo_lab_admin_auth',JSON.stringify({token:j.access_token,refresh:j.refresh_token,uid:(j.user||{}).id,email:email,at:Date.now()}))}catch(_){}}
   function fromHash(){
@@ -386,5 +385,6 @@ $('rp-add').onclick=addReport;
     setInterval(refreshLoop,15*60*1000);
   }
 })();
+</script>
 </body>
 </html>
