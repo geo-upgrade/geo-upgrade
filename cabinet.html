@@ -553,6 +553,7 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
     <button type="button" class="cabtab" data-k="catalog">КАТАЛОГ</button>
     <button type="button" class="cabtab" data-k="reports">ОТЧЁТЫ</button>
     <button type="button" class="cabtab" data-k="fav">ИЗБРАННОЕ</button>
+    <button type="button" class="cabtab" data-k="chat">LABCHAT</button>
     <button type="button" class="cabtab" data-k="dash">ОБЗОР</button>
   </div>
   <div id="lab-dash" class="hide">
@@ -682,6 +683,19 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
         <h2 style="margin:8px 0 4px">Выберите услугу — заявка и оплата здесь же</h2>
         <p class="note">Кнопка «Оплатить» открывает заявку с вашими данными: она уйдёт в лабораторию и откроется оплата в Точке. Оплаченное помечается «ОПЛАЧЕНО» и остаётся в кабинете навсегда. Цифровые продукты (курс, чек-лист, промпты, AI-Паспорт) — в конце каталога.</p>
         <div id="catalog-box"></div>
+
+    <section id="sec-chat" class="panel sec-neon">
+        <p class="kicker">LABCHAT · ПРЯМАЯ СВЯЗЬ С ЛАБОРАТОРИЕЙ</p>
+        <h2 style="margin:8px 0 4px">Чат с лабораторией</h2>
+        <p class="note">Вопросы, сроки, материалы — пишите здесь. Отвечаем в рабочее время, обычно в тот же день. Кнопка «Обновить» подтягивает ответы лаборатории; новые ответы также подтягиваются сами.</p>
+        <div id="chat-box" style="max-height:420px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;margin:12px 0"><p class="note">Загрузка…</p></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
+          <textarea id="chat-input" rows="2" placeholder="Ваше сообщение лаборатории…" style="flex:1;min-width:220px;background:rgba(255,255,255,.04);border:1px solid rgba(0,240,255,.25);border-radius:12px;color:#fff;padding:10px 14px;font:inherit;resize:vertical"></textarea>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <button class="btn btn-neon" type="button" id="chat-send">ОТПРАВИТЬ</button>
+            <button class="btn btn-mute" type="button" id="chat-refresh">ОБНОВИТЬ ↻</button>
+          </div>
+        </div>
     </section>
 
     <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
@@ -1205,7 +1219,8 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
     ['digital','ЦИФРОВЫЕ','sec-digital'],
     ['catalog','КАТАЛОГ','sec-catalog'],
     ['reports','ОТЧЁТЫ','sec-reports'],
-    ['fav','ИЗБРАННОЕ','sec-fav']
+    ['fav','ИЗБРАННОЕ','sec-fav'],
+    ['chat','LABCHAT','sec-chat']
   ];
   function show(k,noScroll){
     var isDash=(k==='dash');
@@ -1239,4 +1254,76 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
   else init();
 })();
 </script>
-</body></html>
+
+<script>
+(function(){
+  'use strict';
+  /* LabChat: клиент ↔ лаборатория. Таблица lab_chat, RLS: своё + админы. */
+  const SB='https://cpaevaypyplwcdjrfzpj.supabase.co';
+  const KEY='sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-';
+  const $=function(id){return document.getElementById(id)};
+  function sess(){try{const j=JSON.parse(localStorage.getItem('geo_lab_auth')||'null');return j&&j.token?j:null}catch(_){return null}}
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function hhmm(ts){try{return String(ts).slice(11,16)}catch(_){return ''}}
+  let rows=[],curEmail='',curUid='';
+  async function load(){
+    const a=sess(),box=$('chat-box');if(!box)return;
+    if(!a||!a.token){box.innerHTML='<p class="note">Войдите в кабинет — чат откроется здесь.</p>';return}
+    curEmail=String(a.email||'').toLowerCase();curUid=a.uid||'';
+    let q=SB+'/rest/v1/lab_chat?order=created_at.desc&limit=200';
+    if(curUid)q+='&or=(user_id.eq.'+curUid+',email.eq.'+encodeURIComponent(curEmail)+')';
+    else q+='&email=eq.'+encodeURIComponent(curEmail);
+    try{
+      const r=await fetch(q,{headers:{apikey:KEY,Authorization:'Bearer '+a.token}});
+      if(!r.ok){box.innerHTML='<p class="note">Не получилось связаться с базой — попробуйте кнопку «Обновить».</p>';return}
+      rows=(await r.json().catch(function(){return[]}))||[];
+    }catch(_){box.innerHTML='<p class="note">Не получилось связаться с базой — попробуйте кнопку «Обновить».</p>';return}
+    draw();
+    const unread=rows.filter(function(m){return m.sender==='lab'&&!m.read_by_client});
+    unread.forEach(function(m){
+      fetch(SB+'/rest/v1/lab_chat?id=eq.'+m.id,{method:'PATCH',headers:{apikey:KEY,Authorization:'Bearer '+a.token,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({read_by_client:true})}).catch(function(){});
+    });
+  }
+  function draw(){
+    const box=$('chat-box');if(!box)return;
+    if(!rows.length){box.innerHTML='<p class="note">Сообщений пока нет. Напишите первое — лаборатория увидит его в рабочем режиме.</p>';return}
+    box.innerHTML=rows.slice().sort(function(x,y){return String(x.created_at).localeCompare(String(y.created_at))}).map(function(m){
+      const mine=m.sender==='client';
+      return '<div style="max-width:78%;align-self:'+(mine?'flex-end':'flex-start')+';background:'+(mine?'rgba(0,240,255,.10)':'rgba(157,123,255,.12)')+';border:1px solid '+(mine?'rgba(0,240,255,.30)':'rgba(157,123,255,.35)')+';border-radius:14px;padding:10px 14px">'
+        +'<div style="font-size:10.5px;letter-spacing:.08em;color:'+(mine?'#00F0FF':'#9D7BFF')+';font-family:Orbitron,sans-serif">'+(mine?'ВЫ':'ЛАБОРАТОРИЯ')+' · '+hhmm(m.created_at)+'</div>'
+        +'<div style="white-space:pre-wrap;margin-top:4px">'+esc(m.body)+'</div></div>';
+    }).join('');
+    box.scrollTop=box.scrollHeight;
+  }
+  async function send(){
+    const a=sess(),inp=$('chat-input'),btn=$('chat-send');
+    if(!a||!a.token){alert('Войдите в кабинет, чтобы писать в чат.');return}
+    const body=String(inp&&inp.value||'').trim();
+    if(!body)return;
+    if(btn)btn.disabled=true;
+    try{
+      const r=await fetch(SB+'/rest/v1/lab_chat',{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+a.token,'Content-Type':'application/json','Prefer':'return=representation'},body:JSON.stringify({email:curEmail,user_id:curUid||null,sender:'client',body:body})});
+      const j=await r.json().catch(function(){return null});
+      if(!r.ok){alert('Не отправилось: '+((j&&j.message)||r.status));return}
+      if(j&&j.length)rows.push(j[0]);else rows.push({sender:'client',body:body,created_at:new Date().toISOString()});
+      if(inp)inp.value='';
+      draw();
+    }catch(e){alert('Не отправилось: '+e.message)}
+    if(btn)btn.disabled=false;
+  }
+  function badge(){
+    const b=document.querySelector('.cabtab[data-k="chat"]');
+    if(!b)return;
+    const n=rows.filter(function(m){return m.sender==='lab'&&!m.read_by_client}).length;
+    b.textContent='LABCHAT'+(n?' · '+n:'');
+  }
+  function kick(){if(!sess())return;load().then(badge).catch(function(){})}
+  if(document.readyState!=='loading')setTimeout(kick,1200);else document.addEventListener('DOMContentLoaded',function(){setTimeout(kick,1200)});
+  setInterval(function(){if(sess())kick()},20000);
+  const sb=$('chat-send'),rb=$('chat-refresh');
+  if(sb)sb.onclick=send;
+  if(rb)rb.onclick=function(){kick()};
+})();
+</script>
+</body>
+</html>

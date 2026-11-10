@@ -105,6 +105,7 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
       <button class="tabbtn" data-tab="tab-cli">КЛИЕНТЫ</button>
       <button class="tabbtn" data-tab="tab-users">ПОЛЬЗОВАТЕЛИ</button>
       <button class="tabbtn" data-tab="tab-rep">ОТЧЁТЫ</button>
+      <button class="tabbtn" data-tab="tab-chat">LABCHAT</button>
     </div>
 
     <div id="tab-dash" class="tabpanel">
@@ -200,6 +201,19 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
       <div class="row" style="margin-top:12px"><button class="btn gold" id="rp-add">ВЫДАТЬ ОТЧЁТ →</button><span class="ok" id="rp-ok"></span></div>
     </div>
     <div id="rp-box" style="margin-top:12px"></div>
+    </div>
+
+    <div id="tab-chat" class="tabpanel">
+    <div class="sec">◆ LABCHAT · ПЕРЕПИСКА С КЛИЕНТАМИ</div>
+    <div class="row"><button class="btn" id="lc-refresh">ОБНОВИТЬ ↻</button><span class="note">сообщения из вкладки LABCHAT в кабинетах клиентов · автообновление каждые 20 секунд</span></div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;margin-top:12px">
+      <div id="lc-list" style="flex:1;min-width:260px;max-width:380px"></div>
+      <div id="lc-conv" style="flex:2;min-width:320px;border:1px solid rgba(157,123,255,.25);border-radius:14px;padding:14px;max-height:480px;overflow-y:auto"></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:flex-end">
+      <textarea id="lc-input" rows="2" placeholder="Ответ лаборатории клиенту…" style="flex:1;min-width:260px;background:rgba(255,255,255,.04);border:1px solid rgba(157,123,255,.35);border-radius:12px;color:#fff;padding:10px 14px;font:inherit;resize:vertical"></textarea>
+      <button class="btn gold" id="lc-send">ОТПРАВИТЬ</button>
+    </div>
     </div>
 
     <div class="row" style="margin-top:26px">
@@ -641,6 +655,86 @@ async function detailFor(u,cardEl){
     refreshLoop();
     setInterval(refreshLoop,15*60*1000);
   }
+})();
+</script>
+
+<script>
+/* LabChat в админке: список диалогов + ответы клиентам. */
+(function(){
+  'use strict';
+  const lcEsc=function(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+  let lcRows=[],lcSel='';
+  function lcDialogs(){
+    const m=new Map();
+    lcRows.forEach(function(r){
+      const k=String(r.email||'').toLowerCase();
+      const cur=m.get(k);
+      if(!cur)m.set(k,{email:k,last:r,unread:(r.sender==='client'&&!r.read_by_lab)?1:0,count:1});
+      else{cur.count++;if(r.sender==='client'&&!r.read_by_lab)cur.unread++;if(String(r.created_at||'')>String(cur.last.created_at||''))cur.last=r}
+    });
+    return Array.from(m.values()).sort(function(a,b){return String(b.last.created_at||'').localeCompare(String(a.last.created_at||''))});
+  }
+  function lcRenderList(){
+    const box=$('lc-list');if(!box)return;
+    const ds=lcDialogs();
+    const tb=document.querySelector('[data-tab="tab-chat"]');
+    const total=ds.reduce(function(s,d){return s+d.unread},0);
+    if(tb)tb.textContent='LABCHAT'+(total?' · '+total:'');
+    if(!ds.length){box.innerHTML='<p class="note">Чатов пока нет — появятся, когда клиент напишет во вкладке LABCHAT в кабинете.</p>';return}
+    box.innerHTML=ds.map(function(d){
+      return '<div class="lc-item'+(d.email===lcSel?' sel':'')+'" data-em="'+lcEsc(d.email)+'" style="cursor:pointer;border:1px solid '+(d.email===lcSel?'rgba(0,229,255,.5)':'rgba(157,123,255,.25)')+';border-radius:12px;padding:10px 12px;margin-bottom:8px;background:rgba(255,255,255,.02)">'
+        +'<b style="word-break:break-all">'+lcEsc(d.email)+'</b>'
+        +'<div class="note" style="margin-top:2px">'+lcEsc(String(d.last.body||'').slice(0,70))+(String(d.last.body||'').length>70?'…':'')+'</div>'
+        +'<div style="margin-top:4px;font-size:10.5px;letter-spacing:.08em;font-family:Orbitron,sans-serif;color:#8A86A0">'+String(d.last.created_at||'').slice(11,16)+' · всего '+d.count+(d.unread?' · <span style="color:#FFD66E">новых: '+d.unread+'</span>':'')+'</div></div>';
+    }).join('');
+    box.querySelectorAll('.lc-item').forEach(function(el){el.onclick=function(){lcOpen(el.getAttribute('data-em'))}});
+  }
+  async function lcOpen(em){
+    lcSel=em;lcRenderList();lcRenderConv();
+    const mine=lcRows.filter(function(r){return r.sender==='client'&&String(r.email||'').toLowerCase()===em&&r.read_by_lab===false});
+    if(!mine.length)return;
+    for(const r of mine){
+      try{await api('/rest/v1/lab_chat?id=eq.'+r.id,'PATCH',{read_by_lab:true});r.read_by_lab=true}
+      catch(e){}
+    }
+    lcRenderList();
+  }
+  function lcRenderConv(){
+    const box=$('lc-conv');if(!box)return;
+    if(!lcSel){box.innerHTML='<p class="note">Выберите диалог слева.</p>';return}
+    const ms=lcRows.filter(function(r){return String(r.email||'').toLowerCase()===lcSel}).sort(function(a,b){return String(a.created_at||'').localeCompare(String(b.created_at||''))});
+    box.innerHTML='<div style="font-family:Orbitron;font-size:10.5px;letter-spacing:.1em;color:#00F0FF;margin-bottom:10px">ДИАЛОГ · '+lcEsc(lcSel)+'</div>'
+      +(ms.map(function(m){
+        const lab=m.sender==='lab';
+        return '<div style="max-width:78%;margin-left:'+(lab?'auto':'0')+';background:'+(lab?'rgba(157,123,255,.12)':'rgba(0,240,255,.08)')+';border:1px solid '+(lab?'rgba(157,123,255,.35)':'rgba(0,240,255,.3)')+';border-radius:14px;padding:9px 13px;margin-bottom:8px">'
+          +'<div style="font-size:10.5px;letter-spacing:.08em;color:'+(lab?'#9D7BFF':'#00F0FF')+';font-family:Orbitron,sans-serif">'+(lab?'ЛАБОРАТОРИЯ':'КЛИЕНТ')+' · '+String(m.created_at||'').slice(11,16)+'</div>'
+          +'<div style="white-space:pre-wrap;margin-top:3px">'+lcEsc(m.body)+'</div></div>';
+      }).join('')||'<p class="note">Сообщений нет.</p>');
+    box.scrollTop=box.scrollHeight;
+  }
+  async function lcLoad(){
+    if(!TOKEN)return;
+    try{lcRows=await api('/rest/v1/lab_chat?order=created_at.desc&limit=1000')||[]}
+    catch(e){lcRows=[];const b=$('lc-list');if(b)b.innerHTML='<p class="note">Не удалось загрузить чаты: '+e.message+'</p>';return}
+    lcRenderList();
+    if(lcSel)lcRenderConv();
+  }
+  async function lcSend(){
+    if(!lcSel)return;
+    const v=$('lc-input').value.trim();
+    if(!v)return;
+    try{
+      const j=await api('/rest/v1/lab_chat','POST',{email:lcSel,sender:'lab',body:v,read_by_lab:true,read_by_client:false});
+      if(j&&j.length)lcRows.push(j[0]);
+      $('lc-input').value='';lcRenderList();lcRenderConv();
+    }catch(e){toast('Не отправилось: '+e.message)}
+  }
+  const rb=$('lc-refresh'),sb=$('lc-send');
+  if(rb)rb.onclick=lcLoad;
+  if(sb)sb.onclick=lcSend;
+  const tb=document.querySelector('[data-tab="tab-chat"]');
+  if(tb)tb.addEventListener('click',function(){setTimeout(lcLoad,150)});
+  setInterval(function(){if(TOKEN)lcLoad()},20000);
 })();
 </script>
 </body>
