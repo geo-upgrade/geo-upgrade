@@ -531,6 +531,13 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
 #pf-edit:hover{box-shadow:0 0 20px rgba(255,214,110,.45)}
 #pf-copy{background:rgba(0,240,255,.10)!important;color:#7FEAFF!important;border:1px solid rgba(0,240,255,.55)!important}
 #pf-copy:hover{background:rgba(0,240,255,.20)!important}
+.cabtabs{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 18px;position:sticky;top:64px;z-index:40;background:rgba(13,6,24,.94);padding:8px;border-radius:14px;border:1px solid rgba(0,240,255,.22);backdrop-filter:blur(6px)}
+.cabtab{font-family:Orbitron,"Exo 2",sans-serif;font-size:11px;letter-spacing:.08em;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:#150B26;color:#B8BCC6;cursor:pointer;white-space:nowrap}
+.cabtab:hover{color:#fff}
+.cabtab.active{color:#fff;border-color:rgba(0,240,255,.7);box-shadow:0 0 12px rgba(0,240,255,.28);background:#241950}
+.cabpanel{display:none}
+.cabpanel.active{display:block}
+@media(max-width:640px){.cabtabs{top:56px;gap:6px;padding:6px}.cabtab{padding:8px 11px;font-size:10px}}
 </style>
 <meta name="robots" content="noindex, nofollow">
 </head>
@@ -539,6 +546,15 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html" class="jnav-here">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
 
 <main id="main" style="padding-top:28px">
+  <div id="cabtabs" class="cabtabs" role="tablist" aria-label="Разделы кабинета">
+    <button type="button" class="cabtab" data-k="dash">ОБЗОР</button>
+    <button type="button" class="cabtab" data-k="orders">ЗАКАЗЫ</button>
+    <button type="button" class="cabtab" data-k="digital">ЦИФРОВЫЕ</button>
+    <button type="button" class="cabtab" data-k="catalog">КАТАЛОГ</button>
+    <button type="button" class="cabtab" data-k="reports">ОТЧЁТЫ</button>
+    <button type="button" class="cabtab" data-k="fav">ИЗБРАННОЕ</button>
+    <button type="button" class="cabtab" data-k="profile">АНКЕТА</button>
+  </div>
   <div id="lab-dash" class="hide">
     <p class="kicker">LAB CONSOLE · ЛИЧНЫЙ ЭКРАН</p>
     <h1 style="font-size:clamp(26px,4.5vw,40px);margin:10px 0 4px" id="dash-title">Лаборатория</h1>
@@ -1081,4 +1097,47 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
 })();
 </script>
 <script src="lab-account.js" defer></script>
+<script>
+(function(){
+  'use strict';
+  var TABS=[
+    ['dash','ОБЗОР','lab-dash'],
+    ['orders','ЗАКАЗЫ','sec-orders'],
+    ['digital','ЦИФРОВЫЕ','sec-digital'],
+    ['catalog','КАТАЛОГ','sec-catalog'],
+    ['reports','ОТЧЁТЫ','sec-reports'],
+    ['fav','ИЗБРАННОЕ','sec-fav'],
+    ['profile','АНКЕТА','sec-profile']
+  ];
+  function show(k,noScroll){
+    TABS.forEach(function(t){
+      var el=document.getElementById(t[2]);
+      if(el)el.classList.toggle('active',t[0]===k);
+    });
+    document.querySelectorAll('.cabtab').forEach(function(b){
+      b.classList.toggle('active',b.getAttribute('data-k')===k);
+    });
+    try{localStorage.setItem('geo_lab_tab',k)}catch(e){}
+    if(!noScroll){
+      var bar=document.getElementById('cabtabs');
+      if(bar)bar.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+  }
+  function init(){
+    var dash=document.getElementById('lab-dash');
+    if(!dash)return;
+    TABS.forEach(function(t){var el=document.getElementById(t[2]);if(el)el.classList.add('cabpanel')});
+    var saved='';
+    try{saved=localStorage.getItem('geo_lab_tab')||''}catch(e){}
+    var ok=TABS.some(function(t){return t[0]===saved});
+    show(ok?saved:'dash',true);
+    document.querySelectorAll('.cabtab').forEach(function(b){
+      b.onclick=function(){show(b.getAttribute('data-k'))};
+    });
+    window.__cabShow=show;
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+  else init();
+})();
+</script>
 </body></html>
