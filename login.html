@@ -718,7 +718,7 @@ const q=new URLSearchParams(location.search);
 const PAY=q.get('pay')||null;
 const TO=q.get('to')||null;
 function back(){if(PAY){location.replace('cabinet.html?pay='+encodeURIComponent(PAY));return}if(TO){location.replace(TO+'.html');return}location.replace('cabinet.html')}
-if(session()){back()}
+if((function(){try{var _a=JSON.parse(localStorage.getItem('geo_lab_auth')||'null');return _a&&_a.token?true:false}catch(e){return false}})()){back()}/* GEO-Апгрейд: авто-переход только при живом токене базы; локальный вход больше не мешает входу по email */
 else if(PAY){
   const SVCS={'geo_scanner_lite':{n:'GEO-сканер Лайт',a:10000},'geo_scanner_full':{n:'GEO-сканер Полный',a:15000}};
   $('pay-note').style.display='block';
