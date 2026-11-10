@@ -258,7 +258,11 @@ async function renderDigital(){
       }
       box.appendChild(d);
       if(confirmed){const c2=document.createElement('div');c2.className='card';
-        c2.innerHTML='<div class="top"><div><b>'+(o.product_id||'—')+' · '+(o.product_name||'')+'</b><br><span class="note">'+(o.email||'')+' · '+dt(o.paid_at||o.created_at)+(o.note?' · '+o.note:'')+'</span></div></div>';
+        c2.innerHTML='<div class="top"><div><b>'+(o.product_id||'—')+' · '+(o.product_name||'')+'</b><br><span class="note">'+(o.email||'')+' · '+dt(o.paid_at||o.created_at)+(o.note?' · '+o.note:'')+'</span></div><div class="acts"></div></div>';
+        const dc=c2.querySelector('.acts');
+        const del=document.createElement('button');del.className='btn danger';del.textContent='УДАЛИТЬ';
+        del.onclick=async function(){if(!confirm('Удалить ПОДТВЕРЖДЁННУЮ покупку «'+(o.product_id||'')+'» у клиента '+(o.email||'')+'? Доступ у клиента закроется немедленно. Отменить удаление нельзя.'))return;try{await api('/rest/v1/digital_orders?id=eq.'+o.id,'DELETE');toast('Покупка удалена — доступ у клиента закрыт');await renderDigital()}catch(e){toast('Не вышло: '+e.message)}};
+        dc.appendChild(del);
         paidBox.appendChild(c2)}
     });
   }catch(e){$('dig-box').innerHTML='<div class="panel err">Ошибка цифровых заказов: '+e.message+'</div>'}
