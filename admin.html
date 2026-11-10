@@ -322,6 +322,7 @@ async function renderOrders(){
       st.textContent=o.status==='confirmed'?'ПОДТВЕРЖДЕНО':(o.status==='paid_check'?'ЧЕК ПОЛУЧЕН':'НА ПРОВЕРКЕ');
       top.appendChild(st);
       d.appendChild(top);
+      const acts=document.createElement('div');acts.className='acts';
       const sel=document.createElement('select');sel.style.cssText='max-width:170px';
       [['pending','На проверке'],['paid_check','Чек получен'],['confirmed','Подтверждено'],['work','В работе'],['ready','Готово'],['done','Завершено'],['cancel','Отменено']].forEach(function(x){const op=document.createElement('option');op.value=x[0];op.textContent=x[1];if((o.status||'')===x[0])op.selected=true;sel.appendChild(op)});
       sel.onchange=function(){setSt(o,sel.value)};
@@ -329,7 +330,6 @@ async function renderOrders(){
       const bDue=document.createElement('button');bDue.className='btn mute';bDue.textContent=o.due_date?('СРОК ДО '+dt(o.due_date)):'УСТАНОВИТЬ СРОК';
       bDue.onclick=async function(){const v=prompt('Срок готовности (ГГГГ-ММ-ДД), например 2026-11-15:',o.due_date||'');if(v===null)return;try{await api('/rest/v1/lab_orders?id=eq.'+o.id,'PATCH',{due_date:v});toast('Срок обновлён');await renderOrders()}catch(e){toast('Не вышло: '+e.message)}};
       acts.appendChild(bDue);
-      const acts=document.createElement('div');acts.className='acts';
       if(o.status!=='confirmed'){
         const b1=document.createElement('button');b1.className='btn gold';b1.textContent='ПОДТВЕРДИТЬ';
         b1.onclick=function(){setSt(o,'confirmed')};acts.appendChild(b1);
