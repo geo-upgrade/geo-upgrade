@@ -943,9 +943,12 @@ function renderCatalog(){
     if(!done){const b=document.createElement('button');b.className='btn btn-gold';b.textContent='Оплатить';b.style.cssText='padding:9px 16px;font-size:12px';b.onclick=()=>openPay(uid);d.appendChild(b)}
     box.appendChild(d);
   });
+  let dw=box.querySelector('[data-digwrap]');
+  if(!dw){dw=document.createElement('div');dw.setAttribute('data-digwrap','1');box.appendChild(dw)}
+  dw.innerHTML='';
   const h2=document.createElement('div');h2.style.cssText='margin:18px 0 6px;font-family:Orbitron,sans-serif;font-size:13px;letter-spacing:.12em;color:#9D7BFF';
-  h2.textContent='◆ ЦИФРОВЫЕ ПРОДУКТЫ · КАТАЛОГ';box.appendChild(h2);
-  const sub=document.createElement('p');sub.className='note';sub.textContent='Без заявки и ожидания: платите по ссылке — доступ открывается после подтверждения лаборатории. Материалы чек-листа и промптов приходят в боте лаборатории.';box.appendChild(sub);
+  h2.textContent='◆ ЦИФРОВЫЕ ПРОДУКТЫ · КАТАЛОГ';dw.appendChild(h2);
+  const sub=document.createElement('p');sub.className='note';sub.textContent='Без заявки и ожидания: платите по ссылке — доступ открывается после подтверждения лаборатории. Материалы чек-листа и промптов приходят в боте лаборатории.';dw.appendChild(sub);
   fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/digital_orders?select=product_id,status,email,user_id',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-'}})
     .then(r=>r.ok?r.json():[]).catch(()=>[]).then(rows=>{
       const em=(s&&s.email||'').toLowerCase();
@@ -972,7 +975,7 @@ function renderCatalog(){
           const bb=document.createElement('button');bb.className='btn btn-gold';bb.textContent='Купить';
           bb.style.cssText='padding:9px 16px;font-size:12px';bb.onclick=()=>dgPayFlow(puid);d.appendChild(bb);
         }
-        box.appendChild(d);
+        dw.appendChild(d);
       });
     });
 }
