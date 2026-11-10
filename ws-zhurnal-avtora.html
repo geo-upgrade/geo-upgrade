@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Журнал автора — GEO-Апгрейд</title>
+<style>
+:root { --bg:#0f0a1e; --surface:#1a1130; --surface-2:#221744; --text:#ece8f7; --muted:#b3aacb;
+  --neon:#5ce1ff; --accent:#8a5cff; --line:#33255c; --ok:#6ee7a0;
+  --font-head:'Orbitron','Segoe UI',Verdana,sans-serif; --font-body:'Exo 2','Segoe UI',Arial,sans-serif; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.6; font-size:16px; }
+main { max-width:840px; margin:0 auto; padding:24px; }
+header.doc { margin-bottom:28px; }
+.series { font-family:var(--font-head); color:var(--neon); font-size:11px; letter-spacing:0.2em; }
+h1 { font-family:var(--font-head); font-size:clamp(20px,4vw,28px); margin-top:10px; }
+.sub { color:var(--muted); margin-top:8px; }
+.panel { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px; margin-bottom:20px; }
+.panel h2 { font-family:var(--font-head); font-size:13px; letter-spacing:0.14em; color:var(--neon); margin-bottom:12px; }
+input[type=text], textarea { width:100%; background:var(--bg); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:9px 11px; font-family:var(--font-body); font-size:14px; }
+textarea { min-height:80px; resize:vertical; }
+input:focus, textarea:focus { outline:none; border-color:var(--neon); }
+table { width:100%; border-collapse:collapse; font-size:13.5px; }
+th { font-family:var(--font-head); font-size:10.5px; letter-spacing:0.08em; color:var(--neon); text-align:left; padding:8px 8px; border-bottom:1px solid var(--line); }
+td { padding:6px 8px; border-bottom:1px solid rgba(51,37,92,0.5); }
+td input { font-size:13.5px; padding:7px 9px; }
+select { background:var(--bg); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:7px 9px; font-family:var(--font-body); font-size:13.5px; }
+.btn { font-family:var(--font-head); font-size:11.5px; letter-spacing:0.06em; color:var(--neon); background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:7px 16px; cursor:pointer; margin:4px 6px 4px 0; }
+.btn:hover { border-color:var(--neon); }
+.btn.main { color:#06121a; background:var(--neon); border:none; font-weight:600; }
+.hint { color:var(--muted); font-size:13px; margin-top:6px; }
+.saved { color:var(--ok); font-size:12.5px; font-family:var(--font-head); }
+.share { display:flex; align-items:center; gap:10px; margin-top:14px; }
+.share label { font-size:13.5px; color:var(--muted); white-space:nowrap; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media (max-width:640px) { .grid2 { grid-template-columns:1fr; } }
+.flabel { font-family:var(--font-head); font-size:10px; letter-spacing:0.12em; color:#8fb8d8; margin-bottom:6px; }
+.metric { font-family:var(--font-head); font-size:20px; color:var(--neon); }
+@media print { .btn, .noprint { display:none; } body { background:#fff; color:#000; } .panel, .lesson { background:#fff; border:1px solid #ccc; } }
+</style>
+</head>
+<body>
+<main>
+<header class="doc"><span class="series">GEO-АПГРЕЙД · РАБОЧИЙ ДОКУМЕНТ КУРСА A10 · ЖУРНАЛ</span><h1>Журнал автора</h1><p class="sub">Курс «Проверь бренд в ИИ за вечер» · Урок 4 · GEO-Апгрейд</p></header>
+<div class="panel"><h2>ТЕМА И ПОЗИЦИЯ</h2><p class="flabel">ТЕМА СТАТЬИ</p><input type="text" id="jtopic" placeholder="О чём статья"><p class="flabel" style="margin-top:12px">АВТОРСКАЯ ПОЗИЦИЯ (2–3 ПРЕДЛОЖЕНИЯ)</p><textarea id="jpos" placeholder="Что я думаю, с чем не согласен, что наблюдал"></textarea><p class="flabel" style="margin-top:12px">ГЛАВНЫЙ ВЫВОД</p><input type="text" id="jout" placeholder="Одна мысль, которую читатель должен унести"></textarea></div><div class="panel"><h2>ИНТЕРВЬЮ АВТОРА: 5–7 НЕОЧЕВИДНЫХ ВОПРОСОВ</h2><div style="margin-bottom:10px"><p class="flabel">ВОПРОС 1</p><input type="text" id="wq1" placeholder="Неочевидный вопрос автора"></div><div style="margin-bottom:12px"><p class="flabel">ОТВЕТ 1</p><textarea id="wa1" style="min-height:64px"></textarea></div><div style="margin-bottom:10px"><p class="flabel">ВОПРОС 2</p><input type="text" id="wq2" placeholder="Неочевидный вопрос автора"></div><div style="margin-bottom:12px"><p class="flabel">ОТВЕТ 2</p><textarea id="wa2" style="min-height:64px"></textarea></div><div style="margin-bottom:10px"><p class="flabel">ВОПРОС 3</p><input type="text" id="wq3" placeholder="Неочевидный вопрос автора"></div><div style="margin-bottom:12px"><p class="flabel">ОТВЕТ 3</p><textarea id="wa3" style="min-height:64px"></textarea></div><div style="margin-bottom:10px"><p class="flabel">ВОПРОС 4</p><input type="text" id="wq4" placeholder="Неочевидный вопрос автора"></div><div style="margin-bottom:12px"><p class="flabel">ОТВЕТ 4</p><textarea id="wa4" style="min-height:64px"></textarea></div><div style="margin-bottom:10px"><p class="flabel">ВОПРОС 5</p><input type="text" id="wq5" placeholder="Неочевидный вопрос автора"></div><div style="margin-bottom:12px"><p class="flabel">ОТВЕТ 5</p><textarea id="wa5" style="min-height:64px"></textarea></div><div style="margin-bottom:10px"><p class="flabel">ВОПРОС 6</p><input type="text" id="wq6" placeholder="Неочевидный вопрос автора"></div><div style="margin-bottom:12px"><p class="flabel">ОТВЕТ 6</p><textarea id="wa6" style="min-height:64px"></textarea></div><div style="margin-bottom:10px"><p class="flabel">ВОПРОС 7</p><input type="text" id="wq7" placeholder="Неочевидный вопрос автора"></div><div style="margin-bottom:12px"><p class="flabel">ОТВЕТ 7</p><textarea id="wa7" style="min-height:64px"></textarea></div></div><div class="panel"><h2>ПРИМЕРЫ ИЗ ПРАКТИКИ</h2><p class="flabel">ПРИМЕР 1 (кто, что делал, что вышло)</p><textarea id="jex1"></textarea><p class="flabel" style="margin-top:12px">ПРИМЕР 2</p><textarea id="jex2"></textarea><p class="flabel" style="margin-top:12px">ПРИМЕР 3</p><textarea id="jex3"></textarea><p class="hint" style="margin-top:10px">Правило: вопросы между статьями не повторяются. Через десять статей журнал превратится в банк наблюдений.</p></div><div class="panel noprint"><button type="button" class="btn main" onclick="window.print()">Печать / PDF</button><span class="saved" id="savenote"></span></div>
+</main>
+<script>function persist(k,v){try{localStorage.setItem(k,JSON.stringify(v));var s=document.getElementById("savenote");if(s)s.textContent="Сохранено ✓";setTimeout(function(){if(s)s.textContent="";},1200);}catch(e){}}
+function restore(k){try{return JSON.parse(localStorage.getItem(k)||"null");}catch(e){return null;}}
+document.addEventListener("input",function(e){var el=e.target;var id=el.id||el.name;if(!id)return;var d=restore("__saver");d=d||{};d[document.title+"|"+id]=el.value;persist("__saver",d);});
+document.addEventListener("DOMContentLoaded",function(){var d=restore("__saver")||{};Object.keys(d).forEach(function(k){if(k.indexOf(document.title+"|")===0){var id=k.split("|")[1];var el=document.getElementById(id)||document.getElementsByName(id)[0];if(el)el.value=d[k];}});});</script>
+</body>
+</html>

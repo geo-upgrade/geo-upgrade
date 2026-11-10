@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Курс «Проверь бренд в ИИ за вечер» v6 — лаборатория GEO-Апгрейд</title>
+<style>
+:root { --bg:#0f0a1e; --surface:#1a1130; --surface-2:#221744; --text:#ece8f7; --muted:#b3aacb;
+  --neon:#5ce1ff; --accent:#8a5cff; --line:#33255c; --ok:#6ee7a0; --content:760px;
+  --font-head:'Orbitron','Segoe UI',Verdana,sans-serif; --font-body:'Exo 2','Segoe UI',Arial,sans-serif; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.7; font-size:16.5px; }
+main { max-width:var(--content); margin:0 auto; padding:0 24px; }
+.hero { position:relative; min-height:320px; display:flex; align-items:flex-end; margin-bottom:40px; }
+.hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.hero-inner { position:relative; padding:64px 24px; max-width:var(--content); margin:0 auto; width:100%; }
+.series { font-family:var(--font-head); color:var(--neon); font-size:12px; letter-spacing:0.22em; }
+h1 { font-family:var(--font-head); font-size:clamp(26px,5vw,38px); line-height:1.2; margin-top:16px; }
+.hero .lead { color:#d8d2ea; margin-top:16px; max-width:52ch; }
+.badges { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+.badge { font-family:var(--font-head); font-size:11.5px; letter-spacing:0.12em; color:var(--neon); border:1px solid var(--line); border-radius:6px; padding:6px 10px; background:rgba(92,225,255,0.06); }
+.progressbar { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px 24px; margin-bottom:40px; }
+.bar { height:10px; background:var(--surface-2); border-radius:6px; overflow:hidden; margin-top:12px; }
+.bar-fill { height:100%; width:0%; background:linear-gradient(90deg,var(--accent),var(--neon)); transition:width .4s; }
+.plabel2 { font-family:var(--font-head); font-size:11px; letter-spacing:0.16em; color:var(--neon); }
+.ptxt { color:var(--muted); font-size:13.5px; margin-top:8px; }
+.frame { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:40px; }
+.frame h2 { font-family:var(--font-head); font-size:15px; letter-spacing:0.14em; color:var(--neon); margin-bottom:14px; }
+.frame ol { margin-left:20px; display:grid; gap:6px; }
+.lesson { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin-bottom:28px; position:relative; }
+.lesson.locked .lbody { display:none; }
+.lockover { display:none; padding:36px 12px; text-align:center; }
+.lesson.locked .lockover { display:block; }
+.lockcard { border:1px dashed var(--line); border-radius:12px; padding:28px 16px; }
+.lockico { font-size:26px; }
+.locktxt { color:var(--muted); margin-top:10px; }
+.lhead { display:flex; align-items:center; gap:14px; margin-bottom:8px; flex-wrap:wrap; }
+.lnum { font-family:var(--font-head); color:var(--neon); font-size:13px; letter-spacing:0.18em; border-left:3px solid var(--neon); padding-left:10px; }
+.ltime { font-family:var(--font-head); font-size:11px; color:#8fb8d8; letter-spacing:0.1em; border:1px solid var(--line); border-radius:10px; padding:2px 10px; }
+.donemark { font-family:var(--font-head); font-size:11px; color:var(--ok); letter-spacing:0.1em; border:1px solid var(--ok); border-radius:10px; padding:2px 10px; }
+h2 { font-family:var(--font-head); font-size:clamp(17px,3vw,21px); margin-bottom:10px; }
+.lout { color:var(--text); margin-bottom:12px; } .lout b { color:var(--neon); }
+.lintro { color:var(--muted); margin-bottom:16px; }
+.plabel { font-family:var(--font-head); font-size:10px; letter-spacing:0.16em; color:#8a5cff; margin-bottom:10px; }
+.ptags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.ptag { font-size:12.5px; color:var(--neon); background:rgba(92,225,255,0.07); border:1px solid var(--line); border-radius:12px; padding:3px 12px; }
+.steps { display:grid; gap:12px; margin-bottom:18px; }
+.step { background:var(--surface-2); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+.shead { display:flex; gap:12px; align-items:flex-start; }
+.snum { font-family:var(--font-head); color:var(--neon); font-size:11px; border:1px solid var(--line); border-radius:8px; padding:3px 8px; white-space:nowrap; margin-top:2px; }
+.stxt { flex:1; font-size:14.5px; }
+.stxt b { color:var(--text); }
+.sctl { margin-top:10px; display:flex; align-items:center; gap:12px; }
+.sbtn { font-family:var(--font-head); font-size:10.5px; letter-spacing:0.06em; color:var(--neon); background:transparent; border:1px solid var(--line); border-radius:14px; padding:6px 14px; cursor:pointer; }
+.sbtn:hover { border-color:var(--neon); box-shadow:0 0 10px rgba(92,225,255,0.25); }
+.sdonenote { font-family:var(--font-head); font-size:10.5px; color:var(--ok); }
+.step.completed { border-color:rgba(110,231,160,0.4); }
+.step.completed .sbtn { display:none; }
+.step.completed .sdonenote { display:inline; }
+.hw { background:var(--surface-2); border:1px solid var(--accent); border-radius:12px; padding:16px; margin-bottom:16px; }
+.hw.blurred { opacity:.45; }
+.hwlist { margin-left:20px; display:grid; gap:8px; margin-bottom:12px; }
+textarea { width:100%; min-height:88px; background:var(--bg); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-family:var(--font-body); font-size:14.5px; resize:vertical; }
+textarea:focus { outline:none; border-color:var(--neon); }
+textarea[disabled] { opacity:.5; }
+.donebtn { margin-top:12px; font-family:var(--font-head); font-size:12px; letter-spacing:0.08em; color:#06121a; background:var(--neon); border:none; border-radius:20px; padding:10px 20px; cursor:pointer; font-weight:600; }
+.donebtn:hover { box-shadow:0 0 14px rgba(92,225,255,0.45); }
+.donebtn[disabled] { opacity:.55; cursor:default; }
+.wsrow { border-top:1px solid var(--line); padding-top:10px; margin-top:10px; }
+.wsrow b { color:var(--text); } .wsrow p { color:var(--muted); font-size:13.5px; margin-top:4px; }
+.lcheck { font-size:14px; margin-bottom:6px; } .lcheck b { color:#8fb8d8; }
+.lnext { font-size:14px; } .lnext b { color:var(--neon); }
+.next { background:var(--surface-2); border:1px solid var(--accent); border-radius:14px; padding:24px; }
+.next h2 { font-size:18px; margin-bottom:14px; }
+.next p { color:var(--muted); margin-bottom:14px; }
+.next strong { color:var(--text); } .next a { color:var(--neon); text-decoration:underline; }
+footer { max-width:var(--content); margin:64px auto 40px; padding:0 24px; color:var(--muted); font-size:13px; }
+footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--neon); font-size:12px; }
+@media print { .sbtn, .donebtn, textarea { display:none; } }
+
+.lecture { background:var(--surface-2); border-left:3px solid var(--accent); border-radius:10px; padding:18px 20px; margin-bottom:20px; }
+.lecture .llead { color:var(--muted); font-style:italic; margin-bottom:12px; font-size:14.5px; }
+.lecture .toc { margin:10px 0 0 18px; color:var(--text); font-size:14px; display:grid; gap:4px; }
+.lecture .toc span { color:var(--accent); }
+.lecture .toc span.app { color:var(--neon); font-weight:600; }
+.dlrow { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:14px; padding-bottom:12px; border-bottom:1px dashed var(--line); }
+.dlbtn { font-family:var(--font-head); font-size:11px; letter-spacing:0.08em; color:#06121a; background:var(--neon); border-radius:16px; padding:8px 16px; text-decoration:none; font-weight:600; }
+.dlmeta { color:var(--muted); font-size:12.5px; }
+.quiz { background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin:18px 0; }
+.qzhead { font-family:var(--font-head); font-size:11px; letter-spacing:0.16em; color:var(--neon); margin-bottom:12px; }
+.q { margin-bottom:14px; } .qq { font-size:14.5px; margin-bottom:8px; }
+.qopts { display:grid; gap:6px; }
+.qopt { font-size:13.5px; color:var(--text); background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:8px 12px; cursor:pointer; text-align:left; width:100%; font-family:var(--font-body); }
+.qopt:hover { border-color:var(--neon); }
+.qopt.ok { border-color:var(--ok); color:var(--ok); }
+.qopt.err { border-color:#e05c7a; color:#e05c7a; }
+.qwhy { display:none; font-size:13px; color:var(--muted); border-left:2px solid var(--ok); padding-left:10px; margin-top:8px; }
+.qwhy.show { display:block; }
+.notes { background:var(--bg); border:1px dashed var(--accent); border-radius:12px; padding:14px 18px; margin-bottom:16px; }
+.notes .nhead { font-family:var(--font-head); font-size:10px; letter-spacing:0.16em; color:var(--accent); margin-bottom:8px; }
+.notes textarea { min-height:70px; }
+.toolrow { display:flex; gap:12px; align-items:center; background:var(--surface-2); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin-bottom:8px; flex-wrap:wrap; }
+.toolrow .tcode { font-family:var(--font-head); color:var(--neon); font-size:11px; }
+.toolrow .tname { color:var(--text); font-size:14px; flex:1; min-width:180px; }
+.toolrow .tdesc { color:var(--muted); font-size:12.5px; flex-basis:100%; }
+.tbuy { font-family:var(--font-head); font-size:11px; letter-spacing:0.08em; color:#06121a; background:var(--neon); border-radius:14px; padding:7px 14px; text-decoration:none; font-weight:600; white-space:nowrap; }
+.final { border-color:var(--ok); }
+</style>
+</head>
+<body>
+<header class="hero"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHCAkIBgoJCAkMCwoMDxoRDw4ODx8WGBMaJSEnJiQhJCMpLjsyKSw4LCMkM0Y0OD0/QkNCKDFITUhATTtBQj//2wBDAQsMDA8NDx4RER4/KiQqPz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz8/Pz//wAARCAKjBLADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDyGiiiugYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQIKWkpaYBS0UUALS0lLTEFLSUtABS0lLQAUtJS0xC0UUtABS0lLTEFLSUtAC0UUUxBS0lLQAtFFLTAKWkpaBBS0lLQAtFFFMQtFFFAC0UUtMQUtJS0AFLRRTABS0CigBaKKKBC0UUUwFooooELRRS0wClpKWgApaKKYhaKKKAFooooELRRS0wCiiloAKWkpaBBRRS0wClpKWgApaKKYBRRRQIWiiloAKKKKYBS0UtAhKWiigAooooAKWiigAooopgFFFFABRRRQAUlLRQAlFFFIApKWigBKSnUlACUUUUDEopaSkAlFFFABSUtFAxKSlpKQCUUtJQAUlLSUgCkpaSgYUlLSUAJRRRSASiiigZz9FFFcZ1hRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAgpaKKYC0tJS0CClpKUUwClpKWgApaSloAWiilpiClpKWgApaSlpiCloooAWiiimIWiiigBaWkpaYBS0lLQIKUUlLQAtFFFMQtLSUUALS0lLQAUtJS0xC0UUUALRRRTAWiiigQtLSUUwFpaSigQtLSUtABS0lLTAWiiloEFFFFMBaKKKAFpaSlpiClpKWgApaSloEFLSUtMApaSloAWiiimAUUUtAgpaSloAKKKWmAUtFFAgooooAKWiigApaSimIWikooAWiiigAoopKAFpKKKACkpaKQxKKKKACkpaKAG0UtJQMKSlopANopaSgAooooGJSUtJSAKSlooASkpaSkAUlLSUDCkpaSgBKKKKQxKKKKAOfooorjOsKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooELRRRTAWlpKWgQUtJS0wClpKWgApaSloAWlpKWmIKWkpaAClpKWmIWiiigBaKKKYhaKSloAWlpBS0AFLSUtMQUtJS0ALRRRTAWiiigQtLSUtABS0lLTELRRRQAUtJS0wFooooELS0lFMBaWkooELS0lLQAUtJS0wClpKWgQtFFFMBaKKKBC0tJS0AFLSUtMApaSloEFLSUtMApaSloAWiiigQUtJS0wCloooAKWiimAtFFFAgpaSloAKKKWmISloooAKKKKACiiigAooooAKSlooASilpKACkpaSkMKKKKAEpKWigBKKKKQxKSlpKACiiikAlJS0lAwpKWkoAKSlpKQBSUtJQMKSlpKAEooopAJRRRQM5+iiiuM6wooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiigUCFooopgLS0lLQIKWkpaAClpKWmAUtJS0CFpaSimAtLSUtABS0lLTELRSUUAOooopiFooooAWlpKWgApaSlpiClpKWgBaKKKYhaWkooAWlpKKBC0tJRTAdRSUtABS0lLTAWiiigQUtJS0wFooooELS0lLQAUtJS0wFopKWgQtFFFAC0UUUxC0tJS0AFLSUtMApaSloEFLSUUwFpaSloAWikpaBBS0lLTAWiiigBaKKKYhaKKKACloooEFLSUtMAooooAWiiigAooooAKKKKAEooooAKSlpKACkpaKQCUUUUDCkpaSgBKKKKQxKSlpKACiikpAFJS0lAwpKKKACkpaSkAUlLSUDCkpaSkAlFFFACUUUUhnP0UUVyHWFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUALRRRQIWlpKWmIWikpaAClpKKYC0tJSigQUtFLTAKWkpaAClpKWmIKWkpaBC0UlLQAtFFFMBaWm0tAC0tJRTAWlpKWgQtFJS0xC0UUUALRRRQIWlpKWmAtFJS0AFLSUUwFpaSloEFLSUtMBaKKKBC0UUUALRRRTAWlpKWgQUtJS0wFopKWgQtLTaWgBaWkopgLS0lLQIKKKKYC0tJS0ALRRRQIKWkpaYC0UUUALS0lFAhaKKKYC0UUUCFooopgFLRRQAUUUUAFFLRQAlFFFABRRRQAlFFFACUUUUgEooooGFJS0lACUUUUhiUlLSUAFFFFIBKSlpKBiUUtJQAUlLSUgCkpaSgYUlFFIBKKKSgAoopKBmBRRRXGdQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRS0AFLSUtMApaSloEFLSUtABRRS0wClpKWgQtLSUtABS0gpaYBS0lLQIKWkpaYBS0lLQIKWkpaYBSikpaAFpaSimIWiiigBaWkpRQIWikpaYC0UUUCFooopgLS0lLQAUUUUxC0tJS0AFLSUUAOopKWmIWikpaAFooopgLS0lLQIKWkpaAClpKWmAtFJS0CFpaSimAtLSUUCFooopgLS0lLQAUtJS0AFLSUtMQUtJS0ALRRRQIWiiimAtFFFAhaKKKYC0UUUAFLRRQAUUUUCCkpaKBiUUUUAJRS0lACUUUUgEooooGFJRRSASkpaKBiUlLSUAFJS0lIApKWkoGJRRRQAUlLSUgCkoNFAxKKKSkAUlLSUAFIaWkpDMCiiiuM6gooopgFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRTAKKKKACiiigAooooAKKKKACiiikAUtJS0wClpKKAFpaSloEFLRRTAKWkpaAClpKWgQtLSUtAAKWkopgLRRSigQUtJRTAWlpKWgQUtJS0AFLSUtMBaKKKBC0UUUwFpRTacKAClpKWmIWiiigBaKSloELS02lpgLRRRQAtFFFMQtFFFACilpKWgBaKSlpiFopKWgApaSlpiClopaAClFJRTAWlpKKBDqKSloAWikpaYC0UCigQUtJS0wFpaSigBaWkopiFpaSigBaWkpaBC0UUUwClpKWgQtFJS0wFooooAWiiigQUUUUAFFFFACUUUUDCkopKACiiikAlFFFAxKKKSkAUUlFAwpKKKACkoopDEpKWkoAKKKKQCUUUUDEoopKQBSUtJQAUlLSUDCkpaSkBgUUUVyHUFFFFABRRRQAUUUUAFFFFMAooooAKKKKACiiigAooooAKKKKBhRRRQAUUUUAFFFFABRRRQIKKKKACloooAKWkpaAFooooELRRRTAKWiigBaKSloELRRRTAWiiigBaWkpaBBRRRTAWlpKKBC0tJS0AFLSUtMBaKKKAFooopiClpKWgBaWkopiFpaSloAKWkooEKKWkFLTAWiiigApaQUtMQUtJS0AKKWkFLQAUtJRTELS0lFAC0tJRTAWlpKWgQtFFFAC0UUUxC0tJRQAtLSUUwFpaSloEFKKSigBaWkpaYC0UlKKBC0UlLTAWiiigBaWkopiFpaSigBaWkooEOopKWmAtFFFAgooooAKKKKAEooooGJSUppKQBSUUUDCkoooAKSiikMSiikoAKKKSkAUUUlAwpKKKQBSUtJQAUlFFAwpKWkpAJRRRQAlFFFIYlFFJQBg0UUVyHUFFFFABRRRTAKKKKACiiigYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUALRRRQIWiiimAtFFFAhaKKKAFooopgFLRRQIWlpKWgApaSloAKWkopiFooooAWiiigQtLSUtABS0lFMB1FJRQAtLSUtAgpaSlpgFLSUtAhaWm0tMBaKKKBCilpBRTAWlpKWgAFLSUUCFpaSlpgFLSUtAC0UUUCFooopgLRRRQAtFJS0xC0tJS0AFLSUtMApaSloELRSUtAC0UlLTAWiiigQtLTaWmAtLSUUCFpaSigBaKKKYC0tJRQIdRSUtMBaKSloELS02loAWikpaYC0UlFAhaSiigYUlFJSAKKKSgAoopKBhSUtJSADSUUUDCkpaSkAUlBooAKSikoAKKKKQxKKKSgAoopKQwpKWkoAKSlpKACkpaSkMSiikoAwqKKK5TqCiiigAooooAKKKKBhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUALRRRTELS0lLQAUtJS0CCiiimAopaSloAKWkpaBBS0UUAFLSUUALRRS0xBS0lFAC0tJS0CCiiigBaKBRTAWiiigQtFFFACilpKKYC0tJRQIWlpKWmAtFFFAC0UlFAh1FJS0wFoooFAC0tJRTELRRRQAtLSUtABS0lLTELRSUtABS0lFMQ6ikpaAFooooAWiiimIWikpaAFooopgLS0lFAhaWkooAdRSUtMQUtJS0AFLSUtAC0UlFMQ6ikooAdRSUtMBaKSjNAC0tJRQIWikooAWkoooAKKM0lAwoopKACiikpAFFJRQAUlLSUDCiikpAFFFJQAUlFFIYUlLSUAFJRRQMKSiikAlFFFABSUUUhiUUUlABSUUUAYVFFFcp1BRRRQAUUUUDCiiigAooooAKKKKYBRRRQAUUUUAFFFFABRRRQAUUtFACUUtFACUUtJQAUUUUAFFFFAC0tJS0CAUtJS0ALRRRTAKKKWgQUtJS0AFLSUtAhaKSlpgFLSUtABSikpaBBRRS0AFLSUtMAooooELRRRQAtFFFAhaKKKBi0UlLQIWiiimIWikpaYC0tJS0AFFFFAhRS0lFAC0tJS0wClpKWgQtFJS0wFopKWgBaKKKBC0UlLTAWikpaAFopKWmIWlpKWgApaSlzQAUtJRTELS0lFAC0tJRTELS0lKKAClpKKAHUUlLTELRSUuaAFopKWgApaSimAtLTaWgQtLTaXNAC0UlFMBaKSigBaKSigBaSjNFIApKKSgBaSiigYUUUlIAoozSUAFFFJQAUlFFIYUlLSUAFJRRQAUlFFIYUlFFABSUuaSkAUlLSUDEoopKACiiikMwqKKK5jqCiiigAooooAKKKKYBRS0UAJRS0UAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFLRRQIWikpaYC0UUUCCiiloAKWkpaACiilpgFLSUtAgpaSloAKKKWgQUtJS0AFLSUtMAooooELRSUtABS0lLQAUtJS0CClpKWmAUtJS0AFLSUtAhaWm0tAC0UUUwFopKWgQtFJS0ALRSUtMQtFFFMBaWkooAdRSUtABS0lFMQtLSUUALRRRQIXNLSUtMApaSloELRSUtABS0lFMB1FJS0ALRSUUxDqKSigBaWkooAdRSUtMQtFJRQAtLSUUALRSUtMAooooELRSUUALRSUUALRSUUALSUUUAFFFFAwpKKKQBRSUUAFFFJQAUlFFIYUUUlABRSUUAFFFJSGFJRRQAUUUlIAoopKACkzS0lAwpKKKQBSUUUDMOiiiuY6goopaYCUtFFAgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigBaKKKAClpKWmAtFFFAgpaKKAClpKWmAUtJS0ALRRRQIKWkpaACiiigQtLSUtMAoooFAC0UUUAFLSUtAgpaSigBaWkpaAClpKWmIKKKKQC0UlLTELS0lFADqKSlpgFFFFAhaWm0tAC0tJS0wFopKWgQUtJRTAWlpKKAHUUlLQIKWkpaYBS0lLQAUuaSigQ6ikpaYC0UlLQIWikpaAClpKKYC0tJRQIdRSUUwFzS0lFAC0tJRQAtLSUZoAWlptLTELmikooAWikpaAFzRmkooAWikooAXNGaSigAoopKAFozSUUALSUUlAC0UmaKQwpKKKACjNJRQAUUlFABSUUUgCkoooGFFFJSAWkopKACiikoGGaSiikAUlLSUDCkpaSgDEpaKK5zpCiiigAooooAKKKKACiiigAooooAKKKKACiiigBaKSimAtFJRQAtFFFABRRRQAUUUlAC0UlFAC0UlFAC0UlLQAUtJSigBaKKKBC0UlLQAUtJS0wClpKWgBaKSloEFLSUtABRRS0CCiiimAtFFAoAWigUUAFLSUUCFpaSigBaWkpaACiigUxC0UUUAFLSUtABS0lFAh1FJS0ALRRRTAKWkooELS0lLQAtFJS0xC0UlLQAtFJS0wFFLTaWgBaKKKBCiikpaYC0UlLQAUtJRQIdRSUtMBaKSloELRSUtABS0lFMBaWkooAWlptLQIWiiimAtFJS5oAWikooAdRTaKAHUUlFAhaKSlpgFFFFABRRSUALRSUUgFoptFAxaKSigAoozSUAFFFFABSUUlIBaSiigYUlFFABRRSUgFpKKSgAoopKBhRSUUgCiikoGFFFJQAUUUUgMWikorA6RaKKKACiiigAooooAKKKWgBKKWimAlLRRQMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooELQKKBQAtFFFMQUtJS0AFLRRQAUUUtABS0lLQIKWkpaAClpKKYC0UUUCFooooAWiiigAooooELRRRTAWiiigBaKKKAFooooEFFFFAC0UUUCFpaSigBaWm0tMBaKKKBC0UlLQAtFFFAC0tJRTELS0lFAC0UlLTAWlptLQIWiiigBaKSlpgLRSUtABS0lFAh1FJS0wFopKKBC0tJRQAtFFFAC0UlLTAWikooAWlpKKBC0UUUwFopKM0ALRSZozQAtLTaWgBaKSigBaSiigAopM0ZoAWikzRQAUUUUAFJRRSAKKSigAoopKBi0lFFABSUUUgCikooAKKKSgYUUUlIAoopKBhRRSUAFFFFIApKKSgDHooorA6gooooEFFFFABRRRTAKKWigAooooAKKKKACiiigAooooAKKKWgBKKWigBKKWigBKKWigBKKWkoAKKKKACiiigBaBRRQAtFJS0wClpKWgQoopKWgApaSloAKWkpaBBRRRTAWiiigBaKKKAClpKWgQtFFFABRRRQIKWkpaAFopKWmAtFJS0AFLSUtAgooooAWikpaAClpKKBC0tJS0ALRSUtMAooooELS0lFAC0UUUxC0tJRQAtFFFAC0UUUwFpabS5oELRSUtAC0UlLTAWikooAWlpKKBDqKSigBaWkopiFpabS5oAWikooAWlpKKAFopKKYC0uaSigQtFJRQA6ikooAWikooAWikooAWikooAWikooAKKSigBaSiigAoopKBi0lFFABRSUUgFpKM0lAC0lFFABRSUUhhSUUUAFFJRQMKKKSgAoopKQC0lGaSgAooooGY9FFFYnQFFFFIAoopaYCUtFFABRRRQAUUUUAFLRRQAUUUUAFFFFABRRRTAKKKKACiiigAooooAKKKKQBRRRQAUUUUAFFFFMApaSloAKWkpaBBSikpRQAUtJS0AFLSUtMAooooEKKWkooAWiiigBaKSloELRSUtABRRRTAKWkpaQgooopgLS0lFAC0UUUCFopKWgAooooAWiiigQtFJS0ALRSUtAC0UlLTEFLSUUAOopKKAFpaSigB1FJRTELRRRQAUopKWgQtLTaWmAtFFFAC0UlLTAWikooAWiiigQtLTaWgBaKTNLQAUuaSimIWikpaAFopKKAFpaSigBaKSigBaKSimAtFJRQAtFJRQAtFJRQAtFJRQAtFJRSAWkoooAKKSigAoopKAFzSUUUAFFFJmgYtJRmkpAFFFFABRSUUDCiikoAKKKKQBSUUlABSUtJSAKKKKBmRRRRWJ0BRS0UwCiiigAooooAKWiigAooooAKKKKYBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUtIKWgApaSigQtFFFAC0tJS0AFFFFMBaKKKBBS0lLQAUtJS0AFLSUUCFpaSloAKKKKACiiimIWlpKKAFooooAWikpaAClpKWgQUUUUAFLSUUALS0lFAhaKSloAWikpaBC0UlLTGFLSUUCHUUlLQAUtJRTELS0lLQAUUUUALRSUtAC0UlGaYhaWkooAWlpKKAFpabS0wFopKWgApaSigQtLSUZoAWikooAWjNFFMQZpaSigBaKSigBaKTNGaAFoozRmgAoozRmgAoozRmgAopM0ZoAWikooAWkzRRQAZooooAKKKSkMWikzRQAUlFFABRRSUDFpKKSgBaSiikAUlFFABRSZooAKKKSkMKKKKACiikoAyqKKKyOgKKKKACiiigBaKKKACiiimAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUtFFABS0lFAC0UUUCFooooAWiigUwFooooEFFFFAC0tJS0AFFFFAC0tJRQIWikpaACiiimIKWkpaACiiigBaWkooAWiiigApaSloEFFFFAC0UlLQAUtJRQIWikpaAFopKWgQtFJS0wClpKKAHUUlLQAUtJRQIWlpKKYC0UUUAFFFFAhaWkooAWlptLTAWikpaAFopKKAFooopgLRSUUCFpaSigBaWm0UAOoptLQAtFJRQAtFJRQAtFFFABRRRQAUUUUAFFFJQAtFJRQAtFJSUAOpKSigBaSiigAoopKACiiigYUUlFIAoopKAFpKKSgBaSiikAUlFFABRRRQMKSiigApKKKQGXRRRWZ0BRRRQMKKWigQUUUUwCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigBaKSloAKKKKAFooooEFLSUtMBaKKKAFopKWgAooooELRSUtAC0UUUALRSUtAgpaSloAKKKKYBRRRQIWikpaAFopKWgApaSigBaKKKBC0UlLQAUUUUALRSUtAgooooAWikpaAFopKWgQtFJS0AFLSUUwFpaSloAKWkooELS02lpgLRSUtABRRRQAtFJRQIdRSUUwFooooAWikpaAFopKKAFopKWgApaSigBaKSimAtFJRQIWlptLQAtFJRQAtFJRQAtFJRQAtJRSUALRSUUALRSUUDFpKKKQBRRSUwFopKKQBRRSUAFFFFABRSUUAFFFJSAWkoooGFFFFABSUUUAFJRRSAKKKSgZmUUUVmbi0UUUAFFFFMAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAClpKWgAoopaACiiimAtFJS0CFopKWgApaSigBaKKKBBS0lLQAUtJS0AFFFFAC0tJRQIWikooAWiiimAUUUUCFopKWgApaSigBaKKKBC0UUUgFopKKYC0UUUALRSUtIAooopiFopKWgBaKSloELRSUtABS0lFMBaWm0tAC0UUUALRSUUCFpaSimAtFJS0AFFFFAC0UlFAh1FJRQAtFJS0wClpKKAFopKKAHUU2igB1FJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFNooAdSUlFAC0lFFABRRSUALRSUUgCiikoAKKKKBhRRSUALSUUUAFFJRSAKKKKBhSUUlAC0lFFAGbS0lLWZuFFFFABRRRTAKKKKACiiigAooooAKKKKACiiigAooopgFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFIAooooGFFFFAhaKKKAFopKWmIKKKKAFpaSigBaKKKAFooooEFFFFAC0UlLQAtFFFABS0lFAhaKKKYC0UUUgCiiigApaSigQtFJS0AFLSUtMBaKSikAtFJRQIWlpKKAFooopgFLSUUhC0UlLQAtFJRTAdRSUUCFpaSigBaKKKAFopKKYDqKSloAKKKKBC0UlLQAUtJRTAWikooAWiiigApaSigQtLTaKAHUU2loAWikopgLRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUlFAC0UlJSAdSUlFAC0lFFABRRRQMKKSigBaKSigAoopKQC0lFFABRRSUDCiikoAWkoopAFJRRQBn0UUVBuFFFFMAooooAKKKKACiiigAooooAKKKKYBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRSAKKKKAFooooAKWkpaYBRRRQIWiiigBaKKKAClpKKAFooooEFFFFAC0tJS0AFFFFAC0UlLQIKWkooAWikpaACiiigQUtJRQAtFFFABS0lLQAUUUUCCiiigBaWkooAWiiigQUUUUALRSUtABS0lFAC0tJRTAWikpaBC0UlLQAUtJRQAtLTaWmAtFJS0AFFFFAgpaSigBaKSloAWikooAWikpaYBRRRQAUUUUCFopKKAFopKKAFozSUUALmjNJRQAuaKSigBaKSigBaKSigAooooAKKKKBhRRSUALRSUUAFFFJSAWkoooAKKKKACiikoGLSUUlAC0lFFIAoopKACiiigApKKKAKFFFFSbhRRRQAUUUUAFFFFABRRRQAUUUUwCiiigAooooAKKKKAFopKWgAooooAKKKKACiiigApKWkoAKKKKACiiigAooooAKKKKQC0UlLQAUtJRTAWiiigQUUUUALS0lFAC0UUUALRRRQIKKKKAFopKKAFpaSigBaKKKBBS0lFAC0UUUALRSUtABRRRQIKKKKAFooooAWikooAWiiigQUtJRQAtFJS0ALRSUtAgooooAKKKKAFopKWgBaKSloAWikopiFooooAWikpaAFopKKAFopKWmAtFJRQAtFFFABS0lFAhaKSigBaKSigBaKSigBaKSigBaWkooAWikopgLRSUUALRSUUALSUUUgCikooAWikooAWikooAWikooAWkoooAKKKKBhRSUUALSUUlAC0UlFIAoopKAFpKKKACikooAKKKSkMKKKSgClRRRSNgooooAKKKKACiiigAooopgFFFFABRRRQAtFJS0AFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABSUUUAFFFFABRRRQAUtJRQAtFFFAC0UlLQAUUUUCFooooAWikpaACiiigBaKKKBBRRRQAtFJS0AFFFFAhaKSloAWikooAWiiigBaKSloEFFFFABS0lFAC0UlLQAUtJRQAtFJS0CCiiikAtFJRQAtFJS0ALRSUtMQUUUUALRSUUALS02loAWlptLTAWikpaBBRRRQAtFJS0AFLSUUALRSUUALS02lpgLRSUUALRSUUALRRRQAUUUUCCiiigAooooAKKKKACiiigAooooAKKKKACiiigYUUlFAC0UlFAC0lFJQAtFJRSAWkoooAKKKSgAooooAKKKSgBaSikoGLSUUlIBaKSigAooooApUUUUjYKKKKACiiigAooooAKKKKYBRRRQAUUUtABRRRQAUUUUwCiiigAooopAFFFFABRRRQAUUUUwCiiigApKWikAlFFFABRRRQAUUUUALRSUtIAooopgLRRRQIKKKKAFpaSigBaKKKAClpKWgAooooEFLSUUALRSUtABRRRQIWikooAWlpKWgAooooAKKKKBC0UlLSAKKKKYC0UlFIBaKKKAClpKKBC0UlFAC0UUUALRSUtABS0lFMBaKSloEFFFFABS0lFAC0tJRQAtFJS0ALRSUtMQUUUUAFLSUUALRSUtABRRRQAUUUUALRSUUALRSUUALRSUUALRSUUALRSUtABRSUUALRSUUALRSUUALRSUUAFFFFABRRRQAUUUlAC0lFFABRRRQAUUUlAC0lFJSGLSUUUAFFJRQAUUUUAFFFJQAtJRRQMp0UUUjUKKKKACiiigAooooAKKKKYBRRRQAUtFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABSUtJQAUUUUAFFFFABS0lFAC0UUUgClpKKYhaKKKAClpKKQC0tJRQAtFFFMApaSigBaKSlpCCiiigBaKKKYBRRRSEFLSUtABS0lFAC0UlFAhaKSigBaWkooAWiiigAooooAKKKKAClpKKAFpaSigQtFFFABS0lFAC0UlLQAtFJRTAWikpaQgooopgLRSUUALS02loAWikooAWlptLQAtFJRQIWikopgLRRRQAUUUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUAFFFFABRRRQAUUlFIBaKSigBaSikoGLRSUUALSUUlAC0UlFABRRRQAUUUlAC0UlFAwoopKQC0lFFAFSiiig1CiiigAooooAKKKKYBRRRQAUtFFABRRRQAUUUUAFFFFABRRRTAKKKKACiiigAooooAKKKKQBRRRQAUUUUAFFFFACUUtJQAUUUUAFFFFIBaKKKACiiigBaKSlpgFFFFIQUtJRQAtLSUUALRRRTAKWkopCFopKWgAooooAWikooAWiiigQUtJRQAtFFFABRRRQIKWkooAWiiigBaKSloAKKKKACiiigAooopALRSUUALS0lFMQtFJS0AFLSUUALRRRQAUtJRQAtFJRQIWiiimAUUUUAFLSUUALRSUtABRRRQAtFJRQAtFJRQAtLTaWgQtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtJRSUALRSUUDFopKKACiiigAoopKAFpKKKACiiigAooooAKKSikAtJRRQMKKKKACkoooAKKKKACkoooAq0UUUGoUUUUAFFFFABRRRTAKKKKACloooAKKKKYwooopCCiiimAUUUUAFFFFABRRRQAUUUUAFFFFABRRRSAKKKKACiiimAUlLSUgCiiigAooooAKKKKQC0UUUAFFFFABS0lLQIKKKKAFopKWgAooooAWikooAWikpaBC0UlLQAUUUUAFLSUUALRSUtAgpaSigBaKSigBaKSloAKKKKAFopKKBDqKSigBaKSigBaKSikAtFJRQAtFFFAC0UlFAhaWkopgLRRRQAUUUUAFLSUUALRSUtABS0lFAC0UlFAhaKSloAKKKKACiiimAUUUUAFLSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUAFFFFABRRRQAUUUUgCiikoAWikooAWkoooGFFFJQAtJRRQAUUUUAFFFFABSUUUAFFJRSAWkoooGVqKKKZoFFFFABRRRQAUUUUwCiiigBaKKKACiiigAooooAKKKKYBRRRQAUUtFACUUtFACUUtJQAUUUUAFFFFABRRRSAKKKKACkpaSgAooooAKKKKACiiikAUtJRQAtFJS0CCiiigYUtJRQIWiiigApaSigBaKSloAKKKKAFpabS0CFopKKAFopKWgAooooELRSUtABRRRQAUUUUAFLSUUgFopKWgAooooEFFFFAC0UlFAC0UUUAFLSUUALRSUtABRRRQAtFJRQIWiiigApaSimAtFJS0AFLSUUALRSUUALRSUUALRSUUALRSUUALRRRQAtFJRQIWikooAWikooAWikooAWikooAWikooAWikooAWkoooGFFJRQAtFJRQAtFJRQAtFJRQAtJRRQAUUUlAC0lFFABRRRQAUUUlIAooooGFFFJQAtJRRQBXooopmgUUUUAFFFFABRRRTAKKKKAFooooAKKKKACiiimAUUUUAFFFFABRRRQMKKKKYBRRRSEFFFFABRRRQAUUUUgCiiigApKWigBKKKKACiiigAooopAFFFFABRRRQAtFJS0AFFFFAhaKSigBaKSigBaKSloAWikooAWiiigQtFJRQAtFFFIApaSigBaKKKACiiigQUUUUAFFFFAC0UlFAC0UUUCCiiigApaSigBaKSikAtLTaWgBaKSloAKKKKYC0UlFAC0UUUAFLSUUALRSUtAgpaSigBaKSimAtFJRQAtFJRQAtFJRQAtFJS0AFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRSUALRSUUALRSUUALRSUUALRSUUALSUUUgCiikoAWkoooGFFFFABRSUUAFFFFABRRSUgFpKKSgCGiiiqNAooooAKKKKACiiimAUUUUALRRRQAUUUUAFFFFMAooooAKKKKBhRS0UAJRS0UAJRS0lABRRRQAUUUUCCiiigAooooAKSlpKQBRRRQAUUUUAFFFFIAooooAKKKKACiiigBaKSloEFFFFABRRRQAUUUUALRSUUALS0lFIQtFJS0AFFFFABS0lFAC0UlLQAtFJRQAtFJRQIWikpaACiiigApaSikAtFJRQAtFJRQIWikpaACiiigBaKSigBaKKKAFopKKAFopKWmAUtJRQAtFJRQAtFFFABRRRQAtFJRQIWikooAWikpaACiiigAooopgFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFIAoopKAFopKKAFopKKACiiigYUUUUAFFFJQAtJRRQAUUUlAC0UlFIAooooAKKSigAooooAhoooqjQKKKKACiiigAooopgFFFFAC0UUUAFFFFABRRRTAKKKKAClpKWgAooooAKKKKACiiigBKKWkoAKKKKACiiikAUUUUAFJS0lABRRRQAUUUUgCiiigAooooAKKKSgBaKSloAKKKKAFopKKQhaKKKACiiigAooooAKWkooAWiiigAooooAKKKKBC0UlFADqKSikAtFJRQAtFFFAgooooAKWkooAWiiigAooooAKKKKBBRRRQMWikooELRRRQAUtJRQAtFJS0AFLSUUALRSUUALRRRQAUUUUwClpKKAFopKKAFopKWgQUUUUAFFFFABRRRQAUUUUDCiiigAooooAKKKKBBRRRQAUUUUAFFFJQAtFJRQMWikooAKKKKACiiikAUUlFAC0lFFABRRSUALSUUUAFFFFABRSUUAFFFFAyKiiiqLCiiigAooooAKKKKACiiimAUtJS0AFFFFABRRRTAKKKKACiiimMKKKWgBKKWikAlFFFMAooopAFFFFAgooopAFFFFACUUUUAFFFFABRRRSAKKKKACiiigApKWkpAFFFFABRRRQAtFJS0AFLSUUCFopKKAFopKWgAooooAKWkooAWikooAWiiikAUUUUAFLSUUCFopKWgAooooAWikooELRSUUALRRRQAtFJRSAWikooAWikooAWiiigAooooAWikopiFopKWgAooooAKKKKAFopKKAFopKWgAooooAKKKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKACiiigAooooAKKKKACikooAKKKKACiiigAoopKAFopKKACiiikMKKKKACkoooAioooqyxaKKKACiiigAooooAKKKKYBRRRQAtFFFMAooooAKKKKAClpKWgAooooAKKKKACiiigBKKKKACiiigAooooAKSlpKQBRRRQAUUUUAFFFFIAooooAKSlpKACiiikAUUUUAFFJRQAtFFFABS0lFAC0UUUhBRRRQAUtJRQAtFJRQAtFFFABRRRQAUtJRQAtFJRQIWiiigAooooAKKKKQC0UlFAC0UlFAC0UUUCCiiigAooooAWikooAWiiigBaKSigBaKKKACiiigBaKSigBaKSimIWikpaACiiigAooooAKKKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKACiiigAooooAKKKKACiikoAWikooAWikopDCiiigAooooAKKSigAooooAKKSigAooooAjoooqixaKKKYBRRRQAUUUUAFFFFABRRRTAKWkooAWiiigAooopgFLSUUALRSUUDFopKKAFopKKBC0lFFABRRRSAKKKKAEooooAKKKKACiiikAUUUUAFFFFABSUtJSAKKKKAEooooAKKKKAClpKKAFooopAFFFFABRRRQIWikooAWiiigAooooAKWkopALRSUUALRRRQAUUUUCFopKKAFopKKAFopKKAFopKKAFopKWgAooooEFFFFIBaKSimAtFFFABRRRQAtFJRQAtFFFAC0UlFAC0UlLQAUUUUAFFFFABS0lFAC0UlFAhaKSigBaKSloAKKKKYBRRRQAUUUUAFFFFABRRRQAUUUlIBaKSigBaKSigBaSiigYUUUUAFFFFABRRSUALRSUUAFFFFABRSUUAFFFFABRRRQAUUlFABRRRSAZRRRVlhRRRQAUtJS0wCiiigAooooAKKKKYBRRRQAtFJS0AFFFFABRRRTAKKKKACiiigAooooAKKKKACiiikAUlFFABRRRQAUUUUgCiiigAooooAKSlpKACiiikAUUUlABRRQaACikopALRSUUALS02loAWikooAWikooAWikooAWlpKKBC0UUUAFFFFIAooooAKWkooAWikpaACiiigAooooEFFFFABRRRQAUUUUgCiiigAooooAWikooAWikpaBC0UlFAC0UlFAC0UUUwCiiigApaSigBaKSigBaWm0tAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0lFFABRSUUALSUUUAFFFFABRRRQAUUlFIBaKSigAoopKAFopKKBhRRRQAyiiirKFooooAKWkooAWikpaYBRRRQAUUUUAFFFFMAooooAWikooAWiiimAUUUUgCiiigAooopgFFFJQAtJRRSAKKKKACiiikAUUUUAFFFFABRSUUAFFFFIApKWkoAKKKKACiiigBKKKKQBRRRQMKKKKBC0UlFAC0UlFIBaKKKACiiigBaKSigQtFJRQAtFFFABRRRQAtFJRQAtLTaWkAtFJRQAUUUUAFFFFABRRRQIWikooAWikooAWiiigAooooAKWkooAWikooAWikpaBBS0lFAC0UlFAC0UUUAFFFFABRRRQAUtJRTAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWkoooAKKKKQBRRRQAUUUUAFFJRQAtJRRQAUUUlAC0UlFAC0lFFAwooooAKKKKACikooAbRRRVlBS0lFAC0UlLQAUUUUwFooooAKKKKACiiigAooooAKKKKYBRRRQAUtJRQAtFJRQAtJRRQAUUUUAFFFFABRRRSAKKKKACiiigApKWkoAKKKKQBRSUUAFFFFABRRRQAUlLSUgCiiigYUUUUCCiiikAUUUUAFFFFABRRRQAtFJS0AFFFFAgooooAKKKKQBS0lFAC0UUUAFFFFABS0lFAC0UlFABS0lFAhaKSikAtFFFABRRRQAUUUUALRSUUALRSUUwFopKWgAooooAKKKKACiiigBaKSigBaKSigQtFFFABRRRQAUtJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAUUUUAFFFFABRSUUALRSUUDCiiigAooooAKKKKACiikoAWikooAWikooAKKKKQBRRRQA2ikoqyhaKSlpgFFFFAC0UUUAFFFFABRRRTAWiiigAooooAKKKKACiiigAooopgFFFFABRRRSAKKKKACiiigAooooAKKKSgAooooAKKKKQBRRSUAFFFFABRSUUALRSUUgFpKKKACiiigAooopAFFFFABRRRQAUUUUAFFFFABRRRSAKKKKACiiigAooooEFFFFAC0UlFAC0UUUAFFFFIAooooAKKKKAClpKKAFopKKAFopKWgQUtJRQAtFJRQAtFFFABRRRQAUUUUwCiiigBaKSigBaKSigBaKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKSigBaKSigAooooAKKKKACiiikAUUUUAFFFJQAtJRRQAUUUlACUUUVZYUtJRQIWiiimAUUUUAFLSUUALRRRQAUUUUALRSUUwFopKKAFopKWgAooooAKKKKACiiigAopKKAFopKKAFpKKKACiiikAUUUlABRRRQAUUUUAFFFJQAUUUUgCiiigYUUUUCCiiikAUUUUAFFFFABRRRQAUUUUgCikooAWikooAWikooAWikooAWikopALRRRQAUUUUCCiiigBaKSigBaKSigBaKSigBaKSigBaKKKACiiigApaSigBaKSigBaKSloAKKKKBC0UlFAC0UlFAC0UUUAFFFFABRRRQAUUUUAFLSUUALRSUUwFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFpKKKQBRRRQAUUUUAFFFFABRRRQAUUlFAC0UlFAC0lFFABRRSUDFopKKAFpKKKACiiigBKKKKsYUUUUDFopKWgQUUUUwCiiigApaSigBaKSigBaKSigBaKKKACiiigAooopgFFFFABRRRQAUUUUgCiikoAWikooAWikooAKKKKACiiigAooopAFJRRQMKKKKBBRRRQAUUUUgCiiigAooooAKKKSgAooooAKKKKQwooooEFFFFIAoopKAFopKKAFooooAKKKKAFopKKBC0UlFAC0UlFAC0UlLSAKKKKACiiigAooooAKWkooAWikooAWikpaYBRRRQAUUUUALRSUUALRSUUALRSUUALRSUUCFooooAKWkooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWkoooAKKKKACiikoAWikooGLRSUUALRSUUAFFFFABRRRQAUUUlAC0UlFIBaSiigAooorQYUUUUAFLRRQMKKKKBBRRRTAKKKKACiiigAooooAKKKKYBS0UUgCiiigAooooAKKKKAEooopgFFFFIAooooAKKKKACiiigAooopAFFFFACUUUUDCiiigQUUUUgCiiigAooooAKKKKACkNFFABRRRSAKKKKACiiigAooopAJRRRQAUUUUAFFFFAC0UUUCCiiigAooooAKKKKACiiigApaKKQBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFMBaKKKACiiigAooooAKKKKACiiigAooooAKKKKAFooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAEooooAKKKKACiiigAooooAKKKKACiiigAooooASiiigAooopAFFFFABRRRQB//9k=" alt=""><div class="hero-inner"><div class="series">GEO-АКАДЕМИЯ · КУРС A10 · v6</div><h1>Проверь бренд в ИИ за вечер</h1><p class="lead">Практический курс лаборатории GEO-Апгрейд · 5 уроков · домашние задания · рабочие документы</p><div class="badges">
+<span class="badge">Узнать, что нейросети говорят о твоём бренде прямо сейчас</span>
+<span class="badge">Собрать факт-базу, из которой ИИ может цитировать тебя</span>
+<span class="badge">Написать первую статью, которую прочитают и человек, и нейросеть</span>
+<span class="badge">Получить маршрут на месяц и повторный замер</span>
+</div></div></header><main>
+<div class="progressbar"><span class="plabel2">ПРОГРЕСС КУРСА</span><div class="bar"><div class="bar-fill" id="bfill"></div></div><p class="ptxt" id="ptxt">Этапов выполнено: 0 из 25 | Уроков пройдено: 0 из 5</p></div>
+<div class="frame"><h2>Как устроен курс</h2><ol>
+<li>Урок открывается после выполнения домашнего задания предыдущего. Прогресс сохраняется автоматически.</li>
+<li>Каждое ДЗ — короткая форма с автосохранением. Нажми «Задание выполнено», чтобы открыть следующий урок.</li>
+<li>Рабочие документы лежат рядом с курсом в комплекте: шаблон замера, журнал автора, контент-план, чек-лист публикации, шаблон AI-Паспорта.</li>
+<li>Уроки 1–2 — за один вечер, уроки 3–5 — по шагам в течение недели.</li>
+<li>В каждом уроке: <b>скачай лекцию (PDF)</b> и прочитай — подробная методичка лаборатории с приложениями (все 21 правило, все 22 площадки); затем этапы практики, квиз «Проверь себя» и ДЗ; в конце урока — поле «Комментарии себе».</li></ol></div>
+<section class="lesson" id="lesson0">
+<div class="lhead"><span class="lnum">УРОК 1</span><span class="ltime">20–30 минут</span><span class="donemark" id="done0" hidden>ПРОЙДЕН ✓</span></div>
+<h2>Что нейросети знают о тебе прямо сейчас</h2>
+<p class="lout">Результат урока: <b>Первая карта видимости: кто назван источником в ответах на твои запросы</b></p>
+<p class="lintro">Нельзя улучшить то, что не замерено. Первый вечер начинается с честного замера: ты спрашиваешь нейросети о себе — как это делают твои клиенты — и фиксируешь, кто попадает в ответы.</p>
+<div class="plabel">ЛЕКЦИЯ УРОКА · ОТДЕЛЬНЫЙ ДОКУМЕНТ (PDF)</div>
+<div class="lecture"><div class="dlrow"><a class="dlbtn" href="lessons/a10-lecture-1.pdf" download>СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Как нейросети узнают бренды — четыре слоя сигнала · подробная методичка, 4+ страницы</span></div>
+<p class="llead">Прежде чем мерить, полезно понять механику. Нейросеть не «гуглит» твой сайт на лету — она отвечает из того, что успела выучить: из текстов, цитируемых источников, каталогов и карточек.</p>
+<p style="font-family:var(--font-head);font-size:11px;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px">ЧТО ВНУТРИ ЛЕКЦИИ:</p>
+<div class="toc">
+<span><b>·</b> Слой 1. Внешние цитируемые источники</span>
+<span><b>·</b> Слой 2. Карточки и каталоги</span>
+<span><b>·</b> Слой 3. Твой сайт</span>
+<span><b>·</b> Слой 4. Согласованность фактов</span>
+<span><b>·</b> Почему важен замер</span>
+</div></div>
+<div class="plabel">ЭТАПЫ УРОКА · ОТКРЫВАЮТСЯ ПО ОДНОМУ</div><div class="steps">
+<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Составь 3–5 запросов клиента</b><br>Сядь на место клиента: что он напишет в ChatGPT, Perplexity или Нейро, когда ищет твою услугу? Запиши запросы его словами, без брендовых названий.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Прогони запросы через две нейросети</b><br>Задай каждый запрос в двух системах (например ChatGPT и Perplexity). Читай ответы как клиент: тебе кто-то назван? Кто — вместо тебя?</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Сведи замер в рабочий документ</b><br>Открой «Шаблон замера видимости» из комплекта: заполни таблицу «Запрос | Кто назван | Я в списке | Конкуренты» для обеих нейросетей.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Зафиксируй стартовую точку</b><br>Посчитай долю присутствия: в скольких ответах из всех тебя назвали. Запиши в отчёт замера с датой.</div></div><div class="sctl"><button class="sbtn" data-l="0" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+</div><div class="quiz"><div class="qzhead">ПРОВЕРЬ СЕБЯ · 3 ВОПРОСА</div>
+<div class="q"><p class="qq">Где нейросеть берёт факты о компании, когда отвечает клиенту?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Ответ строится на совокупности источников. Согласованные факты на многих площадках усиливают сигнал; расхождения — ослабляют.">Только из сайта компании</button>
+<button class="qopt" data-ok="1" data-g="Ответ строится на совокупности источников. Согласованные факты на многих площадках усиливают сигнал; расхождения — ослабляют.">Из внешних цитируемых источников, каталогов, карточек и сайта — согласованность важнее любого одного канала</button>
+<button class="qopt" data-ok="0" data-g="Ответ строится на совокупности источников. Согласованные факты на многих площадках усиливают сигнал; расхождения — ослабляют.">Из рекламы компании в интернете</button>
+</div><p class="qwhy"></p></div>
+<div class="q"><p class="qq">Что такое «зона слепоты» в терминологии лаборатории?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Сайт может быть отличным и на топе поиска — и всё равно отсутствовать в ответах ИИ. Это и есть зона слепоты.">Проблемы с индексацией сайта в поиске</button>
+<button class="qopt" data-ok="1" data-g="Сайт может быть отличным и на топе поиска — и всё равно отсутствовать в ответах ИИ. Это и есть зона слепоты.">Бизнес живёт и работает, но нейросети о нём не знают — его нет в ответах</button>
+<button class="qopt" data-ok="0" data-g="Сайт может быть отличным и на топе поиска — и всё равно отсутствовать в ответах ИИ. Это и есть зона слепоты.">Тёмная тема сайта</button>
+</div><p class="qwhy"></p></div>
+<div class="q"><p class="qq">Почему замер делается ДО правок, а не после?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Замер — карта. Сначала карта, потом маршрут: иначе правки идут вслепую.">Чтобы не потратить время на правки</button>
+<button class="qopt" data-ok="0" data-g="Замер — карта. Сначала карта, потом маршрут: иначе правки идут вслепую.">Так правки не сломают сайт</button>
+<button class="qopt" data-ok="1" data-g="Замер — карта. Сначала карта, потом маршрут: иначе правки идут вслепую.">Нельзя улучшить то, что не замерено: без стартовой точки непонятно, что и где править</button>
+</div><p class="qwhy"></p></div>
+</div>
+<div class="hw"><h2 style="font-size:15px">ДЗ к уроку 1: твои первые три замера</h2><ol class="hwlist">
+<li>Запиши 3–5 клиентских запросов твоей ниши (как их формулирует клиент, не ты).</li>
+<li>Прогони их через две нейросети и заполни таблицу в «Шаблоне замера видимости».</li>
+<li>Посчитай и запиши свою долю присутствия и три причины, почему ты не попал в ответы (по шаблону).</li>
+</ol><textarea id="hw0" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
+<div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote0" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
+<button class="donebtn" id="dbtn0">Задание выполнено — открыть следующий урок</button></div>
+<div class="wsrow"><b>Рабочие документы урока:</b> Замер видимости (шаблон + отчёт), Журнал замеров</div>
+<p class="lcheck">Проверка урока: Таблица замера заполнена, доля присутствия записана с датой.</p>
+<p class="lnext">Дальше: <b>Урок 2: чистим то, что нейросети говорят о тебе.</b></p>
+<div class="hw" style="margin-top:18px"><b style="color:var(--neon)">Этот урок — бесплатная витрина курса.</b> Остальные открываются после покупки полного курса.<br><a class="donebtn" style="display:inline-block;margin-top:12px;text-decoration:none" href="https://tochkaplace.com/ia/53aa63f7-6e05-4612-ae93-12c6d4c8f9c5" target="_blank">Купить полный курс — 990 ₽</a></div>
+</section>
+<section class="lesson" id="lesson1">
+<div class="lhead"><span class="lnum">УРОК 2</span><span class="ltime">20–30 минут</span><span class="donemark" id="done1" hidden>ПРОЙДЕН ✓</span></div>
+<h2>Факт-база: чем ты интересен нейросети</h2>
+<p class="lout">Результат урока: <b>Собранное досье о бренде: факты, цифры, доказательства, позиционирование</b></p>
+<p class="lintro">Нейросеть не советует «понравившегося» — она цитирует проверяемые факты. Сегодня ты собираешь их в одном месте: шаблон AI-Паспорта делает это структурированно.</p>
+<div class="plabel">ЛЕКЦИЯ УРОКА · ОТДЕЛЬНЫЙ ДОКУМЕНТ (PDF)</div>
+<div class="lecture"><div class="dlrow"><a class="dlbtn" href="lessons/a10-lecture-2.pdf" download>СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">AI-Паспорт: фундамент, на который встаёт всё · подробная методичка, 4+ страницы</span></div>
+<p class="llead">Нейросети любят конкретику. «Качественная студия маникюра» — это шум. «Студия маникюра в Новосибирске, работаем с 2019 года, 2400 клиенток, стерилизация в сухожаре» — это факты, которые можно процитировать.</p>
+<p style="font-family:var(--font-head);font-size:11px;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px">ЧТО ВНУТРИ ЛЕКЦИИ:</p>
+<div class="toc">
+<span><b>·</b> Пять блоков паспорта</span>
+<span><b>·</b> Формула позиционирования</span>
+<span><b>·</b> Кому НЕ подойдёт</span>
+<span><b>·</b> 22 площадки и правило NAP</span>
+<span class="app">★ Приложение: 22 площадки — полный список + 5 правил публикации</span>
+</div></div>
+<div class="plabel">ЭТАПЫ УРОКА · ОТКРЫВАЮТСЯ ПО ОДНОМУ</div><div class="steps">
+<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Заполни анкету AI-Паспорта</b><br>Открой «Шаблон AI-Паспорта компании» из комплекта: 26 полей в 5 блоках, живой пример заполнения, автосохранение. Заполняй только правду — пустые поля не блокируют сборку.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Собери формулу позиционирования</b><br>Шаблон сам сложит из ответов формулу: «Мы — [кто] в [город]. Помогаем [кому] [что]: [отличие] — [доказательство]». Прочитай вслух — узнаваемо?</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Добавь блок «Кому НЕ подойдёт»</b><br>Честность цитируется охотнее рекламы: укажи, кому твоя услуга не подойдёт.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Скачай паспорт</b><br>Файл AI-Паспорт-компании.txt готов к выкладке на сайт, в карточки и в промпты.</div></div><div class="sctl"><button class="sbtn" data-l="1" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+</div><div class="quiz"><div class="qzhead">ПРОВЕРЬ СЕБЯ · 3 ВОПРОСА</div>
+<div class="q"><p class="qq">Сколько полей в AI-Паспорте лаборатории и сколько в нём блоков?</p><div class="qopts">
+<button class="qopt" data-ok="1" data-g="Анкета A3 — 26 полей в пяти блоках: «Кто мы», «Что предлагаем», «Контакт-факты», «Доказательства», «Позиционирование».">26 полей в 5 блоках</button>
+<button class="qopt" data-ok="0" data-g="Анкета A3 — 26 полей в пяти блоках: «Кто мы», «Что предлагаем», «Контакт-факты», «Доказательства», «Позиционирование».">10 полей в 2 блоках</button>
+<button class="qopt" data-ok="0" data-g="Анкета A3 — 26 полей в пяти блоках: «Кто мы», «Что предлагаем», «Контакт-факты», «Доказательства», «Позиционирование».">50 полей в 10 блоках</button>
+</div><p class="qwhy"></p></div>
+<div class="q"><p class="qq">Зачем в паспорте блок «Кому НЕ подойдёт»?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Специализированный сигнал сильнее «универсального». Границы — часть узнаваемости.">Чтобы отпугнуть клиентов</button>
+<button class="qopt" data-ok="1" data-g="Специализированный сигнал сильнее «универсального». Границы — часть узнаваемости.">Границы делают специалиста узнаваемым: нейросеть с большей вероятностью назовёт того, у кого есть чёткая специализация</button>
+<button class="qopt" data-ok="0" data-g="Специализированный сигнал сильнее «универсального». Границы — часть узнаваемости.">Это юридическое требование</button>
+</div><p class="qwhy"></p></div>
+<div class="q"><p class="qq">Что такое NAP в контексте карточек и площадок?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Name–Address–Phone: одна и та же контактная фактура везде. Расхождения снижают доверие нейросети к каждому источнику.">Ночная аренда помещений</button>
+<button class="qopt" data-ok="1" data-g="Name–Address–Phone: одна и та же контактная фактура везде. Расхождения снижают доверие нейросети к каждому источнику.">Единые Имя-Адрес-Телефон на всех площадках</button>
+<button class="qopt" data-ok="0" data-g="Name–Address–Phone: одна и та же контактная фактура везде. Расхождения снижают доверие нейросети к каждому источнику.">Порядок публикации статей</button>
+</div><p class="qwhy"></p></div>
+</div>
+<div class="hw"><h2 style="font-size:15px">ДЗ к уроку 2: паспорт бренда</h2><ol class="hwlist">
+<li>Заполни не менее 18 из 26 полей анкеты AI-Паспорта.</li>
+<li>Собери паспорт и проверь формулу позиционирования вслух.</li>
+<li>Впиши блок «Кому НЕ подойдёт» — хотя бы два честных пункта.</li>
+</ol><textarea id="hw1" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
+<div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote1" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
+<button class="donebtn" id="dbtn1">Задание выполнено — открыть следующий урок</button></div>
+<div class="wsrow"><b>Рабочие документы урока:</b> Шаблон AI-Паспорта компании (A3, интерактив), Журнал автора</div>
+<p class="lcheck">Проверка урока: Паспорт собран и скачан. Формула позиционирования читается вслух без запинки.</p>
+<p class="lnext">Дальше: <b>Урок 3: из факт-базы рождаются запросы и структура.</b></p>
+</section>
+<section class="lesson" id="lesson2">
+<div class="lhead"><span class="lnum">УРОК 3</span><span class="ltime">25–35 минут</span><span class="donemark" id="done2" hidden>ПРОЙДЕН ✓</span></div>
+<h2>Запросы и фундамент контента</h2>
+<p class="lout">Результат урока: <b>15 запросов с редкими словами и план первых материалов</b></p>
+<p class="lintro">Слова, по которым тебя находят, нельзя брать «с потолка». Промпт с IDF-моделью строит запросы, где редкие слова привязываются именно к тебе — конкуренты их не заметят.</p>
+<div class="plabel">ЛЕКЦИЯ УРОКА · ОТДЕЛЬНЫЙ ДОКУМЕНТ (PDF)</div>
+<div class="lecture"><div class="dlrow"><a class="dlbtn" href="lessons/a10-lecture-3.pdf" download>СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Запросы: как клиент на самом деле спрашивает нейросеть · подробная методичка, 4+ страницы</span></div>
+<p class="llead">SEO-семантика «купить диван недорого» в нейросетях почти мертва. Клиент разговаривает с ИИ как с человеком: длинными, конкретными, эмоциональными фразами.</p>
+<p style="font-family:var(--font-head);font-size:11px;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px">ЧТО ВНУТРИ ЛЕКЦИИ:</p>
+<div class="toc">
+<span><b>·</b> Три типа запросов</span>
+<span><b>·</b> Редкие слова решают</span>
+<span><b>·</b> Матрица запросов и доказательств</span>
+<span><b>·</b> Проверка вслух</span>
+</div></div>
+<div class="plabel">ЭТАПЫ УРОКА · ОТКРЫВАЮТСЯ ПО ОДНОМУ</div><div class="steps">
+<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Сгенерируй запросы</b><br>Промпт «Генерация запросов пользователей»: 15 анкорных фраз 7–13 слов с редкими словами (IDF), географической привязкой и группировкой по интенту.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Проверь вопросами покупателя</b><br>Промпт «Вопросы пользователей нейросетям» (статус «работает») раскладывает вопросы клиента по этапам: проблема → выбор → сравнение → доверие → покупка. Это будущие заголовки.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Свяжи запросы с паспорт-фактами</b><br>Для каждого запроса ответь: какое доказательство из паспорта подтверждает его? Нет доказательства — это тема будущей статьи или кейса.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Заполни контент-план</b><br>Внеси первые темы в «Контент-план месяца»: один запрос = один материал. Возьми самый частый запрос клиента с хотя бы одним твоим доказательством.</div></div><div class="sctl"><button class="sbtn" data-l="2" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+</div><div class="quiz"><div class="qzhead">ПРОВЕРЬ СЕБЯ · 3 ВОПРОСА</div>
+<div class="q"><p class="qq">Какой тип запросов клиента НЕ существует в разборке курса?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Три типа: проблемный, сравнительный, прямой («услуга рядом»). «Рекламный» — это твой язык, а не язык клиента.">Проблемный</button>
+<button class="qopt" data-ok="0" data-g="Три типа: проблемный, сравнительный, прямой («услуга рядом»). «Рекламный» — это твой язык, а не язык клиента.">Сравнительный</button>
+<button class="qopt" data-ok="1" data-g="Три типа: проблемный, сравнительный, прямой («услуга рядом»). «Рекламный» — это твой язык, а не язык клиента.">Рекламный</button>
+</div><p class="qwhy"></p></div>
+<div class="q"><p class="qq">Почему редкие сочетания слов часто важнее частотных?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Точные термины ниши («сухожаровой стерилизатор») реже встречаются в массовых источниках — там меньше конкуренция и выше шанс стать источником ответа.">Они дешевле в контекстной рекламе</button>
+<button class="qopt" data-ok="1" data-g="Точные термины ниши («сухожаровой стерилизатор») реже встречаются в массовых источниках — там меньше конкуренция и выше шанс стать источником ответа.">Меньше конкуренция — больше шанс целиком попасть в ответ нейросети</button>
+<button class="qopt" data-ok="0" data-g="Точные термины ниши («сухожаровой стерилизатор») реже встречаются в массовых источниках — там меньше конкуренция и выше шанс стать источником ответа.">Так короче текст статьи</button>
+</div><p class="qwhy"></p></div>
+<div class="q"><p class="qq">Что такое «матрица запросов и доказательств»?</p><div class="qopts">
+<button class="qopt" data-ok="1" data-g="Матрица связывает запросы с материалами и сразу превращается в контент-план месяца.">Таблица: у каждого запроса должно быть доказательство — конкретный материал; нет — записываем «нужен материал»</button>
+<button class="qopt" data-ok="0" data-g="Матрица связывает запросы с материалами и сразу превращается в контент-план месяца.">График рекламных расходов</button>
+<button class="qopt" data-ok="0" data-g="Матрица связывает запросы с материалами и сразу превращается в контент-план месяца.">Матрица для сравнения двух CMS</button>
+</div><p class="qwhy"></p></div>
+</div>
+<div class="hw"><h2 style="font-size:15px">ДЗ к уроку 3: запросы и план</h2><ol class="hwlist">
+<li>Сгенерируй 15 запросов промптом и сгруппируй их по интенту (что/как/почему).</li>
+<li>Сопоставь каждый запрос с доказательством из AI-Паспорта (или пометь «нужен материал»).</li>
+<li>Заполни минимум 8 строк в «Контент-плане месяца» — темы по запросам.</li>
+</ol><textarea id="hw2" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
+<div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote2" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
+<button class="donebtn" id="dbtn2">Задание выполнено — открыть следующий урок</button></div>
+<div class="wsrow"><b>Рабочие документы урока:</b> Контент-план месяца, Журнал автора</div>
+<p class="lcheck">Проверка урока: 15 запросов сгруппированы, в плане месяца минимум 8 тем.</p>
+<p class="lnext">Дальше: <b>Урок 4: пишем первую статью по методике лаборатории.</b></p>
+</section>
+<section class="lesson" id="lesson3">
+<div class="lhead"><span class="lnum">УРОК 4</span><span class="ltime">40–60 минут</span><span class="donemark" id="done3" hidden>ПРОЙДЕН ✓</span></div>
+<h2>Первая статья, которую цитирует ИИ</h2>
+<p class="lout">Результат урока: <b>Готовая статья: живая для человека, извлекаемая для нейросети</b></p>
+<p class="lintro">Статья — главный источник цитирования. Методика из 21 правила сожмётся до пяти шагов: вопросы автору → позиция → факты → черновик по GEO-правилам → возврат голоса. Полная методика — в бонусе «Как писать статьи с помощью ИИ» из набора A2.</p>
+<div class="plabel">ЛЕКЦИЯ УРОКА · ОТДЕЛЬНЫЙ ДОКУМЕНТ (PDF)</div>
+<div class="lecture"><div class="dlrow"><a class="dlbtn" href="lessons/a10-lecture-4.pdf" download>СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Статья, которую ИИ процитирует · подробная методичка, 4+ страницы</span></div>
+<p class="llead">Писать для нейросети — значит писать так, чтобы фрагмент текста можно было вытащить целиком и он сам по себе отвечал на вопрос.</p>
+<p style="font-family:var(--font-head);font-size:11px;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px">ЧТО ВНУТРИ ЛЕКЦИИ:</p>
+<div class="toc">
+<span><b>·</b> Этап 0: интервью с собой</span>
+<span><b>·</b> 21 правило, а не «упоротый» текст</span>
+<span><b>·</b> Фрагменты, готовые к цитате</span>
+<span><b>·</b> FAQ и терминология</span>
+<span class="app">★ Приложение: 21 правило регламента — полный текст</span>
+</div></div>
+<div class="plabel">ЭТАПЫ УРОКА · ОТКРЫВАЮТСЯ ПО ОДНОМУ</div><div class="steps">
+<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Интервью автора</b><br>Промпт «Вопросы автору перед статьёй»: нейросеть задаёт 5–7 неочевидных вопросов по теме — по одному, ждёт ответов. Ответы и вопросы фиксируй в «Журнале автора» — они не повторяются между статьями.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Черновик по GEO-правилам</b><br>Промпт «Статья для сайта с GEO-фокусом»: прямой ответ в первом абзаце, заголовки-вопросы, определения, таблицы, FAQ, ограничения. Статистику нейросеть не придумывает — места для фактчекинга помечены.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Верни голос</b><br>Связка промптов редактора: «Очеловечивание» → «Убрать признаки ИИ» → «Чёткая точка зрения». GEO без потери стиля — так материал не станет шаблоном.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Финальная проверка</b><br>Прогони статью через «Чек-лист публикации (21 правило)» из комплекта: все блоки + фильтр «узнаваемости без названия». Незакрытые пункты правь до публикации.</div></div><div class="sctl"><button class="sbtn" data-l="3" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+</div><div class="quiz"><div class="qzhead">ПРОВЕРЬ СЕБЯ · 3 ВОПРОСА</div>
+<div class="q"><p class="qq">Что делает «Этап 0» перед написанием статьи?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Интервью выносит в текст экспертную фактуру, которую не вытащить из чужих статей — и это главный источник уникальности.">Покупает домен</button>
+<button class="qopt" data-ok="1" data-g="Интервью выносит в текст экспертную фактуру, которую не вытащить из чужих статей — и это главный источник уникальности.">Нейросеть задаёт автору 5–7 неочевидных вопросов, автор отвечает своими словами</button>
+<button class="qopt" data-ok="0" data-g="Интервью выносит в текст экспертную фактуру, которую не вытащить из чужих статей — и это главный источник уникальности.">Заказывает лендинг</button>
+</div><p class="qwhy"></p></div>
+<div class="q"><p class="qq">Какие фрагменты статьи нейросети вырывают в ответы чаще всего?</p><div class="qopts">
+<button class="qopt" data-ok="1" data-g="Фрагмент должен сам по себе отвечать на вопрос — тогда он цитируем. Сплошной эссе-поток цитируется редко.">Самодостаточные короткие выводы: чек-пойнты, формулы, мини-таблицы</button>
+<button class="qopt" data-ok="0" data-g="Фрагмент должен сам по себе отвечать на вопрос — тогда он цитируем. Сплошной эссе-поток цитируется редко.">Первые строки любого абзаца</button>
+<button class="qopt" data-ok="0" data-g="Фрагмент должен сам по себе отвечать на вопрос — тогда он цитируем. Сплошной эссе-поток цитируется редко.">Самый длинный абзац текста</button>
+</div><p class="qwhy"></p></div>
+<div class="q"><p class="qq">Что такое «фильтр узнаваемости»?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Если текст узнаётся без имени бренда — это настоящий контекстный якорь, а не просто копирайтинг.">Проверка орфографии</button>
+<button class="qopt" data-ok="1" data-g="Если текст узнаётся без имени бренда — это настоящий контекстный якорь, а не просто копирайтинг.">Читатель должен узнать твой подход даже без названия бренда</button>
+<button class="qopt" data-ok="0" data-g="Если текст узнаётся без имени бренда — это настоящий контекстный якорь, а не просто копирайтинг.">Фильтр спама в комментариях</button>
+</div><p class="qwhy"></p></div>
+</div>
+<div class="hw"><h2 style="font-size:15px">ДЗ к уроку 4: статья по методике</h2><ol class="hwlist">
+<li>Проведи интервью автора: 5–7 вопросов, ответы — в «Журнале автора».</li>
+<li>Собери черновик промптом «Статья для сайта с GEO-фокусом» и верни голос связкой редактора.</li>
+<li>Пройди «Чек-лист публикации»: закрыть все 21 пункт, пометить незакрытые и исправить их.</li>
+</ol><textarea id="hw3" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
+<div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote3" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
+<button class="donebtn" id="dbtn3">Задание выполнено — открыть следующий урок</button></div>
+<div class="wsrow"><b>Рабочие документы урока:</b> Журнал автора (вопросы и ответы), Чек-лист публикации (21 правило)</div>
+<p class="lcheck">Проверка урока: Статья опубликована. Есть «цитатник» — предложение, которое ИИ может взять дословно.</p>
+<p class="lnext">Дальше: <b>Урок 5: маршрут на месяц и повторный замер.</b></p>
+</section>
+<section class="lesson" id="lesson4">
+<div class="lhead"><span class="lnum">УРОК 5</span><span class="ltime">15–20 минут</span><span class="donemark" id="done4" hidden>ПРОЙДЕН ✓</span></div>
+<h2>Маршрут на месяц</h2>
+<p class="lout">Результат урока: <b>План публикаций, площадки и дата повторного замера</b></p>
+<p class="lintro">Один вечер дал точку старта. Теперь — ритм: без него статья останется разовой попыткой, а не системой видимости.</p>
+<div class="plabel">ЛЕКЦИЯ УРОКА · ОТДЕЛЬНЫЙ ДОКУМЕНТ (PDF)</div>
+<div class="lecture"><div class="dlrow"><a class="dlbtn" href="lessons/a10-lecture-5.pdf" download>СКАЧАТЬ ЛЕКЦИЮ (PDF)</a><span class="dlmeta">Маршрут: система вместо героического рывка · подробная методичка, 4+ страницы</span></div>
+<p class="llead">Курс — не тренировка, а настройка системы. После финального урока у тебя на руках замер, паспорт, банк запросов, первая статья и план месяца.</p>
+<p style="font-family:var(--font-head);font-size:11px;letter-spacing:0.12em;color:var(--accent);margin-bottom:6px">ЧТО ВНУТРИ ЛЕКЦИИ:</p>
+<div class="toc">
+<span><b>·</b> Ритм недели</span>
+<span><b>·</b> Повторный замер через 4–6 недель</span>
+<span><b>·</b> Что усиливает быстрее всего</span>
+<span><b>·</b> Терпение как стратегия</span>
+</div></div>
+<div class="plabel">ЭТАПЫ УРОКА · ОТКРЫВАЮТСЯ ПО ОДНОМУ</div><div class="steps">
+<div class="step"><div class="shead"><span class="snum">1/5</span><div class="stxt"><b>Этап 1. Прочитать лекцию</b><br>Скачай лекцию по кнопке выше, прочитай целиком, вернись сюда и отметь этот этап выполненным.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="0">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">2/5</span><div class="stxt"><b>Шаг 1. Спланируй месяц</b><br>Заполни «Контент-план месяца» до конца: сайт 2–3 материала в неделю, соцсети 5–7, внешние площадки 1 в неделю. Реалистично для твоих рук — не больше.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="1">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">3/5</span><div class="stxt"><b>Шаг 2. Не забудь площадки</b><br>В AI-Паспорте — список 22 площадок: «обязательно» (Яндекс Бизнес, Карты, 2ГИС, Zoon) — первая неделя; «желательно» — вторая; остальное — по силам.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="2">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">4/5</span><div class="stxt"><b>Шаг 3. Поставь дату повторного замера</b><br>Через 4–6 недель: те же запросы, те же нейросети, «Шаблон замера видимости» — вторая строка отчёта. Динамика покажет, какие материалы ИИ забрал в свой «словарь».</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="3">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+<div class="step"><div class="shead"><span class="snum">5/5</span><div class="stxt"><b>Шаг 4. Включи сильные сниппеты</b><br>Промпт «Сниппеты для ответов на запросы»: 30 блоков 40–60 слов — самые сильные идут в карточки, посты и описания.</div></div><div class="sctl"><button class="sbtn" data-l="4" data-s="4">Отметить выполненным</button><span class="sdonenote" hidden>ВЫПОЛНЕНО ✓</span></div></div>
+</div><div class="quiz"><div class="qzhead">ПРОВЕРЬ СЕБЯ · 3 ВОПРОСА</div>
+<div class="q"><p class="qq">Когда делать повторный замер видимости?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Нейросети переучиваются с интервалами. Замер с датой превращает усилия в видимый тренд.">Через 1–2 дня</button>
+<button class="qopt" data-ok="1" data-g="Нейросети переучиваются с интервалами. Замер с датой превращает усилия в видимый тренд.">Через 4–6 недель — с датой, чтобы сравнивать тренд</button>
+<button class="qopt" data-ok="0" data-g="Нейросети переучиваются с интервалами. Замер с датой превращает усилия в видимый тренд.">Никогда</button>
+</div><p class="qwhy"></p></div>
+<div class="q"><p class="qq">Какие рычаги усиливают видимость быстрее всего (из практики лаборатории)?</p><div class="qopts">
+<button class="qopt" data-ok="1" data-g="Эти четыре рычага работают быстрее прочих: они усиливают сигнал сразу в нескольких слоях.">Живые карточки под нишу, статьи с кейсами и цифрами, согласованность NAP, отзывы с деталями</button>
+<button class="qopt" data-ok="0" data-g="Эти четыре рычага работают быстрее прочих: они усиливают сигнал сразу в нескольких слоях.">Увеличить бюджет контекстной рекламы</button>
+<button class="qopt" data-ok="0" data-g="Эти четыре рычага работают быстрее прочих: они усиливают сигнал сразу в нескольких слоях.">Поменять логотип и цвета</button>
+</div><p class="qwhy"></p></div>
+<div class="q"><p class="qq">Что правильнее по курсу: «героический рывок» или повторяемая система?</p><div class="qopts">
+<button class="qopt" data-ok="0" data-g="Выжившие маршруты всегда простые: регулярность бьёт рывки, а замеры показывают тренд, а не случайность.">Один мощный рывок раз в полгода</button>
+<button class="qopt" data-ok="1" data-g="Выжившие маршруты всегда простые: регулярность бьёт рывки, а замеры показывают тренд, а не случайность.">Повторяемый вечер в неделю + честные замеры</button>
+<button class="qopt" data-ok="0" data-g="Выжившие маршруты всегда простые: регулярность бьёт рывки, а замеры показывают тренд, а не случайность.">Полная остановка контента до готовности</button>
+</div><p class="qwhy"></p></div>
+</div>
+<div class="hw"><h2 style="font-size:15px">ДЗ к уроку 5: план и дата</h2><ol class="hwlist">
+<li>Контент-план месяца заполнен полностью (темы, форматы, площадки, запросы).</li>
+<li>Из 22 площадок AI-Паспорта отмечены те, что запланированы на первые две недели.</li>
+<li>Дата повторного замера поставлена в календарь (4–6 недель от первого замера).</li>
+</ol><textarea id="hw4" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
+<div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote4" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
+<button class="donebtn" id="dbtn4">Задание выполнено — открыть следующий урок</button></div>
+<div class="wsrow"><b>Рабочие документы урока:</b> Контент-план месяца, Журнал замеров (сравнение динамики)</div>
+<p class="lcheck">Проверка урока: План на месяц записан. Дата повторного замера стоит в календаре.</p>
+<p class="lnext">Дальше: <b>Через месяц — сравнение замеров. Дальше — диалог: мини-аудит или полный разбор.</b></p>
+</section>
+<section class="next final" id="finalSec"><h2>Курс пройден — что дальше</h2>
+<p>У тебя на руках: замер с датой, AI-Паспорт, банк запросов, первая статья и маршрут на месяц. Это больше, чем у 95% бизнесов, которые «как-нибудь разберутся с нейросетями».</p>
+<p>Повторный замер — через 4–6 недель. Запиши дату второго прогона в журнал замеров и сравни с первым: тренд важнее мгновенной картины.</p>
+<div class="plabel" style="margin-top:16px">ИНСТРУМЕНТЫ, КОТОРЫЕ ПРОДОЛЖАТ РАБОТУ</div>
+<div class="toolrow"><span class="tcode">A1</span><span class="tname">Чек-лист «Проверь бренд в нейросетях»</span><span class="tdesc">50 пунктов с «Зачем это» и «Как исправить» — сверка маршрута · 190 ₽</span><a class="tbuy" href="https://tochkaplace.com/ia/6f99084c-1173-4047-85ac-e63803b1b195" target="_blank">Купить · 190 ₽</a></div>
+<div class="toolrow"><span class="tcode">A2</span><span class="tname">20 промптов для AI-видимости</span><span class="tdesc">рабочие промпты лаборатории + бонус-гайд «Как писать статьи» · 150 ₽</span><a class="tbuy" href="https://tochkaplace.com/ia/e19621e4-54bb-477e-862d-1439faa2d6d9" target="_blank">Купить · 150 ₽</a></div>
+<div class="toolrow"><span class="tcode">A3</span><span class="tname">Шаблон AI-Паспорта компании</span><span class="tdesc">интерактивная анкета 26 полей + 22 площадки · 490 ₽</span><a class="tbuy" href="https://tochkaplace.com/ia/140c3c8a-e6c8-40e3-961f-33eece49c47f" target="_blank">Купить · 490 ₽</a></div>
+<p style="margin-top:14px">Урок 1 курса ты прошёл бесплатно — этого достаточно, чтобы понять механику. Полный курс с ДЗ, квизами и всеми документами — 990 ₽.</p>
+<p class="nxt">Вопросы по курсу и пакетам — бот <a href="https://t.me/geo_upgrade_labbot" target="_blank">@geo_upgrade_labbot</a> · сайт: <a href="https://geo-upgrade.ru" target="_blank">geo-upgrade.ru</a></p>
+</section></main>
+<footer><span class="brand">GEO-АПГРЕЙД</span> · Лаборатория GEO-маркетинга и AI-видимости · Новосибирск</footer>
