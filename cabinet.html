@@ -560,6 +560,7 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
     <h1 style="font-size:clamp(26px,4.5vw,40px);margin:10px 0 4px" id="dash-title">Лаборатория</h1>
     <p class="note" id="dash-sub"></p>
     <div id="sb-note" class="hide"></div>
+    <div id="dash-extra"></div>
     <div class="grid cols3" style="margin-top:18px">
       <div class="stat"><div class="k">СТАТУС</div><div class="v neon" id="st-account">—</div></div>
       <div class="stat"><div class="k">ПОКУПКИ</div><div class="v gold" id="st-orders">0</div></div>
@@ -810,7 +811,67 @@ async function postLabOrder(s,svc,puid,em){try{await fetch('https://cpaevaypyplw
       if(!r.ok){const t=await r.text();toast('Анкета НЕ сохранена в базу (код '+r.status+'). Текст для Алисы: '+String(t).slice(0,140))}
     }catch(e){toast('Анкета не дошла до базы: '+e.message)}
   }
-  async function syncSbOrders(){try{const a=store.get('geo_lab_auth',null);if(!a||!a.token)return;const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders?user_id=eq.'+a.uid+'&order=created_at.desc',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+a.token}});if(!r.ok)return;const arr=await r.json();const L=store.get('geo_lab_orders',[]);const liveIds=new Set(arr.map(x=>x.id));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&o.id&&String(o.id).indexOf('sb')===0&&!liveIds.has(String(o.id).slice(2)))L.splice(i,1);}let upd=0;arr.forEach(x=>{const isod=(x.created_at||'').slice(0,10);const idx=L.findIndex(o=>o.sb&&o.uid===x.pay_uid&&o.isodate===isod&&(o.email||'').toLowerCase()===(x.email||'').toLowerCase());const SBMAP={'confirmed':'Подтверждён',pending:'Обработка',paid_check:'Обработка'};const st=SBMAP[x.status]||(SBMAP[x.status]===undefined&&['Обработка','Подтверждён','Выполняется','Завершён'].includes(x.status)?x.status:'Обработка');if(idx<0){L.push({id:'sb'+x.id,uid:x.pay_uid||'',name:x.service_name||'услуга',amount:x.amount||0,email:x.email||'',name2:'',note:'',date:isod?new Date(isod).toLocaleDateString('ru-RU'):'',isodate:isod,status:st,check:'',sb:1});upd++}else if(x.status&&L[idx].status!==st){L[idx].status=st;upd++}});const SK=new Set();arr.forEach(x=>SK.add((x.pay_uid||'')+'|'+(x.created_at||'').slice(0,10)+'|'+(x.email||'').toLowerCase()));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&!SK.has((o.uid||'')+'|'+(o.isodate||'')+'|'+(o.email||'').toLowerCase())){L.splice(i,1);upd++}}for(let i=L.length-1;i>=0;i--){const o2=L[i];if(!o2.sb){L.splice(i,1);upd++}}if(upd)store.set('geo_lab_orders',L);if(upd&&typeof renderOrders==='function')renderOrders()}catch(e){}}
+  async function dashExtra(){
+  const box=$('dash-extra');if(!box)return;
+  const s=session();if(!s){box.innerHTML='';return}
+  box.innerHTML='';
+  const wrap=document.createElement('div');wrap.className='grid cols3';wrap.style.marginTop='14px';box.appendChild(wrap);
+  function card(title,html){const d=document.createElement('div');d.className='panel';d.style.padding='14px 16px';d.innerHTML='<p class="kicker" style="margin-bottom:6px">'+title+'</p>'+html;wrap.appendChild(d);return d}
+  const prof=store.get('geo_lab_profile',null);
+  const ords=orders().filter(o=>o.email===(s.email||'').toLowerCase());
+  const DONEST=['Подтверждён','Подтверждено','Выполняется','Готово','Завершён'];
+  const paid=ords.some(o=>DONEST.includes(o.status));
+  const steps=[['Заполнить анкету',!!(prof&&prof.brand)],['Оставить заявку или купить продукт',ords.length>0],['Оплата подтверждена',paid]];
+  let stHtml='';
+  steps.forEach(x=>{stHtml+='<div style="display:flex;gap:8px;align-items:baseline;margin:6px 0"><span style="color:'+(x[1]?'#00F0FF':'#8A86A0')+';font-weight:700">'+(x[1]?'✓':'○')+'</span><span>'+(x[1]?'<s style="opacity:.55">'+x[0]+'</s>':x[0])+'</span></div>'});
+  card('МОЙ ПУТЬ',stHtml);
+  try{
+    const r=await fetch('signal.json?nc='+Date.now());
+    if(r.ok){const sg=await r.json();if(sg&&sg.title){
+      card('СИГНАЛ ДНЯ'+(sg.date?' · '+String(sg.date).split('-').reverse().slice(0,2).join('.'):''),'<b style="color:#FFD66E">'+sg.title+'</b><p class="note" style="margin:6px 0">'+(sg.text||'')+'</p>'+(sg.url?'<a class="btn btn-ghost" href="'+sg.url+'">Читать →</a>':''));
+    }}
+  }catch(e){}
+  try{
+    const dones=JSON.parse(localStorage.getItem('a10-course-done-v3')||'[]');
+    if(Array.isArray(dones)&&dones.some(Boolean)){
+      const n=dones.filter(Boolean).length;let nxt=0;
+      for(let i=0;i<dones.length;i++){if(!dones[i]){nxt=i+1;break}}
+      card('ПРОГРЕСС КУРСА','<b>Пройдено уроков: '+n+' из 5</b><p class="note" style="margin:6px 0">'+(nxt?('Следующий — урок '+nxt+'. ДЗ предыдущего открывает его.'):'Все уроки пройдены — финальный блок открыт.')+'</p><a class="btn btn-gold" href="a10-course.html">Продолжить курс →</a>');
+    }
+  }catch(e){}
+  try{
+    if(!(prof&&prof.brand))return;
+    const H={'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-'};
+    let confO=[],digs=[];
+    if(s.sb&&s.sb.token){
+      H['Authorization']='Bearer '+s.sb.token;
+      try{const r1=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders?user_id=eq.'+s.sb.uid+'&select=pay_uid,amount,status',{headers:H});if(r1.ok)confO=await r1.json()}catch(e){}
+      try{const r2=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/digital_orders?user_id=eq.'+s.sb.uid+'&select=product_id,status',{headers:H});if(r2.ok)digs=await r2.json()}catch(e){}
+    }
+    const LIVE=['confirmed','work','ready','done'];
+    const boughtDigs=digs.filter(d=>d.status==='confirmed').map(d=>d.product_id);
+    const paidSvc=confO.filter(o=>LIVE.includes(o.status));
+    const digIds=Object.keys(DIGPAY);
+    const a3uid=digIds.find(k=>DIGPAY[k].code==='A3');
+    const ladder=Object.keys(LAB_SERVICES).map(u=>({uid:u,a:LAB_SERVICES[u].a,n:LAB_SERVICES[u].n})).sort((p,q)=>p.a-q.a);
+    if(paidSvc.length){
+      const maxA=Math.max.apply(null,paidSvc.map(o=>+o.amount||0));
+      const ups=ladder.filter(x=>x.a>maxA);
+      if(ups.length){
+        const nxt=ups[0];
+        const d=card('ВАШ СЛЕДУЮЩИЙ ШАГ','<b>'+nxt.n+'</b> — '+fmt(nxt.a)+'<p class="note" style="margin:6px 0">Логичный следующий уровень: больше данных, больше площадок, глубже стратегия.</p><button class="btn btn-gold" id="nxstep">Оставить заявку →</button>');
+        const bb=d.querySelector('#nxstep');if(bb)bb.onclick=()=>openPay(nxt.uid);
+      }else card('ВАШ СЛЕДУЮЩИЙ ШАГ','<b>Вы на высшем тарифе лаборатории</b><p class="note" style="margin:6px 0">Дальше — закрепление: промпт-инструменты и регулярные замеры DFI.</p>');
+    }else if(boughtDigs.indexOf('A3')>=0){
+      const lite=ladder[0];
+      const d=card('ВАШ СЛЕДУЮЩИЙ ШАГ','<b>'+lite.n+'</b> — '+fmt(lite.a)+'<p class="note" style="margin:6px 0">Паспорт готов — теперь проверьте, как бренд реально видят нейросети, и узнайте точки роста.</p><button class="btn btn-gold" id="nxstep">Оставить заявку →</button>');
+      const bb=d.querySelector('#nxstep');if(bb)bb.onclick=()=>openPay(lite.uid);
+    }else if(a3uid){
+      card('ВАШ СЛЕДУЮЩИЙ ШАГ','<b>Шаблон AI-Паспорта компании</b> — '+fmt(DIGPAY[a3uid].amount)+'<p class="note" style="margin:6px 0">С заполненной анкетой паспорт собирается за вечер: 26 полей, которые ИИ ищет у вашего бренда.</p><a class="btn btn-gold" href="cabinet.html?pay='+a3uid+'">Приобрести →</a>');
+    }
+  }catch(e){}
+}
+async function syncSbOrders(){try{const a=store.get('geo_lab_auth',null);if(!a||!a.token)return;const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders?user_id=eq.'+a.uid+'&order=created_at.desc',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+a.token}});if(!r.ok)return;const arr=await r.json();const L=store.get('geo_lab_orders',[]);const liveIds=new Set(arr.map(x=>x.id));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&o.id&&String(o.id).indexOf('sb')===0&&!liveIds.has(String(o.id).slice(2)))L.splice(i,1);}let upd=0;arr.forEach(x=>{const isod=(x.created_at||'').slice(0,10);const idx=L.findIndex(o=>o.sb&&o.uid===x.pay_uid&&o.isodate===isod&&(o.email||'').toLowerCase()===(x.email||'').toLowerCase());const SBMAP={'confirmed':'Подтверждён','paid_check':'Чек получен','pending':'Обработка','work':'В работе','ready':'Готово','done':'Завершён','cancel':'Отменён'};const st=SBMAP[x.status]||(SBMAP[x.status]===undefined&&['Обработка','Подтверждён','Выполняется','В работе','Готово','Завершён','Отменён'].includes(x.status)?x.status:'Обработка');if(idx<0){L.push({id:'sb'+x.id,uid:x.pay_uid||'',name:x.service_name||'услуга',amount:x.amount||0,email:x.email||'',name2:'',note:'',date:isod?new Date(isod).toLocaleDateString('ru-RU'):'',isodate:isod,status:st,check:'',due:x.due_date||'',sb:1});upd++}else{if(x.status&&L[idx].status!==st){L[idx].status=st;upd++}if((x.due_date||'')!==(L[idx].due||'')){L[idx].due=x.due_date||'';upd++}}});const SK=new Set();arr.forEach(x=>SK.add((x.pay_uid||'')+'|'+(x.created_at||'').slice(0,10)+'|'+(x.email||'').toLowerCase()));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&!SK.has((o.uid||'')+'|'+(o.isodate||'')+'|'+(o.email||'').toLowerCase())){L.splice(i,1);upd++}}for(let i=L.length-1;i>=0;i--){const o2=L[i];if(!o2.sb){L.splice(i,1);upd++}}if(upd)store.set('geo_lab_orders',L);if(upd&&typeof renderOrders==='function')renderOrders()}catch(e){}}
 async function postLab(subject,text){try{const s=session()||{email:'—'};const fd=new FormData();fd.set('name',subject);fd.set('email',s.email||'—');fd.set('message',text);fd.set('source','Личный кабинет / сайт');fd.set('page',location.pathname.split('/').pop()||'cabinet.html');await fetch('https://geo-upgrade-inbox.dafna-acid.workers.dev/lead?secret=gu_-8LBI_jtmp8EF4vLHt2Xx1I3A6YZ_7Az',{method:'POST',body:fd,keepalive:true})}catch(e){}try{fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({subject:subject,text:text,from:'cabinet@geo-upgrade.ru'}),keepalive:true})}catch(e){}return true}
 function fmt(n){return n>0?n.toLocaleString('ru-RU')+' ₽':'цена по договорённости'}
 function orders(){return store.get('geo_lab_orders',[])}
@@ -826,7 +887,7 @@ function showDash(){
   $('dash-title').textContent='Лаборатория '+ (s.name||'клиента');
   $('dash-sub').textContent='Вы вошли как '+s.email+' · данные хранятся'+(s.sb?' в защищённой базе лаборатории':' в вашем браузере');
   $('st-account').textContent='онлайн';
-  renderOrders();renderCatalog();renderFav();fillProfile();renderReports();syncSbOrders();rescueProfile();sessionNote();
+  renderOrders();renderCatalog();renderFav();fillProfile();renderReports();syncSbOrders();rescueProfile();sessionNote();dashExtra();
   const q=new URLSearchParams(location.search);
   if(q.get('pay')){const du=DIGPAY[q.get('pay')];if(du){dgPayFlow(du)}else{openPay(q.get('pay'))}}
 }
@@ -836,11 +897,12 @@ function renderOrders(){
   const conf=new Set((statuses().confirmed||[]).map(x=>x.uid+'|'+(x.email||'').toLowerCase()));
   const box=$('orders-box');box.innerHTML='';
   if(!list.length){box.innerHTML='<p class="note">Пока пусто. Нажмите «Оплатить» на странице любой услуги — заявка и оплата соберутся здесь.</p>';return}
-  const DONE=['Подтверждён','Подтверждено','Выполняется','Завершён'];list.slice().reverse().sort((a,b)=>((DONE.includes(b.status)||conf.has(b.uid+'|'+(b.email||'').toLowerCase()))?1:0)-((DONE.includes(a.status)||conf.has(a.uid+'|'+(a.email||'').toLowerCase()))?1:0)).forEach(o=>{
-    const isOk=DONE.includes(o.status)||conf.has(o.uid+'|'+o.email.toLowerCase());const SBADJ=conf.has(o.uid+'|'+o.email.toLowerCase())&&!DONE.includes(o.status)?'Подтверждён':o.status;
+  const DONE=['Подтверждён','Подтверждено','Выполняется','Готово','Завершён'];list.slice().reverse().sort((a,b)=>((DONE.includes(b.status)||conf.has(b.uid+'|'+(b.email||'').toLowerCase()))?1:0)-((DONE.includes(a.status)||conf.has(a.uid+'|'+(a.email||'').toLowerCase()))?1:0)).forEach(o=>{
+    const isOk=DONE.includes(o.status)||conf.has(o.uid+'|'+o.email.toLowerCase());const SBADJ=conf.has(o.uid+'|'+o.email.toLowerCase())&&!DONE.includes(o.status)?'Подтверждён':o.status;const CANCEL=(SBADJ==='Отменён'||o.status==='cancel');
     const d=document.createElement('div');d.className='order';
-    const lbl=isOk?(SBADJ==='Выполняется'?'ВЫПОЛНЯЕТСЯ':SBADJ==='Завершён'?'ЗАВЕРШЁН':SBADJ==='Подтверждён'?'ПОДТВЕРЖДЁН':'ПОДТВЕРЖДЕНО'):'ОБРАБОТКА';const cls=isOk?(SBADJ==='Выполняется'?'st-run':SBADJ==='Завершён'?'st-ok':'st-wait'):'st-wait';d.innerHTML='<div class="row"><div><b>'+o.name+'</b><br><span class="note">'+fmt(o.amount)+' · '+(o.date||'')+(o.check?' · чек '+o.check:'')+'</span></div><span class="status '+cls+'">'+lbl+'</span></div>';
-    if(!isOk){
+    const LB={'Подтверждён':'ПОДТВЕРЖДЁН','Подтверждено':'ПОДТВЕРЖДЁН','Выполняется':'ВЫПОЛНЯЕТСЯ','В работе':'В РАБОТЕ','Готово':'ГОТОВО','Завершён':'ЗАВЕРШЁН'};const dueTxt=o.due?(' · срок до '+String(o.due).split('-').reverse().slice(0,2).join('.')):'';
+    const lbl=CANCEL?'ОТМЕНЕНО':(isOk?(LB[SBADJ]||'ПОДТВЕРЖДЕНО'):'ОБРАБОТКА');const cls=CANCEL?'st-wait':(isOk?(SBADJ==='Выполняется'||SBADJ==='В работе'?'st-run':(SBADJ==='Завершён'||SBADJ==='Готово')?'st-ok':'st-wait'):'st-wait');d.innerHTML='<div class="row"><div><b>'+o.name+'</b><br><span class="note">'+fmt(o.amount)+' · '+(o.date||'')+(o.check?' · чек '+o.check:'')+dueTxt+'</span></div><span class="status '+cls+'">'+lbl+'</span></div>';
+    if(!isOk&&!CANCEL){
       const acts=document.createElement('div');acts.className='pc-actions';acts.style.marginTop='10px';
       if(!o.check){const b=document.createElement('button');b.className='btn btn-ghost';b.textContent='Указать чек';b.onclick=()=>showConfirm(o.id);acts.appendChild(b)}
       const del=document.createElement('button');del.className='btn btn-mute';del.textContent='Удалить заявку';

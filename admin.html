@@ -99,11 +99,19 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
     </div>
 
     <div class="tabs">
+      <button class="tabbtn" data-tab="tab-dash">ДАШБОРД</button>
       <button class="tabbtn active" data-tab="tab-ord">ЗАКАЗЫ УСЛУГ</button>
       <button class="tabbtn" data-tab="tab-dig">ЦИФРОВЫЕ</button>
       <button class="tabbtn" data-tab="tab-cli">КЛИЕНТЫ</button>
       <button class="tabbtn" data-tab="tab-users">ПОЛЬЗОВАТЕЛИ</button>
       <button class="tabbtn" data-tab="tab-rep">ОТЧЁТЫ</button>
+    </div>
+
+    <div id="tab-dash" class="tabpanel">
+    <div class="sec">◆ ДАШБОРД · СВОДКА</div>
+    <div class="row"><button class="btn" id="dash-refresh">ОБНОВИТЬ ↻</button><span class="note">сводка из базы: услуги + цифровые покупки</span></div>
+    <div id="dash-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:12px 0"></div>
+    <div id="dash-note" class="sp"></div>
     </div>
 
     <div id="tab-ord" class="tabpanel active">
@@ -114,6 +122,10 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
         <option value="pending">На проверке</option>
         <option value="paid_check">Чек получен</option>
         <option value="confirmed">Подтверждено</option>
+        <option value="work">В работе</option>
+        <option value="ready">Готово</option>
+        <option value="done">Завершено</option>
+        <option value="cancel">Отменено</option>
       </select>
       <button class="btn" id="ord-refresh">ОБНОВИТЬ ↻</button>
       <button class="btn mute" id="ord-csv">CSV ↓</button>
@@ -167,7 +179,10 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
       <span class="mono" id="users-src"></span>
     </div>
     <div id="users-box"></div>
-    <div class="sp">«УДАЛИТЬ АККАУНТ» стирает регистрацию и все данные клиента безвозвратно (функция admin_delete_user уже выполнена — SQL прогнан). Админские аккаунты удалять нельзя — защита есть и в функции, и тут.</div>
+<div class="sec" style="margin-top:18px">◆ ТЁПЛЫЕ · АНКЕТА ЕСТЬ, ПОКУПОК НЕТ</div>
+    <div class="row"><button class="btn" id="warm-refresh">ОБНОВИТЬ ↻</button><span class="note" id="warm-cnt"></span></div>
+    <div id="warm-box"></div>
+        <div class="sp">«УДАЛИТЬ АККАУНТ» стирает регистрацию и все данные клиента безвозвратно (функция admin_delete_user уже выполнена — SQL прогнан). Админские аккаунты удалять нельзя — защита есть и в функции, и тут.</div>
 
     <div id="tab-rep" class="tabpanel">
     <div class="sec">◆ ОТЧЁТЫ · LAB_REPORTS</div>
@@ -232,7 +247,59 @@ async function start(){
   if(!ok){$('f-auth').classList.remove('hide');$('au-err').textContent='Нет доступа: аккаунт не в списке admins. Добавь свой email через SQL (см. README).';return}
   $('dash').classList.remove('hide');
   $('who').textContent=EMAIL;
-  await Promise.all([renderOrders(),renderDigital(),renderClients(),renderUsers(),renderReports()]);
+  await Promise.all([renderDash(),renderWarm(),renderOrders(),renderDigital(),renderClients(),renderUsers(),renderReports()]);
+}
+async function renderDash(){
+  try{
+    const LIVE=['confirmed','work','ready','done','Подтверждён','Подтверждено','Выполняется','Готово','Завершён'];
+    const lo=await api('/rest/v1/lab_orders?select=amount,status,created_at');
+    const dg=await api('/rest/v1/digital_orders?select=amount,status,created_at');
+    const pr=await api('/rest/v1/lab_profiles?select=id,brand');
+    const paidD=dg.filter(function(o){return o.status==='confirmed'});
+    const revL=lo.filter(function(o){return LIVE.includes(o.status)}).reduce(function(a,o){return a+(+o.amount||0)},0);
+    const revD=paidD.reduce(function(a,o){return a+(+o.amount||0)},0);
+    const d7=new Date(Date.now()-7*86400000).toISOString();
+    const new7=lo.filter(function(o){return (o.created_at||'')>d7}).length+dg.filter(function(o){return (o.created_at||'')>d7}).length;
+    const cards=[
+      ['ВЫРУЧКА · УСЛУГИ',fmt(revL),'подтверждённые заявки'],
+      ['ВЫРУЧКА · ЦИФРОВЫЕ',fmt(revD)+' · '+paidD.length+' шт.','подтверждённые покупки'],
+      ['ЗАЯВКИ ЗА 7 ДНЕЙ',String(new7),'услуги + цифровые'],
+      ['АНКЕТ ЗАПОЛНЕНО',String(pr.filter(function(p){return p.brand}).length),'из '+pr.length+' записей']
+    ];
+    $('dash-cards').innerHTML=cards.map(function(c){return '<div class="panel" style="padding:14px 16px"><div class="kicker">'+c[0]+'</div><div style="font-size:24px;font-family:Orbitron,sans-serif;color:var(--goldb);margin:6px 0 2px">'+c[1]+'</div><div class="note">'+c[2]+'</div></div>'}).join('');
+    $('dash-note').textContent='';
+  }catch(e){$('dash-note').textContent='Не удалось собрать сводку: '+e.message}
+}
+async function renderWarm(){
+  try{
+    const pr=await api('/rest/v1/lab_profiles?select=id,email,brand,sphere,goal,city');
+    const lo=await api('/rest/v1/lab_orders?select=email,user_id,status,pay_uid');
+    const dg=await api('/rest/v1/digital_orders?select=email,user_id,status');
+    const LIVE=['confirmed','paid_check','work','ready','done','Подтверждён','Подтверждено','Выполняется','Готово','Завершён'];
+    const engaged=new Set();
+    lo.forEach(function(o){if(LIVE.includes(o.status)){if(o.email)engaged.add(String(o.email).toLowerCase());if(o.user_id)engaged.add(o.user_id)}});
+    dg.forEach(function(o){if(o.status==='confirmed'){if(o.email)engaged.add(String(o.email).toLowerCase());if(o.user_id)engaged.add(o.user_id)}});
+    const warm=pr.filter(function(p){
+      const em=(p.email||'').toLowerCase();
+      const touched=lo.some(function(o){return (o.email||'').toLowerCase()===em})||dg.some(function(o){return (o.email||'').toLowerCase()===em});
+      return p.brand&&!engaged.has(p.id)&&!engaged.has(em)&&!touched;
+    });
+    $('warm-cnt').textContent=warm.length?warm.length+' клиент(ов) — анкета есть, покупок пока нет':'пусто: все с анкетами уже что-то заказали или заявка на подходе';
+    const box=$('warm-box');box.innerHTML='';
+    if(!warm.length){box.innerHTML='<div class="panel sp">Тёплых пока нет. Клиенты с анкетами и покупками — во вкладке КЛИЕНТЫ.</div>';return}
+    warm.forEach(function(p){
+      const d=document.createElement('div');d.className='card';
+      d.innerHTML='<b>'+escH(p.brand||p.email)+'</b> <span class="note">'+escH(p.email||'')+(p.city?' · '+escH(p.city):'')+(p.sphere?' · '+escH(p.sphere):'')+'</span><br><span class="note">цель: '+escH(p.goal||'—')+'</span>';
+      const acts=document.createElement('div');acts.className='acts';
+      const b=document.createElement('button');b.className='btn gold';b.textContent='СКОПИРОВАТЬ ТЕКСТ КАСАНИЯ';
+      b.onclick=function(){
+        const t='Здравствуйте, '+(p.brand||'')+'! Это Дарья из лаборатории GEO-Апгрейд. Вы заполняли у нас анкету'+(p.sphere?' («'+p.sphere+'»':'')+(p.city?', '+p.city:'')+(p.sphere?')':'')+' — спасибо за доверие. Судя по цели'+(p.goal?' («'+p.goal+'»':'')+(p.goal?')':'')+', начнём с бесплатного мини-аудита видимости: покажу, как ваш бренд сейчас видят ChatGPT, Алиса и Яндекс Нейро, и что мешает ИИ рекомендовать вас. Это 15 минут и без обязательств. Когда удобно?';
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast('Текст скопирован — вставьте в переписку')}).catch(function(){window.prompt('Скопируйте текст:',t)})}
+        else window.prompt('Скопируйте текст:',t);
+      };
+      acts.appendChild(b);d.appendChild(acts);box.appendChild(d);
+    });
+  }catch(e){$('warm-box').innerHTML='<div class="panel err">Ошибка: '+e.message+'</div>'}
 }
 async function renderOrders(){
   try{
@@ -248,13 +315,20 @@ async function renderOrders(){
       const d=document.createElement('div');d.className='card';
       const top=document.createElement('div');top.className='top';
       const l=document.createElement('div');
-      l.innerHTML='<b>'+(o.service_name||'услуга')+'</b><br><span class="note">'+(o.email||'—')+' · '+fmt(o.amount)+' · '+dt(o.created_at)+(o.pay_uid?' · <span class="mono">'+String(o.pay_uid).slice(0,13)+'</span>':'')+'</span>';
+      l.innerHTML='<b>'+(o.service_name||'услуга')+'</b><br><span class="note">'+(o.email||'—')+' · '+fmt(o.amount)+' · '+dt(o.created_at)+(o.pay_uid?' · <span class="mono">'+String(o.pay_uid).slice(0,13)+'</span>':'')+(o.due_date?' · срок до '+dt(o.due_date):'')+'</span>';
       top.appendChild(l);
       const st=document.createElement('span');
       st.className='badge '+(o.status==='confirmed'?'ok':(o.status==='paid_check'?'wait':'wait'));
       st.textContent=o.status==='confirmed'?'ПОДТВЕРЖДЕНО':(o.status==='paid_check'?'ЧЕК ПОЛУЧЕН':'НА ПРОВЕРКЕ');
       top.appendChild(st);
       d.appendChild(top);
+      const sel=document.createElement('select');sel.style.cssText='max-width:170px';
+      [['pending','На проверке'],['paid_check','Чек получен'],['confirmed','Подтверждено'],['work','В работе'],['ready','Готово'],['done','Завершено'],['cancel','Отменено']].forEach(function(x){const op=document.createElement('option');op.value=x[0];op.textContent=x[1];if((o.status||'')===x[0])op.selected=true;sel.appendChild(op)});
+      sel.onchange=function(){setSt(o,sel.value)};
+      acts.appendChild(sel);
+      const bDue=document.createElement('button');bDue.className='btn mute';bDue.textContent=o.due_date?('СРОК ДО '+dt(o.due_date)):'УСТАНОВИТЬ СРОК';
+      bDue.onclick=async function(){const v=prompt('Срок готовности (ГГГГ-ММ-ДД), например 2026-11-15:',o.due_date||'');if(v===null)return;try{await api('/rest/v1/lab_orders?id=eq.'+o.id,'PATCH',{due_date:v});toast('Срок обновлён');await renderOrders()}catch(e){toast('Не вышло: '+e.message)}};
+      acts.appendChild(bDue);
       const acts=document.createElement('div');acts.className='acts';
       if(o.status!=='confirmed'){
         const b1=document.createElement('button');b1.className='btn gold';b1.textContent='ПОДТВЕРДИТЬ';
@@ -445,6 +519,8 @@ $('ord-refresh').onclick=renderOrders;
 $('ord-filter').onchange=renderOrders;
 $('rp-add').onclick=addReport;
 $('users-refresh').onclick=renderUsers;
+$('warm-refresh').onclick=renderWarm;
+$('dash-refresh').onclick=renderDash;
 var _usrTO=null;$('users-search').oninput=function(){clearTimeout(_usrTO);_usrTO=setTimeout(renderUsers,300)};
 $('ord-csv').onclick=async function(){try{const l=await api('/rest/v1/lab_orders?order=created_at.desc');csvSave('lab-orders.csv',[['дата','статус','услуга','email','сумма','uid']].concat(l.map(function(o){return [dt(o.created_at),o.status||'',o.service_name||'',o.email||'',o.amount||'',o.pay_uid||'']})))}catch(e){toast('Не вышло: '+e.message)}};
 $('dig-csv').onclick=async function(){try{const l=await api('/rest/v1/digital_orders?order=created_at.desc');csvSave('digital-orders.csv',[['дата','статус','продукт','email','сумма','uid']].concat(l.map(function(o){return [dt(o.created_at),o.status||'',o.product_id||'',o.email||'',o.amount||'',o.user_id||'']})))}catch(e){toast('Не вышло: '+e.message)}};
@@ -463,8 +539,8 @@ async function delUser(u){
 }
 document.querySelectorAll('.tabbtn').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tabbtn').forEach(function(x){x.classList.remove('active')});b.classList.add('active');document.querySelectorAll('.tabpanel').forEach(function(p){p.classList.toggle('active',p.id===b.dataset.tab)})}});
 function escH(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-function stLab(st){const m={pending:'ОЖИДАЕТ','paid_check':'ОПЛАТА ПРОВЕРЯЕТСЯ',confirmed:'ПОДТВЕРЖДЁН','Ожидает':'ОЖИДАЕТ','Обработка':'ОПЛАТА ПРОВЕРЯЕТСЯ','Подтверждено':'ПОДТВЕРЖДЁН'};return m[st]||String(st||'—').toUpperCase()}
-function stCol(st){return st==='confirmed'||st==='Подтверждено'?'#00F0FF':'#FFD66E'}
+function stLab(st){const m={pending:'ОЖИДАЕТ','paid_check':'ОПЛАТА ПРОВЕРЯЕТСЯ',confirmed:'ПОДТВЕРЖДЁН',work:'В РАБОТЕ',ready:'ГОТОВО',done:'ЗАВЕРШЁН',cancel:'ОТМЕНЁН','Ожидает':'ОЖИДАЕТ','Обработка':'ОПЛАТА ПРОВЕРЯЕТСЯ','Подтверждено':'ПОДТВЕРЖДЁН','В работе':'В РАБОТЕ','Готово':'ГОТОВО','Завершён':'ЗАВЕРШЁН','Отменён':'ОТМЕНЁН'};return m[st]||String(st||'—').toUpperCase()}
+function stCol(st){return st==='confirmed'||st==='Подтверждено'||st==='Подтверждён'?'#00F0FF':(st==='ready'||st==='done'||st==='Готово'||st==='Завершён')?'#7CFFB2':(st==='cancel'||st==='Отменён')?'#FF4FD8':'#FFD66E'}
 async function detailFor(u,cardEl){
   const ex=cardEl.nextElementSibling;
   if(ex&&ex.classList.contains('udcard')){ex.remove();return}
@@ -483,10 +559,11 @@ async function detailFor(u,cardEl){
     api('/rest/v1/digital_orders?or='+ors+'&order=created_at.desc&select=id,status,product_id,product_name,amount,created_at').catch(function(){return []}),
     api('/rest/v1/lab_reports?or='+orb+'&order=created_at.desc&select=id,name,email,date,created_at').catch(function(){return []}),
     api('/rest/v1/lab_fav?or='+orb+'&order=created_at.desc&select=id,url,title,created_at').catch(function(){return []}),
-    api('/rest/v1/assistant_log?or='+orb+'&order=created_at.desc&limit=40&select=id,role,text,page,created_at').catch(function(){return []})
+    api('/rest/v1/assistant_log?or='+orb+'&order=created_at.desc&limit=40&select=id,role,text,page,created_at').catch(function(){return []}),
+    api('/rest/v1/crm_notes?or='+orb+'&order=created_at.desc&select=id,body,created_at').catch(function(){return []})
   ]);
   const prof=(out[0]||[])[0]||null;
-  const orders=out[1]||[],digs=out[2]||[],reps=out[3]||[],favs=out[4]||[],chat=(out[5]||[]).slice().reverse();
+  const orders=out[1]||[],digs=out[2]||[],reps=out[3]||[],favs=out[4]||[],chat=(out[5]||[]).slice().reverse();const notes=out[6]||[];
   let h='<div class="udh">ПРОФИЛЬ · '+escH(u.email||'')+'<button class="btn mute udclose">ЗАКРЫТЬ</button></div>';
   h+='<div class="note">uid '+(uid||'—')+(u.created?' · регистрация: '+String(u.created).slice(0,10).split('-').reverse().join('.'):'')+'</div>';
   h+='<div class="udh">◆ АНКЕТА</div>';
@@ -515,8 +592,22 @@ async function detailFor(u,cardEl){
     });
     if(chat.length>=40)h+='<div class="note">Показаны последние 40 сообщений.</div>';
   }else h+='<div class="sp">Запросов к ассистенту пока нет. Логируются вопросы клиентов, вошедших в кабинет после обновления виджета.</div>';
+  h+='<div class="udh">◆ ЗАМЕТКИ О КЛИЕНТЕ ('+notes.length+')</div>';
+  h+='<div id="notes-list">'+(notes.length?notes.map(function(n){return '<div class="udmsg"><span class="tm">'+dt(n.created_at)+'</span> '+escH(n.body)+'</div>'}).join(''):'<div class="sp">Заметок нет.</div>')+'</div>';
+  h+='<div class="row" style="margin-top:6px"><input id="crm-note-in" placeholder="заметка: договорённости, контекст, следующий шаг" style="flex:1;min-width:220px"><button class="btn gold" id="crm-note-add">ЗАПИСАТЬ</button></div>';
   d2.innerHTML=h;
   const cl=d2.querySelector('.udclose');if(cl)cl.onclick=function(){d2.remove()};
+  const nb=d2.querySelector('#crm-note-add');
+  if(nb)nb.onclick=async function(){
+    const ta=d2.querySelector('#crm-note-in');const body=(ta&&ta.value||'').trim();
+    if(!body){toast('Пустая заметка');return}
+    try{await api('/rest/v1/crm_notes','POST',{user_id:uid||null,email:em,body:body});toast('Заметка записана');
+      const r=await api('/rest/v1/crm_notes?or='+orb+'&order=created_at.desc&select=id,body,created_at');
+      const nl=d2.querySelector('#notes-list');
+      if(nl)nl.innerHTML=(r.length?r.map(function(n){return '<div class="udmsg"><span class="tm">'+dt(n.created_at)+'</span> '+escH(n.body)+'</div>'}).join(''):'');
+      if(ta)ta.value='';
+    }catch(e){toast('Не вышло: '+e.message)}
+  };
 }
 (function init(){const s=loadS();if(s&&s.token){TOKEN=s.token;UID=s.uid;EMAIL=s.email;start()}})();
 </script>
