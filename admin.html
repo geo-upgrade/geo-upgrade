@@ -210,7 +210,6 @@ async function renderOrders(){
       top.appendChild(st);
       d.appendChild(top);
       const acts=document.createElement('div');acts.className='acts';
-      const acts=document.createElement('div');acts.className='acts';
       if(o.status!=='confirmed'){
         const b1=document.createElement('button');b1.className='btn gold';b1.textContent='ПОДТВЕРДИТЬ';
         b1.onclick=function(){setSt(o,'confirmed')};acts.appendChild(b1);
