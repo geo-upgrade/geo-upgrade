@@ -220,7 +220,7 @@ async function renderOrders(){
         b3.onclick=function(){if(confirm('Удалить заявку «'+(o.service_name||'')+'» от '+(o.email||'')+'?'))delOrder(o)};acts.appendChild(b3);
       }else{
         const bd=document.createElement('button');bd.className='btn danger';bd.textContent='УДАЛИТЬ ОПЛАЧЕННЫЙ';
-        bd.onclick=function(){if(confirm('Заказ «'+(o.service_name||'')+'» от '+(o.email||'')+' уже ОПЛАЧЕН и подтверждён.\nУдалить его навсегда? Заявка исчезнет и у клиента в кабинете.'))delOrder(o)};acts.appendChild(bd);
+        bd.onclick=function(){if(confirm('Заказ «'+(o.service_name||'')+'» от '+(o.email||'')+' уже ОПЛАЧЕН и подтверждён. Удалить его навсегда? Заявка исчезнет и у клиента в кабинете.'))delOrder(o)};acts.appendChild(bd);
       }
       d.appendChild(acts);
       box.appendChild(d);
@@ -354,5 +354,37 @@ $('ord-filter').onchange=renderOrders;
 $('rp-add').onclick=addReport;
 (function init(){const s=loadS();if(s&&s.token){TOKEN=s.token;UID=s.uid;EMAIL=s.email;start()}})();
 </script>
+
+/* GEO-Апгрейд · fix: magic-link/recovery подхват + авто-refresh сессии */
+(function(){
+  function ssave(j,email){try{localStorage.setItem('geo_lab_admin_auth',JSON.stringify({token:j.access_token,refresh:j.refresh_token,uid:(j.user||{}).id,email:email,at:Date.now()}))}catch(_){}}
+  function fromHash(){
+    if(!location.hash||location.hash.indexOf('access_token')<0)return false;
+    var p=new URLSearchParams(location.hash.slice(1));
+    var at=p.get('access_token'),rt=p.get('refresh_token');
+    if(!at)return false;
+    var em=p.get('email')||'admin';
+    ssave({access_token:at,refresh_token:rt,user:{}},em);
+    try{history.replaceState(null,'',location.pathname)}catch(_){}
+    return true;
+  }
+  async function refreshLoop(){
+    try{
+      var s=JSON.parse(localStorage.getItem('geo_lab_admin_auth')||'null');
+      if(!s||!s.refresh)return;
+      var age=Date.now()-(s.at||0);
+      if(age<25*60*1000)return;
+      var r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Content-Type':'application/json'},body:JSON.stringify({refresh_token:s.refresh})});
+      var j=await r.json().catch(function(){return{}});
+      if(r.ok&&j.access_token)ssave({access_token:j.access_token,refresh_token:j.refresh_token||s.refresh,user:{}},s.email);
+    }catch(_){}
+  }
+  if(fromHash()){
+    setTimeout(function(){location.reload()},80);
+  }else{
+    refreshLoop();
+    setInterval(refreshLoop,15*60*1000);
+  }
+})();
 </body>
 </html>
