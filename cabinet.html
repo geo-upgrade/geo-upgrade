@@ -1100,8 +1100,9 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
 <script>
 (function(){
   'use strict';
+  /* lab-dash — КОНТЕЙНЕР всех секций, не панель: всегда виден после входа.
+     Вкладки переключают только секции внутри. «ОБЗОР» = дашборд без секций. */
   var TABS=[
-    ['dash','ОБЗОР','lab-dash'],
     ['orders','ЗАКАЗЫ','sec-orders'],
     ['digital','ЦИФРОВЫЕ','sec-digital'],
     ['catalog','КАТАЛОГ','sec-catalog'],
@@ -1110,9 +1111,10 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
     ['profile','АНКЕТА','sec-profile']
   ];
   function show(k,noScroll){
+    var isDash=(k==='dash');
     TABS.forEach(function(t){
       var el=document.getElementById(t[2]);
-      if(el)el.classList.toggle('active',t[0]===k);
+      if(el)el.classList.toggle('active',!isDash&&t[0]===k);
     });
     document.querySelectorAll('.cabtab').forEach(function(b){
       b.classList.toggle('active',b.getAttribute('data-k')===k);
@@ -1129,7 +1131,7 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
     TABS.forEach(function(t){var el=document.getElementById(t[2]);if(el)el.classList.add('cabpanel')});
     var saved='';
     try{saved=localStorage.getItem('geo_lab_tab')||''}catch(e){}
-    var ok=TABS.some(function(t){return t[0]===saved});
+    var ok=(saved==='dash')||TABS.some(function(t){return t[0]===saved});
     show(ok?saved:'dash',true);
     document.querySelectorAll('.cabtab').forEach(function(b){
       b.onclick=function(){show(b.getAttribute('data-k'))};
