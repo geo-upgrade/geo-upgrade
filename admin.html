@@ -210,6 +210,7 @@ async function renderOrders(){
       top.appendChild(st);
       d.appendChild(top);
       const acts=document.createElement('div');acts.className='acts';
+      const acts=document.createElement('div');acts.className='acts';
       if(o.status!=='confirmed'){
         const b1=document.createElement('button');b1.className='btn gold';b1.textContent='ПОДТВЕРДИТЬ';
         b1.onclick=function(){setSt(o,'confirmed')};acts.appendChild(b1);
@@ -217,6 +218,9 @@ async function renderOrders(){
           b2.onclick=function(){setSt(o,'paid_check')};acts.appendChild(b2)}
         const b3=document.createElement('button');b3.className='btn danger';b3.textContent='УДАЛИТЬ';
         b3.onclick=function(){if(confirm('Удалить заявку «'+(o.service_name||'')+'» от '+(o.email||'')+'?'))delOrder(o)};acts.appendChild(b3);
+      }else{
+        const bd=document.createElement('button');bd.className='btn danger';bd.textContent='УДАЛИТЬ ОПЛАЧЕННЫЙ';
+        bd.onclick=function(){if(confirm('Заказ «'+(o.service_name||'')+'» от '+(o.email||'')+' уже ОПЛАЧЕН и подтверждён.\nУдалить его навсегда? Заявка исчезнет и у клиента в кабинете.'))delOrder(o)};acts.appendChild(bd);
       }
       d.appendChild(acts);
       box.appendChild(d);
