@@ -547,13 +547,13 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
 
 <main id="main" style="padding-top:28px">
   <div id="cabtabs" class="cabtabs" role="tablist" aria-label="Разделы кабинета">
-    <button type="button" class="cabtab" data-k="dash">ОБЗОР</button>
+    <button type="button" class="cabtab" data-k="profile">АНКЕТА</button>
     <button type="button" class="cabtab" data-k="orders">ЗАКАЗЫ</button>
     <button type="button" class="cabtab" data-k="digital">ЦИФРОВЫЕ</button>
     <button type="button" class="cabtab" data-k="catalog">КАТАЛОГ</button>
     <button type="button" class="cabtab" data-k="reports">ОТЧЁТЫ</button>
     <button type="button" class="cabtab" data-k="fav">ИЗБРАННОЕ</button>
-    <button type="button" class="cabtab" data-k="profile">АНКЕТА</button>
+    <button type="button" class="cabtab" data-k="dash">ОБЗОР</button>
   </div>
   <div id="lab-dash" class="hide">
     <p class="kicker">LAB CONSOLE · ЛИЧНЫЙ ЭКРАН</p>
@@ -1103,12 +1103,12 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
   /* lab-dash — КОНТЕЙНЕР всех секций, не панель: всегда виден после входа.
      Вкладки переключают только секции внутри. «ОБЗОР» = дашборд без секций. */
   var TABS=[
+    ['profile','АНКЕТА','sec-profile'],
     ['orders','ЗАКАЗЫ','sec-orders'],
     ['digital','ЦИФРОВЫЕ','sec-digital'],
     ['catalog','КАТАЛОГ','sec-catalog'],
     ['reports','ОТЧЁТЫ','sec-reports'],
-    ['fav','ИЗБРАННОЕ','sec-fav'],
-    ['profile','АНКЕТА','sec-profile']
+    ['fav','ИЗБРАННОЕ','sec-fav']
   ];
   function show(k,noScroll){
     var isDash=(k==='dash');
@@ -1132,7 +1132,7 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
     var saved='';
     try{saved=localStorage.getItem('geo_lab_tab')||''}catch(e){}
     var ok=(saved==='dash')||TABS.some(function(t){return t[0]===saved});
-    show(ok?saved:'dash',true);
+    show(ok?saved:'profile',true);
     document.querySelectorAll('.cabtab').forEach(function(b){
       b.onclick=function(){show(b.getAttribute('data-k'))};
     });
