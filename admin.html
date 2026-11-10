@@ -315,7 +315,7 @@ async function renderOrders(){
       const d=document.createElement('div');d.className='card';
       const top=document.createElement('div');top.className='top';
       const l=document.createElement('div');
-      l.innerHTML='<b>'+(o.service_name||'услуга')+'</b><br><span class="note">'+(o.email||'—')+' · '+fmt(o.amount)+' · '+dt(o.created_at)+(o.pay_uid?' · <span class="mono">'+String(o.pay_uid).slice(0,13)+'</span>':'')+(o.due_date?' · срок до '+dt(o.due_date):'')+'</span>';
+      l.innerHTML='<b>'+(o.service_name||'услуга')+'</b><br><span class="note">'+(o.email||'—')+' · '+fmt(o.amount)+' · '+dt(o.created_at)+(o.pay_uid?' · <span class="mono">'+String(o.pay_uid).slice(0,13)+'</span>':'')+(o.status==='work'&&o.due_date?' · срок до '+dt(o.due_date):'')+'</span>';
       top.appendChild(l);
       const st=document.createElement('span');
       st.className='badge '+(o.status==='confirmed'?'ok':(o.status==='paid_check'?'wait':'wait'));
@@ -327,7 +327,7 @@ async function renderOrders(){
       [['pending','На проверке'],['paid_check','Чек получен'],['confirmed','Подтверждено'],['work','В работе'],['ready','Готово'],['done','Завершено'],['cancel','Отменено']].forEach(function(x){const op=document.createElement('option');op.value=x[0];op.textContent=x[1];if((o.status||'')===x[0])op.selected=true;sel.appendChild(op)});
       sel.onchange=function(){setSt(o,sel.value)};
       acts.appendChild(sel);
-      const bDue=document.createElement('button');bDue.className='btn mute';bDue.textContent=o.due_date?('СРОК ДО '+dt(o.due_date)):'УСТАНОВИТЬ СРОК';
+      const bDue=document.createElement('button');bDue.className='btn mute';bDue.textContent=(o.status==='work'&&o.due_date)?('СРОК ДО '+dt(o.due_date)):'УСТАНОВИТЬ СРОК';
       bDue.onclick=async function(){const v=prompt('Срок готовности (ГГГГ-ММ-ДД), например 2026-11-15:',o.due_date||'');if(v===null)return;try{await api('/rest/v1/lab_orders?id=eq.'+o.id,'PATCH',{due_date:v});toast('Срок обновлён');await renderOrders()}catch(e){toast('Не вышло: '+e.message)}};
       acts.appendChild(bDue);
       if(o.status!=='confirmed'){

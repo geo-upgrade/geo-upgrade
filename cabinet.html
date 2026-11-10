@@ -900,7 +900,7 @@ function renderOrders(){
   const DONE=['Подтверждён','Подтверждено','Выполняется','Готово','Завершён'];list.slice().reverse().sort((a,b)=>((DONE.includes(b.status)||conf.has(b.uid+'|'+(b.email||'').toLowerCase()))?1:0)-((DONE.includes(a.status)||conf.has(a.uid+'|'+(a.email||'').toLowerCase()))?1:0)).forEach(o=>{
     const isOk=DONE.includes(o.status)||conf.has(o.uid+'|'+o.email.toLowerCase());const SBADJ=conf.has(o.uid+'|'+o.email.toLowerCase())&&!DONE.includes(o.status)?'Подтверждён':o.status;const CANCEL=(SBADJ==='Отменён'||o.status==='cancel');
     const d=document.createElement('div');d.className='order';
-    const LB={'Подтверждён':'ПОДТВЕРЖДЁН','Подтверждено':'ПОДТВЕРЖДЁН','Выполняется':'ВЫПОЛНЯЕТСЯ','В работе':'В РАБОТЕ','Готово':'ГОТОВО','Завершён':'ЗАВЕРШЁН'};const dueTxt=o.due?(' · срок до '+String(o.due).split('-').reverse().slice(0,2).join('.')):'';
+    const LB={'Подтверждён':'ПОДТВЕРЖДЁН','Подтверждено':'ПОДТВЕРЖДЁН','Выполняется':'ВЫПОЛНЯЕТСЯ','В работе':'В РАБОТЕ','Готово':'ГОТОВО','Завершён':'ЗАВЕРШЁН'};const dueTxt=((SBADJ==='В работе'||o.status==='work')&&o.due)?(' · отчёт будет готов до '+String(o.due).split('-').reverse().slice(0,2).join('.')):'';
     const lbl=CANCEL?'ОТМЕНЕНО':(isOk?(LB[SBADJ]||'ПОДТВЕРЖДЕНО'):'ОБРАБОТКА');const cls=CANCEL?'st-wait':(isOk?(SBADJ==='Выполняется'||SBADJ==='В работе'?'st-run':(SBADJ==='Завершён'||SBADJ==='Готово')?'st-ok':'st-wait'):'st-wait');d.innerHTML='<div class="row"><div><b>'+o.name+'</b><br><span class="note">'+fmt(o.amount)+' · '+(o.date||'')+(o.check?' · чек '+o.check:'')+dueTxt+'</span></div><span class="status '+cls+'">'+lbl+'</span></div>';
     if(!isOk&&!CANCEL){
       const acts=document.createElement('div');acts.className='pc-actions';acts.style.marginTop='10px';
