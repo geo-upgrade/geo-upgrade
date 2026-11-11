@@ -205,7 +205,7 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
 
     <div id="tab-chat" class="tabpanel">
     <div class="sec">◆ LABCHAT · ПЕРЕПИСКА С КЛИЕНТАМИ</div>
-    <div class="row"><button class="btn" id="lc-refresh">ОБНОВИТЬ ↻</button><span class="note">сообщения из вкладки LABCHAT в кабинетах клиентов · автообновление каждые 20 секунд</span></div>
+    <div class="row"><button class="btn" id="lc-refresh">ОБНОВИТЬ ↻</button><span class="note">автообновление каждые 20 секунд</span><b id="lc-status" style="color:#00F0FF;font-family:Orbitron,sans-serif;font-size:11px;letter-spacing:.08em"></b></div>
     <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;margin-top:12px">
       <div id="lc-list" style="flex:1;min-width:260px;max-width:380px"></div>
       <div id="lc-conv" style="flex:2;min-width:320px;border:1px solid rgba(157,123,255,.25);border-radius:14px;padding:14px;max-height:480px;overflow-y:auto"></div>
@@ -715,9 +715,11 @@ async function detailFor(u,cardEl){
   async function lcLoad(){
     if(!TOKEN)return;
     try{lcRows=await api('/rest/v1/lab_chat?order=created_at.desc&limit=1000')||[]}
-    catch(e){lcRows=[];const b=$('lc-list');if(b)b.innerHTML='<p class="note">Не удалось загрузить чаты: '+e.message+'</p>';return}
+    catch(e){lcRows=[];const b=$('lc-list');if(b)b.innerHTML='<p class="note">Не удалось загрузить чаты: '+e.message+' — нажми ОБНОВИТЬ или обнови страницу.</p>';const st=$('lc-status');if(st)st.textContent='ОШИБКА: '+e.message;return}
     lcRenderList();
     if(lcSel)lcRenderConv();
+    const st2=$('lc-status');
+    if(st2)st2.textContent='В базе сообщений: '+lcRows.length+' · обновлено '+new Date().toLocaleTimeString('ru-RU');
   }
   async function lcSend(){
     if(!lcSel)return;
