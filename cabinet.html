@@ -1166,16 +1166,16 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
   const SB='https://cpaevaypyplwcdjrfzpj.supabase.co';
   const DIG=[
     {code:'A10',name:'Курс «Проверь бренд в ИИ за вечер»',url:'a10-course.html',bot:false},
-    {code:'A1',name:'Чек-лист «Проверь бренд в нейросетях»',bot:true},
-    {code:'A2',name:'20 промптов для AI-видимости + бонус-гайд',bot:true},
-    {code:'A3',name:'Шаблон AI-Паспорта компании',bot:true}
+    {code:'A1',name:'Чек-лист «Проверь бренд в нейросетях»',bot:false,dl:'/checklist-brand-in-ai.pdf'},
+    {code:'A2',name:'20 промптов для AI-видимости + бонус-гайд',bot:false,dl:'/a2-prompts-ai-visibility.pdf'},
+    {code:'A3',name:'Шаблон AI-Паспорта компании',bot:false,dl:'/ai-passport-template.pdf'}
   ];
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   function badge(text,color,br){return '<span style="display:inline-block;padding:3px 10px;border-radius:999px;font-size:10.5px;font-family:Orbitron,sans-serif;letter-spacing:.08em;background:'+color+';border:1px solid '+br+';color:'+color+';font-weight:700">'+text+'</span>'}
   function card(p,o){
     if(o&&o.status==='confirmed'){
-      const act=p.bot
-        ?'<a class="btn btn-mute" style="margin-top:10px" href="https://t.me/geo_upgrade_labbot" target="_blank" rel="noopener">МАТЕРИАЛЫ · БОТ →</a>'
+      const act=p.dl
+        ?'<a class="btn btn-neon" style="margin-top:10px" href="'+p.dl+'" download>СКАЧАТЬ МАТЕРИАЛ →</a>'
         :'<a class="btn btn-neon" style="margin-top:10px" href="'+p.url+'">ОТКРЫТЬ КУРС →</a>';
       return '<div style="border:1px solid rgba(110,231,160,.45);border-radius:10px;padding:12px 14px;margin-bottom:8px">'
         +'<b>'+esc(p.name)+'</b> '+badge('✓ ДОСТУП ОТКРЫТ','rgba(52,211,153,.9)','rgba(52,211,153,.5)')
