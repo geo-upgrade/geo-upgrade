@@ -1166,17 +1166,15 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
   const SB='https://cpaevaypyplwcdjrfzpj.supabase.co';
   const DIG=[
     {code:'A10',name:'Курс «Проверь бренд в ИИ за вечер»',url:'a10-course.html',bot:false},
-    {code:'A1',name:'Чек-лист «Проверь бренд в нейросетях»',bot:false,dl:'/checklist-brand-in-ai.pdf'},
-    {code:'A2',name:'20 промптов для AI-видимости + бонус-гайд',bot:false,dl:'/a2-prompts-ai-visibility.pdf'},
-    {code:'A3',name:'Шаблон AI-Паспорта компании',bot:false,dl:'/ai-passport-template.pdf'}
+    {code:'A1',name:'Чек-лист «Проверь бренд в нейросетях»',bot:false,sup:'A1/checklist-brand-in-ai.pdf'},
+    {code:'A2',name:'20 промптов для AI-видимости + бонус-гайд',bot:false,sup:'A2/a2-prompts-ai-visibility.pdf'},
+    {code:'A3',name:'Шаблон AI-Паспорта компании',bot:false,sup:'A3/ai-passport-template.pdf'}
   ];
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   function badge(text,color,br){return '<span style="display:inline-block;padding:3px 10px;border-radius:999px;font-size:10.5px;font-family:Orbitron,sans-serif;letter-spacing:.08em;background:'+color+';border:1px solid '+br+';color:'+color+';font-weight:700">'+text+'</span>'}
   function card(p,o){
     if(o&&o.status==='confirmed'){
-      const act=p.dl
-        ?'<a class="btn btn-neon" style="margin-top:10px" href="'+p.dl+'" download>СКАЧАТЬ МАТЕРИАЛ →</a>'
-        :'<a class="btn btn-neon" style="margin-top:10px" href="'+p.url+'">ОТКРЫТЬ КУРС →</a>';
+      const act=p.sup?'<a class="btn btn-neon" style="margin-top:10px" data-sup="'+p.sup+'" href="#">СКАЧАТЬ МАТЕРИАЛ →</a>':'<a class="btn btn-neon" style="margin-top:10px" href="'+p.url+'">ОТКРЫТЬ КУРС →</a>';
       return '<div style="border:1px solid rgba(110,231,160,.45);border-radius:10px;padding:12px 14px;margin-bottom:8px">'
         +'<b>'+esc(p.name)+'</b> '+badge('✓ ДОСТУП ОТКРЫТ','rgba(52,211,153,.9)','rgba(52,211,153,.5)')
         +'<p class="note" style="margin:8px 0 0">'+(p.bot?'Материалы выданы — повторно в письме о покупке или в боте лаборатории.':'Прогресс сохраняется в браузере и синхронизируется с приложением «ГЕО-Академия».')+'</p>'+act+'</div>';
@@ -1206,7 +1204,22 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
         html+=card(p,o);
       });
       if(!html) html='<p class="note">Цифровых покупок пока нет. Урок 1 курса «Проверь бренд в ИИ за вечер» открыт всем бесплатно — <a href="a10-course.html" style="color:#00F0FF;text-decoration:none">начать урок 1</a>.</p>';
+      
       box.innerHTML=html;
+      box.querySelectorAll('a[data-sup]').forEach(function(a){
+        a.onclick=async function(ev){
+          ev.preventDefault();
+          const s2=dgSess();
+          if(!s2||!s2.token){alert('Сначала войдите в кабинет');return}
+          const sup=a.getAttribute('data-sup');
+          try{
+            const rr=await fetch(SB+'/storage/v1/object/sign/materials/'+sup+'?expireIn=120',{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+s2.token,'Content-Type':'application/json'},body:JSON.stringify({expiresIn:120})});
+            const jj=await rr.json().catch(function(){return{}});
+            if(rr.ok&&jj.signedURL){window.open(SB+'/storage/v1'+jj.signedURL,'_blank')}
+            else{alert('ДОСТУП ЗАКРЫТ — файл доступен только при подтверждённой покупке (код '+rr.status+')')}
+          }catch(e2){alert('Не удалось открыть файл — проверьте соединение')}
+        };
+      });
     }catch(e){box.innerHTML='<p class="note">Не удалось загрузить цифровые продукты — проверьте соединение.</p>'}
   }
   function dgVisible(){const d=$('lab-dash');return d&&!d.classList.contains('hide')}
