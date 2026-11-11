@@ -850,8 +850,16 @@ async function postLabOrder(s,svc,puid,em){try{await fetch('https://cpaevaypyplw
     const dones=JSON.parse(localStorage.getItem('a10-course-done-v3')||'[]');
     if(Array.isArray(dones)&&dones.some(Boolean)){
       const n=dones.filter(Boolean).length;let nxt=0;
-      for(let i=0;i<dones.length;i++){if(!dones[i]){nxt=i+1;break}}
-      card('ПРОГРЕСС КУРСА','<b>Пройдено уроков: '+n+' из 5</b><p class="note" style="margin:6px 0">'+(nxt?('Следующий — урок '+nxt+'. ДЗ предыдущего открывает его.'):'Все уроки пройдены — финальный блок открыт.')+'</p><a class="btn btn-gold" href="a10-course.html">Продолжить курс →</a>');
+      for(let i=0;i<5;i++){if(!dones[i]){nxt=i+1;break}}
+      let paidA10=false;
+      try{
+        if(s.sb&&s.sb.token){
+          const rr=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/digital_orders?user_id=eq.'+s.sb.uid+'&product_id=eq.A10&select=status',{headers:{apikey:'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-',Authorization:'Bearer '+s.sb.token}});
+          if(rr.ok){const dd=await rr.json();paidA10=(dd||[]).some(function(x){return x.status==='confirmed'})}
+        }
+      }catch(e){}
+      const msg=!nxt?'Все уроки пройдены — финальный блок открыт.':(nxt>1&&!paidA10?('Следующий — урок '+nxt+'. Откроется после подтверждения оплаты и ДЗ урока '+(nxt-1)+'.'):('Следующий — урок '+nxt+'. ДЗ предыдущего открывает его.'));
+      card('ПРОГРЕСС КУРСА','<b>Пройдено уроков: '+n+' из 5</b><p class="note" style="margin:6px 0">'+msg+'</p><a class="btn btn-gold" href="a10-course.html">Продолжить курс →</a>');
     }
   }catch(e){}
   try{
