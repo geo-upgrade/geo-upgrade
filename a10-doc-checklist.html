@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Чек-лист публикации — 21 правило — GEO-Апгрейд</title>
+<style>
+:root { --bg:#0f0a1e; --surface:#1a1130; --surface-2:#221744; --text:#ece8f7; --muted:#b3aacb;
+  --neon:#5ce1ff; --accent:#8a5cff; --line:#33255c; --ok:#6ee7a0; --warn:#ffb45c;
+  --font-head:'Orbitron','Segoe UI',Verdana,sans-serif; --font-body:'Exo 2','Segoe UI',Arial,sans-serif; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.6; font-size:16px; }
+main { max-width:780px; margin:0 auto; padding:24px; }
+header.doc { margin-bottom:28px; }
+.series { font-family:var(--font-head); color:var(--neon); font-size:11px; letter-spacing:0.2em; }
+h1 { font-family:var(--font-head); font-size:clamp(20px,4vw,26px); margin-top:10px; }
+.sub { color:var(--muted); margin-top:8px; }
+.panel { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px; margin-bottom:20px; }
+.panel h2 { font-family:var(--font-head); font-size:13px; letter-spacing:0.14em; color:var(--neon); margin-bottom:14px; }
+.rule { display:flex; gap:12px; align-items:flex-start; border-top:1px solid rgba(51,37,92,0.5); padding:12px 4px; }
+.rule:first-of-type { border-top:none; }
+.rnum { font-family:var(--font-head); color:var(--neon); font-size:12px; min-width:34px; padding-top:4px; }
+.rtxt { flex:1; font-size:14.5px; }
+.rtxt b { color:var(--text); }
+.chips { display:flex; gap:8px; margin-top:8px; flex-wrap:wrap; }
+.chip { font-size:12.5px; color:var(--muted); background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:4px 14px; cursor:pointer; }
+.chip.on-ok { color:#06121a; background:var(--ok); border-color:var(--ok); font-weight:600; }
+.chip.on-no { color:#06121a; background:var(--warn); border-color:var(--warn); font-weight:600; }
+textarea { width:100%; min-height:76px; background:var(--bg); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-family:var(--font-body); font-size:14px; resize:vertical; }
+.bar { height:10px; background:var(--surface-2); border-radius:6px; overflow:hidden; margin-top:12px; }
+.bar-fill { height:100%; width:0%; background:linear-gradient(90deg,var(--warn),var(--ok)); transition:width .3s; }
+.saved { color:var(--ok); font-size:12.5px; font-family:var(--font-head); }
+.btn { font-family:var(--font-head); font-size:11.5px; color:var(--neon); background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:7px 16px; cursor:pointer; }
+.btn.main { color:#06121a; background:var(--neon); border:none; font-weight:600; }
+@media print { .chip, .btn, .noprint { display:none; } body { background:#fff; color:#000; } .panel { background:#fff; border:1px solid #ccc; } }
+</style>
+</head>
+<body>
+<main>
+<header class="doc"><span class="series">GEO-АПГРЕЙД · РАБОЧИЙ ДОКУМЕНТ КУРСА A10 · ЧЕК-ЛИСТ</span><h1>Чек-лист публикации: 21 правило</h1><p class="sub">Курс «Проверь бренд в ИИ за вечер» · Урок 4 · финальная сверка статьи перед публикацией</p></header>
+<div class="panel"><h2>СВЕРКА ПЕРЕД ПУБЛИКАЦИЕЙ</h2><p class="sub" style="margin-bottom:14px">Отмечай каждый пункт. Прогресс сохраняется в этом браузере.</p><p class="sub">Готово: <span id="cnt">0</span> из 21</p><div class="bar"><div class="bar-fill" id="bfill"></div></div><div class="rule"><span class="rnum">01</span><div class="rtxt"><b>Пишем для конкретного читателя.</b> Кто читает, что у него происходит, что он сделает после чтения<div class="chips"><span class="chip" data-r="1" data-v="ok">Готово</span><span class="chip" data-r="1" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">02</span><div class="rtxt"><b>Начинаем с реального вопроса, боли, сомнения или ситуации.</b> Первые строки — вопрос читателя его же словами<div class="chips"><span class="chip" data-r="2" data-v="ok">Готово</span><span class="chip" data-r="2" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">03</span><div class="rtxt"><b>Перед статьёй — 5–7 новых вопросов автору.</b> Позиция, опыт, методика, неочевидные аспекты, личный стиль<div class="chips"><span class="chip" data-r="3" data-v="ok">Готово</span><span class="chip" data-r="3" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">04</span><div class="rtxt"><b>Не повторяем вопросы между статьями.</b> Новый набор под конкретный материал<div class="chips"><span class="chip" data-r="4" data-v="ok">Готово</span><span class="chip" data-r="4" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">05</span><div class="rtxt"><b>Сначала раскрываем авторскую позицию.</b> Что автор думает, с чем не согласен, главный вывод<div class="chips"><span class="chip" data-r="5" data-v="ok">Готово</span><span class="chip" data-r="5" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">06</span><div class="rtxt"><b>Совмещаем два стиля: голос автора и бренд.</b> Экспертная лаборатория, сигналы, маршруты, практические выводы<div class="chips"><span class="chip" data-r="6" data-v="ok">Готово</span><span class="chip" data-r="6" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">07</span><div class="rtxt"><b>Создаём полностью уникальный материал.</b> Свой угол, терминология, методика — без копий чужого<div class="chips"><span class="chip" data-r="7" data-v="ok">Готово</span><span class="chip" data-r="7" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">08</span><div class="rtxt"><b>Пишем живым и понятным языком.</b> Без академичности, канцелярита, перегруза терминами<div class="chips"><span class="chip" data-r="8" data-v="ok">Готово</span><span class="chip" data-r="8" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">09</span><div class="rtxt"><b>Примеры не абстрактные.</b> Реальные кейсы с деталями: кто, что делал, что вышло<div class="chips"><span class="chip" data-r="9" data-v="ok">Готово</span><span class="chip" data-r="9" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">10</span><div class="rtxt"><b>Подзаголовки — в форме реальных вопросов.</b> «Почему AI не видит мой бренд?» — готовые вопросы к базе знаний<div class="chips"><span class="chip" data-r="10" data-v="ok">Готово</span><span class="chip" data-r="10" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">11</span><div class="rtxt"><b>Ищем неочевидный угол.</b> Скрытый риск, разрыв обещания и реальности, ограничение метода<div class="chips"><span class="chip" data-r="11" data-v="ok">Готово</span><span class="chip" data-r="11" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">12</span><div class="rtxt"><b>Опираемся на проверенные факты.</b> Первоисточники: официальные документы, исследования, статистика с сайта<div class="chips"><span class="chip" data-r="12" data-v="ok">Готово</span><span class="chip" data-r="12" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">13</span><div class="rtxt"><b>Отделяем факт от гипотезы и мнения.</b> «По данным X» / «в нашей практике наблюдали Y» — честная маркировка<div class="chips"><span class="chip" data-r="13" data-v="ok">Готово</span><span class="chip" data-r="13" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">14</span><div class="rtxt"><b>Используем актуальные новости и события.</b> Свежие изменения в ИИ-поиске, проверенные статус и дата<div class="chips"><span class="chip" data-r="14" data-v="ok">Готово</span><span class="chip" data-r="14" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">15</span><div class="rtxt"><b>Встраиваем авторскую терминологию.</b> Цифровой призрак, зона слепоты, AI-след, контекстный якорь, маяк, резонанс, сигнальная связность<div class="chips"><span class="chip" data-r="15" data-v="ok">Готово</span><span class="chip" data-r="15" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">16</span><div class="rtxt"><b>Даём практическую пользу.</b> Примеры, таблицы, сравнения, чек-листы, мини-тесты, протоколы<div class="chips"><span class="chip" data-r="16" data-v="ok">Готово</span><span class="chip" data-r="16" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">17</span><div class="rtxt"><b>Завершаем статью маршрутом.</b> Читатель понимает следующий шаг: самопроверка, разбор, статья, аудит, услуга<div class="chips"><span class="chip" data-r="17" data-v="ok">Готово</span><span class="chip" data-r="17" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">18</span><div class="rtxt"><b>Пишем по правилам GEO, не теряя голос.</b> Прямой ответ в первом абзаце, извлекаемость — но стиль автора сохранён<div class="chips"><span class="chip" data-r="18" data-v="ok">Готово</span><span class="chip" data-r="18" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">19</span><div class="rtxt"><b>Даём ТЗ программисту; формат каждой статьи — новый.</b> Чек-лист, гайд, интерактив, нестандартная подача — без копий структуры<div class="chips"><span class="chip" data-r="19" data-v="ok">Готово</span><span class="chip" data-r="19" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">20</span><div class="rtxt"><b>Следуем рабочей формуле.</b> Вопрос → позиция → факты → угол → метафора → термин → пример/таблица → действие → честный CTA<div class="chips"><span class="chip" data-r="20" data-v="ok">Готово</span><span class="chip" data-r="20" data-v="no">Не готово</span></div></div></div><div class="rule"><span class="rnum">21</span><div class="rtxt"><b>Прогоняем фильтр «узнаваемости без названия».</b> Убери бренд — статья всё равно узнаётся? Если нет — усиливаем авторский слой<div class="chips"><span class="chip" data-r="21" data-v="ok">Готово</span><span class="chip" data-r="21" data-v="no">Не готово</span></div></div></div></div><div class="panel"><h2>ФИЛЬТР «УЗНАВАЕМОСТИ БЕЗ НАЗВАНИЯ»</h2><p class="sub" style="margin-bottom:10px">Убери из статьи название бренда — по какой мысли, методике или образу она всё ещё узнаётся как твоя? Запиши ответ:</p><textarea id="filter"></textarea><p class="sub" style="margin-top:12px">Пустой ответ = усиливаем авторскую позицию, эксперимент, терминологию или собственный вывод до публикации.</p></div><div class="panel noprint"><button type="button" class="btn main" onclick="window.print()">Печать / PDF</button><button type="button" class="btn" onclick="if(confirm(&quot;Сбросить отметки?&quot;)){localStorage.removeItem(&quot;a10-checklist-21&quot;);location.reload();}">Сбросить</button><span class="saved" id="savenote"></span></div>
+</main>
+<script>
+(function(){
+var KEY="a10-checklist-21";
+var state={}; try{ state=JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){ state={}; }
+function refresh(){ var ok=0; document.querySelectorAll(".chip").forEach(function(c){
+  var r=c.getAttribute("data-r"), v=c.getAttribute("data-v");
+  var cur=state[r]||"";
+  c.classList.toggle("on-ok", cur==="ok"&&v==="ok");
+  c.classList.toggle("on-no", cur==="no"&&v==="no");
+});
+Object.keys(state).forEach(function(k){ if(state[k]==="ok") ok++; });
+document.getElementById("cnt").textContent=ok;
+document.getElementById("bfill").style.width=(ok/21*100)+"%";
+var ft=document.getElementById("filter"); if(state["filter"]) ft.value=state["filter"];
+}
+document.querySelectorAll(".chip").forEach(function(c){ c.addEventListener("click",function(){
+  var r=c.getAttribute("data-r"), v=c.getAttribute("data-v");
+  state[r]=v; localStorage.setItem(KEY, JSON.stringify(state)); refresh();
+}); });
+document.getElementById("filter").addEventListener("input",function(){ state["filter"]=this.value; localStorage.setItem(KEY, JSON.stringify(state)); });
+refresh();
+})();
+</script>
+</body>
+</html>

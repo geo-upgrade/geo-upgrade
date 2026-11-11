@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Шаблон замера видимости — GEO-Апгрейд</title>
+<style>
+:root { --bg:#0f0a1e; --surface:#1a1130; --surface-2:#221744; --text:#ece8f7; --muted:#b3aacb;
+  --neon:#5ce1ff; --accent:#8a5cff; --line:#33255c; --ok:#6ee7a0;
+  --font-head:'Orbitron','Segoe UI',Verdana,sans-serif; --font-body:'Exo 2','Segoe UI',Arial,sans-serif; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.6; font-size:16px; }
+main { max-width:840px; margin:0 auto; padding:24px; }
+header.doc { margin-bottom:28px; }
+.series { font-family:var(--font-head); color:var(--neon); font-size:11px; letter-spacing:0.2em; }
+h1 { font-family:var(--font-head); font-size:clamp(20px,4vw,28px); margin-top:10px; }
+.sub { color:var(--muted); margin-top:8px; }
+.panel { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px; margin-bottom:20px; }
+.panel h2 { font-family:var(--font-head); font-size:13px; letter-spacing:0.14em; color:var(--neon); margin-bottom:12px; }
+input[type=text], textarea { width:100%; background:var(--bg); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:9px 11px; font-family:var(--font-body); font-size:14px; }
+textarea { min-height:80px; resize:vertical; }
+input:focus, textarea:focus { outline:none; border-color:var(--neon); }
+table { width:100%; border-collapse:collapse; font-size:13.5px; }
+th { font-family:var(--font-head); font-size:10.5px; letter-spacing:0.08em; color:var(--neon); text-align:left; padding:8px 8px; border-bottom:1px solid var(--line); }
+td { padding:6px 8px; border-bottom:1px solid rgba(51,37,92,0.5); }
+td input { font-size:13.5px; padding:7px 9px; }
+select { background:var(--bg); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:7px 9px; font-family:var(--font-body); font-size:13.5px; }
+.btn { font-family:var(--font-head); font-size:11.5px; letter-spacing:0.06em; color:var(--neon); background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:7px 16px; cursor:pointer; margin:4px 6px 4px 0; }
+.btn:hover { border-color:var(--neon); }
+.btn.main { color:#06121a; background:var(--neon); border:none; font-weight:600; }
+.hint { color:var(--muted); font-size:13px; margin-top:6px; }
+.saved { color:var(--ok); font-size:12.5px; font-family:var(--font-head); }
+.share { display:flex; align-items:center; gap:10px; margin-top:14px; }
+.share label { font-size:13.5px; color:var(--muted); white-space:nowrap; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media (max-width:640px) { .grid2 { grid-template-columns:1fr; } }
+.flabel { font-family:var(--font-head); font-size:10px; letter-spacing:0.12em; color:#8fb8d8; margin-bottom:6px; }
+.metric { font-family:var(--font-head); font-size:20px; color:var(--neon); }
+@media print { .btn, .noprint { display:none; } body { background:#fff; color:#000; } .panel, .lesson { background:#fff; border:1px solid #ccc; } }
+</style>
+</head>
+<body>
+<main>
+<header class="doc"><span class="series">GEO-АПГРЕЙД · РАБОЧИЙ ДОКУМЕНТ КУРСА A10 · ЗАМЕР</span><h1>Шаблон замера видимости</h1><p class="sub">Курс «Проверь бренд в ИИ за вечер» · Уроки 1 и 5 · GEO-Апгрейд</p></header>
+<div class="panel"><h2>ШАГ 1 · ЗАПРОСЫ И ОТВЕТЫ НЕЙРОСЕТЕЙ</h2><table><tr><th>#</th><th>Запрос клиента</th><th>Нейросеть №1 (например ChatGPT)</th><th>Нейросеть №2 (например Perplexity)</th><th>Я в списке?</th></tr><tr><td>1</td><td><input type="text" id="q1" placeholder="Запрос словами клиента"></td><td><input type="text" id="a1_1" placeholder="Кого назвала №1"></td><td><input type="text" id="b1_1" placeholder="Кого назвала №2"></td><td><select id="s1"><option>—</option><option>Я</option><option>Конкурент</option><option>Пусто</option></select></td></tr><tr><td>2</td><td><input type="text" id="q2" placeholder="Запрос словами клиента"></td><td><input type="text" id="a1_2" placeholder="Кого назвала №1"></td><td><input type="text" id="b1_2" placeholder="Кого назвала №2"></td><td><select id="s2"><option>—</option><option>Я</option><option>Конкурент</option><option>Пусто</option></select></td></tr><tr><td>3</td><td><input type="text" id="q3" placeholder="Запрос словами клиента"></td><td><input type="text" id="a1_3" placeholder="Кого назвала №1"></td><td><input type="text" id="b1_3" placeholder="Кого назвала №2"></td><td><select id="s3"><option>—</option><option>Я</option><option>Конкурент</option><option>Пусто</option></select></td></tr><tr><td>4</td><td><input type="text" id="q4" placeholder="Запрос словами клиента"></td><td><input type="text" id="a1_4" placeholder="Кого назвала №1"></td><td><input type="text" id="b1_4" placeholder="Кого назвала №2"></td><td><select id="s4"><option>—</option><option>Я</option><option>Конкурент</option><option>Пусто</option></select></td></tr><tr><td>5</td><td><input type="text" id="q5" placeholder="Запрос словами клиента"></td><td><input type="text" id="a1_5" placeholder="Кого назвала №1"></td><td><input type="text" id="b1_5" placeholder="Кого назвала №2"></td><td><select id="s5"><option>—</option><option>Я</option><option>Конкурент</option><option>Пусто</option></select></td></tr></table><button type="button" class="btn" onclick="addRow()">+ Добавить запрос</button><p class="hint">Ответы записывай как назвал их нейросеть — дословно. Пусто = бренд не назван.</p></div><div class="panel"><h2>ШАГ 2 · ИТОГИ ЗАМЕРА</h2><div class="grid2"><div><p class="flabel">ДОЛЯ ПРИСУТСТВИЯ (%)</p><input type="text" id="share" placeholder="Например: 2 из 12 = 17%"></div><div><p class="flabel">ДАТА ЗАМЕРА</p><input type="text" id="mdate" placeholder="09.11.2026"></div></div><p class="flabel" style="margin-top:14px">ТРИ ПРИЧИНЫ, ПОЧЕМУ Я НЕ ПОПАЛ В ОТВЕТЫ</p><textarea id="reasons" placeholder="1) … 2) … 3) …"></textarea></div><div class="panel"><h2>ШАГ 3 · ПОВТОРНЫЙ ЗАМЕР (ЧЕРЕЗ 4–6 НЕДЕЛЬ)</h2><div class="grid2"><div><p class="flabel">ДОЛЯ ПРИСУТСТВИЯ ПОВТОРНО (%)</p><input type="text" id="share2" placeholder="Например: 5 из 12 = 42%"></div><div><p class="flabel">ДАТА ПОВТОРА</p><input type="text" id="mdate2" placeholder="14.12.2026"></div></div><p class="flabel" style="margin-top:14px">ЧТО ИЗМЕНИЛОСЬ: КАКИЕ МАТЕРИАЛЫ ИИ ЗАБРАЛ В «СЛОВАРЬ»</p><textarea id="delta" placeholder="Какие запросы теперь ведут на меня, какие статьи цитируются…"></textarea></div><div class="panel noprint"><button type="button" class="btn main" onclick="window.print()">Печать / PDF</button><span class="saved" id="savenote"></span><p class="hint">Данные хранятся в этом браузере. Для страховки распечатай отчёт.</p></div>
+</main>
+<script>function persist(k,v){try{localStorage.setItem(k,JSON.stringify(v));var s=document.getElementById("savenote");if(s)s.textContent="Сохранено ✓";setTimeout(function(){if(s)s.textContent="";},1200);}catch(e){}}
+function restore(k){try{return JSON.parse(localStorage.getItem(k)||"null");}catch(e){return null;}}
+document.addEventListener("input",function(e){var el=e.target;var id=el.id||el.name;if(!id)return;var d=restore("__saver");d=d||{};d[document.title+"|"+id]=el.value;persist("__saver",d);});
+document.addEventListener("DOMContentLoaded",function(){var d=restore("__saver")||{};Object.keys(d).forEach(function(k){if(k.indexOf(document.title+"|")===0){var id=k.split("|")[1];var el=document.getElementById(id)||document.getElementsByName(id)[0];if(el)el.value=d[k];}});});</script>
+</body>
+</html>
