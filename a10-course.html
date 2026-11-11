@@ -56,7 +56,7 @@ h2 { font-family:var(--font-head); font-size:clamp(17px,3vw,21px); margin-bottom
 .step.completed .sbtn { display:none; }
 .step.completed .sdonenote { display:inline; }
 .hw { background:var(--surface-2); border:1px solid var(--accent); border-radius:12px; padding:16px; margin-bottom:16px; }
-.hw.blurred { opacity:.45; pointer-events:none; }
+.hw.blurred { opacity:.45; }
 .hwlist { margin-left:20px; display:grid; gap:8px; margin-bottom:12px; }
 textarea { width:100%; min-height:88px; background:var(--bg); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-family:var(--font-body); font-size:14.5px; resize:vertical; }
 textarea:focus { outline:none; border-color:var(--neon); }
@@ -119,7 +119,7 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <div class="frame"><h2>Как устроен курс</h2><ol>
 <li>Урок открывается после выполнения домашнего задания предыдущего. Прогресс сохраняется автоматически.</li>
 <li>Каждое ДЗ — короткая форма с автосохранением. Нажми «Задание выполнено», чтобы открыть следующий урок.</li>
-<li>Рабочие документы открываются кнопками прямо в ДЗ каждого урока: шаблон замера, журнал автора, контент-план, чек-лист публикации, шаблон AI-Паспорта и матрица запросов. Всё заполняется в браузере, сохраняется автоматически и печатается в PDF.</li>
+<li>Рабочие документы лежат рядом с курсом в комплекте: шаблон замера, журнал автора, контент-план, чек-лист публикации, шаблон AI-Паспорта.</li>
 <li>Уроки 1–2 — за один вечер, уроки 3–5 — по шагам в течение недели.</li>
 <li>В каждом уроке: <b>скачай лекцию (PDF)</b> и прочитай — подробная методичка лаборатории с приложениями (все 21 правило, все 22 площадки); затем этапы практики, квиз «Проверь себя» и ДЗ; в конце урока — поле «Комментарии себе».</li></ol></div>
 <section class="lesson" id="lesson0">
@@ -165,7 +165,7 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <li>Запиши 3–5 клиентских запросов твоей ниши (как их формулирует клиент, не ты).</li>
 <li>Прогони их через две нейросети и заполни таблицу в «Шаблоне замера видимости».</li>
 <li>Посчитай и запиши свою долю присутствия и три причины, почему ты не попал в ответы (по шаблону).</li>
-</ol><div class="dlrow" style="margin-top:10px"><a class="dlbtn" href="a10-doc-zamer.html" target="_blank" rel="noopener" onclick="var hw=this.closest(&apos;.hw&apos;);if(hw&amp;&amp;hw.classList.contains(&apos;blurred&apos;)){event.preventDefault();return false}">ОТКРЫТЬ ДОКУМЕНТ</a><span class="dlmeta">Шаблон замера видимости · автосохранение · печать в PDF</span></div><textarea id="hw0" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
+</ol><textarea id="hw0" placeholder="Ход работы и выводы — сохраняется автоматически"></textarea>
 <div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote0" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
 <button class="donebtn" id="dbtn0" data-i="0">Задание выполнено — открыть следующий урок</button></div>
 <div class="wsrow"><b>Рабочие документы урока:</b> Замер видимости (шаблон + отчёт), Журнал замеров</div>
@@ -216,7 +216,7 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <li>Заполни не менее 18 из 26 полей анкеты AI-Паспорта.</li>
 <li>Собери паспорт и проверь формулу позиционирования вслух.</li>
 <li>Впиши блок «Кому НЕ подойдёт» — хотя бы два честных пункта.</li>
-</ol><div class="dlrow" style="margin-top:10px"><a class="dlbtn" href="a10-doc-ai-passport.html" target="_blank" rel="noopener" onclick="var hw=this.closest(&apos;.hw&apos;);if(hw&amp;&amp;hw.classList.contains(&apos;blurred&apos;)){event.preventDefault();return false}">ОТКРЫТЬ ДОКУМЕНТ</a><span class="dlmeta">Шаблон AI-Паспорта компании · автосохранение · печать в PDF</span></div><textarea id="hw1" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
+</ol><textarea id="hw1" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
 <div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote1" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
 <button class="donebtn" id="dbtn1" data-i="1" disabled="">Задание выполнено — открыть следующий урок</button></div>
 <div class="wsrow"><b>Рабочие документы урока:</b> Шаблон AI-Паспорта компании (A3, интерактив), Журнал автора</div>
@@ -265,7 +265,7 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <li>Сгенерируй 15 запросов промптом и сгруппируй их по интенту (что/как/почему).</li>
 <li>Сопоставь каждый запрос с доказательством из AI-Паспорта (или пометь «нужен материал»).</li>
 <li>Заполни минимум 8 строк в «Контент-плане месяца» — темы по запросам.</li>
-</ol><div class="dlrow" style="margin-top:10px"><a class="dlbtn" href="a10-doc-matrix.html" target="_blank" rel="noopener" onclick="var hw=this.closest(&apos;.hw&apos;);if(hw&amp;&amp;hw.classList.contains(&apos;blurred&apos;)){event.preventDefault();return false}">ОТКРЫТЬ ДОКУМЕНТ</a><span class="dlmeta">Матрица запросов и доказательств · автосохранение · печать в PDF</span></div><div class="dlrow" style="margin-top:10px"><a class="dlbtn" href="a10-doc-plan.html" target="_blank" rel="noopener" onclick="var hw=this.closest(&apos;.hw&apos;);if(hw&amp;&amp;hw.classList.contains(&apos;blurred&apos;)){event.preventDefault();return false}">ОТКРЫТЬ ДОКУМЕНТ</a><span class="dlmeta">Контент-план месяца · автосохранение · печать в PDF</span></div><textarea id="hw2" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
+</ol><textarea id="hw2" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
 <div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote2" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
 <button class="donebtn" id="dbtn2" data-i="2" disabled="">Задание выполнено — открыть следующий урок</button></div>
 <div class="wsrow"><b>Рабочие документы урока:</b> Контент-план месяца, Журнал автора</div>
@@ -315,7 +315,7 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <li>Проведи интервью автора: 5–7 вопросов, ответы — в «Журнале автора».</li>
 <li>Собери черновик промптом «Статья для сайта с GEO-фокусом» и верни голос связкой редактора.</li>
 <li>Пройди «Чек-лист публикации»: закрыть все 21 пункт, пометить незакрытые и исправить их.</li>
-</ol><div class="dlrow" style="margin-top:10px"><a class="dlbtn" href="a10-doc-journal.html" target="_blank" rel="noopener" onclick="var hw=this.closest(&apos;.hw&apos;);if(hw&amp;&amp;hw.classList.contains(&apos;blurred&apos;)){event.preventDefault();return false}">ОТКРЫТЬ ДОКУМЕНТ</a><span class="dlmeta">Журнал автора · автосохранение · печать в PDF</span></div><div class="dlrow" style="margin-top:10px"><a class="dlbtn" href="a10-doc-checklist.html" target="_blank" rel="noopener" onclick="var hw=this.closest(&apos;.hw&apos;);if(hw&amp;&amp;hw.classList.contains(&apos;blurred&apos;)){event.preventDefault();return false}">ОТКРЫТЬ ДОКУМЕНТ</a><span class="dlmeta">Чек-лист публикации: 21 правило · автосохранение · печать в PDF</span></div><textarea id="hw3" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
+</ol><textarea id="hw3" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
 <div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote3" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
 <button class="donebtn" id="dbtn3" data-i="3" disabled="">Задание выполнено — открыть следующий урок</button></div>
 <div class="wsrow"><b>Рабочие документы урока:</b> Журнал автора (вопросы и ответы), Чек-лист публикации (21 правило)</div>
@@ -364,7 +364,7 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <li>Контент-план месяца заполнен полностью (темы, форматы, площадки, запросы).</li>
 <li>Из 22 площадок AI-Паспорта отмечены те, что запланированы на первые две недели.</li>
 <li>Дата повторного замера поставлена в календарь (4–6 недель от первого замера).</li>
-</ol><div class="dlrow" style="margin-top:10px"><a class="dlbtn" href="a10-doc-plan.html" target="_blank" rel="noopener" onclick="var hw=this.closest(&apos;.hw&apos;);if(hw&amp;&amp;hw.classList.contains(&apos;blurred&apos;)){event.preventDefault();return false}">ОТКРЫТЬ ДОКУМЕНТ</a><span class="dlmeta">Контент-план месяца · автосохранение · печать в PDF</span></div><div class="dlrow" style="margin-top:10px"><a class="dlbtn" href="a10-doc-zamer.html" target="_blank" rel="noopener" onclick="var hw=this.closest(&apos;.hw&apos;);if(hw&amp;&amp;hw.classList.contains(&apos;blurred&apos;)){event.preventDefault();return false}">ОТКРЫТЬ ДОКУМЕНТ</a><span class="dlmeta">Шаблон замера видимости (повторный) · автосохранение · печать в PDF</span></div><textarea id="hw4" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
+</ol><textarea id="hw4" placeholder="Ход работы и выводы — сохраняется автоматически" disabled=""></textarea>
 <div class="notes"><div class="nhead">КОММЕНТАРИИ СЕБЕ ПО УРОКУ · ВИДНЫ ТОЛЬКО ТЕБЕ</div><textarea id="cnote4" placeholder="Что понял(а) здесь, что сделать позже, вопросы к лаборатории..."></textarea></div>
 <button class="donebtn" id="dbtn4" data-i="4" disabled="">Задание выполнено — открыть следующий урок</button></div>
 <div class="wsrow"><b>Рабочие документы урока:</b> Контент-план месяца, Журнал замеров (сравнение динамики)</div>
@@ -533,31 +533,29 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
 <script src="/geo-assistant-widget.js" defer></script>
 <script src="lab-account.js" defer></script>
 <script>
-/* GEO-Апгрейд · заказ цифрового продукта v2: заявка в digital_orders до оплаты; понятные ошибки (сессия/RLS/сеть) */
+/* GEO-Апгрейд · заказ цифрового продукта: заявка создаётся в личном кабинете (digital_orders) ДО перехода к оплате Точки */
 (function(){
   var SB='https://cpaevaypyplwcdjrfzpj.supabase.co';
   var KEY='sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-';
-  var TO=location.pathname.split('/').pop().replace('.html','');
   function sess(){try{var j=JSON.parse(localStorage.getItem('geo_lab_auth')||'null');return j&&j.token?j:null}catch(e){return null}}
   function pending(){try{return JSON.parse(localStorage.getItem('geo_lab_dg_pending')||'null')}catch(e){return null}}
   function setPending(v){try{if(v)localStorage.setItem('geo_lab_dg_pending',JSON.stringify(v));else localStorage.removeItem('geo_lab_dg_pending')}catch(e){}}
   function toast(t){var d=document.createElement('div');d.style.cssText='position:fixed;left:50%;transform:translateX(-50%);bottom:26px;z-index:130;background:#241950;border:1px solid rgba(0,240,255,.5);color:#fff;font:13px \'Exo 2\',sans-serif;padding:12px 18px;border-radius:12px;box-shadow:0 0 18px rgba(0,240,255,.25)';d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},5200)}
   function panel(html,border){var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;z-index:120;background:rgba(6,3,14,.78);display:flex;align-items:center;justify-content:center;padding:20px';d.innerHTML='<div style="max-width:460px;background:#16092A;border:1px solid '+border+';border-radius:16px;padding:24px;color:#F5F7FA;font-family:\'Exo 2\',sans-serif">'+html+'</div>';document.body.appendChild(d);return d}
-  function relogin(){try{localStorage.removeItem('geo_lab_auth')}catch(e){};location.href='login.html?to='+TO}
-  async function rtxt(r){try{var j=await r.json();return (j&&(j.message||j.error_description||j.msg||j.hint))||''}catch(e){return ''}}
-  function localSess(){try{return JSON.parse(localStorage.getItem('geo_lab_session')||'null')}catch(e){return null}}
-  function authObj(){try{return JSON.parse(localStorage.getItem('geo_lab_auth')||'null')}catch(e){return null}}
   function dlgGuest(a){
-    var stale=(function(){var ao=authObj();if(ao&&!ao.token)return true;if(localSess()&&!sess())return true;return false})();
-    var d=panel('<div style="color:#00F0FF;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-family:Orbitron,sans-serif">'+(stale?'НУЖЕН ВХОД ПО EMAIL':'ЦИФРОВОЙ ПРОДУКТ')+'</div>'
+    var d=panel('<div style="color:#00F0FF;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-family:Orbitron,sans-serif">ЦИФРОВОЙ ПРОДУКТ</div>'
       +'<h3 style="font-family:Orbitron,sans-serif;font-size:17px;margin:8px 0">'+a.name+'</h3>'
-      +'<p style="font-size:13.5px;color:#c8cbe0;margin:0 0 16px">'+(stale
-        ?'У вас открыт старый локальный вход («ЛК» в шапке) — у него нет ключа базы лаборатории, поэтому заказ не создаётся. Введите email и пароль ещё раз: база выдаст ключ автоматически, и покупка сразу попадёт в кабинет и в админку. Если пароль забыли — зарегистрируйтесь заново с тем же email, база подтвердит учётную запись сама, без письма.'
-        :'Чтобы заказ появился в личном кабинете, а после подтверждения открылся доступ, нужен вход. Если оплатить без входа — лаборатория всё равно увидит платёж и подтвердит вручную по чеку.')+'</p>'
+      +'<p style="font-size:13.5px;color:#c8cbe0;margin:0 0 16px">Чтобы заказ появился в личном кабинете, а после подтверждения открылся доступ, нужен вход. Если оплатить без входа — лаборатория всё равно увидит платёж и подтвердит вручную по чеку.</p>'
       +'<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="dg-l" href="login.html?to=digital-products" style="background:#00F0FF;color:#0D0618;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;text-decoration:none;font-weight:700">ВОЙТИ И КУПИТЬ &rarr;</a>'
       +'<a class="dg-p" href="'+a.pay+'" target="_blank" rel="noopener" style="color:#c8cbe0;border:1px solid rgba(184,188,198,.4);font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;text-decoration:none;font-weight:700">ПРОСТО ОПЛАТИТЬ &rarr;</a>'
       +'<button class="dg-c" style="color:#c8cbe0;border:1px solid rgba(184,188,198,.4);background:transparent;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;cursor:pointer;font-weight:700">ОТМЕНА</button></div>');
     d.querySelector('.dg-l').addEventListener('click',function(){setPending({code:a.code})});
+    d.querySelector('.dg-c').addEventListener('click',function(){d.remove()});
+  }
+  function dlgFail(a,msg){
+    var d=panel('<p style="font-size:13.5px;margin:0 0 16px">'+msg+'</p>'
+      +'<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="dg-p" href="'+a.pay+'" target="_blank" rel="noopener" style="background:#FFD66E;color:#0D0618;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;text-decoration:none;font-weight:700">ПРОСТО ОПЛАТИТЬ &rarr;</a>'
+      +'<button class="dg-c" style="color:#c8cbe0;border:1px solid rgba(184,188,198,.4);background:transparent;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;cursor:pointer;font-weight:700">ЗАКРЫТЬ</button></div>','rgba(255,79,216,.5)');
     d.querySelector('.dg-c').addEventListener('click',function(){d.remove()});
   }
   function dlgPay(a,title,text){
@@ -566,33 +564,13 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
       +'<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="dg-p" href="'+a.pay+'" target="_blank" rel="noopener" style="background:#00F0FF;color:#0D0618;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;text-decoration:none;font-weight:700">ПЕРЕЙТИ К ОПЛАТЕ &rarr;</a>'
       +'<a href="cabinet.html" style="color:#c8cbe0;border:1px solid rgba(184,188,198,.4);font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;text-decoration:none;font-weight:700">В КАБИНЕТ</a></div>','rgba(0,240,255,.45)');
   }
-  function dlgErr(a,status,msg){
-    var isAuth=(status===401||/invalid jwt|jwt expired/i.test(msg||''));
-    var text;
-    if(isAuth){
-      text='<div style="color:#FFD66E;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-family:Orbitron,sans-serif">СЕССИЯ УСТАРЕЛА</div>'
-        +'<p style="font-size:13.5px;color:#c8cbe0;margin:10px 0 16px">База лаборатории ответила 401 — вход в кабинет устарел. Войдите заново и повторите покупку: заявка тогда попадёт в кабинет и в админку. Можно и просто оплатить по ссылке — лаборатория подтвердит вручную по чеку.</p>'
-        +'<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="dg-rl" style="background:#00F0FF;color:#0D0618;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;cursor:pointer;font-weight:700">ВОЙТИ ЗАНОВО &rarr;</button>'
-        +'<a class="dg-p" href="'+a.pay+'" target="_blank" rel="noopener" style="color:#c8cbe0;border:1px solid rgba(184,188,198,.4);font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;text-decoration:none;font-weight:700">ПРОСТО ОПЛАТИТЬ &rarr;</a></div>';
-    } else {
-      text='<div style="color:#FF4FD8;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-family:Orbitron,sans-serif">ОШИБКА БАЗЫ · '+status+'</div>'
-        +'<p style="font-size:13.5px;color:#c8cbe0;margin:10px 0 16px">'+(msg?msg+'. ':'')+'Заказ сейчас не создался — сообщите лаборатории номер ошибки. Пока можно оплатить по прямой ссылке, покупку подтвердят вручную по чеку.</p>'
-        +'<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="dg-p" href="'+a.pay+'" target="_blank" rel="noopener" style="background:#FFD66E;color:#0D0618;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;text-decoration:none;font-weight:700">ПРОСТО ОПЛАТИТЬ &rarr;</a>'
-        +'<button class="dg-c" style="color:#c8cbe0;border:1px solid rgba(184,188,198,.4);background:transparent;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;cursor:pointer;font-weight:700">ЗАКРЫТЬ</button></div>';
-    }
-    var d=panel(text,'rgba(255,79,216,.5)');
-    var rl=d.querySelector('.dg-rl');
-    if(rl)rl.addEventListener('click',function(){d.remove();relogin()});
-    var c=d.querySelector('.dg-c');
-    if(c)c.addEventListener('click',function(){d.remove()});
-  }
   async function dgBuy(a,silent){
     var s=sess();
     if(!s){ dlgGuest(a); return false; }
     try{
       var q=SB+'/rest/v1/digital_orders?email=eq.'+encodeURIComponent(String(s.email||'').toLowerCase())+'&product_id=eq.'+a.code;
       var r=await fetch(q,{headers:{apikey:KEY,Authorization:'Bearer '+s.token}});
-      if(!r.ok){ var m0=await rtxt(r); dlgErr(a,r.status,m0); return false; }
+      if(!r.ok) throw new Error('orders '+r.status);
       var rows=await r.json().catch(function(){return []});
       if((rows||[]).some(function(x){return x.status==='confirmed'})){
         dlgPay(a,'УЖЕ КУПЛЕНО','Этот продукт уже куплен и подтверждён — доступ открыт в личном кабинете, секция «Мои цифровые продукты».');
@@ -602,7 +580,10 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
       if(!alreadyPending){
         var body={email:String(s.email||'').toLowerCase(),user_id:s.uid||null,product_id:a.code,product_name:a.name,amount:a.amount,status:'pending',paid_at:null,note:null};
         var r2=await fetch(SB+'/rest/v1/digital_orders',{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+s.token,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(body)});
-        if(!r2.ok){ var m2=await rtxt(r2); dlgErr(a,r2.status,m2); return false; }
+        if(!r2.ok){
+          dlgFail(a,'Не удалось создать заказ (база ответила '+r2.status+'). Вы всё равно можете оплатить по ссылке — лаборатория подтвердит покупку вручную по чеку, а затем добавит доступ.');
+          return false;
+        }
       }
       if(silent){
         dlgPay(a,'ЗАКАЗ СОЗДАН',(alreadyPending?'Заказ уже ждёт подтверждения — можно завершить или повторить оплату. ':'Заявка создана и уже видна в личном кабинете. '));
@@ -612,10 +593,7 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
       }
       return true;
     }catch(e){
-      panel('<div style="color:#FF4FD8;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-family:Orbitron,sans-serif">НЕТ СВЯЗИ</div>'
-        +'<p style="font-size:13.5px;color:#c8cbe0;margin:10px 0 16px">Не получилось связаться с базой лаборатории ('+String(e.message||e).slice(0,120)+'). Проверьте интернет и повторите, либо оплатите по прямой ссылке — покупку подтвердят вручную по чеку.</p>'
-        +'<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="dg-p" href="'+a.pay+'" target="_blank" rel="noopener" style="background:#FFD66E;color:#0D0618;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;text-decoration:none;font-weight:700">ПРОСТО ОПЛАТИТЬ &rarr;</a>'
-        +'<button class="dg-c" style="color:#c8cbe0;border:1px solid rgba(184,188,198,.4);background:transparent;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;cursor:pointer;font-weight:700">ЗАКРЫТЬ</button></div>','rgba(255,79,216,.5)');
+      dlgFail(a,'Не получилось связаться с базой лаборатории. Вы всё равно можете оплатить по ссылке — лаборатория подтвердит покупку вручную по чеку.');
       return false;
     }
   }
@@ -634,5 +612,66 @@ footer .brand { font-family:var(--font-head); letter-spacing:0.2em; color:var(--
     if(!a) return;
     dgBuy({code:a.dataset.code,name:a.dataset.name,amount:parseInt(a.dataset.amount,10)||0,pay:a.href},true);
   })();
-})();</script>
+})();
+</script>
+<script>
+/* GEO-Апгрейд · синхронизация прогресса курса A10 с базой лаборатории · таблица digital_progress
+   Канон: done[] (5 булевых), steps {}, hw {}, notes {} — как в localStorage курса.
+   Правило: сервер новее локального маркера sync-at — сервер побеждает (страница перезагружается);
+   иначе локальный прогресс пушится в базу. Изменения уходят с задержкой ~6 с после кликов.
+   Если таблицы ещё нет (SQL не выполнен) — тихая локальная работа, без ошибок. */
+(function(){
+  var SB='https://cpaevaypyplwcdjrfzpj.supabase.co';
+  var KEY='sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-';
+  var K_DONE='a10-course-done-v3',K_STEPS='a10-course-steps-v3',K_HW='a10-course-v3-hw',K_NOTE='a10-course-notes-v3';
+  var K_SYNC='a10-progress-sync-at';
+  var disabled=false,hash='';
+  function sess(){try{var j=JSON.parse(localStorage.getItem('geo_lab_auth')||'null');return j&&j.token?j:null}catch(e){return null}}
+  function hdrs(t){return t?{'apikey':KEY,'Authorization':'Bearer '+t,'Content-Type':'application/json'}:{'apikey':KEY,'Content-Type':'application/json'}}
+  function readLocal(){
+    function j(k,d){try{return JSON.parse(localStorage.getItem(k)||d)}catch(e){return JSON.parse(d)}}
+    return {done:j(K_DONE,'[]'),steps:j(K_STEPS,'{}'),hw:j(K_HW,'{}'),notes:j(K_NOTE,'{}')};
+  }
+  function writeLocal(p){
+    try{
+      localStorage.setItem(K_DONE,JSON.stringify(p.done||[]));
+      localStorage.setItem(K_STEPS,JSON.stringify(p.steps||{}));
+      localStorage.setItem(K_HW,JSON.stringify(p.hw||{}));
+      localStorage.setItem(K_NOTE,JSON.stringify(p.notes||{}));
+    }catch(e){}
+  }
+  function hashOf(){var p=readLocal();return JSON.stringify([p.done,p.steps,p.hw,p.notes])}
+  function push(){
+    var s=sess();if(!s||disabled)return;
+    var p=readLocal();
+    var body={email:String(s.email||'').toLowerCase(),user_id:s.uid||null,product_id:'A10',done:p.done,steps:p.steps,hw:p.hw,notes:p.notes,updated_at:new Date().toISOString()};
+    fetch(SB+'/rest/v1/digital_progress?on_conflict=email,product_id',{method:'POST',headers:Object.assign(hdrs(s.token),{'Prefer':'resolution=merge-deduplicate,return=minimal'}),body:JSON.stringify(body)})
+      .then(function(r){ if(r.ok){try{localStorage.setItem(K_SYNC,body.updated_at)}catch(e){} hash=hashOf();} })
+      .catch(function(){});
+  }
+  function pull(){
+    var s=sess();if(!s)return;
+    fetch(SB+'/rest/v1/digital_progress?email=eq.'+encodeURIComponent(String(s.email||'').toLowerCase())+'&product_id=eq.A10&select=*',{headers:hdrs(s.token)})
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok,status:r.status,body:j}})})
+      .then(function(res){
+        var rows=Array.isArray(res.body)?res.body:null;
+        if(!rows){var code=(res.body&&res.body.code)||'';if(code==='PGRST205'||res.status===404)disabled=true;return}
+        if(!rows.length){push();return}
+        var row=rows[0];
+        var last='';try{last=localStorage.getItem(K_SYNC)||''}catch(e){}
+        if(String(row.updated_at||'')>String(last)){
+          writeLocal(row);
+          try{localStorage.setItem(K_SYNC,String(row.updated_at||''))}catch(e){}
+          location.reload();
+        } else push();
+      })
+      .catch(function(){});
+  }
+  window.addEventListener('load',function(){
+    hash=hashOf();
+    pull();
+    setInterval(function(){var h=hashOf();if(h!==hash){hash=h;push();}},6000);
+  });
+})();
+</script>
 </body></html>
