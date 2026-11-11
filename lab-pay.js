@@ -1,4 +1,4 @@
-/* GEO-Апгрейд — lab-pay.js v3: кнопки «Оплатить» работают через личный кабинет.
+/* GEO-Апгрейд — lab-pay.js v4: кнопки «Оплатить» работают через личный кабинет.
    Клик: не вошёл → login.html?pay=UID (вход/бесплатная регистрация, после входа
    кабинет откроет панель «Заявка и оплата»); вошёл → сразу cabinet.html?pay=UID.
    Заявка в лабораторию уходит при подтверждении в кабинете (postLab: Formspree + канал «Сигнал»),
@@ -6,6 +6,7 @@
 (function(){
   [].slice.call(document.querySelectorAll('a[href*="tochkaplace.com/ia/"]')).forEach(function(a){
     if(a.getAttribute('data-labpay')==='1')return;
+    if(a.classList.contains('dg-buy'))return;
     a.setAttribute('data-labpay','1');
     a.addEventListener('click',function(ev){
       ev.preventDefault();ev.stopPropagation();
