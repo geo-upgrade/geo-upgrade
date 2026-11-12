@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Согласование запросов · GEO-радар — GEO-Апгрейд</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0D0618;--panel:#16092A;--neon:#00F0FF;--gold:#D4AF37;--txt:#B8BCC6;--dim:#8A86A0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1100px 600px at 15% -10%,#2A1150,var(--bg) 60%);color:var(--txt);font:15px/1.62 "Exo 2",sans-serif;min-height:100vh}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid rgba(0,240,255,.14)}
+.brand{font-family:Orbitron;font-weight:800;letter-spacing:.14em;color:#fff;text-decoration:none}
+.brand span{color:var(--neon)}
+.wrap{max-width:760px;margin:0 auto;padding:36px 18px 60px}
+.kicker{font-family:Orbitron;font-size:11px;letter-spacing:.22em;color:var(--neon)}
+h1{font-family:Orbitron;font-size:clamp(22px,4vw,32px);color:#fff;margin:10px 0 14px}
+.panel{background:rgba(22,9,42,.85);border:1px solid rgba(0,240,255,.18);border-radius:16px;padding:22px;margin:16px 0}
+.q{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed rgba(184,188,198,.16)}
+.q:last-child{border-bottom:none}
+.q .n{font-family:Orbitron;color:var(--neon);font-size:13px;min-width:26px;padding-top:2px}
+.q .t{color:#fff}
+.btn{display:inline-block;font-family:Orbitron;font-size:12.5px;letter-spacing:.08em;padding:13px 20px;border-radius:14px;border:1px solid rgba(0,240,255,.5);background:#150B26;color:var(--neon);cursor:pointer;text-decoration:none}
+.btn:hover{box-shadow:0 0 16px rgba(0,240,255,.35);color:#fff}
+.btn-gold{border-color:rgba(212,175,55,.6);color:var(--gold)}
+textarea{width:100%;background:#150B26;color:#fff;border:1px solid rgba(157,123,255,.35);border-radius:10px;padding:10px;font:13.5px "Exo 2";resize:vertical}
+.note{font-size:13px;color:var(--dim)}
+.done{color:#7CFC9B;font-weight:600}
+.state{font-family:Orbitron;font-size:11px;letter-spacing:.14em;padding:6px 12px;border-radius:999px;border:1px solid;display:inline-block}
+.ok{color:#7CFC9B;border-color:rgba(124,252,155,.5)}
+.chg{color:#FFD66E;border-color:rgba(255,214,110,.5)}
+</style>
+</head>
+<body>
+<div class="topbar"><a class="brand" href="index.html">GEO<span>-АПГРЕЙД</span></a><span class="note">GEO-радар · согласование запросов</span></div>
+<div class="wrap">
+  <p class="kicker">ШАГ ПЕРЕД ЗАПУСКОМ</p>
+  <h1>Согласование запросов</h1>
+  <div id="box" class="panel"><p>Загружаем…</p></div>
+  <p class="note">Ссылка персональная — не передавайте её третьим лицам.</p>
+</div>
+<script>
+(function(){
+const SB='https://cpaevaypyplwcdjrfzpj.supabase.co';
+const KEY='sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-';
+const box=document.getElementById('box');
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+async function rpc(fn,args){
+  const r=await fetch(SB+'/rest/v1/rpc/'+fn,{method:'POST',headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},body:JSON.stringify(args)});
+  const j=await r.json().catch(function(){return null});
+  if(!r.ok)throw new Error((j&&j.message)||('ошибка '+r.status));
+  return j;
+}
+function qs(name){const m=new RegExp('[?&]'+name+'=([^&]*)').exec(location.search);return m?decodeURIComponent(m[1]):''}
+async function main(){
+  const t=qs('t');
+  if(!t){box.innerHTML='<p>Ссылка неполная — откройте её из письма целиком.</p>';return}
+  let d;
+  try{d=await rpc('radar_get_by_token',{t:t})}catch(e){box.innerHTML='<p>Не удалось загрузить: '+esc(e.message)+'</p>';return}
+  if(!d||!d.length){box.innerHTML='<p>Ссылка недействительна или устарела. Напишите нам — пришлём новую.</p>';return}
+  const c=d[0];
+  let h='<p class="note">Бренд: <b style="color:#fff">'+esc(c.brand||'')+'</b> · '+esc(c.city||'')+' · '+esc(c.niche||'')+'</p>';
+  if((c.approve_status||'none')==='approved'){
+    h+='<p style="margin:12px 0"><span class="state ok">ЗАПРОСЫ СОГЛАСОВАНЫ ✓</span></p>';
+    h+='<p class="done">Спасибо! Список подтверждён. Первый отчёт придёт в ближайший вторник или субботу на вашу почту.</p>';
+    box.innerHTML=h;return;
+  }
+  if((c.approve_status||'none')==='changes'){
+    h+='<p style="margin:12px 0"><span class="state chg">ПРАВКИ ОТПРАВЛЕНЫ</span></p>';
+    h+='<p>Мы получили ваши замечания: «'+esc(c.approve_comment||'')+'». Дарья скорректирует список и пришлёт обновлённую ссылку.</p>';
+    box.innerHTML=h;return;
+  }
+  h+='<p style="margin:8px 0 16px">Ниже — 10 стартовых запросов, по которым мы будем замерять видимость вашего бренда в ответах нейросетей. Посмотрите: это вопросы и формулировки, которые реально вводят ваши клиенты.</p>';
+  const qs2=(Array.isArray(c.queries)?c.queries:[]).map(function(x){return typeof x==='string'?x:String((x&&x.query)||'')}).filter(Boolean);
+  if(!qs2.length){box.innerHTML=h+'<p>Список запросов ещё не готов — он появится здесь после его отправки.</p>';return}
+  qs2.forEach(function(q,i){h+='<div class="q"><span class="n">'+String(i+1).padStart(2,'0')+'</span><span class="t">'+esc(q)+'</span></div>'});
+  h+='<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">'
+    +'<button class="btn" id="b-ok">СОГЛАСОВАНО ✓</button>'
+    +'<button class="btn btn-gold" id="b-ch">ПРЕДЛОЖИТЬ ПРАВКИ</button></div>'
+    +'<div id="ch-form" style="display:none;margin-top:14px"><p class="note" style="margin-bottom:8px">Что поправить? Напишите своими словами.</p>'
+    +'<textarea id="ch-text" rows="4" placeholder="Например: запрос 3 — уберите слово «купить», добавьте «в Новосибирске»…"></textarea>'
+    +'<div style="margin-top:10px"><button class="btn" id="ch-send">ОТПРАВИТЬ ПРАВКИ</button></div></div>';
+  box.innerHTML=h;
+  document.getElementById('b-ok').onclick=async function(){
+    try{await rpc('radar_submit_approval',{t:t,ok:true,cmt:''});main()}catch(e){box.innerHTML+='<p>Не отправилось: '+esc(e.message)+'</p>'}
+  };
+  document.getElementById('b-ch').onclick=function(){document.getElementById('ch-form').style.display='block'};
+  document.getElementById('ch-send').onclick=async function(){
+    const cmt=document.getElementById('ch-text').value.trim();
+    if(!cmt){alert('Опишите правки — иначе мы не поймём, что поменять.');return}
+    try{await rpc('radar_submit_approval',{t:t,ok:false,cmt:cmt});main()}catch(e){box.innerHTML+='<p>Не отправилось: '+esc(e.message)+'</p>'}
+  };
+}
+main();
+})();
+</script>
+</body>
+</html>

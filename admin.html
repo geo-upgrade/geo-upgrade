@@ -102,6 +102,7 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
       <button class="tabbtn" data-tab="tab-dash">ДАШБОРД</button>
       <button class="tabbtn active" data-tab="tab-ord">ЗАКАЗЫ УСЛУГ</button>
       <button class="tabbtn" data-tab="tab-dig">ЦИФРОВЫЕ</button>
+<button class="tabbtn" data-tab="tab-radar">РАДАР</button>
       <button class="tabbtn" data-tab="tab-cli">КЛИЕНТЫ</button>
       <button class="tabbtn" data-tab="tab-users">ПОЛЬЗОВАТЕЛИ</button>
       <button class="tabbtn" data-tab="tab-rep">ОТЧЁТЫ</button>
@@ -164,6 +165,15 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
       <div class="sp">Оплата по собственной ссылке Точки каждого продукта — сверяй с выпиской. «Вручную» — для СБП, подарков и бэктестов; подтверждение открывает продукт в кабинете клиента.</div>
     </div>
     <div id="dig-paid" style="margin-top:12px"></div>
+    </div>
+
+    <div id="tab-radar" class="tabpanel">
+    <div class="sec">◆ GEO-РАДАР · ПОДПИСКА · RADAR_CLIENTS</div>
+    <div class="row">
+      <button class="btn" id="rad-refresh">ОБНОВИТЬ ↻</button>
+      <span class="note">Статусы: NEW — анкета получена · CONFIGURED — запросы отправлены на согласование · APPROVED — клиент согласовал · ACTIVE — подписка активна · PAUSED — пауза</span>
+    </div>
+    <div id="rad-box"></div>
     </div>
 
     <div id="tab-cli" class="tabpanel">
@@ -262,7 +272,7 @@ async function start(){
   if(!ok){$('f-auth').classList.remove('hide');$('au-err').textContent='Нет доступа: аккаунт не в списке admins. Добавь свой email через SQL (см. README).';return}
   $('dash').classList.remove('hide');
   $('who').textContent=EMAIL;
-  await Promise.all([renderDash(),renderWarm(),renderOrders(),renderDigital(),renderClients(),renderUsers(),renderReports()]);
+  await Promise.all([renderDash(),renderWarm(),renderOrders(),renderDigital(),renderClients(),renderUsers(),renderReports()]);try{await renderRadar()}catch(e){}
 }
 async function renderDash(){
   try{
@@ -552,6 +562,105 @@ async function delUser(u){
     else toast('Не удалено: '+msg);
   }catch(e){toast('Не вышло: '+e.message)}
 }
+
+/* ================= РАДАР ================= */
+let radarCache=[];
+function radBadge(txt,color){return '<span class="badge" style="border-color:'+color+';color:'+color+'">'+txt+'</span>'}
+function radStatus(r){
+  const out=[];
+  out.push(radBadge((r.status||'new').toUpperCase(),{new:'#FFD66E',configured:'#00E5FF',active:'#7CFC9B',paused:'#8A86A0'}[r.status]||'#FFD66E'));
+  if((r.pay_status||'not_paid')==='paid')out.push(radBadge('ОПЛАЧЕНО','#7CFC9B'));else out.push(radBadge('НЕ ОПЛАЧЕНО','#FF4FD8'));
+  if((r.approve_status||'none')==='approved')out.push(radBadge('ЗАПРОСЫ СОГЛАСОВАНЫ','#7CFC9B'));
+  else if((r.approve_status||'none')==='changes')out.push(radBadge('ПРАВКИ КЛИЕНТА','#FFD66E'));
+  else if((r.approve_status||'none')==='sent')out.push(radBadge('НА СОГЛАСОВАНИИ','#00E5FF'));
+  return out.join(' ');
+}
+async function renderRadar(){
+  try{
+    const list=await api('/rest/v1/radar_clients?order=created_at.desc');
+    radarCache=list;
+    const tb=document.querySelector('[data-tab="tab-radar"]');
+    const fresh=list.filter(function(r){return (r.status||'new')==='new'}).length;
+    if(tb)tb.textContent='РАДАР'+(fresh?' · '+fresh:'');
+    const box=$('radar-box');if(!box)return;box.innerHTML='';
+    if(!list.length){box.innerHTML='<div class="panel sp">Подписчиков пока нет — анкета живёт на radar-start.html.</div>';return}
+    list.forEach(function(r){box.appendChild(radCard(r))});
+  }catch(e){const box=$('radar-box');if(box)box.innerHTML='<div class="panel sp">Не загрузилось: '+escH(e.message)+'</div>'}
+}
+function radQueriesText(q){
+  try{if(Array.isArray(q))return q.map(function(x){return typeof x==='string'?x:String(x.query||'')}).filter(Boolean).join('\n')}catch(e){}
+  return '';
+}
+function radCard(r){
+  const d=document.createElement('div');d.className='card';
+  let h='<div class="top"><div><b>'+escH(r.brand||r.name||'—')+'</b> '+radStatus(r)+'<br>'
+       +'<span class="note">'+escH(r.email||'—')+' · '+escH(r.city||'—')+' · '+escH(r.niche||'—')+' · '+dt(r.created_at)
+       +(r.active_until?' · подписка до '+dt(r.active_until):'')+'</span></div></div>';
+  let det='';
+  if(r.site_url)det+='<div class="udline"><b>Сайт:</b> '+escH(r.site_url)+'</div>';
+  if(r.competitors)det+='<div class="udline"><b>Конкуренты:</b> '+escH(r.competitors)+'</div>';
+  if(r.usp)det+='<div class="udline"><b>Чем отличается:</b> '+escH(r.usp)+'</div>';
+  if(r.ai_should_say)det+='<div class="udline"><b>Должно звучать:</b> '+escH(r.ai_should_say)+'</div>';
+  if(r.socials)det+='<div class="udline"><b>Соцсети:</b> '+escH(r.socials)+'</div>';
+  if(r.notes)det+='<div class="udline"><b>Заметки:</b> '+escH(r.notes)+'</div>';
+  if(r.approve_status==='changes'&&r.approve_comment)det+='<div class="udmsg" style="border-left:2px solid #FFD66E;padding-left:8px"><b>Правки клиента:</b> '+escH(r.approve_comment)+'</div>';
+  if(det)h+='<div style="margin-top:6px">'+det+'</div>';
+  h+='<div style="margin-top:8px"><span class="udh">Запросы (по одному в строке, до 10)</span>'
+    +'<textarea id="rq-'+r.id+'" rows="6" style="width:100%;background:#150B26;color:#fff;border:1px solid rgba(157,123,255,.35);border-radius:10px;padding:8px;font:12.5px Exo 2;resize:vertical">'+escH(radQueriesText(r.queries))+'</textarea></div>';
+  h+='<div class="row" style="margin-top:8px">'
+    +'<button class="btn" data-act="save" data-id="'+r.id+'">СОХРАНИТЬ ЗАПРОСЫ</button>'
+    +'<button class="btn" data-act="send" data-id="'+r.id+'">ОТПРАВИТЬ НА СОГЛАСОВАНИЕ</button>'
+    +'<button class="btn mute" data-act="pay" data-id="'+r.id+'">ОПЛАТА ПРОШЛА ✓</button>'
+    +'<button class="btn mute" data-act="pause" data-id="'+r.id+'">'+((r.status==='paused')?'ВКЛЮЧИТЬ':'ПАУЗА')+'</button>'
+    +'</div>';
+  if(r.approve_token&&r.approve_status!=='none'){
+    h+='<div class="panel" style="margin-top:10px"><div class="udh">Ссылка согласования</div>'
+      +'<div class="mono" style="word-break:break-all">https://geo-upgrade.ru/radar-approve.html?t='+r.approve_token+'</div>'
+      +'<button class="btn mute" data-act="copy" data-id="'+r.id+'" style="margin-top:8px">СКОПИРОВАТЬ ПИСЬМО</button></div>';
+  }
+  d.innerHTML=h;
+  d.querySelectorAll('button[data-act]').forEach(function(b){
+    b.onclick=function(){radAct(b.dataset.act,b.dataset.id,r.id)};
+  });
+  return d;
+}
+function radLetter(r,tk){
+  return 'Здравствуйте!\n\nВы заполнили анкету подписки GEO-радар — спасибо! Мы подобрали 10 стартовых запросов, по которым будем замерять видимость бренда «'+(r.brand||'')+'» в нейросетях (Алиса/YandexGPT и GigaChat).\n\nПосмотрите список и подтвердите по ссылке:\nhttps://geo-upgrade.ru/radar-approve.html?t='+tk+'\n\nЕсли что-то нужно поправить — там же можно отправить правки, мы учтём их до первого замера.\n\nПервый отчёт придёт в ближайший вторник или субботу на эту почту.\n\nЛаборатория GEO-Апгрейд\ngeo-upgrade.ru';
+}
+async function radAct(act,id){
+  const r=radarCache.find(function(x){return x.id===id});if(!r)return;
+  try{
+    if(act==='save'){
+      const ta=$('rq-'+id);if(!ta)return;
+      const qs=ta.value.split('\n').map(function(s){return s.trim()}).filter(Boolean).slice(0,10);
+      if(!qs.length){toast('Список пуст — впиши хотя бы один запрос');return}
+      await api('/rest/v1/radar_clients?id=eq.'+id,'PATCH',{queries:qs});
+      toast('Запросы сохранены ('+qs.length+' шт.)');await renderRadar();
+    }else if(act==='send'){
+      const ta=$('rq-'+id);if(ta){const qs=ta.value.split('\n').map(function(s){return s.trim()}).filter(Boolean).slice(0,10);if(qs.length)await api('/rest/v1/radar_clients?id=eq.'+id,'PATCH',{queries:qs})}
+      const tk=crypto.randomUUID();
+      await api('/rest/v1/radar_clients?id=eq.'+id,'PATCH',{approve_token:tk,approve_status:'sent',approve_sent_at:new Date().toISOString(),status:'configured'});
+      const link='https://geo-upgrade.ru/radar-approve.html?t='+tk;
+      const letter=radLetter(r,tk);
+      if(navigator.clipboard&&navigator.clipboard.writeText){try{await navigator.clipboard.writeText(letter)}catch(e){}}
+      prompt('Ссылка согласования (письмо уже скопировано в буфер — вставь в письмо клиенту):',letter);
+      await renderRadar();
+    }else if(act==='pay'){
+      const d=new Date();d.setDate(d.getDate()+30);
+      const iso=d.toISOString().slice(0,10);
+      await api('/rest/v1/radar_clients?id=eq.'+id,'PATCH',{pay_status:'paid',status:'active',active_until:iso});
+      toast('Подписка активна до '+iso);await renderRadar();
+    }else if(act==='pause'){
+      const ns=(r.status==='paused')?'active':'paused';
+      await api('/rest/v1/radar_clients?id=eq.'+id,'PATCH',{status:ns});
+      toast(ns==='paused'?'Пауза':'Подписка включена');await renderRadar();
+    }
+  }catch(e){toast('Не вышло: '+e.message)}
+}
+const rb=$('rad-refresh');if(rb)rb.onclick=renderRadar;
+const rtb=document.querySelector('[data-tab="tab-radar"]');
+if(rtb)rtb.addEventListener('click',function(){setTimeout(renderRadar,150)});
+
 document.querySelectorAll('.tabbtn').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tabbtn').forEach(function(x){x.classList.remove('active')});b.classList.add('active');document.querySelectorAll('.tabpanel').forEach(function(p){p.classList.toggle('active',p.id===b.dataset.tab)})}});
 function escH(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function stLab(st){const m={pending:'ОЖИДАЕТ','paid_check':'ОПЛАТА ПРОВЕРЯЕТСЯ',confirmed:'ПОДТВЕРЖДЁН',work:'В РАБОТЕ',ready:'ГОТОВО',done:'ЗАВЕРШЁН',cancel:'ОТМЕНЁН','Ожидает':'ОЖИДАЕТ','Обработка':'ОПЛАТА ПРОВЕРЯЕТСЯ','Подтверждено':'ПОДТВЕРЖДЁН','В работе':'В РАБОТЕ','Готово':'ГОТОВО','Завершён':'ЗАВЕРШЁН','Отменён':'ОТМЕНЁН'};return m[st]||String(st||'—').toUpperCase()}
