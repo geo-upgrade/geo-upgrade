@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Цифровые продукты лаборатории — курсы, чек-листы, промпты | GEO-Апгрейд</title>
+<meta name="description" content="Цифровые продукты GEO-Апгрейд: чек-лист проверки бренда в нейросетях, 20 промптов, шаблон AI-Паспорта и курс «Проверь бренд в ИИ за вечер». Оплата по ссылке, доступ в личном кабинете.">
+<link rel="canonical" href="https://geo-upgrade.ru/digital-products.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://geo-upgrade.ru/digital-products.html">
+<meta property="og:site_name" content="GEO-Апгрейд">
+<meta property="og:title" content="Цифровые продукты лаборатории | GEO-Апгрейд">
+<meta property="og:description" content="Чек-лист, промпты, AI-Паспорт и курс — покупаются без заявки, доступ открывается в личном кабинете.">
+<meta property="og:image" content="https://geo-upgrade.ru/og-cover.jpg">
+<link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
+<style>
+@font-face{font-family:'Exo 2';font-style:normal;font-weight:400;font-display:swap;src:url(exo2-400-cyrillic.woff2) format('woff2')}
+@font-face{font-family:'Exo 2';font-style:normal;font-weight:600;font-display:swap;src:url(exo2-600-cyrillic.woff2) format('woff2')}
+@font-face{font-family:'Orbitron';font-style:normal;font-weight:700;font-display:swap;src:url(orbitron-700-latin.woff2) format('woff2')}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);background-attachment:fixed;color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6;min-height:100vh}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(15,10,30,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(92,225,255,.25);padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar .brand{font-family:Orbitron,sans-serif;font-size:13px;letter-spacing:.14em;color:#5ce1ff;text-decoration:none;font-weight:700}
+.topbar nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:12.5px}
+.topbar nav a{color:#c8cbe0;text-decoration:none}
+.topbar nav a.on,.topbar nav a:hover{color:#5ce1ff}
+.kicker{font-family:Orbitron,sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#00F0FF}
+h1{font-family:Orbitron,sans-serif;font-size:clamp(26px,4.5vw,42px);line-height:1.15;margin:10px 0 8px}
+h2{font-family:Orbitron,sans-serif;font-size:clamp(20px,3vw,28px);line-height:1.2;margin:34px 0 10px}
+.lead{font-size:clamp(15px,2vw,18px);color:#c8cbe0;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+.pcard{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.22);border-radius:14px;padding:22px;transition:all .3s cubic-bezier(.22,1,.36,1)}
+.pcard:hover{border-color:rgba(0,240,255,.6);box-shadow:0 10px 28px rgba(0,240,255,.13);transform:translateY(-3px)}
+.pcard h3{font-family:Orbitron,sans-serif;font-size:16px;margin:8px 0 6px}
+.pcard p{font-size:14px;color:#c8cbe0;margin:0 0 14px}
+.price{font-family:Orbitron,sans-serif;font-size:22px;color:#FFD66E}
+.tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:10px;font-family:Orbitron,sans-serif;letter-spacing:.1em;border:1px solid rgba(0,240,255,.4);color:#00F0FF;background:rgba(0,240,255,.06)}
+.tag.gold{border-color:rgba(255,214,110,.45);color:#FFD66E;background:rgba(255,214,110,.06)}
+.btn{display:inline-block;font-family:Orbitron,sans-serif;font-size:11.5px;letter-spacing:.08em;border-radius:12px;padding:11px 18px;border:none;cursor:pointer;text-decoration:none;font-weight:700;margin:3px 6px 3px 0}
+.btn-neon{background:#00F0FF;color:#0D0618}
+.btn-neon:hover{box-shadow:0 0 18px rgba(0,240,255,.45)}
+.btn-gold{background:#FFD66E;color:#0D0618}
+.btn-ghost{background:transparent;color:#c8cbe0;border:1px solid rgba(184,188,198,.4)}
+.btn-ghost:hover{color:#00F0FF;border-color:rgba(0,240,255,.5)}
+.panel{background:rgba(13,6,24,.85);border:1px solid rgba(184,188,198,.22);border-radius:14px;padding:20px;margin:14px 0}
+.steps{margin:0;padding-left:0;list-style:none;counter-reset:st}
+.steps li{position:relative;padding:0 0 14px 44px;counter-increment:st}
+.steps li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:2px;font-family:Orbitron,sans-serif;font-size:13px;color:#00F0FF}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent);margin:30px 0}
+.note{font-size:13px;color:#B8BCC6}
+.foot{padding:26px 0 40px;font-size:12.5px;color:#7d8299}
+a.c{color:#00F0FF;text-decoration:none}
+a.c:hover{text-decoration:underline}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Цифровые продукты GEO-Апгрейд","itemListElement":[{"@type":"ListItem","position":1,"name":"Чек-лист «Проверь бренд в нейросетях»"},{"@type":"ListItem","position":2,"name":"20 промптов для AI-видимости"},{"@type":"ListItem","position":3,"name":"Шаблон AI-Паспорта компании"},{"@type":"ListItem","position":4,"name":"Курс «Проверь бренд в ИИ за вечер»"},{"@type":"ListItem","position":5,"name":"GEO-радар — подписка на авто-отчёты"}]}</script>
+</head>
+<body>
+<div class="topbar"><a class="brand" href="index.html">GEO-АПГРЕЙД</a><nav><a href="index.html">Главная</a><a href="services.html">Услуги</a><a href="digital-products.html" class="on">Продукты</a><a href="blog.html">Блог</a><a href="cabinet.html">Личный кабинет</a></nav></div>
+<main>
+  <section class="wrap" style="padding:44px 18px 10px">
+    <p class="kicker">DIGITAL SHELF · БЕЗ ЗАЯВКИ И СЪЁМКИ</p>
+    <h1>Цифровые продукты лаборатории</h1>
+    <p class="lead">Готовые материалы лаборатории GEO-Апгрейд: берёте — платите по ссылке — получаете доступ в личном кабинете. Без встречи, без брифа, без ожидания звонка. Курс начинается с бесплатного урока.</p>
+  </section>
+  <section class="wrap">
+    <div class="grid">
+      <div class="pcard">
+        <span class="tag">ЧЕК-ЛИСТ</span>
+        <h3>«Проверь бренд в нейросетях»</h3>
+        <p>50 пунктов проверки: что нейросеть знает о вашем бренде, чего не знает и как это исправить. У каждого пункта — «зачем» и «как исправить», с примерами: маникюр, кофейня, ремонт стиралок, онлайн-школа.</p>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="price">190 ₽</span><a class="btn btn-gold dg-buy" data-code="A1" data-name="Чек-лист «Проверь бренд в нейросетях»" data-amount="190" href="https://tochkaplace.com/ia/6f99084c-1173-4047-85ac-e63803b1b195" target="_blank" rel="noopener">КУПИТЬ →</a></div>
+      </div>
+      <div class="pcard">
+        <span class="tag">ПРОМПТЫ</span>
+        <h3>20 промптов для AI-видимости</h3>
+        <p>Рабочие промпты из библиотеки лаборатории: аудит видимости в AI-поиске, контент-стратегия, проверка привлекательности, оценка ответов нейросетей. В подарок — гайд «Как писать статьи с помощью ИИ».</p>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="price">150 ₽</span><a class="btn btn-gold dg-buy" data-code="A2" data-name="20 промптов для AI-видимости + бонус-гайд" data-amount="150" href="https://tochkaplace.com/ia/e19621e4-54bb-477e-862d-1439faa2d6d9" target="_blank" rel="noopener">КУПИТЬ →</a></div>
+      </div>
+      <div class="pcard">
+        <span class="tag">ШАБЛОН</span>
+        <h3>AI-Паспорт компании</h3>
+        <p>Интерактивный шаблон, который собирает язык бренда для нейросетей: 26 полей в 5 блоках, формула позиционирования, 22 площадки с приоритетами публикации и 10 чек-пунктов проверки.</p>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="price">490 ₽</span><a class="btn btn-gold dg-buy" data-code="A3" data-name="Шаблон AI-Паспорта компании" data-amount="490" href="https://tochkaplace.com/ia/140c3c8a-e6c8-40e3-961f-33eece49c47f" target="_blank" rel="noopener">КУПИТЬ →</a></div>
+      </div>
+      <div class="pcard" style="border-color:rgba(0,240,255,.45)">
+        <span class="tag gold">КУРС</span>
+        <h3>«Проверь бренд в ИИ за вечер»</h3>
+        <p>5 уроков с домашними заданиями и рабочими документами: замер видимости → факт-база и AI-Паспорт → запросы с редкими словами → первая статья за час → маршрут на месяц. Урок 1 — бесплатно.</p>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="price">990 ₽</span><a class="btn btn-ghost" href="a10-course.html">БЕСПЛАТНЫЙ УРОК 1 →</a><a class="btn btn-neon dg-buy" data-code="A10" data-name="Курс «Проверь бренд в ИИ за вечер»" data-amount="990" href="https://tochkaplace.com/ia/53aa63f7-6e05-4612-ae93-12c6d4c8f9c5" target="_blank" rel="noopener">КУПИТЬ КУРС →</a></div>
+      </div>
+      <div class="pcard">
+        <span class="tag">ПОДПИСКА</span>
+        <h3>GEO-радар — авто-отчёты 2×/нед</h3>
+        <p>Автоматические отчёты об AI-видимости: вторник и суббота, 10 запросов, Яндекс (Алиса) + GigaChat, блок «что нейросеть говорит неверно», рекомендации и слепые зоны. Анкета — один шаг до запуска.</p>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="price">1499 ₽/мес</span><a class="btn btn-gold" href="radar-start.html">ЗАПОЛНИТЬ АНКЕТУ →</a></div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap" style="padding:30px 18px 0">
+    <h2>Как открывается доступ</h2>
+    <ol class="steps panel">
+      <li>Нажмите «КУПИТЬ» — заявка на продукт появится в личном кабинете, затем откроется оплата Точки. Чек придёт на почту, которую вы указали при оплате. Если вы не в кабинете — сайт предложит войти (оплата по прямой ссылке тоже останется доступной).</li>
+      <li>Лаборатория сверяет оплату и открывает доступ (обычно несколько часов).</li>
+      <li>Зайдите в <a class="c" href="cabinet.html">личный кабинет</a> — секция «Мои цифровые продукты» покажет статус «Доступ открыт». Курс открывается кнопкой «Открыть курс», материалы чек-листа и промптов — в боте лаборатории.</li>
+    </ol>
+    <div class="divider"></div>
+    <p class="note">Нужен личный разбор вместо самостоятельной работы? Полный список услуг лаборатории — на странице <a class="c" href="services.html">«Услуги»</a>, быстрый вход — <a class="c" href="contacts.html?service=free-audit#form">бесплатный мини-аудит</a>.</p>
+  </section>
+</main>
+<footer class="wrap foot">GEO-Апгрейд — лаборатория AI-видимости бренда · <a class="c" href="index.html">geo-upgrade.ru</a></footer>
+<script src="lab-digital.js"></script>
+<script src="lab-account.js" defer></script>
+<script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"}</script>
+<script src="/geo-assistant-widget.js" defer></script>
+</body>
+</html>
