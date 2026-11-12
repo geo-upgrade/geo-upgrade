@@ -639,6 +639,13 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
       <div id="digital-box"><p class="note">Пока пусто.</p></div>
     </section>
 
+    <section id="sec-radar" class="panel" style="border-color:rgba(0,240,255,.45)">
+      <p class="kicker" style="color:#00F0FF">RADAR · GEO-РАДАР</p>
+      <h2 style="margin:8px 0 4px">Авто-отчёты об AI-видимости</h2>
+      <p class="note" style="margin-top:6px">Видимость бренда в ответах нейросетей (Алиса/YandexGPT и GigaChat) — замеры каждый вторник и субботу, 10 запросов, отчёты на эту почту и здесь.</p>
+      <div id="radar-box-cli"><p class="note">Загрузка…</p></div>
+    </section>
+
     <section id="sec-fav" class="panel sec-neon">
       <p class="kicker">SHELF · ИЗБРАННОЕ</p>
       <h2 style="margin:8px 0 4px">Статьи и страницы, которые вы сохранили</h2>
@@ -919,7 +926,7 @@ function showDash(){
   if(q.get('pay')){const du=DIGPAY[q.get('pay')];if(du){dgPayFlow(du)}else{openPay(q.get('pay'))}}
 }
 function renderOrders(){
-  const list=orders().filter(o=>o.email===(session()||{}).email);
+  const list=orders().filter(o=>o.email===(session()||{}).email||String(o.id||'').indexOf('sb')===0);
   $('st-orders').textContent=String(list.length);
   const conf=new Set((statuses().confirmed||[]).map(x=>x.uid+'|'+(x.email||'').toLowerCase()));
   const box=$('orders-box');box.innerHTML='';
@@ -1350,6 +1357,72 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
   const sb=$('chat-send'),rb=$('chat-refresh');
   if(sb)sb.onclick=send;
   if(rb)rb.onclick=function(){kick()};
+})();
+</script>
+<script>
+(function(){
+'use strict';
+var SB='https://cpaevaypyplwcdjrfzpj.supabase.co';
+var KEY='sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-';
+var PAY='https://tochkaplace.com/ia/6f899e5b-9956-41f7-8000-0d0948446756';
+function $(id){return document.getElementById(id)}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function badge(txt,color){return '<span style="display:inline-block;font-family:Orbitron,monospace;font-size:9.5px;letter-spacing:.1em;padding:4px 10px;border-radius:999px;border:1px solid '+color+';color:'+color+';margin-right:6px">'+txt+'</span>'}
+function auth(){try{return JSON.parse(localStorage.getItem('geo_lab_auth')||'null')}catch(e){return null}}
+function qList(q){try{if(Array.isArray(q))return q.map(function(x){return typeof x==='string'?x:String((x&&x.query)||'')}).filter(Boolean)}catch(e){}return []}
+async function get(path){var a=auth();if(!a||!a.token)return null;var r=await fetch(SB+path,{headers:{apikey:KEY,Authorization:'Bearer '+a.token}});if(!r.ok)throw new Error('ошибка '+r.status);return r.json()}
+async function rpc(fn,args){var r=await fetch(SB+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json'},body:JSON.stringify(args)});var j=await r.json().catch(function(){return null});if(!r.ok)throw new Error((j&&j.message)||('ошибка '+r.status));return j}
+function radStatus(r){
+  var out=[];var st=r.status||'new';
+  out.push(badge({new:'ЗАЯВКА ПРИНЯТА',configured:'ЗАПРОСЫ ГОТОВЫ · НА СОГЛАСОВАНИИ',active:'ПОДПИСКА АКТИВНА',paused:'ПАУЗА'}[st]||'ЗАЯВКА ПРИНЯТА',{new:'#FFD66E',configured:'#00F0FF',active:'#7CFC9B',paused:'#8A86A0'}[st]||'#FFD66E'));
+  if((r.pay_status||'not_paid')==='paid')out.push(badge('ОПЛАЧЕНО','#7CFC9B'));else out.push(badge('ОЖИДАЕТ ОПЛАТУ','#FF4FD8'));
+  var ap=r.approve_status||'none';
+  if(ap==='approved')out.push(badge('ЗАПРОСЫ СОГЛАСОВАНЫ','#7CFC9B'));
+  else if(ap==='changes')out.push(badge('ПРАВКИ ОТПРАВЛЕНЫ','#FFD66E'));
+  else if(ap==='sent')out.push(badge('ЖДЁМ ВАШЕ РЕШЕНИЕ','#00F0FF'));
+  return out.join(' ');
+}
+async function main(){
+  var box=$('radar-box-cli');if(!box)return;
+  var a=auth();
+  if(!a||!a.token){box.innerHTML='<p class="note">Войдите в кабинет, чтобы видеть свой GEO-радар.</p>';return}
+  var list=[];
+  try{
+    list=await get('/rest/v1/radar_clients?or=(user_id.eq.'+a.uid+',email.eq.'+encodeURIComponent(a.email||'')+')&order=created_at.desc')||[];
+  }catch(e){box.innerHTML='<p class="note">Радар недоступен: '+esc(e.message)+'</p>';return}
+  if(!list.length){box.innerHTML='<p class="note">Замеряем видимость бренда в ответах нейросетей дважды в неделю — по 10 запросам, согласованным с вами. <a href="radar-start.html" style="color:#00F0FF;text-decoration:none">Заполнить анкету →</a></p>';return}
+  var r=list.find(function(x){return x.status==='active'||x.status==='paused'})||list[0];
+  var h='<div style="margin:10px 0">'+radStatus(r)+'</div>';
+  h+='<p class="note">Бренд: <b style="color:#fff">'+esc(r.brand||'')+'</b>'+(r.active_until?' · подписка до '+esc(r.active_until):'')+'</p>';
+  var ap=r.approve_status||'none';
+  if(st==='new'||(st==='configured'&&ap!=='sent')){h+='<p class="note" style="margin:8px 0">Заявка принята. Лаборатория готовит стартовый список запросов — он появится здесь, и мы предупредим в чате «Сигнал».</p>';}
+  if(ap==='sent'){
+    var qs=qList(r.queries);
+    h+='<p style="margin:10px 0 6px;font-weight:600;color:#fff">Стартовые запросы ('+qs.length+') — подтвердите или предложите правки:</p>';
+    qs.forEach(function(q,i){h+='<div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(184,188,198,.18)"><span style="font-family:Orbitron,monospace;color:#00F0FF;font-size:12px;min-width:24px">'+String(i+1).padStart(2,'0')+'</span><span style="color:#fff">'+esc(q)+'</span></div>'});
+    h+='<div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-neon" id="r-ok">СОГЛАСОВАНО ✓</button><button class="btn btn-gold" id="r-ch">ПРЕДЛОЖИТЬ ПРАВКИ</button></div>';
+    h+='<div id="r-chform" style="display:none;margin-top:12px"><textarea id="r-chtext" rows="3" style="width:100%;background:rgba(13,6,24,.85);color:#fff;border:1px solid rgba(157,123,255,.35);border-radius:10px;padding:9px;font:13px Exo 2,monospace" placeholder="Что поправить — своими словами"></textarea><div style="margin-top:8px"><button class="btn btn-neon" id="r-chsend">ОТПРАВИТЬ ПРАВКИ</button></div></div>';
+  }
+  if(ap==='approved'&&(r.pay_status||'not_paid')!=='paid'){
+    h+='<p class="note" style="margin:8px 0">Запросы согласованы. После оплаты подписка активируется на 30 дней, и первый отчёт придёт в ближайший вторник или субботу.</p>';
+    h+='<a class="btn btn-gold" href="'+PAY+'" target="_blank" rel="noopener" style="margin-top:6px">ОПЛАТИТЬ 1499 ₽ ЧЕРЕЗ ТОЧКУ →</a>';
+  }
+  if(ap==='changes'){h+='<p class="note" style="margin:8px 0">Правки получены — скорректируем список и вернём его здесь и в чате.</p>';}
+  if(r.status==='active'){
+    var reps=[];
+    try{reps=await get('/rest/v1/radar_reports?radar_id=eq.'+r.id+'&order=created_at.desc')||[]}catch(e){}
+    h+='<p style="margin:14px 0 6px;font-weight:600;color:#fff">Отчёты</p>';
+    if(!reps.length){h+='<p class="note">Первый отчёт появится здесь и придёт на почту — в ближайший вторник или субботу.</p>';}
+    else{reps.forEach(function(p){h+='<div style="border:1px solid rgba(0,240,255,.3);border-radius:12px;padding:10px 12px;margin-top:8px"><b style="color:#fff">'+esc(p.title||'Отчёт')+'</b>'+(p.period?' · '+esc(p.period):'')+(p.report_url?' · <a href="'+esc(p.report_url)+'" target="_blank" rel="noopener" style="color:#00F0FF;text-decoration:none">открыть →</a>':'')+'</div>'});}
+  }
+  if(r.status==='paused'){h+='<p class="note" style="margin:8px 0">Подписка на паузе — напишите в чат «Сигнал», чтобы возобновить.</p>';}
+  box.innerHTML=h;
+  var b1=$('r-ok');if(b1)b1.onclick=async function(){try{await rpc('radar_submit_approval',{t:r.approve_token,ok:true,cmt:''});main()}catch(e){alert('Не отправилось: '+e.message)}};
+  var b2=$('r-ch');if(b2)b2.onclick=function(){$('r-chform').style.display='block'};
+  var b3=$('r-chsend');if(b3)b3.onclick=async function(){var c=$('r-chtext').value.trim();if(!c){alert('Опишите правки — иначе мы не поймём, что поменять.');return}try{await rpc('radar_submit_approval',{t:r.approve_token,ok:false,cmt:c});main()}catch(e){alert('Не отправилось: '+e.message)}};
+}
+if(document.readyState!=='loading')main();else document.addEventListener('DOMContentLoaded',main);
+setInterval(main,60000);
 })();
 </script>
 </body>
