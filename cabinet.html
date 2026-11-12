@@ -683,6 +683,10 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
         <h2 style="margin:8px 0 4px">Выберите услугу — заявка и оплата здесь же</h2>
         <p class="note">Кнопка «Оплатить» открывает заявку с вашими данными: она уйдёт в лабораторию и откроется оплата в Точке. Оплаченное помечается «ОПЛАЧЕНО» и остаётся в кабинете навсегда. Цифровые продукты (курс, чек-лист, промпты, AI-Паспорт) — в конце каталога.</p>
         <div id="catalog-box"></div>
+        <div class="catalog-item" style="border-color:rgba(0,240,255,.45)">
+          <div style="min-width:170px;flex:1"><b>GEO-радар · авто-отчёты 2×/нед</b><div class="note" style="margin:3px 0 2px">Подписка: 10 запросов, Яндекс (Алиса) + GigaChat, 8 отчётов в месяц с рекомендациями и слепыми зонами. Старт с анкеты: лаборатория соберёт запросы и пришлёт ссылку на оплату.</div><div class="note" style="color:#FFD66E">1499 ₽/мес</div></div>
+          <a class="btn btn-neon" href="radar-start.html" style="padding:9px 16px;font-size:12px;text-decoration:none">Заполнить анкету →</a>
+        </div>
     </section>
 
     <section id="sec-chat" class="panel sec-neon">
@@ -1168,13 +1172,14 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
     {code:'A10',name:'Курс «Проверь бренд в ИИ за вечер»',url:'a10-course.html',bot:false},
     {code:'A1',name:'Чек-лист «Проверь бренд в нейросетях»',bot:false,sup:'A1/checklist-brand-in-ai.pdf'},
     {code:'A2',name:'20 промптов для AI-видимости + бонус-гайд',bot:false,sup:'A2/a2-prompts-ai-visibility.pdf'},
-    {code:'A3',name:'Шаблон AI-Паспорта компании',bot:false,sup:'A3/ai-passport-template.pdf'}
+    {code:'A3',name:'Шаблон AI-Паспорта компании',bot:false,sup:'A3/ai-passport-template.pdf'},
+    {code:'RADAR',name:'GEO-радар · авто-отчёты 2×/нед',url:'radar-start.html',radar:true,bot:false}
   ];
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   function badge(text,color,br){return '<span style="display:inline-block;padding:3px 10px;border-radius:999px;font-size:10.5px;font-family:Orbitron,sans-serif;letter-spacing:.08em;background:'+color+';border:1px solid '+br+';color:'+color+';font-weight:700">'+text+'</span>'}
   function card(p,o){
     if(o&&o.status==='confirmed'){
-      const act=p.sup?'<a class="btn btn-neon" style="margin-top:10px" data-sup="'+p.sup+'" href="#">СКАЧАТЬ МАТЕРИАЛ →</a>':'<a class="btn btn-neon" style="margin-top:10px" href="'+p.url+'">ОТКРЫТЬ КУРС →</a>';
+      const act=p.sup?'<a class="btn btn-neon" style="margin-top:10px" data-sup="'+p.sup+'" href="#">СКАЧАТЬ МАТЕРИАЛ →</a>':p.radar?'<a class="btn btn-neon" style="margin-top:10px" href="'+p.url+'">ОТКРЫТЬ РАДАР →</a>':'<a class="btn btn-neon" style="margin-top:10px" href="'+p.url+'">ОТКРЫТЬ КУРС →</a>';
       return '<div style="border:1px solid rgba(110,231,160,.45);border-radius:10px;padding:12px 14px;margin-bottom:8px">'
         +'<b>'+esc(p.name)+'</b> '+badge('✓ ДОСТУП ОТКРЫТ','rgba(52,211,153,.9)','rgba(52,211,153,.5)')
         +'<p class="note" style="margin:8px 0 0">'+(p.bot?'Материалы выданы — повторно в письме о покупке или в боте лаборатории.':'Прогресс сохраняется в браузере и синхронизируется с приложением «ГЕО-Академия».')+'</p>'+act+'</div>';
