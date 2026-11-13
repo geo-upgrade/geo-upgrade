@@ -578,7 +578,7 @@ async function delUser(u){
 
 /* ================= РАДАР ================= */
 let radarCache=[];
-let radarRepCounts={};
+let radarRepCounts={};let radarRepList=[];
 function radBadge(txt,color){return '<span class="badge" style="border-color:'+color+';color:'+color+'">'+txt+'</span>'}
 function radStatus(r){
   const out=[];
@@ -594,7 +594,7 @@ async function renderRadar(){
   try{
     const list=await api('/rest/v1/radar_clients?order=created_at.desc');
     radarCache=list;
-    try{const rr=await api('/rest/v1/radar_reports?order=created_at.desc');radarRepCounts={};(rr||[]).forEach(function(p){radarRepCounts[p.radar_id]=(radarRepCounts[p.radar_id]||0)+1})}catch(e){radarRepCounts={}}
+    try{const rr=await api('/rest/v1/radar_reports?order=created_at.desc');radarRepList=(rr||[]).slice();radarRepCounts={};(rr||[]).forEach(function(p){radarRepCounts[p.radar_id]=(radarRepCounts[p.radar_id]||0)+1})}catch(e){radarRepList=[];radarRepCounts={}}
     const todayIso=new Date().toISOString().slice(0,10);
     const nrad=$('n-rad');if(nrad)nrad.textContent=String(list.filter(function(r){return (r.status||'new')==='active'&&(!r.active_until||r.active_until>=todayIso)}).length);
     const tb=document.querySelector('[data-tab="tab-radar"]');
@@ -624,6 +624,7 @@ function radCard(r){
   if(r.approve_status==='changes'&&r.approve_comment)det+='<div class="udmsg" style="border-left:2px solid #FFD66E;padding-left:8px"><b>Правки клиента:</b> '+escH(r.approve_comment)+'</div>';
   if(det)h+='<div style="margin-top:6px">'+det+'</div>';
   if(r.status==='active')h+='<div class="udline" style="margin-top:6px"><b>Автоматика:</b> замеры вт и сб 12:00 (НСК) · отчётов выдано: '+(radarRepCounts[r.id]||0)+'</div>';
+  if(r.status==='active'){const reps=(radarRepList||[]).filter(function(p){return p.radar_id===r.id});if(reps.length){h+='<div class="panel" style="margin-top:10px"><div class="udh">Выданные отчёты — можно удалить и выдать заново</div>';reps.forEach(function(p){h+='<div class="row" style="align-items:center;margin-top:6px">'+'<div style="flex:1;min-width:150px">'+escH(p.title||'—')+' <span class="note">· '+escH(p.period||'')+'</span></div>'+'<button class="btn mute" data-act="rep-open" data-rep="'+p.id+'" data-url="'+escH(p.report_url||'')+'">ОТКРЫТЬ</button>'+'<button class="btn danger" data-act="rep-del" data-rep="'+p.id+'">УДАЛИТЬ</button>'+'</div>'});h+='</div>'}}
   h+='<div style="margin-top:8px"><span class="udh">Запросы (по одному в строке, до 10)</span>'
     +'<textarea id="rq-'+r.id+'" rows="6" style="width:100%;background:#150B26;color:#fff;border:1px solid rgba(157,123,255,.35);border-radius:10px;padding:8px;font:12.5px Exo 2;resize:vertical">'+escH(radQueriesText(r.queries))+'</textarea></div>';
   h+='<div class="row" style="margin-top:8px">'
@@ -641,14 +642,14 @@ function radCard(r){
   }
   d.innerHTML=h;
   d.querySelectorAll('button[data-act]').forEach(function(b){
-    b.onclick=function(){radAct(b.dataset.act,b.dataset.id,r.id)};
+    b.onclick=function(){radAct(b.dataset.act,b.dataset.id,r.id,b.dataset.rep,b.dataset.url)};
   });
   return d;
 }
 function radLetter(r,tk){
   return 'Здравствуйте!\n\nВы заполнили анкету подписки GEO-радар — спасибо! Мы подобрали 10 стартовых запросов, по которым будем замерять видимость бренда «'+(r.brand||'')+'» в нейросетях (Алиса/YandexGPT и GigaChat).\n\nПосмотрите список и подтвердите по ссылке:\nhttps://geo-upgrade.ru/radar-approve.html?t='+tk+'\n\nЕсли что-то нужно поправить — там же можно отправить правки, мы учтём их до первого замера.\n\nПервый отчёт придёт в ближайший вторник или субботу на эту почту.\n\nЛаборатория GEO-Апгрейд\ngeo-upgrade.ru';
 }
-async function radAct(act,id){
+async function radAct(act,id,radId,repId,repUrl){
   const r=radarCache.find(function(x){return x.id===id});if(!r)return;
   try{
     if(act==='save'){
@@ -681,7 +682,9 @@ async function radAct(act,id){
       if(r.email){try{await api('/rest/v1/lab_orders?service_id=eq.radar-monthly&email=eq.'+encodeURIComponent(r.email),'DELETE')}catch(e){}}
       toast('Радар-запись удалена — у клиента панель исчезнет в течение минуты');
       await renderRadar();
-    }else if(act==='report'){
+    }else if(act==='rep-open'){if(repUrl)window.open(repUrl,'_blank')}
+    else if(act==='rep-del'){if(!confirm('Удалить отчёт из кабинета клиента? Запись в базе сотрётся, файл в хранилище останется (подчистить можно в Supabase - Storage). Отменить нельзя.'))return;await api('/rest/v1/radar_reports?id=eq.'+repId,'DELETE');toast('Отчёт удалён — можно выдать новый');await renderRadar()}
+    else if(act==='report'){
       const url=prompt('Публичная ссылка на отчёт (файл на хостинге или бакете):','');
       if(!url)return;
       const ttl=prompt('Название отчёта:','Отчёт · '+new Date().toLocaleDateString('ru-RU'));
