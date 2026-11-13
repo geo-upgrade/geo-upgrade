@@ -1394,9 +1394,9 @@ async function main(){
   var r=list.find(function(x){return x.status==='active'||x.status==='paused'})||list[0];
   var h='<div style="margin:10px 0">'+radStatus(r)+'</div>';
   h+='<p class="note">Бренд: <b style="color:#fff">'+esc(r.brand||'')+'</b>'+(r.active_until?' · подписка до '+esc(r.active_until):'')+'</p>';
-  var ap=r.approve_status||'none';
+  var st=r.status||'new';var ap=r.approve_status||'none';
   if(st==='new'||(st==='configured'&&ap!=='sent')){h+='<p class="note" style="margin:8px 0">Заявка принята. Лаборатория готовит стартовый список запросов — он появится здесь, и мы предупредим в чате «Сигнал».</p>';}
-  if(ap==='sent'){
+  if(ap==='sent'&&r.approve_token){
     var qs=qList(r.queries);
     h+='<p style="margin:10px 0 6px;font-weight:600;color:#fff">Стартовые запросы ('+qs.length+') — подтвердите или предложите правки:</p>';
     qs.forEach(function(q,i){h+='<div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(184,188,198,.18)"><span style="font-family:Orbitron,monospace;color:#00F0FF;font-size:12px;min-width:24px">'+String(i+1).padStart(2,'0')+'</span><span style="color:#fff">'+esc(q)+'</span></div>'});
