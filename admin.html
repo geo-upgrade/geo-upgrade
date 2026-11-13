@@ -624,7 +624,7 @@ function radCard(r){
   if(r.approve_status==='changes'&&r.approve_comment)det+='<div class="udmsg" style="border-left:2px solid #FFD66E;padding-left:8px"><b>Правки клиента:</b> '+escH(r.approve_comment)+'</div>';
   if(det)h+='<div style="margin-top:6px">'+det+'</div>';
   if(r.status==='active')h+='<div class="udline" style="margin-top:6px"><b>Автоматика:</b> замеры вт и сб 12:00 (НСК) · отчётов выдано: '+(radarRepCounts[r.id]||0)+'</div>';
-  if(r.status==='active'){const reps=(radarRepList||[]).filter(function(p){return p.radar_id===r.id});if(reps.length){h+='<div class="panel" style="margin-top:10px"><div class="udh">Выданные отчёты — можно удалить и выдать заново</div>';reps.forEach(function(p){h+='<div class="row" style="align-items:center;margin-top:6px">'+'<div style="flex:1;min-width:150px">'+escH(p.title||'—')+' <span class="note">· '+escH(p.period||'')+'</span></div>'+'<a class="btn mute" href="'+escH(p.report_url||'#')+'" target="_blank" rel="noopener">ОТКРЫТЬ</a>'+'<button class="btn danger" data-act="rep-del" data-rep="'+p.id+'">УДАЛИТЬ</button>'+'</div>'});h+='</div>'}}
+  if(r.status==='active'){const reps=(radarRepList||[]).filter(function(p){return p.radar_id===r.id});if(reps.length){h+='<div class="panel" style="margin-top:10px"><div class="udh">Выданные отчёты — можно удалить и выдать заново</div>';reps.forEach(function(p){h+='<div class="row" style="align-items:center;margin-top:6px">'+'<div style="flex:1;min-width:150px">'+escH(p.title||'—')+' <span class="note">· '+escH(p.period||'')+'</span></div>'+'<a class="btn mute" href="'+escH(p.report_url||'#')+'" target="_blank" rel="noopener">ОТКРЫТЬ</a>'+'<button class="btn danger" data-act="rep-del" data-id="'+r.id+'" data-rep="'+p.id+'">УДАЛИТЬ</button>'+'</div>'});h+='</div>'}}
   h+='<div style="margin-top:8px"><span class="udh">Запросы (по одному в строке, до 10)</span>'
     +'<textarea id="rq-'+r.id+'" rows="6" style="width:100%;background:#150B26;color:#fff;border:1px solid rgba(157,123,255,.35);border-radius:10px;padding:8px;font:12.5px Exo 2;resize:vertical">'+escH(radQueriesText(r.queries))+'</textarea></div>';
   if(r.status==='active'){
@@ -662,7 +662,8 @@ function radLetter(r,tk){
   return 'Здравствуйте!\n\nВы заполнили анкету подписки GEO-радар — спасибо! Мы подобрали 10 стартовых запросов, по которым будем замерять видимость бренда «'+(r.brand||'')+'» в нейросетях (Алиса/YandexGPT и GigaChat).\n\nПосмотрите список и подтвердите по ссылке:\nhttps://geo-upgrade.ru/radar-approve.html?t='+tk+'\n\nЕсли что-то нужно поправить — там же можно отправить правки, мы учтём их до первого замера.\n\nПервый отчёт придёт в ближайший вторник или субботу на эту почту.\n\nЛаборатория GEO-Апгрейд\ngeo-upgrade.ru';
 }
 async function radAct(act,id,radId,repId,repUrl){
-  const r=radarCache.find(function(x){return x.id===id});if(!r)return;
+  const isRep=(act==='rep-del');
+  const r=radarCache.find(function(x){return x.id===id});if(!r&&!isRep)return;
   try{
     if(act==='save'){
       const ta=$('rq-'+id);if(!ta)return;
