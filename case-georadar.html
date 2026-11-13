@@ -1,0 +1,733 @@
+<!DOCTYPE html><html lang="ru" class=""><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейс: GEO-Радар — автоматизация замеров AI-видимости | GEO-Апгрейд</title>
+<meta name="description" content="Кейс GEO-Апгрейд: GEO-Радар — подписка на автоматические замеры AI-видимости. Настройка один раз, 10 запросов, 8 отчётов в месяц: дословные ответы нейросетей, слепые зоны, конкурентное поле и рекомендации P0/P1/P2.">
+<meta name="theme-color" content="#0D0618">
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA+AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAgVJREFUeJylkztoVFEQhr8559zduw83RoKEaBRUVBQfIFgEBbERQQtLESJR1kiwkIiNFja2YmMXEUFbG1PoEoIg2ASCCUQhqMEHghhFTET3Ps4di7uJQdLtNDNn5p85A/8/Ug03Km2YaacZwAEgkr90xTJLuSVbraaKU2OQNIEsA+dATB6nKaD/GqwDY/JcnIAIGgQ4kohsXRcahsj8PJLGaLkC1SpqLYggzQhZWIA4AiDr7kbSFPk2j9gHzzTbsbs1NaF46QLasZZ45C58XYQQzNRrwsEz+J27iG/cRDdtA1XM9Etg6ocWT9S11LNXi8f6tbTloBZO1pWfqoXTw1rq2aOl3v1a6tyqpjGrMv1dwwPHtXBqSHnn1QUP72Oej5EOXoayRxYXEGPht5KcGyI93499Mo4dfUS2bzvu9h3MzBTyYQ47PobTWgf4DFRJrg5DEiKTE+AyXOMx5tUk8vlLzoIH1tQgiqDioVzBpWcHII4wb2bhD+BTEIUOixoLSYZ2rcdOvMCOPiUd6Ec+zqEbevFHDyHBlVvq+w6DK2DezhDcG0GrNeJr18EHUC0i7z9RHL4IhQJJfQjfdwSiJna8gVToVERa/KcQFMEFy5SRZbkvlfO4+QvEtYSlSLWyWZdVJpKDVHPRKCAtPWmW141hJd7h/eoiX/p55amp8j++7WNqe8BfwsTb5mYAskEAAAAASUVORK5CYII=">
+<link rel="preload" as="font" type="font/woff2" href="/exo2-400-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/exo2-600-cyrillic.woff2" crossorigin=""><link rel="preload" as="font" type="font/woff2" href="/orbitron-700-latin.woff2" crossorigin=""><style>
+/* fonts.css (inlined, PSI #4) */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(exo2-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(exo2-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(exo2-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(exo2-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(exo2-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(orbitron-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(orbitron-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(orbitron-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(orbitron-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<link rel="canonical" href="https://geo-upgrade.ru/case-georadar.html">
+<link rel="stylesheet" href="tailwind.min.css">
+<meta property="og:url" content="https://geo-upgrade.ru/case-georadar.html">
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-11-13"><meta property="article:modified_time" content="2026-11-13">
+<meta property="og:title" content="Кейс: GEO-Радар — автоматизация замеров AI-видимости | GEO-Апгрейд">
+<meta property="og:description" content="Кейс GEO-Апгрейд: GEO-Радар — подписка на автоматические замеры AI-видимости. Настройка один раз, 10 запросов, 8 отчётов в месяц: дословные ответы нейросетей, слепые зоны, конкурентное поле и рекомендации P0/P1/P2.">
+<meta property="og:site_name" content="GEO-Апгрейд">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://geo-upgrade.ru/cover-case-georadar-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script async="" src="https://mc.yandex.ru/metrika/tag.js?id=113118311"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Кейс: GEO-Радар — автоматизация замеров AI-видимости для клиентов","description":"Кейс GEO-Апгрейд: GEO-Радар — подписка на автоматические замеры AI-видимости. Настройка один раз, 10 запросов, 8 отчётов в месяц: дословные ответы нейросетей, слепые зоны, конкурентное поле и рекомендации P0/P1/P2.","author":{"@type":"Person","name":"Жарких Дарья Александровна"},"publisher":{"@type":"Organization","name":"GEO-Апгрейд","sameAs": ["https://t.me/geoupgrade", "https://vk.ru/geo.upgrade", "https://uslugi.yandex.ru/profile/DaryaZharkikh-3434933", "https://profi.ru/profile/ZharkikhDA3/", "https://workspace.ru/id/darya-zharkih/", "https://www.klerk.ru/user/2726432/", "https://dzen.ru/id/6ab4b86296401f17f0716d4b", "https://g.page/r/CSUI5EnmoeeoEBM/review", "https://maps.app.goo.gl/R8nnURT4CwAqi3nc7", "https://yandex.ru/profile/84156063982", "https://www.avito.ru/brands/d4c15b97926e6fef1f41e16d6b828ca7", "https://2gis.ru/tomsk/geo/70000001118166258", "https://tomsk.flamp.ru/geo_upgrade", "https://zoon.ru/tomsk/business/kompaniya_geo-apgrejd/", "https://www.yell.ru/tomsk/com/geo-apgrejd_14526586/", "https://2gis.ru/novosibirsk/geo/70000001118650762", "https://www.avito.ru/brands/a689faf0fc1a53cfe40d4eab4e5e3aa4", "https://zoon.ru/nsk/business/ekspertnaya_laboratoriya_geo-apgrejd/", "https://www.yell.ru/novosibirsk/com/geo-apgrejd_14527356/"]},"image":"https://geo-upgrade.ru/cover-case-georadar-og.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://geo-upgrade.ru/academy-app.html"},"datePublished":"2026-11-13","dateModified":"2026-11-13"}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://geo-upgrade.ru/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Кейсы и эксперименты", "item": "https://geo-upgrade.ru/cases.html"},
+    {"@type": "ListItem", "position": 3, "name": "Кейс: GEO-Радар — автоматизация замеров AI-видимости", "item": "https://geo-upgrade.ru/case-georadar.html"}
+  ]
+}
+</script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6}
+h1,h2,h3,h4{font-family:'Orbitron',sans-serif;line-height:1.15}
+[id]{scroll-margin-top:5.5rem}
+.lab-grid{background-image:linear-gradient(to right,rgba(184,188,198,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(184,188,198,.07) 1px,transparent 1px);background-size:40px 40px}
+.glow{box-shadow:0 0 16px rgba(0,240,255,.28)}
+.card{background:rgba(13,6,24,.88);border:1px solid rgba(184,188,198,.25);border-radius:10px}
+.card:hover{border-color:rgba(0,240,255,.65)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(184,188,198,.35),transparent)}
+.term{color:#00F0FF;font-weight:600}
+.callout{background:rgba(0,240,255,.03);border-left:4px solid #00F0FF;padding:1rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
+table.data{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
+table.data th,table.data td{border:1px solid rgba(184,188,188,.3);padding:.7rem;text-align:left;vertical-align:top}
+table.data th{background:rgba(0,240,255,.08);color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.8rem;letter-spacing:.06em}
+.table-wrap{overflow-x:auto;margin:1.5rem 0}
+.shot{font-family:'Orbitron',sans-serif;font-size:.72rem;border-radius:12px;padding:2px 10px;white-space:nowrap;display:inline-block}
+.shot.hi{background:rgba(52,211,153,.15);color:#34D399;border:1px solid rgba(52,211,153,.6)}
+.shot.mid{background:rgba(0,240,255,.12);color:#00F0FF;border:1px solid rgba(0,240,255,.5)}
+.shot.low{background:rgba(244,114,182,.12);color:#F472B6;border:1px solid rgba(244,114,182,.55)}
+.shot.mod{background:rgba(248,113,113,.15);color:#F87171;border:1px solid rgba(248,113,113,.6)}
+.shot.trap{background:rgba(251,191,36,.12);color:#FBBF24;border:1px solid rgba(251,191,36,.55)}
+.qcard{border:1px solid rgba(184,188,198,.25);border-left:3px solid #00F0FF;border-radius:10px;padding:.9rem 1.1rem;margin:.75rem 0;background:rgba(13,6,24,.88)}
+.qcard .top{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.3rem}
+.qcard .num{font-family:'Orbitron',sans-serif;color:#00F0FF;font-size:.78rem;letter-spacing:.08em}
+.qcard .qtext{font-size:.92rem;color:#B8BCC6;margin-bottom:.4rem}
+.qcard .ans{font-size:.94rem}
+.qcard .src{font-size:.78rem;color:#8A93A6;margin-top:.4rem}
+.qcard .note{font-size:.82rem;color:#F472B6;margin-top:.4rem}
+.find{border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:.9rem 1.1rem;margin:.6rem 0;background:rgba(13,6,24,.88)}
+.find.mod{border-color:rgba(248,113,113,.55);background:rgba(248,113,113,.06)}
+.find h3{font-size:1.15rem;color:#00F0FF;margin:0 0 .4rem}
+.find.mod h3{color:#F87171}
+.find p{font-size:.92rem;margin:0}
+.score{font-family:'Orbitron',sans-serif;font-size:2.4rem;color:#00F0FF;font-weight:700;text-shadow:0 0 18px rgba(0,240,255,.4)}
+.blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:1rem}
+.blk{border:1px solid rgba(184,188,198,.25);border-radius:8px;padding:.6rem .7rem;background:rgba(27,11,49,.75)}
+.blk b{font-family:'Orbitron',sans-serif;font-size:.85rem;color:#00F0FF}
+.blk span{color:#B8BCC6;font-size:.76rem;display:block}
+.bar{height:6px;border-radius:4px;background:rgba(184,188,198,.2);margin-top:.45rem;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#00F0FF,#7C6CFF);border-radius:4px}
+@media(max-width:640px){.blocks{grid-template-columns:1fr 1fr}}
+.shot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.25rem 0}
+@media(max-width:640px){.shot-grid{grid-template-columns:1fr}}
+.shot-grid figure{margin:0;border:1px solid rgba(184,188,198,.25);border-radius:10px;overflow:hidden;background:rgba(13,6,24,.88)}
+.shot-grid img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(184,188,198,.2)}
+.shot-grid figcaption{padding:.7rem .9rem;font-size:.82rem;color:#B8BCC6}
+.shot-grid figcaption b{color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem}
+.toc{border:1px solid rgba(184,188,198,.25);border-radius:10px;padding:1rem 1.2rem;background:rgba(13,6,24,.88)}
+.toc ol{margin:.4rem 0 0 1.2rem;padding:0}
+.toc a{color:#B8BCC6;text-decoration:none}
+.toc a:hover{color:#00F0FF}
+nav.page-nav{display:flex;flex-wrap:wrap;gap:1rem;padding:.5rem 0}
+nav.page-nav a{color:#00F0FF;text-decoration:none;font-size:.85rem}
+nav.page-nav a:hover{text-decoration:underline}
+.scan-line{position:relative;overflow:hidden}
+.scan-line::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 0,rgba(0,240,255,.08) 50%,transparent 100%);animation:scan 4s linear infinite}
+@keyframes scan{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+@media(prefers-reduced-motion:reduce){.scan-line::after{animation:none}}
+.h-toc{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:.14em;color:#00F0FF;text-transform:uppercase}
+.checklist{list-style:none;padding-left:0}.checklist li{position:relative;padding-left:1.75rem;margin-bottom:.75rem}.checklist li:before{content:"✓";position:absolute;left:0;color:#00F0FF;font-weight:bold}
+
+.bot-shot{margin:1.25rem auto 1.5rem;max-width:340px;border:1px solid rgba(184,188,198,.25);border-radius:10px;overflow:hidden;background:rgba(13,6,24,.88)}
+.bot-shot img{width:100%;height:auto;display:block;border-bottom:1px solid rgba(184,188,198,.2)}
+.bot-shot figcaption{padding:.7rem .9rem;font-size:.82rem;color:#B8BCC6}
+.bot-shot figcaption b{color:#00F0FF;font-family:'Orbitron',sans-serif;font-size:.72rem;letter-spacing:.08em;display:block;margin-bottom:.25rem}
+@media(min-width:768px){.bot-shot{max-width:420px}}
+</style>
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
+    ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script><script>document.documentElement.classList.remove('no-js');</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<link rel="alternate" type="application/rss+xml" title="GEO-Апгрейд — RSS" href="/feed.xml">
+<style>
+/* perf-fixes.css (inlined, PSI #4) */
+/* perf-fixes.css — расширение зон тапа (Accessibility). Визуально ничего не меняет. */
+header a, footer a, .geoas-chip, .fc-btn, a.btn { position: relative; }
+header a::before, footer a::before, .geoas-chip::before { content: ""; position: absolute; inset: -10px; }
+.fc-btn::before, a.btn::before { content: ""; position: absolute; inset: -4px; }
+
+
+/* ── v2 (07.10, вечер): A11Y — тап-зоны основной навигации ──────────────
+   Пункты меню были меньше 24px по высоте (text-sm без отступов).
+   Увеличиваем зону нажатия и расстояние между пунктами до ≥24px (WCAG 2.5.8).
+   Визуально меню становится чуть «воздушнее» — это ожидаемо. */
+nav[aria-label="Основная навигация"] {
+  gap: 4px 24px; /* было gap-x-4 (16px) gap-y-2 (8px) */
+}
+nav[aria-label="Основная навигация"] a {
+  display: inline-block;
+  padding: 6px 8px; /* зона нажатия 14+12 = 26px по высоте */
+}
+</style>
+<style>
+/* jnav B6.1: мобильное меню + полоса основных страниц (не применяется на index) */
+.jnav-btn{display:none;position:relative;z-index:60;width:44px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid rgba(0,240,255,.55);border-radius:8px;background:rgba(0,240,255,.08);cursor:pointer;transition:border-color .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn span{display:block;width:20px;height:2px;background:#00F0FF;border-radius:1px;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .3s cubic-bezier(.22,1,.36,1)}
+.jnav-btn:hover,.jnav-btn:focus-visible{border-color:rgba(0,240,255,.9);box-shadow:0 0 14px rgba(0,240,255,.35)}
+.jnav-btn:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+.jnav-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.jnav-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.jnav-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.jnav-beige{border-color:rgba(212,184,150,.55);background:rgba(212,184,150,.08)}
+.jnav-beige span{background:#D4B896}
+.jnav-beige:hover,.jnav-beige:focus-visible{border-color:rgba(212,184,150,.9);box-shadow:0 0 14px rgba(212,184,150,.3)}
+@media(min-width:768px){.jnav-btn,.jnav-strip{display:none!important}}
+@media(max-width:767.98px){
+.jnav-btn{display:flex}
+.jnav-nav{display:none!important;position:absolute;left:12px;right:12px;top:calc(100% + 8px);z-index:59;flex-direction:column;gap:2px;padding:10px;border:1px solid rgba(0,240,255,.35);border-radius:12px;background:rgba(13,6,24,.97);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(0,240,255,.12);backdrop-filter:blur(10px)}
+.jnav-open .jnav-nav{display:flex!important}
+.jnav-nav a{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:8px;font-size:1rem;color:#F5F7FA;text-decoration:none;opacity:0;transform:translateX(-8px);transition:opacity .25s ease,transform .25s ease}
+.jnav-open .jnav-nav a{opacity:1;transform:none}
+.jnav-nav a:nth-child(1){transition-delay:.02s}.jnav-nav a:nth-child(2){transition-delay:.05s}.jnav-nav a:nth-child(3){transition-delay:.08s}.jnav-nav a:nth-child(4){transition-delay:.11s}.jnav-nav a:nth-child(5){transition-delay:.14s}.jnav-nav a:nth-child(6){transition-delay:.17s}.jnav-nav a:nth-child(7){transition-delay:.2s}.jnav-nav a:nth-child(8){transition-delay:.23s}.jnav-nav a:nth-child(9){transition-delay:.26s}.jnav-nav a:nth-child(10){transition-delay:.29s}.jnav-nav a:nth-child(11){transition-delay:.32s}.jnav-nav a:nth-child(12){transition-delay:.35s}.jnav-nav a:nth-child(13){transition-delay:.38s}
+.jnav-nav a:hover{background:rgba(0,240,255,.08)}
+.jnav-nav a.text-\[\#00F0FF\]{background:rgba(0,240,255,.1);border:1px solid rgba(0,240,255,.4)}
+.jnav-nav a.accent-beige,.jnav-nav a.text-\[\#D4B896\]{background:rgba(212,184,150,.1);border:1px solid rgba(212,184,150,.4)}
+.jnav-nav::before{content:"МЕНЮ";display:block;font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:.25em;color:rgba(0,240,255,.7);padding:6px 12px 8px}
+.jnav-beige-panel .jnav-nav{border-color:rgba(212,184,150,.35);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 24px rgba(212,184,150,.1)}
+.jnav-beige-panel .jnav-nav::before{color:rgba(212,184,150,.8)}
+.jnav-beige-panel .jnav-nav a:hover{background:rgba(212,184,150,.08)}
+.jnav-strip{display:flex;gap:8px;overflow-x:auto;padding:8px 12px 10px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(0,240,255,.15);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-strip::-webkit-scrollbar{display:none}
+.jnav-strip a{flex:0 0 auto;padding:6px 12px;border-radius:999px;border:1px solid rgba(0,240,255,.3);font-size:.8rem;color:#F5F7FA;text-decoration:none;background:rgba(0,240,255,.05)}
+.jnav-strip a.jnav-here{border-color:rgba(0,240,255,.8);color:#00F0FF;background:rgba(0,240,255,.12)}
+.jnav-beige-panel + .jnav-strip{border-bottom-color:rgba(212,184,150,.2)}
+.jnav-beige-panel + .jnav-strip a{border-color:rgba(212,184,150,.3);background:rgba(212,184,150,.05)}
+.jnav-beige-panel + .jnav-strip a.jnav-here{border-color:rgba(212,184,150,.8);color:#D4B896;background:rgba(212,184,150,.12)}
+}
+</style>
+<noscript><style>@media(max-width:767.98px){.jnav-btn{display:none!important}.jnav-nav{position:static!important;display:flex!important;flex-wrap:wrap;gap:6px 8px;padding:10px 0 2px;opacity:1}.jnav-nav a{opacity:1;transform:none;display:inline-block;padding:8px 10px;font-size:.9rem}.jnav-nav::before{content:none}}</style></noscript><style>
+/* jnav B6.4: единый стиль с главной (текстовые ссылки, неон-ховер) */
+.jnav-quick a{border:none;background:none;padding:6px 4px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none}
+.jnav-quick a:hover{color:#00F0FF;background:none}
+.jnav-quick a.jnav-here{color:#00F0FF;background:none}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{border:none;background:none;padding:6px 2px;border-radius:4px;font-size:.8rem;color:#B8BCC6;text-decoration:none;white-space:nowrap}
+.jnav-strip a:hover{color:#00F0FF;background:none}
+.jnav-strip a.jnav-here{color:#00F0FF;background:none}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+@media(max-width:767.98px){
+.jnav-strip::-webkit-scrollbar{display:none}
+}
+</style>
+<style>/* jnav B6.4: быстрые пункты в хедере (стиль главной) + полоса «остальное» */
+.jnav-quick{display:none}
+@media(min-width:768px){.jnav-quick{display:none!important}}
+@media(max-width:767.98px){
+.jnav-quick{display:flex;gap:10px;align-items:center;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.jnav-quick::-webkit-scrollbar{display:none}
+.jnav-quick a{flex:0 0 auto;padding:6px 4px;font-size:.8rem;line-height:1.2;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-quick a:hover,.jnav-quick a.jnav-here{color:#00F0FF}
+.jnav-beige-panel .jnav-quick a{color:#B8B0A8}
+.jnav-beige-panel .jnav-quick a:hover,.jnav-beige-panel .jnav-quick a.jnav-here{color:#D4B896}
+.jnav-strip{gap:14px;padding:9px 16px 11px;background:rgba(13,6,24,.92);border-bottom:1px solid rgba(255,255,255,.08)}
+.jnav-strip a{flex:0 0 auto;padding:6px 2px;font-size:.8rem;color:#B8BCC6;text-decoration:none;border:none;background:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1)}
+.jnav-strip a:hover,.jnav-strip a.jnav-here{color:#00F0FF}
+.jnav-beige-panel + .jnav-strip a{color:#B8B0A8}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#D4B896}
+}
+</style>
+<style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style><style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style><style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style><style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style></head>
+
+<body>
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#D4B896] font-semibold hover:text-[#E8D5B7]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
+
+<main class="max-w-6xl mx-auto px-5 py-12 md:py-20">
+<p class="font-heading text-xs tracking-[.2em] text-[#00F0FF]">CASE LAB · АВТОМАТИЗАЦИЯ · GEO-РАДАР</p>
+<h1 class="mt-4 text-3xl md:text-5xl font-bold">GEO-Радар: как нас видят нейросети — теперь на автопилоте</h1>
+<p class="mt-6 text-base md:text-lg text-[#B8BCC6]">Каждый раз, когда кто-то спрашивает ChatGPT, Perplexity или Алису «а где купить/кто лучший/что посоветуете» — нейросеть отвечает чьим-то именем. Вопрос только в том, чьим. <span class="term">Геомаркетинг</span> начинается с честного замера: не «нам кажется», а дословный ответ нейросети. GEO-Радар — это подписка, которая делает такие замеры за вас: дважды в неделю, по разработанной для вашего бизнеса системе запросов, с отчётами, где видно всё — от дословных ответов до слепых зон. Настраивается один раз, дальше всё от нас: нужны только ваши данные.</p>
+
+<figure class="mx-auto mt-10 w-full max-w-[360px]"> <img src="cover-case-georadar.jpg" alt="Обложка кейса: GEO-Радар — радарный дисплей со сканирующим лучом и маркерами откликов" width="1024" height="1024" loading="eager"> </figure>
+
+<div class="lab-card mt-8"><div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+<div><b class="font-heading text-[#00F0FF] text-xs tracking-wide">ЭКСПОНАТ</b><p class="mt-1">EXH-16 · АВТОМАТИЗАЦИЯ</p></div>
+<div><b class="font-heading text-[#00F0FF] text-xs tracking-wide">ДАТА</b><p class="mt-1">13.11.2026</p></div>
+<div><b class="font-heading text-[#00F0FF] text-xs tracking-wide">СТАТУС</b><p class="mt-1">В РАБОТЕ · подписка открыта</p></div>
+<div><b class="font-heading text-[#00F0FF] text-xs tracking-wide">МЕТОДИКА</b><p class="mt-1">авто-замеры дважды в неделю · 10 запросов · Алиса (YandexGPT) + GigaChat · индекс Яндекса</p></div>
+</div></div>
+
+<nav class="toc mt-8" aria-label="Содержание">
+<p class="h-toc">СОДЕРЖАНИЕ</p>
+<ol class="mt-2 text-sm">
+<li><a href="#what">Что такое GEO-Радар и что он заменяет</a></li>
+<li><a href="#how">Настройка один раз: запросы, аватары и разбор бизнеса — включено</a></li>
+<li><a href="#report">Что приходит в отчёте</a></li>
+<li><a href="#queries">Примеры запросов</a></li>
+<li><a href="#price">Тариф: 1 499 ₽/мес — 8 отчётов в месяц</a></li>
+<li><a href="#app">Автоматика в приложении GEO-Академия</a></li>
+<li><a href="#verdict">Вывод лаборатории</a></li>
+</ol>
+</nav>
+
+<section id="what" class="mt-12">
+<h2 class="text-2xl md:text-3xl font-bold">1. Что такое GEO-Радар и что он заменяет</h2>
+<p class="mt-6">До Радара замер <span class="term">AI-видимости</span> — это ручная работа: открыть нейросеть, задать запросы, переписать ответы, сравнить с прошлым прогоном, отметить слепые зоны. Мы делали это руками в кейсах EXH-01, EXH-02 и EXH-11 — и знаем цену каждому прогону. GEO-Радар превращает этот протокол в <span class="term">автоматизацию</span>: система сама дважды в неделю — во вторник и в субботу в 12:00 по Новосибирску — прогоняет запросный набор вашего бизнеса через нейросети и собирает отчёт.</p>
+<p class="mt-6">Что важно понимать: это не «ещё один SEO-сервис». Нейропоиск не ранжирует страницы — он <b>отвечает текстом</b>, опираясь на индекс и на то, что нашёл о вас. Продвижение в нейросетях — отдельная дисциплина: GEO (Generative Engine Optimization) про то, как стать упомянутым и рекомендуемым в ответах, AEO — про то, как ответы формируются на ваши вопросы. Радар не «поднимает сайт» — он показывает, как вас видят нейросети сегодня, и что именно чинить, чтобы видели лучше завтра.</p>
+<p class="mt-6 callout">Зачем дважды в неделю: нейропоиск живой. Индексы обновляются, ответы меняются, конкуренты не спят. Разовый замер — это фотоснимок; Радар — это видеорегистратор AI-видимости.</p>
+</section>
+
+<section id="how" class="mt-12">
+<h2 class="text-2xl md:text-3xl font-bold">2. Настройка один раз: запросы, аватары и разбор бизнеса — включено</h2>
+<p class="mt-6">Самое недооценённое в автоматизации — вход. Машине нужно, что именно спрашивать. Поэтому в подписку включён <b>входной разбор вашего бизнеса бесплатно</b>:</p>
+<ul class="checklist mt-6">
+<li>разбор каждого бизнеса: чем занимаетесь, кто клиенты, чем отличаетесь — это основа запросного набора;</li>
+<li>разработка запросов по аватарам: для каждого портрета клиента (аватара) — своя группа запросов на живом языке, как люди реально спрашивают;</li>
+<li>маршрут замера: 10 запросов, индекс Яндекса, системы ответа — Алиса (YandexGPT) и GigaChat;</li>
+<li>график: вторник и суббота, 12:00 по Новосибирску.</li>
+</ul>
+<p class="mt-6">Настройка делается один раз. Дальше — всё от нас: вы просто получаете отчёты. В принципе нужны только ваши данные — те, что вы и так знаете о своём бизнесе лучше всех. Заполняете <a href="radar-start.html" class="term">стартовую анкету</a> — лаборатория собирает запросный набор и запускает замеры.</p>
+</section>
+
+<section id="report" class="mt-12">
+<h2 class="text-2xl md:text-3xl font-bold">3. Что приходит в отчёте</h2>
+<p class="mt-6">Отчёт — не «график и до свидания». В нём видно всё, что увидел бы человек, который вручную гоняет замеры:</p>
+<ul class="checklist mt-6">
+<li><b>Дословные ответы нейросетей</b> — как они прозвучали, без пересказа: где вас назвали, где «обошли» и кем;</li>
+<li><b>Слепые зоны</b> — запросы, на которых вас нет и не должно было быть по логике рынка: именно отсюда начинается чинить;</li>
+<li><b>Конкурентное поле</b> — кто звучит в ваших запросах вместо вас и в какой роли;</li>
+<li><b>Рекомендации по приоритетам P0/P1/P2</b> — что делать в первую очередь, что во вторую, что подождёт.</li>
+</ul>
+<p class="mt-6">Восемь отчётов в месяц — это восемь точек динамики. Видно, как меняются ответы после правок, где сдвигается конкурентное поле и куда дует ветер нейропоиска.</p>
+</section>
+
+<section id="queries" class="mt-12">
+<h2 class="text-2xl md:text-3xl font-bold">4. Примеры запросов</h2>
+<p class="mt-6">Запросный набор собирается под ваш бизнес — но вот как это выглядит на живых примерах (для пекарни, клиники и маркетингового агентства):</p>
+<div class="table-wrap"><table class="data">
+<thead><tr><th>Тип запроса</th><th>Пример</th><th>Что проверяем</th></tr></thead>
+<tbody>
+<tr><td>Навигационный</td><td>«пекарня на левом берегу томск»</td><td>знают ли нейросети, где вы находитесь</td></tr>
+<tr><td>Коммерческий</td><td>«купить свежий хлеб и булочки томск»</td><td>попадаете ли вы в список вариантов</td></tr>
+<tr><td>Сравнение</td><td>«лучшие клиники лазерной эпиляции новосибирск»</td><td>роль в конкурентном поле: первая тройка или фон</td></tr>
+<tr><td>Репутация</td><td>«маркетинговое агентство новосибирск отзывы»</td><td>что нейросети пересказывают об отзывах</td></tr>
+<tr><td>Ситуативный</td><td>«где отпраздновать день рождения на 15 человек томск»</td><td>видят ли вас в сценариях, а не только по названию</td></tr>
+<tr><td>Аватарный</td><td>«что посоветуете молодой маме: развитие ребёнка 2 года»</td><td>как звучите для конкретного аватара клиента</td></tr>
+<tr><td>Локальный + «возле»</td><td>«хорошая стоматология рядом с метро»</td><td>локальная видимость без прямого упоминания города</td></tr>
+<tr><td>Категорийный</td><td>«услуги гео-оптимизации сайта»</td><td>узнают ли нейросети вашу категорию expertise</td></tr>
+</tbody>
+</table></div>
+<p class="mt-6 callout">Промпты в Радаре — не «магические слова», а протокол запросного двойника: он собирается под ваш реальный рынок, по аватарам и живому языку клиентов. Тот же метод, что мы применяем в кейсах.</p>
+</section>
+
+<section id="price" class="mt-12">
+<h2 class="text-2xl md:text-3xl font-bold">5. Тариф: 1 499 ₽/мес — 8 отчётов в месяц</h2>
+<div class="table-wrap"><table class="data">
+<thead><tr><th>Что входит</th><th>Детали</th></tr></thead>
+<tbody>
+<tr><td>Подписка</td><td>1 499 ₽ в месяц</td></tr>
+<tr><td>Замеры</td><td>дважды в неделю: вторник и суббота, 12:00 (НСК)</td></tr>
+<tr><td>Отчёты</td><td>8 отчётов в месяц</td></tr>
+<tr><td>Запросный набор</td><td>10 запросов, собранных по аватарам вашего бизнеса</td></tr>
+<tr><td>Системы ответа</td><td>Алиса (YandexGPT) + GigaChat, индекс Яндекса</td></tr>
+<tr><td>Входной разбор</td><td>включён бесплатно: аватары, запросы, разбор бизнеса</td></tr>
+<tr><td>Управление</td><td>отмена и пауза — в любой момент</td></tr>
+<tr><td>Оплата</td><td>картой через Точку</td></tr>
+</tbody>
+</table></div>
+<p class="mt-6">Для сравнения: один ручной замер 10 запросов через 2 нейросети — это несколько часов работы, и разовый снимок. Подписка Радара — это те же протоколы на автопилоте и динамика вместо снимка.</p>
+</section>
+
+<section id="app" class="mt-12">
+<h2 class="text-2xl md:text-3xl font-bold">6. Автоматика в приложении GEO-Академия</h2>
+<p class="mt-6">GEO-Радар живёт не только на сайте. С версии 0.2.4 он встроен в <a href="academy-app.html" class="term">приложение GEO-Академия</a>: статус подписки, отчёты и прогресс — прямо в кармане. Регистрируетесь один раз — тот же email открывает и кабинет на сайте, и приложение: без кодов активации, без второго аккаунта.</p>
+<p class="mt-6 callout">Автоматика в приложении настроена так, что вам не нужно ничего «вести»: замеры идут по графику, отчёты появляются сами, статусы подписки видны на панели. Настраивается раз — дальше всё от нас.</p>
+</section>
+
+<section id="verdict" class="mt-12">
+<h2 class="text-2xl md:text-3xl font-bold">7. Вывод лаборатории</h2>
+<p class="mt-6">Нейросети уже отвечают о брендах без спроса. Вопрос «как нас видят нейросети» перестал быть философским — на него есть измеряемый ответ, и этот ответ теперь собирается на автопилоте. GEO-Радар — это геомаркетинг без ручного труда: методика наша, вычисления машинные, отчёты — ваши.</p>
+<p class="mt-6">Кейс продолжается: примеры отчётов и динамика появятся по мере первых подписок — как и во всех наших кейсах, показываем то, что уже работает.</p>
+</section>
+
+<section class="mt-14 card p-6 md:p-8">
+<h2 class="text-xl md:text-2xl font-bold">Настроить GEO-Радар для своего бизнеса</h2>
+<p class="mt-3 text-[#B8BCC6]">Старт с анкеты: расскажите о бизнесе — лаборатория соберёт запросный набор по аватарам и запустит замеры. Всё, что нужно от вас — ваши данные; всё, что нужно дальше — уже от нас.</p>
+<div class="mt-6 flex flex-wrap gap-4">
+<a href="radar-start.html" class="btn glow inline-block rounded-md bg-[#00F0FF] px-6 py-3 font-semibold text-[#0D0618]">СТАРТ С АНКЕТЫ →</a>
+<a href="radar.html" class="btn inline-block rounded-md border border-[#00F0FF]/50 px-6 py-3 font-semibold text-[#00F0FF]">ПОДРОБНОСТИ ПОДПИСКИ →</a>
+<a href="contacts.html#form" class="btn inline-block rounded-md border border-[#B8BCC6]/40 px-6 py-3 font-semibold">ЗАДАТЬ ВОПРОС ЛАБОРАТОРИИ</a>
+</div>
+</section>
+
+</main>
+<footer class="border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6"><div><div class="flex items-center gap-3"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-10 w-10 rounded-full" style="box-shadow:0 0 10px rgba(0,240,255,.25)" loading="lazy" width="96" height="96"><p class="font-heading font-bold text-lg">GEO-Апгрейд</p></div><p class="mt-2 text-sm text-[#B8BCC6]">Лаборатория AI-видимости бренда</p><p class="mt-4 text-sm text-[#B8BCC6]">GEO-маркетолог и AI-консультант Жарких Дарья Александровна</p><p class="mt-2 text-sm text-[#B8BCC6]">г. Томск, ул. Набережная озера, 22, 634009 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79529449239" class="hover:text-[#00F0FF]">+7 952 944-92-39</a></p><p class="mt-2 text-sm text-[#B8BCC6]">г. Новосибирск, ул. Гоголя, 209, 630015 · Пн–Пт, 12:00–20:00, UTC+7 · <a href="tel:+79521572955" class="hover:text-[#00F0FF]">+7 952 157-29-55</a></p><p class="mt-2 text-sm text-[#B8BCC6]"><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">geo.upgrade@bk.ru</a></p>
+      </div><span class="flex items-center gap-2" aria-label="Соцсети GEO-Апгрейд"><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M21.94 4.05c.28-1.16-.9-2.1-1.94-1.68L2.3 9.62c-1.15.46-1.09 2.11.09 2.5l4.35 1.4 1.62 5.2c.34 1.1 1.72 1.32 2.42.42l2.16-2.65 4.5 3.32c.97.72 2.37.2 2.6-.98L21.94 4.05zM8.5 13.06l8.93-5.5c.26-.16.53.19.31.4l-7.1 6.44c-.3.28-.5.65-.56 1.05l-.3 2.2c-.04.28-.42.31-.51.04l-1.16-3.75c-.13-.4.05-.84.39-1.08z"></path></svg></a><a href="https://max.ru/u/f9LHodD0cOKn5NlqWfUehS5ZCaGQ9oLqwIkL5vvgygrWfsgupZ45s41702Q" target="_blank" rel="noopener" aria-label="MAX" title="MAX" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M4 4h16v13a2 2 0 0 1-2 2H9l-4 3V6a2 2 0 0 1 2-2h-3z"></path></svg></a><a href="https://dzen.ru/id/6ab4b86296401f17f0716d4b" target="_blank" rel="noopener" aria-label="Дзен" title="Дзен" style="display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:9999px;color:#B8BCC6"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2h.9v8.1H21v1.8h-8.1V22h-1.8v-8.1H3v-1.8h8.1V2z"></path></svg></a></span><div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="hover:text-[#00F0FF]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a><a href="ai-policy.html" class="hover:text-[#00F0FF]">Для нейросетей</a><a href="https://t.me/geoupgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">Telegram</a><a href="https://vk.ru/geo.upgrade" target="_blank" rel="noopener" class="hover:text-[#00F0FF]">ВКонтакте</a><a href="mailto:geo.upgrade@bk.ru" class="hover:text-[#00F0FF]">Email</a><a href="offer.html" class="hover:text-[#00F0FF]">Оферта</a><a href="privacy.html" class="hover:text-[#00F0FF]">Политика</a></div></div><div class="max-w-6xl mx-auto px-5"><div class="mt-6 text-xs text-[#B8BCC6]">© 2026 GEO-Апгрейд · ИП Жарких Дарья Александровна · ОГРНИП 326700000056258 · ИНН 700233102822</div></div>
+</footer>
+<script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"};</script>
+<script src="/geo-assistant-widget.js" defer=""></script>
+
+<script>
+/* jnav B6.1: мобильное меню + полоса основных страниц */
+document.addEventListener('DOMContentLoaded',function(){
+  var btn=document.querySelector('.jnav-btn'),panel=document.getElementById('jnav-panel');
+  if(!btn||!panel){return}
+  var hdr=btn.closest('header')||document.body;
+  function set(open){hdr.classList.toggle('jnav-open',open);btn.setAttribute('aria-expanded',open?'true':'false');btn.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню')}
+  btn.addEventListener('click',function(){set(btn.getAttribute('aria-expanded')!=='true')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false)}});
+  document.addEventListener('click',function(e){if(btn.getAttribute('aria-expanded')==='true'&&!panel.contains(e.target)&&!btn.contains(e.target)){set(false)}});
+  window.addEventListener('resize',function(){if(window.innerWidth>=768){set(false)}});
+  var strip=document.querySelector('.jnav-strip');
+  if(strip){
+    var cur=(location.pathname.split('/').pop()||'index.html');
+    if(cur===''||cur==='index.html'){cur='index'}
+    strip.querySelectorAll('a').forEach(function(a){
+      var t=a.getAttribute('href').replace('./','').replace('.html','');
+      if(t===cur||(cur==='index'&&t==='index')){a.classList.add('jnav-here')}
+    });
+  }
+});
+</script>
+<script>
+/* jnav B6.4: подсветка текущей страницы в quick и strip */
+document.addEventListener('DOMContentLoaded',function(){
+  var cur=(location.pathname.split('/').pop()||'').replace('.html','');
+  if(cur===''){cur='index'}
+  document.querySelectorAll('.jnav-quick a,.jnav-strip a').forEach(function(a){
+    var t=a.getAttribute('href').replace('./','').replace('.html','');
+    if(t===cur){a.classList.add('jnav-here')}
+  });
+});
+</script>
+<script src="lab-account.js" defer=""></script>
+
+
+<div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div><a id="lab-lk-btn" href="cabinet.html" aria-label="Личный кабинет" style="position: fixed; right: 14px; bottom: 88px; z-index: 60; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(212, 184, 150, 0.55); background: rgba(13, 6, 24, 0.94); color: rgb(255, 214, 110); font: 600 13px / 1.2 system-ui, -apple-system, sans-serif; letter-spacing: 0.04em; text-decoration: none; white-space: nowrap; cursor: pointer;">ЛК</a><button id="lab-fav-btn" type="button" aria-label="В избранное" title="В избранное" style="position: fixed; left: 16px; bottom: 16px; z-index: 60; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.3); background: rgb(21, 11, 38); color: rgb(244, 244, 250); cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#F4F4FA" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9C1 8.6 2.9 5.4 6.2 5.1c2-.2 3.9.9 4.8 2.6l1 1.7 1-1.7c.9-1.7 2.8-2.8 4.8-2.6 3.3.3 5.2 3.5 3.7 6.9-2 4.4-9.5 9-9.5 9z"></path></svg></button><div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div><div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div><div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div></body></html>
