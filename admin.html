@@ -632,6 +632,7 @@ function radCard(r){
     +'<button class="btn mute" data-act="pay" data-id="'+r.id+'">ОПЛАТА ПРОШЛА ✓</button>'
     +'<button class="btn mute" data-act="pause" data-id="'+r.id+'">'+((r.status==='paused')?'ВКЛЮЧИТЬ':'ПАУЗА')+'</button>'
     +'<button class="btn danger" data-act="del" data-id="'+r.id+'">УДАЛИТЬ</button>'
+    +'<button class="btn gold" data-act="report" data-id="'+r.id+'">ВЫДАТЬ ОТЧЁТ</button>'
     +'</div>';
   if(r.approve_token&&r.approve_status!=='none'){
     h+='<div class="panel" style="margin-top:10px"><div class="udh">Ссылка согласования</div>'
@@ -679,6 +680,14 @@ async function radAct(act,id){
       await api('/rest/v1/radar_clients?id=eq.'+id,'DELETE');
       if(r.email){try{await api('/rest/v1/lab_orders?service_id=eq.radar-monthly&email=eq.'+encodeURIComponent(r.email),'DELETE')}catch(e){}}
       toast('Радар-запись удалена — у клиента панель исчезнет в течение минуты');
+      await renderRadar();
+    }else if(act==='report'){
+      const url=prompt('Публичная ссылка на отчёт (файл на хостинге или бакете):','');
+      if(!url)return;
+      const ttl=prompt('Название отчёта:','Отчёт · '+new Date().toLocaleDateString('ru-RU'));
+      const per=prompt('Период:','13.11.2026');
+      await api('/rest/v1/radar_reports','POST',{radar_id:id,title:ttl,period:per,report_url:url});
+      toast('Отчёт выдан — клиент увидит его в кабинете в течение минуты');
       await renderRadar();
     }
   }catch(e){toast('Не вышло: '+e.message)}
