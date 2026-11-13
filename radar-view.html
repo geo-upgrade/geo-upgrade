@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GEO-радар · отчёт</title>
+<style>body{margin:0;background:#0D0618;color:#8A86A0;font-family:'Exo 2',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.wrap{text-align:center;padding:24px}.k{font-family:Orbitron,sans-serif;font-size:10px;letter-spacing:.2em;color:#00F0FF;text-transform:uppercase}#msg{margin-top:12px;font-size:14px}
+.spin{width:34px;height:34px;border:3px solid rgba(0,240,255,.2);border-top-color:#00F0FF;border-radius:50%;margin:0 auto 14px;animation:sp 1s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}</style></head><body>
+<div class="wrap"><div class="k">GEO-РАДАР</div><div class="spin"></div><div id="msg">Загружаю отчёт…</div></div>
+<script>(function(){var h=(location.hash||"");var u=h.slice(3)||new URLSearchParams(location.search).get("u")||"";var msg=document.getElementById("msg");if(!u){msg.textContent="Ссылка не указана.";return}if(u.indexOf("%")>-1){try{u=decodeURIComponent(u)}catch(_){}}
+fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.text()}).then(function(t){document.open();document.write(t);document.close()}).catch(function(e){msg.textContent="Не удалось открыть отчёт ("+e.message+"). Ссылка устарела — попроси свежую у лаборатории."})})();</script></body></html>
