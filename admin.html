@@ -95,6 +95,7 @@ label{display:block;font-size:10.5px;letter-spacing:.08em;color:var(--dim);font-
       <div class="b"><span>ПОДТВЕРЖДЕНО</span><b id="n-ok">0</b></div>
       <div class="b"><span>КЛИЕНТОВ</span><b id="n-cli">0</b></div>
       <div class="b"><span>ЦИФРОВЫЕ · ЖДУТ</span><b id="n-dig">0</b></div>
+      <div class="b"><span>РАДАР · АКТИВНЫХ</span><b id="n-rad">0</b></div>
       <div class="b"><span>ПОЛЬЗОВАТЕЛИ</span><b id="n-users">0</b></div>
     </div>
 
@@ -283,13 +284,17 @@ async function renderDash(){
     const paidD=dg.filter(function(o){return o.status==='confirmed'});
     const revL=lo.filter(function(o){return LIVE.includes(o.status)}).reduce(function(a,o){return a+(+o.amount||0)},0);
     const revD=paidD.reduce(function(a,o){return a+(+o.amount||0)},0);
+    let rad=[];try{rad=await api('/rest/v1/radar_clients?select=status,active_until')}catch(e){}
+    const todayIso=new Date().toISOString().slice(0,10);
+    const radN=rad.filter(function(r){return r.status==='active'&&(!r.active_until||r.active_until>=todayIso)}).length;
     const d7=new Date(Date.now()-7*86400000).toISOString();
     const new7=lo.filter(function(o){return (o.created_at||'')>d7}).length+dg.filter(function(o){return (o.created_at||'')>d7}).length;
     const cards=[
       ['ВЫРУЧКА · УСЛУГИ',fmt(revL),'подтверждённые заявки'],
       ['ВЫРУЧКА · ЦИФРОВЫЕ',fmt(revD)+' · '+paidD.length+' шт.','подтверждённые покупки'],
       ['ЗАЯВКИ ЗА 7 ДНЕЙ',String(new7),'услуги + цифровые'],
-      ['АНКЕТ ЗАПОЛНЕНО',String(pr.filter(function(p){return p.brand}).length),'из '+pr.length+' записей']
+      ['АНКЕТ ЗАПОЛНЕНО',String(pr.filter(function(p){return p.brand}).length),'из '+pr.length+' записей'],
+      ['РАДАР · АКТИВНЫХ',String(radN)+' · '+fmt(radN*1499),'подписки 1499 ₽/мес']
     ];
     $('dash-cards').innerHTML=cards.map(function(c){return '<div class="panel" style="padding:14px 16px"><div class="kicker">'+c[0]+'</div><div style="font-size:24px;font-family:Orbitron,sans-serif;color:var(--goldb);margin:6px 0 2px">'+c[1]+'</div><div class="note">'+c[2]+'</div></div>'}).join('');
     $('dash-note').textContent='';
@@ -456,13 +461,21 @@ async function renderClients(){
     try{prof=await api('/rest/v1/profiles?select=*');}catch(e){}
     const byId={};(prof||[]).forEach(function(p){byId[p.id]=p});
     $('n-cli').textContent=String(Object.keys(map).length);
+    let radm={};
+    try{
+      const rr=await api('/rest/v1/radar_clients?select=id,email,status,active_until');
+      let repm={};try{const rp=await api('/rest/v1/radar_reports?select=radar_id');(rp||[]).forEach(function(p){repm[p.radar_id]=(repm[p.radar_id]||0)+1})}catch(e){}
+      (rr||[]).forEach(function(r){const e=(r.email||'').toLowerCase();if(e)radm[e]={st:r.status||'new',until:r.active_until,reps:repm[r.id]||0}});
+    }catch(e){}
     const box=$('cli-box');box.innerHTML='';
     const keys=Object.keys(map);
     if(!keys.length){box.innerHTML='<div class="panel sp">Пока нет клиентов с заявками.</div>';return}
     keys.sort().forEach(function(e){
       const m=map[e];const p=byId[m.uid]||{};
       const d=document.createElement('div');d.className='card';
-      d.innerHTML='<div class="top"><div><b>'+(p.full_name||e)+'</b><br><span class="note">'+e+' · заявок: '+m.n+' · последняя: '+dt(m.last)+'</span></div><span class="mono">uid '+(m.uid||'').slice(0,8)+'</span></div>';
+      const rd=radm[e];
+      const radline=rd?'<br><span style="color:#00FF9C;font-family:Orbitron;font-size:9.5px;letter-spacing:.08em">РАДАР · '+({new:'ЗАЯВКА ПРИНЯТА',configured:'НА СОГЛАСОВАНИИ',active:'АКТИВНА'+(rd.until?' · до '+rd.until:''),paused:'ПАУЗА'}[rd.st]||'ЗАЯВКА ПРИНЯТА')+' · отчётов: '+rd.reps+'</span>':'';
+      d.innerHTML='<div class="top"><div><b>'+(p.full_name||e)+'</b><br><span class="note">'+e+' · заявок: '+m.n+' · последняя: '+dt(m.last)+radline+'</span></div><span class="mono">uid '+(m.uid||'').slice(0,8)+'</span></div>';
       const acts=document.createElement('div');acts.className='acts';
       const bp=document.createElement('button');bp.className='btn';bp.textContent='ПРОФИЛЬ';
       bp.onclick=function(){detailFor({id:m.uid,email:e},d)};acts.appendChild(bp);
@@ -582,6 +595,8 @@ async function renderRadar(){
     const list=await api('/rest/v1/radar_clients?order=created_at.desc');
     radarCache=list;
     try{const rr=await api('/rest/v1/radar_reports?order=created_at.desc');radarRepCounts={};(rr||[]).forEach(function(p){radarRepCounts[p.radar_id]=(radarRepCounts[p.radar_id]||0)+1})}catch(e){radarRepCounts={}}
+    const todayIso=new Date().toISOString().slice(0,10);
+    const nrad=$('n-rad');if(nrad)nrad.textContent=String(list.filter(function(r){return (r.status||'new')==='active'&&(!r.active_until||r.active_until>=todayIso)}).length);
     const tb=document.querySelector('[data-tab="tab-radar"]');
     const fresh=list.filter(function(r){return (r.status||'new')==='new'}).length;
     if(tb)tb.textContent='РАДАР'+(fresh?' · '+fresh:'');
