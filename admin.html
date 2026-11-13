@@ -627,15 +627,27 @@ function radCard(r){
   if(r.status==='active'){const reps=(radarRepList||[]).filter(function(p){return p.radar_id===r.id});if(reps.length){h+='<div class="panel" style="margin-top:10px"><div class="udh">Выданные отчёты — можно удалить и выдать заново</div>';reps.forEach(function(p){h+='<div class="row" style="align-items:center;margin-top:6px">'+'<div style="flex:1;min-width:150px">'+escH(p.title||'—')+' <span class="note">· '+escH(p.period||'')+'</span></div>'+'<button class="btn mute" data-act="rep-open" data-rep="'+p.id+'" data-url="'+escH(p.report_url||'')+'">ОТКРЫТЬ</button>'+'<button class="btn danger" data-act="rep-del" data-rep="'+p.id+'">УДАЛИТЬ</button>'+'</div>'});h+='</div>'}}
   h+='<div style="margin-top:8px"><span class="udh">Запросы (по одному в строке, до 10)</span>'
     +'<textarea id="rq-'+r.id+'" rows="6" style="width:100%;background:#150B26;color:#fff;border:1px solid rgba(157,123,255,.35);border-radius:10px;padding:8px;font:12.5px Exo 2;resize:vertical">'+escH(radQueriesText(r.queries))+'</textarea></div>';
-  h+='<div class="row" style="margin-top:8px">'
-    +'<button class="btn" data-act="save" data-id="'+r.id+'">СОХРАНИТЬ ЗАПРОСЫ</button>'
-    +'<button class="btn" data-act="send" data-id="'+r.id+'">ОТПРАВИТЬ НА СОГЛАСОВАНИЕ</button>'
-    +'<button class="btn mute" data-act="pay" data-id="'+r.id+'">ОПЛАТА ПРОШЛА ✓</button>'
-    +'<button class="btn mute" data-act="pause" data-id="'+r.id+'">'+((r.status==='paused')?'ВКЛЮЧИТЬ':'ПАУЗА')+'</button>'
-    +'<button class="btn danger" data-act="del" data-id="'+r.id+'">УДАЛИТЬ</button>'
-    +'<button class="btn gold" data-act="report" data-id="'+r.id+'">ВЫДАТЬ ОТЧЁТ</button>'
-    +'</div>';
-  if(r.approve_token&&r.approve_status!=='none'){
+  if(r.status==='active'){
+    h+='<div class="row" style="margin-top:8px">'
+      +'<button class="btn" data-act="save" data-id="'+r.id+'">СОХРАНИТЬ ЗАПРОСЫ</button>'
+      +'<button class="btn" data-act="send" data-id="'+r.id+'">ИЗМЕНИТЬ ЗАПРОСЫ → НОВОЕ СОГЛАСОВАНИЕ</button>'
+      +'<button class="btn mute" data-act="pause" data-id="'+r.id+'">'+((r.status==='paused')?'ВКЛЮЧИТЬ':'ПАУЗА')+'</button>'
+      +'<button class="btn danger" data-act="del" data-id="'+r.id+'">УДАЛИТЬ</button>'
+      +'<button class="btn gold" data-act="report" data-id="'+r.id+'">ВЫДАТЬ ОТЧЁТ</button>'
+      +'</div>';
+  }else{
+    const approvedOk=(r.approve_status==='approved');
+    h+='<div class="row" style="margin-top:8px">'
+      +'<button class="btn" data-act="save" data-id="'+r.id+'">СОХРАНИТЬ ЗАПРОСЫ</button>'
+      +(approvedOk?'':'<button class="btn" data-act="send" data-id="'+r.id+'">ОТПРАВИТЬ НА СОГЛАСОВАНИЕ</button>')
+      +'<button class="btn mute" data-act="pay" data-id="'+r.id+'">ОПЛАТА ПРОШЛА ✓</button>'
+      +'<button class="btn mute" data-act="pause" data-id="'+r.id+'">'+((r.status==='paused')?'ВКЛЮЧИТЬ':'ПАУЗА')+'</button>'
+      +'<button class="btn danger" data-act="del" data-id="'+r.id+'">УДАЛИТЬ</button>'
+      +'<button class="btn gold" data-act="report" data-id="'+r.id+'">ВЫДАТЬ ОТЧЁТ</button>'
+      +'</div>';
+    if(approvedOk)h+='<div class="udline" style="margin-top:6px"><b>Согласование:</b> клиент утвердил набор запросов ✓ (кнопка согласования закрыта)</div>';
+  }
+  if(r.approve_token&&(r.approve_status==='sent'||r.approve_status==='changes')){
     h+='<div class="panel" style="margin-top:10px"><div class="udh">Ссылка согласования</div>'
       +'<div class="mono" style="word-break:break-all">https://geo-upgrade.ru/radar-approve.html?t='+r.approve_token+'</div>'
       +'<button class="btn mute" data-act="copy" data-id="'+r.id+'" style="margin-top:8px">СКОПИРОВАТЬ ПИСЬМО</button></div>';
@@ -659,9 +671,12 @@ async function radAct(act,id,radId,repId,repUrl){
       await api('/rest/v1/radar_clients?id=eq.'+id,'PATCH',{queries:qs});
       toast('Запросы сохранены ('+qs.length+' шт.)');await renderRadar();
     }else if(act==='send'){
+      if(r.status==='active'&&!confirm('Сформировать новое согласование? Текущие замеры продолжают идти по старому набору, пока клиент не утвердит новый. Активность и оплата не сбросятся.'))return;
       const ta=$('rq-'+id);if(ta){const qs=ta.value.split('\n').map(function(s){return s.trim()}).filter(Boolean).slice(0,10);if(qs.length)await api('/rest/v1/radar_clients?id=eq.'+id,'PATCH',{queries:qs})}
       const tk=crypto.randomUUID();
-      await api('/rest/v1/radar_clients?id=eq.'+id,'PATCH',{approve_token:tk,approve_status:'sent',approve_sent_at:new Date().toISOString(),status:'configured'});
+      const patch={approve_token:tk,approve_status:'sent',approve_sent_at:new Date().toISOString()};
+      if(r.status!=='active')patch.status='configured';
+      await api('/rest/v1/radar_clients?id=eq.'+id,'PATCH',patch);
       const link='https://geo-upgrade.ru/radar-approve.html?t='+tk;
       const letter=radLetter(r,tk);
       if(navigator.clipboard&&navigator.clipboard.writeText){try{await navigator.clipboard.writeText(letter)}catch(e){}}
