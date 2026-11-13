@@ -550,6 +550,7 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
     <button type="button" class="cabtab" data-k="profile">АНКЕТА</button>
     <button type="button" class="cabtab" data-k="orders">ЗАКАЗЫ</button>
     <button type="button" class="cabtab" data-k="digital">ЦИФРОВЫЕ</button>
+<button type="button" class="cabtab" data-k="radar">РАДАР</button>
     <button type="button" class="cabtab" data-k="catalog">КАТАЛОГ</button>
     <button type="button" class="cabtab" data-k="reports">ОТЧЁТЫ</button>
     <button type="button" class="cabtab" data-k="fav">ИЗБРАННОЕ</button>
@@ -692,7 +693,7 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
         <div id="catalog-box"></div>
         <div class="catalog-item" style="border-color:rgba(0,240,255,.45)">
           <div style="min-width:170px;flex:1"><b>GEO-радар · авто-отчёты 2×/нед</b><div class="note" style="margin:3px 0 2px">Подписка: 10 запросов, Яндекс (Алиса) + GigaChat, 8 отчётов в месяц с рекомендациями и слепыми зонами. Старт с анкеты: лаборатория соберёт запросы и пришлёт ссылку на оплату.</div><div class="note" style="color:#FFD66E">1499 ₽/мес</div></div>
-          <a class="btn btn-neon" href="radar-start.html" style="padding:9px 16px;font-size:12px;text-decoration:none">Заполнить анкету →</a>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-neon" href="radar-start.html" style="padding:9px 16px;font-size:12px;text-decoration:none">Заполнить анкету →</a><a class="btn btn-ghost" href="radar.html" style="padding:9px 16px;font-size:12px;text-decoration:none">Как это работает →</a></div>
         </div>
     </section>
 
@@ -847,7 +848,7 @@ async function postLabOrder(s,svc,puid,em){try{await fetch('https://cpaevaypyplw
   const ords=orders().filter(o=>o.email===(s.email||'').toLowerCase());
   const DONEST=['Подтверждён','Подтверждено','Выполняется','Готово','Завершён'];
   const paid=ords.some(o=>DONEST.includes(o.status));
-  const steps=[['Заполнить анкету',!!(prof&&prof.brand)],['Оставить заявку или купить продукт',ords.length>0],['Оплата подтверждена',paid]];
+  const steps=[['Заполнить анкету',!!(prof&&prof.brand)],['Оставить заявку или купить продукт',ords.length>0||(window.__labDig||0)>0],['Оплата подтверждена',paid]];
   let stHtml='';
   steps.forEach(x=>{stHtml+='<div style="display:flex;gap:8px;align-items:baseline;margin:6px 0"><span style="color:'+(x[1]?'#00F0FF':'#8A86A0')+';font-weight:700">'+(x[1]?'✓':'○')+'</span><span>'+(x[1]?'<s style="opacity:.55">'+x[0]+'</s>':x[0])+'</span></div>'});
   card('МОЙ ПУТЬ',stHtml);
@@ -927,7 +928,7 @@ function showDash(){
 }
 function renderOrders(){
   const list=orders().filter(o=>o.email===(session()||{}).email||String(o.id||'').indexOf('sb')===0);
-  $('st-orders').textContent=String(list.length);
+  window.__labN=list.length;$('st-orders').textContent=String(list.length+(window.__labDig||0));
   const conf=new Set((statuses().confirmed||[]).map(x=>x.uid+'|'+(x.email||'').toLowerCase()));
   const box=$('orders-box');box.innerHTML='';
   if(!list.length){box.innerHTML='<p class="note">Пока пусто. Нажмите «Оплатить» на странице любой услуги — заявка и оплата соберутся здесь.</p>';return}
@@ -1202,14 +1203,14 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
   async function renderDigital(){
     const box=$('digital-box');if(!box)return;
     const a=dgSess();
-    if(!a||!a.token){box.innerHTML='<p class="note">Войдите в кабинет — здесь появятся купленные цифровые продукты и доступ к курсам.</p>';const st=$('st-digital');if(st)st.textContent='0';return}
+    if(!a||!a.token){box.innerHTML='<p class="note">Войдите в кабинет — здесь появятся купленные цифровые продукты и доступ к курсам.</p>';const st=$('st-digital');if(st)st.textContent='0';window.__labDig=0;const so2=$('st-orders');if(so2)so2.textContent=String(window.__labN||0);return}
     let q=SB+'/rest/v1/digital_orders?order=created_at.desc';
     if(a.uid) q+='&or=(user_id.eq.'+a.uid+',email.eq.'+encodeURIComponent(String(a.email||'').toLowerCase())+')';
     else q+='&email=eq.'+encodeURIComponent(String(a.email||'').toLowerCase());
     try{
       const r=await fetch(q,{headers:{apikey:KEY,Authorization:'Bearer '+a.token}});
       const rows=await r.json().catch(()=>[]);
-      const st=$('st-digital'); if(st) st.textContent=String((rows||[]).length);
+      const st=$('st-digital'); if(st) st.textContent=String((rows||[]).length);window.__labDig=(rows||[]).length;const so=$('st-orders');if(so)so.textContent=String((window.__labN||0)+(rows||[]).length);
       let html='';
       DIG.forEach(function(p){
         const o=(rows||[]).find(function(x){return x.product_id===p.code&&x.status!=='rejected';});
@@ -1251,6 +1252,7 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
     ['profile','АНКЕТА','sec-profile'],
     ['orders','ЗАКАЗЫ','sec-orders'],
     ['digital','ЦИФРОВЫЕ','sec-digital'],
+    ['radar','РАДАР','sec-radar'],
     ['catalog','КАТАЛОГ','sec-catalog'],
     ['reports','ОТЧЁТЫ','sec-reports'],
     ['fav','ИЗБРАННОЕ','sec-fav'],

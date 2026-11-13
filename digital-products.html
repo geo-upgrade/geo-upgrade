@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
+<!DOCTYPE html><html lang="ru"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Цифровые продукты лаборатории — курсы, чек-листы, промпты | GEO-Апгрейд</title>
@@ -55,8 +53,45 @@ h2{font-family:Orbitron,sans-serif;font-size:clamp(20px,3vw,28px);line-height:1.
 a.c{color:#00F0FF;text-decoration:none}
 a.c:hover{text-decoration:underline}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Цифровые продукты GEO-Апгрейд","itemListElement":[{"@type":"ListItem","position":1,"name":"Чек-лист «Проверь бренд в нейросетях»"},{"@type":"ListItem","position":2,"name":"20 промптов для AI-видимости"},{"@type":"ListItem","position":3,"name":"Шаблон AI-Паспорта компании"},{"@type":"ListItem","position":4,"name":"Курс «Проверь бренд в ИИ за вечер»"},{"@type":"ListItem","position":5,"name":"GEO-радар — подписка на авто-отчёты"}]}</script>
-</head>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Цифровые продукты GEO-Апгрейд","itemListElement":[{"@type":"ListItem","position":1,"name":"Чек-лист «Проверь бренд в нейросетях»"},{"@type":"ListItem","position":2,"name":"20 промптов для AI-видимости"},{"@type":"ListItem","position":3,"name":"Шаблон AI-Паспорта компании"},{"@type":"ListItem","position":4,"name":"Курс «Проверь бренд в ИИ за вечер»"},{"@type":"ListItem","position":5,"name":"GEO-радар — подписка на авто-отчёты"},{"@type":"ListItem","position":5,"name":"GEO-радар — подписка на авто-отчёты"}]}</script>
+<style>#geoas-root,#geoas-root *{box-sizing:border-box;margin:0;padding:0}
+#geoas-root{position:relative;z-index:2147483000;font-family:"Exo 2",-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+#geoas-btn{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;border:1px solid rgba(0,240,255,.6);cursor:pointer;z-index:2147483001;background:linear-gradient(140deg,#16092A,#1B0B31);box-shadow:0 0 22px rgba(0,240,255,.45),0 4px 18px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease}
+#geoas-btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(0,240,255,.65),0 4px 18px rgba(0,0,0,.5)}
+#geoas-btn svg{width:26px;height:26px;stroke:#00F0FF;fill:none;stroke-width:1.8}
+#geoas-panel{position:fixed;right:22px;bottom:92px;width:min(384px,calc(100vw - 24px));height:min(560px,calc(100vh - 120px));z-index:2147483002;border-radius:18px;border:1px solid rgba(0,240,255,.35);background:linear-gradient(160deg,#16092A 0%,#0D0618 55%,#1B0B31 100%);box-shadow:0 0 28px rgba(0,240,255,.22),0 12px 40px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#geoas-panel.geoas-open{display:flex;animation:geoasIn .22s ease}
+@keyframes geoasIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+#geoas-head{padding:14px 16px 12px;border-bottom:1px solid rgba(0,240,255,.18);display:flex;align-items:center;gap:10px;background:rgba(0,240,255,.05)}
+#geoas-head .geoas-logo{width:34px;height:34px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#00F0FF 0%,#1B0B31 70%);box-shadow:0 0 12px rgba(0,240,255,.6)}
+#geoas-head .geoas-t{color:#fff;font-family:Orbitron,"Exo 2",sans-serif;font-size:12px;letter-spacing:.06em}
+#geoas-head .geoas-s{color:rgba(255,255,255,.55);font-size:11px}
+#geoas-badge{margin-left:auto;font-size:9px;color:#0D0618;background:#00F0FF;border-radius:8px;padding:2px 7px;letter-spacing:.08em;font-family:Orbitron,sans-serif}
+#geoas-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+#geoas-close:hover{color:#00F0FF}
+#geoas-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,240,255,.4) transparent}
+.geoas-m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13.5px;color:#fff;white-space:pre-wrap;word-break:break-word}
+.geoas-a{align-self:flex-start;background:rgba(0,240,255,.08);border-left:2px solid rgba(0,240,255,.7);border-radius:4px 12px 12px 12px}
+.geoas-u{align-self:flex-end;background:rgba(255,255,255,.09);border-radius:12px 4px 12px 12px}
+.geoas-src{align-self:flex-start;max-width:88%;font-size:11px;color:rgba(255,255,255,.5)}
+.geoas-src a{color:#00F0FF;text-decoration:none;opacity:.85}
+.geoas-src a:hover{text-decoration:underline;opacity:1}
+.geoas-typing{align-self:flex-start;color:rgba(255,255,255,.6);font-size:13px;padding:4px 2px}
+.geoas-typing span{animation:geoasBlink 1.2s infinite}
+.geoas-typing span:nth-child(2){animation-delay:.2s}
+.geoas-typing span:nth-child(3){animation-delay:.4s}
+@keyframes geoasBlink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+#geoas-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.geoas-chip{font-size:11.5px;color:#00F0FF;border:1px solid rgba(0,240,255,.4);border-radius:999px;padding:5px 11px;cursor:pointer;background:rgba(0,240,255,.05);font-family:"Exo 2",sans-serif}
+.geoas-chip:hover{background:rgba(0,240,255,.16)}
+#geoas-inputrow{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,240,255,.18);background:rgba(0,0,0,.25)}
+#geoas-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(0,240,255,.25);border-radius:10px;color:#fff;font-size:13.5px;padding:10px 12px;outline:none;font-family:"Exo 2",sans-serif}
+#geoas-input::placeholder{color:rgba(255,255,255,.35)}
+#geoas-input:focus{border-color:rgba(0,240,255,.6);box-shadow:0 0 8px rgba(0,240,255,.25)}
+#geoas-send{width:42px;border-radius:10px;border:1px solid rgba(0,240,255,.5);background:linear-gradient(140deg,rgba(0,240,255,.25),rgba(27,11,49,.6));cursor:pointer;display:flex;align-items:center;justify-content:center}
+#geoas-send:hover{background:rgba(0,240,255,.3)}
+#geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
+@media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style></head>
 <body>
 <div class="topbar"><a class="brand" href="index.html">GEO-АПГРЕЙД</a><nav><a href="index.html">Главная</a><a href="services.html">Услуги</a><a href="digital-products.html" class="on">Продукты</a><a href="blog.html">Блог</a><a href="cabinet.html">Личный кабинет</a></nav></div>
 <main>
@@ -96,6 +131,13 @@ a.c:hover{text-decoration:underline}
         <h3>GEO-радар — авто-отчёты 2×/нед</h3>
         <p>Автоматические отчёты об AI-видимости: вторник и суббота, 10 запросов, Яндекс (Алиса) + GigaChat, блок «что нейросеть говорит неверно», рекомендации и слепые зоны. Анкета — один шаг до запуска.</p>
         <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="price">1499 ₽/мес</span><a class="btn btn-gold" href="radar-start.html">ЗАПОЛНИТЬ АНКЕТУ →</a></div>
+      <div class="pcard" style="border-color:rgba(0,240,255,.45)">
+        <span class="tag">ПОДСПИСКА</span>
+        <h3>GEO-радар — авто-отчёты 2×/нед</h3>
+        <p>Пока вы работаете, клиенты спрашивают не у Яндекса — они спрашивают у нейросетей: Алиса, GigaChat, Perplexity. GEO-радар дважды в неделю (вторник и суббота, 12:00 НСК) прогоняет 10 ваших запросов через индекс Яндекса и нейросети — и присылает отчёт: где вас видят, что отвечают дословно, где слепые зоны и что чинить первым.</p>
+        <p class="note" style="margin:6px 0 0">1499 ₽/мес · 8 отчётов · пауза и правки запросов — в один клик.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px"><a class="btn btn-gold" href="radar.html">КАК ЭТО РАБОТАЕТ →</a><a class="btn btn-neon" href="radar-start.html">ЗАПОЛНИТЬ АНКЕТУ →</a></div>
+      </div>
       </div>
     </div>
   </section>
@@ -112,8 +154,9 @@ a.c:hover{text-decoration:underline}
 </main>
 <footer class="wrap foot">GEO-Апгрейд — лаборатория AI-видимости бренда · <a class="c" href="index.html">geo-upgrade.ru</a></footer>
 <script src="lab-digital.js"></script>
-<script src="lab-account.js" defer></script>
+<script src="lab-account.js" defer=""></script>
 <script>window.GEO_ASSISTANT_CONFIG={endpoint:"https://geo-assistant.dafna-acid.workers.dev"}</script>
-<script src="/geo-assistant-widget.js" defer></script>
-</body>
-</html>
+<script src="/geo-assistant-widget.js" defer=""></script>
+
+
+<a id="lab-lk-btn" href="cabinet.html" aria-label="Личный кабинет" style="position: fixed; right: 14px; bottom: 88px; z-index: 60; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(212, 184, 150, 0.55); background: rgba(13, 6, 24, 0.94); color: rgb(255, 214, 110); font: 600 13px / 1.2 system-ui, -apple-system, sans-serif; letter-spacing: 0.04em; text-decoration: none; white-space: nowrap; cursor: pointer;">ЛК</a><button id="lab-fav-btn" type="button" aria-label="В избранное" title="В избранное" style="position: fixed; left: 16px; bottom: 16px; z-index: 60; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.3); background: rgb(21, 11, 38); color: rgb(244, 244, 250); cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#F4F4FA" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9C1 8.6 2.9 5.4 6.2 5.1c2-.2 3.9.9 4.8 2.6l1 1.7 1-1.7c.9-1.7 2.8-2.8 4.8-2.6 3.3.3 5.2 3.5 3.7 6.9-2 4.4-9.5 9-9.5 9z"></path></svg></button><div id="geoas-root"><button id="geoas-btn" aria-label="Открыть чат с ассистентом"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"></path><path d="M8.5 10.5h7M8.5 13.5h4.5"></path></svg></button><div id="geoas-panel"><div id="geoas-head"><div class="geoas-logo"></div><div><div class="geoas-t">GEO-АПГРЕЙД · AI-АССИСТЕНТ</div><div class="geoas-s">Главный лаборант</div></div><button id="geoas-close" aria-label="Закрыть">×</button></div><div id="geoas-msgs"></div><div id="geoas-chips"><button class="geoas-chip">Сколько стоит аудит?</button><button class="geoas-chip">Что такое цифровой призрак?</button><button class="geoas-chip">Что входит в GEO-сканер?</button></div><div id="geoas-inputrow"><input id="geoas-input" type="text" placeholder="Ваш вопрос…"><button id="geoas-send" aria-label="Отправить"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div></div></div></body></html>
