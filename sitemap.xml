@@ -186,7 +186,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/cases.html</loc>
-<lastmod>2026-11-09</lastmod>
+<lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/about-daria-zharkikh.html</loc>
@@ -274,7 +274,7 @@
   </url>
   <url>
     <loc>https://geo-upgrade.ru/case-geo-app.html</loc>
-<lastmod>2026-11-13</lastmod>
+<lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://geo-upgrade.ru/case-strategy-selfaudit.html</loc>
@@ -379,4 +379,8 @@
   </url>
 
 <url><loc>https://geo-upgrade.ru/case-tricolor54.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url>
+    <loc>https://geo-upgrade.ru/academy-app.html</loc>
+<lastmod>2026-11-13</lastmod>
+  </url>
 </urlset>
