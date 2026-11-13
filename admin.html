@@ -565,10 +565,12 @@ async function delUser(u){
 
 /* ================= РАДАР ================= */
 let radarCache=[];
+let radarRepCounts={};
 function radBadge(txt,color){return '<span class="badge" style="border-color:'+color+';color:'+color+'">'+txt+'</span>'}
 function radStatus(r){
   const out=[];
   out.push(radBadge((r.status||'new').toUpperCase(),{new:'#FFD66E',configured:'#00E5FF',active:'#7CFC9B',paused:'#8A86A0'}[r.status]||'#FFD66E'));
+  if((r.status||'new')==='active')out.push(radBadge('АВТОМАТИКА ВКЛЮЧЕНА','#00FF9C'));
   if((r.pay_status||'not_paid')==='paid')out.push(radBadge('ОПЛАЧЕНО','#7CFC9B'));else out.push(radBadge('НЕ ОПЛАЧЕНО','#FF4FD8'));
   if((r.approve_status||'none')==='approved')out.push(radBadge('ЗАПРОСЫ СОГЛАСОВАНЫ','#7CFC9B'));
   else if((r.approve_status||'none')==='changes')out.push(radBadge('ПРАВКИ КЛИЕНТА','#FFD66E'));
@@ -579,6 +581,7 @@ async function renderRadar(){
   try{
     const list=await api('/rest/v1/radar_clients?order=created_at.desc');
     radarCache=list;
+    try{const rr=await api('/rest/v1/radar_reports?order=created_at.desc');radarRepCounts={};(rr||[]).forEach(function(p){radarRepCounts[p.radar_id]=(radarRepCounts[p.radar_id]||0)+1})}catch(e){radarRepCounts={}}
     const tb=document.querySelector('[data-tab="tab-radar"]');
     const fresh=list.filter(function(r){return (r.status||'new')==='new'}).length;
     if(tb)tb.textContent='РАДАР'+(fresh?' · '+fresh:'');
@@ -605,6 +608,7 @@ function radCard(r){
   if(r.notes)det+='<div class="udline"><b>Заметки:</b> '+escH(r.notes)+'</div>';
   if(r.approve_status==='changes'&&r.approve_comment)det+='<div class="udmsg" style="border-left:2px solid #FFD66E;padding-left:8px"><b>Правки клиента:</b> '+escH(r.approve_comment)+'</div>';
   if(det)h+='<div style="margin-top:6px">'+det+'</div>';
+  if(r.status==='active')h+='<div class="udline" style="margin-top:6px"><b>Автоматика:</b> замеры вт и сб 12:00 (НСК) · отчётов выдано: '+(radarRepCounts[r.id]||0)+'</div>';
   h+='<div style="margin-top:8px"><span class="udh">Запросы (по одному в строке, до 10)</span>'
     +'<textarea id="rq-'+r.id+'" rows="6" style="width:100%;background:#150B26;color:#fff;border:1px solid rgba(157,123,255,.35);border-radius:10px;padding:8px;font:12.5px Exo 2;resize:vertical">'+escH(radQueriesText(r.queries))+'</textarea></div>';
   h+='<div class="row" style="margin-top:8px">'
@@ -612,6 +616,7 @@ function radCard(r){
     +'<button class="btn" data-act="send" data-id="'+r.id+'">ОТПРАВИТЬ НА СОГЛАСОВАНИЕ</button>'
     +'<button class="btn mute" data-act="pay" data-id="'+r.id+'">ОПЛАТА ПРОШЛА ✓</button>'
     +'<button class="btn mute" data-act="pause" data-id="'+r.id+'">'+((r.status==='paused')?'ВКЛЮЧИТЬ':'ПАУЗА')+'</button>'
+    +'<button class="btn danger" data-act="del" data-id="'+r.id+'">УДАЛИТЬ</button>'
     +'</div>';
   if(r.approve_token&&r.approve_status!=='none'){
     h+='<div class="panel" style="margin-top:10px"><div class="udh">Ссылка согласования</div>'
@@ -654,6 +659,12 @@ async function radAct(act,id){
       const ns=(r.status==='paused')?'active':'paused';
       await api('/rest/v1/radar_clients?id=eq.'+id,'PATCH',{status:ns});
       toast(ns==='paused'?'Пауза':'Подписка включена');await renderRadar();
+    }else if(act==='del'){
+      if(!confirm('Удалить запись радара «'+(r.brand||'')+'» ('+(r.email||'')+')?\nУдалится: анкета, статусы, запросы и согласование. Заявка «GEO-радар» в ЗАКАЗАХ тоже будет удалена. У клиента панель радара исчезнет. Отменить нельзя.'))return;
+      await api('/rest/v1/radar_clients?id=eq.'+id,'DELETE');
+      if(r.email){try{await api('/rest/v1/lab_orders?service_id=eq.radar-monthly&email=eq.'+encodeURIComponent(r.email),'DELETE')}catch(e){}}
+      toast('Радар-запись удалена — у клиента панель исчезнет в течение минуты');
+      await renderRadar();
     }
   }catch(e){toast('Не вышло: '+e.message)}
 }
