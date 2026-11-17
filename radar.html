@@ -26,17 +26,17 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%);background-attachment:fixed;color:#F5F7FA;font-family:'Exo 2',sans-serif;line-height:1.6;min-height:100vh}
 .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
-.topbar{position:sticky;top:0;z-index:50;background:rgba(15,10,30,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(92,225,255,.25);padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.topbar .brand{font-family:Orbitron,sans-serif;font-size:13px;letter-spacing:.14em;color:#5ce1ff;text-decoration:none;font-weight:700}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(22,9,42,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,240,255,.25);padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar .brand{font-family:Orbitron,sans-serif;font-size:13px;letter-spacing:.14em;color:#00F0FF;text-decoration:none;font-weight:700}
 .topbar nav{display:flex;gap:16px;flex-wrap:wrap}
 .topbar nav a{color:#B8BCC6;text-decoration:none;font-size:14px}
-.topbar nav a:hover{color:#5ce1ff}
+.topbar nav a:hover{color:#00F0FF}
 .hero{padding:56px 0 20px;position:relative}
 .kicker{font-family:Orbitron,sans-serif;font-size:12px;letter-spacing:.22em;color:#00F0FF;text-transform:uppercase;margin:0}
 h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:14px 0 10px;font-weight:600}
 h2{font-size:clamp(24px,3.6vw,34px);line-height:1.2;margin:0 0 8px;font-weight:600}
 .lead{color:#B8BCC6;max-width:720px;font-size:17px}
-.panel{background:rgba(15,10,30,.72);border:1px solid rgba(157,123,255,.35);border-radius:16px;padding:22px 24px;margin:18px 0}
+.panel{background:rgba(22,9,42,.72);border:1px solid rgba(167,139,250,.35);border-radius:16px;padding:22px 24px;margin:18px 0}
 .panel.neon{border-color:rgba(0,240,255,.45);box-shadow:0 0 24px rgba(0,240,255,.10)}
 .grid{display:grid;gap:14px}
 @media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}}
@@ -46,28 +46,119 @@ h2{font-size:clamp(24px,3.6vw,34px);line-height:1.2;margin:0 0 8px;font-weight:6
 .step b{display:block;margin-bottom:2px}
 .step p{margin:0;color:#B8BCC6;font-size:15px}
 ul.pts{margin:8px 0 0;padding-left:0;list-style:none}
-ul.pts li{padding:6px 0 6px 26px;position:relative;color:#E7E9F2}
+ul.pts li{padding:6px 0 6px 26px;position:relative;color:#F5F7FA}
 ul.pts li::before{content:"▸";position:absolute;left:2px;color:#00F0FF;font-weight:700}
 ul.pts b{color:#F5F7FA}
 .btn{display:inline-block;padding:12px 22px;border-radius:12px;font-family:Orbitron,sans-serif;font-size:13px;letter-spacing:.08em;text-decoration:none;cursor:pointer;border:1px solid transparent}
-.btn-neon{background:linear-gradient(135deg,#0FA8C9,#00F0FF);color:#0D0618;font-weight:700;box-shadow:0 0 18px rgba(0,240,255,.35)}
+.btn-neon{background:linear-gradient(135deg,#00F0FF,#00F0FF);color:#0D0618;font-weight:700;box-shadow:0 0 18px rgba(0,240,255,.35)}
 .btn-neon:hover{box-shadow:0 0 28px rgba(0,240,255,.55)}
-.btn-ghost{background:transparent;color:#5ce1ff;border-color:rgba(0,240,255,.4)}
+.btn-ghost{background:transparent;color:#00F0FF;border-color:rgba(0,240,255,.4)}
 .btn-ghost:hover{background:rgba(0,240,255,.08)}
-.price-big{font-family:Orbitron,sans-serif;font-size:30px;color:#FFD66E;letter-spacing:.04em}
+.price-big{font-family:Orbitron,sans-serif;font-size:30px;color:#00F0FF;letter-spacing:.04em}
 figure.hero-fig{margin:20px auto;max-width:520px}
 figure.hero-fig img{width:100%;border-radius:14px;border:1px solid rgba(0,240,255,.35);display:block}
-.faq{border:1px solid rgba(157,123,255,.3);border-radius:12px;padding:14px 18px;margin:10px 0;background:rgba(15,10,30,.5)}
+.faq{border:1px solid rgba(167,139,250,.3);border-radius:12px;padding:14px 18px;margin:10px 0;background:rgba(22,9,42,.5)}
 .faq b{color:#fff}
 .faq p{margin:6px 0 0;color:#B8BCC6;font-size:15px}
-.lab-card{border:1px solid rgba(212,184,150,.4);border-radius:16px;padding:18px 22px;margin:28px 0;background:rgba(26,16,48,.6)}
-.lab-card .k{font-family:Orbitron,sans-serif;font-size:11px;letter-spacing:.2em;color:#FFD66E;text-transform:uppercase}
-footer.foot{padding:26px 0 40px;color:#7E7A92;font-size:13px;text-align:center}
+.lab-card{border:1px solid rgba(167,139,250,.4);border-radius:16px;padding:18px 22px;margin:28px 0;background:rgba(31,18,64,.6)}
+.lab-card .k{font-family:Orbitron,sans-serif;font-size:11px;letter-spacing:.2em;color:#00F0FF;text-transform:uppercase}
+footer.foot{padding:26px 0 40px;color:#8A93B8;font-size:13px;text-align:center}
 a{color:#00F0FF}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
 .note{color:#B8BCC6;font-size:14px}
 </style>
-</head><body>
+<style id="geo-design-system-v2">
+/* ===== GEO-Апгрейд · Design System v2.2 (17.11.2026): неон + лазер + сетка + фиолет + пилюли ===== */
+:root{
+  --g-bg:#0D0618;--g-card:#16092A;--g-card2:#1B0B31;
+  --g-vio-deep:#6D28D9;--g-vio:#8B5CF6;--g-vio-light:#A78BFA;--g-vio-soft:#C4B5FD;
+  --g-neon:#00F0FF;--g-text:#F5F7FA;--g-dim:#B8BCC6;--g-gold:#E8B84B;
+}
+body{
+  background-image:
+    linear-gradient(rgba(0,240,255,.030) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,240,255,.030) 1px,transparent 1px),
+    radial-gradient(70% 50% at 18% -5%,rgba(109,40,217,.16),transparent 60%),
+    radial-gradient(55% 40% at 88% 4%,rgba(139,92,246,.10),transparent 62%),
+    linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%) !important;
+  background-size:46px 46px,46px 46px,auto,auto,cover !important;
+  background-attachment:fixed !important;
+}
+.card{background:linear-gradient(180deg,rgba(27,11,49,.92),rgba(22,9,42,.94)) !important;
+  border:1px solid rgba(167,139,250,.22) !important;border-radius:14px}
+.card:hover{border-color:rgba(0,240,255,.45) !important;
+  box-shadow:0 10px 30px rgba(109,40,217,.28),0 0 0 1px rgba(0,240,255,.18)}
+header.sticky{position:sticky}
+.jnav-beige-panel{position:sticky}
+header.sticky::after,.jnav-beige-panel::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%,rgba(0,240,255,.25) 15%,rgba(0,240,255,.85) 46%,#00F0FF 50%,rgba(0,240,255,.85) 54%,rgba(0,240,255,.25) 85%,transparent 100%);
+  background-size:240% 100%;animation:geo-laser-run 6.5s linear infinite}
+@keyframes geo-laser-run{0%{background-position:115% 0}45%{background-position:-15% 0}46%{background-position:-15% 0}100%{background-position:-115% 0}}
+.card::after{content:"";position:absolute;left:0;right:0;top:0;height:0;pointer-events:none;transition:height .25s}
+.card:hover::after{height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,rgba(0,240,255,.9),transparent);
+  background-size:200% 100%;animation:geo-laser-run 1.8s linear infinite}
+.btn{position:relative;overflow:hidden;transition:box-shadow .25s,transform .25s,background-color .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.glow::before,.btn-pay::before,.btn-neon::before{content:"";position:absolute;top:0;bottom:0;left:-45%;width:35%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.20),transparent);
+  transform:skewX(-18deg);animation:geo-sweep 4.6s ease-in-out infinite;pointer-events:none}
+@keyframes geo-sweep{0%{left:-45%}55%{left:115%}100%{left:115%}}
+.btn-pay{background:linear-gradient(135deg,#F5CD66,#E8B84B) !important;color:#241A05 !important;
+  font-weight:700 !important;box-shadow:0 0 16px rgba(232,184,75,.35),inset 0 1px 0 rgba(255,255,255,.45) !important;
+  border:none !important;text-shadow:none}
+.btn-pay::before{background:linear-gradient(105deg,transparent,rgba(255,255,255,.34),transparent)}
+.btn-pay:hover{box-shadow:0 0 28px rgba(232,184,75,.6),inset 0 1px 0 rgba(255,255,255,.45) !important;
+  transform:translateY(-2px)}
+.dgx-buy{background:linear-gradient(90deg,#F5CD66,#E8B84B) !important;color:#241A05 !important;text-shadow:none;
+  box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.45) !important;
+  transition:box-shadow .25s,transform .25s}
+.dgx-buy:hover{box-shadow:0 0 24px rgba(232,184,75,.5),inset 0 1px 0 rgba(255,255,255,.45) !important;
+  transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#F5CD66,#E8B84B) !important;color:#241A05 !important;
+  box-shadow:0 0 16px rgba(232,184,75,.35) !important;text-shadow:none}
+.jnav-quick a,.jnav-nav a{color:#B8BCC6}
+.jnav-quick a:hover,.jnav-nav a:hover{color:#00F0FF}
+.jnav-btn{border-color:rgba(0,240,255,.55);background:rgba(0,240,255,.06)}
+.jnav-btn span{background:#00F0FF}
+.jnav-btn:hover,.jnav-btn:focus-visible{border-color:rgba(0,240,255,.85);background:rgba(0,240,255,.12)}
+.jnav-btn.jnav-beige{border-color:rgba(0,240,255,.55)}
+.jnav-btn.jnav-beige span{background:#00F0FF}
+.jnav-btn.jnav-beige:hover{border-color:rgba(0,240,255,.85)}
+.jnav-beige{border-color:rgba(0,240,255,.55);background:rgba(0,240,255,.06)}
+.jnav-beige span{background:#00F0FF}
+.jnav-beige:hover,.jnav-beige:focus-visible{border-color:rgba(0,240,255,.85);background:rgba(0,240,255,.12)}
+.jnav-beige-panel + .jnav-strip a{color:#B8BCC6}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#00F0FF}
+.accent-beige{color:#A78BFA !important}
+.accent-burgundy{color:#8B5CF6 !important}
+.border-beige{border-color:rgba(167,139,250,.4)}
+.bg-beige{background:#00F0FF !important;color:#0D0618 !important}
+.bg-burgundy{background:#6D28D9 !important;color:#F5F7FA !important}
+.glow-beige{box-shadow:0 0 16px rgba(0,240,255,.3)}
+.glow-burgundy{box-shadow:0 0 16px rgba(109,40,217,.35)}
+.divider{background:linear-gradient(90deg,transparent,rgba(0,240,255,.35),transparent)}
+.table th{background:rgba(109,40,217,.18) !important;color:#A78BFA !important}
+.table th,.table td{border-color:rgba(167,139,250,.25) !important}
+.tag.gold{border-color:rgba(167,139,250,.45) !important;color:#A78BFA !important;background:rgba(139,92,246,.08) !important}
+.price{color:#00F0FF !important}
+.dgx-price{color:#00F0FF !important;text-shadow:0 0 12px rgba(0,240,255,.35)}
+.dgx-chip,.dgx-label{color:#A78BFA !important;border-color:rgba(167,139,250,.5) !important;text-shadow:none}
+@media (prefers-reduced-motion:reduce){
+  header.sticky::after,.jnav-beige-panel::after,.card::after,.btn::before{animation:none}
+}
+
+/* Скругления кнопок (r3): .rounded-md/.rounded-lg наконец работают, кнопки — пилюли */
+.rounded-md{border-radius:10px}
+.rounded-lg{border-radius:14px}
+.btn{border-radius:999px}
+.btn.rounded-md,.btn.rounded-lg,.btn-pay,.dgx-buy,.btn-neon,.btn-gold,
+.btn-city-tomsk,.btn-city-nsk{border-radius:999px !important}
+.jnav-btn{border-radius:12px}
+
+/* ===== конец Design System v2.2 ===== */
+</style></head><body>
 <div class="topbar"><div><a class="brand" href="/">GEO-АПГРЕЙД</a></div><nav><a href="/">Главная</a><a href="services.html">Услуги</a><a href="digital-products.html">Цифровые продукты</a><a href="cabinet.html">Кабинет</a></nav></div>
 <div class="wrap">
   <section class="hero">
@@ -85,7 +176,7 @@ a{color:#00F0FF}
   </section>
 
   <section id="kak">
-    <p class="kicker" style="color:#FFD66E">ПРОТОКОЛ · 4 ШАГА</p>
+    <p class="kicker" style="color:#00F0FF">ПРОТОКОЛ · 4 ШАГА</p>
     <h2 style="margin-top:10px">Как работает радар</h2>
     <div class="panel">
       <div class="step"><span class="n">01</span><div><b>Анкета — пять минут</b><p>Бренд, сайт, город, ниша, конкуренты и то, как вы хотите, чтобы вас называли. Это вход, а не экзамен.</p></div></div>
@@ -124,15 +215,15 @@ a{color:#00F0FF}
     </div>
   </section>
 
-  <section class="panel" style="border-color:rgba(255,214,110,.45)">
-    <p class="kicker" style="color:#FFD66E">ПОДПИСКА</p>
+  <section class="panel" style="border-color:rgba(167,139,250,.45)">
+    <p class="kicker" style="color:#00F0FF">ПОДПИСКА</p>
     <div style="display:flex;gap:20px;align-items:baseline;flex-wrap:wrap;margin-top:8px"><span class="price-big">1499 ₽/мес</span><span class="note">10 запросов · 8 отчётов в месяц · отмена и пауза — в любой момент</span></div>
     <p class="lead" style="margin-top:10px">Оплата — картой через Точку. После оплаты лаборатория активирует замеры, и ближайший вторник или суббота станет вашим первым отчётом.</p>
     <div class="cta-row"><a class="btn btn-neon" href="radar-start.html">ЗАПОЛНИТЬ АНКЕТУ ПОДСПИСКИ →</a><a class="btn btn-ghost" href="contacts.html">ЗАДАТЬ ВОПРОС ЛАБОРАТОРИИ</a></div>
   </section>
 
   <section>
-    <p class="kicker" style="color:#FFD66E">ЧАСТЫЕ ВОПРОСЫ</p>
+    <p class="kicker" style="color:#00F0FF">ЧАСТЫЕ ВОПРОСЫ</p>
     <h2 style="margin-top:10px">Коротко о главном</h2>
     <div class="faq"><b>Почему вторник и суббота?</b><p>Так формируется ритм: два замера в неделю показывают не всплеск, а движение. За месяц набирается 8 отчётов — по ним видно, работает ли то, что вы чините.</p></div>
     <div class="faq"><b>Можно ли поменять запросы?</b><p>Да. Список из 10 запросов согласуется в кабинете: предложите правки — лаборатория скорректирует список, и радар продолжит замеры уже по новым.</p></div>

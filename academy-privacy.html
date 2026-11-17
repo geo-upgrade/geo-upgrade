@@ -4,24 +4,115 @@
 <title>Политика конфиденциальности приложения GEO-Академия — GEO-Апгрейд</title>
 <meta name="description" content="Политика конфиденциальности учебного приложения GEO-Академия от ИП Жарких Дарьи Александровны: email для входа, выдача материалов после оплаты, отчёты радара; без аналитики и трекеров.">
 <style>
-:root{--bg:#0e0818;--panel:#171028;--ink:#e8e2f5;--dim:#a99fc4;--neon:#63d8f2;--gold:#e8c96a;--line:#2c2044}
+:root{--bg:#0D0618;--panel:#16092A;--ink:#F1E9FF;--dim:#B8BCC6;--neon:#00F0FF;--gold:#A78BFA;--line:#2E1B55}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font-family:'Exo 2',system-ui,-apple-system,sans-serif;line-height:1.65;padding:24px 16px 80px}
 .wrap{max-width:760px;margin:0 auto}
 .kicker{font-family:Orbitron,'Exo 2',sans-serif;letter-spacing:.22em;font-size:12px;color:var(--neon);text-transform:uppercase;margin-bottom:10px}
-h1{font-size:30px;font-weight:700;margin-bottom:6px;color:#f5effc}
+h1{font-size:30px;font-weight:700;margin-bottom:6px;color:#F1E9FF}
 h2{font-size:20px;color:var(--gold);margin:34px 0 10px}
 p,li{color:var(--dim);font-size:16px}
 strong{color:var(--ink)}
 ul{padding-left:22px;margin:8px 0}
 li{margin:6px 0}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:18px}
-.meta{font-size:13.5px;color:#8f85ad;margin-top:14px}
+.meta{font-size:13.5px;color:#B8BCC6;margin-top:14px}
 a{color:var(--neon);text-decoration:none}
 a:hover{text-decoration:underline}
 .hl{color:var(--ink)}
 </style>
-</head>
+<style id="geo-design-system-v2">
+/* ===== GEO-Апгрейд · Design System v2.2 (17.11.2026): неон + лазер + сетка + фиолет + пилюли ===== */
+:root{
+  --g-bg:#0D0618;--g-card:#16092A;--g-card2:#1B0B31;
+  --g-vio-deep:#6D28D9;--g-vio:#8B5CF6;--g-vio-light:#A78BFA;--g-vio-soft:#C4B5FD;
+  --g-neon:#00F0FF;--g-text:#F5F7FA;--g-dim:#B8BCC6;--g-gold:#E8B84B;
+}
+body{
+  background-image:
+    linear-gradient(rgba(0,240,255,.030) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,240,255,.030) 1px,transparent 1px),
+    radial-gradient(70% 50% at 18% -5%,rgba(109,40,217,.16),transparent 60%),
+    radial-gradient(55% 40% at 88% 4%,rgba(139,92,246,.10),transparent 62%),
+    linear-gradient(135deg,#16092A 0%,#0D0618 48%,#1B0B31 100%) !important;
+  background-size:46px 46px,46px 46px,auto,auto,cover !important;
+  background-attachment:fixed !important;
+}
+.card{background:linear-gradient(180deg,rgba(27,11,49,.92),rgba(22,9,42,.94)) !important;
+  border:1px solid rgba(167,139,250,.22) !important;border-radius:14px}
+.card:hover{border-color:rgba(0,240,255,.45) !important;
+  box-shadow:0 10px 30px rgba(109,40,217,.28),0 0 0 1px rgba(0,240,255,.18)}
+header.sticky{position:sticky}
+.jnav-beige-panel{position:sticky}
+header.sticky::after,.jnav-beige-panel::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%,rgba(0,240,255,.25) 15%,rgba(0,240,255,.85) 46%,#00F0FF 50%,rgba(0,240,255,.85) 54%,rgba(0,240,255,.25) 85%,transparent 100%);
+  background-size:240% 100%;animation:geo-laser-run 6.5s linear infinite}
+@keyframes geo-laser-run{0%{background-position:115% 0}45%{background-position:-15% 0}46%{background-position:-15% 0}100%{background-position:-115% 0}}
+.card::after{content:"";position:absolute;left:0;right:0;top:0;height:0;pointer-events:none;transition:height .25s}
+.card:hover::after{height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,rgba(0,240,255,.9),transparent);
+  background-size:200% 100%;animation:geo-laser-run 1.8s linear infinite}
+.btn{position:relative;overflow:hidden;transition:box-shadow .25s,transform .25s,background-color .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.glow::before,.btn-pay::before,.btn-neon::before{content:"";position:absolute;top:0;bottom:0;left:-45%;width:35%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.20),transparent);
+  transform:skewX(-18deg);animation:geo-sweep 4.6s ease-in-out infinite;pointer-events:none}
+@keyframes geo-sweep{0%{left:-45%}55%{left:115%}100%{left:115%}}
+.btn-pay{background:linear-gradient(135deg,#F5CD66,#E8B84B) !important;color:#241A05 !important;
+  font-weight:700 !important;box-shadow:0 0 16px rgba(232,184,75,.35),inset 0 1px 0 rgba(255,255,255,.45) !important;
+  border:none !important;text-shadow:none}
+.btn-pay::before{background:linear-gradient(105deg,transparent,rgba(255,255,255,.34),transparent)}
+.btn-pay:hover{box-shadow:0 0 28px rgba(232,184,75,.6),inset 0 1px 0 rgba(255,255,255,.45) !important;
+  transform:translateY(-2px)}
+.dgx-buy{background:linear-gradient(90deg,#F5CD66,#E8B84B) !important;color:#241A05 !important;text-shadow:none;
+  box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.45) !important;
+  transition:box-shadow .25s,transform .25s}
+.dgx-buy:hover{box-shadow:0 0 24px rgba(232,184,75,.5),inset 0 1px 0 rgba(255,255,255,.45) !important;
+  transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#F5CD66,#E8B84B) !important;color:#241A05 !important;
+  box-shadow:0 0 16px rgba(232,184,75,.35) !important;text-shadow:none}
+.jnav-quick a,.jnav-nav a{color:#B8BCC6}
+.jnav-quick a:hover,.jnav-nav a:hover{color:#00F0FF}
+.jnav-btn{border-color:rgba(0,240,255,.55);background:rgba(0,240,255,.06)}
+.jnav-btn span{background:#00F0FF}
+.jnav-btn:hover,.jnav-btn:focus-visible{border-color:rgba(0,240,255,.85);background:rgba(0,240,255,.12)}
+.jnav-btn.jnav-beige{border-color:rgba(0,240,255,.55)}
+.jnav-btn.jnav-beige span{background:#00F0FF}
+.jnav-btn.jnav-beige:hover{border-color:rgba(0,240,255,.85)}
+.jnav-beige{border-color:rgba(0,240,255,.55);background:rgba(0,240,255,.06)}
+.jnav-beige span{background:#00F0FF}
+.jnav-beige:hover,.jnav-beige:focus-visible{border-color:rgba(0,240,255,.85);background:rgba(0,240,255,.12)}
+.jnav-beige-panel + .jnav-strip a{color:#B8BCC6}
+.jnav-beige-panel + .jnav-strip a:hover,.jnav-beige-panel + .jnav-strip a.jnav-here{color:#00F0FF}
+.accent-beige{color:#A78BFA !important}
+.accent-burgundy{color:#8B5CF6 !important}
+.border-beige{border-color:rgba(167,139,250,.4)}
+.bg-beige{background:#00F0FF !important;color:#0D0618 !important}
+.bg-burgundy{background:#6D28D9 !important;color:#F5F7FA !important}
+.glow-beige{box-shadow:0 0 16px rgba(0,240,255,.3)}
+.glow-burgundy{box-shadow:0 0 16px rgba(109,40,217,.35)}
+.divider{background:linear-gradient(90deg,transparent,rgba(0,240,255,.35),transparent)}
+.table th{background:rgba(109,40,217,.18) !important;color:#A78BFA !important}
+.table th,.table td{border-color:rgba(167,139,250,.25) !important}
+.tag.gold{border-color:rgba(167,139,250,.45) !important;color:#A78BFA !important;background:rgba(139,92,246,.08) !important}
+.price{color:#00F0FF !important}
+.dgx-price{color:#00F0FF !important;text-shadow:0 0 12px rgba(0,240,255,.35)}
+.dgx-chip,.dgx-label{color:#A78BFA !important;border-color:rgba(167,139,250,.5) !important;text-shadow:none}
+@media (prefers-reduced-motion:reduce){
+  header.sticky::after,.jnav-beige-panel::after,.card::after,.btn::before{animation:none}
+}
+
+/* Скругления кнопок (r3): .rounded-md/.rounded-lg наконец работают, кнопки — пилюли */
+.rounded-md{border-radius:10px}
+.rounded-lg{border-radius:14px}
+.btn{border-radius:999px}
+.btn.rounded-md,.btn.rounded-lg,.btn-pay,.dgx-buy,.btn-neon,.btn-gold,
+.btn-city-tomsk,.btn-city-nsk{border-radius:999px !important}
+.jnav-btn{border-radius:12px}
+
+/* ===== конец Design System v2.2 ===== */
+</style></head>
 <body>
 <div class="wrap">
   <div class="kicker">Политика конфиденциальности</div>
