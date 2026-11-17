@@ -14,6 +14,9 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
@@ -47,6 +50,9 @@ Allow: /
 User-agent: YandexGPT
 Allow: /
 
+User-agent: YandexAdditionalBot
+Allow: /
+
 User-agent: YandexImages
 Allow: /
 
@@ -57,9 +63,6 @@ User-agent: Amazonbot
 Allow: /
 
 User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: Perplexity-User
 Allow: /
 
 User-agent: cohere-ai
