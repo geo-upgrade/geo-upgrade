@@ -453,7 +453,7 @@ nav[aria-label="Основная навигация"] a {
 #geoas-send:hover{background:rgba(0,240,255,.3)}
 #geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
 @media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style><style id="geo-design-system-v2">
-/* ===== GEO-Апгрейд · Design System v2.2 (17.11.2026): неон + лазер + сетка + фиолет + пилюли ===== */
+/* ===== GEO-Апгрейд · Design System v2.3 (17.11.2026): тех-кнопки + лазер + сетка + фиолет ===== */
 :root{
   --g-bg:#0D0618;--g-card:#16092A;--g-card2:#1B0B31;
   --g-vio-deep:#6D28D9;--g-vio:#8B5CF6;--g-vio-light:#A78BFA;--g-vio-soft:#C4B5FD;
@@ -470,7 +470,7 @@ body{
   background-attachment:fixed !important;
 }
 .card{background:linear-gradient(180deg,rgba(27,11,49,.92),rgba(22,9,42,.94)) !important;
-  border:1px solid rgba(167,139,250,.22) !important;border-radius:14px}
+  border:1px solid rgba(167,139,250,.22) !important;border-radius:10px}
 .card:hover{border-color:rgba(0,240,255,.45) !important;
   box-shadow:0 10px 30px rgba(109,40,217,.28),0 0 0 1px rgba(0,240,255,.18)}
 header.sticky{position:sticky}
@@ -484,25 +484,32 @@ header.sticky::after,.jnav-beige-panel::after{
 .card:hover::after{height:2px;border-radius:2px;
   background:linear-gradient(90deg,transparent,rgba(0,240,255,.9),transparent);
   background-size:200% 100%;animation:geo-laser-run 1.8s linear infinite}
-.btn{position:relative;overflow:hidden;transition:box-shadow .25s,transform .25s,background-color .25s,border-color .25s}
-.btn:hover{transform:translateY(-2px)}
-.btn.glow::before,.btn-pay::before,.btn-neon::before{content:"";position:absolute;top:0;bottom:0;left:-45%;width:35%;
-  background:linear-gradient(105deg,transparent,rgba(255,255,255,.20),transparent);
-  transform:skewX(-18deg);animation:geo-sweep 4.6s ease-in-out infinite;pointer-events:none}
-@keyframes geo-sweep{0%{left:-45%}55%{left:115%}100%{left:115%}}
-.btn-pay{background:linear-gradient(135deg,#F5CD66,#E8B84B) !important;color:#241A05 !important;
-  font-weight:700 !important;box-shadow:0 0 16px rgba(232,184,75,.35),inset 0 1px 0 rgba(255,255,255,.45) !important;
-  border:none !important;text-shadow:none}
-.btn-pay::before{background:linear-gradient(105deg,transparent,rgba(255,255,255,.34),transparent)}
-.btn-pay:hover{box-shadow:0 0 28px rgba(232,184,75,.6),inset 0 1px 0 rgba(255,255,255,.45) !important;
-  transform:translateY(-2px)}
-.dgx-buy{background:linear-gradient(90deg,#F5CD66,#E8B84B) !important;color:#241A05 !important;text-shadow:none;
-  box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.45) !important;
-  transition:box-shadow .25s,transform .25s}
-.dgx-buy:hover{box-shadow:0 0 24px rgba(232,184,75,.5),inset 0 1px 0 rgba(255,255,255,.45) !important;
-  transform:translateY(-2px)}
-.btn-gold{background:linear-gradient(135deg,#F5CD66,#E8B84B) !important;color:#241A05 !important;
-  box-shadow:0 0 16px rgba(232,184,75,.35) !important;text-shadow:none}
+/* --- тех-кнопки: прямые почти-углы, светлая верхняя кромка, без бегущего блика --- */
+.rounded-md{border-radius:8px}
+.rounded-lg{border-radius:10px}
+.btn{border-radius:4px;position:relative;overflow:hidden;
+  background-image:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 55%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22);
+  transition:box-shadow .2s,transform .2s,background-color .25s,border-color .25s,filter .2s}
+.btn::before{content:none}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.btn:active{transform:translateY(0)}
+.jnav-btn{border-radius:8px}
+.btn-pay{background:linear-gradient(180deg,#F7D271,#E8B84B 60%,#D9A62F) !important;color:#241A05 !important;
+  font-weight:700 !important;letter-spacing:.02em;
+  box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
+  border:none !important;text-shadow:none;border-radius:4px !important}
+.btn-pay::before{content:none}
+.btn-pay:hover{box-shadow:0 0 26px rgba(232,184,75,.55),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
+  transform:translateY(-1px);filter:brightness(1.05)}
+.dgx-buy{background:linear-gradient(180deg,#F7D271,#E8B84B 60%,#D9A62F) !important;color:#241A05 !important;text-shadow:none;
+  box-shadow:0 0 12px rgba(232,184,75,.28),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
+  border-radius:4px !important;transition:box-shadow .2s,transform .2s,filter .2s}
+.dgx-buy::before{content:none}
+.dgx-buy:hover{box-shadow:0 0 22px rgba(232,184,75,.5),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
+  transform:translateY(-1px);filter:brightness(1.05)}
+.btn-gold{background:linear-gradient(180deg,#F7D271,#E8B84B 60%,#D9A62F) !important;color:#241A05 !important;
+  box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.55) !important;text-shadow:none;border-radius:4px !important}
 .jnav-quick a,.jnav-nav a{color:#B8BCC6}
 .jnav-quick a:hover,.jnav-nav a:hover{color:#00F0FF}
 .jnav-btn{border-color:rgba(0,240,255,.55);background:rgba(0,240,255,.06)}
@@ -531,18 +538,9 @@ header.sticky::after,.jnav-beige-panel::after{
 .dgx-price{color:#00F0FF !important;text-shadow:0 0 12px rgba(0,240,255,.35)}
 .dgx-chip,.dgx-label{color:#A78BFA !important;border-color:rgba(167,139,250,.5) !important;text-shadow:none}
 @media (prefers-reduced-motion:reduce){
-  header.sticky::after,.jnav-beige-panel::after,.card::after,.btn::before{animation:none}
+  header.sticky::after,.jnav-beige-panel::after,.card::after{animation:none}
 }
-
-/* Скругления кнопок (r3): .rounded-md/.rounded-lg наконец работают, кнопки — пилюли */
-.rounded-md{border-radius:10px}
-.rounded-lg{border-radius:14px}
-.btn{border-radius:999px}
-.btn.rounded-md,.btn.rounded-lg,.btn-pay,.dgx-buy,.btn-neon,.btn-gold,
-.btn-city-tomsk,.btn-city-nsk{border-radius:999px !important}
-.jnav-btn{border-radius:12px}
-
-/* ===== конец Design System v2.2 ===== */
+/* ===== конец Design System v2.3 ===== */
 </style></head>
 <body>
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="text-[#00F0FF]">Блог</a><a href="reviews.html" class="hover:text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="hover:text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#A78BFA] font-semibold hover:text-[#C4B5FD]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
