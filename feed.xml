@@ -5,12 +5,19 @@
     <link>https://geo-upgrade.ru</link>
     <description>Статьи про GEO, AI и маркетинг: простыми словами и с практикой</description>
     <language>ru-RU</language>
-    <lastBuildDate>Sun, 08 Nov 2026 12:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 12:00:00 +0700</lastBuildDate>
     <atom:link href="https://geo-upgrade.ru/feed.xml" rel="self" type="application/rss+xml"/>
 
     
         
-    <item>
+        <item>
+      <title>AI-трафик в Яндекс Метрике: как поймать переходы из ChatGPT, Perplexity и Алисы</title>
+      <link>https://geo-upgrade.ru/blog-post-ai-traffic-metrika.html</link>
+      <description><![CDATA[Пошаговый протокол: сегмент AI Traffic в Яндекс Метрике по рефереру, ловля переходов из Google ИИ-пересказов, SoV в Алисе AI и robots.txt для ИИ-краулеров. С первым живым замером на сайте двухмесячного возраста.]]></description>
+      <pubDate>Tue, 17 Nov 2026 12:00:00 +0700</pubDate>
+      <guid isPermaLink="true">https://geo-upgrade.ru/blog-post-ai-traffic-metrika.html</guid>
+    </item>
+<item>
       <title>Что входит в AI-видимость: пять слоёв и полный цикл</title>
       <link>https://geo-upgrade.ru/blog-post-chto-vhodit-v-ai-vidimost.html</link>
       <description><![CDATA[Пять слоёв AI-видимости: GEO-контент, репутация, карточки, техника и SEO — и как они собираются в полный цикл. Лестница услуг GEO-Апгрейд от бесплатного мини-аудита до GEO-штурвала с ценами.]]></description>
