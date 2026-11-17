@@ -414,7 +414,7 @@ nav[aria-label="Основная навигация"] a {
 }
 </style>
 <style id="geo-design-system-v2">
-/* ===== GEO-Апгрейд · Design System v2.5 (17.11.2026): тех-кнопки + лазер + сетка + фиолет ===== */
+/* ===== GEO-Апгрейд · Design System v2.6 (17.11.2026): тех-кнопки + лазер + сетка + фиолет ===== */
 :root{
   --g-bg:#0D0618;--g-card:#16092A;--g-card2:#1B0B31;
   --g-vio-deep:#6D28D9;--g-vio:#8B5CF6;--g-vio-light:#A78BFA;--g-vio-soft:#C4B5FD;
@@ -448,14 +448,24 @@ header.sticky::after,.jnav-beige-panel::after{
 .rounded-md{border-radius:8px}
 .rounded-lg{border-radius:10px}
 .btn{border-radius:4px;position:relative;overflow:hidden;
+  width:max-content;max-width:100%;justify-self:start;align-self:start;
   background-image:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 55%);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.22);
   transition:box-shadow .2s,transform .2s,background-color .25s,border-color .25s,filter .2s}
+.btn.w-full{width:100%}
 .btn::before{content:none}
 .btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
 .btn:active{transform:translateY(0)}
 .jnav-btn{border-radius:8px}
-/* --- платёжные кнопки: компактные, по ширине контента (десктоп и мобильные) --- */
+/* --- тех-чип для стрелочных ссылок-переходов --- */
+.btn-mini{display:inline-block;border-radius:4px;border:1px solid rgba(0,240,255,.45);
+  background:rgba(0,240,255,.07);color:#00F0FF !important;padding:.3rem .7rem;
+  font-size:.8125rem;font-weight:600;line-height:1.4;text-decoration:none;
+  transition:background-color .2s,border-color .2s,box-shadow .2s}
+.btn-mini:hover{background:rgba(0,240,255,.15);border-color:#00F0FF;
+  box-shadow:0 0 12px rgba(0,240,255,.25);color:#00F0FF}
+.btn-mini:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+/* --- платёжные кнопки: компактные --- */
 .btn-pay{background:linear-gradient(180deg,#F7D271,#E8B84B 60%,#D9A62F) !important;color:#241A05 !important;
   font-weight:700 !important;letter-spacing:.02em;
   box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
@@ -506,9 +516,9 @@ header.sticky::after,.jnav-beige-panel::after{
 @media (prefers-reduced-motion:reduce){
   header.sticky::after,.jnav-beige-panel::after,.card::after{animation:none}
 }
-/* ===== конец Design System v2.5 ===== */
+/* ===== конец Design System v2.6 ===== */
 
-/* ===== utility-слой r6 ===== */
+/* ===== utility-слой r7 ===== */
 .sticky{position:sticky}
 .top-0{top:0}
 .z-50{z-index:50}
@@ -757,7 +767,7 @@ header.sticky::after,.jnav-beige-panel::after{
     <blockquote style="margin-top:0" itemprop="reviewBody">Приятно удивил подход: не просто общие советы, а детальный разбор с выявленными ошибками, конкретными решениями и расставленными приоритетами. Видно, что специалисты действительно погрузились в наш бизнес и проделали большую работу. Спасибо за профессионализм, внимательность и полезный анализ! Рекомендуем!</blockquote>
     <p class="text-sm text-[#F5F7FA] mt-4 mb-0">— <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Светлана К.</span></span>, типография «Атмосфера Идей», Новосибирск · отзыв в <a itemprop="url" href="https://2gis.ru/novosibirsk/geo/70000001118650762" target="_blank" rel="noopener" class="text-[#00F0FF] hover:underline">2ГИС</a>, дословно</p>
     <div class="callout mt-4"><p class="mb-0 text-sm"><span class="font-heading text-[#00F0FF]">Официальный ответ лаборатории (в 2ГИС, дословно):</span> «Большое спасибо за такой развёрнутый и приятный отзыв 💜 Было очень интересно погрузиться в детали вашего бизнеса и поработать с такой крупной и крутой типографией Новосибирска! Надеемся, теперь Атмосфера идей получила новый канал рекламы и рекомендаций — нейросети. Если нужна будет помощь с внедрением рекомендаций или какие-то индивидуальные задачи — вплоть до разработки приложений, чат-ботов, контента для вашего сайта — обращайтесь снова, будем рады сотрудничеству с вами! ☀️»</p></div>
-    <p class="text-xs text-[#B8BCC6] mt-4 mb-0">Проверить сигнал: <a href="https://2gis.ru/novosibirsk/geo/70000001118650762" target="_blank" rel="noopener" class="text-[#00F0FF] hover:underline">отзыв в карточке 2ГИС →</a> · детали работы — в <a href="case-atmosfera-idey.html" class="text-[#00F0FF] hover:underline">кейсе «Атмосфера Идей»</a>.</p>
+    <p class="text-xs text-[#B8BCC6] mt-4 mb-0">Проверить сигнал: <a href="https://2gis.ru/novosibirsk/geo/70000001118650762" target="_blank" rel="noopener"class="btn-mini">отзыв в карточке 2ГИС →</a> · детали работы — в <a href="case-atmosfera-idey.html" class="text-[#00F0FF] hover:underline">кейсе «Атмосфера Идей»</a>.</p>
   </div>
 
   <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -833,7 +843,7 @@ header.sticky::after,.jnav-beige-panel::after{
     <li><span class="term">Без правки:</span> формулировки клиента не редактируем. Имя и роль публикуем только с его разрешения.</li>
     <li><span class="term">Честные оценки:</span> публикуем всё, включая критические замечания, — они помогают лаборатории расти.</li>
   </ul>
-  <div class="callout mt-8 max-w-3xl mx-auto"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Методика в действии:</span> авторская методика обработки ответов на отзывы переведена в программу и первый раз отработала на живой карточке: <a href="blog-post-avtoobrabotka-otzyvov.html" class="text-[#00F0FF] hover:underline">разбор Make Love Pizza — 493 отзыва →</a></p></div>
+  <div class="callout mt-8 max-w-3xl mx-auto"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Методика в действии:</span> авторская методика обработки ответов на отзывы переведена в программу и первый раз отработала на живой карточке: <a href="blog-post-avtoobrabotka-otzyvov.html"class="btn-mini">разбор Make Love Pizza — 493 отзыва →</a></p></div>
   <div class="callout mt-10 max-w-3xl mx-auto"><p class="mb-0"><span class="font-heading text-[#00F0FF]">Почему это важно для AI-видимости:</span> нейросети собирают сигналы о бренде из открытых источников. Реальные отзывы с проверяемыми источниками — самый честный способ сказать ИИ и людям: нам доверяют.</p></div>
 </section>
 

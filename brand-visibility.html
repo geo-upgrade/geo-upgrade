@@ -471,7 +471,7 @@ nav[aria-label="Основная навигация"] a {
 }
 </style>
 <style id="geo-design-system-v2">
-/* ===== GEO-Апгрейд · Design System v2.5 (17.11.2026): тех-кнопки + лазер + сетка + фиолет ===== */
+/* ===== GEO-Апгрейд · Design System v2.6 (17.11.2026): тех-кнопки + лазер + сетка + фиолет ===== */
 :root{
   --g-bg:#0D0618;--g-card:#16092A;--g-card2:#1B0B31;
   --g-vio-deep:#6D28D9;--g-vio:#8B5CF6;--g-vio-light:#A78BFA;--g-vio-soft:#C4B5FD;
@@ -505,14 +505,24 @@ header.sticky::after,.jnav-beige-panel::after{
 .rounded-md{border-radius:8px}
 .rounded-lg{border-radius:10px}
 .btn{border-radius:4px;position:relative;overflow:hidden;
+  width:max-content;max-width:100%;justify-self:start;align-self:start;
   background-image:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 55%);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.22);
   transition:box-shadow .2s,transform .2s,background-color .25s,border-color .25s,filter .2s}
+.btn.w-full{width:100%}
 .btn::before{content:none}
 .btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
 .btn:active{transform:translateY(0)}
 .jnav-btn{border-radius:8px}
-/* --- платёжные кнопки: компактные, по ширине контента (десктоп и мобильные) --- */
+/* --- тех-чип для стрелочных ссылок-переходов --- */
+.btn-mini{display:inline-block;border-radius:4px;border:1px solid rgba(0,240,255,.45);
+  background:rgba(0,240,255,.07);color:#00F0FF !important;padding:.3rem .7rem;
+  font-size:.8125rem;font-weight:600;line-height:1.4;text-decoration:none;
+  transition:background-color .2s,border-color .2s,box-shadow .2s}
+.btn-mini:hover{background:rgba(0,240,255,.15);border-color:#00F0FF;
+  box-shadow:0 0 12px rgba(0,240,255,.25);color:#00F0FF}
+.btn-mini:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+/* --- платёжные кнопки: компактные --- */
 .btn-pay{background:linear-gradient(180deg,#F7D271,#E8B84B 60%,#D9A62F) !important;color:#241A05 !important;
   font-weight:700 !important;letter-spacing:.02em;
   box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
@@ -563,9 +573,9 @@ header.sticky::after,.jnav-beige-panel::after{
 @media (prefers-reduced-motion:reduce){
   header.sticky::after,.jnav-beige-panel::after,.card::after{animation:none}
 }
-/* ===== конец Design System v2.5 ===== */
+/* ===== конец Design System v2.6 ===== */
 
-/* ===== utility-слой r6 ===== */
+/* ===== utility-слой r7 ===== */
 .sticky{position:sticky}
 .top-0{top:0}
 .z-50{z-index:50}
@@ -816,14 +826,14 @@ header.sticky::after,.jnav-beige-panel::after{
           <figcaption>ИИ знает детали сайта — от калькулятора до стиля лаборатории: AI-след бренда насыщенный.</figcaption>
         </figure>
       </div>
-      <p class="mt-5 text-xs text-[#B8BCC6]">Полная витрина полевых скриншотов и выводы этапа — в статье: <a href="blog-post-zaprosny-dvoinik-geo-audit.html" class="text-[#00F0FF] hover:underline">Аудит на себе. Этап 1: как мы собрали запросный двойник →</a></p>
-      <p class="mt-2 text-xs text-[#B8BCC6]">Метрики первого полного замера (Алиса AI, 30.09.2026) — в статье этапа 2: <a href="blog-post-metriki-ai-vidimosti-geo-audit.html" class="text-[#00F0FF] hover:underline">Метрики AI-видимости: второй этап GEO-аудита бренда →</a></p>
+      <p class="mt-5 text-xs text-[#B8BCC6]">Полная витрина полевых скриншотов и выводы этапа — в статье: <a href="blog-post-zaprosny-dvoinik-geo-audit.html"class="btn-mini">Аудит на себе. Этап 1: как мы собрали запросный двойник →</a></p>
+      <p class="mt-2 text-xs text-[#B8BCC6]">Метрики первого полного замера (Алиса AI, 30.09.2026) — в статье этапа 2: <a href="blog-post-metriki-ai-vidimosti-geo-audit.html"class="btn-mini">Метрики AI-видимости: второй этап GEO-аудита бренда →</a></p>
     </div>
   </section>
 
   <section class="mt-12" id="first-scan">
     <h2 class="text-2xl font-semibold">Что показал первый полный замер</h2>
-    <p class="mt-3 text-sm text-[#B8BCC6] max-w-3xl">Данные ниже — по Алисе AI, из базового замера этапа 2 кейса «о нас самих»: анонимный режим, без аккаунта, регион Томск, 66 запросов и 67 прогонов, замер 30 сентября 2026 года. Полный разбор метрик, Presence Score и слепых зон — в статье: <a href="blog-post-metriki-ai-vidimosti-geo-audit.html" class="text-[#00F0FF] hover:underline">Метрики AI-видимости: второй этап GEO-аудита бренда →</a></p>
+    <p class="mt-3 text-sm text-[#B8BCC6] max-w-3xl">Данные ниже — по Алисе AI, из базового замера этапа 2 кейса «о нас самих»: анонимный режим, без аккаунта, регион Томск, 66 запросов и 67 прогонов, замер 30 сентября 2026 года. Полный разбор метрик, Presence Score и слепых зон — в статье: <a href="blog-post-metriki-ai-vidimosti-geo-audit.html"class="btn-mini">Метрики AI-видимости: второй этап GEO-аудита бренда →</a></p>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="slot-filled"><h3 class="font-heading text-lg text-[#00F0FF]">Mention Rate</h3><p class="slot-val mt-2">0.433</p><p class="mt-2 text-sm text-[#B8BCC6]">Как часто нейросети упоминают лабораторию по ключевым запросам. Алиса AI назвала GEO-Апгрейд в 43% прогонов: 29 из 67.</p></div>
       <div class="slot-filled"><h3 class="font-heading text-lg text-[#00F0FF]">Accuracy</h3><p class="slot-val mt-2">0.724</p><p class="mt-2 text-sm text-[#B8BCC6]">Насколько точно AI описывает наши услуги, город и специализацию: 72% упоминаний без фактических ошибок.</p></div>

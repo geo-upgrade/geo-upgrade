@@ -480,7 +480,7 @@ nav[aria-label="Основная навигация"] a {
 }
 </style>
 <style id="geo-design-system-v2">
-/* ===== GEO-Апгрейд · Design System v2.5 (17.11.2026): тех-кнопки + лазер + сетка + фиолет ===== */
+/* ===== GEO-Апгрейд · Design System v2.6 (17.11.2026): тех-кнопки + лазер + сетка + фиолет ===== */
 :root{
   --g-bg:#0D0618;--g-card:#16092A;--g-card2:#1B0B31;
   --g-vio-deep:#6D28D9;--g-vio:#8B5CF6;--g-vio-light:#A78BFA;--g-vio-soft:#C4B5FD;
@@ -514,14 +514,24 @@ header.sticky::after,.jnav-beige-panel::after{
 .rounded-md{border-radius:8px}
 .rounded-lg{border-radius:10px}
 .btn{border-radius:4px;position:relative;overflow:hidden;
+  width:max-content;max-width:100%;justify-self:start;align-self:start;
   background-image:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 55%);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.22);
   transition:box-shadow .2s,transform .2s,background-color .25s,border-color .25s,filter .2s}
+.btn.w-full{width:100%}
 .btn::before{content:none}
 .btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
 .btn:active{transform:translateY(0)}
 .jnav-btn{border-radius:8px}
-/* --- платёжные кнопки: компактные, по ширине контента (десктоп и мобильные) --- */
+/* --- тех-чип для стрелочных ссылок-переходов --- */
+.btn-mini{display:inline-block;border-radius:4px;border:1px solid rgba(0,240,255,.45);
+  background:rgba(0,240,255,.07);color:#00F0FF !important;padding:.3rem .7rem;
+  font-size:.8125rem;font-weight:600;line-height:1.4;text-decoration:none;
+  transition:background-color .2s,border-color .2s,box-shadow .2s}
+.btn-mini:hover{background:rgba(0,240,255,.15);border-color:#00F0FF;
+  box-shadow:0 0 12px rgba(0,240,255,.25);color:#00F0FF}
+.btn-mini:focus-visible{outline:2px solid #00F0FF;outline-offset:2px}
+/* --- платёжные кнопки: компактные --- */
 .btn-pay{background:linear-gradient(180deg,#F7D271,#E8B84B 60%,#D9A62F) !important;color:#241A05 !important;
   font-weight:700 !important;letter-spacing:.02em;
   box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
@@ -572,9 +582,9 @@ header.sticky::after,.jnav-beige-panel::after{
 @media (prefers-reduced-motion:reduce){
   header.sticky::after,.jnav-beige-panel::after,.card::after{animation:none}
 }
-/* ===== конец Design System v2.5 ===== */
+/* ===== конец Design System v2.6 ===== */
 
-/* ===== utility-слой r6 ===== */
+/* ===== utility-слой r7 ===== */
 .sticky{position:sticky}
 .top-0{top:0}
 .z-50{z-index:50}
@@ -874,7 +884,7 @@ header.sticky::after,.jnav-beige-panel::after{
 
 <section class="mt-12"><h3 class="text-lg font-semibold mb-4">Связанные термины</h3><div class="flex flex-wrap gap-2"><a href="glossary.html#term-digital-ghost" class="badge badge-visibility hover:bg-[#10b981]/20">Цифровой призрак</a><a href="glossary.html" class="badge badge-visibility hover:bg-[#10b981]/20">Невидимость по умолчанию</a><a href="glossary.html#term-geo" class="badge badge-basics hover:bg-[#5991f5]/20">GEO</a><a href="glossary.html" class="badge badge-business hover:bg-[#8b5cf6]/20">НАП-хаос</a><a href="glossary.html#term-ai-crawler" class="badge badge-basics hover:bg-[#5991f5]/20">AI-crawler</a><a href="glossary.html#term-brand-entity" class="badge badge-basics hover:bg-[#5991f5]/20">Brand entity</a><a href="glossary.html#term-ai-lead" class="badge badge-business hover:bg-[#8b5cf6]/20">AI-лид</a></div></section>
 
-<section class="mt-12 card p-6"><h3 class="text-lg font-semibold mb-4">Похожие материалы</h3><ul class="space-y-2 text-sm"><li><a href="blog-post-what-is-geo.html" class="text-[#00F0FF] hover:underline">← Что такое GEO простыми словами?</a></li><li><a href="blog-post-chto-vhodit-v-ai-vidimost.html" class="text-[#00F0FF] hover:underline">← Что входит в AI-видимость: пять слоёв и полный цикл</a></li><li><a href="blog-post-geo-vs-seo.html" class="text-[#00F0FF] hover:underline">← Чем GEO отличается от SEO?</a></li><li><a href="case-traktir-tomsk.html" class="text-[#00F0FF] hover:underline">→ Кейс: трактир в центре Томска</a></li><li><a href="blog-post-kontentnye-mayaki.html" class="text-[#00F0FF] hover:underline">→ Контентные маяки: бренд понятнее для людей и AI</a></li><li><a href="blog-post-kontent-dlya-neyrosetey.html" class="text-[#00F0FF] hover:underline">→ Контент для нейросетей: как писать, чтобы нейросети цитировали ваш сайт?</a></li><li><a href="quiz-prizrak-ili-mayak.html" class="text-[#00F0FF] hover:underline">→ Тест «Призрак или маяк?»</a></li></ul></section>
+<section class="mt-12 card p-6"><h3 class="text-lg font-semibold mb-4">Похожие материалы</h3><ul class="space-y-2 text-sm"><li><a href="blog-post-what-is-geo.html" class="text-[#00F0FF] hover:underline">← Что такое GEO простыми словами?</a></li><li><a href="blog-post-chto-vhodit-v-ai-vidimost.html" class="text-[#00F0FF] hover:underline">← Что входит в AI-видимость: пять слоёв и полный цикл</a></li><li><a href="blog-post-geo-vs-seo.html" class="text-[#00F0FF] hover:underline">← Чем GEO отличается от SEO?</a></li><li><a href="case-traktir-tomsk.html"class="btn-mini">→ Кейс: трактир в центре Томска</a></li><li><a href="blog-post-kontentnye-mayaki.html"class="btn-mini">→ Контентные маяки: бренд понятнее для людей и AI</a></li><li><a href="blog-post-kontent-dlya-neyrosetey.html"class="btn-mini">→ Контент для нейросетей: как писать, чтобы нейросети цитировали ваш сайт?</a></li><li><a href="quiz-prizrak-ili-mayak.html"class="btn-mini">→ Тест «Призрак или маяк?»</a></li></ul></section>
 
 </article>
 </div>
