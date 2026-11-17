@@ -469,7 +469,7 @@ nav[aria-label="Основная навигация"] a {
 #geoas-send:hover{background:rgba(0,240,255,.3)}
 #geoas-send svg{width:18px;height:18px;stroke:#00F0FF;fill:none;stroke-width:2}
 @media (max-width:480px){#geoas-panel{right:12px;bottom:80px}#geoas-btn{right:14px;bottom:14px}}</style><style id="geo-design-system-v2">
-/* ===== GEO-Апгрейд · Design System v2.3 (17.11.2026): тех-кнопки + лазер + сетка + фиолет ===== */
+/* ===== GEO-Апгрейд · Design System v2.5 (17.11.2026): тех-кнопки + лазер + сетка + фиолет ===== */
 :root{
   --g-bg:#0D0618;--g-card:#16092A;--g-card2:#1B0B31;
   --g-vio-deep:#6D28D9;--g-vio:#8B5CF6;--g-vio-light:#A78BFA;--g-vio-soft:#C4B5FD;
@@ -500,7 +500,6 @@ header.sticky::after,.jnav-beige-panel::after{
 .card:hover::after{height:2px;border-radius:2px;
   background:linear-gradient(90deg,transparent,rgba(0,240,255,.9),transparent);
   background-size:200% 100%;animation:geo-laser-run 1.8s linear infinite}
-/* --- тех-кнопки: прямые почти-углы, светлая верхняя кромка, без бегущего блика --- */
 .rounded-md{border-radius:8px}
 .rounded-lg{border-radius:10px}
 .btn{border-radius:4px;position:relative;overflow:hidden;
@@ -511,21 +510,27 @@ header.sticky::after,.jnav-beige-panel::after{
 .btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
 .btn:active{transform:translateY(0)}
 .jnav-btn{border-radius:8px}
+/* --- платёжные кнопки: компактные, по ширине контента (десктоп и мобильные) --- */
 .btn-pay{background:linear-gradient(180deg,#F7D271,#E8B84B 60%,#D9A62F) !important;color:#241A05 !important;
   font-weight:700 !important;letter-spacing:.02em;
   box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
-  border:none !important;text-shadow:none;border-radius:4px !important}
+  border:none !important;text-shadow:none;border-radius:4px !important;
+  display:inline-block !important;width:fit-content !important;max-width:100%;
+  justify-self:start;align-self:start}
 .btn-pay::before{content:none}
 .btn-pay:hover{box-shadow:0 0 26px rgba(232,184,75,.55),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
   transform:translateY(-1px);filter:brightness(1.05)}
 .dgx-buy{background:linear-gradient(180deg,#F7D271,#E8B84B 60%,#D9A62F) !important;color:#241A05 !important;text-shadow:none;
   box-shadow:0 0 12px rgba(232,184,75,.28),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
-  border-radius:4px !important;transition:box-shadow .2s,transform .2s,filter .2s}
+  border-radius:4px !important;transition:box-shadow .2s,transform .2s,filter .2s;
+  display:inline-block !important;width:fit-content !important;max-width:100%;
+  justify-self:start;align-self:start}
 .dgx-buy::before{content:none}
 .dgx-buy:hover{box-shadow:0 0 22px rgba(232,184,75,.5),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(120,80,10,.25) !important;
   transform:translateY(-1px);filter:brightness(1.05)}
 .btn-gold{background:linear-gradient(180deg,#F7D271,#E8B84B 60%,#D9A62F) !important;color:#241A05 !important;
-  box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.55) !important;text-shadow:none;border-radius:4px !important}
+  box-shadow:0 0 14px rgba(232,184,75,.30),inset 0 1px 0 rgba(255,255,255,.55) !important;text-shadow:none;border-radius:4px !important;
+  display:inline-block !important;width:fit-content !important;max-width:100%;justify-self:start;align-self:start}
 .jnav-quick a,.jnav-nav a{color:#B8BCC6}
 .jnav-quick a:hover,.jnav-nav a:hover{color:#00F0FF}
 .jnav-btn{border-color:rgba(0,240,255,.55);background:rgba(0,240,255,.06)}
@@ -556,7 +561,203 @@ header.sticky::after,.jnav-beige-panel::after{
 @media (prefers-reduced-motion:reduce){
   header.sticky::after,.jnav-beige-panel::after,.card::after{animation:none}
 }
-/* ===== конец Design System v2.3 ===== */
+/* ===== конец Design System v2.5 ===== */
+
+/* ===== utility-слой r6 ===== */
+.sticky{position:sticky}
+.top-0{top:0}
+.z-50{z-index:50}
+.border-white\/10{border-color:rgba(255,255,255,0.1)}
+.bg-\[\#0D0618\]\/90{background-color:rgba(13,6,24,0.9)}
+.backdrop-blur{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.max-w-6xl{max-width:68rem}
+.mx-auto{margin-left:auto;margin-right:auto}
+.px-5{padding-left:1.25rem;padding-right:1.25rem}
+.py-2{padding-top:0.5rem;padding-bottom:0.5rem}
+.flex{display:flex}
+.flex-wrap{flex-wrap:wrap}
+.items-center{align-items:center}
+.justify-between{justify-content:space-between}
+.gap-x-4{column-gap:1rem}
+.gap-3{gap:0.75rem}
+.shrink-0{flex-shrink:0}
+.h-11{height:2.75rem}
+.w-11{width:2.75rem}
+.rounded-full{border-radius:9999px}
+.font-bold{font-weight:700}
+.text-lg{font-size:1.125rem;line-height:1.7}
+.gap-y-2{row-gap:0.5rem}
+.text-sm{font-size:.875rem;line-height:1.35}
+.text-text-\[\#B8BCC6\]{color:#B8BCC6}
+.text-text-\[\#00F0FF\]{color:#00F0FF}
+.text-text-\[\#00F0FF\]:hover{color:#00F0FF}
+.text-text-\[\#A78BFA\]{color:#A78BFA}
+.font-semibold{font-weight:600}
+.text-text-\[\#C4B5FD\]:hover{color:#C4B5FD}
+.py-20{padding-top:4rem;padding-bottom:4rem}
+.max-w-3xl{max-width:48rem}
+.h-24{height:6rem}
+.w-24{width:6rem}
+.text-xs{font-size:.75rem;line-height:1.05}
+.tracking-\[\.2em\]{letter-spacing:0.2em}
+.mt-4{margin-top:1rem}
+.text-4xl{font-size:2.25rem;line-height:2.4}
+.mt-6{margin-top:1.5rem}
+.text-base{font-size:1rem;line-height:1.55}
+.mt-8{margin-top:2rem}
+.flex-col{flex-direction:column}
+.gap-4{gap:1rem}
+.inline-block{display:inline-block}
+.rounded-md{border-radius:8px}
+.bg-\[\#00F0FF\]{background-color:#00F0FF}
+.px-7{padding-left:1.75rem;padding-right:1.75rem}
+.py-4{padding-top:1rem;padding-bottom:1rem}
+.text-center{text-align:center}
+.text-text-\[\#0D0618\]{color:#0D0618}
+.border-\[\#B8BCC6\]\/40{border-color:rgba(184,188,198,0.4)}
+.mt-5{margin-top:1.25rem}
+.py-16{padding-top:3.25rem;padding-bottom:3.25rem}
+.text-3xl{font-size:1.75rem;line-height:2.1}
+.mt-10{margin-top:2.5rem}
+.grid{display:grid}
+.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.gap-6{gap:1.5rem}
+.p-6{padding:1.5rem}
+.mt-3{margin-top:0.75rem}
+.rounded-xl{border-radius:14px}
+.border-\[\#00F0FF\]\/30{border-color:rgba(0,240,255,0.3)}
+.bg-\[\#00F0FF\]\/5{background-color:rgba(0,240,255,0.05)}
+.border-\[\#00F0FF\]\/40{border-color:rgba(0,240,255,0.4)}
+.text-2xl{font-size:1.375rem;line-height:1.6}
+.max-w-2xl{max-width:42rem}
+.underline:hover{text-decoration:underline}
+.text-xl{font-size:1.25rem;line-height:1.75}
+.p-5{padding:1.25rem}
+.mt-2{margin-top:0.5rem}
+.space-y-2 > * + *{margin-top:0.5rem}
+.px-6{padding-left:1.5rem;padding-right:1.5rem}
+.py-3{padding-top:0.75rem;padding-bottom:0.75rem}
+.underline{text-decoration:underline}
+.relative{position:relative}
+.leading-snug{line-height:1.4}
+.max-w-4xl{max-width:56rem}
+.justify-center{justify-content:center}
+.border-\[\#00F0FF\]\/50{border-color:rgba(0,240,255,0.5)}
+.max-w-5xl{max-width:64rem}
+.items-start{align-items:flex-start}
+.mt-7{margin-top:1.75rem}
+.space-y-4 > * + *{margin-top:1rem}
+.block{display:block}
+.p-4{padding:1rem}
+.py-10{padding-top:2.25rem;padding-bottom:2.25rem}
+.h-10{height:2.5rem}
+.w-10{width:2.5rem}
+.gap-2{gap:0.5rem}
+.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.w-full{width:100%}
+.py-14{padding-top:3.5rem;padding-bottom:3.5rem}
+.max-w-md{max-width:28rem}
+.space-y-1 > * + *{margin-top:0.25rem}
+.pl-5{padding-left:1.25rem}
+.inline-flex{display:inline-flex}
+.w-3{width:0.75rem}
+.h-3{height:0.75rem}
+.pb-16{padding-bottom:4rem}
+.rounded-lg{border-radius:10px}
+.border-\[\#B8BCC6\]\/30{border-color:rgba(184,188,198,0.3)}
+.text-text-\[\#8A93B8\]{color:#8A93B8}
+.font-medium{font-weight:500}
+.uppercase{text-transform:uppercase}
+.tracking-wider{letter-spacing:.05em}
+.mb-4{margin-bottom:1rem}
+.px-4{padding-left:1rem;padding-right:1rem}
+.bg-\[\#00F0FF\]\/10:hover{background-color:rgba(0,240,255,0.1)}
+.border-\[\#00F0FF\]\/60:hover{border-color:rgba(0,240,255,0.6)}
+.transition-all{transition-property:all;transition-duration:.3s;transition-timing-function:cubic-bezier(.4,0,.2,1)}
+.duration-300{transition-duration:.3s}
+.tracking-\[\.16em\]{letter-spacing:0.16em}
+.border-red-400\/30{border-color:rgba(248,113,113,.3)}
+.text-red-300{color:#FCA5A5}
+.bg-\[\#8B5CF6\]{background-color:#8B5CF6}
+.text-text-\[\#F5F7FA\]{color:#F5F7FA}
+.mb-2{margin-bottom:0.5rem}
+.mb-0{margin-bottom:0}
+.max-w-\[360px\]{max-width:360px}
+.py-12{padding-top:2.5rem;padding-bottom:2.5rem}
+.tracking-\[\.18em\]{letter-spacing:0.18em}
+.mt-1{margin-top:0.25rem}
+.w-40{width:10rem}
+.mt-12{margin-top:3rem}
+.space-y-3 > * + *{margin-top:0.75rem}
+.opacity-80:hover{opacity:.8}
+.px-2{padding-left:0.5rem;padding-right:0.5rem}
+.py-1{padding-top:0.25rem;padding-bottom:0.25rem}
+.space-y-7 > * + *{margin-top:1.75rem}
+.p-7{padding:1.75rem}
+.mb-8{margin-bottom:2rem}
+.space-y-8 > * + *{margin-top:2rem}
+.my-6{margin-top:1.5rem;margin-bottom:1.5rem}
+.my-4{margin-top:1rem;margin-bottom:1rem}
+.bg-\[\#06b6d4\]\/20:hover{background-color:rgba(6,182,212,0.2)}
+.bg-\[\#8b5cf6\]\/20:hover{background-color:rgba(139,92,246,0.2)}
+.mb-3{margin-bottom:0.75rem}
+.gap-x-6{column-gap:1.5rem}
+.my-10{margin-top:2.5rem;margin-bottom:2.5rem}
+.bg-\[\#5991f5\]\/20:hover{background-color:rgba(89,145,245,0.2)}
+.my-8{margin-top:2rem;margin-bottom:2rem}
+.tracking-\[\.14em\]{letter-spacing:0.14em}
+.tracking-\[\.15em\]{letter-spacing:0.15em}
+.mr-2{margin-right:0.5rem}
+.rounded{border-radius:6px}
+.bg-\[\#00F0FF\]\/10{background-color:rgba(0,240,255,0.1)}
+.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}
+.whitespace-nowrap{white-space:nowrap}
+.border-\[\#8b5cf6\]\/60{border-color:rgba(139,92,246,0.6)}
+.bg-\[\#8b5cf6\]\/10{background-color:rgba(139,92,246,0.1)}
+.text-text-\[\#8b5cf6\]{color:#8B5CF6}
+.bg-\[\#10b981\]\/20:hover{background-color:rgba(16,185,129,0.2)}
+.ml-9{margin-left:2.25rem}
+.bg-\[\#3b82f6\]\/20:hover{background-color:rgba(59,130,246,0.2)}
+.space-y-6 > * + *{margin-top:1.5rem}
+.bg-\[\#16092A\]\/50{background-color:rgba(22,9,42,0.5)}
+.border-\[\#B8BCC6\]\/20{border-color:rgba(184,188,198,0.2)}
+.bg-\[\#f59e0b\]\/20:hover{background-color:rgba(245,158,11,0.2)}
+.bg-\[\#ec4899\]\/20:hover{background-color:rgba(236,72,153,0.2)}
+.bg-\[\#0D0618\]\/70{background-color:rgba(13,6,24,0.7)}
+.hidden{display:none}
+.bg-\[\#0D0618\]\/80{background-color:rgba(13,6,24,0.8)}
+.pl-6{padding-left:1.5rem}
+.gap-y-3{row-gap:0.75rem}
+.m-0{margin:0}
+.border-\[\#00F0FF\]{border-color:#00F0FF}
+.pl-4{padding-left:1rem}
+.text-text-\[\#34D399\]{color:#34D399}
+.tracking-wide{letter-spacing:.025em}
+.font-\[\'Orbitron\'\]{font-family:'Orbitron',sans-serif}
+.tracking-widest{letter-spacing:.1em}
+.border-\[\#00F0FF\]\/60{border-color:rgba(0,240,255,0.6)}
+.border-\[\#B8BCC6\]\/25{border-color:rgba(184,188,198,0.25)}
+.mt-14{margin-top:3.5rem}
+.pt-10{padding-top:2.5rem}
+.text-text-\[\#F87171\]{color:#F87171}
+.pb-20{padding-bottom:5rem}
+.space-y-5 > * + *{margin-top:1.25rem}
+.bg-\[\#16092A\]{background-color:#16092A}
+.h-5{height:1.25rem}
+.w-5{width:1.25rem}
+.border-\[\#8B5CF6\]\/40{border-color:rgba(139,92,246,0.4)}
+.px-3{padding-left:0.75rem;padding-right:0.75rem}
+.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}
+.bg-\[\#A78BFA\]{background-color:#A78BFA}
+.text-text-\[\#3D2B6B\]{color:#3D2B6B}
+.ml-4{margin-left:1rem}
+.pb-5{padding-bottom:1.25rem}
+.pt-16{padding-top:4rem}
+.flex-shrink-0{flex-shrink:0}
+.leading-relaxed{line-height:1.65}
+.max-w-\[900px\]{max-width:900px}
+.tracking-\[\.12em\]{letter-spacing:0.12em}
+/* ===== конец utility-слоя ===== */
 </style></head>
 <body>
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0D0618]/90 backdrop-blur"><div class="max-w-6xl mx-auto min-h-16 px-5 py-2 flex flex-wrap items-center justify-between gap-x-4"><a href="index.html" class="flex items-center gap-3 shrink-0"><img src="logo-round-min.webp" alt="GEO-Апгрейд — логотип" class="h-11 w-11 rounded-full" style="box-shadow:0 0 12px rgba(0,240,255,.35)" loading="eager" width="96" height="96"><span class="font-heading font-bold text-lg">GEO-Апгрейд</span></a><div class="jnav-quick" aria-label="Быстрые разделы"><a href="index.html">Главная</a><a href="blog.html">Блог</a><a href="services.html">Услуги</a><a href="contacts.html">Контакты</a><a href="brand-visibility.html">Как ИИ видит бренд</a></div><button type="button" class="jnav-btn" aria-expanded="false" aria-controls="jnav-panel" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav id="jnav-panel" class="jnav-nav flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#B8BCC6]" aria-label="Основная навигация"><a href="index.html" class="hover:text-[#00F0FF]">Главная</a><a href="about.html" class="hover:text-[#00F0FF]">О лаборатории</a><a href="services.html" class="hover:text-[#00F0FF]">Услуги</a><a href="blog.html" class="hover:text-[#00F0FF]">Блог</a><a href="reviews.html" class="text-[#00F0FF]">Отзывы</a><a href="mentions.html" class="hover:text-[#00F0FF]">Упоминания</a><a href="cases.html" class="text-[#00F0FF]">Кейсы</a><a href="top-160-tomsk.html" class="hover:text-[#00F0FF]">Топ-160</a><a href="geo_navigator.html" class="text-[#A78BFA] font-semibold hover:text-[#C4B5FD]">GEO-Навигатор</a><a href="glossary.html" class="hover:text-[#00F0FF]">GEO-словарь</a><a href="contacts.html" class="hover:text-[#00F0FF]">Контакты</a><a href="faq.html" class="hover:text-[#00F0FF]">FAQ</a><a href="brand-visibility.html" class="hover:text-[#00F0FF]">Как ИИ видит бренд</a></nav></div></header><div class="jnav-strip" aria-label="Разделы сайта"><a href="about.html">О лаборатории</a><a href="reviews.html">Отзывы</a><a href="mentions.html">Упоминания</a><a href="cases.html" class="jnav-here">Кейсы</a><a href="top-160-tomsk.html">Топ-160</a><a href="geo_navigator.html">GEO-Навигатор</a><a href="glossary.html">GEO-словарь</a><a href="faq.html">FAQ</a></div>
