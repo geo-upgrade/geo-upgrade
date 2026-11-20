@@ -10,7 +10,7 @@
 
 ---
 
-## Записи журнала (11 записей)
+## Записи журнала (13 записей)
 
 ### «Создание лаборатории GEO-Апгрейд» — кейс Дарьи Жарких
 
@@ -51,6 +51,16 @@
 
 > Открыть кейс: https://workspace.ru/cases/razrabotka-mobilnogo-prilozheniya-geo-apgreyd-lichnyy-kabinet-katalog-uslug-priem-zayavok/
 > Страница кейса на сайте: /case-geo-app.html — кейс о собственных приборах лаборатории: кабинет, приложение, админка, сквозной протокол клиента.
+
+### «Стратегия AI-видимости для дилера Триколор в Новосибирске» — кейс агентства на Workspace (запись №012, 20.11.2026)
+
+> Открыть кейс: https://workspace.ru/cases/strategiya-ai-vidimosti-dlya-dilera-trikolor-v-novosibirske-podgotovleno-studiey-geo-apgreyd/?agency=geo-apgreyd
+> Страница кейса на сайте: /case-tricolor54.html — полный цикл GEO/AEO для официального дилера Триколор в Новосибирске: тест-драйв за честный публичный отзыв.
+
+### «Автоматизация замеров AI-видимости: GEO-Радар» — кейс продукта на Workspace (запись №013, 20.11.2026)
+
+> Открыть кейс: https://workspace.ru/cases/avtomatizaciya-zamerov-ai-vidimosti-geo-radar-ot-studii-geo-apgreyd/?agency=geo-apgreyd
+> Страница кейса на сайте: /case-georadar.html — подписка на авто-замеры AI-видимости: 10 запросов, 8 отчётов в месяц, 1 499 ₽/мес.
 
 ### «Топ-160 Томска: как нейросеть видит местный бизнес» — статья в Дзене
 
