@@ -540,6 +540,43 @@ footer.ft{margin-top:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.
 @media(max-width:640px){.cabtabs{top:56px;gap:6px;padding:6px}.cabtab{padding:8px 11px;font-size:10px}}
 </style>
 <meta name="robots" content="noindex, nofollow">
+<script>
+/* GEO-Апгрейд · token-refresh fix 2026-11-25: перед обращениями к базе и Storage проверяем токен; при протухании — обновляем через refresh_token. Без этого Storage отвечает 404 «Object not found» (маскирует отказ). */
+(function(){
+  var SB='https://cpaevaypyplwcdjrfzpj.supabase.co', KEY='sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-';
+  function read(){try{return JSON.parse(localStorage.getItem('geo_lab_auth')||'null')}catch(e){return null}}
+  function write(a){try{localStorage.setItem('geo_lab_auth',JSON.stringify(a))}catch(e){}}
+  function expOf(tok){try{var b=String(tok).split('.')[1].replace(/-/g,'+').replace(/_/g,'/');while(b.length%4)b+='=';var p=JSON.parse(atob(b));return p.exp||0}catch(e){return 0}}
+  var inFlight=null;
+  async function refreshNow(){
+    var a=read();if(!a||!a.refresh_token)return null;
+    try{
+      var r=await fetch(SB+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:a.refresh_token})});
+      var j=await r.json().catch(function(){return{}});
+      if(r.ok&&j.access_token){
+        var b={email:a.email||((j.user||{}).email)||'',uid:a.uid||((j.user||{}).id)||'',token:j.access_token,name:a.name||'',refresh_token:j.refresh_token||a.refresh_token,at:Date.now()};
+        write(b);return b;
+      }
+    }catch(e){}
+    return null;
+  }
+  async function sbFixEnsure(){
+    var a=read();if(!a||!a.token)return a;
+    var exp=expOf(a.token), now=Math.floor(Date.now()/1000);
+    var stale=(exp&&now>exp-600)||(!exp&&a.at&&(Date.now()-a.at>50*60*1000));
+    if(stale){
+      if(!inFlight)inFlight=refreshNow();
+      var nb=await inFlight;inFlight=null;
+      return nb||a;
+    }
+    return a;
+  }
+  window.sbFixEnsure=sbFixEnsure;
+  async function loop(){try{await sbFixEnsure()}catch(e){}}
+  if(document.readyState!=='loading')loop();else document.addEventListener('DOMContentLoaded',loop);
+  setInterval(function(){if(!document.hidden)loop()},25*60*1000);
+})();
+</script>
 </head>
 <body>
 
@@ -906,7 +943,7 @@ async function postLabOrder(s,svc,puid,em){try{await fetch('https://cpaevaypyplw
     }
   }catch(e){}
 }
-async function syncSbOrders(){try{const a=store.get('geo_lab_auth',null);if(!a||!a.token)return;const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders?user_id=eq.'+a.uid+'&order=created_at.desc',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+a.token}});if(!r.ok)return;const arr=await r.json();const L=store.get('geo_lab_orders',[]);const liveIds=new Set(arr.map(x=>x.id));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&o.id&&String(o.id).indexOf('sb')===0&&!liveIds.has(String(o.id).slice(2)))L.splice(i,1);}let upd=0;arr.forEach(x=>{const isod=(x.created_at||'').slice(0,10);const idx=L.findIndex(o=>o.sb&&o.uid===x.pay_uid&&o.isodate===isod&&(o.email||'').toLowerCase()===(x.email||'').toLowerCase());const SBMAP={'confirmed':'Подтверждён','paid_check':'Чек получен','pending':'Обработка','work':'В работе','ready':'Готово','done':'Завершён','cancel':'Отменён'};const st=SBMAP[x.status]||(SBMAP[x.status]===undefined&&['Обработка','Подтверждён','Выполняется','В работе','Готово','Завершён','Отменён'].includes(x.status)?x.status:'Обработка');if(idx<0){L.push({id:'sb'+x.id,uid:x.pay_uid||'',name:x.service_name||'услуга',amount:x.amount||0,email:x.email||'',name2:'',note:'',date:isod?new Date(isod).toLocaleDateString('ru-RU'):'',isodate:isod,status:st,check:'',due:x.due_date||'',sb:1});upd++}else{if(x.status&&L[idx].status!==st){L[idx].status=st;upd++}if((x.due_date||'')!==(L[idx].due||'')){L[idx].due=x.due_date||'';upd++}}});const SK=new Set();arr.forEach(x=>SK.add((x.pay_uid||'')+'|'+(x.created_at||'').slice(0,10)+'|'+(x.email||'').toLowerCase()));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&!SK.has((o.uid||'')+'|'+(o.isodate||'')+'|'+(o.email||'').toLowerCase())){L.splice(i,1);upd++}}for(let i=L.length-1;i>=0;i--){const o2=L[i];if(!o2.sb){L.splice(i,1);upd++}}if(upd)store.set('geo_lab_orders',L);if(upd&&typeof renderOrders==='function')renderOrders()}catch(e){}}
+async function syncSbOrders(){try{const a=await window.sbFixEnsure();if(!a||!a.token)return;const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/rest/v1/lab_orders?user_id=eq.'+a.uid+'&order=created_at.desc',{headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Authorization':'Bearer '+a.token}});if(!r.ok)return;const arr=await r.json();const L=store.get('geo_lab_orders',[]);const liveIds=new Set(arr.map(x=>x.id));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&o.id&&String(o.id).indexOf('sb')===0&&!liveIds.has(String(o.id).slice(2)))L.splice(i,1);}let upd=0;arr.forEach(x=>{const isod=(x.created_at||'').slice(0,10);const idx=L.findIndex(o=>o.sb&&o.uid===x.pay_uid&&o.isodate===isod&&(o.email||'').toLowerCase()===(x.email||'').toLowerCase());const SBMAP={'confirmed':'Подтверждён','paid_check':'Чек получен','pending':'Обработка','work':'В работе','ready':'Готово','done':'Завершён','cancel':'Отменён'};const st=SBMAP[x.status]||(SBMAP[x.status]===undefined&&['Обработка','Подтверждён','Выполняется','В работе','Готово','Завершён','Отменён'].includes(x.status)?x.status:'Обработка');if(idx<0){L.push({id:'sb'+x.id,uid:x.pay_uid||'',name:x.service_name||'услуга',amount:x.amount||0,email:x.email||'',name2:'',note:'',date:isod?new Date(isod).toLocaleDateString('ru-RU'):'',isodate:isod,status:st,check:'',due:x.due_date||'',sb:1});upd++}else{if(x.status&&L[idx].status!==st){L[idx].status=st;upd++}if((x.due_date||'')!==(L[idx].due||'')){L[idx].due=x.due_date||'';upd++}}});const SK=new Set();arr.forEach(x=>SK.add((x.pay_uid||'')+'|'+(x.created_at||'').slice(0,10)+'|'+(x.email||'').toLowerCase()));for(let i=L.length-1;i>=0;i--){const o=L[i];if(o.sb&&!SK.has((o.uid||'')+'|'+(o.isodate||'')+'|'+(o.email||'').toLowerCase())){L.splice(i,1);upd++}}for(let i=L.length-1;i>=0;i--){const o2=L[i];if(!o2.sb){L.splice(i,1);upd++}}if(upd)store.set('geo_lab_orders',L);if(upd&&typeof renderOrders==='function')renderOrders()}catch(e){}}
 async function postLab(subject,text){try{const s=session()||{email:'—'};const fd=new FormData();fd.set('name',subject);fd.set('email',s.email||'—');fd.set('message',text);fd.set('source','Личный кабинет / сайт');fd.set('page',location.pathname.split('/').pop()||'cabinet.html');await fetch('https://geo-upgrade-inbox.dafna-acid.workers.dev/lead?secret=gu_-8LBI_jtmp8EF4vLHt2Xx1I3A6YZ_7Az',{method:'POST',body:fd,keepalive:true})}catch(e){}try{fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({subject:subject,text:text,from:'cabinet@geo-upgrade.ru'}),keepalive:true})}catch(e){}return true}
 function fmt(n){return n>0?n.toLocaleString('ru-RU')+' ₽':'цена по договорённости'}
 function orders(){return store.get('geo_lab_orders',[])}
@@ -1222,14 +1259,14 @@ fetch('lab-statuses.json?nc='+Date.now()).then(r=>r.ok?r.json():null).then(j=>{i
       box.querySelectorAll('a[data-sup]').forEach(function(a){
         a.onclick=async function(ev){
           ev.preventDefault();
-          const s2=dgSess();
+          const s2=await window.sbFixEnsure();
           if(!s2||!s2.token){alert('Сначала войдите в кабинет');return}
           const sup=a.getAttribute('data-sup');
           try{
             const rr=await fetch(SB+'/storage/v1/object/sign/materials/'+sup+'?expireIn=120',{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+s2.token,'Content-Type':'application/json'},body:JSON.stringify({expiresIn:120})});
             const jj=await rr.json().catch(function(){return{}});
             if(rr.ok&&jj.signedURL){window.open(SB+'/storage/v1'+jj.signedURL,'_blank')}
-            else{alert('ДОСТУП ЗАКРЫТ — файл доступен только при подтверждённой покупке (код '+rr.status+')')}
+            else{alert('ДОСТУП ЗАКРЫТ — файл доступен только при подтверждённой покупке (код '+rr.status+'). Если давно не заходили в кабинет — выйдите и войдите заново')}
           }catch(e2){alert('Не удалось открыть файл — проверьте соединение')}
         };
       });
@@ -1372,7 +1409,7 @@ function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'
 function badge(txt,color){return '<span style="display:inline-block;font-family:Orbitron,monospace;font-size:9.5px;letter-spacing:.1em;padding:4px 10px;border-radius:999px;border:1px solid '+color+';color:'+color+';margin-right:6px">'+txt+'</span>'}
 function auth(){try{return JSON.parse(localStorage.getItem('geo_lab_auth')||'null')}catch(e){return null}}
 function qList(q){try{if(Array.isArray(q))return q.map(function(x){return typeof x==='string'?x:String((x&&x.query)||'')}).filter(Boolean)}catch(e){}return []}
-async function get(path){var a=auth();if(!a||!a.token)return null;var r=await fetch(SB+path,{headers:{apikey:KEY,Authorization:'Bearer '+a.token}});if(!r.ok)throw new Error('ошибка '+r.status);return r.json()}
+async function get(path){var a=await window.sbFixEnsure();if(!a||!a.token)return null;var r=await fetch(SB+path,{headers:{apikey:KEY,Authorization:'Bearer '+a.token}});if(!r.ok)throw new Error('ошибка '+r.status);return r.json()}
 async function rpc(fn,args){var r=await fetch(SB+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json'},body:JSON.stringify(args)});var j=await r.json().catch(function(){return null});if(!r.ok)throw new Error((j&&j.message)||('ошибка '+r.status));return j}
 function radStatus(r){
   var out=[];var st=r.status||'new';

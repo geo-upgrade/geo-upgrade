@@ -738,7 +738,7 @@ $('f-login').addEventListener('submit',async e=>{
   try{
     const r=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/auth/v1/token?grant_type=password',{method:'POST',headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Content-Type':'application/json'},body:JSON.stringify({email:em,password:pw})});
     const j=await r.json().catch(()=>({}));
-    if(r.ok&&j.access_token){localStorage.setItem('geo_lab_auth',JSON.stringify({email:(j.user||{}).email||em,uid:(j.user||{}).id||'',token:j.access_token,name:((j.user||{}).user_metadata||{}).full_name||em,at:Date.now()}));store.set('geo_lab_session',em);back();return}
+    if(r.ok&&j.access_token){localStorage.setItem('geo_lab_auth',JSON.stringify({email:(j.user||{}).email||em,uid:(j.user||{}).id||'',token:j.access_token,refresh_token:j.refresh_token||'',name:((j.user||{}).user_metadata||{}).full_name||em,at:Date.now()}));store.set('geo_lab_session',em);back();return}
     const d=(j.error_description||j.msg||'')+'';
     $('li-err').textContent=/Invalid login/i.test(d)?'Неверный email или пароль. Если аккаунт был создан раньше — пройдите короткую регистрацию ещё раз (сайт переехал на защищённую базу).':(d||'Не удалось войти ('+r.status+').');
   }catch(err){$('li-err').textContent='Нет связи с базой лаборатории. Проверьте интернет.'}
@@ -753,10 +753,10 @@ $('f-reg').addEventListener('submit',async e=>{
     const j=await r.json().catch(()=>({}));
     if(r.ok){
       const s=j.session||null;
-      localStorage.setItem('geo_lab_auth',JSON.stringify({email:em,uid:(j.user||{}).id||'',token:(s||{}).access_token||'',name:nm,at:Date.now()}));
+      localStorage.setItem('geo_lab_auth',JSON.stringify({email:em,uid:(j.user||{}).id||'',token:(s||{}).access_token||'',refresh_token:(s||{}).refresh_token||'',name:nm,at:Date.now()}));
       const U=users();U[em]={name:nm,h:await sha256(em+'|'+pw),at:new Date().toISOString().slice(0,10)};store.set('geo_lab_users',U);
       postLab('[Кабинет] РЕГИСТРАЦИЯ: '+nm+' — '+em,'Новый клиент в личной лаборатории.\nИмя: '+nm+'\nEmail: '+em+'\nДата: '+new Date().toLocaleString('ru-RU'));
-      if(!s){try{const r2=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/auth/v1/token?grant_type=password',{method:'POST',headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Content-Type':'application/json'},body:JSON.stringify({email:em,password:pw})});const j2=await r2.json().catch(()=>({}));if(r2.ok&&j2.access_token){localStorage.setItem('geo_lab_auth',JSON.stringify({email:(j2.user||{}).email||em,uid:(j2.user||{}).id||'',token:j2.access_token,name:nm,at:Date.now()}));store.set('geo_lab_session',em);back();return}}catch(e2){}$('rg-err').textContent='Аккаунт создан. Подтвердите email по письму из лаборатории — затем войдите.';return}
+      if(!s){try{const r2=await fetch('https://cpaevaypyplwcdjrfzpj.supabase.co/auth/v1/token?grant_type=password',{method:'POST',headers:{'apikey':'sb_publishable_XgpZnxkWQTSSwPaP6ClKPw_YzV2r5Z-','Content-Type':'application/json'},body:JSON.stringify({email:em,password:pw})});const j2=await r2.json().catch(()=>({}));if(r2.ok&&j2.access_token){localStorage.setItem('geo_lab_auth',JSON.stringify({email:(j2.user||{}).email||em,uid:(j2.user||{}).id||'',token:j2.access_token,refresh_token:j2.refresh_token||'',name:nm,at:Date.now()}));store.set('geo_lab_session',em);back();return}}catch(e2){}$('rg-err').textContent='Аккаунт создан. Подтвердите email по письму из лаборатории — затем войдите.';return}
       back();return;
     }
     const d=(j.error_description||j.msg||'')+'';
