@@ -554,6 +554,87 @@ nav[aria-label="Основная навигация"] a {
   </div>
 </section><section id="related" class="max-w-6xl mx-auto px-5 py-16 md:py-20"><p class="font-heading text-xs tracking-[.2em] accent-beige">СМЕЖНЫЕ МАРШРУТЫ</p><h2 class="mt-4 text-3xl md:text-5xl font-bold">Что рядом на карте</h2><div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6"><a href="prompt-map.html" class="card p-6 block"><h3 class="text-lg font-semibold accent-beige">Промпт-карта бренда</h3><p class="mt-2 text-sm text-[#B8B0A8]">Библиотека промптов по всей территории бренда</p><span class="mt-3 inline-block text-sm accent-beige font-semibold">Открыть →</span></a><a href="expedition-lite.html" class="card p-6 block"><h3 class="text-lg font-semibold accent-beige">AI-экспедиция Лайт</h3><p class="mt-2 text-sm text-[#B8B0A8]">Короткая разведка, если план пока рано</p><span class="mt-3 inline-block text-sm accent-beige font-semibold">Открыть →</span></a><a href="geo_navigator.html" class="card p-6 block"><h3 class="text-lg font-semibold accent-beige">GEO-Навигатор — все экспедиции</h3><p class="mt-2 text-sm text-[#B8B0A8]">Вернуться на страницу направления GEO-Навигатор</p><span class="mt-3 inline-block text-sm accent-beige font-semibold">Открыть →</span></a></div></section>
 <div class="divider"></div>
+<!-- ===== GEO-BRIEF :: AI-экспедиция Полная :: вставка блока (v1 пилот) ===== -->
+<section id="geo-brief" style="margin:2.5rem auto 0;max-width:760px;background:#16092A;border:1px solid rgba(0,240,255,.35);border-radius:16px;padding:1.75rem 1.25rem;font-family:'Exo 2',sans-serif;box-shadow:0 0 32px rgba(0,240,255,.08)">
+  <style>
+    #geo-brief label{display:block;margin:.9rem 0 .35rem;color:#B8BCC6;font-size:.9rem;letter-spacing:.02em}
+    #geo-brief input[type=text],#geo-brief input[type=email],#geo-brief textarea,#geo-brief select{width:100%;box-sizing:border-box;background:#0D0618;border:1px solid rgba(184,188,198,.35);border-radius:8px;padding:.65rem .8rem;color:#F7F7FA;font-family:'Exo 2',sans-serif;font-size:.95rem}
+    #geo-brief input:focus,#geo-brief textarea:focus,#geo-brief select:focus{outline:none;border-color:#00F0FF;box-shadow:0 0 10px rgba(0,240,255,.25)}
+    #geo-brief textarea{min-height:70px;resize:vertical}
+    #geo-brief .gb-title{font-family:Orbitron,'Exo 2',sans-serif;color:#F7F7FA;font-size:1.25rem;margin:0 0 .5rem;letter-spacing:.04em}
+    #geo-brief .gb-podvodka{color:#C9B9E8;font-size:.95rem;line-height:1.65;margin:0}
+    #geo-brief .gb-btn{display:inline-block;background:#00F0FF;color:#0D0618;font-weight:600;border-radius:8px;padding:.85rem 1.9rem;border:none;cursor:pointer;font-family:'Exo 2',sans-serif;font-size:1rem;margin-top:1.2rem;box-shadow:0 0 18px rgba(0,240,255,.35)}
+    #geo-brief .gb-btn:hover{filter:brightness(1.12)}
+    #geo-brief .gb-status{margin-top:1rem;font-size:.92rem;color:#7EE787;min-height:1.2em}
+    #geo-brief .gb-fallback{margin-top:.9rem;font-size:.88rem;color:#B8BCC6}
+    #geo-brief .gb-fallback a{color:#00F0FF;text-decoration:underline}
+    #geo-brief .gb-note{margin-top:.6rem;font-size:.8rem;color:#8A8DA0}
+  </style>
+  <h3 class="gb-title">◆ Мини-бриф: AI-экспедиция Полная</h3>
+  <p class="gb-podvodka">Хотите так же — но при этом получить персональный и уникальный продукт или услугу? Наша лаборатория решает самые трудные задачи и берётся за любые ваши идеи — особенно, если они интересные. Пройдите мини-бриф: 2 минуты — и заявка придёт к нам со всеми вашими ответами.</p>
+  <form id="geo-brief-form" novalidate>
+    <input type="hidden" name="page" value="AI-экспедиция Полная">
+    <input type="hidden" name="_subject" value="Бриф-опросник — AI-экспедиция Полная">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+    <label for="gb-name">Как вас зовут?</label>
+    <input id="gb-name" type="text" name="name" maxlength="120" required>
+    <label for="gb-biz">Что за бизнес и кто ваши клиенты?</label>
+    <input id="gb-biz" type="text" name="business" maxlength="300" required>
+    <label for="gb-goal">Какой результат хотите увидеть?</label>
+    <textarea id="gb-goal" name="goal" maxlength="800" required></textarea>
+    <label for="gb-email">E-mail для ответа</label>
+    <input id="gb-email" type="email" name="email" maxlength="160" required>
+    <label for="gb-phone">Телефон или ник в Telegram/WhatsApp — где вас искать (необязательно)</label>
+    <input id="gb-phone" type="text" name="phone" maxlength="80" autocomplete="off">
+    <label for="gb-pref">Как удобнее общаться?</label>
+    <select id="gb-pref" name="contact_pref">
+      <option value="Telegram">Telegram</option>
+      <option value="WhatsApp">WhatsApp</option>
+      <option value="Телефон">Телефон</option>
+      <option value="E-mail">E-mail</option>
+      <option value="Видеозвонок">Видеозвонок</option>
+    </select>
+    <label for="gb-q1">Какие процессы разбираем в первую очередь?</label>
+    <textarea id="gb-q1" name="q1" maxlength="800"></textarea>
+    <label for="gb-q2">Кто принимает решения по внедрению?</label>
+    <textarea id="gb-q2" name="q2" maxlength="800"></textarea>
+    <button type="submit" class="gb-btn">Отправить бриф — 2 минуты</button>
+    <div id="geo-brief-status" class="gb-status" role="status" aria-live="polite"></div>
+    <div class="gb-fallback">Не отправляется? <a href="contacts.html">Общая форма связи</a> или <a href="mailto:geo.upgrade@bk.ru">geo.upgrade@bk.ru</a> — отвечаем от руки.</div>
+    <div class="gb-note">Заявка уходит в лабораторию GEO-Апгрейд: в Telegram — сразу, копия — на почту. Никаких рассылок.</div>
+  </form>
+  <script>
+  (function(){
+    var f=document.getElementById('geo-brief-form'), st=document.getElementById('geo-brief-status');
+    if(!f||!st||f.dataset.gbInit) return; f.dataset.gbInit='1';
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var fd=new FormData(f);
+      if((fd.get('_gotcha')||'').trim()){ return; }
+      var page=fd.get('page')||'';
+      var filled={};
+      ['name','business','goal','email','contact_pref','q1','q2','phone'].forEach(function(k){ var v=(fd.get(k)||'').toString().trim(); if(v) filled[k]=v.slice(0,800); });
+      if(!filled.name||!filled.business||!filled.goal||!filled.email){ st.textContent='Заполните имя, бизнес, цель и e-mail — остальное можно дописать потом.'; return; }
+      var parts=[]; for(var k in filled){ parts.push(k+'='+encodeURIComponent(filled[k])); }
+      parts.push('page='+encodeURIComponent(page)); parts.push('_subject='+encodeURIComponent('Бриф-опросник — '+page));
+      var body=parts.join('&');
+      st.textContent='Отправляю…';
+      var post=function(url,opts){ return fetch(url,opts).then(function(r){ if(!r.ok) throw new Error(r.status); return r; }); };
+      var jobs=[
+        post('https://geo-brief.dafna-acid.workers.dev/brief',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).catch(function(err){ return {failed:'worker',err:err}; }),
+        post('https://formspree.io/f/mljdyaqo',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/x-www-form-urlencoded'},body:body}).catch(function(err){ return {failed:'formspree',err:err}; })
+      ];
+      Promise.all(jobs).then(function(res){
+        var fails=res.filter(function(x){return x&&x.failed;});
+        if(fails.length===0){ st.textContent='Готово! Бриф ушёл в лабораторию — ответим по указанному способу связи.'; f.reset(); }
+        else if(fails.length===1){ st.textContent='Бриф отправлен (один из каналов). Если ответа нет в течение дня — напишите через общую форму: contacts.html'; f.reset(); }
+        else { st.textContent='Не получилось отправить. Напишите нам напрямую: contacts.html или geo.upgrade@bk.ru — получим ваш запрос от руки.'; }
+      });
+    });
+  })();
+  </script>
+</section>
+<!-- ===== END GEO-BRIEF :: AI-экспедиция Полная ===== -->
 <section class="nav-grid"><div class="max-w-6xl mx-auto px-5 py-16 md:py-20"><div class="max-w-2xl mx-auto text-center">
 <span class="case-stamp">ДЕЛО ОЖИДАЕТ СВОЕГО ВЛАДЕЛЬЦА</span>
 <h2 class="mt-6 text-3xl md:text-5xl font-bold">Маршрут начинается с первой сессии</h2>

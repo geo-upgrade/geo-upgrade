@@ -12,6 +12,8 @@
 
 
 
+
+[Видимость в нейросетях](https://geo-upgrade.ru/) в этой статье измеряется конкретными числами: это способ проверить её, а не обсуждать абстрактно.
 Категории: [ЭКСПЕРИМЕНТЫ](https://geo-upgrade.ru/blog-experiments.html) · [AI-ВИДИМОСТЬ](https://geo-upgrade.ru/blog-visibility.html) · МЕТРИКИ
 
 ---

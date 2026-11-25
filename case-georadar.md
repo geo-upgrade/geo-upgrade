@@ -70,3 +70,5 @@
 Кейс также опубликован на Workspace (агентский профиль, сторонняя площадка): https://workspace.ru/cases/avtomatizaciya-zamerov-ai-vidimosti-geo-radar-ot-studii-geo-apgreyd/?agency=geo-apgreyd
 
 Ключевые слова: GEO, GEO-маркетинг, продвижение в нейросетях, AI-видимость, AEO, нейропоиск, как нас видят нейросети, замеры AI-видимости, ChatGPT, Perplexity, Алиса (YandexGPT), GigaChat.
+
+На этой странице действует мини-бриф GEO-Апгрейд: шесть коротких полей (имя, бизнес, цель, e-mail, контакт, способ связи) и два вопроса под страницу. Заявка уходит в Telegram-уведомление студии и дублируется на почту geo.upgrade@bk.ru.
