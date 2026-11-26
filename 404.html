@@ -95,6 +95,12 @@ html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#160
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113118311', 'ym');
 
     ym(113118311, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+ /* bot-trap-v1 */
+    try{
+      var bt={u:location.href,ua:navigator.userAgent,ref:document.referrer||"",lang:navigator.language||"",w:screen.width,h:screen.height,ts:Date.now()};
+      ym(113118311,'params',{bot404:bt});
+      ym(113118311,'reachGoal','BOT404');
+    }catch(e){}
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/113118311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
